@@ -6,7 +6,9 @@
 bin/*
 obj/*
 /OTB_SEGURA/OTB_SEGURA/obj/Debug/
+/OTB_SEGURA/OTB_SEGURA.Android/obj/Debug/
 /OTB_SEGURA/OTB_SEGURA/bin/Debug/
+/OTB_SEGURA/OTB_SEGURA.Android/bin/Debug/
 /OTB_SEGURA/OTB_SEGURA.iOS/obj/iPhone/Debug/
 
 # User-specific files

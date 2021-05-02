@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OTB_SEGURA.Views.View_UsersList"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:UsersListViewModel />
+        <!-- establecemos el contexto de los datos -->
+    </ContentPage.BindingContext>
+
+    <ListView ItemsSource="{Binding usersList}" HasUnevenRows="true" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame BorderColor="Black" CornerRadius="5" Margin="5" Padding="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Nombre:" FontAttributes="Bold" TextColor="Black" />
+                                    <Label Text="{Binding Name}" TextColor="Black" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Telefono:" FontAttributes="Bold" TextColor="Black"  />
+                                    <Label Text="{Binding Phone}" TextColor="Black" />
+                                </StackLayout>
+                                <Button Text="Habilitar/Deshabilitar" TextColor="Black" />
+                            </StackLayout>
+                            <Grid Grid.Column="1">
+                                <Image Background="gray" />
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

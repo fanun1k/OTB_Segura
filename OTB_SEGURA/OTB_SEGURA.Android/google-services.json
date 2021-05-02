@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "973479782758",
+    "project_id": "proyecto-emergencia",
+    "storage_bucket": "proyecto-emergencia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973479782758:android:f3029c216105cc690cc0a7",
+        "android_client_info": {
+          "package_name": "com.companyname.otb_segura"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973479782758-rus0cf6pte4cvu80lmo8f3024u7kjo4a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.companyname.otb_segura",
+            "certificate_hash": "0144a3c5e2c6e36fea8a250dfaca48facdaed5b5"
+          }
+        },
+        {
+          "client_id": "973479782758-ot8chfleom0u94tn0omn7651a8afsdhl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApbt_DBJwgzkBxU3oFyPBLNpVtiYFARoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973479782758-ot8chfleom0u94tn0omn7651a8afsdhl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

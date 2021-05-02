@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             x:Class="OTB_SEGURA.Views.View_AddUser"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:AddUSerViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout Padding="15">
+        <Label Text="Nombre Completo" TextColor="Black"/>
+        <Entry Text="{Binding Name, Mode=TwoWay}"  TextColor="Black"/>
+        <Label Text="Número de Carnet" TextColor="Black"/>
+        <Entry Text="{Binding Ci,Mode=TwoWay}" TextColor="Black"/>
+        <Label Text="Número de Celular" TextColor="Black"/>
+        <Entry Text="{Binding Phone,Mode=OneWayToSource}" TextColor="Black"/>
+        <Label Text="Nombre de Usuario" TextColor="Black"/>
+        <Label Text="{Binding UserName , Mode=TwoWay}"  TextColor="Black"/>
+        <Label Text="Contraseña" TextColor="Black"/>
+        <Entry Text="{Binding Password,Mode=TwoWay}" TextColor="Black"/>
+        <Label Text="Confirmar Contraseña" TextColor="Black"/>
+        <Entry Text="{Binding RePassword,Mode=TwoWay}" TextColor="Black"/>
+        <Button Text="Registrar Usuario" Command="{Binding InsertCommand}"></Button>
+    </StackLayout>
+</ContentPage>

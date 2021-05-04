@@ -44,12 +44,12 @@ namespace OTB_SEGURA.Services
             {
                 UserId = Guid.NewGuid(),
                 Name = userModel.Name,
-                  UserName = userModel.UserName,
-                  Password = userModel.Password,
-                  Phone=userModel.Phone,
-                  State=userModel.State,
-                  Photo = userModel.Photo
-                
+                UserName = userModel.UserName,
+                Password = userModel.Password,
+                Phone=userModel.Phone,
+                State=userModel.State,
+                Photo = userModel.Photo,
+                Ci=userModel.Ci              
             });
         }
 

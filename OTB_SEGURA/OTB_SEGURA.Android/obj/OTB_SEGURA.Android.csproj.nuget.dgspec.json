@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj": {}
+    "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj": {
+    "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
+        "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
         "projectName": "OTB_SEGURA.Android",
-        "projectPath": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
+        "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
         "packagesPath": "C:\\Users\\FaNunk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA.Android\\obj\\",
+        "outputPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid10.0": {
             "projectReferences": {
-              "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
-                "projectPath": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
+              "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
+                "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
               }
             }
           }
@@ -54,14 +54,14 @@
         }
       }
     },
-    "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
+    "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
+        "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
         "projectName": "OTB_SEGURA",
-        "projectPath": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
+        "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
         "packagesPath": "C:\\Users\\FaNunk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA\\obj\\",
+        "outputPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

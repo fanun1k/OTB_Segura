@@ -11,7 +11,7 @@ namespace OTB_SEGURA
         public App()
         {
             InitializeComponent();
-            MainPage = new AppShell();
+            MainPage = new View_Login();
         }
 
         protected override void OnStart()

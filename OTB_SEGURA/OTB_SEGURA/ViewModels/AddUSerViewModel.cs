@@ -51,20 +51,18 @@ namespace OTB_SEGURA.ViewModels
                CreateUserName();
             }
         }
-
-
-        public string UserName
-        {
-            get { return userName; }
-            set { userName = value;}
-        }
-
-
         public string Name
         {
             get { return name; }
             set { name = value;
                 CreateUserName();
+            }
+        }
+        public string UserName
+        {
+            get { return userName; }
+            set { userName = value;
+                OnPropertyChanged();
             }
         }
 
@@ -86,37 +84,87 @@ namespace OTB_SEGURA.ViewModels
         #region Metodh
         private async void InsertMethod()
         {
-            var user = new UserModel
+            IsBusy = true;
+            if (Validar())
             {
-                Name = name,
-                UserName = userName,
-                Password = password,
-                Ci = ci,
-                Phone = phone,
-                State=1,
-                Photo=null
+                var user = new UserModel
+                {
+                    Name = name.ToUpper().Trim(),
+                    UserName = userName,
+                    Password = password.Trim(),
+                    Ci = ci,
+                    Phone = phone,
+                    State = 1,
+                    Photo = null
 
-            };
+                };
+                await fireBaseHelper.AddUser(user);
+                await Task.Delay(1500);
+                DependencyService.Get<IMessage>().ShortAlert("Usuario Agregado con éxito");
+            }
+            
+            IsBusy = false;
+        }
 
-            await fireBaseHelper.AddUser(user);
-            await Task.Delay(1000);
-            DependencyService.Get<IMessage>().LongAlert("Usuario Agregado con éxito");
+        private bool Validar()
+        {
+            bool res;
+            if (ci.ToString().Length > 7)
+            {
+                if (phone.ToString().Length > 6)
+                {
+                    if (password.Length>5)
+                    {
+                        if (password.Trim()==rePassword.Trim())
+                        {
+                            res = true;
+                        }
+                        else
+                        {
+                            res = false;
+                            DependencyService.Get<IMessage>().LongAlert("las contraseñas deben ser iguales");
+                        }
+                    }
+                    else
+                    {
+                        res = false;
+                        DependencyService.Get<IMessage>().LongAlert("las contraseña debe tener mas de 5 caracteres");
+
+                    }
+                }
+                else
+                {
+                    res = false;
+                    DependencyService.Get<IMessage>().LongAlert("El número de celular debe tener más de 7 caracteres");
+
+                }
+            }
+            else
+            {
+                DependencyService.Get<IMessage>().LongAlert("El número de carnet debe tener 8 caracteres");
+                res = false;
+            }
+            return res;
         }
 
         public void CreateUserName()
         {
             try
             {
-                if (name.Length>0)
+                if (name.Length > 0)
                 {
                     string[] iniciales = name.Split(' ');
                     string userNameComplete = "";
                     foreach (string inicial in iniciales)
                     {
-                        userNameComplete += inicial.Substring(0, 1).ToUpper();
+                        if (inicial.Length > 0)
+                        {
+                            userNameComplete += inicial.Substring(0, 1).ToUpper();
+                        }
                     }
-                    userNameComplete += Ci.ToString();
+                    userNameComplete += Ci.ToString();                 
                     UserName = userNameComplete;
+                  
                 }
                          
             }

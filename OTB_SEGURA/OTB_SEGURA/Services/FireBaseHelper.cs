@@ -15,15 +15,14 @@ namespace OTB_SEGURA.Services
         {
 
             return (await firebase
-              .Child("Persons")
+              .Child("Users")
               .OnceAsync<UserModel>()).Select(item => new UserModel
               {
                   Name = item.Object.Name,
                   UserName = item.Object.UserName,
                   Password = item.Object.Password,
-                  Phone=item.Object.Phone,
+                  Phone = item.Object.Phone,
                   State=item.Object.State,
-                  Photo = item.Object.Photo
               }).ToList();
         }
 

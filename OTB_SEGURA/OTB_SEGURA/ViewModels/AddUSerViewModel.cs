@@ -67,10 +67,14 @@ namespace OTB_SEGURA.ViewModels
         }
 
         #endregion
+
+        #region Construct
         public AddUSerViewModel()
         {
             Title = "Agregar Nuevo Usuario";
         }
+        #endregion
+
         #region Command
         public ICommand InsertCommand
         {
@@ -80,7 +84,7 @@ namespace OTB_SEGURA.ViewModels
             }
         }
         #endregion
-        
+
         #region Metodh
         private async void InsertMethod()
         {

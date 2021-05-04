@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj": {}
+    "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj": {
+    "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj",
         "projectName": "OTB_SEGURA.iOS",
-        "projectPath": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj",
+        "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj",
         "packagesPath": "C:\\Users\\FaNunk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA.iOS\\obj\\",
+        "outputPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
-                "projectPath": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
+              "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
+                "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
+    "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
+        "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
         "projectName": "OTB_SEGURA",
-        "projectPath": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
+        "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
         "packagesPath": "C:\\Users\\FaNunk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FaNunk\\Desktop\\otb\\OTB_SEGURA\\OTB_SEGURA\\obj\\",
+        "outputPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -23,7 +23,7 @@
                 </Grid.RowDefinitions>
 
                 <Image Source="logoOTB.png" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0" WidthRequest="300" HeightRequest="300" MinimumHeightRequest="300" MinimumWidthRequest="300"/>
-                <Entry Grid.Row="1" Placeholder="Ingrese su nombre de Usuario" PlaceholderColor="Black" FontSize="16" TextColor="Black" />
+                <Entry Grid.Row="1" Placeholder="Ingrese su nombre de Usuario" PlaceholderColor="Black" FontSize="16" TextColor="Black"    />
                 <Entry Grid.Row="2" Placeholder="Ingrese su contraseña" PlaceholderColor="Black" FontSize="16" TextColor="Black"/>
                 <Button Text="Ingresar" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3"/>
                 <Grid Grid.Row="5">

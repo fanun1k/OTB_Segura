@@ -2922,11 +2922,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
+      "projectUniqueName": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
       "projectName": "OTB_SEGURA.Android",
-      "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
+      "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
       "packagesPath": "C:\\Users\\quiro\\.nuget\\packages\\",
-      "outputPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\obj\\",
+      "outputPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2947,8 +2947,8 @@
       "frameworks": {
         "monoandroid10.0": {
           "projectReferences": {
-            "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
-              "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
+            "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
+              "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
             }
           }
         }

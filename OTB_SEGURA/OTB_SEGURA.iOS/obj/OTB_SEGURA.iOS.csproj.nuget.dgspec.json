@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj": {}
+    "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj": {}
   },
   "projects": {
-    "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj": {
+    "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj",
+        "projectUniqueName": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj",
         "projectName": "OTB_SEGURA.iOS",
-        "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj",
+        "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\OTB_SEGURA.iOS.csproj",
         "packagesPath": "C:\\Users\\quiro\\.nuget\\packages\\",
-        "outputPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\obj\\",
+        "outputPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
-                "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
+              "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
+                "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
+    "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
+        "projectUniqueName": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
         "projectName": "OTB_SEGURA",
-        "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
+        "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
         "packagesPath": "C:\\Users\\quiro\\.nuget\\packages\\",
-        "outputPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\fanun1k\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\obj\\",
+        "outputPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

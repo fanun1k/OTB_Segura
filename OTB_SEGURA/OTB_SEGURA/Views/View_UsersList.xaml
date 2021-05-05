@@ -4,28 +4,37 @@
              x:Class="OTB_SEGURA.Views.View_UsersList"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
-             Title="{Binding Title}">
-    
+             Title="{Binding Title}"
+             >
+    <ContentPage.Behaviors>
+        <behaviorsPack:EventToCommandBehavior 
+            EventName="Appearing"
+            Command="{Binding AppearingCommand }"/>
+    </ContentPage.Behaviors>
     <ContentPage.BindingContext>
         <vm:UsersListViewModel />
         <!-- establecemos el contexto de los datos -->
     </ContentPage.BindingContext>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <ListView ItemsSource="{Binding UserList}" HasUnevenRows="true">
+        <ListView x:Name="ListUser"  ItemsSource="{Binding UserList}" HasUnevenRows="true"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListUser_Refreshing">
             <ListView.Behaviors>
                 <behaviorsPack:EventToCommandBehavior 
                     EventName="ItemTapped"
                     Command="{Binding ItemTappedCommand}"
                     EventArgsPropertyPath="Item"/>
+                <behaviorsPack:EventToCommandBehavior 
+                    EventName="Refreshing"
+                    Command="{Binding RefreshingCommand}"/>
             </ListView.Behaviors>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame BorderColor="Black" CornerRadius="5" Margin="5" Padding="5">
+                        <Frame BorderColor="Black" CornerRadius="5" Margin="5" Padding="5" BackgroundColor="{Binding StateColor}">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="25"/>

@@ -18,29 +18,30 @@ namespace OTB_SEGURA.Services
               .Child("Users")
               .OnceAsync<UserModel>()).Select(item => new UserModel
               {
+                  UserId=item.Object.UserId,
                   Name = item.Object.Name,
                   UserName = item.Object.UserName,
                   Phone = item.Object.Phone,
                   State=item.Object.State,
-                  Ci=item.Object.Ci
+                  Ci=item.Object.Ci,
+                  Password=item.Object.Password
+                  
               }).ToList();
         }
 
         public async Task<List<UserActivityModel>> GetAllActivities()
         {
-            return (await firebase
-              .Child("Activity")
-              .OnceAsync<UserActivityModel>()).Select(item => new UserActivityModel
-              {
-                  UserId = item.Object.UserId,
-                  Message=item.Object.Message,
-                  Type=item.Object.Type,
-                  Latitude=item.Object.Latitude,
-                  Longitude=item.Object.Longitude,
-                  DateTime=item.Object.DateTime
-                  
-                  
-              }).ToList();
+                return (await firebase
+                  .Child("Activity")
+                  .OnceAsync<UserActivityModel>()).Select(item => new UserActivityModel
+                  {
+                      UserId = item.Object.UserId,
+                      Message=item.Object.Message,
+                      Type=item.Object.Type,
+                      Latitude=item.Object.Latitude,
+                      Longitude=item.Object.Longitude,
+                      DateTime=item.Object.DateTime
+                  }).ToList();
         }
 
         /*
@@ -97,12 +98,52 @@ namespace OTB_SEGURA.Services
               .PutAsync(new UserModel() { UserId = userModel.UserId, Name = userModel.Name, UserName = userModel.UserName, Password=userModel.Password,Photo=userModel.Photo,Phone=userModel.Phone,State=userModel.State });
         }
 
+        public async Task DisableUser(UserModel userModel)
+        {
+            var toUpdateUser = (await firebase
+              .Child("Users")
+              .OnceAsync<UserModel>()).Where(a => a.Object.UserId == userModel.UserId).FirstOrDefault();
+            await firebase
+              .Child("Users")
+              .Child(toUpdateUser.Key)
+              .PutAsync(new UserModel() {
+                  UserId = userModel.UserId,
+                  Name = userModel.Name,
+                  UserName = userModel.UserName,
+                  Password = userModel.Password,
+                  Phone = userModel.Phone,
+                  State = 0,
+                  Photo = userModel.Photo,
+                  Ci = userModel.Ci
+              });
+        }
+        public async Task EnableUser(UserModel userModel)
+        {
+            var toUpdateUser = (await firebase
+              .Child("Users")
+              .OnceAsync<UserModel>()).Where(a => a.Object.UserId == userModel.UserId).FirstOrDefault();
+            await firebase
+              .Child("Users")
+              .Child(toUpdateUser.Key)
+              .PutAsync(new UserModel()
+              {
+                  UserId = userModel.UserId,
+                  Name = userModel.Name,
+                  UserName = userModel.UserName,
+                  Password = userModel.Password,
+                  Phone = userModel.Phone,
+                  State = 1,
+                  Photo = userModel.Photo,
+                  Ci = userModel.Ci
+              });
+        }
+
         public async Task DeleteUser(Guid userId)
         {
             var toDeletePerson = (await firebase
-              .Child("Persons")
+              .Child("Users")
               .OnceAsync<UserModel>()).Where(a => a.Object.UserId == userId).FirstOrDefault();
-            await firebase.Child("Persons").Child(toDeletePerson.Key).DeleteAsync();
+            await firebase.Child("Users").Child(toDeletePerson.Key).DeleteAsync();
 
         }
 

@@ -13,9 +13,9 @@ namespace OTB_SEGURA.ViewModels
     
     public class AddUSerViewModel:BaseViewModel
     {
-        FireBaseHelper fireBaseHelper = new FireBaseHelper();
-        #region Attributes
 
+        #region Attributes
+        FireBaseHelper fireBaseHelper = new FireBaseHelper();
         private string name="";
         private string userName;
         private int ci;
@@ -85,7 +85,7 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
 
-        #region Metodh
+        #region Method
         private async void InsertMethod()
         {
             IsBusy = true;
@@ -103,8 +103,9 @@ namespace OTB_SEGURA.ViewModels
 
                 };
                 await fireBaseHelper.AddUser(user);
-                await Task.Delay(1500);
+                await Task.Delay(1000);
                 DependencyService.Get<IMessage>().ShortAlert("Usuario Agregado con éxito");
+                await Shell.Current.GoToAsync("..");
             }
             
             IsBusy = false;

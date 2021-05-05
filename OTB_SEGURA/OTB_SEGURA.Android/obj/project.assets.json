@@ -2941,24 +2941,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FaNunk\\.nuget\\packages\\": {},
+    "C:\\Users\\WIN10\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
+      "projectUniqueName": "C:\\Users\\WIN10\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
       "projectName": "OTB_SEGURA.Android",
-      "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
-      "packagesPath": "C:\\Users\\FaNunk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\obj\\",
+      "projectPath": "C:\\Users\\WIN10\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
+      "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\WIN10\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\FaNunk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2972,8 +2972,8 @@
       "frameworks": {
         "monoandroid10.0": {
           "projectReferences": {
-            "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
-              "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
+            "C:\\Users\\WIN10\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
+              "projectPath": "C:\\Users\\WIN10\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
             }
           }
         }

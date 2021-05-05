@@ -3,6 +3,8 @@ using OTB_SEGURA.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace OTB_SEGURA.ViewModels
@@ -27,9 +29,26 @@ namespace OTB_SEGURA.ViewModels
         #region Construct
         public UserActivityViewModel()
         {
+            Title = "Actividad de Usuarios";
             LoadData();
         }
         #endregion
+
+        #region Commands
+        public ICommand ItemTappedCommandUserActivity { get; } = new Command(async (Item) =>
+        {
+            var userActivityModel = Item as UserActivityModel;
+            if (userActivityModel != null)
+            {
+                await Map.OpenAsync(userActivityModel.Latitude, userActivityModel.Longitude, new MapLaunchOptions
+                {
+                    Name = "Ubicación",
+                    NavigationMode = NavigationMode.None
+                });
+            }
+        });
+        #endregion
+
         #region Metodh
 
         public async void LoadData()

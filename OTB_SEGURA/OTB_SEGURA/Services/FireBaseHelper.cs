@@ -20,9 +20,26 @@ namespace OTB_SEGURA.Services
               {
                   Name = item.Object.Name,
                   UserName = item.Object.UserName,
-                  Password = item.Object.Password,
                   Phone = item.Object.Phone,
                   State=item.Object.State,
+                  Ci=item.Object.Ci
+              }).ToList();
+        }
+
+        public async Task<List<UserActivityModel>> GetAllActivities()
+        {
+            return (await firebase
+              .Child("Activity")
+              .OnceAsync<UserActivityModel>()).Select(item => new UserActivityModel
+              {
+                  UserId = item.Object.UserId,
+                  Message=item.Object.Message,
+                  Type=item.Object.Type,
+                  Latitude=item.Object.Latitude,
+                  Longitude=item.Object.Longitude,
+                  DateTime=item.Object.DateTime
+                  
+                  
               }).ToList();
         }
 
@@ -49,6 +66,21 @@ namespace OTB_SEGURA.Services
                 State=userModel.State,
                 Photo = userModel.Photo,
                 Ci=userModel.Ci              
+            });
+        }
+
+        public async Task AddActivity(UserActivityModel activity)
+        {
+            await firebase
+            .Child("Activity")
+            .PostAsync(new UserActivityModel()
+            {
+                UserId = Guid.NewGuid(),
+                Message=activity.Message,
+                Type=activity.Type,
+                Latitude=activity.Latitude,
+                Longitude=activity.Longitude,
+                DateTime=activity.DateTime
             });
         }
 

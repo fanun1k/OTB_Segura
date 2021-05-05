@@ -26,14 +26,25 @@ namespace OTB_SEGURA.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        #region Construct
         public UsersListViewModel()
         {
             Title = "Lista de Usuarios";
             loadDataDelegate = LoadData;
             loadDataDelegate();
         }
-        #region Commands
+        #endregion
 
+        #region Commands
+        public ICommand ItemTappedCommand { get; } = new Command(async (Item) =>
+          {
+              var userModel = Item as UserModel;
+              if (userModel != null)
+              {
+                  bool res = await App.Current.MainPage.DisplayAlert("Deshabilitar Usuario", $"¿Esta seguro de deshabilitar al usuario: {userModel.Name}?", "Ok", "Cancelar");
+              }
+          });
         #endregion
 
         #region Metodh
@@ -43,7 +54,6 @@ namespace OTB_SEGURA.ViewModels
             UserList = await firebaseHelper.GetAllUsers();
             DependencyService.Get<IMessage>().ShortAlert(userList.Count.ToString());
         }
-
         #endregion
     }
 }

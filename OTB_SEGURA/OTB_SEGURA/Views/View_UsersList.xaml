@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OTB_SEGURA.Views.View_UsersList"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              Title="{Binding Title}">
     
     <ContentPage.BindingContext>
@@ -10,34 +11,76 @@
         <!-- establecemos el contexto de los datos -->
     </ContentPage.BindingContext>
 
-    <ListView ItemsSource="{Binding usersList}" HasUnevenRows="true" >
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <Frame BorderColor="Black" CornerRadius="5" Margin="5" Padding="5">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="100"/>
-                            </Grid.ColumnDefinitions>
-                            <StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Nombre:" FontAttributes="Bold" TextColor="Black" />
-                                    <Label Text="{Binding Name}" TextColor="Black" />
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Telefono:" FontAttributes="Bold" TextColor="Black"  />
-                                    <Label Text="{Binding Phone}" TextColor="Black" />
-                                </StackLayout>
-                                <Button Text="Habilitar/Deshabilitar" TextColor="Black" />
-                            </StackLayout>
-                            <Grid Grid.Column="1">
-                                <Image Background="gray" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ListView ItemsSource="{Binding UserList}" HasUnevenRows="true">
+            <ListView.Behaviors>
+                <behaviorsPack:EventToCommandBehavior 
+                    EventName="ItemTapped"
+                    Command="{Binding ItemTappedCommand}"
+                    EventArgsPropertyPath="Item"/>
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BorderColor="Black" CornerRadius="5" Margin="5" Padding="5">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="45"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="90"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.ColumnSpan="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="Nombre: " />
+                                    <Label Text="{Binding Name}" Grid.Column="1" FontAttributes="None"/>
+                                </Grid>
+
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="110"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="Nro. Carnet: " />
+                                    <Label Text="{Binding Ci}" Grid.Column="1" FontAttributes="None"/>
+                                </Grid>
+
+                                <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="Celular: " />
+                                    <Label Text="{Binding Phone}" Grid.Column="1" FontAttributes="None"/>
+                                </Grid>
+                                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                                    <Image Background="gray"/>
+                                </Grid>
                             </Grid>
-                        </Grid>
-                    </Frame>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Row="0" 
+                Text="+" BorderColor="#2b3c3c" 
+                BorderWidth="1" FontAttributes="Bold" 
+                BackgroundColor="{StaticResource colorYellow}"
+                BorderRadius="35" TextColor="{StaticResource colorDark}" 
+                HorizontalOptions="End" WidthRequest="80" 
+                HeightRequest="70" Margin="0,0,20,22" VerticalOptions="End"
+                FontSize="40"
+                Clicked="Button_Clicked"/>
+
+    </Grid>
 </ContentPage>

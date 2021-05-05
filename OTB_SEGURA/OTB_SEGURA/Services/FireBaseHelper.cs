@@ -15,15 +15,31 @@ namespace OTB_SEGURA.Services
         {
 
             return (await firebase
-              .Child("Persons")
+              .Child("Users")
               .OnceAsync<UserModel>()).Select(item => new UserModel
               {
                   Name = item.Object.Name,
                   UserName = item.Object.UserName,
-                  Password = item.Object.Password,
-                  Phone=item.Object.Phone,
+                  Phone = item.Object.Phone,
                   State=item.Object.State,
-                  Photo = item.Object.Photo
+                  Ci=item.Object.Ci
+              }).ToList();
+        }
+
+        public async Task<List<UserActivityModel>> GetAllActivities()
+        {
+            return (await firebase
+              .Child("Activity")
+              .OnceAsync<UserActivityModel>()).Select(item => new UserActivityModel
+              {
+                  UserId = item.Object.UserId,
+                  Message=item.Object.Message,
+                  Type=item.Object.Type,
+                  Latitude=item.Object.Latitude,
+                  Longitude=item.Object.Longitude,
+                  DateTime=item.Object.DateTime
+                  
+                  
               }).ToList();
         }
 
@@ -44,12 +60,27 @@ namespace OTB_SEGURA.Services
             {
                 UserId = Guid.NewGuid(),
                 Name = userModel.Name,
-                  UserName = userModel.UserName,
-                  Password = userModel.Password,
-                  Phone=userModel.Phone,
-                  State=userModel.State,
-                  Photo = userModel.Photo
-                
+                UserName = userModel.UserName,
+                Password = userModel.Password,
+                Phone=userModel.Phone,
+                State=userModel.State,
+                Photo = userModel.Photo,
+                Ci=userModel.Ci              
+            });
+        }
+
+        public async Task AddActivity(UserActivityModel activity)
+        {
+            await firebase
+            .Child("Activity")
+            .PostAsync(new UserActivityModel()
+            {
+                UserId = Guid.NewGuid(),
+                Message=activity.Message,
+                Type=activity.Type,
+                Latitude=activity.Latitude,
+                Longitude=activity.Longitude,
+                DateTime=activity.DateTime
             });
         }
 

@@ -70,6 +70,10 @@
               "target": "Package",
               "version": "[5.0.0.2012, )"
             },
+            "Xamarin.Forms.BehaviorsPack": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.7.335, )"

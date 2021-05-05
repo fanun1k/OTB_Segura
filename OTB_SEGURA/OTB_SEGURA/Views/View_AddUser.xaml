@@ -8,18 +8,18 @@
         <vm:AddUSerViewModel />
     </ContentPage.BindingContext>
     <StackLayout Padding="15">
-        <Label Text="Nombre Completo" TextColor="Black"/>
-        <Entry Text="{Binding Name, Mode=TwoWay}"  TextColor="Black"/>
-        <Label Text="Número de Carnet" TextColor="Black"/>
-        <Entry Text="{Binding Ci,Mode=TwoWay}" TextColor="Black"/>
-        <Label Text="Número de Celular" TextColor="Black"/>
-        <Entry Text="{Binding Phone,Mode=OneWayToSource}" TextColor="Black"/>
-        <Label Text="Nombre de Usuario" TextColor="Black"/>
-        <Label Text="{Binding UserName , Mode=TwoWay}"  TextColor="Black"/>
-        <Label Text="Contraseña" TextColor="Black"/>
-        <Entry Text="{Binding Password,Mode=TwoWay}" TextColor="Black"/>
-        <Label Text="Confirmar Contraseña" TextColor="Black"/>
-        <Entry Text="{Binding RePassword,Mode=TwoWay}" TextColor="Black"/>
+        <Label Text="Nombre Completo" FontSize="{StaticResource mediumTextSize}" />
+        <Entry Text="{Binding Name, Mode=TwoWay}" Placeholder="Escriba el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
+        <Label Text="Número de Carnet" FontSize="{StaticResource mediumTextSize}" />
+        <Entry Text="{Binding Ci,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8"/>
+        <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" />
+        <Entry Text="{Binding Phone,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" />
+        <Label Text="Nombre de Usuario" FontSize="{StaticResource mediumTextSize}" />
+        <Label Text="{Binding UserName,Mode=TwoWay}"/>
+        <Label Text="Contraseña" FontSize="{StaticResource mediumTextSize}"/>
+        <Entry Text="{Binding Password,Mode=TwoWay}" IsPassword="True" MaxLength="12"/>
+        <Label Text="Confirmar Contraseña" FontSize="{StaticResource mediumTextSize}" />
+        <Entry Text="{Binding RePassword,Mode=TwoWay}" IsPassword="True" MaxLength="12" />
         <Button Text="Registrar Usuario" Command="{Binding InsertCommand}"></Button>
     </StackLayout>
 </ContentPage>

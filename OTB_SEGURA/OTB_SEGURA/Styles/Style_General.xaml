@@ -59,6 +59,7 @@
     <Style TargetType="Label">
         <Setter Property="TextColor" Value="{StaticResource colorDark}"/>
         <Setter Property="FontSize" Value="{StaticResource bigTextSize}"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
 </ResourceDictionary>

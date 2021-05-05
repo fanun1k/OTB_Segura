@@ -340,6 +340,18 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.BehaviorsPack/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Forms.BehaviorsPack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.BehaviorsPack.dll": {}
+        }
+      },
       "OTB_SEGURA/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -349,6 +361,7 @@
           "MvvmLightLibs": "5.4.1.1",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.Forms.BehaviorsPack": "3.0.0",
           "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
@@ -698,6 +711,18 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.BehaviorsPack/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Forms.BehaviorsPack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.BehaviorsPack.dll": {}
+        }
+      },
       "OTB_SEGURA/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -707,6 +732,7 @@
           "MvvmLightLibs": "5.4.1.1",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.Forms.BehaviorsPack": "3.0.0",
           "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
@@ -1056,6 +1082,18 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.BehaviorsPack/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Forms.BehaviorsPack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.BehaviorsPack.dll": {}
+        }
+      },
       "OTB_SEGURA/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1065,6 +1103,7 @@
           "MvvmLightLibs": "5.4.1.1",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.Forms.BehaviorsPack": "3.0.0",
           "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
@@ -1414,6 +1453,18 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.BehaviorsPack/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Forms.BehaviorsPack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.BehaviorsPack.dll": {}
+        }
+      },
       "OTB_SEGURA/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1423,6 +1474,7 @@
           "MvvmLightLibs": "5.4.1.1",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.Forms.BehaviorsPack": "3.0.0",
           "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
@@ -2307,6 +2359,18 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Forms.BehaviorsPack/3.0.0": {
+      "sha512": "YH3L2Ar9NFoqM/0TALji8f/CHsWQHMqW9IZDWJre8ZCt4u1ZDSV/MwtTm3OAU5Ce+3uS3JO2zNcp7sO4I1V+Hg==",
+      "type": "package",
+      "path": "xamarin.forms.behaviorspack/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Xamarin.Forms.BehaviorsPack.dll",
+        "xamarin.forms.behaviorspack.3.0.0.nupkg.sha512",
+        "xamarin.forms.behaviorspack.nuspec"
+      ]
+    },
     "OTB_SEGURA/1.0.0": {
       "type": "project",
       "path": "../OTB_SEGURA/OTB_SEGURA.csproj",
@@ -2322,7 +2386,7 @@
   },
   "packageFolders": {
     "C:\\Users\\FaNunk\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2335,7 +2399,7 @@
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\FaNunk\\AppData\\Roaming\\NuGet\\NuGet.Config",

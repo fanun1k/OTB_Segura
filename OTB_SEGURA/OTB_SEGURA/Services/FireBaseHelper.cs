@@ -146,6 +146,31 @@ namespace OTB_SEGURA.Services
             await firebase.Child("Users").Child(toDeletePerson.Key).DeleteAsync();
 
         }
+        public async Task<List<UserModel>> LogGet()
+        {
+
+            return (await firebase
+              .Child("Users")
+              .OnceAsync<UserModel>()).Select(item => new UserModel
+              {
+                  Name = item.Object.Name,
+                  UserName = item.Object.UserName,
+                  Phone = item.Object.Phone,
+                  State = item.Object.State,
+                  Ci = item.Object.Ci,
+                  Password = item.Object.Password
+              }).ToList();
+        }
+
+
+        public async Task<UserModel> GetPerson(string userName, string password)
+        {
+            var allPersons = await LogGet();
+            await firebase
+              .Child("Users")
+              .OnceAsync<UserModel>();
+            return allPersons.Where(a => a.UserName == userName && a.Password==password).FirstOrDefault();
+        }
 
         /*
         public async Task<UserModel> GetPerson(int personId)

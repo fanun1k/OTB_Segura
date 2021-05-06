@@ -1832,11 +1832,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
+      "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\Nueva carpeta\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
       "projectName": "OTB_SEGURA",
-      "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
+      "projectPath": "C:\\Users\\FaNunk\\Desktop\\Nueva carpeta\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
       "packagesPath": "C:\\Users\\FaNunk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\obj\\",
+      "outputPath": "C:\\Users\\FaNunk\\Desktop\\Nueva carpeta\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

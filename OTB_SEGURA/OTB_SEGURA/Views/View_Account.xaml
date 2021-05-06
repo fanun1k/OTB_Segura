@@ -1,12 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="OTB_SEGURA.Views.View_Account">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Esta es la vista de la cuenta"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" TextColor="Black" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"         
+             x:Class="OTB_SEGURA.Views.View_Account"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             Title="{Binding Title}">
+        <ContentPage.BindingContext>
+            <vm:AccountViewModel />
+        </ContentPage.BindingContext>
+    <StackLayout Padding="15">
+        <Label Text="Nombre Completo" FontSize="{StaticResource mediumTextSize}" />
+        <Entry Text="{Binding Name, Mode=TwoWay}" Placeholder="Escriba el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
+        <Label Text="Número de Carnet" FontSize="{StaticResource mediumTextSize}" />
+        <Entry Text="{Binding Ci,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de carnet" PlaceholderColor="{StaticResource colorGray}"/>
+        <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" />
+        <Entry Text="{Binding Phone,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de celular" PlaceholderColor="{StaticResource colorGray}" />
+        <Button Text="Registrar Usuario" Command="{Binding UpdateCommand}"></Button>
+    </StackLayout>      
+</ContentPage> 

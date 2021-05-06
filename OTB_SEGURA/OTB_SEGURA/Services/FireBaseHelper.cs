@@ -89,11 +89,11 @@ namespace OTB_SEGURA.Services
         public async Task UpdateUser(UserModel userModel)
         {
             var toUpdatePerson = (await firebase
-              .Child("Persons")
+              .Child("Users")
               .OnceAsync<UserModel>()).Where(a => a.Object.UserId == userModel.UserId).FirstOrDefault();
 
             await firebase
-              .Child("Persons")
+              .Child("Users")
               .Child(toUpdatePerson.Key)
               .PutAsync(new UserModel() { UserId = userModel.UserId, Name = userModel.Name, UserName = userModel.UserName, Password=userModel.Password,Photo=userModel.Photo,Phone=userModel.Phone,State=userModel.State });
         }

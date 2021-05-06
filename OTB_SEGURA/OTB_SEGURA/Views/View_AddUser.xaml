@@ -11,15 +11,15 @@
         <Label Text="Nombre Completo" FontSize="{StaticResource mediumTextSize}" />
         <Entry Text="{Binding Name, Mode=TwoWay}" Placeholder="Escriba el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
         <Label Text="Número de Carnet" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding Ci,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8"/>
+        <Entry Text="{Binding Ci,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de carnet" PlaceholderColor="{StaticResource colorGray}"/>
         <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding Phone,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" />
+        <Entry Text="{Binding Phone,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de celular" PlaceholderColor="{StaticResource colorGray}" />
         <Label Text="Nombre de Usuario" FontSize="{StaticResource mediumTextSize}" />
         <Label Text="{Binding UserName,Mode=TwoWay}"/>
         <Label Text="Contraseña" FontSize="{StaticResource mediumTextSize}"/>
-        <Entry Text="{Binding Password,Mode=TwoWay}" IsPassword="True" MaxLength="12"/>
+        <Entry Text="{Binding Password,Mode=TwoWay}" IsPassword="True" MaxLength="12" Placeholder="Escriba una contraseña" PlaceholderColor="{StaticResource colorGray}"/>
         <Label Text="Confirmar Contraseña" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding RePassword,Mode=TwoWay}" IsPassword="True" MaxLength="12" />
+        <Entry Text="{Binding RePassword,Mode=TwoWay}" IsPassword="True" MaxLength="12" Placeholder="Repita la contraseña" PlaceholderColor="{StaticResource colorGray}" />
         <Button Text="Registrar Usuario" Command="{Binding InsertCommand}"></Button>
     </StackLayout>
 </ContentPage>

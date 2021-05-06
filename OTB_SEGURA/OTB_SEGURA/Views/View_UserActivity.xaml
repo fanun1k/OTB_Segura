@@ -1,12 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="OTB_SEGURA.Views.View_UserActivity">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Esta es la vista de la actividad de usuarios" TextColor="Black"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels" 
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
+             x:Class="OTB_SEGURA.Views.View_UserActivity"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:UserActivityViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <ListView ItemsSource="{Binding ListActivity}" HasUnevenRows="True">
+            <ListView.Behaviors>
+                <behaviorsPack:EventToCommandBehavior 
+                    EventName="ItemTapped"
+                    Command="{Binding ItemTappedCommandUserActivity}"
+                    EventArgsPropertyPath="Item"/>
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BorderColor="Black" CornerRadius="1" Padding="4" Margin="6">
+                            <StackLayout >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Fecha/Hora: " TextColor="Black"></Label>
+                                    <Label Text="{Binding DateTime}" TextColor="Black" FontAttributes="None"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Usuario: " TextColor="Black"></Label>
+                                    <Label Text="Juan Pedro Montoya" TextColor="Black" FontAttributes="None"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Mensaje: " TextColor="Black"></Label>
+                                    <Label Text="{Binding Message,Mode=TwoWay}" TextColor="Black" FontAttributes="None"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Tipo: " TextColor="Black"/>
+                                    <Label Text="{Binding Type,Mode=TwoWay}" TextColor="Black" FontAttributes="None"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" IsVisible="False">
+                                    <Label Text="Latitud: " TextColor="Black"/>
+                                    <Label Text="{Binding Latitude,Mode=TwoWay}" TextColor="Black" FontAttributes="None"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" IsVisible="False">
+                                    <Label Text="Longitud: " TextColor="Black"/>
+                                    <Label Text="{Binding Longitude,Mode=TwoWay}" TextColor="Black" FontAttributes="None"/>
+                                </StackLayout>
+                            </StackLayout>                                                                                              
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

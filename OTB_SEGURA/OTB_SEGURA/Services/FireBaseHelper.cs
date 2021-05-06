@@ -15,16 +15,33 @@ namespace OTB_SEGURA.Services
         {
 
             return (await firebase
-              .Child("Persons")
+              .Child("Users")
               .OnceAsync<UserModel>()).Select(item => new UserModel
               {
+                  UserId=item.Object.UserId,
                   Name = item.Object.Name,
                   UserName = item.Object.UserName,
-                  Password = item.Object.Password,
-                  Phone=item.Object.Phone,
+                  Phone = item.Object.Phone,
                   State=item.Object.State,
-                  Photo = item.Object.Photo
+                  Ci=item.Object.Ci,
+                  Password=item.Object.Password
+                  
               }).ToList();
+        }
+
+        public async Task<List<UserActivityModel>> GetAllActivities()
+        {
+                return (await firebase
+                  .Child("Activity")
+                  .OnceAsync<UserActivityModel>()).Select(item => new UserActivityModel
+                  {
+                      UserId = item.Object.UserId,
+                      Message=item.Object.Message,
+                      Type=item.Object.Type,
+                      Latitude=item.Object.Latitude,
+                      Longitude=item.Object.Longitude,
+                      DateTime=item.Object.DateTime
+                  }).ToList();
         }
 
         /*
@@ -44,12 +61,27 @@ namespace OTB_SEGURA.Services
             {
                 UserId = Guid.NewGuid(),
                 Name = userModel.Name,
-                  UserName = userModel.UserName,
-                  Password = userModel.Password,
-                  Phone=userModel.Phone,
-                  State=userModel.State,
-                  Photo = userModel.Photo
-                
+                UserName = userModel.UserName,
+                Password = userModel.Password,
+                Phone=userModel.Phone,
+                State=userModel.State,
+                Photo = userModel.Photo,
+                Ci=userModel.Ci              
+            });
+        }
+
+        public async Task AddActivity(UserActivityModel activity)
+        {
+            await firebase
+            .Child("Activity")
+            .PostAsync(new UserActivityModel()
+            {
+                UserId = Guid.NewGuid(),
+                Message=activity.Message,
+                Type=activity.Type,
+                Latitude=activity.Latitude,
+                Longitude=activity.Longitude,
+                DateTime=activity.DateTime
             });
         }
 
@@ -57,22 +89,87 @@ namespace OTB_SEGURA.Services
         public async Task UpdateUser(UserModel userModel)
         {
             var toUpdatePerson = (await firebase
-              .Child("Persons")
+              .Child("Users")
               .OnceAsync<UserModel>()).Where(a => a.Object.UserId == userModel.UserId).FirstOrDefault();
 
             await firebase
-              .Child("Persons")
+              .Child("Users")
               .Child(toUpdatePerson.Key)
               .PutAsync(new UserModel() { UserId = userModel.UserId, Name = userModel.Name, UserName = userModel.UserName, Password=userModel.Password,Photo=userModel.Photo,Phone=userModel.Phone,State=userModel.State });
+        }
+
+        public async Task DisableUser(UserModel userModel)
+        {
+            var toUpdateUser = (await firebase
+              .Child("Users")
+              .OnceAsync<UserModel>()).Where(a => a.Object.UserId == userModel.UserId).FirstOrDefault();
+            await firebase
+              .Child("Users")
+              .Child(toUpdateUser.Key)
+              .PutAsync(new UserModel() {
+                  UserId = userModel.UserId,
+                  Name = userModel.Name,
+                  UserName = userModel.UserName,
+                  Password = userModel.Password,
+                  Phone = userModel.Phone,
+                  State = 0,
+                  Photo = userModel.Photo,
+                  Ci = userModel.Ci
+              });
+        }
+        public async Task EnableUser(UserModel userModel)
+        {
+            var toUpdateUser = (await firebase
+              .Child("Users")
+              .OnceAsync<UserModel>()).Where(a => a.Object.UserId == userModel.UserId).FirstOrDefault();
+            await firebase
+              .Child("Users")
+              .Child(toUpdateUser.Key)
+              .PutAsync(new UserModel()
+              {
+                  UserId = userModel.UserId,
+                  Name = userModel.Name,
+                  UserName = userModel.UserName,
+                  Password = userModel.Password,
+                  Phone = userModel.Phone,
+                  State = 1,
+                  Photo = userModel.Photo,
+                  Ci = userModel.Ci
+              });
         }
 
         public async Task DeleteUser(Guid userId)
         {
             var toDeletePerson = (await firebase
-              .Child("Persons")
+              .Child("Users")
               .OnceAsync<UserModel>()).Where(a => a.Object.UserId == userId).FirstOrDefault();
-            await firebase.Child("Persons").Child(toDeletePerson.Key).DeleteAsync();
+            await firebase.Child("Users").Child(toDeletePerson.Key).DeleteAsync();
 
+        }
+        public async Task<List<UserModel>> LogGet()
+        {
+
+            return (await firebase
+              .Child("Users")
+              .OnceAsync<UserModel>()).Select(item => new UserModel
+              {
+                  Name = item.Object.Name,
+                  UserName = item.Object.UserName,
+                  Phone = item.Object.Phone,
+                  State = item.Object.State,
+                  Ci = item.Object.Ci,
+                  Password = item.Object.Password
+              }).ToList();
+        }
+
+
+        public async Task<UserModel> GetPerson(string userName, string password)
+        {
+            var allPersons = await LogGet();
+            await firebase
+              .Child("Users")
+              .OnceAsync<UserModel>();
+            return allPersons.Where(a => a.UserName == userName && a.Password==password).FirstOrDefault();
         }
 
         /*

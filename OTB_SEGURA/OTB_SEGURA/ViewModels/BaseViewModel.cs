@@ -9,8 +9,6 @@ namespace OTB_SEGURA.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        
-
         bool isBusy = false;
         public bool IsBusy
         {

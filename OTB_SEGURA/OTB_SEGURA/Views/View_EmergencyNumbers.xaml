@@ -1,12 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="OTB_SEGURA.Views.View_EmergencyNumbers">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Esta es la vista de los numeros de emergencia" TextColor="Black"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="OTB_SEGURA.Views.View_EmergencyNumbers"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:EmergencyNumbersViewModel />
+        <!-- establecemos el contexto de los datos -->
+    </ContentPage.BindingContext>
+
+    <ListView x:Name="list" ItemsSource="{Binding emergencyNumbersList}" HasUnevenRows="True" ItemSelected="list_ItemSelected" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame BorderColor="#111a1c" CornerRadius="8" Margin="5" Padding="9" Grid.Row="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="150"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Servicio:"/>
+                                    <Label x:Name="txtNombre" Text="{Binding Name}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Numero:"/>
+                                    <Label x:Name="txtNumero" Text="{Binding Number}"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <Grid Grid.Column="1">
+                                <Label Text="LLAMAR" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="22" BackgroundColor="#fd2a2f"/>
+                                <!--<Button x:Name="btnCallNumber" Text="Llamar" BackgroundColor="#fd2a2f" Clicked="btnCallNumber_Clicked"  />-->
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
 </ContentPage>

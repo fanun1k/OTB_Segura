@@ -1826,23 +1826,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\quiro\\.nuget\\packages\\": {},
+    "C:\\Users\\FaNunk\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
+      "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
       "projectName": "OTB_SEGURA",
-      "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
-      "packagesPath": "C:\\Users\\quiro\\.nuget\\packages\\",
-      "outputPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\obj\\",
+      "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
+      "packagesPath": "C:\\Users\\FaNunk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\quiro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\FaNunk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1914,7 +1914,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },

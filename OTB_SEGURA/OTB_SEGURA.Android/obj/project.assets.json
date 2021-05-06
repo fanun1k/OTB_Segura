@@ -2941,24 +2941,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\quiro\\.nuget\\packages\\": {},
+    "C:\\Users\\FaNunk\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
+      "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
       "projectName": "OTB_SEGURA.Android",
-      "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
-      "packagesPath": "C:\\Users\\quiro\\.nuget\\packages\\",
-      "outputPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\obj\\",
+      "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
+      "packagesPath": "C:\\Users\\FaNunk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\quiro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\FaNunk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2972,8 +2972,8 @@
       "frameworks": {
         "monoandroid10.0": {
           "projectReferences": {
-            "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
-              "projectPath": "D:\\Univalle\\5toSemestre\\Proyecto de Sistemas II\\Avance\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
+            "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
+              "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
             }
           }
         }

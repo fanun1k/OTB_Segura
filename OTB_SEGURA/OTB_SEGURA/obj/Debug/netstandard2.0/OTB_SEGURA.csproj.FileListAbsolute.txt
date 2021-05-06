@@ -70,6 +70,7 @@ C:\Users\FaNunk\Desktop\OTB_Segura\OTB_SEGURA\OTB_SEGURA\obj\Debug\netstandard2.
 C:\Users\FaNunk\Desktop\OTB_Segura\OTB_SEGURA\OTB_SEGURA\obj\Debug\netstandard2.0\Views\View_Account.xaml.g.cs
 C:\Users\FaNunk\Desktop\OTB_Segura\OTB_SEGURA\OTB_SEGURA\obj\Debug\netstandard2.0\Views\View_AddUser.xaml.g.cs
 C:\Users\FaNunk\Desktop\OTB_Segura\OTB_SEGURA\OTB_SEGURA\obj\Debug\netstandard2.0\Views\View_EmergencyNumbers.xaml.g.cs
+C:\Users\FaNunk\Desktop\OTB_Segura\OTB_SEGURA\OTB_SEGURA\obj\Debug\netstandard2.0\Views\View_Login.xaml.g.cs
 C:\Users\FaNunk\Desktop\OTB_Segura\OTB_SEGURA\OTB_SEGURA\obj\Debug\netstandard2.0\Views\View_UserActivity.xaml.g.cs
 C:\Users\FaNunk\Desktop\OTB_Segura\OTB_SEGURA\OTB_SEGURA\obj\Debug\netstandard2.0\Views\View_UsersList.xaml.g.cs
 C:\Users\FaNunk\Desktop\OTB_Segura\OTB_SEGURA\OTB_SEGURA\obj\Debug\netstandard2.0\OTB_SEGURA.AssemblyInfoInputs.cache

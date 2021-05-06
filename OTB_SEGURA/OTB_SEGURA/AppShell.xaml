@@ -80,7 +80,7 @@
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
     <FlyoutItem Title="INFORMACIÓN" Icon="icon_about.png">
-        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_About}" />
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_Login}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Mi Cuenta" Icon="icon_feed.png">

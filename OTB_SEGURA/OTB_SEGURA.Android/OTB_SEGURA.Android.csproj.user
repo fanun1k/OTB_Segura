@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SelectedDevice>pixel_2_pie_9_0_-_api_28</SelectedDevice>
-    <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
+    <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
     <DefaultDevice>pixel_2_pie_9_0_-_api_28</DefaultDevice>
     <ActiveDebugProfile>pixel_2_pie_9_0_-_api_28</ActiveDebugProfile>
   </PropertyGroup>

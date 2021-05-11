@@ -11,6 +11,7 @@
     <PackageReference Include="MvvmLight" Version="5.4.1.1" />  
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />  
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />  
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />  
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
     <PackageReference Include="Xamarin.Forms.BehaviorsPack" Version="3.0.0" />
@@ -24,6 +25,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\View_Account.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\View_AddActivity.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\View_AddUser.xaml">

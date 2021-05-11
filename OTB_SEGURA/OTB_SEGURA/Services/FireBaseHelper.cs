@@ -70,18 +70,18 @@ namespace OTB_SEGURA.Services
             });
         }
 
-        public async Task AddActivity(UserActivityModel activity)
+        public async Task AddActivity(ActivityModel activity)
         {
             await firebase
             .Child("Activity")
-            .PostAsync(new UserActivityModel()
+            .PostAsync(new ActivityModel()
             {
-                UserId = Guid.NewGuid(),
-                Message=activity.Message,
-                Type=activity.Type,
-                Latitude=activity.Latitude,
-                Longitude=activity.Longitude,
-                DateTime=activity.DateTime
+                DateTime = activity.DateTime,
+                Latitude = activity.Latitude,
+                Longitude = activity.Longitude,
+                Message = activity.Message,
+                Type = activity.Type,
+                UserId = activity.UserId
             });
         }
 
@@ -95,7 +95,7 @@ namespace OTB_SEGURA.Services
             await firebase
               .Child("Users")
               .Child(toUpdatePerson.Key)
-              .PutAsync(new UserModel() { UserId = userModel.UserId, Name = userModel.Name, UserName = userModel.UserName, Password=userModel.Password,Photo=userModel.Photo,Phone=userModel.Phone,State=userModel.State });
+              .PutAsync(new UserModel() { UserId = userModel.UserId, Name = userModel.Name, UserName = userModel.UserName, Password=userModel.Password,Photo=userModel.Photo,Phone=userModel.Phone,State=userModel.State,Ci=userModel.Ci });
         }
 
         public async Task DisableUser(UserModel userModel)

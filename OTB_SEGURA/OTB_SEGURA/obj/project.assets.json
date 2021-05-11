@@ -345,6 +345,15 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "Xam.Plugin.Geolocator/4.5.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Plugin.Geolocator.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Geolocator.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -1533,6 +1542,33 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "Xam.Plugin.Geolocator/4.5.0.6": {
+      "sha512": "Ro7peBDxsDXPc7J7yLx0ekAcXIfVTAXj/rXiBKiTgZ4Lm7KZJIU8PXOCcI4JztzT3MQrL8Rmka48il/ix0pwoA==",
+      "type": "package",
+      "path": "xam.plugin.geolocator/4.5.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid71/Plugin.Geolocator.dll",
+        "lib/monoandroid71/Plugin.Geolocator.xml",
+        "lib/netstandard1.0/Plugin.Geolocator.dll",
+        "lib/netstandard1.0/Plugin.Geolocator.xml",
+        "lib/netstandard2.0/Plugin.Geolocator.dll",
+        "lib/netstandard2.0/Plugin.Geolocator.xml",
+        "lib/uap10.0.10240/Plugin.Geolocator.dll",
+        "lib/uap10.0.10240/Plugin.Geolocator.pri",
+        "lib/uap10.0.10240/Plugin.Geolocator.xml",
+        "lib/xamarinios10/Plugin.Geolocator.dll",
+        "lib/xamarinios10/Plugin.Geolocator.xml",
+        "lib/xamarinmac20/Plugin.Geolocator.dll",
+        "lib/xamarinmac20/Plugin.Geolocator.xml",
+        "lib/xamarintvos10/Plugin.Geolocator.dll",
+        "lib/xamarintvos10/Plugin.Geolocator.xml",
+        "readme.txt",
+        "xam.plugin.geolocator.4.5.0.6.nupkg.sha512",
+        "xam.plugin.geolocator.nuspec"
+      ]
+    },
     "Xamarin.Essentials/1.6.1": {
       "sha512": "gG1Bp4j4bpJQ0dp9MeBJQJ9c8xULauIlhc7Cx5Qw4J2K1c+4Glq5n+gkb9Pm0UA/CevXVqLK5ZXmZkuYI52FgA==",
       "type": "package",
@@ -1819,6 +1855,7 @@
       "MvvmLight >= 5.4.1.1",
       "MvvmLightLibs >= 5.4.1.1",
       "NETStandard.Library >= 2.0.3",
+      "Xam.Plugin.Geolocator >= 4.5.0.6",
       "Xamarin.Essentials >= 1.6.1",
       "Xamarin.Forms >= 5.0.0.2012",
       "Xamarin.Forms.BehaviorsPack >= 3.0.0",
@@ -1832,11 +1869,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\Nueva carpeta\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
+      "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
       "projectName": "OTB_SEGURA",
-      "projectPath": "C:\\Users\\FaNunk\\Desktop\\Nueva carpeta\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
+      "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj",
       "packagesPath": "C:\\Users\\FaNunk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FaNunk\\Desktop\\Nueva carpeta\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\obj\\",
+      "outputPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -1886,6 +1923,10 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
+          },
+          "Xam.Plugin.Geolocator": {
+            "target": "Package",
+            "version": "[4.5.0.6, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",

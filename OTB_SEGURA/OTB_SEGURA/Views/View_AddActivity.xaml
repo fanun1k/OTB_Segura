@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             x:Class="OTB_SEGURA.Views.View_AddActivity"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:AddActivityViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout Padding="15">
+        <Label Text="Descripicíon" TextColor="Black"/>
+        <Editor Text="{Binding Message, Mode=TwoWay}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Robo" Command="{Binding InsertRoboCommand}"></Button>
+            <Button Grid.Row="1" Text="Accidente" Command="{Binding InsertAccidenteCommand}"></Button>
+            <Button Grid.Column="1" Text="Incendio" Command="{Binding InsertIncendioCommand}"></Button>
+            <Button Grid.Row="1" Grid.Column="1" Text="Desastre" Command="{Binding InsertDesastreCommand}"></Button>
+        </Grid>
+        <BoxView   VerticalOptions="Center"
+           HorizontalOptions="Center"
+           HeightRequest="1"  
+           WidthRequest      ="300"
+           Color="#111a1c"></BoxView>
+        <Button
+            Text="Boton de Emergencia" Command="{Binding EmergencyCommand}"
+            WidthRequest      ="200"
+            HeightRequest     ="200"
+            CornerRadius      ="100"
+            VerticalOptions   ="Center"
+            HorizontalOptions ="Center"
+            BackgroundColor   ="#fd2a2f"
+            TextColor="#e7d6d2"/>
+    </StackLayout>
+</ContentPage>

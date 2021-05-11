@@ -65,11 +65,14 @@ namespace OTB_SEGURA.ViewModels
             {
                 var user = new UserModel
                 {
+                    UserId = Guid.Parse("0719d604-705f-4ab0-be3a-40d4adfb6bfb"),//implementar el id de la sesion
                     Name = name.ToUpper().Trim(),
                     Ci = ci,
                     Phone = phone,
                     State = 1,
-                    Photo = null
+                    Photo = null,
+                    Password = "andrea123",
+                    UserName= "ARS13564654"
 
                 };
                 await fireBaseHelper.UpdateUser(user);

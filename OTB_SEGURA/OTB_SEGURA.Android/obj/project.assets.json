@@ -69,6 +69,35 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.CurrentActivity/2.1.0.2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid44/Plugin.CurrentActivity.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid44/Plugin.CurrentActivity.dll": {}
+        }
+      },
+      "Plugin.Permissions/3.0.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.CurrentActivity": "2.1.0.2",
+          "Xamarin.Android.Support.Compat": "25.4.0.2",
+          "Xamarin.Android.Support.Core.Utils": "25.4.0.2"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid71/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid71/Plugin.Permissions.dll": {}
+        }
+      },
       "sqlite-net-pcl/1.7.335": {
         "type": "package",
         "dependencies": {
@@ -208,6 +237,60 @@
         },
         "runtime": {
           "lib/MonoAndroid10/_._": {}
+        }
+      },
+      "Xam.Plugin.Geolocator/4.5.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.Permissions": "3.0.0.12"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid71/Plugin.Geolocator.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid71/Plugin.Geolocator.dll": {}
+        }
+      },
+      "Xamarin.Android.Support.Annotations/25.4.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.Android.Support.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.Android.Support.Annotations.dll": {}
+        }
+      },
+      "Xamarin.Android.Support.Compat/25.4.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Annotations": "[25.4.0.2]"
+        },
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.Android.Support.Compat.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.Android.Support.Compat.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid70/_._": {}
+        }
+      },
+      "Xamarin.Android.Support.Core.Utils/25.4.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Compat": "[25.4.0.2]"
+        },
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.Android.Support.Core.Utils.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.Android.Support.Core.Utils.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid70/_._": {}
         }
       },
       "Xamarin.AndroidX.Activity/1.1.0.5": {
@@ -1189,6 +1272,7 @@
           "FirebaseDatabase.net": "4.0.6",
           "MvvmLight": "5.4.1.1",
           "MvvmLightLibs": "5.4.1.1",
+          "Xam.Plugin.Geolocator": "4.5.0.6",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
           "Xamarin.Forms.BehaviorsPack": "3.0.0",
@@ -1416,6 +1500,43 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.11.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "Plugin.CurrentActivity/2.1.0.2": {
+      "sha512": "uiMbA0G1ulSEj7MtGUQDDhzw80+QgvH5ts+Yt9cyft1dF4Eb0tYxiXAgNPuohJXpxhZmRs+6ZjL6QBaL/wUKDQ==",
+      "type": "package",
+      "path": "plugin.currentactivity/2.1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid44/Plugin.CurrentActivity.dll",
+        "lib/monoandroid44/Plugin.CurrentActivity.xml",
+        "plugin.currentactivity.2.1.0.2.nupkg.sha512",
+        "plugin.currentactivity.nuspec",
+        "readme.txt"
+      ]
+    },
+    "Plugin.Permissions/3.0.0.12": {
+      "sha512": "VrYqI/ufk3bH6gTP1JJlLByjhS0CHu3riKmdozhX9/qXA9hlvLolmcqKJdyAqpzmrVC74m3ZtirUBIrBxvT1Lw==",
+      "type": "package",
+      "path": "plugin.permissions/3.0.0.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid71/Plugin.Permissions.dll",
+        "lib/monoandroid71/Plugin.Permissions.xml",
+        "lib/netstandard1.0/Plugin.Permissions.dll",
+        "lib/netstandard1.0/Plugin.Permissions.xml",
+        "lib/netstandard2.0/Plugin.Permissions.dll",
+        "lib/netstandard2.0/Plugin.Permissions.xml",
+        "lib/uap10.0.10240/Plugin.Permissions.dll",
+        "lib/uap10.0.10240/Plugin.Permissions.pri",
+        "lib/uap10.0.10240/Plugin.Permissions.xml",
+        "lib/xamarinios10/Plugin.Permissions.dll",
+        "lib/xamarinios10/Plugin.Permissions.xml",
+        "plugin.permissions.3.0.0.12.nupkg.sha512",
+        "plugin.permissions.nuspec",
+        "readme.txt"
       ]
     },
     "sqlite-net-pcl/1.7.335": {
@@ -1820,6 +1941,74 @@
         "runtimes/aot/lib/netcore50/System.Runtime.InteropServices.WindowsRuntime.dll",
         "system.runtime.interopservices.windowsruntime.4.3.0.nupkg.sha512",
         "system.runtime.interopservices.windowsruntime.nuspec"
+      ]
+    },
+    "Xam.Plugin.Geolocator/4.5.0.6": {
+      "sha512": "Ro7peBDxsDXPc7J7yLx0ekAcXIfVTAXj/rXiBKiTgZ4Lm7KZJIU8PXOCcI4JztzT3MQrL8Rmka48il/ix0pwoA==",
+      "type": "package",
+      "path": "xam.plugin.geolocator/4.5.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid71/Plugin.Geolocator.dll",
+        "lib/monoandroid71/Plugin.Geolocator.xml",
+        "lib/netstandard1.0/Plugin.Geolocator.dll",
+        "lib/netstandard1.0/Plugin.Geolocator.xml",
+        "lib/netstandard2.0/Plugin.Geolocator.dll",
+        "lib/netstandard2.0/Plugin.Geolocator.xml",
+        "lib/uap10.0.10240/Plugin.Geolocator.dll",
+        "lib/uap10.0.10240/Plugin.Geolocator.pri",
+        "lib/uap10.0.10240/Plugin.Geolocator.xml",
+        "lib/xamarinios10/Plugin.Geolocator.dll",
+        "lib/xamarinios10/Plugin.Geolocator.xml",
+        "lib/xamarinmac20/Plugin.Geolocator.dll",
+        "lib/xamarinmac20/Plugin.Geolocator.xml",
+        "lib/xamarintvos10/Plugin.Geolocator.dll",
+        "lib/xamarintvos10/Plugin.Geolocator.xml",
+        "readme.txt",
+        "xam.plugin.geolocator.4.5.0.6.nupkg.sha512",
+        "xam.plugin.geolocator.nuspec"
+      ]
+    },
+    "Xamarin.Android.Support.Annotations/25.4.0.2": {
+      "sha512": "4Gkj6OCOJO7jn4drGZxeCCaEVHOjUu0RzsEzZaAZJzrLNqEHqoYrKwIlbsecfEpjbAcyT77Sb8wkZnZNFPdlaA==",
+      "type": "package",
+      "path": "xamarin.android.support.annotations/25.4.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/MonoAndroid70/Xamarin.Android.Support.Annotations.dll",
+        "xamarin.android.support.annotations.25.4.0.2.nupkg.sha512",
+        "xamarin.android.support.annotations.nuspec"
+      ]
+    },
+    "Xamarin.Android.Support.Compat/25.4.0.2": {
+      "sha512": "k+bZ2ArXV7x1U5xomEiCVRoWHAWr6VKhF6Ziqd1DdK4ZZ4W+J0Dsi5oR2QcQHhIodb7j7cfuDcBAEs0KYvOmuQ==",
+      "type": "package",
+      "path": "xamarin.android.support.compat/25.4.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/MonoAndroid70/Xamarin.Android.Support.Compat.targets",
+        "lib/MonoAndroid70/Xamarin.Android.Support.Compat.dll",
+        "xamarin.android.support.compat.25.4.0.2.nupkg.sha512",
+        "xamarin.android.support.compat.nuspec"
+      ]
+    },
+    "Xamarin.Android.Support.Core.Utils/25.4.0.2": {
+      "sha512": "ZF+yk8b1WVRfgmf3MNeUOVdd9Bq3EoIYsXjCW2sAouwbNsnPKyjwL91mYyVcoT5f8Sf0SL866GnBtRi14wQesQ==",
+      "type": "package",
+      "path": "xamarin.android.support.core.utils/25.4.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/MonoAndroid70/Xamarin.Android.Support.Core.Utils.targets",
+        "lib/MonoAndroid70/Xamarin.Android.Support.Core.Utils.dll",
+        "xamarin.android.support.core.utils.25.4.0.2.nupkg.sha512",
+        "xamarin.android.support.core.utils.nuspec"
       ]
     },
     "Xamarin.AndroidX.Activity/1.1.0.5": {
@@ -2947,11 +3136,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\Nueva carpeta\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
+      "projectUniqueName": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
       "projectName": "OTB_SEGURA.Android",
-      "projectPath": "C:\\Users\\FaNunk\\Desktop\\Nueva carpeta\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
+      "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\OTB_SEGURA.Android.csproj",
       "packagesPath": "C:\\Users\\FaNunk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FaNunk\\Desktop\\Nueva carpeta\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\obj\\",
+      "outputPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2972,8 +3161,8 @@
       "frameworks": {
         "monoandroid10.0": {
           "projectReferences": {
-            "C:\\Users\\FaNunk\\Desktop\\Nueva carpeta\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
-              "projectPath": "C:\\Users\\FaNunk\\Desktop\\Nueva carpeta\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
+            "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj": {
+              "projectPath": "C:\\Users\\FaNunk\\Desktop\\OTB_Segura\\OTB_SEGURA\\OTB_SEGURA\\OTB_SEGURA.csproj"
             }
           }
         }

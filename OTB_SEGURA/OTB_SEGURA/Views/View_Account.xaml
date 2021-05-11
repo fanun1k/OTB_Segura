@@ -11,9 +11,9 @@
         <Label Text="Nombre Completo" FontSize="{StaticResource mediumTextSize}" />
         <Entry Text="{Binding Name, Mode=TwoWay}" Placeholder="Escriba el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
         <Label Text="Número de Carnet" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding Ci,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de carnet" PlaceholderColor="{StaticResource colorGray}"/>
+        <Entry Text="{Binding Ci,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de carnet" PlaceholderColor="{StaticResource colorGray}"/>
         <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding Phone,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de celular" PlaceholderColor="{StaticResource colorGray}" />
+        <Entry Text="{Binding Phone,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de celular" PlaceholderColor="{StaticResource colorGray}" />
         <Button Text="Registrar Usuario" Command="{Binding UpdateCommand}"></Button>
     </StackLayout>      
 </ContentPage> 

@@ -79,10 +79,12 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
-    <FlyoutItem Title="INFORMACIÓN" Icon="icon_about.png">
+    <FlyoutItem Title="Iniciar Sesión">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_Login}" />
     </FlyoutItem>
-
+    <FlyoutItem Title="Alertar Evento" Icon="icon_about.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddActivity}" />
+    </FlyoutItem>
     <FlyoutItem Title="Mi Cuenta" Icon="icon_feed.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_Account}" />
     </FlyoutItem>

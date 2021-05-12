@@ -11,7 +11,6 @@ obj/*
 /OTB_SEGURA/OTB_SEGURA.Android/bin/Debug/
 /OTB_SEGURA/OTB_SEGURA.iOS/obj/iPhone/Debug/
 /OTB_SEGURA/OTB_SEGURA.iOS/bin/iPhone/Debug/
-OTB_SEGURA.sln
 # User-specific files
 *.suo
 *.user

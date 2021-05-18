@@ -54,7 +54,6 @@
                                     <Label Text="Nombre: " />
                                     <Label Text="{Binding Name}" Grid.Column="1" FontAttributes="None"/>
                                 </Grid>
-
                                 <Grid Grid.Row="1">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="110"/>
@@ -63,7 +62,6 @@
                                     <Label Text="Nro. Carnet: " />
                                     <Label Text="{Binding Ci}" Grid.Column="1" FontAttributes="None"/>
                                 </Grid>
-
                                 <Grid Grid.Row="2">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="80"/>

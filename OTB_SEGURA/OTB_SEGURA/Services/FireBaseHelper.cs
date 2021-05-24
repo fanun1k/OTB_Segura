@@ -31,17 +31,28 @@ namespace OTB_SEGURA.Services
 
         public async Task<List<UserActivityModel>> GetAllActivities()
         {
-                return (await firebase
+            
+            var allUsers = await GetAllUsers();
+            var allActivities = (await firebase
                   .Child("Activity")
                   .OnceAsync<UserActivityModel>()).Select(item => new UserActivityModel
                   {
                       UserId = item.Object.UserId,
-                      Message=item.Object.Message,
-                      Type=item.Object.Type,
-                      Latitude=item.Object.Latitude,
-                      Longitude=item.Object.Longitude,
-                      DateTime=item.Object.DateTime
+                      Message = item.Object.Message,
+                      Type = item.Object.Type,
+                      Latitude = item.Object.Latitude,
+                      Longitude = item.Object.Longitude,
+                      DateTime = item.Object.DateTime
                   }).ToList();
+
+            var listAct = from x in allActivities
+                          join allU in allUsers
+                          on x.UserId equals allU.UserId
+                          where allU.UserId == x.UserId
+                          select x;
+
+
+            return listAct.ToList();
         }
 
         /*

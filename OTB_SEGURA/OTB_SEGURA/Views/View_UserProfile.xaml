@@ -19,7 +19,7 @@
         <Label Text="Pablo Rodriguez Solis" HorizontalOptions="Center"></Label>
         <Label Text="(PDRS13623834)" HorizontalOptions="Center"></Label>
         <Button Text="Editar Perfil"/>
-        <Label Text="Alertas" Margin="0 20"></Label>
+        <Label Text="Alertas"></Label>
         <ListView>
             <ListView.ItemTemplate>
                 <DataTemplate>

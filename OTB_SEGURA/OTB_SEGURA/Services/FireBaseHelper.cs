@@ -31,7 +31,7 @@ namespace OTB_SEGURA.Services
 
         public async Task<List<UserActivityModel>> GetAllActivities()
         {
-            
+            List<UserActivityModel> userActivities = new List<UserActivityModel>();
             var allUsers = await GetAllUsers();
             var allActivities = (await firebase
                   .Child("Activity")
@@ -49,10 +49,29 @@ namespace OTB_SEGURA.Services
                           join allU in allUsers
                           on x.UserId equals allU.UserId
                           where allU.UserId == x.UserId
-                          select x;
+                          select new
+                          {
+                              allU.Name,
+                              x.Message,
+                              x.Type,
+                              x.Latitude,
+                              x.Longitude,
+                              x.DateTime
+                          };
 
-
-            return listAct.ToList();
+            foreach (var item in listAct)
+            {
+                userActivities.Add(new UserActivityModel
+                {
+                    Message = item.Message,
+                    Type = item.Type,
+                    Latitude = item.Latitude,
+                    Longitude = item.Longitude,
+                    DateTime = item.DateTime,
+                    Name = item.Name
+                });
+            }
+            return userActivities.ToList();
         }
 
         /*

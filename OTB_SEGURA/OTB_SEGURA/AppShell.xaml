@@ -89,7 +89,7 @@
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_Account}" />
     </FlyoutItem>
     <FlyoutItem Title="Numeros de Emergencia" Icon="icon_feed.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_EmergencyNumbers}" />
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Lista de Usuarios" Icon="icon_feed.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_UsersList}" />

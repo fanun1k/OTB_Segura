@@ -1,4 +1,5 @@
 ﻿using OTB_SEGURA.Models;
+using OTB_SEGURA.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,8 +7,8 @@ using System.Text;
 
 namespace OTB_SEGURA.ViewModels
 {
-    class EmergencyNumbersViewModel:BaseViewModel
-    {
+    public class EmergencyNumbersViewModel:BaseViewModel
+    {        
         public ObservableCollection<EmergencyNumbersModel> emergencyNumbersList { get; }
         public EmergencyNumbersViewModel()
         {
@@ -24,5 +25,6 @@ namespace OTB_SEGURA.ViewModels
             emergencyNumbersList.Add(new EmergencyNumbersModel { Name = "SEMAPA", Number = 4290755, State = 1 });
 
         }
+
     }
 }

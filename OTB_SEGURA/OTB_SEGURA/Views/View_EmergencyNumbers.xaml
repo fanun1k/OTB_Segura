@@ -17,16 +17,16 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="100"/>
                             </Grid.ColumnDefinitions>
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Servicio:"/>
-                                    <Label x:Name="txtNombre" Text="{Binding Name}" />
+                                    <Label x:Name="txtNombre" Text="{Binding Name}" FontAttributes="None" />
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Numero:"/>
-                                    <Label x:Name="txtNumero" Text="{Binding Number}"/>
+                                    <Label x:Name="txtNumero" Text="{Binding Number}" FontAttributes="None"/>
                                 </StackLayout>
                             </StackLayout>
                             <Grid Grid.Column="1">

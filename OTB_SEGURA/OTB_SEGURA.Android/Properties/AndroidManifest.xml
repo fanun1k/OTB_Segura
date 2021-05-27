@@ -1,6 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" package="com.companyname.otb_segura" android:installLocation="preferExternal">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="23" />
-	<application android:label="OTB_SEGURA.Android" android:theme="@style/MainTheme" android:icon="@drawable/xamarin_logo"></application>
+	<application android:label="OTB_SEGURA.Android" android:theme="@style/MainTheme" android:icon="@drawable/xamarin_logo">
+    <receiver
+    android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
+    android:exported="false"
+      />
+    <receiver
+      android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
+      android:exported="false"
+      />
+
+    <receiver
+      android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+      android:exported="true"
+      android:permission="com.google.android.c2dm.permission.SEND"
+      >
+
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+        <category android:name="${applicationId}"/>
+      </intent-filter>
+    </receiver>
+  </application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>

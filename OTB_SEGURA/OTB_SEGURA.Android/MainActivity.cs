@@ -22,6 +22,7 @@ namespace OTB_SEGURA.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             base.OnCreate(savedInstanceState);
 
@@ -43,6 +44,8 @@ namespace OTB_SEGURA.Droid
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
+            Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode,
+                permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }

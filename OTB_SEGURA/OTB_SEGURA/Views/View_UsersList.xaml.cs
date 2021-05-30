@@ -16,6 +16,7 @@ namespace OTB_SEGURA.Views
         public View_UsersList()
         {
             InitializeComponent();
+            BindingContext = new UsersListViewModel(Navigation);
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

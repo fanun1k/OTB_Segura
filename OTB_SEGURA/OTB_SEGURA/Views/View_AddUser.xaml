@@ -26,7 +26,6 @@
             <Label Text="-17000000,752222" VerticalTextAlignment="Center"/>
             <Button Text="Abrir Maps" Command="{Binding OpenMapsCommand}"/>
         </StackLayout>
-        <Maps:Map/>
         <Button Text="Registrar Usuario" Command="{Binding InsertCommand}"></Button>
     </StackLayout>
 </ContentPage>

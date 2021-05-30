@@ -11,10 +11,6 @@
             EventName="Appearing"
             Command="{Binding AppearingCommand }"/>
     </ContentPage.Behaviors>
-    <ContentPage.BindingContext>
-        <vm:UsersListViewModel />
-        <!-- establecemos el contexto de los datos -->
-    </ContentPage.BindingContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />

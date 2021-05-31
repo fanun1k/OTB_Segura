@@ -79,28 +79,31 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
-    <FlyoutItem Title="Iniciar Sesión">
-        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_Login}" />
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:View_Login}" />
+    </TabBar>
+    <FlyoutItem Title="Acerca de Nosotros">
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_About}" />
     </FlyoutItem>
     <FlyoutItem Title="Alertar Evento" Icon="icon_about.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddActivity}" />
+        <ShellContent Route="Add" ContentTemplate="{DataTemplate local:View_AddActivity}" />
     </FlyoutItem>
     <FlyoutItem Title="Mi Cuenta" Icon="icon_feed.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_Account}" />
+        <ShellContent Route="Acount" ContentTemplate="{DataTemplate local:View_Account}" />
     </FlyoutItem>
     <FlyoutItem Title="Numeros de Emergencia" Icon="icon_feed.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_EmergencyNumbers}" />
+        <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbers}" />
     </FlyoutItem>
     <FlyoutItem Title="Lista de Usuarios" Icon="icon_feed.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_UsersList}" />
+        <ShellContent Route="UserList" ContentTemplate="{DataTemplate local:View_UsersList}" />
     </FlyoutItem>
     <FlyoutItem Title="Actividad de Usuarios" Icon="icon_feed.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_UserActivity}" />
+        <ShellContent Route="UserActivity" ContentTemplate="{DataTemplate local:View_UserActivity}" />
     </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
-    
-    <MenuItem Text="Cerrar Sesion" StyleClass="MenuItemLayoutStyle" >
+
+    <MenuItem Text="Cerrar Sesion" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
     </MenuItem>
 
     <!--

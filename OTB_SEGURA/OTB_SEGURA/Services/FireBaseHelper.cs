@@ -31,17 +31,47 @@ namespace OTB_SEGURA.Services
 
         public async Task<List<UserActivityModel>> GetAllActivities()
         {
-                return (await firebase
+            List<UserActivityModel> userActivities = new List<UserActivityModel>();
+            var allUsers = await GetAllUsers();
+            var allActivities = (await firebase
                   .Child("Activity")
                   .OnceAsync<UserActivityModel>()).Select(item => new UserActivityModel
                   {
                       UserId = item.Object.UserId,
-                      Message=item.Object.Message,
-                      Type=item.Object.Type,
-                      Latitude=item.Object.Latitude,
-                      Longitude=item.Object.Longitude,
-                      DateTime=item.Object.DateTime
+                      Message = item.Object.Message,
+                      Type = item.Object.Type,
+                      Latitude = item.Object.Latitude,
+                      Longitude = item.Object.Longitude,
+                      DateTime = item.Object.DateTime
                   }).ToList();
+
+            var listAct = from x in allActivities
+                          join allU in allUsers
+                          on x.UserId equals allU.UserId
+                          where allU.UserId == x.UserId
+                          select new
+                          {
+                              allU.Name,
+                              x.Message,
+                              x.Type,
+                              x.Latitude,
+                              x.Longitude,
+                              x.DateTime
+                          };
+
+            foreach (var item in listAct)
+            {
+                userActivities.Add(new UserActivityModel
+                {
+                    Message = item.Message,
+                    Type = item.Type,
+                    Latitude = item.Latitude,
+                    Longitude = item.Longitude,
+                    DateTime = item.DateTime,
+                    Name = item.Name
+                });
+            }
+            return userActivities.ToList();
         }
 
         /*

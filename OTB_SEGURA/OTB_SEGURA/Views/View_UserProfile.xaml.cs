@@ -16,6 +16,7 @@ namespace OTB_SEGURA.Views
         public View_UserProfile()
         {
             InitializeComponent();
+            BindingContext = new UserProfileViewModel(Navigation);
         }
         public View_UserProfile(UserModel user)
         {

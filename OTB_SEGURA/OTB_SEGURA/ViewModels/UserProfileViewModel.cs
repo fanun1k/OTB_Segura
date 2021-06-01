@@ -6,6 +6,7 @@ using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Models;
 using Xamarin.Forms;
 using OTB_SEGURA.Services;
+using OTB_SEGURA.Views;
 namespace OTB_SEGURA.ViewModels
 {
     class UserProfileViewModel:BaseViewModel
@@ -34,20 +35,28 @@ namespace OTB_SEGURA.ViewModels
             this.user = user;
             DependencyService.Get<IMessage>().ShortAlert(user.Name + "");
             SetTextButton();
+            ButtonChangeStateClick = new Command(UpdateMethod);
         }
-        public UserProfileViewModel()
+        public UserProfileViewModel(INavigation navigation)
         {
-                
+            user = new UserModel();
+            textButton="Editar Mi Perfil";
+            user.Name = Application.Current.Properties["Name"].ToString();
+            user.UserName = Application.Current.Properties["UserName"].ToString();
+            ButtonChangeStateClick = new Command(async()=> 
+            {
+                await navigation.PushAsync(new View_Account());
+            });
         }
         #endregion
         #region Commands
-        public ICommand ButtonChangeStateClick 
-        {
-            get
-            {
-                return new RelayCommand(UpdateMethod);
-            }
-        }
+        public ICommand ButtonChangeStateClick { get; private set; } 
+        //{
+        //    get
+        //    {
+        //        return new RelayCommand(UpdateMethod);
+        //    }
+        //}
           
 
         #endregion

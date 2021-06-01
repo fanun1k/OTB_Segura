@@ -90,6 +90,10 @@ namespace OTB_SEGURA.ViewModels
                         {
                             Application.Current.Properties["Id"] = userModel.UserId;
                             Application.Current.Properties["Name"] = userModel.Name;
+                            Application.Current.Properties["UserName"] = userModel.UserName;
+                            Application.Current.Properties["Ci"] = userModel.Ci;
+                            Application.Current.Properties["Password"] = userModel.Password;
+                            Application.Current.Properties["Phone"] = userModel.Phone;
                         }
                         DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + userModel.Name);
                         await Shell.Current.GoToAsync("//AboutPage");

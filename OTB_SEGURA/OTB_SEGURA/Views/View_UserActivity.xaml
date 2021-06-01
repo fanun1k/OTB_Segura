@@ -10,12 +10,15 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
-        <ListView ItemsSource="{Binding ListActivity}" HasUnevenRows="True">
+        <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListActivity}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing">
             <ListView.Behaviors>
                 <behaviorsPack:EventToCommandBehavior 
                     EventName="ItemTapped"
                     Command="{Binding ItemTappedCommandUserActivity}"
                     EventArgsPropertyPath="Item"/>
+                <behaviorsPack:EventToCommandBehavior
+                    EventName="Refreshing"
+                    Command="{Binding RefreshingCommandActivityUsers}"/>
             </ListView.Behaviors>
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -28,7 +31,7 @@
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Usuario: " TextColor="Black"></Label>
-                                    <Label Text="Juan Pedro Montoya" TextColor="Black" FontAttributes="None"/>
+                                    <Label Text="{Binding Name, Mode=TwoWay}" TextColor="Black" FontAttributes="None"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Mensaje: " TextColor="Black"></Label>

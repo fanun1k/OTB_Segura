@@ -10,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace OTB_SEGURA.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class View_AddUser : ContentPage
+    public partial class View_EmergencyNumbersTabbedPage : TabbedPage
     {
-        public View_AddUser()
+        public View_EmergencyNumbersTabbedPage()
         {
-            InitializeComponent();          
+            InitializeComponent();
         }
-
     }
 }

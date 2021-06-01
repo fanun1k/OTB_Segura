@@ -7,15 +7,24 @@
              Title="{Binding Title}"             
              >
 
+    <ContentPage.Behaviors>
+        <behaviorsPack:EventToCommandBehavior 
+            EventName="Appearing"
+            Command="{Binding AppearingCommand }"/>
+    </ContentPage.Behaviors>
     <ContentPage.BindingContext>
-        <vm:UsersListViewModel/>
+        <vm:EmergencyNumberUsersViewModel/>
     </ContentPage.BindingContext>
-    
-        <ListView x:Name="ListUser" ItemsSource="{Binding UserList}" HasUnevenRows="True"
+    <ListView x:Name="ListUser" ItemsSource="{Binding UserList}" HasUnevenRows="True"
                   IsPullToRefreshEnabled="True"
                   Refreshing="ListUser_Refreshing"
-                  ItemSelected="ListUser_ItemSelected">            
-            <ListView.ItemTemplate>
+                  ItemSelected="ListUser_ItemSelected">
+        <ListView.Behaviors>
+            <behaviorsPack:EventToCommandBehavior 
+                    EventName="Refreshing"
+                    Command="{Binding RefreshingCommand}"/>
+        </ListView.Behaviors>
+        <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Frame BorderColor="Black" CornerRadius="5" Margin="5" Padding="5">

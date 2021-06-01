@@ -23,5 +23,10 @@ namespace OTB_SEGURA.Views
             InitializeComponent();            
             BindingContext = new UserProfileViewModel(user);
         }
+        public View_UserProfile(string name,int phone)
+        {
+            InitializeComponent();
+            BindingContext = new UserProfileViewModel(name,phone);
+        }
     }
 }

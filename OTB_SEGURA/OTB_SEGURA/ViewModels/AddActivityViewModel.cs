@@ -169,7 +169,7 @@ namespace OTB_SEGURA.ViewModels
             var activity = newActivity(message,"Robo");
             await fireBaseHelper.AddActivity(activity);
             await Task.Delay(1000);
-            DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");
+            DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito"+activity.UserId);
             PostNotification(activity);
         }
         private async void InsertAccidenteMethod()

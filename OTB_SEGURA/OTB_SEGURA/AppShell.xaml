@@ -87,13 +87,13 @@
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_About}" />
     </FlyoutItem>
     <FlyoutItem Title="Alertar Evento" Icon="icon_about.png">
-        <ShellContent Route="Add" ContentTemplate="{DataTemplate local:View_AddActivity}" />
+        <ShellContent Route="AddActivity" ContentTemplate="{DataTemplate local:View_AddActivity}" />
     </FlyoutItem>
     <FlyoutItem Title="Mi Perfil " Icon="icon_feed.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_UserProfile}" />
     </FlyoutItem>
     <FlyoutItem Title="Numeros de Emergencia" Icon="icon_feed.png">
-        <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbers}" />
+        <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Lista de Usuarios" Icon="icon_feed.png">
         <ShellContent Route="UserList" ContentTemplate="{DataTemplate local:View_UsersList}" />

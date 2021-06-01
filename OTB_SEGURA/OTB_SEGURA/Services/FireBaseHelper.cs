@@ -202,7 +202,23 @@ namespace OTB_SEGURA.Services
               .OnceAsync<UserModel>();
             return allPersons.Where(a => a.UserName == userName && a.Password==password).FirstOrDefault();
         }
+        public async Task<List<UserModel>> GetActiveUsers()
+        {
+            return (await firebase
+              .Child("Users")
+              .OnceAsync<UserModel>()).Select(item => new UserModel
+              {
+                  UserId = item.Object.UserId,
+                  Name = item.Object.Name,
+                  UserName = item.Object.UserName,
+                  Phone = item.Object.Phone,
+                  State = item.Object.State,
+                  Ci = item.Object.Ci,
+                  Password = item.Object.Password
 
+              }).Where(item => item.State == 1).ToList();
+
+        }
         /*
         public async Task<UserModel> GetPerson(int personId)
         {

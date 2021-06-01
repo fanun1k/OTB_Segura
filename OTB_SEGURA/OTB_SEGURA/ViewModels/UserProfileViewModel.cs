@@ -48,6 +48,13 @@ namespace OTB_SEGURA.ViewModels
                 await navigation.PushAsync(new View_Account());
             });
         }
+        public UserProfileViewModel(string name,int phone)
+        {
+            user = new UserModel();
+            user.Name = name;
+            user.UserName = phone.ToString();
+            textButton = "LLamar";
+        }
         #endregion
         #region Commands
         public ICommand ButtonChangeStateClick { get; private set; } 

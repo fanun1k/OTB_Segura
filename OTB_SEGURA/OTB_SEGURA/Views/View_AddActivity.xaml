@@ -29,7 +29,18 @@
            HeightRequest="1"  
            WidthRequest      ="300"
            Color="#111a1c"></BoxView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <CheckBox Margin="35,0,0,0" x:Name="check1" CheckedChanged="CheckBox_CheckedChanged"/>
+            <Label Text="Habilitar botón" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
         <Button
+            x:Name="btn1"
             Text="Boton de Emergencia" Command="{Binding EmergencyCommand}"
             WidthRequest      ="200"
             HeightRequest     ="200"

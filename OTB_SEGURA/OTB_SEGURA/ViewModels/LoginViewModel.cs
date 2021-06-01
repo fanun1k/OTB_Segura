@@ -96,7 +96,7 @@ namespace OTB_SEGURA.ViewModels
                             Application.Current.Properties["Phone"] = userModel.Phone;
                         }
                         DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + userModel.Name);
-                        await Shell.Current.GoToAsync("//AboutPage");
+                        await Shell.Current.GoToAsync("//AddActivity");
 
                     }
                     else

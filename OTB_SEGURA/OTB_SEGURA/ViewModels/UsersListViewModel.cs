@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
+using OTB_SEGURA.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,7 +17,7 @@ namespace OTB_SEGURA.ViewModels
 
         #region Attributes
         FireBaseHelper firebaseHelper = new FireBaseHelper();
-      
+        public INavigation Navigation { get; set; }
         private List<UserModel> userList;
         #endregion
 
@@ -32,10 +33,10 @@ namespace OTB_SEGURA.ViewModels
         #endregion
 
         #region Construct
-        public UsersListViewModel()
+        public UsersListViewModel(INavigation navigation)
         {
-            Title = "Lista de Usuarios";
-         
+            Navigation = navigation;
+            Title = "Lista de Usuarios";         
             InitCommandTapped();
         }
         #endregion
@@ -75,48 +76,10 @@ namespace OTB_SEGURA.ViewModels
         }
         public void InitCommandTapped()
         {
-            ItemTappedCommand = new Command((item) => {
-                UpdateMethod(item);
+            ItemTappedCommand = new Command(async (item) => {
+                var user = item as UserModel;
+                await Navigation.PushAsync(new View_UserProfile(user));
             });
-        }
-        public async void UpdateMethod(object item)
-        {
-            var userModel = item as UserModel;
-            bool resDisplayAlert;
-            if (userModel != null)
-            {
-                switch (userModel.State)
-                {
-                    //SI EL ESTADO ES =1 ENTONCES DEBEMOS DESHABILITAR AL USUARIO
-                    case 1:
-                        resDisplayAlert = await App.Current.MainPage.DisplayAlert("DESHABILITAR USUARIO", $"¿Esta seguro de deshabilitar al usuario: {userModel.Name}?", "Ok", "Cancelar");
-                        if (resDisplayAlert)
-                        {
-                            await firebaseHelper.DisableUser(userModel);
-                            DependencyService.Get<IMessage>().ShortAlert($"usuario {userModel.Name} deshabilitado");
-                            LoadData();
-                            
-                        }
-                        break;
-                        //SI ESTADO =2 ENTONCES DEBEMOS PREGUNTAR SI HABILITAR O ELIMINAR DEFINITIVAMENTE AL USUARIO
-                    case 0:
-                        resDisplayAlert = await App.Current.MainPage.DisplayAlert("HABILITAR O ELIMINAR USUARIO", $"¿Que desea hacer con el usuario: {userModel.UserName} ", "Habilitar", "Eliminar usuario");
-                        if (resDisplayAlert)
-                        {
-                            await firebaseHelper.EnableUser(userModel);
-                            DependencyService.Get<IMessage>().ShortAlert($"usuario {userModel.Name} habilitado");
-                            LoadData();
-                        }
-                        else
-                        {
-                            await firebaseHelper.DeleteUser(userModel.UserId);
-                            DependencyService.Get<IMessage>().ShortAlert($"usuario {userModel.Name} fue eliminado");
-                            LoadData();
-                        }
-                        break;                       
-                }
-                
-            }
         }
         #endregion
     }

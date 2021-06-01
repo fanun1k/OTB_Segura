@@ -14,7 +14,8 @@ namespace OTB_SEGURA.Views
     {
         public View_AddUser()
         {
-            InitializeComponent();
+            InitializeComponent();          
         }
+
     }
 }

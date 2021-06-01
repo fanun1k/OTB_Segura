@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             xmlns:ImgCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="OTB_SEGURA.Views.View_UserProfile">
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid BackgroundColor="{StaticResource Primary}"></Grid>
+            <ImgCircle:CircleImage WidthRequest="80" HeightRequest="80" BorderColor="White" BorderThickness="3" Grid.RowSpan="2" Source="https://i.blogs.es/2d5264/facebook-image/1366_2000.jpg"></ImgCircle:CircleImage>
+        </Grid>
+        <Label BindingContext="{Binding User}" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"></Label>
+        <Label BindingContext="{Binding User}" Text="{Binding UserName,Mode=TwoWay}" HorizontalOptions="Center"></Label>
+        <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="0.60" Command="{Binding ButtonChangeStateClick}" />
+        <Label Text="Alertas"></Label>
+        <ListView>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BorderColor="Black" CornerRadius="5" Margin="5" Padding="5">
+                            <Label Text="alguna historia"/>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

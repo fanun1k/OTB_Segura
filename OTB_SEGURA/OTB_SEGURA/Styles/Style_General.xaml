@@ -5,12 +5,22 @@
 
     <!-- General Colors -->
     <!--===============================================================================-->
-    <Color x:Key="colorGray">#e7d6d2</Color>
-    <Color x:Key="colorDark">#111a1c</Color>
-    <Color x:Key="colorRed">#fd2a2f</Color>
-    <Color x:Key="colorYellow">#ffe800</Color>
-    <Color x:Key="colorBeige">#eec99c</Color>
     
+        <!--Colores obsoletos -->
+        <Color x:Key="colorGray">#e7d6d2</Color>
+        <Color x:Key="colorDark">#111a1c</Color>
+        <Color x:Key="colorRed">#fd2a2f</Color>
+        <Color x:Key="colorYellow">#ffe800</Color>
+        <Color x:Key="colorBeige">#eec99c</Color>
+        <!--===============================================================================-->
+    
+        <!--Colores Nuevos -->
+        <Color x:Key="Primary">#056d8a</Color>
+        <Color x:Key="Secondary">#FB7923</Color>
+        <Color x:Key="tertiary">#79B030</Color>
+        <Color x:Key="quaternary">#FCFF47</Color>
+        <Color x:Key="Dark">#292D25</Color>
+        <!--===============================================================================-->
     <!--===============================================================================-->
 
     <!--General FontSize-->

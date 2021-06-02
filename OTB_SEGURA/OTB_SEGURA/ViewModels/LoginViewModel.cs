@@ -113,7 +113,7 @@ namespace OTB_SEGURA.ViewModels
         }
         public async void LoginSuccess()
         {
-            await Shell.Current.GoToAsync("//AboutPage");
+            await Shell.Current.GoToAsync("//AddActivity");
         }
         public bool validar()
         {

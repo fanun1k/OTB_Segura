@@ -27,7 +27,7 @@
                             <StackLayout >
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Fecha/Hora: " TextColor="Black"></Label>
-                                    <Label Text="{Binding DateTime}" TextColor="Black" FontAttributes="None"/>
+                                    <Label Text="{Binding DateTime,StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}" TextColor="Black" FontAttributes="None"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Usuario: " TextColor="Black"></Label>

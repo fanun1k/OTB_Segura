@@ -71,7 +71,7 @@ namespace OTB_SEGURA.Services
                     Name = item.Name
                 });
             }
-            return userActivities.ToList();
+            return userActivities.Take(10).ToList();
         }
 
         /*

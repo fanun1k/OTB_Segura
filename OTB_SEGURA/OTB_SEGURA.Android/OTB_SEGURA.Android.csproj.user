@@ -3,7 +3,7 @@
   <PropertyGroup>
     <SelectedDevice>Samsung SM-A305G</SelectedDevice>
     <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
-    <DefaultDevice>pixel_2_pie_9_0_-_api_28</DefaultDevice>
+    <DefaultDevice>Pixel_2_API_27</DefaultDevice>
     <ActiveDebugProfile>Samsung SM-A305G</ActiveDebugProfile>
   </PropertyGroup>
 </Project>

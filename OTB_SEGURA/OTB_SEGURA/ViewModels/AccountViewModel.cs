@@ -14,6 +14,10 @@ namespace OTB_SEGURA.ViewModels
     {
         #region Attributes
         FireBaseHelper fireBaseHelper = new FireBaseHelper();
+
+        UserModel userModel;
+        private Guid userId;
+
         private string name = "";
         private int ci;
         private int phone;
@@ -49,6 +53,13 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
         #region Command
+        public ICommand SelectCommand
+        {
+            get 
+            {
+                return new RelayCommand(SelectMethod);
+            }
+        }
         public ICommand UpdateCommand
         {
             get
@@ -58,6 +69,10 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
         #region Method
+        private async void SelectMethod()
+        {
+            //await fireBaseHelper.GetSessionPerson(userModel.UserId);
+        }
         private async void UpdateMethod()
         {
             IsBusy = true;

@@ -3,11 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"         
              x:Class="OTB_SEGURA.Views.View_Account"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+              xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              Title="{Binding Title}">
         <ContentPage.BindingContext>
             <vm:AccountViewModel />
         </ContentPage.BindingContext>
     <StackLayout Padding="15">
+        <!--<StackLayout.Behaviors>
+            <behaviorsPack:EventToCommandBehavior 
+                    EventName="Refreshing"
+                    Command="{Binding SelectCommand}"/>
+        </StackLayout.Behaviors>-->
         <Label Text="Nombre Completo" FontSize="{StaticResource mediumTextSize}" />
         <Entry Text="{Binding Name, Mode=TwoWay}" Placeholder="Escriba el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
         <Label Text="Número de Carnet" FontSize="{StaticResource mediumTextSize}" />

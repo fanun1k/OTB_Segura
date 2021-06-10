@@ -14,8 +14,16 @@ namespace OTB_SEGURA.Views
     {
         public View_Login()
         {
+            string name = null;
             InitializeComponent();
+            LoginViewModel log = new LoginViewModel();
             this.BindingContext = new LoginViewModel();
+            if (Application.Current.Properties.ContainsKey("Id"))
+            {
+                name = Application.Current.Properties["Name"] as string;
+                DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + name);
+                log.Logged.Execute(button1);
+            }
         }
 
     }

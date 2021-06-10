@@ -19,8 +19,8 @@ namespace OTB_SEGURA.ViewModels
         UserModel userModel;
 
         #region Variables
-        private string userName="";
-        private string password="";
+        private string userName = "";
+        private string password = "";
         #endregion
 
         #region GettersAndSetters
@@ -38,6 +38,12 @@ namespace OTB_SEGURA.ViewModels
                 OnPropertyChanged();
             }
         }
+        public bool RememberMe
+        {
+            get { return _rememberMe; }
+            set { _rememberMe = value; this.OnPropertyChanged("ColorFiltered"); }
+        }
+        private bool _rememberMe = false;
         #endregion
         public Command LoginCommand { get; }
 
@@ -48,8 +54,8 @@ namespace OTB_SEGURA.ViewModels
 
         private async void OnLoginClicked(object obj)
         {
-                await Shell.Current.GoToAsync($"//{nameof(View_About)}");
-            
+            await Shell.Current.GoToAsync($"//AboutPage");
+
         }
         #region Commands
         public ICommand LoginValidateCommand
@@ -59,6 +65,13 @@ namespace OTB_SEGURA.ViewModels
                 return new RelayCommand(LoginMethod);
             }
         }
+        public ICommand Logged
+        {
+            get
+            {
+                return new RelayCommand(LoginSuccess);
+            }
+        }
         #endregion
 
         #region metodos
@@ -66,17 +79,41 @@ namespace OTB_SEGURA.ViewModels
         {
             if (validar())
             {
-                
+
                 try
                 {
                     userModel = await fireBaseHelper.GetPerson(userName, password);
-                    DependencyService.Get<IMessage>().LongAlert("Bienvenido: "+userModel.Name);
+                    if (userModel.State != 0)
+                    {
+
+                        if (_rememberMe)
+                        {
+                            Application.Current.Properties["Id"] = userModel.UserId;
+                            Application.Current.Properties["Name"] = userModel.Name;
+                            Application.Current.Properties["UserName"] = userModel.UserName;
+                            Application.Current.Properties["Ci"] = userModel.Ci;
+                            Application.Current.Properties["Password"] = userModel.Password;
+                            Application.Current.Properties["Phone"] = userModel.Phone;
+                        }
+                        DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + userModel.Name);
+                        await Shell.Current.GoToAsync("//AddActivity");
+
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert("Su usuario se Encuentra bloqueado, comuniquese con soporte de su zona");
+                    }
+
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     DependencyService.Get<IMessage>().LongAlert("El usuario o la contraseña no son correctos");
                 }
             }
+        }
+        public async void LoginSuccess()
+        {
+            await Shell.Current.GoToAsync("//AboutPage");
         }
         public bool validar()
         {
@@ -98,9 +135,9 @@ namespace OTB_SEGURA.ViewModels
                 {
                     DependencyService.Get<IMessage>().LongAlert("Todos los campos tienen que llenados");
                 }
-                
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }

@@ -25,31 +25,31 @@
                     Command="{Binding RefreshingCommand}"/>
         </ListView.Behaviors>
         <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Frame BorderColor="Black" CornerRadius="5" Margin="5" Padding="5">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="15"/>                                    
-                                </Grid.ColumnDefinitions>
-                                <StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="Nombre:    "/>
-                                        <Label Text="{Binding Name}" FontAttributes="None"/>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="Telefono: "/>
-                                        <Label Text="{Binding Phone}" FontAttributes="None"/>
-                                    </StackLayout>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame BorderColor="Black" CornerRadius="5" Margin="5" Padding="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="15"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Nombre:    "/>
+                                    <Label Text="{Binding Name}" FontAttributes="None"/>
                                 </StackLayout>
-                            </Grid>
-                        </Frame>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
- 
-    
-    
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Telefono: "/>
+                                    <Label Text="{Binding Phone}" FontAttributes="None"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+
 </ContentPage>

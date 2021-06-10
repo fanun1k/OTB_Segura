@@ -1,4 +1,5 @@
-﻿using OTB_SEGURA.Models;
+﻿using GalaSoft.MvvmLight.Command;
+using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,22 @@ namespace OTB_SEGURA.ViewModels
         #endregion
 
         #region Commands
+        public ICommand AppearingCommand
+        {
+            get
+            {
+                return new RelayCommand(LoadData);
+            }
+        }
+
+        public ICommand RefreshingCommandActivityUsers
+        {
+            get
+            {
+                return new RelayCommand(LoadData);
+            }
+        }
+
         public ICommand ItemTappedCommandUserActivity { get; } = new Command(async (Item) =>
         {
             var userActivityModel = Item as UserActivityModel;

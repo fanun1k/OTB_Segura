@@ -7,6 +7,9 @@ using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Essentials;
+using Plugin.Geolocator.Abstractions;
+using Plugin.Geolocator;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -81,6 +84,13 @@ namespace OTB_SEGURA.ViewModels
             get
             {
                 return new RelayCommand(InsertMethod);
+            }
+        }
+        public ICommand OpenMapsCommand
+        {
+            get
+            {
+                return new RelayCommand(OpeenMaps);
             }
         }
         #endregion
@@ -178,6 +188,41 @@ namespace OTB_SEGURA.ViewModels
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
             
+        }
+
+        private async void OpeenMaps()
+        {
+           Position position = null;
+			try
+			{
+              
+					var locator = CrossGeolocator.Current;
+					locator.DesiredAccuracy = 100;
+
+					position = await locator.GetLastKnownLocationAsync();
+
+                if (position != null)
+                {
+                    position = await locator.GetPositionAsync(TimeSpan.FromSeconds(20), null, true);
+                    await Map.OpenAsync(position.Latitude, position.Longitude, new MapLaunchOptions
+                    {
+                        Name = "Ubicación",
+                        NavigationMode = NavigationMode.None
+                    });              
+                }
+
+                if (!locator.IsGeolocationAvailable || !locator.IsGeolocationEnabled)
+					{
+                    //not available or enabled                    
+                }
+
+					
+
+			}
+			catch (Exception ex)
+			{
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
         }
         #endregion
 

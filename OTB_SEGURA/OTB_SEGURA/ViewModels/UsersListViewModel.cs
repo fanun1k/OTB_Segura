@@ -70,8 +70,15 @@ namespace OTB_SEGURA.ViewModels
             UserList = await firebaseHelper.GetAllUsers();
             foreach (var user in userList)
             {
-                if (user.State == 1) user.StateColor = "#dbeddc";
-                else user.StateColor = "#ff9880";
+                if (user.State == 0)
+                {
+                    user.StateColor = "#ff4e4e";
+                    user.StateBorderColor = "#ff4e4e";
+                }
+                else
+                {
+                    user.StateBorderColor = "#056d8a";
+                }
             }
         }
         public void InitCommandTapped()

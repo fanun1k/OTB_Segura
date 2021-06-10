@@ -28,6 +28,19 @@ namespace OTB_SEGURA.Services
                   
               }).ToList();
         }
+        public async Task<List<ActivityModel>> GetAllActivitiesId(string id)
+        {
+            var allActivities= (await firebase
+                .Child("Activity")
+                .OnceAsync<ActivityModel>()).Select(item => new ActivityModel
+                {
+                    UserId = item.Object.UserId,
+                    DateTime = item.Object.DateTime,
+                    Type = item.Object.Type,
+                    Message = item.Object.Message
+                }).ToList(); 
+            return allActivities.Where(a => a.UserId == id).ToList();
+        }
 
         public async Task<List<UserActivityModel>> GetAllActivities()
         {
@@ -222,11 +235,11 @@ namespace OTB_SEGURA.Services
         /*
         public async Task<UserModel> GetPerson(int personId)
         {
-            var allPersons = await GetAllPersons();
+            var allActivities = await GetAllPersons();
             await firebase
               .Child("Persons")
               .OnceAsync<UserModel>();
-            return allPersons.Where(a => a.PersonId == personId).FirstOrDefault();
+            return allActivities.Where(a => a.PersonId == personId).FirstOrDefault();
         }
         public async Task UpdatePerson(int personId, string name)
         {

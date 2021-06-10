@@ -17,12 +17,25 @@
         <Label BindingContext="{Binding User}" Text="{Binding UserName,Mode=TwoWay}" HorizontalOptions="Center"></Label>
         <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="0.60" Command="{Binding ButtonChangeStateClick}" />
         <Label Text="Alertas"></Label>
-        <ListView>
+        <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Frame BorderColor="Black" CornerRadius="5" Margin="5" Padding="5">
-                            <Label Text="alguna historia"/>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Fecha: "/>
+                                    <Label Text="{Binding DateTime}" FontAttributes="None"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Tipo : "/>
+                                    <Label Text="{Binding Type}" FontAttributes="None"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Mensaje: "/>
+                                    <Label Text="{Binding Message}" FontAttributes="None"/>
+                                </StackLayout>
+                            </StackLayout>
                         </Frame>
                     </ViewCell>
                 </DataTemplate>

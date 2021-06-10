@@ -10,7 +10,7 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
-        <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListActivity}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing">
+        <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListActivity}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}">
             <ListView.Behaviors>
                 <behaviorsPack:EventToCommandBehavior 
                     EventName="ItemTapped"
@@ -23,31 +23,31 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame BorderColor="Black" CornerRadius="1" Padding="4" Margin="6">
+                        <Frame Style="{StaticResource frameStyle}">
                             <StackLayout >
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Fecha/Hora: " TextColor="Black"></Label>
-                                    <Label Text="{Binding DateTime}" TextColor="Black" FontAttributes="None"/>
+                                    <Label Text="Fecha:" TextColor="{StaticResource Dark}" WidthRequest="80"></Label>
+                                    <Label Text="{Binding DateTime,StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Usuario: " TextColor="Black"></Label>
-                                    <Label Text="{Binding Name, Mode=TwoWay}" TextColor="Black" FontAttributes="None"/>
+                                    <Label Text="Usuario:" TextColor="{StaticResource Dark}"  WidthRequest="80"></Label>
+                                    <Label Text="{Binding Name, Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Mensaje: " TextColor="Black"></Label>
-                                    <Label Text="{Binding Message,Mode=TwoWay}" TextColor="Black" FontAttributes="None"/>
+                                    <Label Text="Mensaje:" TextColor="{StaticResource Dark}"  WidthRequest="80"></Label>
+                                    <Label Text="{Binding Message,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Tipo: " TextColor="Black"/>
-                                    <Label Text="{Binding Type,Mode=TwoWay}" TextColor="Black" FontAttributes="None"/>
+                                    <Label Text="Tipo:" TextColor="{StaticResource Dark}"  WidthRequest="80"/>
+                                    <Label Text="{Binding Type,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" IsVisible="False">
-                                    <Label Text="Latitud: " TextColor="Black"/>
-                                    <Label Text="{Binding Latitude,Mode=TwoWay}" TextColor="Black" FontAttributes="None"/>
+                                    <Label Text="Latitud:" TextColor="{StaticResource Dark}"  WidthRequest="80"/>
+                                    <Label Text="{Binding Latitude,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" IsVisible="False">
-                                    <Label Text="Longitud: " TextColor="Black"/>
-                                    <Label Text="{Binding Longitude,Mode=TwoWay}" TextColor="Black" FontAttributes="None"/>
+                                    <Label Text="Longitud:" TextColor="{StaticResource Dark}"  WidthRequest="80"/>
+                                    <Label Text="{Binding Longitude,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
                                 </StackLayout>
                             </StackLayout>                                                                                              
                         </Frame>

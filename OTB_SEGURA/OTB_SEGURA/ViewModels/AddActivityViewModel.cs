@@ -207,9 +207,22 @@ namespace OTB_SEGURA.ViewModels
             getLocation();
             await Task.Delay(1000);
             var activity = newActivity("Alerta de Emergncia iniciada", "Emergencia");
+            var emergency = newEmergency(activity);
             await fireBaseHelper.AddActivity(activity);
             await Task.Delay(1000);
+            await fireBaseHelper.AddEmergency(emergency);
+            await Task.Delay(1000);
             PostNotification(activity);
+        }
+        private EmergencyModel newEmergency(ActivityModel activity)
+        {
+            return new EmergencyModel
+            {
+                UserId = activity.UserId,
+                Latitude = activity.Latitude,
+                Longitude = activity.Longitude,
+                DateTime = activity.DateTime
+            };
         }
         #endregion
     }

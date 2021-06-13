@@ -16,6 +16,5 @@ namespace OTB_SEGURA.Views
         {
             InitializeComponent();          
         }
-
     }
 }

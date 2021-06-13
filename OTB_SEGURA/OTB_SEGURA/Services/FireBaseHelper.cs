@@ -127,6 +127,18 @@ namespace OTB_SEGURA.Services
                 UserId = activity.UserId
             });
         }
+        public async Task AddEmergency(EmergencyModel emergency)
+        {
+            await firebase
+            .Child("Emergency")
+            .PostAsync(new EmergencyModel()
+            {
+                DateTime = emergency.DateTime,
+                Latitude = emergency.Latitude,
+                Longitude = emergency.Longitude,
+                UserId = emergency.UserId
+            });
+        }
 
 
         public async Task UpdateUser(UserModel userModel)

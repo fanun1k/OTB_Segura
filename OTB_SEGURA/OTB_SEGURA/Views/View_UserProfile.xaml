@@ -17,11 +17,11 @@
         <Label BindingContext="{Binding User}" Text="{Binding UserName,Mode=TwoWay}" HorizontalOptions="Center"></Label>
         <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="0.60" Command="{Binding ButtonChangeStateClick}" BackgroundColor="{StaticResource PrimaryVariation}" />
         <Label Text="Alertas"></Label>
-        <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True">
+        <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame BorderColor="Black" CornerRadius="5" Margin="5" Padding="5">
+                        <Frame Style="{StaticResource frameStyle}">
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Fecha: "/>

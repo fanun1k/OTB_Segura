@@ -7,6 +7,8 @@ using OTB_SEGURA.Models;
 using Xamarin.Forms;
 using OTB_SEGURA.Services;
 using OTB_SEGURA.Views;
+using Xamarin.Essentials;
+
 namespace OTB_SEGURA.ViewModels
 {
     public class UserProfileViewModel:BaseViewModel
@@ -57,14 +59,22 @@ namespace OTB_SEGURA.ViewModels
                 await navigation.PushAsync(new View_Account());
             });
         }
-        public UserProfileViewModel(string name,int phone)
+        public UserProfileViewModel(string name,int phone,Guid id)
         {
             user = new UserModel();
             user.Name = name;
             user.UserName = phone.ToString();
-           // LoadActivities(un id); =>se necesita un id para cargar sus actividades
+            user.UserId = id;
+            LoadActivities(user.UserId.ToString());
             textButton = "LLamar";
-            // se necesita el codigo qu hace la llamada telefonica
+            ButtonChangeStateClick = new Command(async () => {
+                var answer = await App.Current.MainPage.DisplayAlert("Llamar a "+user.Name , "¿Desea realizar la llamada?", "Aceptar", "Cancelar");
+                if (answer)
+                {
+                    PhoneDialer.Open(phone.ToString());
+                }
+            });
+
         }
         #endregion
         #region Commands

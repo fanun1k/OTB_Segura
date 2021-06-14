@@ -10,17 +10,17 @@
     </ContentPage.BindingContext>
     <StackLayout Padding="15">
         <Label Text="Nombre Completo" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding Name, Mode=TwoWay}" Placeholder="Escriba el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
+        <Entry Text="{Binding Name, Mode=TwoWay}" Placeholder="Introduzca el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
         <Label Text="Número de Carnet" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding Ci,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de carnet" PlaceholderColor="{StaticResource colorGray}"/>
+        <Entry Text="{Binding Ci,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="7" Placeholder="Introduzca el número de carnet" PlaceholderColor="{StaticResource colorGray}"/>
         <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding Phone,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de celular" PlaceholderColor="{StaticResource colorGray}" />
+        <Entry Text="{Binding Phone,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Introduzca el número de celular" PlaceholderColor="{StaticResource colorGray}" />
         <Label Text="Nombre de Usuario" FontSize="{StaticResource mediumTextSize}" />
         <Label Text="{Binding UserName,Mode=TwoWay}"/>
         <Label Text="Contraseña" FontSize="{StaticResource mediumTextSize}"/>
-        <Entry Text="{Binding Password,Mode=TwoWay}" IsPassword="True" MaxLength="12" Placeholder="Escriba una contraseña" PlaceholderColor="{StaticResource colorGray}"/>
+        <Entry Text="{Binding Password,Mode=TwoWay}" IsPassword="True" MaxLength="12" Placeholder="Establezca una contraseña" PlaceholderColor="{StaticResource colorGray}"/>
         <Label Text="Confirmar Contraseña" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding RePassword,Mode=TwoWay}" IsPassword="True" MaxLength="12" Placeholder="Repita la contraseña" PlaceholderColor="{StaticResource colorGray}" />
+        <Entry Text="{Binding RePassword,Mode=TwoWay}" IsPassword="True" MaxLength="12" Placeholder="Confirme la contraseña" PlaceholderColor="{StaticResource colorGray}" />
         <StackLayout Orientation="Horizontal">
             <Label Text="Ubicacion: " FontSize="{StaticResource mediumTextSize}" VerticalTextAlignment="Center"></Label>
             <Label Text="-17000000,752222" VerticalTextAlignment="Center"/>

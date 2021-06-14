@@ -11,6 +11,7 @@ namespace OTB_SEGURA.Services
 {
     class FireBaseHelper
     {
+        public static UserModel staticUser;
         public async Task<List<UserModel>> GetAllUsers()
         {
 
@@ -225,6 +226,7 @@ namespace OTB_SEGURA.Services
             await firebase
               .Child("Users")
               .OnceAsync<UserModel>();
+            staticUser = allPersons.Where(a => a.UserName == userName && a.Password == password).FirstOrDefault();
             return allPersons.Where(a => a.UserName == userName && a.Password==password).FirstOrDefault();
         }
         public async Task<List<UserModel>> GetActiveUsers()

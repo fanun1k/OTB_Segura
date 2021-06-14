@@ -3,7 +3,11 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:OTB_SEGURA.Views"
        Title="OTB_SEGURA"
-       x:Class="OTB_SEGURA.AppShell">
+       x:Class="OTB_SEGURA.AppShell"
+       xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels">
+    <Shell.BindingContext>
+        <vm:AppShellViewModel></vm:AppShellViewModel>
+    </Shell.BindingContext>
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -95,7 +99,7 @@
     <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
         <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Lista de Usuarios" Icon="ListaUsuarios.png">
+    <FlyoutItem x:Name="fiUser" Title="Lista de Usuarios" Icon="ListaUsuarios.png" IsVisible="{Binding IsAdmin}">
         <ShellContent Route="UserList" ContentTemplate="{DataTemplate local:View_UsersList}" />
     </FlyoutItem>
     <FlyoutItem Title="Actividad de Usuarios" Icon="icon_feed.png">

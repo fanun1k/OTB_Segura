@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
              x:Class="OTB_SEGURA.Views.View_Login">
-    <StackLayout BackgroundColor="#e6e6e6">
+    <StackLayout BackgroundColor="#292D25">
         <Grid>
             <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
-                <Frame HeightRequest="150" BackgroundColor="HotPink" Padding="0" Margin="0">
+                <Frame HeightRequest="300" BackgroundColor="#292D25" Padding="0" Margin="0">
                     <Image Source="https://i.ibb.co/dg6LVNX/Otb-Segura-Wallpaper.jpg" Aspect="AspectFill" Margin="0"/>
                 </Frame>
             </StackLayout>
-            <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
+            <StackLayout Padding="0" Margin="10,200,10,0" HorizontalOptions="FillAndExpand">
                 <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
 
                     <StackLayout>

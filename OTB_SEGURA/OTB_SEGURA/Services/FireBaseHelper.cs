@@ -28,22 +28,18 @@ namespace OTB_SEGURA.Services
                   
               }).ToList();
         }
-        public async Task<List<UserModel>> GetActiveUsers()
+        public async Task<List<ActivityModel>> GetAllActivitiesId(string id)
         {
-            return (await firebase
-              .Child("Users")
-              .OnceAsync<UserModel>()).Select(item => new UserModel
-              {
-                  UserId = item.Object.UserId,
-                  Name = item.Object.Name,
-                  UserName = item.Object.UserName,
-                  Phone = item.Object.Phone,
-                  State = item.Object.State,
-                  Ci = item.Object.Ci,
-                  Password = item.Object.Password
-
-              }).Where(item => item.State == 1).ToList();
-
+            var allActivities= (await firebase
+                .Child("Activity")
+                .OnceAsync<ActivityModel>()).Select(item => new ActivityModel
+                {
+                    UserId = item.Object.UserId,
+                    DateTime = item.Object.DateTime,
+                    Type = item.Object.Type,
+                    Message = item.Object.Message
+                }).ToList(); 
+            return allActivities.Where(a => a.UserId == id).ToList();
         }
 
         public async Task<List<UserActivityModel>> GetAllActivities()
@@ -88,7 +84,7 @@ namespace OTB_SEGURA.Services
                     Name = item.Name
                 });
             }
-            return userActivities.ToList();
+            return userActivities.OrderByDescending(dt=>dt.DateTime).Take(10).ToList();
         }
 
         /*
@@ -129,6 +125,18 @@ namespace OTB_SEGURA.Services
                 Message = activity.Message,
                 Type = activity.Type,
                 UserId = activity.UserId
+            });
+        }
+        public async Task AddEmergency(EmergencyModel emergency)
+        {
+            await firebase
+            .Child("Emergency")
+            .PostAsync(new EmergencyModel()
+            {
+                DateTime = emergency.DateTime,
+                Latitude = emergency.Latitude,
+                Longitude = emergency.Longitude,
+                UserId = emergency.UserId
             });
         }
 
@@ -219,16 +227,32 @@ namespace OTB_SEGURA.Services
               .OnceAsync<UserModel>();
             return allPersons.Where(a => a.UserName == userName && a.Password==password).FirstOrDefault();
         }
-        
-        
-        public async Task<UserModel> GetSessionPerson(Guid personId)
+        public async Task<List<UserModel>> GetActiveUsers()
         {
-            var allPersons = await LogGet();
+            return (await firebase
+              .Child("Users")
+              .OnceAsync<UserModel>()).Select(item => new UserModel
+              {
+                  UserId = item.Object.UserId,
+                  Name = item.Object.Name,
+                  UserName = item.Object.UserName,
+                  Phone = item.Object.Phone,
+                  State = item.Object.State,
+                  Ci = item.Object.Ci,
+                  Password = item.Object.Password
+
+              }).Where(item => item.State == 1).ToList();
+
+        }
+        /*
+        public async Task<UserModel> GetPerson(int personId)
+        {
+            var allActivities = await GetAllPersons();
             await firebase
               .Child("Persons")
               .OnceAsync<UserModel>();
-            return allPersons.Where(a => a.UserId == personId).FirstOrDefault();
-        }/*
+            return allActivities.Where(a => a.PersonId == personId).FirstOrDefault();
+        }
         public async Task UpdatePerson(int personId, string name)
         {
             var toUpdatePerson = (await firebase

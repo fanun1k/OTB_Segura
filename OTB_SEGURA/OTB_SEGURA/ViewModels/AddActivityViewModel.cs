@@ -165,7 +165,7 @@ namespace OTB_SEGURA.ViewModels
         private async void InsertRoboMethod()
         {
             getLocation();
-            await Task.Delay(500);
+            await Task.Delay(1000);
             var activity = newActivity(message,"Robo");
             await fireBaseHelper.AddActivity(activity);
             await Task.Delay(1000);
@@ -175,7 +175,7 @@ namespace OTB_SEGURA.ViewModels
         private async void InsertAccidenteMethod()
         {
             getLocation();
-            await Task.Delay(500);
+            await Task.Delay(1000);
             var activity = newActivity(message, "Accidente");
             await fireBaseHelper.AddActivity(activity);
             await Task.Delay(1000);
@@ -185,7 +185,7 @@ namespace OTB_SEGURA.ViewModels
         private async void InsertIncendioMethod()
         {
             getLocation();
-            await Task.Delay(500);
+            await Task.Delay(1000);
             var activity = newActivity(message, "Incendio");
             await fireBaseHelper.AddActivity(activity);
             await Task.Delay(1000);
@@ -195,7 +195,7 @@ namespace OTB_SEGURA.ViewModels
         private async void InsertDesastreMethod()
         {
             getLocation();
-            await Task.Delay(500);
+            await Task.Delay(1000);
             var activity = newActivity(message, "Desastre");
             await fireBaseHelper.AddActivity(activity);
             await Task.Delay(1000);
@@ -205,11 +205,24 @@ namespace OTB_SEGURA.ViewModels
         private async void EmergencyMethod()
         {
             getLocation();
-            await Task.Delay(500);
+            await Task.Delay(1000);
             var activity = newActivity("Alerta de Emergncia iniciada", "Emergencia");
+            var emergency = newEmergency(activity);
             await fireBaseHelper.AddActivity(activity);
             await Task.Delay(1000);
+            await fireBaseHelper.AddEmergency(emergency);
+            await Task.Delay(1000);
             PostNotification(activity);
+        }
+        private EmergencyModel newEmergency(ActivityModel activity)
+        {
+            return new EmergencyModel
+            {
+                UserId = activity.UserId,
+                Latitude = activity.Latitude,
+                Longitude = activity.Longitude,
+                DateTime = activity.DateTime
+            };
         }
         #endregion
     }

@@ -83,28 +83,28 @@
     <TabBar>
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:View_Login}" />
     </TabBar>
-    <FlyoutItem Title="Acerca de Nosotros">
+    <FlyoutItem Title="Acerca de Nosotros" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_About}" />
     </FlyoutItem>
-    <FlyoutItem Title="Alertar Evento" Icon="icon_about.png">
+    <FlyoutItem Title="Alertar Evento" Icon="botonEmergencia.png">
         <ShellContent Route="AddActivity" ContentTemplate="{DataTemplate local:View_AddActivity}" />
     </FlyoutItem>
-    <FlyoutItem Title="Mi Perfil " Icon="icon_feed.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_Account}" />
+    <FlyoutItem Title="Mi Perfil " Icon="usuario.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_UserProfile}" />
     </FlyoutItem>
-    <FlyoutItem Title="Numeros de Emergencia" Icon="icon_feed.png">
+    <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
         <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Lista de Usuarios" Icon="icon_feed.png">
+    <FlyoutItem Title="Lista de Usuarios" Icon="ListaUsuarios.png">
         <ShellContent Route="UserList" ContentTemplate="{DataTemplate local:View_UsersList}" />
     </FlyoutItem>
     <FlyoutItem Title="Actividad de Usuarios" Icon="icon_feed.png">
-        <ShellContent Route="UserActivity" ContentTemplate="{DataTemplate local:View_UserActivity}" />
+        <ShellContent Route="UserActivity" ContentTemplate="{DataTemplate local:View_UserActivity}"/>
     </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
 
-    <MenuItem Text="Cerrar Sesion" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
+    <MenuItem Text="Cerrar Sesion" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked" IconImageSource="CerrarSesion.png">
     </MenuItem>
 
     <!--

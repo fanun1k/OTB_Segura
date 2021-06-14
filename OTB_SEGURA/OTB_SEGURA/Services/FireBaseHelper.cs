@@ -39,8 +39,7 @@ namespace OTB_SEGURA.Services
                     Type = item.Object.Type,
                     Message = item.Object.Message
                 }).ToList(); 
-            return allActivities.Where(a => a.UserId == id).ToList();
-        }
+            return allActivities.Where(a => a.UserId == id).OrderByDescending(dt => dt.DateTime).Take(5).ToList();        }
 
         public async Task<List<UserActivityModel>> GetAllActivities()
         {

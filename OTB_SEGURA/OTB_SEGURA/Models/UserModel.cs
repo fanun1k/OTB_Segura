@@ -18,5 +18,6 @@ namespace OTB_SEGURA.Models
         public int Ci { get; set; }
         public string StateColor { get; set; }
         public string StateBorderColor { get; set; }
+        public int UserType { get; set; }
     }
 }

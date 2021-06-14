@@ -12,11 +12,11 @@ namespace OTB_SEGURA
         {
             InitializeComponent();
         }
+        
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
             Application.Current.Properties.Clear();
             await Shell.Current.GoToAsync("//LoginPage");
         }
-
     }
 }

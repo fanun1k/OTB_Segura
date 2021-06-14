@@ -12,6 +12,7 @@ using System.Threading;
 using Plugin.Geolocator;
 using Newtonsoft.Json;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -20,7 +21,7 @@ namespace OTB_SEGURA.ViewModels
         FireBaseHelper fireBaseHelper = new FireBaseHelper();
         #region Attributes
 
-        private string message;
+        private string message="";
         private string type;
         private string userId; //no se utiliza por falta de manejo de sesiones a implementar con login de usuarios
         private double latitude;
@@ -162,45 +163,86 @@ namespace OTB_SEGURA.ViewModels
                 DependencyService.Get<IMessage>().LongAlert("Error: "+ex.Message);
             }
         }
+
+        public bool ValidationEntry()
+        {
+            bool res=true;
+            if (!message.Equals(""))
+            {
+                if (!Regex.Match(message, "^[ñA-Za-záéíóúÁÉÍÓÚ _]*[ñA-Za-záéíóúÁÉÍÓÚ][ñA-Za-záéíóúÁÉÍÓÚ _]*$").Success)
+                {
+                    res = false;
+                    DependencyService.Get<IMessage>().LongAlert("Formato del mensaje incorrecto");
+                }
+            }
+            else
+            {
+                res = false;
+                DependencyService.Get<IMessage>().LongAlert("Por favor, introduzca una descripción del suceso");
+            }
+
+            return res;
+        }
+
         private async void InsertRoboMethod()
         {
-            getLocation();
-            await Task.Delay(1000);
-            var activity = newActivity(message,"Robo");
-            await fireBaseHelper.AddActivity(activity);
-            await Task.Delay(1000);
-            DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito"+activity.UserId);
-            PostNotification(activity);
+            IsBusy = true;
+            if (ValidationEntry())
+            {
+                getLocation();
+                await Task.Delay(1000);
+                var activity = newActivity(message, "Robo");
+                await fireBaseHelper.AddActivity(activity);
+                await Task.Delay(1000);
+                DependencyService.Get<IMessage>().LongAlert("Actividad agregada con éxito" + activity.UserId);
+                PostNotification(activity);
+            }
+            IsBusy = false;
         }
         private async void InsertAccidenteMethod()
         {
-            getLocation();
-            await Task.Delay(1000);
-            var activity = newActivity(message, "Accidente");
-            await fireBaseHelper.AddActivity(activity);
-            await Task.Delay(1000);
-            DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");
-            PostNotification(activity);
+            IsBusy = true;
+            if (ValidationEntry())
+            {
+                getLocation();
+                await Task.Delay(1000);
+                var activity = newActivity(message, "Accidente");
+                await fireBaseHelper.AddActivity(activity);
+                await Task.Delay(1000);
+                DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");
+                PostNotification(activity);
+            }
+            IsBusy = false;
         }
         private async void InsertIncendioMethod()
         {
-            getLocation();
-            await Task.Delay(1000);
-            var activity = newActivity(message, "Incendio");
-            await fireBaseHelper.AddActivity(activity);
-            await Task.Delay(1000);
-            DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");
-            PostNotification(activity);
+            IsBusy = true;
+            if (ValidationEntry())
+            {
+                getLocation();
+                await Task.Delay(1000);
+                var activity = newActivity(message, "Incendio");
+                await fireBaseHelper.AddActivity(activity);
+                await Task.Delay(1000);
+                DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");
+                PostNotification(activity);
+            }
+            IsBusy = false;
         }
         private async void InsertDesastreMethod()
         {
-            getLocation();
-            await Task.Delay(1000);
-            var activity = newActivity(message, "Desastre");
-            await fireBaseHelper.AddActivity(activity);
-            await Task.Delay(1000);
-            DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");
-            PostNotification(activity);
+            IsBusy = true;
+            if (ValidationEntry())
+            {
+                getLocation();
+                await Task.Delay(1000);
+                var activity = newActivity(message, "Desastre");
+                await fireBaseHelper.AddActivity(activity);
+                await Task.Delay(1000);
+                DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");
+                PostNotification(activity);
+            }
+            IsBusy = true;  
         }
         private async void EmergencyMethod()
         {

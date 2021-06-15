@@ -9,7 +9,7 @@
     </ContentPage.BindingContext>
     <StackLayout Padding="15">
         <Label Text="Descripción" TextColor="Black"/>
-        <Editor Text="{Binding Message, Mode=TwoWay}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" />
+        <Editor Text="{Binding Message, Mode=TwoWay}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" TextColor="Black" />
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>

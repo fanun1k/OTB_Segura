@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             xmlns:ImgCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="OTB_SEGURA.Views.View_UserProfile"
+             Appearing="ContentPage_Appearing">
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid BackgroundColor="{StaticResource PrimaryDisabled}"></Grid>
+            <ImgCircle:CircleImage WidthRequest="80" HeightRequest="80" BorderColor="White" BorderThickness="3" Grid.RowSpan="2" Source="https://i.blogs.es/2d5264/facebook-image/1366_2000.jpg"></ImgCircle:CircleImage>
+        </Grid>
+        <Label BindingContext="{Binding User}" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"></Label>
+        <Label BindingContext="{Binding User}" Text="{Binding UserName,Mode=TwoWay}" HorizontalOptions="Center"></Label>
+        <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="0.60" Command="{Binding ButtonChangeStateClick}" BackgroundColor="{StaticResource PrimaryVariation}" />
+        <Label Text="Alertas"></Label>
+        <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Style="{StaticResource frameStyle}">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Fecha: "/>
+                                    <Label Text="{Binding DateTime}" FontAttributes="None"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Tipo : "/>
+                                    <Label Text="{Binding Type}" FontAttributes="None"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Mensaje: "/>
+                                    <Label Text="{Binding Message}" FontAttributes="None"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

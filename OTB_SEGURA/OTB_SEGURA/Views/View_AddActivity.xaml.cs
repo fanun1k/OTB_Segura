@@ -15,6 +15,22 @@ namespace OTB_SEGURA.Views
         public View_AddActivity()
         {
             InitializeComponent();
+            if (btn1.IsEnabled == true)
+            {
+                btn1.IsEnabled = false;
+            }
+        }
+
+        private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (check1.IsChecked == false)
+            {
+                btn1.IsEnabled = false;
+            }
+            else
+            {
+                btn1.IsEnabled = true;
+            }
         }
     }
 }

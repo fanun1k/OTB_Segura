@@ -7,6 +7,10 @@ using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Essentials;
+using Plugin.Geolocator.Abstractions;
+using Plugin.Geolocator;
+using System.Text.RegularExpressions;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -17,11 +21,11 @@ namespace OTB_SEGURA.ViewModels
         #region Attributes
         FireBaseHelper fireBaseHelper = new FireBaseHelper();
         private string name="";
-        private string userName;
-        private int ci;
-        private int phone;
-        private string password;
-        private string rePassword;
+        private string userName="";
+        private int ci=0;
+        private int phone=0;
+        private string password="";
+        private string rePassword="";
         #endregion
 
         #region Properties
@@ -51,6 +55,7 @@ namespace OTB_SEGURA.ViewModels
                CreateUserName();
             }
         }
+
         public string Name
         {
             get { return name; }
@@ -83,6 +88,13 @@ namespace OTB_SEGURA.ViewModels
                 return new RelayCommand(InsertMethod);
             }
         }
+        public ICommand OpenMapsCommand
+        {
+            get
+            {
+                return new RelayCommand(OpeenMaps);
+            }
+        }
         #endregion
 
         #region Method
@@ -99,8 +111,9 @@ namespace OTB_SEGURA.ViewModels
                     Ci = ci,
                     Phone = phone,
                     State = 1,
-                    Photo = null
-
+                    Photo = null,
+                    UserType=0
+                    
                 };
                 await fireBaseHelper.AddUser(user);
                 await Task.Delay(1000);
@@ -114,41 +127,58 @@ namespace OTB_SEGURA.ViewModels
         private bool Validar()
         {
             bool res;
-            if (ci.ToString().Length > 7)
+
+            if (!Regex.Match(name, "^[ñA-Za-z _]*[ñA-Za-z][ñA-Za-z _]*$").Success)
             {
-                if (phone.ToString().Length > 6)
-                {
-                    if (password.Length>5)
-                    {
-                        if (password.Trim()==rePassword.Trim())
-                        {
-                            res = true;
-                        }
-                        else
-                        {
-                            res = false;
-                            DependencyService.Get<IMessage>().LongAlert("las contraseñas deben ser iguales");
-                        }
-                    }
-                    else
-                    {
-                        res = false;
-                        DependencyService.Get<IMessage>().LongAlert("las contraseña debe tener mas de 5 caracteres");
-
-                    }
-                }
-                else
-                {
-                    res = false;
-                    DependencyService.Get<IMessage>().LongAlert("El número de celular debe tener más de 7 caracteres");
-
-                }
+                res = false;
+                DependencyService.Get<IMessage>().LongAlert("Formato del nombre incorrecto");
+            }
+            else if (!Regex.Match(ci.ToString(), "^[0-9]{7}$").Success)
+            {
+                res = false;
+                DependencyService.Get<IMessage>().LongAlert("Formato de C.I incorrecto");
+            }
+            else if (!Regex.Match(phone.ToString(), "^[0-9]{8}$").Success)
+            {
+                res = false;
+                DependencyService.Get<IMessage>().LongAlert("Número de télefono incorrecto");
             }
             else
             {
-                DependencyService.Get<IMessage>().LongAlert("El número de carnet debe tener 8 caracteres");
-                res = false;
-            }
+                 if(!password.Equals(""))
+                 {
+                     if (!rePassword.Equals(""))
+                     {
+                         if (password.Length > 5)
+                         {
+                             if (password.Trim() == rePassword.Trim())
+                             {
+                                 res = true;
+                             }
+                             else
+                             {
+                                 res = false;
+                                 DependencyService.Get<IMessage>().LongAlert("Las contraseñas no coinciden");
+                             }
+                         }
+                         else
+                         {
+                             res = false;
+                             DependencyService.Get<IMessage>().LongAlert("La contraseña debe tener más de 5 caracteres");
+                         }
+                     }
+                     else
+                     {
+                         res = false;
+                         DependencyService.Get<IMessage>().LongAlert("Por favor, confirme la contraseña");
+                     }
+                 }
+                 else
+                 {
+                     res = false;
+                     DependencyService.Get<IMessage>().LongAlert("Por favor, introduzca una contraseña");
+                 }
+             }
             return res;
         }
 
@@ -178,6 +208,41 @@ namespace OTB_SEGURA.ViewModels
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
             
+        }
+
+        private async void OpeenMaps()
+        {
+           Position position = null;
+			try
+			{
+              
+					var locator = CrossGeolocator.Current;
+					locator.DesiredAccuracy = 100;
+
+					position = await locator.GetLastKnownLocationAsync();
+
+                if (position != null)
+                {
+                    position = await locator.GetPositionAsync(TimeSpan.FromSeconds(20), null, true);
+                    await Map.OpenAsync(position.Latitude, position.Longitude, new MapLaunchOptions
+                    {
+                        Name = "Ubicación",
+                        NavigationMode = NavigationMode.None
+                    });              
+                }
+
+                if (!locator.IsGeolocationAvailable || !locator.IsGeolocationEnabled)
+					{
+                    //not available or enabled                    
+                }
+
+					
+
+			}
+			catch (Exception ex)
+			{
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
         }
         #endregion
 

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OTB_SEGURA.Views.View_EmergencyNumberUserList"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
+             Title="{Binding Title}"             
+             >
+
+    <ContentPage.Behaviors>
+        <behaviorsPack:EventToCommandBehavior 
+            EventName="Appearing"
+            Command="{Binding AppearingCommand }"/>
+    </ContentPage.Behaviors>
+    <ContentPage.BindingContext>
+        <vm:EmergencyNumberUsersViewModel/>
+    </ContentPage.BindingContext>
+    <ListView x:Name="ListUser" ItemsSource="{Binding UserList}" HasUnevenRows="True"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListUser_Refreshing"
+                  ItemSelected="ListUser_ItemSelected" Style="{StaticResource listViewStyle}">
+        <ListView.Behaviors>
+            <behaviorsPack:EventToCommandBehavior 
+                    EventName="Refreshing"
+                    Command="{Binding RefreshingCommand}"/>
+        </ListView.Behaviors>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame Style="{StaticResource frameStyle}">
+                        <Grid>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Nombre:" WidthRequest="80"/>
+                                    <Label Text="{Binding Name}" FontAttributes="None"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Telefono:" WidthRequest="80"/>
+                                    <Label Text="{Binding Phone}" FontAttributes="None"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+
+</ContentPage>

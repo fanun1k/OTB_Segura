@@ -11,6 +11,7 @@ namespace OTB_SEGURA.Services
 {
     class FireBaseHelper
     {
+        public static UserModel staticUser;
         public async Task<List<UserModel>> GetAllUsers()
         {
 
@@ -28,20 +29,62 @@ namespace OTB_SEGURA.Services
                   
               }).ToList();
         }
+        public async Task<List<ActivityModel>> GetAllActivitiesId(string id)
+        {
+            var allActivities= (await firebase
+                .Child("Activity")
+                .OnceAsync<ActivityModel>()).Select(item => new ActivityModel
+                {
+                    UserId = item.Object.UserId,
+                    DateTime = item.Object.DateTime,
+                    Type = item.Object.Type,
+                    Message = item.Object.Message
+                }).ToList(); 
+            return allActivities.Where(a => a.UserId == id).OrderByDescending(dt => dt.DateTime).Take(5).ToList();        }
 
         public async Task<List<UserActivityModel>> GetAllActivities()
         {
-                return (await firebase
+            List<UserActivityModel> userActivities = new List<UserActivityModel>();
+            var allUsers = await GetAllUsers();
+            var allActivities = (await firebase
                   .Child("Activity")
                   .OnceAsync<UserActivityModel>()).Select(item => new UserActivityModel
                   {
                       UserId = item.Object.UserId,
-                      Message=item.Object.Message,
-                      Type=item.Object.Type,
-                      Latitude=item.Object.Latitude,
-                      Longitude=item.Object.Longitude,
-                      DateTime=item.Object.DateTime
+                      Message = item.Object.Message,
+                      Type = item.Object.Type,
+                      Latitude = item.Object.Latitude,
+                      Longitude = item.Object.Longitude,
+                      DateTime = item.Object.DateTime
                   }).ToList();
+
+            var listAct = from x in allActivities
+                          join allU in allUsers
+                          on x.UserId equals allU.UserId
+                          where allU.UserId == x.UserId
+                          select new
+                          {
+                              allU.Name,
+                              x.Message,
+                              x.Type,
+                              x.Latitude,
+                              x.Longitude,
+                              x.DateTime
+                          };
+
+            foreach (var item in listAct)
+            {
+                userActivities.Add(new UserActivityModel
+                {
+                    Message = item.Message,
+                    Type = item.Type,
+                    Latitude = item.Latitude,
+                    Longitude = item.Longitude,
+                    DateTime = item.DateTime,
+                    Name = item.Name
+                });
+            }
+            return userActivities.OrderByDescending(dt=>dt.DateTime).Take(10).ToList();
         }
 
         /*
@@ -66,7 +109,9 @@ namespace OTB_SEGURA.Services
                 Phone=userModel.Phone,
                 State=userModel.State,
                 Photo = userModel.Photo,
-                Ci=userModel.Ci              
+                Ci=userModel.Ci,
+                UserType=0
+                
             });
         }
 
@@ -82,6 +127,18 @@ namespace OTB_SEGURA.Services
                 Message = activity.Message,
                 Type = activity.Type,
                 UserId = activity.UserId
+            });
+        }
+        public async Task AddEmergency(EmergencyModel emergency)
+        {
+            await firebase
+            .Child("Emergency")
+            .PostAsync(new EmergencyModel()
+            {
+                DateTime = emergency.DateTime,
+                Latitude = emergency.Latitude,
+                Longitude = emergency.Longitude,
+                UserId = emergency.UserId
             });
         }
 
@@ -153,12 +210,14 @@ namespace OTB_SEGURA.Services
               .Child("Users")
               .OnceAsync<UserModel>()).Select(item => new UserModel
               {
+                  UserId=item.Object.UserId,
                   Name = item.Object.Name,
                   UserName = item.Object.UserName,
                   Phone = item.Object.Phone,
                   State = item.Object.State,
                   Ci = item.Object.Ci,
-                  Password = item.Object.Password
+                  Password = item.Object.Password,
+                  UserType = item.Object.UserType
               }).ToList();
         }
 
@@ -169,17 +228,34 @@ namespace OTB_SEGURA.Services
             await firebase
               .Child("Users")
               .OnceAsync<UserModel>();
+            staticUser = allPersons.Where(a => a.UserName == userName && a.Password == password).FirstOrDefault();
             return allPersons.Where(a => a.UserName == userName && a.Password==password).FirstOrDefault();
         }
+        public async Task<List<UserModel>> GetActiveUsers()
+        {
+            return (await firebase
+              .Child("Users")
+              .OnceAsync<UserModel>()).Select(item => new UserModel
+              {
+                  UserId = item.Object.UserId,
+                  Name = item.Object.Name,
+                  UserName = item.Object.UserName,
+                  Phone = item.Object.Phone,
+                  State = item.Object.State,
+                  Ci = item.Object.Ci,
+                  Password = item.Object.Password
+                  
+              }).Where(item => item.State == 1).ToList();
 
+        }
         /*
         public async Task<UserModel> GetPerson(int personId)
         {
-            var allPersons = await GetAllPersons();
+            var allActivities = await GetAllPersons();
             await firebase
               .Child("Persons")
               .OnceAsync<UserModel>();
-            return allPersons.Where(a => a.PersonId == personId).FirstOrDefault();
+            return allActivities.Where(a => a.PersonId == personId).FirstOrDefault();
         }
         public async Task UpdatePerson(int personId, string name)
         {

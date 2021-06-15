@@ -8,7 +8,7 @@
         <vm:AddActivityViewModel/>
     </ContentPage.BindingContext>
     <StackLayout Padding="15">
-        <Label Text="Descripicíon" TextColor="Black"/>
+        <Label Text="Descripción" TextColor="Black"/>
         <Editor Text="{Binding Message, Mode=TwoWay}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" />
         <Grid>
             <Grid.RowDefinitions>
@@ -29,14 +29,24 @@
            HeightRequest="1"  
            WidthRequest      ="300"
            Color="#111a1c"></BoxView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <CheckBox Margin="35,0,0,0" x:Name="check1" Style="{StaticResource chbxStyle}" CheckedChanged="CheckBox_CheckedChanged"/>
+            <Label Text="Habilitar botón" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
         <Button
-            Text="Boton de Emergencia" Command="{Binding EmergencyCommand}"
+            x:Name="btn1"
+            Style="{StaticResource btnEmergencyStyle}"
+            Text="Botón de Emergencia" Command="{Binding EmergencyCommand}"
             WidthRequest      ="200"
             HeightRequest     ="200"
             CornerRadius      ="100"
             VerticalOptions   ="Center"
-            HorizontalOptions ="Center"
-            BackgroundColor   ="#fd2a2f"
-            TextColor="#e7d6d2"/>
+            HorizontalOptions ="Center"/>
     </StackLayout>
 </ContentPage>

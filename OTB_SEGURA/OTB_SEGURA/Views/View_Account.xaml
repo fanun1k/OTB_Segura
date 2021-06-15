@@ -3,17 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"         
              x:Class="OTB_SEGURA.Views.View_Account"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+              xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              Title="{Binding Title}">
         <ContentPage.BindingContext>
             <vm:AccountViewModel />
         </ContentPage.BindingContext>
-    <StackLayout Padding="15">
+    <StackLayout Padding="15">        
         <Label Text="Nombre Completo" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding Name, Mode=TwoWay}" Placeholder="Escriba el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
+        <Entry x:Name="txtName" Text="{Binding Name, Mode=TwoWay}" Keyboard="Text" Placeholder="Escriba el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
         <Label Text="Número de Carnet" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding Ci,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de carnet" PlaceholderColor="{StaticResource colorGray}"/>
+        <Entry x:Name="txtCi" Text="{Binding Ci,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de carnet" PlaceholderColor="{StaticResource colorGray}"/>
         <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding Phone,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de celular" PlaceholderColor="{StaticResource colorGray}" />
-        <Button Text="Registrar Usuario" Command="{Binding UpdateCommand}"></Button>
+        <Entry x:Name="txtPhone" Text="{Binding Phone,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de celular" PlaceholderColor="{StaticResource colorGray}" />
+        <Button Text="Editar Usuario" Command="{Binding UpdateCommand}"></Button>
     </StackLayout>      
 </ContentPage> 

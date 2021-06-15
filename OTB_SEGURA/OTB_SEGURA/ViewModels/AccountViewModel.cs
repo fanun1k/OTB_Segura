@@ -48,7 +48,7 @@ namespace OTB_SEGURA.ViewModels
             Title = "Editar Usuario";
         }
         #endregion
-        #region Command
+        #region Command      
         public ICommand UpdateCommand
         {
             get
@@ -58,6 +58,7 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
         #region Method
+        
         private async void UpdateMethod()
         {
             IsBusy = true;
@@ -65,14 +66,14 @@ namespace OTB_SEGURA.ViewModels
             {
                 var user = new UserModel
                 {
-                    UserId = Guid.Parse("0719d604-705f-4ab0-be3a-40d4adfb6bfb"),//implementar el id de la sesion
+                    UserId = FireBaseHelper.staticUser.UserId,
                     Name = name.ToUpper().Trim(),
                     Ci = ci,
                     Phone = phone,
                     State = 1,
                     Photo = null,
-                    Password = "andrea123",
-                    UserName= "ARS13564654"
+                    Password = FireBaseHelper.staticUser.Password,
+                    UserName = FireBaseHelper.staticUser.UserName
 
                 };
                 await fireBaseHelper.UpdateUser(user);
@@ -87,7 +88,7 @@ namespace OTB_SEGURA.ViewModels
         private bool Validar()
         {
             bool res;
-            if (ci.ToString().Length > 7)
+            if (ci.ToString().Length > 5)
             {
                 if (phone.ToString().Length > 6)
                 {
@@ -102,7 +103,7 @@ namespace OTB_SEGURA.ViewModels
             }
             else
             {
-                DependencyService.Get<IMessage>().LongAlert("El número de carnet debe tener 8 caracteres");
+                DependencyService.Get<IMessage>().LongAlert("El número de carnet debe tener mas de 5 caracteres");
                 res = false;
             }
             return res;

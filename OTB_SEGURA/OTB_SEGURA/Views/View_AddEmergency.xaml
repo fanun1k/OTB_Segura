@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             x:Class="OTB_SEGURA.Views.View_AddEmergency">
+    <ContentPage.BindingContext>
+        <vm:AddEmergencyViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Row="1"
+                Grid.Column="1"
+                x:Name="btn1"
+                Style="{StaticResource btnEmergencyStyle}"
+                Text="Encender la alarma" Command="{Binding EmergencyCommand}"
+                WidthRequest      ="200"
+                HeightRequest     ="200"
+                CornerRadius      ="100"
+                VerticalOptions   ="Center"
+                HorizontalOptions ="Center"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

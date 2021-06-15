@@ -9,28 +9,28 @@
         <!-- establecemos el contexto de los datos -->
     </ContentPage.BindingContext>
 
-    <ListView x:Name="list" ItemsSource="{Binding emergencyNumbersList}" HasUnevenRows="True" ItemSelected="list_ItemSelected" >
+    <ListView x:Name="list" ItemsSource="{Binding emergencyNumbersList}" HasUnevenRows="True" ItemSelected="list_ItemSelected" Style="{StaticResource listViewStyle}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <Frame BorderColor="#111a1c" CornerRadius="8" Margin="5" Padding="9" Grid.Row="0">
+                    <Frame Grid.Row="0" Style="{StaticResource frameStyle}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="110"/>
                             </Grid.ColumnDefinitions>
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Servicio:"/>
+                                    <Label Text="Servicio:" WidthRequest="80"/>
                                     <Label x:Name="txtNombre" Text="{Binding Name}" />
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Numero:"/>
+                                    <Label Text="Numero:" WidthRequest="80"/>
                                     <Label x:Name="txtNumero" Text="{Binding Number}"/>
                                 </StackLayout>
                             </StackLayout>
                             <Grid Grid.Column="1">
-                                <Label Text="LLAMAR" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="22" BackgroundColor="#fd2a2f"/>
+                                <Label Text="LLAMAR" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="22" BackgroundColor="{StaticResource colorEmergency}"/>
                                 <!--<Button x:Name="btnCallNumber" Text="Llamar" BackgroundColor="#fd2a2f" Clicked="btnCallNumber_Clicked"  />-->
                             </Grid>
                         </Grid>

@@ -7,16 +7,24 @@ using OTB_SEGURA.Models;
 using Xamarin.Forms;
 using OTB_SEGURA.Services;
 using OTB_SEGURA.Views;
+using Xamarin.Essentials;
+
 namespace OTB_SEGURA.ViewModels
 {
-    class UserProfileViewModel:BaseViewModel
+    public class UserProfileViewModel:BaseViewModel
     {
         #region Attributes
         private UserModel user;
         private string textButton;
         FireBaseHelper firebaseHelper=new FireBaseHelper();
+        private List<ActivityModel> activityList = new List<ActivityModel>();
         #endregion
         #region Properties
+        public List<ActivityModel> ActivityList
+        {
+            get { return activityList; }
+            set { activityList = value; OnPropertyChanged(); }
+        }
         public string TextButton
         {
             get { return textButton; }
@@ -30,11 +38,12 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
         #region Contructs
+
         public UserProfileViewModel(UserModel user)
         {          
             this.user = user;
-            DependencyService.Get<IMessage>().ShortAlert(user.Name + "");
             SetTextButton();
+            LoadActivities(user.UserId.ToString());
             ButtonChangeStateClick = new Command(UpdateMethod);
         }
         public UserProfileViewModel(INavigation navigation)
@@ -43,17 +52,31 @@ namespace OTB_SEGURA.ViewModels
             textButton="Editar Mi Perfil";
             user.Name = Application.Current.Properties["Name"].ToString();
             user.UserName = Application.Current.Properties["UserName"].ToString();
+            //user.Name = FireBaseHelper.staticUser.Name;
+            //user.UserName = FireBaseHelper.staticUser.UserName;
+            LoadActivities(Application.Current.Properties["Id"].ToString());
+            //LoadActivities(FireBaseHelper.staticUser.UserId.ToString());
             ButtonChangeStateClick = new Command(async()=> 
             {
                 await navigation.PushAsync(new View_Account());
             });
         }
-        public UserProfileViewModel(string name,int phone)
+        public UserProfileViewModel(string name,int phone,Guid id)
         {
             user = new UserModel();
             user.Name = name;
             user.UserName = phone.ToString();
+            user.UserId = id;
+            LoadActivities(user.UserId.ToString());
             textButton = "LLamar";
+            ButtonChangeStateClick = new Command(async () => {
+                var answer = await App.Current.MainPage.DisplayAlert("Llamar a "+user.Name , "¿Desea realizar la llamada?", "Aceptar", "Cancelar");
+                if (answer)
+                {
+                    PhoneDialer.Open(phone.ToString());
+                }
+            });
+
         }
         #endregion
         #region Commands
@@ -68,7 +91,7 @@ namespace OTB_SEGURA.ViewModels
 
         #endregion
         #region Methods
-        public void SetTextButton()
+        private void SetTextButton()
         {
             switch (user.State)
             {
@@ -80,7 +103,7 @@ namespace OTB_SEGURA.ViewModels
                     break;
             }
         }
-        public async void UpdateMethod()
+        private async void UpdateMethod()
         {
             bool resDisplayAlert;
             if (user != null)
@@ -119,7 +142,10 @@ namespace OTB_SEGURA.ViewModels
             }
             await Shell.Current.GoToAsync("..");
         }
-
+        private async void LoadActivities(string id)
+        {
+            ActivityList = await firebaseHelper.GetAllActivitiesId(id);
+        }
         #endregion
     }
 }

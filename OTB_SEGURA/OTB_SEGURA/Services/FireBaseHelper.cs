@@ -11,6 +11,7 @@ namespace OTB_SEGURA.Services
 {
     class FireBaseHelper
     {
+        public static UserModel staticUser;
         public async Task<List<UserModel>> GetAllUsers()
         {
 
@@ -28,6 +29,18 @@ namespace OTB_SEGURA.Services
                   
               }).ToList();
         }
+        public async Task<List<ActivityModel>> GetAllActivitiesId(string id)
+        {
+            var allActivities= (await firebase
+                .Child("Activity")
+                .OnceAsync<ActivityModel>()).Select(item => new ActivityModel
+                {
+                    UserId = item.Object.UserId,
+                    DateTime = item.Object.DateTime,
+                    Type = item.Object.Type,
+                    Message = item.Object.Message
+                }).ToList(); 
+            return allActivities.Where(a => a.UserId == id).OrderByDescending(dt => dt.DateTime).Take(5).ToList();        }
 
         public async Task<List<UserActivityModel>> GetAllActivities()
         {
@@ -71,7 +84,7 @@ namespace OTB_SEGURA.Services
                     Name = item.Name
                 });
             }
-            return userActivities.ToList();
+            return userActivities.OrderByDescending(dt=>dt.DateTime).Take(10).ToList();
         }
 
         /*
@@ -96,7 +109,9 @@ namespace OTB_SEGURA.Services
                 Phone=userModel.Phone,
                 State=userModel.State,
                 Photo = userModel.Photo,
-                Ci=userModel.Ci              
+                Ci=userModel.Ci,
+                UserType=0
+                
             });
         }
 
@@ -112,6 +127,18 @@ namespace OTB_SEGURA.Services
                 Message = activity.Message,
                 Type = activity.Type,
                 UserId = activity.UserId
+            });
+        }
+        public async Task AddEmergency(EmergencyModel emergency)
+        {
+            await firebase
+            .Child("Emergency")
+            .PostAsync(new EmergencyModel()
+            {
+                DateTime = emergency.DateTime,
+                Latitude = emergency.Latitude,
+                Longitude = emergency.Longitude,
+                UserId = emergency.UserId
             });
         }
 
@@ -189,7 +216,8 @@ namespace OTB_SEGURA.Services
                   Phone = item.Object.Phone,
                   State = item.Object.State,
                   Ci = item.Object.Ci,
-                  Password = item.Object.Password
+                  Password = item.Object.Password,
+                  UserType = item.Object.UserType
               }).ToList();
         }
 
@@ -200,6 +228,7 @@ namespace OTB_SEGURA.Services
             await firebase
               .Child("Users")
               .OnceAsync<UserModel>();
+            staticUser = allPersons.Where(a => a.UserName == userName && a.Password == password).FirstOrDefault();
             return allPersons.Where(a => a.UserName == userName && a.Password==password).FirstOrDefault();
         }
         public async Task<List<UserModel>> GetActiveUsers()
@@ -215,18 +244,18 @@ namespace OTB_SEGURA.Services
                   State = item.Object.State,
                   Ci = item.Object.Ci,
                   Password = item.Object.Password
-
+                  
               }).Where(item => item.State == 1).ToList();
 
         }
         /*
         public async Task<UserModel> GetPerson(int personId)
         {
-            var allPersons = await GetAllPersons();
+            var allActivities = await GetAllPersons();
             await firebase
               .Child("Persons")
               .OnceAsync<UserModel>();
-            return allPersons.Where(a => a.PersonId == personId).FirstOrDefault();
+            return allActivities.Where(a => a.PersonId == personId).FirstOrDefault();
         }
         public async Task UpdatePerson(int personId, string name)
         {

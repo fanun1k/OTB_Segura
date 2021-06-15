@@ -37,6 +37,7 @@ namespace OTB_SEGURA.Views
 
             if (answer)
             {
+                //await Navigation.PushAsync(new View_EmergencyNumberUserList());
                 PhoneDialer.Open(number.ToString());
             }
         }

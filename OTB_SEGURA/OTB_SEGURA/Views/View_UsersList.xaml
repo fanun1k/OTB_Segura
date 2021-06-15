@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
         <ListView x:Name="ListUser"  ItemsSource="{Binding UserList}" HasUnevenRows="true"
                   IsPullToRefreshEnabled="True"
-                  Refreshing="ListUser_Refreshing">
+                  Refreshing="ListUser_Refreshing" Style="{StaticResource listViewStyle}">
             <ListView.Behaviors>
                 <behaviorsPack:EventToCommandBehavior 
                     EventName="ItemTapped"
@@ -30,7 +30,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame BorderColor="Black" CornerRadius="5" Margin="5" Padding="5" BackgroundColor="{Binding StateColor}">
+                        <Frame BackgroundColor="{Binding StateColor}"  Style="{StaticResource frameStyle}" BorderColor="{Binding StateBorderColor}">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="25"/>
@@ -39,7 +39,7 @@
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="90"/>
+                                    <ColumnDefinition Width="80"/>
                                 </Grid.ColumnDefinitions>
 
                                 <Grid Grid.ColumnSpan="2">
@@ -47,15 +47,15 @@
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="Nombre: " />
+                                    <Label Text="Nombre:"/>
                                     <Label Text="{Binding Name}" Grid.Column="1" FontAttributes="None"/>
                                 </Grid>
                                 <Grid Grid.Row="1">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="110"/>
+                                        <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="Nro. Carnet: " />
+                                    <Label Text="C.I:"/>
                                     <Label Text="{Binding Ci}" Grid.Column="1" FontAttributes="None"/>
                                 </Grid>
                                 <Grid Grid.Row="2">
@@ -63,7 +63,7 @@
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="Celular: " />
+                                    <Label Text="Celular:"/>
                                     <Label Text="{Binding Phone}" Grid.Column="1" FontAttributes="None"/>
                                 </Grid>
                                 <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
@@ -76,12 +76,13 @@
             </ListView.ItemTemplate>
         </ListView>
         <Button Grid.Row="0" 
-                Text="+" BorderColor="#2b3c3c" 
-                BorderWidth="1" FontAttributes="Bold" 
-                BackgroundColor="{StaticResource colorYellow}"
-                BorderRadius="35" TextColor="{StaticResource colorDark}" 
+                Text="+" BorderColor="{StaticResource Primary}"
+                BorderWidth="1"
+                FontAttributes="Bold" 
+                BackgroundColor="{StaticResource PrimaryVariation}"
+                BorderRadius="90" TextColor="White" 
                 HorizontalOptions="End" WidthRequest="80" 
-                HeightRequest="70" Margin="0,0,20,22" VerticalOptions="End"
+                HeightRequest="80" Margin="0,0,20,22" VerticalOptions="End"
                 FontSize="40"
                 Clicked="Button_Clicked"/>
 

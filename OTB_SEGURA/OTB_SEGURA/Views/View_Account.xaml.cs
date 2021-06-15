@@ -23,5 +23,10 @@ namespace OTB_SEGURA.Views
             txtCi.Text = FireBaseHelper.staticUser.Ci.ToString();
             txtPhone.Text = FireBaseHelper.staticUser.Phone.ToString();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -15,6 +15,9 @@
         <Entry x:Name="txtCi" Text="{Binding Ci,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de carnet" PlaceholderColor="{StaticResource colorGray}"/>
         <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" />
         <Entry x:Name="txtPhone" Text="{Binding Phone,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de celular" PlaceholderColor="{StaticResource colorGray}" />
-        <Button Text="Editar Usuario" Command="{Binding UpdateCommand}"></Button>
+        <Label Text="Contraseña" FontSize="{StaticResource mediumTextSize}" />
+        <Entry x:Name="txtPassword1" Text="{Binding Password1, Mode=TwoWay}" Placeholder="Escriba nueva contraseña" PlaceholderColor="{StaticResource colorGray}" />
+        <Entry x:Name="txtPassword2" Text="{Binding Password2, Mode=TwoWay}" Placeholder="Repita la contraseña" PlaceholderColor="{StaticResource colorGray}" />
+        <Button Text="Editar Usuario" Command="{Binding UpdateCommand}" Clicked="Button_Clicked"></Button>
     </StackLayout>      
 </ContentPage> 

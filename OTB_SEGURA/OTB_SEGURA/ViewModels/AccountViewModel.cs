@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using OTB_SEGURA.Views;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -17,6 +18,8 @@ namespace OTB_SEGURA.ViewModels
         private string name = "";
         private int ci;
         private int phone;
+        private string password1;
+        private string password2;
         #endregion
         #region Properties
         public int Phone
@@ -39,6 +42,22 @@ namespace OTB_SEGURA.ViewModels
             set
             {
                 name = value;
+            }
+        }
+        public string Password1
+        {
+            get { return password1; }
+            set
+            {
+                password1 = value;
+            }
+        }
+        public string Password2
+        {
+            get { return password2; }
+            set
+            {
+                password2 = value;
             }
         }
         #endregion
@@ -64,6 +83,14 @@ namespace OTB_SEGURA.ViewModels
             IsBusy = true;
             if (Validar())
             {
+                if (password1 != password2)
+                {
+                    //agregar alerta
+                    View_Account vi = new View_Account();
+                    vi.DisplayAlert("Error en la contraseña ", "Escriba la misma en ambos campos", "OK");
+                }
+                else
+                { 
                 var user = new UserModel
                 {
                     UserId = FireBaseHelper.staticUser.UserId,
@@ -72,14 +99,16 @@ namespace OTB_SEGURA.ViewModels
                     Phone = phone,
                     State = 1,
                     Photo = null,
-                    Password = FireBaseHelper.staticUser.Password,
+                    Password = password1,
                     UserName = FireBaseHelper.staticUser.UserName
 
                 };
+                
                 await fireBaseHelper.UpdateUser(user);
                 await Task.Delay(1000);
                 DependencyService.Get<IMessage>().ShortAlert("Usuario Editado con éxito");
                 await Shell.Current.GoToAsync("..");
+                }
             }
 
             IsBusy = false;

@@ -19,9 +19,12 @@ namespace OTB_SEGURA.Views
         }
         public void LoadData()
         {
-            txtName.Text = FireBaseHelper.staticUser.Name.ToString();
-            txtCi.Text = FireBaseHelper.staticUser.Ci.ToString();
-            txtPhone.Text = FireBaseHelper.staticUser.Phone.ToString();
+            //txtName.Text = FireBaseHelper.staticUser.Name.ToString();
+            txtName.Text = Application.Current.Properties["Name"].ToString();
+            //txtCi.Text = FireBaseHelper.staticUser.Ci.ToString();
+            //txtPhone.Text = FireBaseHelper.staticUser.Phone.ToString();
+            txtCi.Text = Application.Current.Properties["Ci"].ToString();
+            txtPhone.Text = Application.Current.Properties["Phone"].ToString();
         }
 
         private void Button_Clicked(object sender, EventArgs e)

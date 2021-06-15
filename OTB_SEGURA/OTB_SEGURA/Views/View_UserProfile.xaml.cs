@@ -32,13 +32,11 @@ namespace OTB_SEGURA.Views
             BindingContext = new UserProfileViewModel(name,phone,id);
             aux = 0;
         }
-
         private void ContentPage_Appearing(object sender, EventArgs e)
         {
             if (aux==1)
             {
                 BindingContext = new UserProfileViewModel(Navigation);
-
             }
         }
     }

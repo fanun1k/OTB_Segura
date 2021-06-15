@@ -23,7 +23,7 @@
                 Grid.Column="1"
                 x:Name="btn1"
                 Style="{StaticResource btnEmergencyStyle}"
-                Text="Botón de Emergencia" Command="{Binding EmergencyCommand}"
+                Text="Encender la alarma" Command="{Binding EmergencyCommand}"
                 WidthRequest      ="200"
                 HeightRequest     ="200"
                 CornerRadius      ="100"

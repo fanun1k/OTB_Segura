@@ -86,8 +86,8 @@ namespace OTB_SEGURA.ViewModels
                 if (password1 != password2)
                 {
                     //agregar alerta
-                    View_Account vi = new View_Account();
-                    vi.DisplayAlert("Error en la contraseña ", "Escriba la misma en ambos campos", "OK");
+
+                    await App.Current.MainPage.DisplayAlert("Error en la contraseña ", "Escriba la misma en ambos campos", "OK");
                 }
                 else
                 { 

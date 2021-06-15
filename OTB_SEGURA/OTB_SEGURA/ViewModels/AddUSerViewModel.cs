@@ -111,8 +111,9 @@ namespace OTB_SEGURA.ViewModels
                     Ci = ci,
                     Phone = phone,
                     State = 1,
-                    Photo = null
-
+                    Photo = null,
+                    UserType=0
+                    
                 };
                 await fireBaseHelper.AddUser(user);
                 await Task.Delay(1000);

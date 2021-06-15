@@ -85,7 +85,7 @@ namespace OTB_SEGURA.ViewModels
                     userModel = await fireBaseHelper.GetPerson(userName, password);
                     if (userModel.State != 0)
                     {
-
+                        string tipo = "";
                         if (_rememberMe)
                         {
                             Application.Current.Properties["Id"] = userModel.UserId;
@@ -94,7 +94,18 @@ namespace OTB_SEGURA.ViewModels
                             Application.Current.Properties["Ci"] = userModel.Ci;
                             Application.Current.Properties["Password"] = userModel.Password;
                             Application.Current.Properties["Phone"] = userModel.Phone;
+                            Application.Current.Properties["UserType"] = userModel.UserType;
+
+                            
+                            if (userModel.UserType == 1)
+                            {
+                                tipo = "admin";
+                            } else tipo = "user";
+                            
+
                         }
+                        MessagingCenter.Send<LoginViewModel>(this, tipo);
+                        //DependencyService.Get<IMessage>().LongAlert(tipo);
                         DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + userModel.Name);
                         await Shell.Current.GoToAsync("//AddActivity");
 

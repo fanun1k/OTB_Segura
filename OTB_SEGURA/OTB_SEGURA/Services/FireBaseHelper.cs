@@ -109,7 +109,9 @@ namespace OTB_SEGURA.Services
                 Phone=userModel.Phone,
                 State=userModel.State,
                 Photo = userModel.Photo,
-                Ci=userModel.Ci              
+                Ci=userModel.Ci,
+                UserType=0
+                
             });
         }
 
@@ -214,7 +216,8 @@ namespace OTB_SEGURA.Services
                   Phone = item.Object.Phone,
                   State = item.Object.State,
                   Ci = item.Object.Ci,
-                  Password = item.Object.Password
+                  Password = item.Object.Password,
+                  UserType = item.Object.UserType
               }).ToList();
         }
 
@@ -241,7 +244,7 @@ namespace OTB_SEGURA.Services
                   State = item.Object.State,
                   Ci = item.Object.Ci,
                   Password = item.Object.Password
-
+                  
               }).Where(item => item.State == 1).ToList();
 
         }

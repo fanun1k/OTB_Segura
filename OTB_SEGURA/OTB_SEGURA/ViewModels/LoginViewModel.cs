@@ -82,7 +82,7 @@ namespace OTB_SEGURA.ViewModels
 
                 try
                 {
-                    userModel = await fireBaseHelper.GetPerson(userName, password);
+                    userModel = await fireBaseHelper.GetPerson(userName.ToUpper(), password);
                     if (userModel.State != 0)
                     {
                         string tipo = "";
@@ -135,6 +135,7 @@ namespace OTB_SEGURA.ViewModels
                 {
                     if (password != "")
                     {
+                        userName = userName.Replace(" ", string.Empty);
                         res = true;
                     }
                     else

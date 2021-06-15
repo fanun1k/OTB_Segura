@@ -88,22 +88,22 @@ namespace OTB_SEGURA.ViewModels
                         string tipo = "";
                         if (_rememberMe)
                         {
-                            Application.Current.Properties["Id"] = userModel.UserId;
-                            Application.Current.Properties["Name"] = userModel.Name;
-                            Application.Current.Properties["UserName"] = userModel.UserName;
-                            Application.Current.Properties["Ci"] = userModel.Ci;
-                            Application.Current.Properties["Password"] = userModel.Password;
-                            Application.Current.Properties["Phone"] = userModel.Phone;
-                            Application.Current.Properties["UserType"] = userModel.UserType;
-
-                            
-                            if (userModel.UserType == 1)
-                            {
-                                tipo = "admin";
-                            } else tipo = "user";
-                            
-
+                            Application.Current.Properties["Sesion"] = 1;
                         }
+                        Application.Current.Properties["Id"] = userModel.UserId;
+                        Application.Current.Properties["Name"] = userModel.Name;
+                        Application.Current.Properties["UserName"] = userModel.UserName;
+                        Application.Current.Properties["Ci"] = userModel.Ci;
+                        Application.Current.Properties["Password"] = userModel.Password;
+                        Application.Current.Properties["Phone"] = userModel.Phone;
+                        Application.Current.Properties["UserType"] = userModel.UserType;
+
+
+                        if (userModel.UserType == 1)
+                        {
+                            tipo = "admin";
+                        }
+                        else tipo = "user";
                         MessagingCenter.Send<LoginViewModel>(this, tipo);
                         //DependencyService.Get<IMessage>().LongAlert(tipo);
                         DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + userModel.Name);

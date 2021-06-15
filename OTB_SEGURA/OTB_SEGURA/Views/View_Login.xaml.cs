@@ -18,7 +18,7 @@ namespace OTB_SEGURA.Views
             InitializeComponent();
             LoginViewModel log = new LoginViewModel();
             this.BindingContext = new LoginViewModel();
-            if (Application.Current.Properties.ContainsKey("Id"))
+            if (Application.Current.Properties.ContainsKey("Sesion"))
             {
                 name = Application.Current.Properties["Name"] as string;
                 DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + name);

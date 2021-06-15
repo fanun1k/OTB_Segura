@@ -23,7 +23,7 @@ namespace OTB_SEGURA.ViewModels
 
         private string message="";
         private string type;
-        private string userId; //no se utiliza por falta de manejo de sesiones a implementar con login de usuarios
+        private string userId;
         private double latitude;
         private double longitude;
         private DateTime dateTimeAttribute;

@@ -93,6 +93,9 @@
     <FlyoutItem Title="Alertar Evento" Icon="botonEmergencia.png">
         <ShellContent Route="AddActivity" ContentTemplate="{DataTemplate local:View_AddActivity}" />
     </FlyoutItem>
+    <FlyoutItem Title="Alertar Evento Admin" Icon="botonEmergencia.png">
+        <ShellContent Route="AddEmergency" ContentTemplate="{DataTemplate local:View_AddEmergency}" />
+    </FlyoutItem>
     <FlyoutItem Title="Mi Perfil " Icon="usuario.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_UserProfile}" />
     </FlyoutItem>

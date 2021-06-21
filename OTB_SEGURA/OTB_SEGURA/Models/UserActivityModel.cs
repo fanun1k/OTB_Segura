@@ -5,6 +5,7 @@ using System.Text;
 
 namespace OTB_SEGURA.Models
 {
+    // Modelo de las actividades de los usuarios
     public class UserActivityModel
     {
         [PrimaryKey, AutoIncrement]

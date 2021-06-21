@@ -124,6 +124,7 @@ namespace OTB_SEGURA.ViewModels
             IsBusy = false;
         }
 
+        // Metodo de valicaion de los Entry en la vista
         private bool Validar()
         {
             bool res;

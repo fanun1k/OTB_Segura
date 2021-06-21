@@ -15,10 +15,10 @@ namespace OTB_SEGURA.Droid
     [Service]
     [IntentFilter(new[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
     [Obsolete]
-    class MyFirebaseIdService : FirebaseInstanceIdService
+    class MyFirebaseIdService : FirebaseInstanceIdService //clase de manejo de la base de datos para datos de notificaciones
     {
         [Obsolete]
-        public override void OnTokenRefresh()
+        public override void OnTokenRefresh()//metodo de la actualizacion del token de la BBD
         {
             base.OnTokenRefresh();
             Android.Util.Log.Debug("Refreshed Token:", FirebaseInstanceId.Instance.Token);

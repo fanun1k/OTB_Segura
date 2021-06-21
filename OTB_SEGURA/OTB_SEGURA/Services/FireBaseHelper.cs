@@ -114,7 +114,7 @@ namespace OTB_SEGURA.Services
                 
             });
         }
-
+        //Metodo de insercion de actividades a firebase
         public async Task AddActivity(ActivityModel activity)
         {
             await firebase
@@ -129,6 +129,7 @@ namespace OTB_SEGURA.Services
                 UserId = activity.UserId
             });
         }
+        //Metodo de insercion de emergencias a firebase
         public async Task AddEmergency(EmergencyModel emergency)
         {
             await firebase

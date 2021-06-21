@@ -13,11 +13,10 @@ namespace OTB_SEGURA.ViewModels
     public class UserActivityViewModel:BaseViewModel
     {
         #region prop
-        FireBaseHelper firebaseHelper = new FireBaseHelper();
-        private List<UserActivityModel> listActivity=new List<UserActivityModel>();
+        FireBaseHelper firebaseHelper = new FireBaseHelper(); // instancia de helper de BDD
+        private List<UserActivityModel> listActivity=new List<UserActivityModel>(); // instancia de la lista de actividades 
 
         #endregion
-
 
         public List<UserActivityModel> ListActivity
         {
@@ -30,12 +29,14 @@ namespace OTB_SEGURA.ViewModels
         #region Construct
         public UserActivityViewModel()
         {
-            Title = "Actividad de Usuarios";
-            LoadData();
+            Title = "Actividad de Usuarios"; // Titulo de la vista
+            LoadData(); // Carga de los datos
         }
         #endregion
 
         #region Commands
+
+        // Comando que carga los datos una vez se abre la vista
         public ICommand AppearingCommand
         {
             get
@@ -44,6 +45,7 @@ namespace OTB_SEGURA.ViewModels
             }
         }
 
+        //Comando que refresca los datos
         public ICommand RefreshingCommandActivityUsers
         {
             get
@@ -52,31 +54,27 @@ namespace OTB_SEGURA.ViewModels
             }
         }
 
+        // Comando que redirecciona a Google Maps con la locaclizacion de la actividad
         public ICommand ItemTappedCommandUserActivity { get; } = new Command(async (Item) =>
         {
-            var userActivityModel = Item as UserActivityModel;
+            var userActivityModel = Item as UserActivityModel; // Instancia del UserActivityViewModel
             if (userActivityModel != null)
             {
                 await Map.OpenAsync(userActivityModel.Latitude, userActivityModel.Longitude, new MapLaunchOptions
                 {
                     Name = "Ubicación",
                     NavigationMode = NavigationMode.None
-                });
+                }); // Redireccion a Maps con la latitud y longitud
             }
         });
         #endregion
 
         #region Metodh
 
+        // Metodo que carga la data 
         public async void LoadData()
         {
-            //await firebaseHelper.AddActivity(new UserActivityModel {Message="hola mundo",
-            //Type="Alerta",
-            //Latitude=123546,
-            //Longitude=321456,
-            //DateTime=DateTime.Now});
-            //DependencyService.Get<IMessage>().ShortAlert("se inserto");
-            ListActivity = await firebaseHelper.GetAllActivities();
+            ListActivity = await firebaseHelper.GetAllActivities(); // Llamada al metodo del helper para obtener la data
         }
         #endregion
     }

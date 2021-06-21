@@ -40,8 +40,10 @@ namespace OTB_SEGURA.Services
                     Type = item.Object.Type,
                     Message = item.Object.Message
                 }).ToList(); 
-            return allActivities.Where(a => a.UserId == id).OrderByDescending(dt => dt.DateTime).Take(5).ToList();        }
+            return allActivities.Where(a => a.UserId == id).OrderByDescending(dt => dt.DateTime).Take(5).ToList();        
+        }
 
+        // Metodo que obtiene la lista de actividades de los usuarios
         public async Task<List<UserActivityModel>> GetAllActivities()
         {
             List<UserActivityModel> userActivities = new List<UserActivityModel>();
@@ -114,6 +116,7 @@ namespace OTB_SEGURA.Services
                 
             });
         }
+
         //Metodo de insercion de actividades a firebase
         public async Task AddActivity(ActivityModel activity)
         {

@@ -165,6 +165,7 @@ namespace OTB_SEGURA.ViewModels
             }
         }
 
+        // Metodo de validacion de los Entry de la vista
         public bool ValidationEntry()
         {
             bool res=true;

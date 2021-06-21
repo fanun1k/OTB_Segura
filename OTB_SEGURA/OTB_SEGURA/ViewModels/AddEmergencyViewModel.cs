@@ -18,12 +18,12 @@ namespace OTB_SEGURA.ViewModels
 {
     class AddEmergencyViewModel:BaseViewModel
     {
-        FireBaseHelper fireBaseHelper = new FireBaseHelper();
-        #region Attributes
-        private string userId;
-        private double latitude;
-        private double longitude;
-        private DateTime dateTimeAttribute;
+        FireBaseHelper fireBaseHelper = new FireBaseHelper(); //instancia de helper de BDD
+        #region Attributes 
+        private string userId;//identificador de usuario
+        private double latitude;//latitud de ubicacion
+        private double longitude;//longitud de ubicacion
+        private DateTime dateTimeAttribute;//fecha y hora de emergencia
         #endregion
         #region Properties
         public string UserId
@@ -48,45 +48,45 @@ namespace OTB_SEGURA.ViewModels
         }
 
         #endregion
-        public AddEmergencyViewModel()
+        public AddEmergencyViewModel()//constructor de la clase
         {
-            Title = "Lanzar Alarma de Emergencia";
+            Title = "Lanzar Alarma de Emergencia"; //Titulo de la vista
         }
         #region Command
-        public ICommand EmergencyCommand
+        public ICommand EmergencyCommand //comando de boton
         {
             get
             {
-                return new RelayCommand(EmergencyMethod);
+                return new RelayCommand(EmergencyMethod);//referencia de metodo de creacion de la emergencia
             }
         }
         #endregion
         #region Method
-        private async void EmergencyMethod()
+        private async void EmergencyMethod()//metodo de inicializacion de la emergencia
         {
-            getLocation();
+            getLocation();//llamada a metodo para obtener ubicacion
             await Task.Delay(1000);
-            var emergency = newEmergency();
-            await fireBaseHelper.AddEmergency(emergency);
+            var emergency = newEmergency();//Generar la emergencia
+            await fireBaseHelper.AddEmergency(emergency);//llamada al metodo del helper para insertar la emergencia
             await Task.Delay(1000);
         }
-        private EmergencyModel newEmergency()
+        private EmergencyModel newEmergency()//metodo de creacion de la emergencia
         {
-            return new EmergencyModel
+            return new EmergencyModel //creando el objeto de la emergencia
             {
-                UserId = Application.Current.Properties["Id"].ToString(),
-                Latitude = Latitude,
-                Longitude = Longitude,
-                DateTime = DateTime.Now
+                UserId = Application.Current.Properties["Id"].ToString(),//obtener id del usuario
+                Latitude = Latitude,//obteniendo valores de latitud de la ubicacion
+                Longitude = Longitude,//obteniendo valores de latitud de la ubicacion
+                DateTime = DateTime.Now//obteniendo fecha y hora actual
             };
         }
-        private async void getLocation()
+        private async void getLocation()//metodo para obtener la ubicacion
         {
-            var locator = CrossGeolocator.Current;
-            locator.DesiredAccuracy = 50;
-            var position = await locator.GetPositionAsync();
-            latitude = position.Latitude;
-            longitude = position.Longitude;
+            var locator = CrossGeolocator.Current;//Nueva instancia para obtener ubicacion
+            locator.DesiredAccuracy = 50;//definiendo la precision de la ubicacion
+            var position = await locator.GetPositionAsync();//metodo para obtener la ubicacion
+            latitude = position.Latitude;//asignando valores de latitud a variables globales
+            longitude = position.Longitude;//asignando valores de longitud a variables globales
         }
         #endregion
     }

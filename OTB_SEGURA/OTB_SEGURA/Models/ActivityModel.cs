@@ -4,6 +4,7 @@ using System.Text;
 
 namespace OTB_SEGURA.Models
 {
+    //Modelo de Actividades
     public class ActivityModel
     {
         public string Message { get; set; }

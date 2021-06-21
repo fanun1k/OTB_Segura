@@ -7,6 +7,9 @@ using System.Text;
 
 namespace OTB_SEGURA.ViewModels
 {
+    /// <summary>
+    /// Clase con informacion de numeros de emergencia estatica
+    /// </summary>
     public class EmergencyNumbersViewModel:BaseViewModel
     {        
         public ObservableCollection<EmergencyNumbersModel> emergencyNumbersList { get; }

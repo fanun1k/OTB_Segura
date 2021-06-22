@@ -11,6 +11,9 @@ using Xamarin.Essentials;
 
 namespace OTB_SEGURA.ViewModels
 {
+    /// <summary>
+    /// Clase UserProfileViewModel que nos sirbe de logica para la vista View_UserProfile
+    /// </summary>
     public class UserProfileViewModel:BaseViewModel
     {
         #region Attributes
@@ -39,6 +42,12 @@ namespace OTB_SEGURA.ViewModels
         #endregion
         #region Contructs
 
+        /// <summary>
+        /// Constructor que recibe un objeto del tipo UserModel.
+        /// Este constructor nos sirbe para dirigirnos a un perfil con la informacion del usuario recibido por parametro
+        /// y podamos habilitar o deshabilitar a dicho usuario
+        /// </summary>
+        /// <param name="user"></param>
         public UserProfileViewModel(UserModel user)
         {          
             this.user = user;
@@ -46,6 +55,10 @@ namespace OTB_SEGURA.ViewModels
             LoadActivities(user.UserId.ToString());
             ButtonChangeStateClick = new Command(UpdateMethod);
         }
+        /// <summary>
+        /// Constructor que recibe como parametro un elemento del tipo INavigation
+        /// </summary>
+        /// <param name="navigation">parametro que nos sirbe para hacer redirecciones a otras vistas</param>
         public UserProfileViewModel(INavigation navigation)
         {
             user = new UserModel();
@@ -61,6 +74,12 @@ namespace OTB_SEGURA.ViewModels
                 await navigation.PushAsync(new View_Account());
             });
         }
+        /// <summary>
+        /// Constructor que nos sirbe para modificar el perfil con la informacion recibida por parametros
+        /// </summary>
+        /// <param name="name">parametro que nos sirbe para mostrar el nombre del usuario en el perfil</param>
+        /// <param name="phone">parametro que nos sirbe para poder hacerle llamadas al numero recibido mediante este parametro</param>
+        /// <param name="id">parametro que nos sirbe para poder hacer consultas a la bdd</param>
         public UserProfileViewModel(string name,int phone,Guid id)
         {
             user = new UserModel();
@@ -91,6 +110,9 @@ namespace OTB_SEGURA.ViewModels
 
         #endregion
         #region Methods
+        /// <summary>
+        /// metodo que nos sirbe para cambiar el texto del boton en la interfaz View_UserProfile
+        /// </summary>
         private void SetTextButton()
         {
             switch (user.State)
@@ -103,6 +125,11 @@ namespace OTB_SEGURA.ViewModels
                     break;
             }
         }
+        /// <summary>
+        /// Metodo que actualiza el estado en bdd del usuario al que seleccionamos
+        /// si el usuario esta inactivo el metodo lo pone activo
+        /// si el usuario esta activo el metodo lo pone activo
+        /// </summary>
         private async void UpdateMethod()
         {
             bool resDisplayAlert;
@@ -142,6 +169,10 @@ namespace OTB_SEGURA.ViewModels
             }
             await Shell.Current.GoToAsync("..");
         }
+        /// <summary>
+        /// Metodo que carga las actividades en la vista View_UserProfile segun el id del usuario que reciba
+        /// </summary>
+        /// <param name="id">codigo id de un usuario que sera utilizado para hacer consultas a la bdd</param>
         private async void LoadActivities(string id)
         {
             ActivityList = await firebaseHelper.GetAllActivitiesId(id);

@@ -43,7 +43,7 @@ namespace OTB_SEGURA.Services
             return allActivities.Where(a => a.UserId == id).OrderByDescending(dt => dt.DateTime).Take(5).ToList();        
         }
 
-        // Metodo que obtiene la lista de actividades de los usuarios
+        // Metodo que obtiene la lista de actividades de los usuarios del sistema
         public async Task<List<UserActivityModel>> GetAllActivities()
         {
             List<UserActivityModel> userActivities = new List<UserActivityModel>();

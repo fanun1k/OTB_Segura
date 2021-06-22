@@ -71,7 +71,7 @@ namespace OTB_SEGURA.ViewModels
 
         #region Metodh
 
-        // Metodo que carga la data 
+        // Metodo que carga la data de actividades de usuarios
         public async void LoadData()
         {
             ListActivity = await firebaseHelper.GetAllActivities(); // Llamada al metodo del helper para obtener la data

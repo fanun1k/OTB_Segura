@@ -12,6 +12,10 @@ using Xamarin.Forms;
 
 namespace OTB_SEGURA.ViewModels
 {
+    /// <summary>
+    /// clase UserListViewModel que nos sirbe de contexto de datos de la vista View_UserList
+    /// la clase contiene la logica de la vista View_UserList
+    /// </summary>
     public class UsersListViewModel : BaseViewModel
     {
 
@@ -29,10 +33,15 @@ namespace OTB_SEGURA.ViewModels
                 OnPropertyChanged();
             }
         }
-       
+
         #endregion
 
         #region Construct
+        /// <summary>
+        /// Constructor de la clase que recibe un parametro del tipo INavigation
+        /// Este constructor tambien ejecuta la inicializacion del comando ItemTappedCommand
+        /// </summary>
+        /// <param name="navigation"> tipo INavigacion esto para poder hacer redirecciones a otras vistas de interfaz</param>
         public UsersListViewModel(INavigation navigation)
         {
             Navigation = navigation;
@@ -42,8 +51,15 @@ namespace OTB_SEGURA.ViewModels
         #endregion
 
         #region Commands   
+        /// <summary>
+        ///  comando que se ejecuta cuando el usuario hace click en un item del listview de la vista
+        ///  el comando necesita inicializarse con el metodo InitCommandTapped
+        /// </summary>
         public ICommand ItemTappedCommand { get; protected set; }
 
+        /// <summary>
+        /// comando que se ejecuta cuando aparece la vista View_UserList en pantalla
+        /// </summary>
         public ICommand AppearingCommand
         {
             get
@@ -51,6 +67,9 @@ namespace OTB_SEGURA.ViewModels
                 return  new RelayCommand(LoadData);
             }
         }
+        /// <summary>
+        /// comando que se ejecuta cuando se refresca el listview de la interfaz
+        /// </summary>
         public ICommand RefreshingCommand
         {
             get
@@ -63,7 +82,8 @@ namespace OTB_SEGURA.ViewModels
         #region Method
 
         /// <summary>
-        /// this method obtains the data of all users
+        /// Metodo LoadData que nos sirbe para cargar los usuarios de la base de datos Firebase 
+        /// este metodo pone un color al item de usuario dependiendo si su estado es activo o inactivo
         /// </summary>
         public async void LoadData()
         {           
@@ -81,6 +101,9 @@ namespace OTB_SEGURA.ViewModels
                 }
             }
         }
+        /// <summary>
+        /// Metodo que que inicia el comando ItemTappedCommnad
+        /// </summary>
         public void InitCommandTapped()
         {
             ItemTappedCommand = new Command(async (item) => {

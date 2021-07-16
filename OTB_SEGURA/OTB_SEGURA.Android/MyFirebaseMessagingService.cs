@@ -16,7 +16,7 @@ namespace OTB_SEGURA.Droid
 {
     [Service]
     [IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
-    class MyFirebaseMessagingService : FirebaseMessagingService
+    class MyFirebaseMessagingService : FirebaseMessagingService//Clase de envio de notificaciones push
     {
         [Obsolete]
 #pragma warning disable CS0809 // El miembro obsoleto invalida un miembro no obsoleto
@@ -28,7 +28,7 @@ namespace OTB_SEGURA.Droid
         }
 
         [Obsolete]
-        private void SendNotification(RemoteMessage.Notification message)
+        private void SendNotification(RemoteMessage.Notification message)//metodo de generacion de la notificacion de forma local
         {
             var intent = new Intent(this, typeof(MainActivity));
             intent.AddFlags(ActivityFlags.ClearTop);

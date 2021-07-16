@@ -12,7 +12,7 @@ namespace OTB_SEGURA.ViewModels
     {
         #region Attributes
         FireBaseHelper firebaseHelper = new FireBaseHelper();
-        private List<UserModel> userList;
+        private List<UserModel> userList; // Lista de usuarios registrados
         #endregion
         #region Properties
         public List<UserModel> UserList
@@ -24,21 +24,20 @@ namespace OTB_SEGURA.ViewModels
         #region Construct
         public EmergencyNumberUsersViewModel()
         {
-            Title = "Lista de Vecinos";
-
+            Title = "Lista de Vecinos"; // Titulo de View_EmergencyNumberUserList
         }
         #endregion
         #region Commands
         public ICommand ItemTappedCommand { get; protected set; }
 
-        public ICommand AppearingCommand
+        public ICommand AppearingCommand // Comando para listar usuarios
         {
             get
             {
                 return new RelayCommand(LoadData);
             }
         }
-        public ICommand RefreshingCommand
+        public ICommand RefreshingCommand // Comando para refrescar la lista
         {
             get
             {
@@ -49,7 +48,7 @@ namespace OTB_SEGURA.ViewModels
         #region Methods
         public async void LoadData()
         {
-            UserList = await firebaseHelper.GetActiveUsers();
+            UserList = await firebaseHelper.GetActiveUsers(); //Obtiene la lista de usuarios activos en el sistema
         }
 
         #endregion

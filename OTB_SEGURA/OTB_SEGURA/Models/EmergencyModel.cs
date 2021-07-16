@@ -4,6 +4,7 @@ using System.Text;
 
 namespace OTB_SEGURA.Models
 {
+    //Modelo de Actividades de Emergencia
     class EmergencyModel
     {
         public string UserId { get; set; }

@@ -14,15 +14,23 @@ namespace OTB_SEGURA.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-
+        /// <summary>
+        /// Variables de uso Global
+        /// </summary>
         FireBaseHelper fireBaseHelper = new FireBaseHelper();
         UserModel userModel;
 
+        /// <summary>
+        /// Parte de declaracion de variables
+        /// </summary>
         #region Variables
         private string userName = "";
         private string password = "";
         #endregion
 
+        /// <summary>
+        /// Getters y Setters
+        /// </summary>
         #region GettersAndSetters
         public string Password
         {
@@ -47,17 +55,34 @@ namespace OTB_SEGURA.ViewModels
         #endregion
         public Command LoginCommand { get; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <remarks>
+        /// Asigna el comando de OnLogiClicked a la variable LoginCommand
+        /// </remarks>
         public LoginViewModel()
         {
             LoginCommand = new Command(OnLoginClicked);
         }
 
+        /// <summary>
+        /// Metodo para asignar un comando async en alguna variable command
+        /// </summary>
         private async void OnLoginClicked(object obj)
         {
             await Shell.Current.GoToAsync($"//AboutPage");
 
         }
+
+        /// <summary>
+        /// Metodos ICommand
+        /// </summary>
         #region Commands
+
+        /// <summary>
+        /// Devuelve el metodo LoginMethod
+        /// </summary>
         public ICommand LoginValidateCommand
         {
             get
@@ -65,6 +90,10 @@ namespace OTB_SEGURA.ViewModels
                 return new RelayCommand(LoginMethod);
             }
         }
+
+        /// <summary>
+        /// Devuelve el metodo LoginSuccess
+        /// </summary>
         public ICommand Logged
         {
             get
@@ -74,7 +103,21 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
 
+
+        /// <summary>
+        /// Metodos
+        /// </summary>
         #region metodos
+
+        /// <summary>
+        /// Metodo Para realizar la accion de inicio de sesion
+        /// </summary>
+        /// <remarks>
+        /// Esta clase realiza revision de existencia del usuario, 
+        /// realiza la creacion de la sesion si es que fue requerida, 
+        /// tiene conexion con la base de datos
+        /// traslada al usuario a la ventana emergencia en caso de ser realizar inicio de sesion
+        /// </remarks>
         private async void LoginMethod()
         {
             if (validar())
@@ -122,10 +165,27 @@ namespace OTB_SEGURA.ViewModels
                 }
             }
         }
+
+        /// <summary>
+        /// Metodo Para realizar la accion de inicio de sesion
+        /// </summary>
+        /// <remarks>
+        /// Este metodo, se lleva a cabo solo si la sesion fue creada, lo transportara
+        /// directo a pagina de emergencia
+        /// </remarks>
         public async void LoginSuccess()
         {
             await Shell.Current.GoToAsync("//AddActivity");
         }
+
+        /// <summary>
+        /// Metodo Para validar entries ingresados por el usuario
+        /// </summary>
+        /// <remarks>
+        /// Este metodo, revisa la validez de los entries ingresados por el usuario
+        /// revisa si estan vacios, y tambien revisa caracteres como espacios
+        /// da una alerta de lo que se consiguio
+        /// </remarks>
         public bool validar()
         {
             bool res = false;

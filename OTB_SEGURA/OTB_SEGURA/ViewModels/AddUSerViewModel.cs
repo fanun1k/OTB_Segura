@@ -14,7 +14,9 @@ using System.Text.RegularExpressions;
 
 namespace OTB_SEGURA.ViewModels
 {
-    
+    /// <summary>
+    /// clase AddUSerViewModel que nos sirbe de logica para la vista View_AdUser
+    /// </summary>
     public class AddUSerViewModel:BaseViewModel
     {
 
@@ -74,6 +76,9 @@ namespace OTB_SEGURA.ViewModels
         #endregion
 
         #region Construct
+        /// <summary>
+        /// Constructor que asigna el titulo a la vista View_AddUser
+        /// </summary>
         public AddUSerViewModel()
         {
             Title = "Agregar Nuevo Usuario";
@@ -81,6 +86,9 @@ namespace OTB_SEGURA.ViewModels
         #endregion
 
         #region Command
+        /// <summary>
+        /// comando que se ejecuta cuando se hace click al boton de insertar en la vista
+        /// </summary>
         public ICommand InsertCommand
         {
             get
@@ -88,16 +96,12 @@ namespace OTB_SEGURA.ViewModels
                 return new RelayCommand(InsertMethod);
             }
         }
-        public ICommand OpenMapsCommand
-        {
-            get
-            {
-                return new RelayCommand(OpeenMaps);
-            }
-        }
         #endregion
 
         #region Method
+        /// <summary>
+        /// Metodo que nos ayuda a Hacer la insercion de un usuario a la bdd
+        /// </summary>
         private async void InsertMethod()
         {
             IsBusy = true;
@@ -124,6 +128,10 @@ namespace OTB_SEGURA.ViewModels
             IsBusy = false;
         }
 
+        /// <summary>
+        /// Metodo que valida los campos del formulario de registro de usuario de la vista 
+        /// </summary>
+        /// <returns></returns>
         private bool Validar()
         {
             bool res;
@@ -182,6 +190,9 @@ namespace OTB_SEGURA.ViewModels
             return res;
         }
 
+        /// <summary>
+        /// Metodo que Crea un Nombre de usuario con las iniciales del nombre y el carnet
+        /// </summary>
         public void CreateUserName()
         {
             try
@@ -208,41 +219,6 @@ namespace OTB_SEGURA.ViewModels
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
             
-        }
-
-        private async void OpeenMaps()
-        {
-           Position position = null;
-			try
-			{
-              
-					var locator = CrossGeolocator.Current;
-					locator.DesiredAccuracy = 100;
-
-					position = await locator.GetLastKnownLocationAsync();
-
-                if (position != null)
-                {
-                    position = await locator.GetPositionAsync(TimeSpan.FromSeconds(20), null, true);
-                    await Map.OpenAsync(position.Latitude, position.Longitude, new MapLaunchOptions
-                    {
-                        Name = "Ubicación",
-                        NavigationMode = NavigationMode.None
-                    });              
-                }
-
-                if (!locator.IsGeolocationAvailable || !locator.IsGeolocationEnabled)
-					{
-                    //not available or enabled                    
-                }
-
-					
-
-			}
-			catch (Exception ex)
-			{
-                DependencyService.Get<IMessage>().LongAlert(ex.Message);
-            }
         }
         #endregion
 

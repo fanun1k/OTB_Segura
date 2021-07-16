@@ -11,6 +11,10 @@ using OTB_SEGURA.Views;
 
 namespace OTB_SEGURA.ViewModels
 {
+    ///<summary>
+    /// Nombre del desarrollador: Miguel Angel Terrazas Challapa
+    /// Clase para realizar el update de usuario
+    ///</summary>
     class AccountViewModel : BaseViewModel
     {
         #region Attributes
@@ -64,11 +68,11 @@ namespace OTB_SEGURA.ViewModels
         #region Construct
         public AccountViewModel()
         {
-            Title = "Editar Usuario";
+            Title = "Editar Usuario"; //Titulo de View_Account
         }
         #endregion
         #region Command      
-        public ICommand UpdateCommand
+        public ICommand UpdateCommand //Comando para llamar al metodo 
         {
             get
             {
@@ -77,24 +81,26 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
         #region Method
-        
+        /// <summary>
+        /// Metodo update del perfil de usuario
+        /// </summary>
         private async void UpdateMethod()
         {
-            IsBusy = true;
+            IsBusy = true;            
             if (Validar())
             {
+                //Se verifica si el password ingresado en los 2 campos es el mismo, esto como un metodo de seguridad
                 if (password1 != password2)
                 {
-                    //agregar alerta
-
-                    await App.Current.MainPage.DisplayAlert("Error en la contraseña ", "Escriba la misma en ambos campos", "OK");
+                    await App.Current.MainPage.DisplayAlert("Error en la contraseña ", "Escriba la misma en ambos campos", "OK"); //Error de contraseña
                 }
                 else
                 { 
                 var user = new UserModel
                 {
-                    UserId = FireBaseHelper.staticUser.UserId,
-                    Name = name.ToUpper().Trim(),
+                    //Se agregan los atributos al constructor
+                    UserId = FireBaseHelper.staticUser.UserId, //userId de el usuario con sesion iniciada
+                    Name = name.ToUpper().Trim(), 
                     Ci = ci,
                     Phone = phone,
                     State = 1,
@@ -113,7 +119,10 @@ namespace OTB_SEGURA.ViewModels
 
             IsBusy = false;
         }
-
+        /// <summary>
+        /// Validacion de datos de entrada 
+        /// </summary>
+        /// <returns></returns>
         private bool Validar()
         {
             bool res;

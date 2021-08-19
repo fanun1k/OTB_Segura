@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Services;
 using Xamarin.Forms;
 using OTB_SEGURA.Models;
+using System.Net.Mail;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -16,8 +17,9 @@ namespace OTB_SEGURA.ViewModels
         #region attributes
         private string correo;
         private FireBaseHelper fireBaseHelper = new FireBaseHelper();
-        private ICommand recoveryCommand;
         private Func<string, string, string, Task> displayAlert;
+        private UserModel user;  
+        private string newPass="";
         #endregion
 
         public RecoverPasswordViewModel(Func<string, string, string, Task> displayAlert)
@@ -40,9 +42,47 @@ namespace OTB_SEGURA.ViewModels
             get { return new RelayCommand(async()=> {
               if(await ValidateForm())
                 {
+                    if (await ValidateEmail())
+                    {
+                        
+                        try
+                        {
+                            //generando nueva contraseña
+                            Random rand = new Random();
+                            int aux = rand.Next(111, 999);
+                            for (int i = 0; i < 4; i++)
+                            {
+                                int numero = rand.Next(26);
+                                char letra = (char)(((int)'A') + numero);
+                                newPass += letra;
+                            }
+                            newPass += aux;
 
+                            user.Password = newPass;
+                            await fireBaseHelper.UpdateUser(user);
+                            //enviando la nueva contraseña al correo
+                            MailMessage mail = new MailMessage();
+                            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                            mail.From = new MailAddress("emergencyproject2@gmail.com");
+                            mail.To.Add(Correo);
+                            mail.Subject = "OTB SEGURA - Restablecer Contraseña";
+                            mail.Body = $"Su contraseña en la aplicacion OTB SEGURA fué restablecida, su nueva contraseña es: {newPass}. No olvide cambiar su contraseña despues de iniciar sesión";
+
+                            SmtpServer.Port = 587;
+                            SmtpServer.Credentials = new System.Net.NetworkCredential("emergencyproject2@gmail.com", "proyecto2021");
+                            SmtpServer.EnableSsl = true;
+
+                            SmtpServer.Send(mail);
+                            DependencyService.Get<IMessage>().LongAlert("Se le envio su nueva contraseña al correo  "+correo);
+                        }
+                        catch (Exception ex)
+                        {
+                            DependencyService.Get<IMessage>().LongAlert("Error " + ex.Message);
+                        }
+                    }
                 }
-            
+                
             }); }
         }
         #endregion
@@ -72,7 +112,8 @@ namespace OTB_SEGURA.ViewModels
 
         private async Task<bool> ValidateEmail()
         {
-          UserModel user= await fireBaseHelper.ValidateEmail(Correo);
+            user = null;
+            user = await fireBaseHelper.ValidateEmail(Correo);
             //valida si existe un usuario en bdd con ese email
             if (user==null)
             {
@@ -81,7 +122,6 @@ namespace OTB_SEGURA.ViewModels
             }
             return true;
         }
-
             #endregion
 
 

@@ -20,14 +20,16 @@ namespace OTB_SEGURA.ViewModels
     public class AddUSerViewModel:BaseViewModel
     {
 
+
         #region Attributes
         FireBaseHelper fireBaseHelper = new FireBaseHelper();
-        private string name="";
-        private string userName="";
-        private int ci=0;
-        private int phone=0;
-        private string password="";
-        private string rePassword="";
+        private string name = "";
+        private string userName = "";
+        private int ci = 0;
+        private int phone = 0;
+        private string password = "";
+        private string rePassword = "";
+        private string email = "";
         #endregion
 
         #region Properties
@@ -53,24 +55,35 @@ namespace OTB_SEGURA.ViewModels
         public int Ci
         {
             get { return ci; }
-            set { ci = value;
-               CreateUserName();
+            set
+            {
+                ci = value;
+                CreateUserName();
             }
         }
 
         public string Name
         {
             get { return name; }
-            set { name = value;
+            set
+            {
+                name = value;
                 CreateUserName();
             }
         }
         public string UserName
         {
             get { return userName; }
-            set { userName = value;
+            set
+            {
+                userName = value;
                 OnPropertyChanged();
             }
+        }
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
         }
 
         #endregion
@@ -116,15 +129,16 @@ namespace OTB_SEGURA.ViewModels
                     Phone = phone,
                     State = 1,
                     Photo = null,
-                    UserType=0
-                    
+                    UserType = 0,
+                    Email = email
+
                 };
                 await fireBaseHelper.AddUser(user);
                 await Task.Delay(1000);
                 DependencyService.Get<IMessage>().ShortAlert("Usuario Agregado con éxito");
                 await Shell.Current.GoToAsync("..");
             }
-            
+
             IsBusy = false;
         }
 
@@ -151,42 +165,47 @@ namespace OTB_SEGURA.ViewModels
                 res = false;
                 DependencyService.Get<IMessage>().LongAlert("Número de télefono incorrecto");
             }
+            else if (!Regex.Match(email.ToString(), "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*").Success)
+            {
+                res = false;
+                DependencyService.Get<IMessage>().LongAlert("Correo invalido");
+            }
             else
             {
-                 if(!password.Equals(""))
-                 {
-                     if (!rePassword.Equals(""))
-                     {
-                         if (password.Length > 5)
-                         {
-                             if (password.Trim() == rePassword.Trim())
-                             {
-                                 res = true;
-                             }
-                             else
-                             {
-                                 res = false;
-                                 DependencyService.Get<IMessage>().LongAlert("Las contraseñas no coinciden");
-                             }
-                         }
-                         else
-                         {
-                             res = false;
-                             DependencyService.Get<IMessage>().LongAlert("La contraseña debe tener más de 5 caracteres");
-                         }
-                     }
-                     else
-                     {
-                         res = false;
-                         DependencyService.Get<IMessage>().LongAlert("Por favor, confirme la contraseña");
-                     }
-                 }
-                 else
-                 {
-                     res = false;
-                     DependencyService.Get<IMessage>().LongAlert("Por favor, introduzca una contraseña");
-                 }
-             }
+                if (!password.Equals(""))
+                {
+                    if (!rePassword.Equals(""))
+                    {
+                        if (password.Length > 5)
+                        {
+                            if (password.Trim() == rePassword.Trim())
+                            {
+                                res = true;
+                            }
+                            else
+                            {
+                                res = false;
+                                DependencyService.Get<IMessage>().LongAlert("Las contraseñas no coinciden");
+                            }
+                        }
+                        else
+                        {
+                            res = false;
+                            DependencyService.Get<IMessage>().LongAlert("La contraseña debe tener más de 5 caracteres");
+                        }
+                    }
+                    else
+                    {
+                        res = false;
+                        DependencyService.Get<IMessage>().LongAlert("Por favor, confirme la contraseña");
+                    }
+                }
+                else
+                {
+                    res = false;
+                    DependencyService.Get<IMessage>().LongAlert("Por favor, introduzca una contraseña");
+                }
+            }
             return res;
         }
 
@@ -208,20 +227,19 @@ namespace OTB_SEGURA.ViewModels
                             userNameComplete += inicial.Substring(0, 1).ToUpper();
                         }
                     }
-                    userNameComplete += Ci.ToString();                 
+                    userNameComplete += Ci.ToString();
                     UserName = userNameComplete;
-                  
+
                 }
-                         
+
             }
             catch (Exception ex)
             {
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
-            
+
         }
         #endregion
-
 
 
     }

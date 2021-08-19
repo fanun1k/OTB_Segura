@@ -51,6 +51,13 @@ namespace OTB_SEGURA.Services
                 .Child("Users")
                 .OnceAsync<UserModel>()).Select(item => new UserModel
                 {
+                    UserId=item.Object.UserId,
+                    UserName=item.Object.UserName,
+                    Password=item.Object.Password,
+                    Phone=item.Object.Phone,
+                    Name=item.Object.Name,
+                    Ci=item.Object.Ci,
+                    UserType=item.Object.UserType,
                     State = item.Object.State,
                     Email=item.Object.Email
                 }).ToList();

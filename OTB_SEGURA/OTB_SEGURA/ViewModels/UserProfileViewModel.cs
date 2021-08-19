@@ -100,12 +100,6 @@ namespace OTB_SEGURA.ViewModels
         #endregion
         #region Commands
         public ICommand ButtonChangeStateClick { get; private set; } 
-        //{
-        //    get
-        //    {
-        //        return new RelayCommand(UpdateMethod);
-        //    }
-        //}
           
 
         #endregion

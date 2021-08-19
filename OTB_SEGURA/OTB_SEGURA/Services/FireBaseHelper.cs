@@ -19,19 +19,20 @@ namespace OTB_SEGURA.Services
               .Child("Users")
               .OnceAsync<UserModel>()).Select(item => new UserModel
               {
-                  UserId=item.Object.UserId,
+                  UserId = item.Object.UserId,
                   Name = item.Object.Name,
                   UserName = item.Object.UserName,
                   Phone = item.Object.Phone,
-                  State=item.Object.State,
-                  Ci=item.Object.Ci,
-                  Password=item.Object.Password
-                  
+                  State = item.Object.State,
+                  Ci = item.Object.Ci,
+                  Password = item.Object.Password,
+                  Email = item.Object.Email
+
               }).ToList();
         }
         public async Task<List<ActivityModel>> GetAllActivitiesId(string id)
         {
-            var allActivities= (await firebase
+            var allActivities = (await firebase
                 .Child("Activity")
                 .OnceAsync<ActivityModel>()).Select(item => new ActivityModel
                 {
@@ -39,8 +40,8 @@ namespace OTB_SEGURA.Services
                     DateTime = item.Object.DateTime,
                     Type = item.Object.Type,
                     Message = item.Object.Message
-                }).ToList(); 
-            return allActivities.Where(a => a.UserId == id).OrderByDescending(dt => dt.DateTime).Take(5).ToList();        
+                }).ToList();
+            return allActivities.Where(a => a.UserId == id).OrderByDescending(dt => dt.DateTime).Take(5).ToList();
         }
 
 
@@ -99,7 +100,7 @@ namespace OTB_SEGURA.Services
                     Name = item.Name
                 });
             }
-            return userActivities.OrderByDescending(dt=>dt.DateTime).Take(10).ToList();
+            return userActivities.OrderByDescending(dt => dt.DateTime).Take(10).ToList();
         }
 
         /*
@@ -121,12 +122,13 @@ namespace OTB_SEGURA.Services
                 Name = userModel.Name,
                 UserName = userModel.UserName,
                 Password = userModel.Password,
-                Phone=userModel.Phone,
-                State=userModel.State,
+                Phone = userModel.Phone,
+                State = userModel.State,
                 Photo = userModel.Photo,
-                Ci=userModel.Ci,
-                UserType=0
-                
+                Ci = userModel.Ci,
+                UserType = 0,
+                Email = userModel.Email
+
             });
         }
 
@@ -169,7 +171,7 @@ namespace OTB_SEGURA.Services
             await firebase
               .Child("Users")
               .Child(toUpdatePerson.Key)
-              .PutAsync(new UserModel() { UserId = userModel.UserId, Name = userModel.Name, UserName = userModel.UserName, Password=userModel.Password,Photo=userModel.Photo,Phone=userModel.Phone,State=userModel.State,Ci=userModel.Ci });
+              .PutAsync(new UserModel() { UserId = userModel.UserId, Name = userModel.Name, UserName = userModel.UserName, Password = userModel.Password, Photo = userModel.Photo, Phone = userModel.Phone, State = userModel.State, Ci = userModel.Ci });
         }
 
         public async Task DisableUser(UserModel userModel)
@@ -180,7 +182,8 @@ namespace OTB_SEGURA.Services
             await firebase
               .Child("Users")
               .Child(toUpdateUser.Key)
-              .PutAsync(new UserModel() {
+              .PutAsync(new UserModel()
+              {
                   UserId = userModel.UserId,
                   Name = userModel.Name,
                   UserName = userModel.UserName,
@@ -188,7 +191,8 @@ namespace OTB_SEGURA.Services
                   Phone = userModel.Phone,
                   State = 0,
                   Photo = userModel.Photo,
-                  Ci = userModel.Ci
+                  Ci = userModel.Ci,
+                  Email = userModel.Email
               });
         }
         public async Task EnableUser(UserModel userModel)
@@ -208,7 +212,8 @@ namespace OTB_SEGURA.Services
                   Phone = userModel.Phone,
                   State = 1,
                   Photo = userModel.Photo,
-                  Ci = userModel.Ci
+                  Ci = userModel.Ci,
+                  Email = userModel.Email
               });
         }
 
@@ -227,12 +232,13 @@ namespace OTB_SEGURA.Services
               .Child("Users")
               .OnceAsync<UserModel>()).Select(item => new UserModel
               {
-                  UserId=item.Object.UserId,
+                  UserId = item.Object.UserId,
                   Name = item.Object.Name,
                   UserName = item.Object.UserName,
                   Phone = item.Object.Phone,
                   State = item.Object.State,
                   Ci = item.Object.Ci,
+                  Email = item.Object.Email,
                   Password = item.Object.Password,
                   UserType = item.Object.UserType
               }).ToList();
@@ -246,7 +252,7 @@ namespace OTB_SEGURA.Services
               .Child("Users")
               .OnceAsync<UserModel>();
             staticUser = allPersons.Where(a => a.UserName == userName && a.Password == password).FirstOrDefault();
-            return allPersons.Where(a => a.UserName == userName && a.Password==password).FirstOrDefault();
+            return allPersons.Where(a => a.UserName == userName && a.Password == password).FirstOrDefault();
         }
         public async Task<List<UserModel>> GetActiveUsers()
         {
@@ -260,8 +266,9 @@ namespace OTB_SEGURA.Services
                   Phone = item.Object.Phone,
                   State = item.Object.State,
                   Ci = item.Object.Ci,
+                  Email = item.Object.Email,
                   Password = item.Object.Password
-                  
+
               }).Where(item => item.State == 1).ToList();
 
         }

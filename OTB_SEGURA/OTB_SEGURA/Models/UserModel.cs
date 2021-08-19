@@ -19,5 +19,6 @@ namespace OTB_SEGURA.Models
         public string StateColor { get; set; }
         public string StateBorderColor { get; set; }
         public int UserType { get; set; }
+        public string Email { get; set; }
     }
 }

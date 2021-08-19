@@ -247,13 +247,7 @@ namespace OTB_SEGURA.Droid
 			global::Xamarin.Forms.Maps.Android.Resource.Animation.EnterFromRight = global::OTB_SEGURA.Droid.Resource.Animation.EnterFromRight;
 			global::Xamarin.Forms.Maps.Android.Resource.Animation.ExitToLeft = global::OTB_SEGURA.Droid.Resource.Animation.ExitToLeft;
 			global::Xamarin.Forms.Maps.Android.Resource.Animation.ExitToRight = global::OTB_SEGURA.Droid.Resource.Animation.ExitToRight;
-			global::Xamarin.Forms.Maps.Android.Resource.Animation.fragment_close_enter = global::OTB_SEGURA.Droid.Resource.Animation.fragment_close_enter;
-			global::Xamarin.Forms.Maps.Android.Resource.Animation.fragment_close_exit = global::OTB_SEGURA.Droid.Resource.Animation.fragment_close_exit;
-			global::Xamarin.Forms.Maps.Android.Resource.Animation.fragment_fade_enter = global::OTB_SEGURA.Droid.Resource.Animation.fragment_fade_enter;
-			global::Xamarin.Forms.Maps.Android.Resource.Animation.fragment_fade_exit = global::OTB_SEGURA.Droid.Resource.Animation.fragment_fade_exit;
 			global::Xamarin.Forms.Maps.Android.Resource.Animation.fragment_fast_out_extra_slow_in = global::OTB_SEGURA.Droid.Resource.Animation.fragment_fast_out_extra_slow_in;
-			global::Xamarin.Forms.Maps.Android.Resource.Animation.fragment_open_enter = global::OTB_SEGURA.Droid.Resource.Animation.fragment_open_enter;
-			global::Xamarin.Forms.Maps.Android.Resource.Animation.fragment_open_exit = global::OTB_SEGURA.Droid.Resource.Animation.fragment_open_exit;
 			global::Xamarin.Forms.Maps.Android.Resource.Animation.mtrl_bottom_sheet_slide_in = global::OTB_SEGURA.Droid.Resource.Animation.mtrl_bottom_sheet_slide_in;
 			global::Xamarin.Forms.Maps.Android.Resource.Animation.mtrl_bottom_sheet_slide_out = global::OTB_SEGURA.Droid.Resource.Animation.mtrl_bottom_sheet_slide_out;
 			global::Xamarin.Forms.Maps.Android.Resource.Animation.mtrl_card_lowers_interpolator = global::OTB_SEGURA.Droid.Resource.Animation.mtrl_card_lowers_interpolator;
@@ -1994,7 +1988,9 @@ namespace OTB_SEGURA.Droid
 			global::Xamarin.Forms.Maps.Android.Resource.Id.up = global::OTB_SEGURA.Droid.Resource.Id.up;
 			global::Xamarin.Forms.Maps.Android.Resource.Id.useLogo = global::OTB_SEGURA.Droid.Resource.Id.useLogo;
 			global::Xamarin.Forms.Maps.Android.Resource.Id.view_offset_helper = global::OTB_SEGURA.Droid.Resource.Id.view_offset_helper;
+			global::Xamarin.Forms.Maps.Android.Resource.Id.view_tree_lifecycle_owner = global::OTB_SEGURA.Droid.Resource.Id.view_tree_lifecycle_owner;
 			global::Xamarin.Forms.Maps.Android.Resource.Id.view_tree_saved_state_registry_owner = global::OTB_SEGURA.Droid.Resource.Id.view_tree_saved_state_registry_owner;
+			global::Xamarin.Forms.Maps.Android.Resource.Id.view_tree_view_model_store_owner = global::OTB_SEGURA.Droid.Resource.Id.view_tree_view_model_store_owner;
 			global::Xamarin.Forms.Maps.Android.Resource.Id.visible = global::OTB_SEGURA.Droid.Resource.Id.visible;
 			global::Xamarin.Forms.Maps.Android.Resource.Id.visible_removing_fragment_view_tag = global::OTB_SEGURA.Droid.Resource.Id.visible_removing_fragment_view_tag;
 			global::Xamarin.Forms.Maps.Android.Resource.Id.wide = global::OTB_SEGURA.Droid.Resource.Id.wide;

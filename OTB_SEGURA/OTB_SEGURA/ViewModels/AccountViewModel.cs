@@ -15,7 +15,7 @@ namespace OTB_SEGURA.ViewModels
     /// Nombre del desarrollador: Miguel Angel Terrazas Challapa
     /// Clase para realizar el update de usuario
     ///</summary>
-    class AccountViewModel : BaseViewModel
+    public class AccountViewModel : BaseViewModel
     {
         #region Attributes
         FireBaseHelper fireBaseHelper = new FireBaseHelper();

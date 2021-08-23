@@ -22,11 +22,6 @@ namespace OTB_SEGURA.ViewModels
         private string newPass="";
         #endregion
 
-        public RecoverPasswordViewModel(Func<string, string, string, Task> displayAlert)
-        {
-            this.displayAlert = displayAlert;
-        }
-
         #region Properties
         public string Correo
         {
@@ -35,6 +30,12 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
 
+        #region Construct
+        public RecoverPasswordViewModel(Func<string, string, string, Task> displayAlert)
+        {
+            this.displayAlert = displayAlert;
+        }
+        #endregion
 
         #region Commands
         public ICommand RecoveryCommand
@@ -124,7 +125,5 @@ namespace OTB_SEGURA.ViewModels
         }
             #endregion
 
-
-
-        }
+    }
 }

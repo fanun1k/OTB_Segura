@@ -51,6 +51,7 @@ namespace OTB_SEGURA.ViewModels
                             //generando nueva contraseña
                             Random rand = new Random();
                             int aux = rand.Next(111, 999);
+                            newPass = "";
                             for (int i = 0; i < 4; i++)
                             {
                                 int numero = rand.Next(26);

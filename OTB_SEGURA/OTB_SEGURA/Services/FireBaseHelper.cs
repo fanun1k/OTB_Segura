@@ -178,7 +178,7 @@ namespace OTB_SEGURA.Services
             await firebase
               .Child("Users")
               .Child(toUpdatePerson.Key)
-              .PutAsync(new UserModel() { UserId = userModel.UserId, Name = userModel.Name, UserName = userModel.UserName, Password = userModel.Password, Photo = userModel.Photo, Phone = userModel.Phone, State = userModel.State, Ci = userModel.Ci });
+              .PutAsync(new UserModel() { UserId = userModel.UserId, Name = userModel.Name, UserName = userModel.UserName, Password = userModel.Password, Photo = userModel.Photo, Phone = userModel.Phone, State = userModel.State, Ci = userModel.Ci,UserType=userModel.UserType,Email=userModel.Email });
         }
 
         public async Task DisableUser(UserModel userModel)

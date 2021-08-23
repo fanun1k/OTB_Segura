@@ -106,8 +106,9 @@ namespace OTB_SEGURA.ViewModels
                     State = 1,
                     Photo = null,
                     Password = password1,
-                    UserName = FireBaseHelper.staticUser.UserName
-
+                    UserName = FireBaseHelper.staticUser.UserName,
+                    Email=FireBaseHelper.staticUser.Email,
+                    UserType=FireBaseHelper.staticUser.UserType
                 };
                 
                 await fireBaseHelper.UpdateUser(user);

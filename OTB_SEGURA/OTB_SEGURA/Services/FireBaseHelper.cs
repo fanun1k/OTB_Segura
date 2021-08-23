@@ -247,7 +247,8 @@ namespace OTB_SEGURA.Services
                   Ci = item.Object.Ci,
                   Email = item.Object.Email,
                   Password = item.Object.Password,
-                  UserType = item.Object.UserType
+                  UserType = item.Object.UserType,
+             
               }).ToList();
         }
 

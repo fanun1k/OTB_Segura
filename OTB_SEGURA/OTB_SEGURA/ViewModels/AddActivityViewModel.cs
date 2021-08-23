@@ -105,7 +105,7 @@ namespace OTB_SEGURA.ViewModels
         #endregion
 
         #region Method
-        private async void getLocation()//metodo para obtener la ubicacion
+        private async Task getLocation()//metodo para obtener la ubicacion
         {
             var locator = CrossGeolocator.Current;//Nueva instancia para obtener ubicacion
             locator.DesiredAccuracy = 50;//definiendo la precision de la ubicacion
@@ -191,7 +191,7 @@ namespace OTB_SEGURA.ViewModels
             IsBusy = true;
             if (ValidationEntry())
             {
-                getLocation();//llamada a metodo para obtener ubicacion
+                await getLocation();//llamada a metodo para obtener ubicacion
                 await Task.Delay(1000);
                 var activity = newActivity(message, "Robo");//Generar la actividad tipo robo
                 await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
@@ -206,7 +206,7 @@ namespace OTB_SEGURA.ViewModels
             IsBusy = true;
             if (ValidationEntry())
             {
-                getLocation();//llamada a metodo para obtener ubicacion
+                await getLocation();//llamada a metodo para obtener ubicacion
                 await Task.Delay(1000);
                 var activity = newActivity(message, "Accidente");//Generar la actividad tipo accidente
                 await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
@@ -221,7 +221,7 @@ namespace OTB_SEGURA.ViewModels
             IsBusy = true;
             if (ValidationEntry())
             {
-                getLocation();//llamada a metodo para obtener ubicacion
+                await getLocation ();//llamada a metodo para obtener ubicacion
                 await Task.Delay(1000);
                 var activity = newActivity(message, "Incendio");//Generar la actividad tipo incendio
                 await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
@@ -236,7 +236,7 @@ namespace OTB_SEGURA.ViewModels
             IsBusy = true;
             if (ValidationEntry())
             {
-                getLocation();//llamada a metodo para obtener ubicacion
+                await getLocation();//llamada a metodo para obtener ubicacion
                 await Task.Delay(1000);
                 var activity = newActivity(message, "Desastre");//Generar la actividad tipo desastre
                 await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
@@ -248,9 +248,9 @@ namespace OTB_SEGURA.ViewModels
         }
         private async void EmergencyMethod()
         {
-            getLocation();//llamada a metodo para obtener ubicacion
+            await getLocation();//llamada a metodo para obtener ubicacion
             await Task.Delay(1000);
-            var activity = newActivity("Alerta de Emergncia iniciada", "Emergencia");//Generar la actividad tipo emergencia
+            var activity = newActivity("Alerta de Emergencia iniciada", "Emergencia");//Generar la actividad tipo emergencia
             var emergency = newEmergency(activity);//llamada al metodo del helper para insertar la actividad tipo emergencia
             await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
             await Task.Delay(1000);

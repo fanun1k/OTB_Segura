@@ -19,8 +19,8 @@ namespace OTB_SEGURA.Views
         {
             string name = null;
             InitializeComponent();
-            LoginViewModel log = new LoginViewModel();
-            this.BindingContext = new LoginViewModel();
+            LoginViewModel log = new LoginViewModel(Navigation);
+            this.BindingContext = new LoginViewModel(Navigation);
             if (Application.Current.Properties.ContainsKey("Sesion"))
             {
                 name = Application.Current.Properties["Name"] as string;

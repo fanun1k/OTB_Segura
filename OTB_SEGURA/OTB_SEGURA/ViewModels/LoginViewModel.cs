@@ -26,6 +26,7 @@ namespace OTB_SEGURA.ViewModels
         #region Variables
         private string userName = "";
         private string password = "";
+        INavigation navigation;
         #endregion
 
         /// <summary>
@@ -61,9 +62,10 @@ namespace OTB_SEGURA.ViewModels
         /// <remarks>
         /// Asigna el comando de OnLogiClicked a la variable LoginCommand
         /// </remarks>
-        public LoginViewModel()
+        public LoginViewModel(INavigation nav)
         {
             LoginCommand = new Command(OnLoginClicked);
+            navigation = nav;
         }
 
         /// <summary>
@@ -90,6 +92,15 @@ namespace OTB_SEGURA.ViewModels
                 return new RelayCommand(LoginMethod);
             }
         }
+        public ICommand RecoveryPassCommand
+        {
+            get
+            {
+                return new RelayCommand(async()=>{
+                    await navigation.PushAsync(new View_RecoverPassword());
+                });
+            }
+        }
 
         /// <summary>
         /// Devuelve el metodo LoginSuccess
@@ -102,7 +113,6 @@ namespace OTB_SEGURA.ViewModels
             }
         }
         #endregion
-
 
         /// <summary>
         /// Metodos

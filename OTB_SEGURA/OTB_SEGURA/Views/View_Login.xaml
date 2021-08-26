@@ -46,7 +46,8 @@
                                 <CheckBox IsChecked="{Binding RememberMe}" Color="#056d8a"/>
                                 <Label Text="Recordarme" TextColor="DarkGray" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
 
-                                <Label Text="Olvidaste tu Contraseña?" TextColor="#056d8a" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                <Button Text="Olvidaste tu Contraseña?" TextColor="#056d8a" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small"
+                                        Background="Transparent" BorderWidth="0" Command="{Binding RecoveryPassCommand}" />
 
 
                             </StackLayout>

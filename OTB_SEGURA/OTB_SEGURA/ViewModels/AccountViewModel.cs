@@ -15,7 +15,7 @@ namespace OTB_SEGURA.ViewModels
     /// Nombre del desarrollador: Miguel Angel Terrazas Challapa
     /// Clase para realizar el update de usuario
     ///</summary>
-    class AccountViewModel : BaseViewModel
+    public class AccountViewModel : BaseViewModel
     {
         #region Attributes
         FireBaseHelper fireBaseHelper = new FireBaseHelper();
@@ -106,8 +106,9 @@ namespace OTB_SEGURA.ViewModels
                     State = 1,
                     Photo = null,
                     Password = password1,
-                    UserName = FireBaseHelper.staticUser.UserName
-
+                    UserName = FireBaseHelper.staticUser.UserName,
+                    Email=FireBaseHelper.staticUser.Email,
+                    UserType=FireBaseHelper.staticUser.UserType
                 };
                 
                 await fireBaseHelper.UpdateUser(user);

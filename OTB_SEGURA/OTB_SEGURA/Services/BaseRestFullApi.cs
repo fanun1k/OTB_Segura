@@ -40,7 +40,6 @@ namespace OTB_SEGURA.Services
             {
                 throw ex;
             }
-
         }
     }
 }

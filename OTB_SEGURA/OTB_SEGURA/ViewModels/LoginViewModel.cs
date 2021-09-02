@@ -119,7 +119,7 @@ namespace OTB_SEGURA.ViewModels
                     ResponseHTTP<UserModel> resultHTTP = await restFull.Login(User);
                     if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                     {
-                        if (resultHTTP.Data.State != 0)
+                        if (resultHTTP.Data[0].State != 0)
                         {
                             string tipo = "";
 
@@ -127,22 +127,22 @@ namespace OTB_SEGURA.ViewModels
                             {
                                 Application.Current.Properties["Sesion"] = 1;
                             }
-                            Application.Current.Properties["Id"] = resultHTTP.Data.UserId;
-                            Application.Current.Properties["Name"] = resultHTTP.Data.Name;
-                            Application.Current.Properties["UserName"] = resultHTTP.Data.UserName;
-                            Application.Current.Properties["Ci"] = resultHTTP.Data.Ci;
-                            Application.Current.Properties["Password"] = resultHTTP.Data.Password;
-                            Application.Current.Properties["Phone"] = resultHTTP.Data.Cell_phone;
-                            Application.Current.Properties["UserType"] = resultHTTP.Data.Type;
+                            Application.Current.Properties["Id"] = resultHTTP.Data[0].UserId;
+                            Application.Current.Properties["Name"] = resultHTTP.Data[0].Name;
+                            Application.Current.Properties["UserName"] = resultHTTP.Data[0].UserName;
+                            Application.Current.Properties["Ci"] = resultHTTP.Data[0].Ci;
+                            Application.Current.Properties["Password"] = resultHTTP.Data[0].Password;
+                            Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
+                            Application.Current.Properties["UserType"] = resultHTTP.Data[0].Type;
 
-                            if (resultHTTP.Data.Type == 1)
+                            if (resultHTTP.Data[0].Type == 1)
                             {
                                 tipo = "admin";
                             }
                             else tipo = "user";
                             MessagingCenter.Send<LoginViewModel>(this, tipo);
                             //DependencyService.Get<IMessage>().LongAlert(tipo);
-                            DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data.Name);
+                            DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data[0].Name);
                             await Shell.Current.GoToAsync("//AddActivity");
 
                         }

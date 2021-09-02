@@ -15,37 +15,22 @@ namespace OTB_SEGURA.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         /// <summary>
-        /// Variables de uso Global
-        /// </summary>
-        FireBaseHelper fireBaseHelper = new FireBaseHelper();
-        UserModel userModel;
-
-        /// <summary>
         /// Parte de declaracion de variables
         /// </summary>
-        #region Variables
-        private string userName = "";
-        private string password = "";
+        #region Attributes
+        private UserModel user=new UserModel();
+
         INavigation navigation;
         #endregion
 
         /// <summary>
         /// Getters y Setters
         /// </summary>
-        #region GettersAndSetters
-        public string Password
+        #region Properties
+        public UserModel User
         {
-            get { return password; }
-            set { password = value; }
-        }
-        public string UserName
-        {
-            get { return userName; }
-            set
-            {
-                userName = value;
-                OnPropertyChanged();
-            }
+            get { return user; }
+            set { user = value; OnPropertyChanged(); }
         }
         public bool RememberMe
         {
@@ -68,14 +53,7 @@ namespace OTB_SEGURA.ViewModels
             navigation = nav;
         }
 
-        /// <summary>
-        /// Metodo para asignar un comando async en alguna variable command
-        /// </summary>
-        private async void OnLoginClicked(object obj)
-        {
-            await Shell.Current.GoToAsync($"//AboutPage");
-
-        }
+       
 
         /// <summary>
         /// Metodos ICommand
@@ -92,6 +70,7 @@ namespace OTB_SEGURA.ViewModels
                 return new RelayCommand(LoginMethod);
             }
         }
+
         public ICommand RecoveryPassCommand
         {
             get
@@ -135,45 +114,62 @@ namespace OTB_SEGURA.ViewModels
 
                 try
                 {
-                    userModel = await fireBaseHelper.GetPerson(userName.ToUpper(), password);
-                    if (userModel.State != 0)
+                    UserService restFull = new UserService();
+                    
+                    ResponseHTTP<UserModel> resultHTTP = await restFull.Login(User);
+                    if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                     {
-                        string tipo = "";
-                        if (_rememberMe)
+                        if (resultHTTP.Data.State != 0)
                         {
-                            Application.Current.Properties["Sesion"] = 1;
+                            string tipo = "";
+
+                            if (_rememberMe)
+                            {
+                                Application.Current.Properties["Sesion"] = 1;
+                            }
+                            Application.Current.Properties["Id"] = resultHTTP.Data.UserId;
+                            Application.Current.Properties["Name"] = resultHTTP.Data.Name;
+                            Application.Current.Properties["UserName"] = resultHTTP.Data.UserName;
+                            Application.Current.Properties["Ci"] = resultHTTP.Data.Ci;
+                            Application.Current.Properties["Password"] = resultHTTP.Data.Password;
+                            Application.Current.Properties["Phone"] = resultHTTP.Data.Cell_phone;
+                            Application.Current.Properties["UserType"] = resultHTTP.Data.Type;
+
+                            if (resultHTTP.Data.Type == 1)
+                            {
+                                tipo = "admin";
+                            }
+                            else tipo = "user";
+                            MessagingCenter.Send<LoginViewModel>(this, tipo);
+                            //DependencyService.Get<IMessage>().LongAlert(tipo);
+                            DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data.Name);
+                            await Shell.Current.GoToAsync("//AddActivity");
+
                         }
-                        Application.Current.Properties["Id"] = userModel.UserId;
-                        Application.Current.Properties["Name"] = userModel.Name;
-                        Application.Current.Properties["UserName"] = userModel.UserName;
-                        Application.Current.Properties["Ci"] = userModel.Ci;
-                        Application.Current.Properties["Password"] = userModel.Password;
-                        Application.Current.Properties["Phone"] = userModel.Phone;
-                        Application.Current.Properties["UserType"] = userModel.UserType;
-
-
-                        if (userModel.UserType == 1)
+                        else
                         {
-                            tipo = "admin";
+                            DependencyService.Get<IMessage>().LongAlert("Su usuario se Encuentra bloqueado, comuniquese con soporte de su zona");
                         }
-                        else tipo = "user";
-                        MessagingCenter.Send<LoginViewModel>(this, tipo);
-                        //DependencyService.Get<IMessage>().LongAlert(tipo);
-                        DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + userModel.Name);
-                        await Shell.Current.GoToAsync("//AddActivity");
-
                     }
                     else
                     {
-                        DependencyService.Get<IMessage>().LongAlert("Su usuario se Encuentra bloqueado, comuniquese con soporte de su zona");
+                        DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
                     }
-
                 }
                 catch (Exception ex)
                 {
-                    DependencyService.Get<IMessage>().LongAlert("El usuario o la contraseña no son correctos");
+                    DependencyService.Get<IMessage>().LongAlert(ex.Message);
                 }
             }
+        }
+
+        /// <summary>
+        /// Metodo para asignar un comando async en alguna variable command
+        /// </summary>
+        private async void OnLoginClicked(object obj)
+        {
+            await Shell.Current.GoToAsync($"//AboutPage");
+
         }
 
         /// <summary>
@@ -201,11 +197,11 @@ namespace OTB_SEGURA.ViewModels
             bool res = false;
             try
             {
-                if (userName != "")
+                if (user.Email != "")
                 {
-                    if (password != "")
+                    if (user.Password != "")
                     {
-                        userName = userName.Replace(" ", string.Empty);
+                        user.Email = user.Email.Replace(" ", string.Empty);
                         res = true;
                     }
                     else

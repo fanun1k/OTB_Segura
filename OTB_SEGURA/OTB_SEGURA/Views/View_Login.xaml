@@ -28,7 +28,7 @@
                                         <Image Source="https://www.findool.com/images/avatars/avatar.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
 
-                                    <Entry Placeholder="Email" Text="{Binding UserName, Mode=TwoWay}" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                    <Entry Placeholder="Email" Text="{Binding User.Email, Mode=TwoWay}" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                 </StackLayout>
                             </Frame>
 
@@ -38,7 +38,7 @@
                                         <Image Source="https://images.all-free-download.com/images/graphicthumb/lock_icon_6813906.jpg" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
 
-                                    <Entry Placeholder="Password" Text="{Binding Password,Mode=TwoWay}" IsPassword="True" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                    <Entry Placeholder="Password" Text="{Binding User.Password,Mode=TwoWay}" IsPassword="True" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                 </StackLayout>
                             </Frame>
 
@@ -54,7 +54,6 @@
 
                             <Button Text="Ingresar" Command="{Binding LoginValidateCommand}" BackgroundColor="#056d8a" TextColor="White" CornerRadius="30" />
                             <Button x:Name="button1" IsVisible="false"></Button>
-
                         </StackLayout>
 
 

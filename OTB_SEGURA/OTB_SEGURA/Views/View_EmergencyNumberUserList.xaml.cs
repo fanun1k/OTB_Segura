@@ -41,7 +41,7 @@ namespace OTB_SEGURA.Views
             UserModel user = e.SelectedItem as UserModel;
             //DependencyService.Get<IMessage>().ShortAlert(user.Name + user.Phone);
             //Agregar redireccionamiento a perfil
-            await Navigation.PushAsync(new View_UserProfile(user.Name,user.Phone,user.UserId));
+            await Navigation.PushAsync(new View_UserProfile(user.Name,user.Cell_phone,user.UserId));
         }
     }
 }

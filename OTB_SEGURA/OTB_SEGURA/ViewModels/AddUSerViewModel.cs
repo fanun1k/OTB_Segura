@@ -126,10 +126,10 @@ namespace OTB_SEGURA.ViewModels
                     UserName = userName,
                     Password = password.Trim(),
                     Ci = ci,
-                    Phone = phone,
+                    Cell_phone = phone,
                     State = 1,
                     Photo = null,
-                    UserType = 0,
+                    Type = 0,
                     Email = email
 
                 };

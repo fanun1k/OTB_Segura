@@ -102,13 +102,13 @@ namespace OTB_SEGURA.ViewModels
                     UserId = FireBaseHelper.staticUser.UserId, //userId de el usuario con sesion iniciada
                     Name = name.ToUpper().Trim(), 
                     Ci = ci,
-                    Phone = phone,
+                    Cell_phone = phone,
                     State = 1,
                     Photo = null,
                     Password = password1,
                     UserName = FireBaseHelper.staticUser.UserName,
                     Email=FireBaseHelper.staticUser.Email,
-                    UserType=FireBaseHelper.staticUser.UserType
+                    Type=FireBaseHelper.staticUser.Type
                 };
                 
                 await fireBaseHelper.UpdateUser(user);

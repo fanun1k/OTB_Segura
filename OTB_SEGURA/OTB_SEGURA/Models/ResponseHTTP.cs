@@ -7,7 +7,7 @@ namespace OTB_SEGURA.Models
 {
     public class ResponseHTTP<T>
     {
-        public T Data { get; set; }
+        public List<T> Data { get; set; }
         public string Msj { get; set; }
         public HttpStatusCode Code { get; set; }
     }

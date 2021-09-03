@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using OTB_SEGURA.Models;
 using System.Net;
+using System.Collections.Generic;
 
 namespace OTB_SEGURA.Services
 {
@@ -16,13 +17,27 @@ namespace OTB_SEGURA.Services
         {
             try
             {
-               return await POST(user, urlApiUser + "login");
+                string urlLogin = urlApiUser+"login";
+               return await POST(user, urlLogin);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
           
+        }
+        public async Task<ResponseHTTP<UserModel>> UsersByOtb(int otbId)
+        {
+            try
+            {
+                string urlGetUsersByOtb = urlApiUser + "byotb/4";
+                return await GET(urlGetUsersByOtb);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

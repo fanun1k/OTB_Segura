@@ -19,10 +19,9 @@ namespace OTB_SEGURA.ViewModels
         /// </summary>
         #region Attributes
         private UserModel user=new UserModel();
-
+        UserService restFull = new UserService();
         INavigation navigation;
         #endregion
-
         /// <summary>
         /// Getters y Setters
         /// </summary>
@@ -109,12 +108,13 @@ namespace OTB_SEGURA.ViewModels
         /// </remarks>
         private async void LoginMethod()
         {
+            var re = await restFull.UsersByOtb(5);
             if (validar())
             {
 
                 try
                 {
-                    UserService restFull = new UserService();
+                    
                     
                     ResponseHTTP<UserModel> resultHTTP = await restFull.Login(User);
                     if (resultHTTP.Code == System.Net.HttpStatusCode.OK)

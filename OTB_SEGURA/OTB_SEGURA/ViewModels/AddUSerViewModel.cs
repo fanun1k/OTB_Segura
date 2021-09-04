@@ -22,70 +22,25 @@ namespace OTB_SEGURA.ViewModels
 
 
         #region Attributes
-        FireBaseHelper fireBaseHelper = new FireBaseHelper();
-        private string name = "";
-        private string userName = "";
-        private int ci = 0;
-        private int phone = 0;
-        private string password = "";
+        private UserModel user = new UserModel();
+        UserService restFull = new UserService();
         private string rePassword = "";
-        private string email = "";
+
         #endregion
 
         #region Properties
+
+        public UserModel User
+        {
+            get { return user; }
+            set { user = value; OnPropertyChanged(); }
+        }
+
         public string RePassword
         {
             get { return rePassword; }
             set { rePassword = value; }
         }
-
-        public string Password
-        {
-            get { return password; }
-            set { password = value; }
-        }
-
-
-        public int Phone
-        {
-            get { return phone; }
-            set { phone = value; }
-        }
-
-        public int Ci
-        {
-            get { return ci; }
-            set
-            {
-                ci = value;
-                CreateUserName();
-            }
-        }
-
-        public string Name
-        {
-            get { return name; }
-            set
-            {
-                name = value;
-                CreateUserName();
-            }
-        }
-        public string UserName
-        {
-            get { return userName; }
-            set
-            {
-                userName = value;
-                OnPropertyChanged();
-            }
-        }
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
-
         #endregion
 
         #region Construct
@@ -116,30 +71,26 @@ namespace OTB_SEGURA.ViewModels
         /// Metodo que nos ayuda a Hacer la insercion de un usuario a la bdd
         /// </summary>
         private async void InsertMethod()
-        {
-            IsBusy = true;
-            if (Validar())
+        {         
+            try
             {
-                var user = new UserModel
+                IsBusy = true;
+                ResponseHTTP<UserModel> resultHTTP = await restFull.UserInsert(user);
+                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                 {
-                    Name = name.ToUpper().Trim(),
-                    UserName = userName,
-                    Password = password.Trim(),
-                    Ci = ci,
-                    Cell_phone = phone,
-                    State = 1,
-                    Photo = null,
-                    Type = 0,
-                    Email = email
-
-                };
-                await fireBaseHelper.AddUser(user);
-                await Task.Delay(1000);
-                DependencyService.Get<IMessage>().ShortAlert("Usuario Agregado con éxito");
-                await Shell.Current.GoToAsync("..");
+                    DependencyService.Get<IMessage>().LongAlert("Registrado con exito!!!");
+                    await Shell.Current.GoToAsync("..");
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                }
+                IsBusy = false;
             }
-
-            IsBusy = false;
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }                            
         }
 
         /// <summary>
@@ -150,35 +101,35 @@ namespace OTB_SEGURA.ViewModels
         {
             bool res;
 
-            if (!Regex.Match(name, "^[ñA-Za-z _]*[ñA-Za-z][ñA-Za-z _]*$").Success)
+            if (!Regex.Match(user.Name, "^[ñA-Za-z _]*[ñA-Za-z][ñA-Za-z _]*$").Success)
             {
                 res = false;
                 DependencyService.Get<IMessage>().LongAlert("Formato del nombre incorrecto");
             }
-            else if (!Regex.Match(ci.ToString(), "^[0-9]{7}$").Success)
+            else if (!Regex.Match(user.Ci.ToString(), "^[0-9]{7}$").Success)
             {
                 res = false;
                 DependencyService.Get<IMessage>().LongAlert("Formato de C.I incorrecto");
             }
-            else if (!Regex.Match(phone.ToString(), "^[0-9]{8}$").Success)
+            else if (!Regex.Match(user.Cell_phone.ToString(), "^[0-9]{8}$").Success)
             {
                 res = false;
                 DependencyService.Get<IMessage>().LongAlert("Número de télefono incorrecto");
             }
-            else if (!Regex.Match(email.ToString(), "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*").Success)
+            else if (!Regex.Match(user.Email.ToString(), "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*").Success)
             {
                 res = false;
                 DependencyService.Get<IMessage>().LongAlert("Correo invalido");
             }
             else
             {
-                if (!password.Equals(""))
+                if (!user.Password.Equals(""))
                 {
                     if (!rePassword.Equals(""))
                     {
-                        if (password.Length > 5)
+                        if (user.Password.Length > 5)
                         {
-                            if (password.Trim() == rePassword.Trim())
+                            if (user.Password.Trim() == rePassword.Trim())
                             {
                                 res = true;
                             }
@@ -216,9 +167,9 @@ namespace OTB_SEGURA.ViewModels
         {
             try
             {
-                if (name.Length > 0)
+                if (user.Name.Length > 0)
                 {
-                    string[] iniciales = name.Split(' ');
+                    string[] iniciales = user.Name.Split(' ');
                     string userNameComplete = "";
                     foreach (string inicial in iniciales)
                     {
@@ -227,8 +178,8 @@ namespace OTB_SEGURA.ViewModels
                             userNameComplete += inicial.Substring(0, 1).ToUpper();
                         }
                     }
-                    userNameComplete += Ci.ToString();
-                    UserName = userNameComplete;
+                    userNameComplete += user.Ci.ToString();
+                    user.UserName = userNameComplete;
 
                 }
 

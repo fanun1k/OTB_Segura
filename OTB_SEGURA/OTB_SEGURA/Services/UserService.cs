@@ -39,5 +39,18 @@ namespace OTB_SEGURA.Services
                 throw ex;
             }
         }
+        public async Task<ResponseHTTP<UserModel>> UserInsert(UserModel user)
+        {
+            try
+            {
+                string urlInsert = urlApiUser;
+                return await POST(user, urlInsert);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }

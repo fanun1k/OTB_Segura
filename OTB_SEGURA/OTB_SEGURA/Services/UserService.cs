@@ -11,13 +11,13 @@ namespace OTB_SEGURA.Services
 {
     class UserService: BaseRestFullApi<UserModel>
     {
-        string urlApiUser = "restUser/";
+        string urlApiUser = "restUser";
 
         public async Task<ResponseHTTP<UserModel>> Login(UserModel user)
         {
             try
             {
-                string urlLogin = urlApiUser+"login";
+                string urlLogin = urlApiUser+"/login";
                return await POST(user, urlLogin);
             }
             catch (Exception ex)
@@ -30,7 +30,7 @@ namespace OTB_SEGURA.Services
         {
             try
             {
-                string urlGetUsersByOtb = urlApiUser + "byotb/4";
+                string urlGetUsersByOtb = urlApiUser + "/byotb/4";
                 return await GET(urlGetUsersByOtb);
             }
             catch (Exception ex)

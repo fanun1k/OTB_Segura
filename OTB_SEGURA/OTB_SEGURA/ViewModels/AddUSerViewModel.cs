@@ -75,10 +75,11 @@ namespace OTB_SEGURA.ViewModels
             try
             {
                 IsBusy = true;
+                user.State = 1;
                 ResponseHTTP<UserModel> resultHTTP = await restFull.UserInsert(user);
                 if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                 {
-                    DependencyService.Get<IMessage>().LongAlert("Registrado con exito!!!");
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
                     await Shell.Current.GoToAsync("..");
                 }
                 else
@@ -159,37 +160,7 @@ namespace OTB_SEGURA.ViewModels
             }
             return res;
         }
-
-        /// <summary>
-        /// Metodo que Crea un Nombre de usuario con las iniciales del nombre y el carnet
-        /// </summary>
-        public void CreateUserName()
-        {
-            try
-            {
-                if (user.Name.Length > 0)
-                {
-                    string[] iniciales = user.Name.Split(' ');
-                    string userNameComplete = "";
-                    foreach (string inicial in iniciales)
-                    {
-                        if (inicial.Length > 0)
-                        {
-                            userNameComplete += inicial.Substring(0, 1).ToUpper();
-                        }
-                    }
-                    userNameComplete += user.Ci.ToString();
-                    user.UserName = userNameComplete;
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                DependencyService.Get<IMessage>().LongAlert(ex.Message);
-            }
-
-        }
+      
         #endregion
 
 

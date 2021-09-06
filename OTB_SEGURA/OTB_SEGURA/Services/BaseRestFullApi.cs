@@ -11,7 +11,8 @@ namespace OTB_SEGURA.Services
 {
     class BaseRestFullApi<T>
     {
-        string urlserver = "https://otbsegura.000webhostapp.com/otbapi/v2/";
+        string urlserver = "https://otbsegura.000webhostapp.com/otbapi/v3/";
+        ResponseHTTP<T> res = new ResponseHTTP<T>();
 
 
         public async Task<ResponseHTTP<T>> POST(T obj, string url)
@@ -27,11 +28,11 @@ namespace OTB_SEGURA.Services
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     var jsonString = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<ResponseHTTP<T>>(jsonString);
+                    res= await JsonConvert.DeserializeObject<ResponseHTTP<T>>(jsonString);
+                    return res;
                 }
                 else
                 {
-                    ResponseHTTP<T> res = new ResponseHTTP<T>();
                     res.Code = response.StatusCode;
                     if (res.Msj == null) res.Msj = response.StatusCode.ToString();
                     return res;
@@ -46,7 +47,6 @@ namespace OTB_SEGURA.Services
         {
             try
             {
-
                 Uri RequestUri = new Uri(urlserver + url);
                 var client = new HttpClient();
                 var response = await client.GetAsync(RequestUri);
@@ -58,7 +58,6 @@ namespace OTB_SEGURA.Services
                 }
                 else
                 {
-                    ResponseHTTP<T> res = new ResponseHTTP<T>();
                     res.Code = response.StatusCode;
                     if (res.Msj == null) res.Msj = response.StatusCode.ToString();
                     return res;

@@ -144,7 +144,7 @@ namespace OTB_SEGURA.ViewModels
                             MessagingCenter.Send<LoginViewModel>(this, tipo);
                             //DependencyService.Get<IMessage>().LongAlert(tipo);
                             //DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data[0].Name);
-                            DependencyService.Get<IMessage>().LongAlert(Application.Current.Properties["Ci"] as string);
+                            DependencyService.Get<IMessage>().LongAlert(Application.Current.Properties["Name"] as string);
                             await Shell.Current.GoToAsync("//AddActivity");
 
                         }

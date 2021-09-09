@@ -1,13 +1,9 @@
-﻿using System;
-using GalaSoft.MvvmLight.Command;
+﻿using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 using System.Windows.Input;
 using Xamarin.Forms;
-using OTB_SEGURA.Views;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -18,17 +14,30 @@ namespace OTB_SEGURA.ViewModels
     public class AccountViewModel : BaseViewModel
     {
         #region Attributes
-
+        private UserModel user = new UserModel();
+        UserService restFull = new UserService();
+        private string oldPassword;
 
         #endregion
         #region Properties
+        public string OldPassword
+        {
+            get { return oldPassword; }
+            set { oldPassword = value; OnPropertyChanged(); }
+        }
 
+        public UserModel User
+        {
+            get { return user; }
+            set { user = value; OnPropertyChanged(); }
+        }
         #endregion
         #region Construct
         public AccountViewModel()
         {
             Title = "Editar Usuario"; //Titulo de View_Account
-            DependencyService.Get<IMessage>().LongAlert(Application.Current.Properties["Ci"] as string);
+            User.Name = Application.Current.Properties["Name"] as string;
+            User.Cell_phone = int.Parse(Application.Current.Properties["Phone"].ToString());
         }
 
         #endregion
@@ -48,68 +57,68 @@ namespace OTB_SEGURA.ViewModels
         private async void UpdateMethod()
         {
             IsBusy = true;
-            if (true)
+            if (Validate())
             {
+                try
+                {
+                    IsBusy = true;
+                    user.State = 1;
+                    ResponseHTTP<UserModel> resultHTTP = await restFull.UserUpdate(user);
+                    if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                    {
+                        Application.Current.Properties["Name"]= resultHTTP.Data[0].Name;
+                        Application.Current.Properties["Password"] = resultHTTP.Data[0].Password;
+                        Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
+                        await Shell.Current.GoToAsync("..");
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                    }
+                    IsBusy = false;
+                }
+                catch (Exception ex)
+                {
+                    DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                }
 
-                //Se verifica si el password ingresado en los 2 campos es el mismo, esto como un metodo de seguridad
-                //    if (password1 != password2)
-                //    {
-                //        await App.Current.MainPage.DisplayAlert("Error en la contraseña ", "Escriba la misma en ambos campos", "OK"); //Error de contraseña
-                //    }
-                //    else
-                //    {
-                //        var user = new UserModel
-                //        {
-                //            //Se agregan los atributos al constructor
-                //            UserId = FireBaseHelper.staticUser.UserId, //userId de el usuario con sesion iniciada
-                //            Name = name.ToUpper().Trim(),
-                //            Ci = ci,
-                //            Cell_phone = phone,
-                //            State = 1,
-                //            Photo = null,
-                //            Password = password1,
-                //            UserName = FireBaseHelper.staticUser.UserName,
-                //            Email = FireBaseHelper.staticUser.Email,
-                //            Type = FireBaseHelper.staticUser.Type
-                //        };
-
-                //        //await fireBaseHelper.UpdateUser(user);
-                //        await Task.Delay(1000);
-                //        DependencyService.Get<IMessage>().ShortAlert("Usuario Editado con éxito");
-                //        await Shell.Current.GoToAsync("..");
-                //    }
-                //}
-
-                //IsBusy = false;
             }
-            /// <summary>
-            /// Validacion de datos de entrada 
-            /// </summary>
-            /// <returns></returns>
-            //private bool Validar()
-            //{
-            //    bool res;
-            //    if (ci.ToString().Length > 5)
-            //    {
-            //        if (phone.ToString().Length > 6)
-            //        {
-            //            res = true;
-            //        }
-            //        else
-            //        {
-            //            res = false;
-            //            DependencyService.Get<IMessage>().LongAlert("El número de celular debe tener más de 7 caracteres");
-
-            //        }
-            //    }
-            //    else
-            //    {
-            //        DependencyService.Get<IMessage>().LongAlert("El número de carnet debe tener mas de 5 caracteres");
-            //        res = false;
-            //    }
-            //    return res;
-            //}
-            #endregion
         }
+        ///<summary>
+        ///Validacion de datos de entrada 
+        ///</summary>
+        ///<returns></returns>
+        private bool Validate()
+        {
+            bool res;
+            if (oldPassword == Application.Current.Properties["Password"].ToString())
+            {
+                if (user.Cell_phone.ToString().Length > 6)
+                {
+                    if (user.Name.Length > 4)
+                    {
+                        res = true;
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert("El nombre no puede ser tan reducido");
+                        res = false;
+                    }
+                }               
+                else
+                {
+                    res = false;
+                    DependencyService.Get<IMessage>().LongAlert("El número de celular debe tener más de 7 caracteres");
+
+                }
+            }
+            else
+            {
+                DependencyService.Get<IMessage>().LongAlert("La contraseña antigua es incorrecta");
+                res = false;
+            }
+            return res;
+        }
+        #endregion
     }
 }

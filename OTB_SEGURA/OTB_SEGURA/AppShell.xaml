@@ -110,6 +110,9 @@
     <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
         <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" />
     </FlyoutItem>
+    <FlyoutItem Title="Mi OTB" Icon="IconOtb.png">
+        <ShellContent Route="Mi OTB" ContentTemplate="{DataTemplate local:View_MyOtb}" />
+    </FlyoutItem>
     <FlyoutItem x:Name="fiUser" Title="Lista de Usuarios" Icon="ListaUsuarios.png" IsVisible="{Binding IsAdmin}">
         <ShellContent Route="UserList" ContentTemplate="{DataTemplate local:View_UsersList}" />
     </FlyoutItem>

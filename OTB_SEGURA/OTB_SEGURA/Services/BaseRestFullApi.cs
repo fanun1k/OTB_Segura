@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using OTB_SEGURA.Models;
 using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -28,7 +27,7 @@ namespace OTB_SEGURA.Services
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     var jsonString = await response.Content.ReadAsStringAsync();
-                    res= await JsonConvert.DeserializeObject<ResponseHTTP<T>>(jsonString);
+                    res = JsonConvert.DeserializeObject<ResponseHTTP<T>>(jsonString);
                     return res;
                 }
                 else
@@ -67,6 +66,6 @@ namespace OTB_SEGURA.Services
             {
                 throw ex;
             }
-        } 
+        }
     }
 }

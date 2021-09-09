@@ -101,6 +101,7 @@ namespace OTB_SEGURA.ViewModels
                 }
             }
         }
+
         /// <summary>
         /// Metodo que que inicia el comando ItemTappedCommnad
         /// </summary>

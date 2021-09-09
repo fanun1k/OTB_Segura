@@ -17,7 +17,7 @@ namespace OTB_SEGURA.ViewModels
     public class UserProfileViewModel:BaseViewModel
     {
         #region Attributes
-        private UserModel user;
+        private UserModel user = new UserModel();
         private string textButton;
         FireBaseHelper firebaseHelper=new FireBaseHelper();
         private List<ActivityModel> activityList = new List<ActivityModel>();
@@ -63,12 +63,8 @@ namespace OTB_SEGURA.ViewModels
         {
             user = new UserModel();
             textButton="Editar Mi Perfil";
-            user.Name = Application.Current.Properties["Name"].ToString();
-            user.UserName = Application.Current.Properties["UserName"].ToString();
-            //user.Name = FireBaseHelper.staticUser.Name;
-            //user.UserName = FireBaseHelper.staticUser.UserName;
-            LoadActivities(Application.Current.Properties["Id"].ToString());
-            //LoadActivities(FireBaseHelper.staticUser.UserId.ToString());
+            user.Name = Application.Current.Properties["Name"] as string;
+            LoadActivities(Application.Current.Properties["Id"] as string);
             ButtonChangeStateClick = new Command(async()=> 
             {
                 await navigation.PushAsync(new View_Account());

@@ -22,7 +22,7 @@ namespace OTB_SEGURA.Services
                   UserId = item.Object.UserId,
                   Name = item.Object.Name,
                   UserName = item.Object.UserName,
-                  Phone = item.Object.Phone,
+                  Cell_phone = item.Object.Cell_phone,
                   State = item.Object.State,
                   Ci = item.Object.Ci,
                   Password = item.Object.Password,
@@ -54,10 +54,10 @@ namespace OTB_SEGURA.Services
                     UserId=item.Object.UserId,
                     UserName=item.Object.UserName,
                     Password=item.Object.Password,
-                    Phone=item.Object.Phone,
+                    Cell_phone=item.Object.Cell_phone,
                     Name=item.Object.Name,
                     Ci=item.Object.Ci,
-                    UserType=item.Object.UserType,
+                    Type=item.Object.Type,
                     State = item.Object.State,
                     Email=item.Object.Email
                 }).ToList();
@@ -129,11 +129,11 @@ namespace OTB_SEGURA.Services
                 Name = userModel.Name,
                 UserName = userModel.UserName,
                 Password = userModel.Password,
-                Phone = userModel.Phone,
+                Cell_phone = userModel.Cell_phone,
                 State = userModel.State,
                 Photo = userModel.Photo,
                 Ci = userModel.Ci,
-                UserType = 0,
+                Type = 0,
                 Email = userModel.Email
 
             });
@@ -178,7 +178,7 @@ namespace OTB_SEGURA.Services
             await firebase
               .Child("Users")
               .Child(toUpdatePerson.Key)
-              .PutAsync(new UserModel() { UserId = userModel.UserId, Name = userModel.Name, UserName = userModel.UserName, Password = userModel.Password, Photo = userModel.Photo, Phone = userModel.Phone, State = userModel.State, Ci = userModel.Ci,UserType=userModel.UserType,Email=userModel.Email });
+              .PutAsync(new UserModel() { UserId = userModel.UserId, Name = userModel.Name, UserName = userModel.UserName, Password = userModel.Password, Photo = userModel.Photo, Cell_phone = userModel.Cell_phone, State = userModel.State, Ci = userModel.Ci,Type=userModel.Type,Email=userModel.Email });
         }
 
         public async Task DisableUser(UserModel userModel)
@@ -195,7 +195,7 @@ namespace OTB_SEGURA.Services
                   Name = userModel.Name,
                   UserName = userModel.UserName,
                   Password = userModel.Password,
-                  Phone = userModel.Phone,
+                  Cell_phone = userModel.Cell_phone,
                   State = 0,
                   Photo = userModel.Photo,
                   Ci = userModel.Ci,
@@ -216,7 +216,7 @@ namespace OTB_SEGURA.Services
                   Name = userModel.Name,
                   UserName = userModel.UserName,
                   Password = userModel.Password,
-                  Phone = userModel.Phone,
+                  Cell_phone = userModel.Cell_phone,
                   State = 1,
                   Photo = userModel.Photo,
                   Ci = userModel.Ci,
@@ -242,12 +242,12 @@ namespace OTB_SEGURA.Services
                   UserId = item.Object.UserId,
                   Name = item.Object.Name,
                   UserName = item.Object.UserName,
-                  Phone = item.Object.Phone,
+                  Cell_phone = item.Object.Cell_phone,
                   State = item.Object.State,
                   Ci = item.Object.Ci,
                   Email = item.Object.Email,
                   Password = item.Object.Password,
-                  UserType = item.Object.UserType,
+                  Type = item.Object.Type,
              
               }).ToList();
         }
@@ -271,7 +271,7 @@ namespace OTB_SEGURA.Services
                   UserId = item.Object.UserId,
                   Name = item.Object.Name,
                   UserName = item.Object.UserName,
-                  Phone = item.Object.Phone,
+                  Cell_phone = item.Object.Cell_phone,
                   State = item.Object.State,
                   Ci = item.Object.Ci,
                   Email = item.Object.Email,

@@ -15,37 +15,21 @@ namespace OTB_SEGURA.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         /// <summary>
-        /// Variables de uso Global
-        /// </summary>
-        FireBaseHelper fireBaseHelper = new FireBaseHelper();
-        UserModel userModel;
-
-        /// <summary>
         /// Parte de declaracion de variables
         /// </summary>
-        #region Variables
-        private string userName = "";
-        private string password = "";
+        #region Attributes
+        private UserModel user=new UserModel();
+        UserService restFull = new UserService();
         INavigation navigation;
         #endregion
-
         /// <summary>
         /// Getters y Setters
         /// </summary>
-        #region GettersAndSetters
-        public string Password
+        #region Properties
+        public UserModel User
         {
-            get { return password; }
-            set { password = value; }
-        }
-        public string UserName
-        {
-            get { return userName; }
-            set
-            {
-                userName = value;
-                OnPropertyChanged();
-            }
+            get { return user; }
+            set { user = value; OnPropertyChanged(); }
         }
         public bool RememberMe
         {
@@ -68,14 +52,7 @@ namespace OTB_SEGURA.ViewModels
             navigation = nav;
         }
 
-        /// <summary>
-        /// Metodo para asignar un comando async en alguna variable command
-        /// </summary>
-        private async void OnLoginClicked(object obj)
-        {
-            await Shell.Current.GoToAsync($"//AboutPage");
-
-        }
+       
 
         /// <summary>
         /// Metodos ICommand
@@ -92,6 +69,7 @@ namespace OTB_SEGURA.ViewModels
                 return new RelayCommand(LoginMethod);
             }
         }
+
         public ICommand RecoveryPassCommand
         {
             get
@@ -130,50 +108,70 @@ namespace OTB_SEGURA.ViewModels
         /// </remarks>
         private async void LoginMethod()
         {
+            var re = await restFull.UsersByOtb(5);
             if (validar())
             {
 
                 try
                 {
-                    userModel = await fireBaseHelper.GetPerson(userName.ToUpper(), password);
-                    if (userModel.State != 0)
+                    
+                    
+                    ResponseHTTP<UserModel> resultHTTP = await restFull.Login(User);
+                    if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                     {
-                        string tipo = "";
-                        if (_rememberMe)
+                        if (resultHTTP.Data[0].State != 0)
                         {
-                            Application.Current.Properties["Sesion"] = 1;
+                            string tipo = "";
+
+                            if (_rememberMe)
+                            {
+                                Application.Current.Properties["Sesion"] = 1;
+                            }
+                            Application.Current.Properties["User_ID"] = resultHTTP.Data[0].User_ID;
+                            Application.Current.Properties["Id"] = resultHTTP.Data[0].UserId;
+                            Application.Current.Properties["Name"] = resultHTTP.Data[0].Name;
+                            Application.Current.Properties["UserName"] = resultHTTP.Data[0].UserName;
+                            Application.Current.Properties["Ci"] = resultHTTP.Data[0].Ci;
+                            Application.Current.Properties["Password"] = resultHTTP.Data[0].Password;
+                            Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
+                            Application.Current.Properties["UserType"] = resultHTTP.Data[0].Type;
+
+                            if (resultHTTP.Data[0].Type == 1)
+                            {
+                                tipo = "admin";
+                            }
+                            else tipo = "user";
+                            MessagingCenter.Send<LoginViewModel>(this, tipo);
+                            //DependencyService.Get<IMessage>().LongAlert(tipo);
+                            //DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data[0].Name);
+                            DependencyService.Get<IMessage>().LongAlert(Application.Current.Properties["Ci"] as string);
+                            await Shell.Current.GoToAsync("//AddActivity");
+
                         }
-                        Application.Current.Properties["Id"] = userModel.UserId;
-                        Application.Current.Properties["Name"] = userModel.Name;
-                        Application.Current.Properties["UserName"] = userModel.UserName;
-                        Application.Current.Properties["Ci"] = userModel.Ci;
-                        Application.Current.Properties["Password"] = userModel.Password;
-                        Application.Current.Properties["Phone"] = userModel.Phone;
-                        Application.Current.Properties["UserType"] = userModel.UserType;
-
-
-                        if (userModel.UserType == 1)
+                        else
                         {
-                            tipo = "admin";
+                            DependencyService.Get<IMessage>().LongAlert("Su usuario se Encuentra bloqueado, comuniquese con soporte de su zona");
                         }
-                        else tipo = "user";
-                        MessagingCenter.Send<LoginViewModel>(this, tipo);
-                        //DependencyService.Get<IMessage>().LongAlert(tipo);
-                        DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + userModel.Name);
-                        await Shell.Current.GoToAsync("//AddActivity");
-
                     }
                     else
                     {
-                        DependencyService.Get<IMessage>().LongAlert("Su usuario se Encuentra bloqueado, comuniquese con soporte de su zona");
+                        DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
                     }
-
                 }
                 catch (Exception ex)
                 {
-                    DependencyService.Get<IMessage>().LongAlert("El usuario o la contraseña no son correctos");
+                    DependencyService.Get<IMessage>().LongAlert(ex.Message);
                 }
             }
+        }
+
+        /// <summary>
+        /// Metodo para asignar un comando async en alguna variable command
+        /// </summary>
+        private async void OnLoginClicked(object obj)
+        {
+            await Shell.Current.GoToAsync($"//AboutPage");
+
         }
 
         /// <summary>
@@ -201,11 +199,11 @@ namespace OTB_SEGURA.ViewModels
             bool res = false;
             try
             {
-                if (userName != "")
+                if (user.Email != "")
                 {
-                    if (password != "")
+                    if (user.Password != "")
                     {
-                        userName = userName.Replace(" ", string.Empty);
+                        user.Email = user.Email.Replace(" ", string.Empty);
                         res = true;
                     }
                     else

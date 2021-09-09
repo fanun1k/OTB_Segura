@@ -14,8 +14,7 @@
             <Grid BackgroundColor="{StaticResource PrimaryDisabled}"></Grid>
             <ImgCircle:CircleImage WidthRequest="80" HeightRequest="80" BorderColor="White" BorderThickness="3" Grid.RowSpan="2" Source="https://i.blogs.es/2d5264/facebook-image/1366_2000.jpg"></ImgCircle:CircleImage>
         </Grid>
-        <Label BindingContext="{Binding User}" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"></Label>
-        <Label BindingContext="{Binding User}" Text="{Binding UserName,Mode=TwoWay}" HorizontalOptions="Center"></Label>
+        <Label Text="{Binding User.Name,Mode=TwoWay}" HorizontalOptions="Center" TextColor="Black"></Label>
         <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="0.60" Command="{Binding ButtonChangeStateClick}" BackgroundColor="{StaticResource PrimaryVariation}" />
         <Label Text="Alertas"></Label>
         <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">

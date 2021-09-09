@@ -1,13 +1,9 @@
-﻿using System;
-using GalaSoft.MvvmLight.Command;
+﻿using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 using System.Windows.Input;
 using Xamarin.Forms;
-using OTB_SEGURA.Views;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -18,58 +14,32 @@ namespace OTB_SEGURA.ViewModels
     public class AccountViewModel : BaseViewModel
     {
         #region Attributes
-        FireBaseHelper fireBaseHelper = new FireBaseHelper();
-        private string name = "";
-        private int ci;
-        private int phone;
-        private string password1;
-        private string password2;
+        private UserModel user = new UserModel();
+        UserService restFull = new UserService();
+        private string oldPassword;
+
         #endregion
         #region Properties
-        public int Phone
+        public string OldPassword
         {
-            get { return phone; }
-            set { phone = value; }
+            get { return oldPassword; }
+            set { oldPassword = value; OnPropertyChanged(); }
         }
 
-        public int Ci
+        public UserModel User
         {
-            get { return ci; }
-            set
-            {
-                ci = value;
-            }
-        }
-        public string Name
-        {
-            get { return name; }
-            set
-            {
-                name = value;
-            }
-        }
-        public string Password1
-        {
-            get { return password1; }
-            set
-            {
-                password1 = value;
-            }
-        }
-        public string Password2
-        {
-            get { return password2; }
-            set
-            {
-                password2 = value;
-            }
+            get { return user; }
+            set { user = value; OnPropertyChanged(); }
         }
         #endregion
         #region Construct
         public AccountViewModel()
         {
             Title = "Editar Usuario"; //Titulo de View_Account
+            User.Name = Application.Current.Properties["Name"] as string;
+            User.Cell_phone = int.Parse(Application.Current.Properties["Phone"].ToString());
         }
+
         #endregion
         #region Command      
         public ICommand UpdateCommand //Comando para llamar al metodo 
@@ -86,53 +56,55 @@ namespace OTB_SEGURA.ViewModels
         /// </summary>
         private async void UpdateMethod()
         {
-            IsBusy = true;            
-            if (Validar())
+            IsBusy = true;
+            if (Validate())
             {
-                //Se verifica si el password ingresado en los 2 campos es el mismo, esto como un metodo de seguridad
-                if (password1 != password2)
+                try
                 {
-                    await App.Current.MainPage.DisplayAlert("Error en la contraseña ", "Escriba la misma en ambos campos", "OK"); //Error de contraseña
+                    IsBusy = true;
+                    user.State = 1;
+                    ResponseHTTP<UserModel> resultHTTP = await restFull.UserUpdate(user);
+                    if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                    {
+                        Application.Current.Properties["Name"]= resultHTTP.Data[0].Name;
+                        Application.Current.Properties["Password"] = resultHTTP.Data[0].Password;
+                        Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
+                        await Shell.Current.GoToAsync("..");
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                    }
+                    IsBusy = false;
                 }
-                else
-                { 
-                var user = new UserModel
+                catch (Exception ex)
                 {
-                    //Se agregan los atributos al constructor
-                    UserId = FireBaseHelper.staticUser.UserId, //userId de el usuario con sesion iniciada
-                    Name = name.ToUpper().Trim(), 
-                    Ci = ci,
-                    Cell_phone = phone,
-                    State = 1,
-                    Photo = null,
-                    Password = password1,
-                    UserName = FireBaseHelper.staticUser.UserName,
-                    Email=FireBaseHelper.staticUser.Email,
-                    Type=FireBaseHelper.staticUser.Type
-                };
-                
-                await fireBaseHelper.UpdateUser(user);
-                await Task.Delay(1000);
-                DependencyService.Get<IMessage>().ShortAlert("Usuario Editado con éxito");
-                await Shell.Current.GoToAsync("..");
+                    DependencyService.Get<IMessage>().LongAlert(ex.Message);
                 }
-            }
 
-            IsBusy = false;
+            }
         }
-        /// <summary>
-        /// Validacion de datos de entrada 
-        /// </summary>
-        /// <returns></returns>
-        private bool Validar()
+        ///<summary>
+        ///Validacion de datos de entrada 
+        ///</summary>
+        ///<returns></returns>
+        private bool Validate()
         {
             bool res;
-            if (ci.ToString().Length > 5)
+            if (oldPassword == Application.Current.Properties["Password"].ToString())
             {
-                if (phone.ToString().Length > 6)
+                if (user.Cell_phone.ToString().Length > 6)
                 {
-                    res = true;
-                }
+                    if (user.Name.Length > 4)
+                    {
+                        res = true;
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert("El nombre no puede ser tan reducido");
+                        res = false;
+                    }
+                }               
                 else
                 {
                     res = false;
@@ -142,7 +114,7 @@ namespace OTB_SEGURA.ViewModels
             }
             else
             {
-                DependencyService.Get<IMessage>().LongAlert("El número de carnet debe tener mas de 5 caracteres");
+                DependencyService.Get<IMessage>().LongAlert("La contraseña antigua es incorrecta");
                 res = false;
             }
             return res;

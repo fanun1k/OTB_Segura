@@ -104,6 +104,9 @@
     <FlyoutItem Title="Mi Perfil " Icon="usuario.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_UserProfile}" />
     </FlyoutItem>
+    <FlyoutItem Title="Registrar/Unirse OTB" Icon="usuario.png">
+        <ShellContent Route="registrarotb" ContentTemplate="{DataTemplate local:View_RegisterJoinOtb}" />
+    </FlyoutItem>
     <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
         <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" />
     </FlyoutItem>

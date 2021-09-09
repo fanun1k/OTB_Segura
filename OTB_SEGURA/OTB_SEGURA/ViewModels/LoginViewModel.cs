@@ -127,6 +127,7 @@ namespace OTB_SEGURA.ViewModels
                             {
                                 Application.Current.Properties["Sesion"] = 1;
                             }
+                            Application.Current.Properties["User_ID"] = resultHTTP.Data[0].User_ID;
                             Application.Current.Properties["Id"] = resultHTTP.Data[0].UserId;
                             Application.Current.Properties["Name"] = resultHTTP.Data[0].Name;
                             Application.Current.Properties["UserName"] = resultHTTP.Data[0].UserName;
@@ -142,7 +143,8 @@ namespace OTB_SEGURA.ViewModels
                             else tipo = "user";
                             MessagingCenter.Send<LoginViewModel>(this, tipo);
                             //DependencyService.Get<IMessage>().LongAlert(tipo);
-                            DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data[0].Name);
+                            //DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data[0].Name);
+                            DependencyService.Get<IMessage>().LongAlert(Application.Current.Properties["Name"] as string);
                             await Shell.Current.GoToAsync("//AddActivity");
 
                         }

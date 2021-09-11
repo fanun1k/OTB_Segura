@@ -10,17 +10,16 @@ namespace OTB_SEGURA.Services
 {
     class BaseRestFullApi<T>
     {
-        string urlserver = "https://otbsegura.000webhostapp.com/otbapi/v3/";
+        //string urlserver = "https://otbsegura.000webhostapp.com/otbapi/v3/";
+        readonly string urlserver = "http://ec2-18-224-252-198.us-east-2.compute.amazonaws.com/otbapi/v1/";
         ResponseHTTP<T> res = new ResponseHTTP<T>();
 
-
-        public async Task<ResponseHTTP<T>> POST(T obj, string url)
+        protected async Task<ResponseHTTP<T>> POST(string json, string url)
         {
             try
             {
                 Uri RequestUri = new Uri(urlserver + url);
                 var client = new HttpClient();
-                var json = JsonConvert.SerializeObject(obj);
                 var contJson = new StringContent(json, Encoding.UTF8, "application/json");
                 var response = await client.PostAsync(RequestUri, contJson);
 
@@ -42,7 +41,7 @@ namespace OTB_SEGURA.Services
                 throw ex;
             }
         }
-        public async Task<ResponseHTTP<T>> GET(string url)
+        protected async Task<ResponseHTTP<T>> GET(string url)
         {
             try
             {

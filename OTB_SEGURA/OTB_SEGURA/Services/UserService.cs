@@ -13,12 +13,18 @@ namespace OTB_SEGURA.Services
     {
         string urlApiUser = "restUser";
 
-        public async Task<ResponseHTTP<UserModel>> Login(UserModel user)
+        public async Task<ResponseHTTP<UserModel>> Login(string email,string password)
         {
             try
             {
                 string urlLogin = urlApiUser+"/login";
-               return await POST(user, urlLogin);
+                var bodyRequest = new
+                {
+                    Email=email,
+                    Password=password
+                };
+                string json = JsonConvert.SerializeObject(bodyRequest);
+               return await POST(json, urlLogin);
             }
             catch (Exception ex)
             {
@@ -44,7 +50,18 @@ namespace OTB_SEGURA.Services
             try
             {
                 string urlInsert = urlApiUser;
-                return await POST(user, urlInsert);
+                var bodyRequest = new
+                {
+                    Name=user.Name,
+                    Password=user.Password,
+                    Cell_phone=user.Cell_phone,
+                    Ci=user.Ci,
+                    Email=user.Email
+                };
+
+                
+                string json = JsonConvert.SerializeObject(bodyRequest);
+                return await POST(json, urlInsert);
             }
             catch (Exception ex)
             {

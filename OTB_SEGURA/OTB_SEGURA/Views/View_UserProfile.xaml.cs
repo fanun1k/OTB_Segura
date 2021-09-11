@@ -13,7 +13,9 @@ namespace OTB_SEGURA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class View_UserProfile : ContentPage
     {
+#pragma warning disable IDE0044 // Agregar modificador de solo lectura
         int aux = 0;
+#pragma warning restore IDE0044 // Agregar modificador de solo lectura
         public View_UserProfile()
         {
             InitializeComponent();

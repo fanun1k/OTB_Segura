@@ -8,20 +8,41 @@
     <ContentPage.BindingContext>
         <vm:ViewModel_RegisterJoinOtb/>
     </ContentPage.BindingContext>
-    <StackLayout Padding="20">
-        <Label Text="Registrar una OTB" HorizontalOptions="Center"
+    <Grid BackgroundColor="{StaticResource Primary}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Frame Padding="20" Margin="1" Grid.Row="0">
+            <StackLayout>
+                <Label Text="Registrar una OTB" HorizontalOptions="Center"
                TextColor="{StaticResource Primary}"
                FontSize="20"/>
-        <Label Text="Ingrese el nombre de la OTB" Opacity="0.5"/>
-        <Entry Text="{Binding Otb.Name}" Placeholder="OTB ...." />
-        <Frame CornerRadius="20" Padding="0">
-            <Button Text="CREAR OTB" Command="{Binding CreateOTBCommand}" />
-        </Frame>
-        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-            <Label Text="Código: "
+                <Label Text="Ingrese el nombre de la OTB" Opacity="0.5"/>
+                <Entry Text="{Binding Otb.Name, Mode=TwoWay}" Placeholder="OTB ...." />
+                <Frame CornerRadius="20" Padding="0">
+                    <Button Text="CREAR OTB" Command="{Binding CreateOTBCommand}" />
+                </Frame>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Label Text="Código: "
                FontSize="20" TextColor="{StaticResource Primary}" Opacity="0.7"/>
-            <Label Text="{Binding Otb.Code}"
+                    <Label Text="{Binding Otb.Code, Mode=TwoWay}"
                    FontSize="20" TextColor="{StaticResource Primary}" Opacity="0.7"/>
-        </StackLayout>
-    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+        <Frame Padding="20" Margin="1" Grid.Row="1">
+            <StackLayout>
+                <Label Text="Unirse a una OTB" HorizontalOptions="Center"
+               TextColor="{StaticResource Primary}"
+               FontSize="20"/>
+                <Label Text="Escriba el Código de la OTB" Opacity="0.5"/>
+                <Entry Text="{Binding Otb.Code, Mode=TwoWay}" Placeholder="Código ...." />
+                <Frame CornerRadius="20" Padding="0">
+                    <Button Text="Unirse" Command="{Binding JoinOtbCommand}" />
+                </Frame>
+            </StackLayout>
+        </Frame>
+    </Grid>
+   
 </ContentPage>

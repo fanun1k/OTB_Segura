@@ -69,5 +69,18 @@ namespace OTB_SEGURA.Services
             }
 
         }
+        public async Task<ResponseHTTP<UserModel>> UserUpdate(UserModel user)
+        {
+            try
+            {
+                string urlUpdate = urlApiUser + $"/{user.User_ID}";
+                return await PUT(user, urlUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }

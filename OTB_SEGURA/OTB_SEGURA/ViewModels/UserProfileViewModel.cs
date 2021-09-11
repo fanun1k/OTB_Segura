@@ -17,7 +17,7 @@ namespace OTB_SEGURA.ViewModels
     public class UserProfileViewModel:BaseViewModel
     {
         #region Attributes
-        private UserModel user;
+        private UserModel user = new UserModel();
         private string textButton;
         private List<ActivityModel> activityList = new List<ActivityModel>();
         #endregion

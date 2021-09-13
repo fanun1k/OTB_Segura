@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OTB_SEGURA.Views.View_UserAlertRescues"
+             Title="Rescates">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Rescates" FontSize="Title"></Label>
+            <Label Text="Ingrese una fecha Minima" FontSize="Subtitle"></Label>
+            <Entry Text="" ></Entry>
+            <Label Text="Ingrese una fecha Maxima" FontSize="Subtitle"></Label>
+            <Entry Text=""></Entry>
+        </StackLayout>
+    </ContentPage.Content>
+
+    <ListView >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame Grid.Row="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="110"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Nombre" WidthRequest="100"/>
+                                    <Label x:Name="txtVictimName" Text="{Binding Name}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Mensaje" WidthRequest="100"/>
+                                    <Label x:Name="txtVictimMessage" Text="{Binding Name}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Tipo" WidthRequest="100"/>
+                                    <Label x:Name="txtType" Text="{Binding Name}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+    
+</ContentPage>

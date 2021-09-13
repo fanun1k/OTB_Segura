@@ -95,6 +95,9 @@
     <FlyoutItem Title="Acerca de Nosotros" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_About}" />
     </FlyoutItem>
+    <FlyoutItem Title="Alertas de Usuario" Icon="UsertAlertIcon.png">
+        <ShellContent Route="UserAlerts" ContentTemplate="{DataTemplate local:View_UserAlarmTabbedPage}" />
+    </FlyoutItem>
     <FlyoutItem Title="Alertar Evento" Icon="botonEmergencia.png">
         <ShellContent Route="AddActivity" ContentTemplate="{DataTemplate local:View_AddActivity}" />
     </FlyoutItem>
@@ -119,6 +122,10 @@
     <FlyoutItem Title="Actividad de Usuarios" Icon="icon_feed.png">
         <ShellContent Route="UserActivity" ContentTemplate="{DataTemplate local:View_UserActivity}"/>
     </FlyoutItem>
+    <FlyoutItem Title="Ver Alarmas " Icon="AlarmIconOtb.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_ViewAlarms}" />
+    </FlyoutItem>
+    
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
 

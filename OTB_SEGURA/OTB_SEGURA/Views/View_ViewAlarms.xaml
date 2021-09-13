@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OTB_SEGURA.Views.View_ViewAlarms"
+             Title="Ver Alarmas"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels">
+    <!--<ContentPage.BindingContext>
+        <vm:ViewModel_ViewAlarms>
+    </ContentPage.BindingContext>-->
+      <ScrollView HeightRequest="1000" Background="White" >
+        <StackLayout >
+            <StackLayout WidthRequest="1000" HeightRequest="40" BackgroundColor="{StaticResource PrimaryVariation}"  >
+                <Label Text="Alarmas Registradas" TextColor="White"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" FontSize="18" />
+                <BoxView></BoxView>
+                <StackLayout HorizontalOptions="Center" WidthRequest="200" VerticalOptions="Center">
+                    <Button Text="Alarma 1
+                            Calle Colombia"  FontSize="16" BackgroundColor="{StaticResource PrimaryDisabled }" BorderColor="Black" BorderWidth="0.5"
+                            TextColor="Black"
+                        CornerRadius="20"  />
+                    <BoxView></BoxView>
+                    <Button Text="Alarma 2
+                            Calle Ecuador" BorderColor="Black" BorderWidth="0.5" FontSize="16" BackgroundColor="{StaticResource PrimaryDisabled }"
+                            TextColor="Black"
+                        CornerRadius="20" />
+                    <BoxView></BoxView>
+                    <Button Text="Alarma 3                                                        
+                            Calle Mexico" FontSize="16" BackgroundColor="{StaticResource PrimaryDisabled }"
+                            BorderColor="Black" BorderWidth="0.5" TextColor="Black"
+                        CornerRadius="20"  />
+                    <BoxView></BoxView>
+                    <Button Text="Alarma 4
+                            Calle San Martin "  TextColor="{StaticResource Dark}" BorderColor="Black" BorderWidth="0.5"
+                        CornerRadius="20" BackgroundColor="{StaticResource PrimaryDisabled }" FontSize="16"  />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

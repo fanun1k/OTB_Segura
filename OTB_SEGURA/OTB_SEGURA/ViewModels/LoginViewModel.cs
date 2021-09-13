@@ -36,7 +36,7 @@ namespace OTB_SEGURA.ViewModels
             get { return _rememberMe; }
             set { _rememberMe = value; this.OnPropertyChanged("ColorFiltered"); }
         }
-        private bool _rememberMe = false;
+        private bool _rememberMe = true;
         #endregion
         public Command LoginCommand { get; }
 
@@ -113,10 +113,8 @@ namespace OTB_SEGURA.ViewModels
             {
 
                 try
-                {
-                    
-                    
-                    ResponseHTTP<UserModel> resultHTTP = await restFull.Login(User);
+                {                  
+                    ResponseHTTP<UserModel> resultHTTP = await restFull.Login(User.Email,user.Password);
                     if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                     {
                         if (resultHTTP.Data[0].State != 0)
@@ -127,13 +125,15 @@ namespace OTB_SEGURA.ViewModels
                             {
                                 Application.Current.Properties["Sesion"] = 1;
                             }
+                            Application.Current.Properties["User_ID"] = resultHTTP.Data[0].User_ID;
                             Application.Current.Properties["Id"] = resultHTTP.Data[0].UserId;
                             Application.Current.Properties["Name"] = resultHTTP.Data[0].Name;
-                            Application.Current.Properties["UserName"] = resultHTTP.Data[0].UserName;
+                            Application.Current.Properties["Email"] = resultHTTP.Data[0].Email;
                             Application.Current.Properties["Ci"] = resultHTTP.Data[0].Ci;
                             Application.Current.Properties["Password"] = resultHTTP.Data[0].Password;
                             Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
                             Application.Current.Properties["UserType"] = resultHTTP.Data[0].Type;
+                            Application.Current.Properties["Otb_ID"] = resultHTTP.Data[0].Otb_ID;
 
                             if (resultHTTP.Data[0].Type == 1)
                             {
@@ -142,7 +142,8 @@ namespace OTB_SEGURA.ViewModels
                             else tipo = "user";
                             MessagingCenter.Send<LoginViewModel>(this, tipo);
                             //DependencyService.Get<IMessage>().LongAlert(tipo);
-                            DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data[0].Name);
+                            //DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data[0].Name);
+                            DependencyService.Get<IMessage>().LongAlert(Application.Current.Properties["Name"] as string);
                             await Shell.Current.GoToAsync("//AddActivity");
 
                         }

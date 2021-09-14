@@ -80,6 +80,16 @@ namespace OTB_SEGURA.ViewModels
             }
         }
 
+        public ICommand CreateAccountCommand
+        {
+            get
+            {
+                return new RelayCommand(async () => {
+                    await navigation.PushAsync(new View_AddUser());
+                });
+            }
+        }
+
         /// <summary>
         /// Devuelve el metodo LoginSuccess
         /// </summary>
@@ -134,6 +144,7 @@ namespace OTB_SEGURA.ViewModels
                             Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
                             Application.Current.Properties["UserType"] = resultHTTP.Data[0].Type;
                             Application.Current.Properties["Otb_ID"] = resultHTTP.Data[0].Otb_ID;
+                            Application.Current.Properties["Token"] = resultHTTP.Data[0].Token;
 
                             if (resultHTTP.Data[0].Type == 1)
                             {

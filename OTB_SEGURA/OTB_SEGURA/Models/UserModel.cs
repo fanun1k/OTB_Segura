@@ -24,6 +24,7 @@ namespace OTB_SEGURA.Models
         public int Type { get; set; }
         public string Email { get; set; }
         public Nullable<int> Otb_ID { get; set; }
+        public string Token { get; set; }
 
 
 

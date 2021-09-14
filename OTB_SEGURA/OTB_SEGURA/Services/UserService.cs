@@ -36,7 +36,7 @@ namespace OTB_SEGURA.Services
         {
             try
             {
-                string urlGetUsersByOtb = urlApiUser + "/byotb/4";
+                string urlGetUsersByOtb = urlApiUser + $"/byotb/{otbId}";
                 return await GET(urlGetUsersByOtb);
             }
             catch (Exception ex)

@@ -18,7 +18,7 @@ namespace OTB_SEGURA.Views
         {
             InitializeComponent();
         }
-        private void list_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void List_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             try
             {
@@ -26,7 +26,7 @@ namespace OTB_SEGURA.Views
             }
             catch (Exception ex)
             {
-                DisplayAlert("Error al marcar ", "intente nuevamente", "OK", "cancel");
+                DisplayAlert("Error al marcar ",ex.Message, "OK", "cancel");
             }
         }
 

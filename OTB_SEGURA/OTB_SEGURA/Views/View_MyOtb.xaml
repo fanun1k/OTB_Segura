@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OTB_SEGURA.Views.View_MyOtb"
+             Title="{Binding Title}"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:MyOtbViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout Padding="20">
+        <Button CornerRadius="30" HeightRequest="215" Text="Registrar Cámara" FontAttributes="Bold" FontSize="20" 
+                Command="{Binding RegisterCameraCommand}" 
+                ImageSource="CameraIcon.png" ContentLayout="Bottom,-20"/>
+        <Button CornerRadius="20" Text="Ver Cámaras" Margin="30, 15, 30, 15" Command="{Binding SeeCameraCommand}" />
+        <Button CornerRadius="30" HeightRequest="215" Text="Registrar Alarma" FontAttributes="Bold" FontSize="20" 
+                Command="{Binding RegisterAlarmCommand}"
+                ImageSource="AlarmIcon.png" ContentLayout="Bottom,-20"/>
+        <Button CornerRadius="20" Text="Ver Alarmas" Margin="30, 15, 30, 15" Command="{Binding SeeAlarmCommand}"/>
+    </StackLayout>
+</ContentPage>

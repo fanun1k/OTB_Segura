@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OTB_SEGURA.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,10 @@ namespace OTB_SEGURA.Views
             listaAlertas.Add("Incendios");
             listaAlertas.Add("Accidentes");
             listaAlertas.Add("Rescates");
-            foreach(var pestanhas in listaAlertas)
+            foreach (var pestanhas in listaAlertas)
             {
                 TappPrueba.Children.Add(new View_AlertType(pestanhas));
             }
-           
-
         }
     }
 }

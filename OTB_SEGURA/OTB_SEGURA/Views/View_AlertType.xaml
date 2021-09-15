@@ -2,15 +2,50 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OTB_SEGURA.Views.View_AlertType"
-             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels" xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              Title="{Binding Title}">
 
     
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
+            <Label Text="{Binding Title}"
+                VerticalOptions="StartAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            
+            <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListAlert}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}">
+                <ListView.Behaviors>
+                    <behaviorsPack:EventToCommandBehavior 
+                    EventName="ItemTapped"
+                    Command="{Binding ItemTappedCommandUserActivity}"
+                    EventArgsPropertyPath="Item"/>
+                    <behaviorsPack:EventToCommandBehavior
+                    EventName="Refreshing"
+                    Command="{Binding RefreshingCommandActivityUsers}"/>
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Style="{StaticResource frameStyle}">
+                                <StackLayout >
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Fecha:" TextColor="{StaticResource Dark}" WidthRequest="80"></Label>
+                                        <Label Text="{Binding Date,StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Estado:" TextColor="{StaticResource Dark}"  WidthRequest="80"></Label>
+                                        <Label Text="{Binding State, Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Tipo de Alerta:" TextColor="{StaticResource Dark}"  WidthRequest="80"></Label>
+                                        <Label Text="{Binding Alert_type_ID,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </StackLayout>
     </ContentPage.Content>
-</ContentPage>
+</ContentPage> 

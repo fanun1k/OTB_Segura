@@ -146,7 +146,7 @@ namespace OTB_SEGURA.ViewModels
                             Application.Current.Properties["Otb_ID"] = resultHTTP.Data[0].Otb_ID;
                             Application.Current.Properties["Token"] = resultHTTP.Data[0].Token;
 
-                            if (resultHTTP.Data[0].Type == 1)
+                            if (resultHTTP.Data[0].Type >= 1)
                             {
                                 tipo = "admin";
                             }
@@ -155,7 +155,7 @@ namespace OTB_SEGURA.ViewModels
                             //DependencyService.Get<IMessage>().LongAlert(tipo);
                             //DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data[0].Name);
                             DependencyService.Get<IMessage>().LongAlert(Application.Current.Properties["Name"] as string);
-                            await Shell.Current.GoToAsync("//AddActivity");
+                            await Shell.Current.GoToAsync("//MyProfile");
 
                         }
                         else
@@ -193,7 +193,7 @@ namespace OTB_SEGURA.ViewModels
         /// </remarks>
         public async void LoginSuccess()
         {
-            await Shell.Current.GoToAsync("//AddActivity");
+            await Shell.Current.GoToAsync("//MyProfile");
         }
 
         /// <summary>

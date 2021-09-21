@@ -3,8 +3,10 @@ using OTB_SEGURA.Models;
 using System;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace OTB_SEGURA.Services
 {
@@ -18,9 +20,17 @@ namespace OTB_SEGURA.Services
         {
             try
             {
+              
+
+                
                 Uri RequestUri = new Uri(urlserver + url);
-                var client = new HttpClient();
+                var client = new HttpClient();            
                 var contJson = new StringContent(json, Encoding.UTF8, "application/json");
+                if (Application.Current.Properties.ContainsKey("Token"))
+                {
+                    string token = Application.Current.Properties["Token"].ToString();
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token);
+                }
                 var response = await client.PostAsync(RequestUri, contJson);
 
                 if (response.StatusCode == HttpStatusCode.OK)

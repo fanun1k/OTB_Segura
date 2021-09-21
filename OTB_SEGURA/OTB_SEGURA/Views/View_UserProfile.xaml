@@ -4,7 +4,8 @@
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              xmlns:ImgCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="OTB_SEGURA.Views.View_UserProfile"
-             Appearing="ContentPage_Appearing">
+             Appearing="ContentPage_Appearing"
+             x:Name="contentPage">
     <StackLayout>
         <Grid>
             <Grid.RowDefinitions>

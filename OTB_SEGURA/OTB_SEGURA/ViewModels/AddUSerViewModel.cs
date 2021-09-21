@@ -113,7 +113,7 @@ namespace OTB_SEGURA.ViewModels
                 res = false;
                 DependencyService.Get<IMessage>().LongAlert("Formato del nombre incorrecto");
             }
-            else if (!Regex.Match(user.Ci.ToString(), "^[0-9]{7}$").Success)
+            else if (!Regex.Match(user.Ci.ToString(), "^[0-9]{8}$").Success)
             {
                 res = false;
                 DependencyService.Get<IMessage>().LongAlert("Formato de C.I incorrecto");

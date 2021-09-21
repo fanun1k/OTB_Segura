@@ -49,6 +49,7 @@ namespace OTB_SEGURA.ViewModels
         public UserProfileViewModel(UserModel user)
         {          
             this.user = user;
+            
             SetTextButton();
             //LoadActivities(user.UserId.ToString());
             ButtonChangeStateClick = new Command(UpdateMethod);

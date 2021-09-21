@@ -57,6 +57,11 @@ namespace OTB_SEGURA.Services
             {
                 Uri RequestUri = new Uri(urlserver + url);
                 var client = new HttpClient();
+                if (Application.Current.Properties.ContainsKey("Token"))
+                {
+                    string token = Application.Current.Properties["Token"].ToString();
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token);
+                }
                 var response = await client.GetAsync(RequestUri);
 
                 if (response.StatusCode == HttpStatusCode.OK)

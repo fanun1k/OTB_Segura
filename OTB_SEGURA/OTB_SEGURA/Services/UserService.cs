@@ -82,5 +82,72 @@ namespace OTB_SEGURA.Services
             }
 
         }
+        public async Task<ResponseHTTP<UserModel>> SetAdmin(UserModel user)
+        {
+            try
+            {
+                string urlUpdate = urlApiUser + "/setadmin";
+                var bodyRequest = new
+                {
+                    User_ID = user.User_ID
+                };
+
+                string json = JsonConvert.SerializeObject(bodyRequest);
+                return await POST(json, urlUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<ResponseHTTP<UserModel>> RemoveAdmin(UserModel user)
+        {
+            try
+            {
+                string urlUpdate = urlApiUser + "/removeadmin";
+                var bodyRequest = new
+                {
+                    User_ID = user.User_ID
+                };
+
+                string json = JsonConvert.SerializeObject(bodyRequest);
+                return await POST(json, urlUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<ResponseHTTP<UserModel>> RemoveOTB(UserModel user)
+        {
+            try
+            {
+                string urlUpdate = urlApiUser + "/removeotb";
+                var bodyRequest = new
+                {
+                    User_ID = user.User_ID
+                };
+
+                string json = JsonConvert.SerializeObject(bodyRequest);
+                return await POST(json, urlUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<ResponseHTTP<UserModel>> GetUser(int id)
+        {
+            try
+            {
+                string urlUpdate = urlApiUser + $"/{id}";
+                return await GET(urlUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

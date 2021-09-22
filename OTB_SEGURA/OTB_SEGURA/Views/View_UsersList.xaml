@@ -15,7 +15,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <ListView x:Name="ListUser"  ItemsSource="{Binding UserList}" HasUnevenRows="true"
+        <ListView x:Name="ListUser"  ItemsSource="{Binding UserList}" HasUnevenRows="true" SelectedItem="{Binding UserSelected}"
                   IsPullToRefreshEnabled="True"
                   Refreshing="ListUser_Refreshing" Style="{StaticResource listViewStyle}">
             <ListView.Behaviors>
@@ -30,7 +30,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame BackgroundColor="{Binding StateColor}"  Style="{StaticResource frameStyle}" BorderColor="{Binding StateBorderColor}">
+                        <Frame Style="{StaticResource frameStyle}">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="25"/>

@@ -28,6 +28,7 @@ namespace OTB_SEGURA.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
             LoadApplication(new App());
             if (!GetString(Resource.String.google_app_id).Equals("1:973479782758:android:f3029c216105cc690cc0a7"))//Validacion de json de datos de firebase
                 throw new System.Exception("Invalid Json file");
@@ -38,7 +39,11 @@ namespace OTB_SEGURA.Droid
                 var instanceId = FirebaseInstanceId.Instance;
                 instanceId.DeleteInstanceId();
                 Android.Util.Log.Debug("TAG", "{0} {1}", instanceId.Token, instanceId.GetToken(GetString(Resource.String.gcm_defaultSenderId), Firebase.Messaging.FirebaseMessaging.InstanceIdScope));
+
             });
+            global::ZXing.Net.Mobile.Forms.Android.Platform.Init();
+            ZXing.Mobile.MobileBarcodeScanner.Initialize(Application);
+
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)//metodo de peticion de los permisos
         {
@@ -46,7 +51,14 @@ namespace OTB_SEGURA.Droid
 
             Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode,
                 permissions, grantResults);
+
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            //lector qr
+
+            global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+
         }
     }
 }

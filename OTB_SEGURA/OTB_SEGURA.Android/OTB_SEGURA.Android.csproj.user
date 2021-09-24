@@ -1,11 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-<<<<<<< HEAD
     <SelectedDevice>Samsung SM-G9650</SelectedDevice>
-=======
-    <SelectedDevice>Samsung SM-G955F</SelectedDevice>
->>>>>>> 3be6fa9566f9eee59f11c85d9f505001c45e7c05
     <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
     <DefaultDevice>pixel_2_pie_9_0_-_api_28</DefaultDevice>
     <ActiveDebugProfile>Samsung SM-G9650</ActiveDebugProfile>

@@ -98,7 +98,7 @@
     <FlyoutItem Title="Acerca de Nosotros" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_About}" />
     </FlyoutItem>
-    <FlyoutItem Title="Alertas de Usuario" Icon="UsertAlertIcon.png">
+    <FlyoutItem Title="Alertas de Usuario" Icon="icon_alert.png">
         <ShellContent Route="UserAlerts" ContentTemplate="{DataTemplate local:View_UserAlarmTabbedPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Alertar Evento" Icon="botonEmergencia.png">
@@ -110,7 +110,7 @@
     <FlyoutItem Title="Mi Perfil " Icon="usuario.png">
         <ShellContent Route="MyProfile" ContentTemplate="{DataTemplate local:View_UserProfile}" />
     </FlyoutItem>
-    <FlyoutItem Title="Registrar/Unirse OTB" Icon="usuario.png">
+    <FlyoutItem Title="Registrar/Unirse OTB" Icon="icon_register.png">
         <ShellContent Route="registrarotb" ContentTemplate="{DataTemplate local:View_RegisterJoinOtb}" />
     </FlyoutItem>
     <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
@@ -125,7 +125,7 @@
     <FlyoutItem Title="Actividad de Usuarios" Icon="icon_feed.png">
         <ShellContent Route="UserActivity" ContentTemplate="{DataTemplate local:View_UserActivity}"/>
     </FlyoutItem>
-    <FlyoutItem Title="Ver Alarmas " Icon="AlarmIconOtb.png">
+    <FlyoutItem Title="Ver Alarmas " Icon="icon_SeeAlarm.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_ViewAlarms}" />
     </FlyoutItem>
     

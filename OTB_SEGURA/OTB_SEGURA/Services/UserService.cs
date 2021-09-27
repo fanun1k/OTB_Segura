@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using OTB_SEGURA.Models;
 using System.Net;
 using System.Collections.Generic;
+using System.IO;
 
 namespace OTB_SEGURA.Services
 {
@@ -142,6 +143,28 @@ namespace OTB_SEGURA.Services
             {
                 string urlUpdate = urlApiUser + $"/{id}";
                 return await GET(urlUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<ResponseHTTP<UserModel>> UploadProfile(string id, Stream imgProfile)
+        {
+            try
+            {
+                string urlUpload = urlApiUser+ "/upload";
+
+                HttpContent stringContent = new StringContent(id);
+                HttpContent bytesContent = new StreamContent(imgProfile);
+
+                using (var formData = new MultipartFormDataContent())
+                {
+                    formData.Add(stringContent, "User_ID");
+                    formData.Add(bytesContent, "Profile", "profile.png");
+
+                    return await UPLOAD(formData, urlUpload);
+                }
             }
             catch (Exception ex)
             {

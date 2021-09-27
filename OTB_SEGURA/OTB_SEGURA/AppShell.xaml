@@ -4,10 +4,13 @@
        xmlns:local="clr-namespace:OTB_SEGURA.Views"
        Title="OTB_SEGURA"
        x:Class="OTB_SEGURA.AppShell"
-       xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels">
+       xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+       xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack">
     <Shell.BindingContext>
         <vm:AppShellViewModel></vm:AppShellViewModel>
     </Shell.BindingContext>
+    
+    
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -105,7 +108,7 @@
         <ShellContent Route="AddEmergency" ContentTemplate="{DataTemplate local:View_AddEmergency}" IsVisible="{Binding IsAdmin}" />
     </FlyoutItem>
     <FlyoutItem Title="Mi Perfil " Icon="usuario.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_UserProfile}" />
+        <ShellContent Route="MyProfile" ContentTemplate="{DataTemplate local:View_UserProfile}" />
     </FlyoutItem>
     <FlyoutItem Title="Registrar/Unirse OTB" Icon="icon_register.png">
         <ShellContent Route="registrarotb" ContentTemplate="{DataTemplate local:View_RegisterJoinOtb}" />
@@ -113,7 +116,7 @@
     <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
         <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Mi OTB" Icon="IconOtb.png">
+    <FlyoutItem Title="Mi OTB" Icon="IconOtb.png" >
         <ShellContent Route="Mi OTB" ContentTemplate="{DataTemplate local:View_MyOtb}" />
     </FlyoutItem>
     <FlyoutItem x:Name="fiUser" Title="Lista de Usuarios" Icon="ListaUsuarios.png" IsVisible="{Binding IsAdmin}">

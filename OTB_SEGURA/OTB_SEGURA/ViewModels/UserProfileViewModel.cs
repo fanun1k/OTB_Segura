@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using OTB_SEGURA.Services;
 using OTB_SEGURA.Views;
 using Xamarin.Essentials;
+using System.IO;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -21,6 +22,15 @@ namespace OTB_SEGURA.ViewModels
         private string textButton;
         private List<ActivityModel> activityList = new List<ActivityModel>();
         UserService restFull = new UserService();
+
+        private Image imgProfile = new Image();
+
+        public Image ImgProfile
+        {
+            get { return imgProfile; }
+            set { imgProfile = value; OnPropertyChanged(); }
+        }
+
         #endregion
         #region Properties
         public List<ActivityModel> ActivityList
@@ -67,6 +77,7 @@ namespace OTB_SEGURA.ViewModels
                 textButton = "Editar Mi Perfil";
                 user.Name = Application.Current.Properties["Name"].ToString();
                 user.Email = Application.Current.Properties["Email"].ToString();
+                user.User_ID = int.Parse(Application.Current.Properties["User_ID"].ToString());
 
                 //LoadActivities(Application.Current.Properties["Id"].ToString());
                 ButtonChangeStateClick = new Command(async () =>
@@ -130,6 +141,45 @@ namespace OTB_SEGURA.ViewModels
             get
             {
                 return new RelayCommand(RemoveOTB);
+            }
+        }
+
+        public ICommand UploadCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        Stream stream = await DependencyService.Get<IOpenGalery>().GetFotoAsync();
+
+                        if (stream != null)
+                        {
+                            ImgProfile.Source = ImageSource.FromStream(() => stream);
+
+                            IsBusy = true;
+
+                            ResponseHTTP<UserModel> resultHTTP = await restFull.UploadProfile(user.User_ID.ToString(),stream);
+
+                            if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                                await Shell.Current.GoToAsync("..");
+                            }
+                            else
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            }
+                            IsBusy = false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    
+                });
             }
         }
 

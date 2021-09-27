@@ -146,7 +146,7 @@ namespace OTB_SEGURA.ViewModels
                             Application.Current.Properties["Otb_ID"] = resultHTTP.Data[0].Otb_ID;
                             Application.Current.Properties["Token"] = resultHTTP.Data[0].Token;
 
-                            if (resultHTTP.Data[0].Type == 1)
+                            if (resultHTTP.Data[0].Type >= 1)
                             {
                                 tipo = "admin";
                             }

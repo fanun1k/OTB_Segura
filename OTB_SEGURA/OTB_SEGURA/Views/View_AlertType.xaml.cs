@@ -11,13 +11,13 @@ using Xamarin.Forms.Xaml;
 namespace OTB_SEGURA.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class View_AlertType : ContentPage
+    public partial class View_AlarmType : ContentPage
     {
         
-        public View_AlertType(string title)
+        public View_AlarmType(string title)
         {
             InitializeComponent();
-            this.BindingContext = new ViewModel_AlertType(title);
+            this.BindingContext = new ViewModel_Alert(title);
 
             
         }

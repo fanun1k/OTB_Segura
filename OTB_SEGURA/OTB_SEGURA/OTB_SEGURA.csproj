@@ -25,6 +25,9 @@
     <Compile Update="Views\View_RegisterJoinOtb.xaml.cs">
       <DependentUpon>View_RegisterJoinOtb.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\View_AlarmContainer.xaml.cs">
+      <DependentUpon>View_AlarmContainer.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -73,7 +76,7 @@
     <EmbeddedResource Update="Views\View_UserActivity.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\View_UserAlarmTabbedPage.xaml">
+    <EmbeddedResource Update="Views\View_AlarmContainer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\View_UserAlertRescues.xaml">

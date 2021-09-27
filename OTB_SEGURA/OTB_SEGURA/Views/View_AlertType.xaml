@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="OTB_SEGURA.Views.View_AlertType"
+             x:Class="OTB_SEGURA.Views.View_AlarmType"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels" xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              Title="{Binding Title}">
 
@@ -11,8 +11,8 @@
             <Label Text="{Binding Title}"
                 VerticalOptions="StartAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            
-            <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListAlert}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}">
+
+            <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListaAlertas}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}">
                 <ListView.Behaviors>
                     <behaviorsPack:EventToCommandBehavior 
                     EventName="ItemTapped"

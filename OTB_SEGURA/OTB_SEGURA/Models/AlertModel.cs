@@ -14,5 +14,6 @@ namespace OTB_SEGURA.Models
         public float Longitude { get; set; }
         public int Otb_ID { get; set; }
         public int User_ID { get; set; }
+        public string Message { get; set; }
     }
 }

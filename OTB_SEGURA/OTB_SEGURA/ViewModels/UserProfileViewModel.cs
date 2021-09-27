@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using OTB_SEGURA.Services;
 using OTB_SEGURA.Views;
 using Xamarin.Essentials;
+using System.IO;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -20,6 +21,16 @@ namespace OTB_SEGURA.ViewModels
         private UserModel user = new UserModel();
         private string textButton;
         private List<ActivityModel> activityList = new List<ActivityModel>();
+        UserService restFull = new UserService();
+
+        private Image imgProfile = new Image();
+
+        public Image ImgProfile
+        {
+            get { return imgProfile; }
+            set { imgProfile = value; OnPropertyChanged(); }
+        }
+
         #endregion
         #region Properties
         public List<ActivityModel> ActivityList
@@ -66,6 +77,7 @@ namespace OTB_SEGURA.ViewModels
                 textButton = "Editar Mi Perfil";
                 user.Name = Application.Current.Properties["Name"].ToString();
                 user.Email = Application.Current.Properties["Email"].ToString();
+                user.User_ID = int.Parse(Application.Current.Properties["User_ID"].ToString());
 
                 //LoadActivities(Application.Current.Properties["Id"].ToString());
                 ButtonChangeStateClick = new Command(async () =>
@@ -106,8 +118,70 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
         #region Commands
-        public ICommand ButtonChangeStateClick { get; private set; } 
-          
+        public ICommand ButtonChangeStateClick { get; private set; }
+
+        public ICommand SetAdminCommand
+        {
+            get 
+            { 
+                return new RelayCommand(SetAdmin); 
+            }
+        }
+
+        public ICommand RemoveAdminCommand
+        {
+            get
+            {
+                return new RelayCommand(RemoveAdmin);
+            }
+        }
+
+        public ICommand RemoveOTBCommand
+        {
+            get
+            {
+                return new RelayCommand(RemoveOTB);
+            }
+        }
+
+        public ICommand UploadCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        Stream stream = await DependencyService.Get<IOpenGalery>().GetFotoAsync();
+
+                        if (stream != null)
+                        {
+                            ImgProfile.Source = ImageSource.FromStream(() => stream);
+
+                            IsBusy = true;
+
+                            ResponseHTTP<UserModel> resultHTTP = await restFull.UploadProfile(user.User_ID.ToString(),stream);
+
+                            if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                                await Shell.Current.GoToAsync("..");
+                            }
+                            else
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            }
+                            IsBusy = false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    
+                });
+            }
+        }
 
         #endregion
         #region Methods
@@ -120,12 +194,95 @@ namespace OTB_SEGURA.ViewModels
             {
                 case 1:
                     textButton = "Inhabilitar usuario";
+                    
                     break;
                 case 0:
                     textButton = "habilitar/borrar usuario";
                     break;
             }
         }
+
+        private async void SetAdmin()
+        {
+            try
+            {
+                IsBusy = true;
+
+                ResponseHTTP<UserModel> resultHTTP = await restFull.SetAdmin(user);
+
+                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                    await Shell.Current.GoToAsync("..");
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                }
+                IsBusy = false;
+
+                
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
+        }
+
+        private async void RemoveAdmin()
+        {
+            try
+            {
+                IsBusy = true;
+
+                ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveAdmin(user);
+
+                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                    await Shell.Current.GoToAsync("..");
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                }
+                IsBusy = false;
+
+
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
+        }
+
+        private async void RemoveOTB()
+        {
+            try
+            {
+                IsBusy = true;
+
+                ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveOTB(user);
+
+                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                    await Shell.Current.GoToAsync("..");
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                }
+                IsBusy = false;
+
+
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
+        }
+
         /// <summary>
         /// Metodo que actualiza el estado en bdd del usuario al que seleccionamos
         /// si el usuario esta inactivo el metodo lo pone activo

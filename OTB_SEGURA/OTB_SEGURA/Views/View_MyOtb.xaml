@@ -16,5 +16,6 @@
                 Command="{Binding RegisterAlarmCommand}"
                 ImageSource="AlarmIcon.png" ContentLayout="Bottom,-20"/>
         <Button CornerRadius="20" Text="Ver Alarmas" Margin="30, 15, 30, 15" Command="{Binding SeeAlarmCommand}"/>
+        <Button CornerRadius="20" Text="Administrar Alertas" Margin="30, 0, 30, 15" Command="{Binding AdministrateAlerts}"/>
     </StackLayout>
 </ContentPage>

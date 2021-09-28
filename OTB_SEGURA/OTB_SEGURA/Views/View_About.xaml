@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="OTB_SEGURA.Views.View_About">
-    <ContentPage.Content>
+             x:Class="OTB_SEGURA.Views.View_About"
+             BackgroundImageSource="background2ed.png"
+            >
+    <ContentPage.Content >
+        
         <ScrollView HeightRequest="1000">
             <StackLayout>
                 <Label Text="¿Quiénes somos?" TextColor="{StaticResource Primary}"

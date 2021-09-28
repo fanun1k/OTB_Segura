@@ -10,6 +10,8 @@ namespace OTB_SEGURA.ViewModels
     /// </summary>
     public  class AppShellViewModel:BaseViewModel
     {
+        List<String> listaMenu = new List<string>();
+        
         #region Attributes
         private bool isAdmin;
         #endregion

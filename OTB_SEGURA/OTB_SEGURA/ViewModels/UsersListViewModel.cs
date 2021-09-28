@@ -114,10 +114,14 @@ namespace OTB_SEGURA.ViewModels
             if (responseHTTP.Code==System.Net.HttpStatusCode.OK)
             {
                 UserList = responseHTTP.Data;
+                //--Agregar video 2
+
+                
             }
             else
             {
                 DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+
             }
         }
         #endregion

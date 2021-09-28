@@ -95,11 +95,11 @@
     <TabBar>
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:View_Login}" />
     </TabBar>
-    <FlyoutItem Title="Acerca de Nosotros" Icon="icon_about.png">
+    <FlyoutItem Title="Acerca de Nosotros" Icon="logoUnivalle.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_About}" />
     </FlyoutItem>
-    <FlyoutItem Title="Alertas de Usuario" Icon="icon_alert.png">
-        <ShellContent Route="UserAlerts" ContentTemplate="{DataTemplate local:View_UserAlarmTabbedPage}" />
+    <FlyoutItem Title="Alertas de Usuario" Icon="UsertAlertIcon.png">
+        <ShellContent Route="UserAlerts" ContentTemplate="{Binding Data}" />
     </FlyoutItem>
     <FlyoutItem Title="Alertar Evento" Icon="botonEmergencia.png">
         <ShellContent Route="AddActivity" ContentTemplate="{DataTemplate local:View_AddActivity}" />

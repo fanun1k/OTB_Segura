@@ -140,7 +140,6 @@ namespace OTB_SEGURA.ViewModels
                             Application.Current.Properties["Name"] = resultHTTP.Data[0].Name;
                             Application.Current.Properties["Email"] = resultHTTP.Data[0].Email;
                             Application.Current.Properties["Ci"] = resultHTTP.Data[0].Ci;
-                            Application.Current.Properties["Password"] = resultHTTP.Data[0].Password;
                             Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
                             Application.Current.Properties["UserType"] = resultHTTP.Data[0].Type;
                             Application.Current.Properties["Otb_ID"] = resultHTTP.Data[0].Otb_ID;

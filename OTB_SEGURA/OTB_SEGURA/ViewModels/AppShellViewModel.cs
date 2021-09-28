@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
+using OTB_SEGURA.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +15,12 @@ namespace OTB_SEGURA.ViewModels
     /// </summary>
     public  class AppShellViewModel:BaseViewModel
     {
+        List<String> listaMenu = new List<string>();
+        
         #region Attributes
+        AlertService alertService = new AlertService();
+        DataTemplate data;
+         
         private bool isAdmin;
         //private bool isxolito;
 
@@ -27,6 +33,20 @@ namespace OTB_SEGURA.ViewModels
             get { return isAdmin; }
             set { isAdmin = value; OnPropertyChanged(); }
         }
+        private View_AlarmContainer alarmContainer;
+
+        public View_AlarmContainer AlarmContainer
+        {
+            get { return alarmContainer; }
+            set { alarmContainer= value; }
+        }
+        
+        public DataTemplate Data
+        {
+            get { return data; }
+            set { data = value; OnPropertyChanged(); }
+        }
+
         /*public bool IsXolito
         {
             get { return isxolito; }
@@ -81,6 +101,7 @@ namespace OTB_SEGURA.ViewModels
         /// </summary>
         public AppShellViewModel()
         {
+                
             if (Application.Current.Properties.ContainsKey("Sesion"))
             {
                 if (int.Parse(Application.Current.Properties["UserType"].ToString()) == 1)
@@ -94,14 +115,23 @@ namespace OTB_SEGURA.ViewModels
             MessagingCenter.Subscribe<LoginViewModel>(this, "user", (sender) => {
                 IsAdmin = false;
             });
-
-            //*----
-            /*
-            UserModel user = new UserModel
-            {
-                User_ID = user_id,
-            }
-            */
+            Data = new DataTemplate(() => {
+                List<String> listaAlertas = new List<string>();
+                listaAlertas.Add("General");
+                listaAlertas.Add("Robos");
+     
+                //    ResponseHTTP<AlertModel> response = await alertService.listarAlertas(int.Parse(Application.Current.Properties["Otb_ID"].ToString()));
+                //    if (response.Code == System.Net.HttpStatusCode.OK)
+                //    {
+                //        listaAlertas = response.Data;
+                //    }
+                //    else
+                //    {
+                //        DependencyService.Get<IMessage>().LongAlert(response.Msj);
+                //    }
+                //Data = new DataTemplate(() => { return new View_AlarmContainer(); });
+                return new View_AlarmContainer(listaAlertas);
+            });
 
         }
         #endregion

@@ -158,6 +158,7 @@
     <AndroidResource Include="Resources\drawable\CerrarSesion.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\cameraview.png" />
     <AndroidResource Include="Resources\drawable\AlarmIcon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -208,7 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ladron.jpg" />
-
     <AndroidResource Include="Resources\drawable\icon_register.png" />
   </ItemGroup>
   <ItemGroup>
@@ -216,12 +216,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_SeeAlarm.png" />
-
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionOTB_SEGURAAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionOTB_SEGURAAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

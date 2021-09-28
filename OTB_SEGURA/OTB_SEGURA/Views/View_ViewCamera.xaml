@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OTB_SEGURA.Views.View_ViewCamera"
+             Title="{Binding Title}"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:ViewCameraViewModel/>
+    </ContentPage.BindingContext>
+   
+    <StackLayout Padding="0">
+            <Button WidthRequest="1000" HeightRequest="60" BackgroundColor="{StaticResource PrimaryVariation}" 
+            Text="  Cámaras Registradas" HorizontalOptions="Center"
+               TextColor="White"
+               FontSize="28"
+                    ImageSource="cameraview" 
+               />
+        <StackLayout  Padding="0" Margin="0,20,0,20">
+            <Button  CornerRadius="30" HeightRequest="90" Text="Cámara 1                                         
+             Calle Santivañes" TextTransform="None" TextColor="Black" Command="{Binding SeeCamera}" FontSize="30" Margin="20,10,20,10" BackgroundColor="{StaticResource PrimaryVariation}" />
+            <Button CornerRadius="30" HeightRequest="90" Text="Cámara 2                                         
+             Calle Tumusla" TextTransform="None"  TextColor="Black" Command="{Binding SeeCamera}" FontSize="30" Margin="20,10,20,10" BackgroundColor="{StaticResource PrimaryVariation}" />
+            <Button CornerRadius="30" HeightRequest="90" Text="Cámara 3                                         
+             Calle Tarapaca" TextTransform="None"  TextColor="Black" Command="{Binding SeeCamera}" FontSize="30" Margin="20,10,20,10" BackgroundColor="{StaticResource PrimaryVariation}"/>
+            <Button CornerRadius="30" HeightRequest="90" Text="Cámara 4                                         
+             Calle Jordan" TextTransform="None"  TextColor="Black" Command="{Binding SeeCamera}" FontSize="30" Margin="20,10,20,10" BackgroundColor="{StaticResource PrimaryVariation}"/>
+                
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

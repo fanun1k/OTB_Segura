@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using OTB_SEGURA.Services;
 using OTB_SEGURA.Views;
 using Xamarin.Essentials;
+using System.IO;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -17,10 +18,19 @@ namespace OTB_SEGURA.ViewModels
     public class UserProfileViewModel:BaseViewModel
     {
         #region Attributes
-        private UserModel user;
+        private UserModel user = new UserModel();
         private string textButton;
-        FireBaseHelper firebaseHelper=new FireBaseHelper();
         private List<ActivityModel> activityList = new List<ActivityModel>();
+        UserService restFull = new UserService();
+
+        private Image imgProfile = new Image();
+
+        public Image ImgProfile
+        {
+            get { return imgProfile; }
+            set { imgProfile = value; OnPropertyChanged(); }
+        }
+
         #endregion
         #region Properties
         public List<ActivityModel> ActivityList
@@ -37,11 +47,10 @@ namespace OTB_SEGURA.ViewModels
         public UserModel User
         {
             get { return user; }
-            set { user = value; }
+            set { user = value;OnPropertyChanged(); }
         }
         #endregion
         #region Contructs
-
         /// <summary>
         /// Constructor que recibe un objeto del tipo UserModel.
         /// Este constructor nos sirbe para dirigirnos a un perfil con la informacion del usuario recibido por parametro
@@ -51,8 +60,9 @@ namespace OTB_SEGURA.ViewModels
         public UserProfileViewModel(UserModel user)
         {          
             this.user = user;
+            
             SetTextButton();
-            LoadActivities(user.UserId.ToString());
+            //LoadActivities(user.UserId.ToString());
             ButtonChangeStateClick = new Command(UpdateMethod);
         }
         /// <summary>
@@ -61,18 +71,25 @@ namespace OTB_SEGURA.ViewModels
         /// <param name="navigation">parametro que nos sirbe para hacer redirecciones a otras vistas</param>
         public UserProfileViewModel(INavigation navigation)
         {
-            user = new UserModel();
-            textButton="Editar Mi Perfil";
-            user.Name = Application.Current.Properties["Name"].ToString();
-            user.UserName = Application.Current.Properties["UserName"].ToString();
-            //user.Name = FireBaseHelper.staticUser.Name;
-            //user.UserName = FireBaseHelper.staticUser.UserName;
-            LoadActivities(Application.Current.Properties["Id"].ToString());
-            //LoadActivities(FireBaseHelper.staticUser.UserId.ToString());
-            ButtonChangeStateClick = new Command(async()=> 
+            try
             {
-                await navigation.PushAsync(new View_Account());
-            });
+                user = new UserModel();
+                textButton = "Editar Mi Perfil";
+                user.Name = Application.Current.Properties["Name"].ToString();
+                user.Email = Application.Current.Properties["Email"].ToString();
+                user.User_ID = int.Parse(Application.Current.Properties["User_ID"].ToString());
+
+                //LoadActivities(Application.Current.Properties["Id"].ToString());
+                ButtonChangeStateClick = new Command(async () =>
+                {
+                    await navigation.PushAsync(new View_Account());
+                });
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
+           
         }
         /// <summary>
         /// Constructor que nos sirbe para modificar el perfil con la informacion recibida por parametros
@@ -82,11 +99,13 @@ namespace OTB_SEGURA.ViewModels
         /// <param name="id">parametro que nos sirbe para poder hacer consultas a la bdd</param>
         public UserProfileViewModel(string name,int phone,Guid id)
         {
-            user = new UserModel();
-            user.Name = name;
-            user.UserName = phone.ToString();
-            user.UserId = id;
-            LoadActivities(user.UserId.ToString());
+            user = new UserModel
+            {
+                Name = name,
+                Email = phone.ToString(),
+                UserId = id
+            };
+            //LoadActivities(user.UserId.ToString());
             textButton = "LLamar";
             ButtonChangeStateClick = new Command(async () => {
                 var answer = await App.Current.MainPage.DisplayAlert("Llamar a "+user.Name , "¿Desea realizar la llamada?", "Aceptar", "Cancelar");
@@ -99,8 +118,70 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
         #region Commands
-        public ICommand ButtonChangeStateClick { get; private set; } 
-          
+        public ICommand ButtonChangeStateClick { get; private set; }
+
+        public ICommand SetAdminCommand
+        {
+            get 
+            { 
+                return new RelayCommand(SetAdmin); 
+            }
+        }
+
+        public ICommand RemoveAdminCommand
+        {
+            get
+            {
+                return new RelayCommand(RemoveAdmin);
+            }
+        }
+
+        public ICommand RemoveOTBCommand
+        {
+            get
+            {
+                return new RelayCommand(RemoveOTB);
+            }
+        }
+
+        public ICommand UploadCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        Stream stream = await DependencyService.Get<IOpenGalery>().GetFotoAsync();
+
+                        if (stream != null)
+                        {
+                            ImgProfile.Source = ImageSource.FromStream(() => stream);
+
+                            IsBusy = true;
+
+                            ResponseHTTP<UserModel> resultHTTP = await restFull.UploadProfile(user.User_ID.ToString(),stream);
+
+                            if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                                await Shell.Current.GoToAsync("..");
+                            }
+                            else
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            }
+                            IsBusy = false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    
+                });
+            }
+        }
 
         #endregion
         #region Methods
@@ -113,12 +194,95 @@ namespace OTB_SEGURA.ViewModels
             {
                 case 1:
                     textButton = "Inhabilitar usuario";
+                    
                     break;
                 case 0:
                     textButton = "habilitar/borrar usuario";
                     break;
             }
         }
+
+        private async void SetAdmin()
+        {
+            try
+            {
+                IsBusy = true;
+
+                ResponseHTTP<UserModel> resultHTTP = await restFull.SetAdmin(user);
+
+                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                    await Shell.Current.GoToAsync("..");
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                }
+                IsBusy = false;
+
+                
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
+        }
+
+        private async void RemoveAdmin()
+        {
+            try
+            {
+                IsBusy = true;
+
+                ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveAdmin(user);
+
+                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                    await Shell.Current.GoToAsync("..");
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                }
+                IsBusy = false;
+
+
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
+        }
+
+        private async void RemoveOTB()
+        {
+            try
+            {
+                IsBusy = true;
+
+                ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveOTB(user);
+
+                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                    await Shell.Current.GoToAsync("..");
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                }
+                IsBusy = false;
+
+
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
+        }
+
         /// <summary>
         /// Metodo que actualiza el estado en bdd del usuario al que seleccionamos
         /// si el usuario esta inactivo el metodo lo pone activo
@@ -127,50 +291,61 @@ namespace OTB_SEGURA.ViewModels
         private async void UpdateMethod()
         {
             bool resDisplayAlert;
-            if (user != null)
+            try
             {
-                switch (user.State)
+
+                if (user != null)
                 {
-                    //SI EL ESTADO ES =1 ENTONCES DEBEMOS DESHABILITAR AL USUARIO
-                    case 1:
-                        resDisplayAlert = await App.Current.MainPage.DisplayAlert("DESHABILITAR USUARIO", $"¿Esta seguro de deshabilitar al usuario: {user.Name}?", "Ok", "Cancelar");
-                        if (resDisplayAlert)
-                        {
-                            await firebaseHelper.DisableUser(user);
-                            DependencyService.Get<IMessage>().ShortAlert($"usuario {user.Name} deshabilitado");
-                            SetTextButton();
+                    switch (user.State)
+                    {
+                        //SI EL ESTADO ES =1 ENTONCES DEBEMOS DESHABILITAR AL USUARIO
+                        case 1:
+                            resDisplayAlert = await App.Current.MainPage.DisplayAlert("DESHABILITAR USUARIO", $"¿Esta seguro de deshabilitar al usuario: {user.Name}?", "Ok", "Cancelar");
+                            if (resDisplayAlert)
+                            {
+                                //await firebaseHelper.DisableUser(user);
+                                DependencyService.Get<IMessage>().ShortAlert($"usuario {user.Name} deshabilitado");
+                                SetTextButton();
 
-                        }
-                        break;
-                    //SI ESTADO =2 ENTONCES DEBEMOS PREGUNTAR SI HABILITAR O ELIMINAR DEFINITIVAMENTE AL USUARIO
-                    case 0:
-                        resDisplayAlert = await App.Current.MainPage.DisplayAlert("HABILITAR O ELIMINAR USUARIO", $"¿Que desea hacer con el usuario: {user.UserName} ", "Habilitar", "Eliminar usuario");
-                        if (resDisplayAlert)
-                        {
-                            await firebaseHelper.EnableUser(user);
-                            DependencyService.Get<IMessage>().ShortAlert($"usuario {user.Name} habilitado");
-                            SetTextButton();
-                        }
-                        else
-                        {
-                            await firebaseHelper.DeleteUser(user.UserId);
-                            DependencyService.Get<IMessage>().ShortAlert($"usuario {user.Name} fue eliminado");
-                            SetTextButton();
-                        }
-                        break;
+                            }
+                            break;
+                        //SI ESTADO =2 ENTONCES DEBEMOS PREGUNTAR SI HABILITAR O ELIMINAR DEFINITIVAMENTE AL USUARIO
+                        case 0:
+                            resDisplayAlert = await App.Current.MainPage.DisplayAlert("HABILITAR O ELIMINAR De La OTB USUARIO", $"¿Que desea hacer con el usuario: {user.Name} ", "Habilitar", "Eliminar usuario");
+                            if (resDisplayAlert)
+                            {
+                                //await firebaseHelper.EnableUser(user);
+                                DependencyService.Get<IMessage>().ShortAlert($"usuario {user.Name} habilitado");
+                                SetTextButton();
+                            }
+                            else
+                            {
+                                //await firebaseHelper.DeleteUser(user.UserId);
+                                DependencyService.Get<IMessage>().ShortAlert($"usuario {user.Name} fue eliminado");
+                                SetTextButton();
+                            }
+                            break;
+                    }
+                    await Shell.Current.GoToAsync("..");
                 }
+                }
+            catch (Exception ex)
+            {
 
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
-            await Shell.Current.GoToAsync("..");
+          
+
+           
         }
         /// <summary>
         /// Metodo que carga las actividades en la vista View_UserProfile segun el id del usuario que reciba
         /// </summary>
         /// <param name="id">codigo id de un usuario que sera utilizado para hacer consultas a la bdd</param>
-        private async void LoadActivities(string id)
-        {
-            ActivityList = await firebaseHelper.GetAllActivitiesId(id);
-        }
+        //private async void LoadActivities(string id)
+        //{
+        //    ActivityList = await firebaseHelper.GetAllActivitiesId(id);
+        //}
         #endregion
     }
 }

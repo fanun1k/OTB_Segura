@@ -12,7 +12,7 @@ namespace OTB_SEGURA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class View_EmergencyNumberUserList : ContentPage
     {
-        AccountViewModel account = new AccountViewModel();
+        ViewModel_EditProfile account = new ViewModel_EditProfile();
         public View_EmergencyNumberUserList()
         {
             InitializeComponent();

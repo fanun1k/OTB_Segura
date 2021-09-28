@@ -4,7 +4,8 @@
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              xmlns:ImgCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="OTB_SEGURA.Views.View_UserProfile"
-             Appearing="ContentPage_Appearing">
+             Appearing="ContentPage_Appearing"
+             x:Name="contentPage">
     <StackLayout>
         <Grid>
             <Grid.RowDefinitions>
@@ -12,10 +13,10 @@
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
             <Grid BackgroundColor="{StaticResource PrimaryDisabled}"></Grid>
-            <ImgCircle:CircleImage WidthRequest="80" HeightRequest="80" BorderColor="White" BorderThickness="3" Grid.RowSpan="2" Source="https://i.blogs.es/2d5264/facebook-image/1366_2000.jpg"></ImgCircle:CircleImage>
+            <ImgCircle:CircleImage WidthRequest="80" HeightRequest="80" BorderColor="White" BorderThickness="3" Grid.RowSpan="2" Source="{Binding ImgProfile}"></ImgCircle:CircleImage>
         </Grid>
-        <Label BindingContext="{Binding User}" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"></Label>
-        <Label BindingContext="{Binding User}" Text="{Binding UserName,Mode=TwoWay}" HorizontalOptions="Center"></Label>
+        <Label BindingContext="{Binding User}" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"/>
+        <Label BindingContext="{Binding User}" Text="{Binding Email,Mode=TwoWay}" HorizontalOptions="Center"/>
         <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="0.60" Command="{Binding ButtonChangeStateClick}" BackgroundColor="{StaticResource PrimaryVariation}" />
         <Label Text="Alertas"></Label>
         <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
@@ -42,5 +43,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Command="{Binding UploadCommand}" Text="UPLOAD" />
     </StackLayout>
 </ContentPage>

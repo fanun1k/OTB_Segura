@@ -6,18 +6,15 @@
               xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              Title="{Binding Title}">
         <ContentPage.BindingContext>
-            <vm:AccountViewModel />
+            <vm:ViewModel_EditProfile />
         </ContentPage.BindingContext>
     <StackLayout Padding="15">        
         <Label Text="Nombre Completo" FontSize="{StaticResource mediumTextSize}" />
-        <Entry x:Name="txtName" Text="{Binding Name, Mode=TwoWay}" Keyboard="Text" Placeholder="Escriba el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
-        <Label Text="Número de Carnet" FontSize="{StaticResource mediumTextSize}" />
-        <Entry x:Name="txtCi" Text="{Binding Ci,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de carnet" PlaceholderColor="{StaticResource colorGray}"/>
+        <Entry x:Name="txtName" Text="{Binding User.Name, Mode=TwoWay}" Keyboard="Text" Placeholder="Escriba el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
         <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" />
-        <Entry x:Name="txtPhone" Text="{Binding Phone,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de celular" PlaceholderColor="{StaticResource colorGray}" />
-        <Label Text="Contraseña" FontSize="{StaticResource mediumTextSize}" />
-        <Entry x:Name="txtPassword1" Text="{Binding Password1, Mode=TwoWay}" Placeholder="Escriba nueva contraseña" PlaceholderColor="{StaticResource colorGray}" />
-        <Entry x:Name="txtPassword2" Text="{Binding Password2, Mode=TwoWay}" Placeholder="Repita la contraseña" PlaceholderColor="{StaticResource colorGray}" />
-        <Button Text="Editar Usuario" Command="{Binding UpdateCommand}" Clicked="Button_Clicked"></Button>
+        <Entry x:Name="txtPhone" Text="{Binding User.Cell_phone,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de celular" PlaceholderColor="{StaticResource colorGray}" />
+        <Label Text="Contraseña nueva" FontSize="{StaticResource mediumTextSize}" />
+        <Entry x:Name="txtRePassword" Text="{Binding User.Password,Mode=TwoWay}" IsPassword="True" Placeholder="Escriba la nueva contraseña" PlaceholderColor="{StaticResource colorGray}"/>
+        <Button Text="Editar Usuario" Command="{Binding UpdateCommand}"></Button>
     </StackLayout>      
 </ContentPage> 

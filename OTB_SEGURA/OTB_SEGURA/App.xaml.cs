@@ -1,4 +1,5 @@
-﻿using OTB_SEGURA.Views;
+﻿using OTB_SEGURA.Services;
+using OTB_SEGURA.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,6 +17,7 @@ namespace OTB_SEGURA
 
         protected override void OnStart()
         {
+
         }
 
         protected override void OnSleep()

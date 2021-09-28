@@ -1,6 +1,8 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace OTB_SEGURA.Models
@@ -9,17 +11,26 @@ namespace OTB_SEGURA.Models
     {
         [PrimaryKey, AutoIncrement]
         public Guid UserId { get; set; }//eliminar despues cuando se deje de utilizar firebase
-        public int User_ID { get; set; }
-        public string Name { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int User_ID { get; set; }//--Ss
+        [MaxLength(50)]
+        public string Name { get; set; }//--ss
         public string UserName { get; set; }//eliminar despues cuando se deje de utilizar firebase
         public string Password { get; set; }
         public int Cell_phone { get; set; }
         public byte[] Photo { get; set; }
-        public byte State { get; set; }
+        [MaxLength(1)]
+        public byte State { get; set; }//--ss
+        [MaxLength(8)]
         public int Ci { get; set; }
-        public string StateColor { get; set; }
-        public string StateBorderColor { get; set; }
-        public int Type { get; set; }
-        public string Email { get; set; }
+        [MaxLength(50)]
+        public int Type { get; set; }//--ss
+        [MaxLength(50)]
+        public string Email { get; set; }//--ss
+        public Nullable<int> Otb_ID { get; set; }
+        public string Token { get; set; }
+
+
+
     }
 }

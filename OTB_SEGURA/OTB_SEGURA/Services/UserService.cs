@@ -75,7 +75,15 @@ namespace OTB_SEGURA.Services
             try
             {
                 string urlUpdate = urlApiUser + $"/{user.User_ID}";
-                return await PUT(user, urlUpdate);
+
+                var bodyRequest = new
+                {
+                    Name = user.Name,
+                    Password = user.Password,
+                    Cell_phone = user.Cell_phone
+                };
+                var json = JsonConvert.SerializeObject(bodyRequest);
+                return await PUT(json, urlUpdate);
             }
             catch (Exception ex)
             {

@@ -75,6 +75,18 @@ namespace OTB_SEGURA.ViewModels
             }
         }
 
+        private ICommand administrateAlerts;
+
+        public ICommand AdministrateAlerts
+        {
+            get
+            {
+                return new RelayCommand(() =>
+                    DependencyService.Get<IMessage>().LongAlert("Administrar Alertas")
+                );
+            }
+        }
+
         public MyOtbViewModel()
         {
             Title = "Mi OTB";

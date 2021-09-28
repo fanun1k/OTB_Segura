@@ -15,18 +15,22 @@ namespace OTB_SEGURA.ViewModels
     public class RecoverPasswordViewModel:BaseViewModel
     {
         #region attributes
-        private string correo;
-        private FireBaseHelper fireBaseHelper = new FireBaseHelper();
         private Func<string, string, string, Task> displayAlert;
-        private UserModel user;  
-        private string newPass="";
+        UserService userService = new UserService();
+        private string  email;
+        private int ci;
         #endregion
 
         #region Properties
-        public string Correo
+        public int Ci
         {
-            get { return correo; }
-            set { correo = value; OnPropertyChanged(); }
+            get { return ci; }
+            set { ci = value; OnPropertyChanged(); }
+        }
+        public string Email
+        {
+            get { return email; }
+            set { email = value; OnPropertyChanged(); }
         }
         #endregion
 
@@ -43,40 +47,20 @@ namespace OTB_SEGURA.ViewModels
             get { return new RelayCommand(async()=> {
               if(await ValidateForm())
                 {
-                    if (await ValidateEmail())
+                    if (await ValidateForm())
                     {
                         
                         try
                         {
-                            //generando nueva contraseña
-                            Random rand = new Random();
-                            int aux = rand.Next(111, 999);
-                            newPass = "";
-                            for (int i = 0; i < 4; i++)
+                            ResponseHTTP<UserModel> responseHTTP = await userService.RecoveryPassword(Email,Ci);
+                            if (responseHTTP.Code==System.Net.HttpStatusCode.OK)
                             {
-                                int numero = rand.Next(26);
-                                char letra = (char)(((int)'A') + numero);
-                                newPass += letra;
+                                DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
                             }
-                            newPass += aux;
-
-                            user.Password = newPass;
-                            await fireBaseHelper.UpdateUser(user);
-                            //enviando la nueva contraseña al correo
-                            MailMessage mail = new MailMessage();
-                            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-
-                            mail.From = new MailAddress("emergencyproject2@gmail.com");
-                            mail.To.Add(Correo);
-                            mail.Subject = "OTB SEGURA - Restablecer Contraseña";
-                            mail.Body = $"Su contraseña en la aplicacion OTB SEGURA fué restablecida, su nueva contraseña es: {newPass}. No olvide cambiar su contraseña despues de iniciar sesión";
-
-                            SmtpServer.Port = 587;
-                            SmtpServer.Credentials = new System.Net.NetworkCredential("emergencyproject2@gmail.com", "proyecto2021");
-                            SmtpServer.EnableSsl = true;
-
-                            SmtpServer.Send(mail);
-                            DependencyService.Get<IMessage>().LongAlert("Se le envio su nueva contraseña al correo  "+correo);
+                            else
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                            }
                         }
                         catch (Exception ex)
                         {
@@ -93,7 +77,7 @@ namespace OTB_SEGURA.ViewModels
         private async Task<bool> ValidateForm()
         {
             //Valida si el valor en el Entry txtTo se encuentra vacio o es igual a Null
-            if (String.IsNullOrWhiteSpace(Correo))
+            if (String.IsNullOrWhiteSpace(Email.Trim()))
             {
                 await displayAlert("Advertencia", "Debe introducir un correo electrónico", "Ok");
                 return false;
@@ -101,7 +85,7 @@ namespace OTB_SEGURA.ViewModels
             else
             {
                 //Valida que el formato del correo sea valido
-                bool isEmail = Regex.IsMatch(Correo, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+                bool isEmail = Regex.IsMatch(Email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
                 if (!isEmail)
                 {
                     await displayAlert("Advertencia", "El formato del correo electrónico es incorrecto, revíselo e intente nuevamente.", "OK");
@@ -109,19 +93,6 @@ namespace OTB_SEGURA.ViewModels
                 }
             }          
             
-            return true;
-        }
-
-        private async Task<bool> ValidateEmail()
-        {
-            user = null;
-            user = await fireBaseHelper.ValidateEmail(Correo);
-            //valida si existe un usuario en bdd con ese email
-            if (user==null)
-            {
-                await displayAlert("Advertencia", "El correo que especificó no pertenece a ningun usuario con cuenta activa", "OK");
-                return false;
-            }
             return true;
         }
             #endregion

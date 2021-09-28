@@ -10,7 +10,7 @@
         <!-- establecemos el contexto de los datos -->
     </ContentPage.BindingContext>
 
-    <ListView x:Name="list" ItemsSource="{Binding emergencyNumbersList}" HasUnevenRows="True" ItemSelected="list_ItemSelected" Style="{StaticResource listViewStyle}">
+    <ListView x:Name="list" ItemsSource="{Binding emergencyNumbersList}" HasUnevenRows="True" ItemSelected="List_ItemSelected" Style="{StaticResource listViewStyle}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>

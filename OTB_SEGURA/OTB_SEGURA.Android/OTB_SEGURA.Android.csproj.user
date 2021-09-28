@@ -3,8 +3,8 @@
   <PropertyGroup>
     <SelectedDevice>pixel_2_pie_9_0_-_api_28</SelectedDevice>
     <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
-    <DefaultDevice>pixel_2_pie_9_0_-_api_28</DefaultDevice>
-    <ActiveDebugProfile>pixel_2_pie_9_0_-_api_28</ActiveDebugProfile>
+    <DefaultDevice>bM</DefaultDevice>
+    <ActiveDebugProfile>bM</ActiveDebugProfile>
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
 </Project>

@@ -83,6 +83,24 @@ namespace OTB_SEGURA.Services
             }
 
         }
+        public async Task<ResponseHTTP<UserModel>> RecoveryPassword(string email, int ci)
+        {
+            try
+            {
+                string urlUpdate = urlApiUser + $"/recoverypass";
+                var bodyRequest = new
+                {
+                    Email = email,
+                    Ci = ci
+                };
+                string json = JsonConvert.SerializeObject(bodyRequest);
+                return await POST(json, urlUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public async Task<ResponseHTTP<UserModel>> SetAdmin(UserModel user)
         {
             try
@@ -92,7 +110,6 @@ namespace OTB_SEGURA.Services
                 {
                     User_ID = user.User_ID
                 };
-
                 string json = JsonConvert.SerializeObject(bodyRequest);
                 return await POST(json, urlUpdate);
             }
@@ -171,6 +188,5 @@ namespace OTB_SEGURA.Services
                 throw ex;
             }
         }
-
     }
 }

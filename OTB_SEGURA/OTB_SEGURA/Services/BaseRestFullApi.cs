@@ -20,10 +20,7 @@ namespace OTB_SEGURA.Services
         protected async Task<ResponseHTTP<T>> POST(string json, string url)
         {
             try
-            {
-              
-
-                
+            {   
                 Uri RequestUri = new Uri(urlserver + url);
                 var client = new HttpClient();
 

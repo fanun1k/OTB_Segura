@@ -28,7 +28,7 @@ namespace OTB_SEGURA.Services
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     var jsonString = await response.Content.ReadAsStringAsync();
-                    res= await JsonConvert.DeserializeObject<ResponseHTTP<T>>(jsonString);
+                    res= JsonConvert.DeserializeObject<ResponseHTTP<T>>(jsonString);
                     return res;
                 }
                 else

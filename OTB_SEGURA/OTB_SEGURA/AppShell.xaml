@@ -104,6 +104,13 @@
     <FlyoutItem Title="Mi Perfil " Icon="usuario.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_UserProfile}" />
     </FlyoutItem>
+   
+    <FlyoutItem Title="Ver Camara " Icon="usuario.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_ViewCamera}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Agregar Alerta " Icon="usuario.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddAlert}" />
+    </FlyoutItem>
     <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
         <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" />
     </FlyoutItem>

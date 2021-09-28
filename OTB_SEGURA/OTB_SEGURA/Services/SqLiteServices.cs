@@ -9,9 +9,11 @@ namespace OTB_SEGURA.Services
 {
     class SqLiteServices
     {
-        private SQLiteConnection connection;
+        private SQLiteConnection connection; 
         private static SqLiteServices instance;
         public string MessageStatus; //Mensaje de verificacion
+
+        private SQLiteAsyncConnection connection2;
 
         public static SqLiteServices Instance
         {
@@ -55,7 +57,7 @@ namespace OTB_SEGURA.Services
             }
         }
 
-        private SqLiteServices(string dbPath)
+        private SqLiteServices(string dbPath) //Video min 8:10
         {
             try
             {

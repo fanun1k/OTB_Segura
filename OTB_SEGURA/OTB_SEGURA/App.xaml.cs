@@ -9,10 +9,9 @@ namespace OTB_SEGURA
     public partial class App : Application
     {
 
-        public App(string filename)
+        public App()
         {
             InitializeComponent();
-            SqLiteServices.Initializer(filename); //Inicializamos el sqlite
             MainPage = new AppShell();
         }
 

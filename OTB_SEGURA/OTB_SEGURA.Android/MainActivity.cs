@@ -9,6 +9,8 @@ using Android.OS;
 using System.Threading.Tasks;
 using Firebase.Iid;
 using Firebase.Messaging;
+using SQLite;
+using OTB_SEGURA.Models;
 
 namespace OTB_SEGURA.Droid
 {

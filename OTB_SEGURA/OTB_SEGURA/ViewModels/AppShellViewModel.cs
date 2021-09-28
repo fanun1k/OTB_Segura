@@ -94,6 +94,16 @@ namespace OTB_SEGURA.ViewModels
             MessagingCenter.Subscribe<LoginViewModel>(this, "user", (sender) => {
                 IsAdmin = false;
             });
+
+            //*----
+            /*
+            UserModel user = new UserModel
+            {
+                User_ID = user_id,
+
+            }
+            */
+
         }
         #endregion
     }

@@ -102,14 +102,18 @@ namespace OTB_SEGURA.Services
                 throw ex;
             }
         }
-        public async Task<ResponseHTTP<T>> PUT(T obj, string url)
+        public async Task<ResponseHTTP<T>> PUT(string json, string url)
         {
             try
             {
                 Uri RequestUri = new Uri(urlserver + url);
                 var client = new HttpClient();
-                var json = JsonConvert.SerializeObject(obj);
                 var contJson = new StringContent(json, Encoding.UTF8, "application/json");
+                if (Application.Current.Properties.ContainsKey("Token"))
+                {
+                    string token = Application.Current.Properties["Token"].ToString();
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token);
+                }
                 var response = await client.PutAsync(RequestUri, contJson);
 
                 if (response.StatusCode == HttpStatusCode.OK)

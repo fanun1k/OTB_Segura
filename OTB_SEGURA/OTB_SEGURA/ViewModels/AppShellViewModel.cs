@@ -15,6 +15,8 @@ namespace OTB_SEGURA.ViewModels
     /// </summary>
     public  class AppShellViewModel:BaseViewModel
     {
+        List<String> listaMenu = new List<string>();
+        
         #region Attributes
         AlertService alertService = new AlertService();
         DataTemplate data;

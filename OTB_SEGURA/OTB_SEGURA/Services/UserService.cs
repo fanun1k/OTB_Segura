@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using OTB_SEGURA.Models;
 using System.Net;
 using System.Collections.Generic;
+using System.IO;
 
 namespace OTB_SEGURA.Services
 {
@@ -36,7 +37,7 @@ namespace OTB_SEGURA.Services
         {
             try
             {
-                string urlGetUsersByOtb = urlApiUser + "/byotb/4";
+                string urlGetUsersByOtb = urlApiUser + $"/byotb/{otbId}";
                 return await GET(urlGetUsersByOtb);
             }
             catch (Exception ex)
@@ -81,6 +82,111 @@ namespace OTB_SEGURA.Services
                 throw ex;
             }
 
+        }
+        public async Task<ResponseHTTP<UserModel>> RecoveryPassword(string email, int ci)
+        {
+            try
+            {
+                string urlUpdate = urlApiUser + $"/recoverypass";
+                var bodyRequest = new
+                {
+                    Email = email,
+                    Ci = ci
+                };
+                string json = JsonConvert.SerializeObject(bodyRequest);
+                return await POST(json, urlUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<ResponseHTTP<UserModel>> SetAdmin(UserModel user)
+        {
+            try
+            {
+                string urlUpdate = urlApiUser + "/setadmin";
+                var bodyRequest = new
+                {
+                    User_ID = user.User_ID
+                };
+                string json = JsonConvert.SerializeObject(bodyRequest);
+                return await POST(json, urlUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<ResponseHTTP<UserModel>> RemoveAdmin(UserModel user)
+        {
+            try
+            {
+                string urlUpdate = urlApiUser + "/removeadmin";
+                var bodyRequest = new
+                {
+                    User_ID = user.User_ID
+                };
+
+                string json = JsonConvert.SerializeObject(bodyRequest);
+                return await POST(json, urlUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<ResponseHTTP<UserModel>> RemoveOTB(UserModel user)
+        {
+            try
+            {
+                string urlUpdate = urlApiUser + "/removeotb";
+                var bodyRequest = new
+                {
+                    User_ID = user.User_ID
+                };
+
+                string json = JsonConvert.SerializeObject(bodyRequest);
+                return await POST(json, urlUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<ResponseHTTP<UserModel>> GetUser(int id)
+        {
+            try
+            {
+                string urlUpdate = urlApiUser + $"/{id}";
+                return await GET(urlUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<ResponseHTTP<UserModel>> UploadProfile(string id, Stream imgProfile)
+        {
+            try
+            {
+                string urlUpload = urlApiUser+ "/upload";
+
+                HttpContent stringContent = new StringContent(id);
+                HttpContent bytesContent = new StreamContent(imgProfile);
+
+                using (var formData = new MultipartFormDataContent())
+                {
+                    formData.Add(stringContent, "User_ID");
+                    formData.Add(bytesContent, "Profile", "profile.png");
+
+                    return await UPLOAD(formData, urlUpload);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

@@ -8,58 +8,24 @@
         
         <ScrollView HeightRequest="1000">
             <StackLayout>
-                <Label Text="¿Quiénes somos?" TextColor="{StaticResource Primary}"
-                VerticalOptions="Start" 
-                HorizontalOptions="CenterAndExpand" />
-                <Label Text="Somos un grupo de estudiantes de la carrera de ingeniería de sistemas informáticos en la Universidad del valle que vimos como problema la seguridad comunal y gracias a eso comenzamos con el desarrollo de esta aplicación móvil, el grupo de trabajo esta conformado por los siguientes integrantes:" TextColor="Black"
+                
+                <Label Text="Somos un grupo de estudiantes de la carrera de Ingeniería de sistemas informáticos en la Universidad del valle que vimos como problema la seguridad comunal y gracias a eso comenzamos con el desarrollo de este proyecto que consta de una aplicación móvil" TextColor="Black"
                 VerticalOptions="Center" 
                 HorizontalOptions="CenterAndExpand" />
                 <StackLayout Orientation="Horizontal">
                     <StackLayout Orientation="Vertical">
-                        <Image Source="https://i.ibb.co/7yqkcyh/usuario.png" Aspect="AspectFit" Margin="0" WidthRequest="70" HeightRequest="70"/>
-                        <Label Text="Jose Luis Quiroga Lema" TextColor="{StaticResource Primary}" FontSize="Small" HorizontalOptions="Center"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical">
-                        <Image Source="https://i.ibb.co/7yqkcyh/usuario.png" Aspect="AspectFit" Margin="0" WidthRequest="70" HeightRequest="70"/>
-                        <Label Text="Pablo Daniel Rodriguez Solis" TextColor="{StaticResource Primary}" FontSize="Small" HorizontalOptions="Center"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical">
-                        <Image Source="https://i.ibb.co/7yqkcyh/usuario.png" Aspect="AspectFit" Margin="0" WidthRequest="70" HeightRequest="70"/>
-                        <Label Text="Mirko Marca Moreno" TextColor="{StaticResource Primary}" FontSize="Small" HorizontalOptions="Center"/>
-                    </StackLayout>
-                </StackLayout>
-
-                <StackLayout Orientation="Horizontal">
-                    <StackLayout Orientation="Vertical">
-                        <Image Source="https://i.ibb.co/7yqkcyh/usuario.png" Aspect="AspectFit" Margin="0"  WidthRequest="70" HeightRequest="70"/>
-                        <Label Text="Miguel Angel Terrazas Challapa" TextColor="{StaticResource Primary}" FontSize="Small" HorizontalOptions="Center"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical">
-                        <Image Source="https://i.ibb.co/7yqkcyh/usuario.png" Aspect="AspectFit" Margin="0"  WidthRequest="70" HeightRequest="70"/>
-                        <Label Text="Daniel Aldo Lima Alcalá" TextColor="{StaticResource Primary}" FontSize="Small" HorizontalOptions="Center"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical">
-                        <Image Source="https://i.ibb.co/7yqkcyh/usuario.png" Aspect="AspectFit" Margin="0"  WidthRequest="70" HeightRequest="70"/>
-                        <Label Text="Erlan Luis Vedia Herrera" TextColor="{StaticResource Primary}" FontSize="Small" HorizontalOptions="Center"/>
-                    </StackLayout>
-                </StackLayout>
-
-                <StackLayout Orientation="Horizontal">
-                    <StackLayout Orientation="Vertical">
-                        <Image Source="https://i.ibb.co/7yqkcyh/usuario.png" Aspect="AspectFit" Margin="0"  WidthRequest="70" HeightRequest="70"/>
-                        <Label Text="Axel Eddy Martinez Ayala" TextColor="{StaticResource Primary}" FontSize="Small" HorizontalOptions="Center"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical">
-                        <Image Source="https://i.ibb.co/7yqkcyh/usuario.png" Aspect="AspectFit" Margin="0"  WidthRequest="70" HeightRequest="70"/>
-                        <Label Text="Jhon Alex Shorts Ardaya" TextColor="{StaticResource Primary}" FontSize="Small" HorizontalOptions="Center"/>
+                        <Image Source="banerUnivalle.png" Aspect="AspectFit" WidthRequest="390" Margin="10"/>
                     </StackLayout>
                 </StackLayout>
                 <Label Text="¿Qué es OTB SEGURA?" TextColor="{StaticResource Primary}"
                 VerticalOptions="End" 
                 HorizontalOptions="CenterAndExpand" />
-                <Label Text="OTB SEGURA es una aplicación para reportar accidentes, robos, incendios, etc. Con esta aplicación móvil podemos alertar a nuestros vecinos cualquier incidente mediante notificaciones y alertas, así ayudamos a que las comunidades estén un poco mas seguras." TextColor="Black"
+                <Label Text="OTB SEGURA es una aplicación para reportar accidentes, robos, incendios, etc. Con esta aplicación móvil podemos alertar a nuestros vecinos de cualquier incidente mediante notificaciones y alertas, tambien se podra tener vigilancia mediante camaras de de seguridad, así ayudamos a que las comunidades estén un poco mas seguras." TextColor="Black"
                 VerticalOptions="EndAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+                <StackLayout Orientation="Vertical">
+                    <Image Source="ladron.jpg" Aspect="AspectFit" WidthRequest="390" Margin="10"/>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

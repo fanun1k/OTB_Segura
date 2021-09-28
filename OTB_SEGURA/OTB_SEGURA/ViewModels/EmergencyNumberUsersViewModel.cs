@@ -48,7 +48,18 @@ namespace OTB_SEGURA.ViewModels
         #region Methods
         public async void LoadData()
         {
-            UserList = await firebaseHelper.GetActiveUsers(); //Obtiene la lista de usuarios activos en el sistema
+            try
+            {
+                UserList = await firebaseHelper.GetActiveUsers(); //Obtiene la lista de usuarios activos en el sistema
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            //Guardaresta listaen sqlIte
         }
 
         #endregion

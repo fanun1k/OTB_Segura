@@ -24,8 +24,38 @@ namespace OTB_SEGURA.Views
         }
         public View_UserProfile(UserModel user)
         {
-            InitializeComponent();            
-            BindingContext = new UserProfileViewModel(user);
+            InitializeComponent();
+            UserProfileViewModel upb = new UserProfileViewModel(user);
+            BindingContext = upb;
+            if (user.Type == 0)
+            {
+                contentPage.ToolbarItems.Add(new ToolbarItem()
+                {
+                    Order = ToolbarItemOrder.Secondary,
+                    Text = "Establecer como adminsitrador",
+                    Command = upb.SetAdminCommand
+                });
+            }
+            else if(user.Type == 1)
+            {
+                contentPage.ToolbarItems.Add(new ToolbarItem()
+                {
+                    Order = ToolbarItemOrder.Secondary,
+                    Text = "Remover Administrador",
+                    Command = upb.RemoveAdminCommand
+                });
+            }
+
+            if (user.Type != 2)
+            {
+                contentPage.ToolbarItems.Add(new ToolbarItem()
+                {
+                    Order = ToolbarItemOrder.Secondary,
+                    Text = "Expulsar de la OTB",
+                    Command = upb.RemoveOTBCommand
+                });
+            }
+
             aux = 0;
         }
         public View_UserProfile(string name,int phone,Guid id)

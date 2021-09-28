@@ -100,7 +100,6 @@ namespace OTB_SEGURA.ViewModels
             UserModel user = new UserModel
             {
                 User_ID = user_id,
-
             }
             */
 

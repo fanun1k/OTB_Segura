@@ -77,16 +77,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Grid.Row="0" 
-                Text="+" BorderColor="{StaticResource Primary}"
-                BorderWidth="1"
-                FontAttributes="Bold" 
-                BackgroundColor="{StaticResource PrimaryVariation}"
-                BorderRadius="90" TextColor="White" 
-                HorizontalOptions="End" WidthRequest="80" 
-                HeightRequest="80" Margin="0,0,20,22" VerticalOptions="End"
-                FontSize="40"
-                Clicked="Button_Clicked"/>
-
+        
     </Grid>
 </ContentPage>

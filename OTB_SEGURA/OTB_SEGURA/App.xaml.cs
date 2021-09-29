@@ -27,18 +27,6 @@ namespace OTB_SEGURA
             }
         }
 
-        public static SQLiteHelper SQLiteDB
-        {
-            get
-            {
-                if (db == null)
-                {
-                    db = new SQLiteHelper(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "User.db3"));
-                }
-                return db;
-            }
-        }
-
         protected override void OnStart()
         {
 

@@ -113,10 +113,6 @@
     <FlyoutItem Title="Registrar/Unirse OTB" Icon="icon_register.png">
         <ShellContent Route="registrarotb" ContentTemplate="{DataTemplate local:View_RegisterJoinOtb}" />
     </FlyoutItem>
-   
-    <FlyoutItem Title="Ver Camara " Icon="usuario.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_ViewCamera}" />
-    </FlyoutItem>
     <FlyoutItem Title="Agregar Alerta " Icon="usuario.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddAlert}" />
     </FlyoutItem>
@@ -132,10 +128,6 @@
     <FlyoutItem Title="Actividad de Usuarios" Icon="icon_feed.png">
         <ShellContent Route="UserActivity" ContentTemplate="{DataTemplate local:View_UserActivity}"/>
     </FlyoutItem>
-    <FlyoutItem Title="Ver Alarmas " Icon="icon_SeeAlarm.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_ViewAlarms}" />
-    </FlyoutItem>
-    
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
 

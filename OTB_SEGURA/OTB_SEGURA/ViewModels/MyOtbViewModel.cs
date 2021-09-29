@@ -71,7 +71,6 @@ namespace OTB_SEGURA.ViewModels
             }
         }
 
-        
         public ICommand AdministrateAlerts
         {
             get

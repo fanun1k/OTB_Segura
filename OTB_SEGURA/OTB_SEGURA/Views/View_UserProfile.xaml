@@ -7,42 +7,53 @@
              Appearing="ContentPage_Appearing"
              x:Name="contentPage">
     <StackLayout>
-        <Grid>
-            <Grid.RowDefinitions>
+        <Grid IsClippedToBounds="True">
+             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
-            <Grid BackgroundColor="{StaticResource PrimaryDisabled}"></Grid>
-            <ImgCircle:CircleImage WidthRequest="80" HeightRequest="80" BorderColor="White" BorderThickness="3" Grid.RowSpan="2" Source="{Binding ImgProfile}"></ImgCircle:CircleImage>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
         </Grid>
+        <Grid IsClippedToBounds="True">
+            <ImgCircle:CircleImage HeightRequest="700" BorderColor="Black" BorderThickness="3" Margin="5,10,5,5" Source="{Binding ImgProfile}"></ImgCircle:CircleImage>
+            <Button Command="{Binding UploadCommand}" ImageSource="CamaraSubirImg.png" Margin="229,130,120,10" WidthRequest="300" HeightRequest="250" HorizontalOptions="Center" BackgroundColor="{StaticResource PrimaryVariation}" CornerRadius="30"/>
+        </Grid>
+        
+
         <Label BindingContext="{Binding User}" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"/>
         <Label BindingContext="{Binding User}" Text="{Binding Email,Mode=TwoWay}" HorizontalOptions="Center"/>
-        <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="0.60" Command="{Binding ButtonChangeStateClick}" BackgroundColor="{StaticResource PrimaryVariation}" />
+        <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="15">
+            
+            <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="55,5,41,10" WidthRequest="180" HeightRequest="200" Command="{Binding ButtonChangeStateClick}" BackgroundColor="{StaticResource PrimaryVariation}" HorizontalOptions="EndAndExpand"/>
+        </Grid>
+        
         <Label Text="Alertas"></Label>
-        <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Frame Style="{StaticResource frameStyle}">
-                            <StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Fecha: "/>
-                                    <Label Text="{Binding DateTime}" FontAttributes="None"/>
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Tipo : "/>
-                                    <Label Text="{Binding Type}" FontAttributes="None"/>
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Mensaje: "/>
-                                    <Label Text="{Binding Message}" FontAttributes="None"/>
-                                </StackLayout>
+    <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame Style="{StaticResource frameStyle}">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Fecha: "/>
+                                <Label Text="{Binding DateTime}" FontAttributes="None"/>
                             </StackLayout>
-                        </Frame>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Button Command="{Binding UploadCommand}" Text="UPLOAD" />
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Tipo : "/>
+                                <Label Text="{Binding Type}" FontAttributes="None"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Mensaje: "/>
+                                <Label Text="{Binding Message}" FontAttributes="None"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
     </StackLayout>
 </ContentPage>

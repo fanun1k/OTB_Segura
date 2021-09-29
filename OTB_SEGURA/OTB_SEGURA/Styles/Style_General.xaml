@@ -25,6 +25,7 @@
     <Color x:Key="colorEmergency">#ea0208</Color>
     <Color x:Key="colorEmergencyDisabled">#fe787b</Color>
     <Color x:Key="colorEmergencyNumbers">#C2D7F4</Color>
+    <Color x:Key="colorFrames">#6EDFF0</Color>
     <!--===============================================================================-->
     <!--===============================================================================-->
 
@@ -126,5 +127,12 @@
         <Setter Property="BorderColor" Value="{StaticResource Primary}"/>
     </Style>
     <!--===========================================================================================================-->
+    <Style TargetType="Frame" x:Key="frameN">
+        <Setter Property="CornerRadius" Value="30"/>
+        <Setter Property="Margin" Value="6"/>
+        <Setter Property="Padding" Value="9"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource colorFrames}"/>
+    </Style>
 
 </ResourceDictionary>

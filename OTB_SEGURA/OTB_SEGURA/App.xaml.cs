@@ -15,6 +15,17 @@ namespace OTB_SEGURA
             InitializeComponent();
             MainPage = new AppShell();
         }
+        public static SQLiteHelper SQLiteDB
+        {
+            get
+            {
+                if (db==null)
+                {
+                    db = new SQLiteHelper(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"Otb.db3"));
+                }
+                return db;
+            }
+        }
 
         public static SQLiteHelper SQLiteDB
         {

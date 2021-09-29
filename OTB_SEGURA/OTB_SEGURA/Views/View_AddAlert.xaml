@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:OTB_SEGURA.ViewModels"
+             x:Class="OTB_SEGURA.Views.View_AddAlert">
+    <ContentPage.BindingContext>
+        <local:AddAlertViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Entry
+            Placeholder="Nombre alerta"  Opacity="0.5" Margin="20,15,20,10"
+            Text="{Binding Alertname}"
+            FontSize="25"
+            
+            />
+        <Button
+            Text="Agregar Alerta" Command="{Binding AddAlertCommand}"
+            Margin="20,0,20,20" 
+            CornerRadius="20" 
+            />
+        
+        <StackLayout BackgroundColor="{StaticResource Primary}" Padding="2" Margin="20,0,20,20">
+            <StackLayout BackgroundColor="White" Margin="1" >
+                <ListView x:Name="lvAlert" ItemsSource="{Binding Alerts}" SelectedItem="{Binding SelectedAlert}"  
+                          
+                      >
+            </ListView>
+            </StackLayout>
+            
+        </StackLayout>
+
+        <Button
+            Text="Quitar Alerta" Command="{Binding RemoveAlertCommand}"
+            Margin="260,0,20,20"     
+            CornerRadius="20"           
+            />
+
+    </StackLayout>
+                  
+</ContentPage>

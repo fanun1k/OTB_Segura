@@ -1,15 +1,11 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
+using OTB_SEGURA.Models;
 
 namespace OTB_SEGURA.Models
 {
     public class UserModel
     {
-        [PrimaryKey, AutoIncrement]
         public Guid UserId { get; set; }//eliminar despues cuando se deje de utilizar firebase
         [PrimaryKey, AutoIncrement]
         public int User_ID { get; set; }//--Ss

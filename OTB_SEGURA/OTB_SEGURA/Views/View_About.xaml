@@ -9,7 +9,7 @@
         <ScrollView HeightRequest="1000">
             <StackLayout>
                 
-                <Label Text="Somos un grupo de estudiantes de la carrera de Ingeniería de sistemas informáticos en la Universidad del valle que vimos como problema la seguridad comunal y gracias a eso comenzamos con el desarrollo de este proyecto que consta de una aplicación móvil" TextColor="Black"
+                <Label Margin="10" Text="Somos un grupo de estudiantes de la carrera de Ingeniería de sistemas informáticos en la Universidad del valle que vimos como problema la seguridad comunal y gracias a eso comenzamos con el desarrollo de este proyecto que consta de una aplicación móvil" TextColor="Black"
                 VerticalOptions="Center" 
                 HorizontalOptions="CenterAndExpand" />
                 <StackLayout Orientation="Horizontal">
@@ -20,7 +20,7 @@
                 <Label Text="¿Qué es OTB SEGURA?" TextColor="{StaticResource Primary}"
                 VerticalOptions="End" 
                 HorizontalOptions="CenterAndExpand" />
-                <Label Text="OTB SEGURA es una aplicación para reportar accidentes, robos, incendios, etc. Con esta aplicación móvil podemos alertar a nuestros vecinos de cualquier incidente mediante notificaciones y alertas, tambien se podra tener vigilancia mediante camaras de de seguridad, así ayudamos a que las comunidades estén un poco mas seguras." TextColor="Black"
+                <Label Margin="10" Text="OTB SEGURA es una aplicación para reportar accidentes, robos, incendios, etc. Con esta aplicación móvil podemos alertar a nuestros vecinos de cualquier incidente mediante notificaciones y alertas, tambien se podra tener vigilancia mediante camaras de de seguridad, así ayudamos a que las comunidades estén un poco mas seguras." TextColor="Black"
                 VerticalOptions="EndAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
                 <StackLayout Orientation="Vertical">

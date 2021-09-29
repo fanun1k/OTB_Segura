@@ -114,11 +114,14 @@
         <ShellContent Route="registrarotb" ContentTemplate="{DataTemplate local:View_RegisterJoinOtb}" />
     </FlyoutItem>
    
-    <FlyoutItem Title="Ver Camara " Icon="usuario.png">
+    <FlyoutItem Title="Ver Camaras " Icon="usuario.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_ViewCamera}" />
     </FlyoutItem>
     <FlyoutItem Title="Agregar Alerta " Icon="usuario.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddAlert}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Camaras" Icon="usuario.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_SeeCamera}" />
     </FlyoutItem>
     <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
         <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" />

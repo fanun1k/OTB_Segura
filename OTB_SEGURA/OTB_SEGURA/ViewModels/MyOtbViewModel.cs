@@ -4,14 +4,14 @@ using System.Text;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using Xamarin.Forms;
+using OTB_SEGURA.Views;
 
 
 namespace OTB_SEGURA.ViewModels
 {
     class MyOtbViewModel:BaseViewModel
     {
-        private ICommand registerCameraCommand;
-
+        private INavigation Navigation { get; set; }
         public ICommand RegisterCameraCommand
         {
             get
@@ -30,6 +30,7 @@ namespace OTB_SEGURA.ViewModels
                 if (result != null)
                 {
                     DependencyService.Get<IMessage>().LongAlert("Código scanneado");
+
                 }
             }
             catch (Exception ex)
@@ -38,9 +39,6 @@ namespace OTB_SEGURA.ViewModels
             }
 
         }
-
-        private ICommand seeCameraCommand;
-
         public ICommand SeeCameraCommand
         {
             get
@@ -50,8 +48,6 @@ namespace OTB_SEGURA.ViewModels
                 );
             }
         }
-
-        private ICommand registerAlarmCommand;
 
         public ICommand RegisterAlarmCommand
         {
@@ -69,14 +65,11 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(() =>
-                    DependencyService.Get<IMessage>().LongAlert("Ver Alarmas")
-                );
+                return new RelayCommand(async()=> {
+                    await Navigation.PushAsync(new View_ViewAlarms());
+                });
             }
         }
-
-        private ICommand administrateAlerts;
-
         public ICommand AdministrateAlerts
         {
             get
@@ -84,12 +77,14 @@ namespace OTB_SEGURA.ViewModels
                 return new RelayCommand(() =>
                     DependencyService.Get<IMessage>().LongAlert("Administrar Alertas")
                 );
+                
             }
         }
 
-        public MyOtbViewModel()
+        public MyOtbViewModel(INavigation nav)
         {
             Title = "Mi OTB";
+            Navigation = nav;
         }
     }
 }

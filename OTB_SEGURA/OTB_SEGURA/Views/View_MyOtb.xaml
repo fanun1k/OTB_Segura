@@ -3,11 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OTB_SEGURA.Views.View_MyOtb"
              xmlns:local="clr-namespace:OTB_SEGURA.Views"
-             Title="{Binding Title}"
-             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels">
-    <ContentPage.BindingContext>
-        <vm:MyOtbViewModel/>
-    </ContentPage.BindingContext>
+             Title="{Binding Title}">
     <StackLayout Padding="20">
         <Button CornerRadius="30" HeightRequest="215" Text="Registrar Cámara" FontAttributes="Bold" FontSize="20" 
                 Command="{Binding RegisterCameraCommand}" 
@@ -17,7 +13,7 @@
                 Command="{Binding RegisterAlarmCommand}"
                 ImageSource="AlarmIcon.png" ContentLayout="Bottom,-20"/>
 
-        <Button CornerRadius="20" Text="Ver Alarmas" Margin="30, 15, 30, 15" Command="{Binding SeeAlarmCommand}" Clicked="Button_Clicked"/>
+        <Button CornerRadius="20" Text="Ver Alarmas" Margin="30, 15, 30, 15" Command="{Binding SeeAlarmCommand}"/>
 
         <Button CornerRadius="20" Text="Administrar Alertas" Margin="30, 0, 30, 15" Command="{Binding AdministrateAlerts}"/>
 

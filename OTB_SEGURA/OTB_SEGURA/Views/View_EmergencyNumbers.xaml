@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OTB_SEGURA.Views.View_EmergencyNumbers"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
              Title="{Binding Title}">
     <ContentPage.BindingContext>
         <vm:EmergencyNumbersViewModel />
@@ -13,24 +14,25 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <Frame Grid.Row="0" Style="{StaticResource frameStyle}">
+                    <Frame   Grid.Row="0"  Style="{StaticResource frameN}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="190"/>
                             </Grid.ColumnDefinitions>
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Servicio:" WidthRequest="80"/>
-                                    <Label x:Name="txtNombre" Text="{Binding Name}" />
+                                    <Label x:Name="txtNombre" Text="{Binding Name}" WidthRequest="100"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Numero:" WidthRequest="80"/>
+                                    <Image Source="phoneCall.png" HeightRequest="30" WidthRequest="30" />
                                     <Label x:Name="txtNumero" Text="{Binding Number}"/>
                                 </StackLayout>
+                                
+                                
                             </StackLayout>
-                            <Grid Grid.Column="1">
-                                <Label Text="LLAMAR" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="22" BackgroundColor="{StaticResource colorEmergency}"/>
+                            <Grid Grid.Column="1" >
+                                <Image  Source="{Binding Imagen}" HeightRequest="40" WidthRequest="40" />
                                 <!--<Button x:Name="btnCallNumber" Text="Llamar" BackgroundColor="#fd2a2f" Clicked="btnCallNumber_Clicked"  />-->
                             </Grid>
                         </Grid>
@@ -39,5 +41,7 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+    
+    
 
 </ContentPage>

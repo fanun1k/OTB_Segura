@@ -119,6 +119,9 @@
     <FlyoutItem Title="Agregar Alerta " Icon="agregarAlerta.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddAlert}" />
     </FlyoutItem>
+    <FlyoutItem Title="Camaras" Icon="usuario.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_SeeCamera}" />
+    </FlyoutItem>
     <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
         <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" />
     </FlyoutItem>

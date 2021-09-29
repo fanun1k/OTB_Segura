@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OTB_SEGURA.Services
 {
-    class SQLiteHelper
+    public class SQLiteHelper
     {
         SQLiteAsyncConnection dataBase;
 

@@ -21,7 +21,6 @@ namespace OTB_SEGURA.Models
         public byte[] Photo { get; set; }
         [MaxLength(1)]
         public byte State { get; set; }//--ss
-        [MaxLength(8)]
         public int Ci { get; set; }
         [MaxLength(50)]
         public int Type { get; set; }//--ss

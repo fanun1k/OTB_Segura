@@ -110,13 +110,12 @@ namespace OTB_SEGURA.ViewModels
         public async void LoadData()
         {
             int otbID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
-            ResponseHTTP<UserModel> responseHTTP =await userService.UsersByOtb(otbID);
-            if (responseHTTP.Code==System.Net.HttpStatusCode.OK)
+            ResponseHTTP<UserModel> responseHTTP = await userService.UsersByOtb(otbID);
+            if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
             {
                 UserList = responseHTTP.Data;
                 //--Agregar video 2
-
-                
+            
             }
             else
             {

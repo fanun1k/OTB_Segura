@@ -133,6 +133,7 @@ namespace OTB_SEGURA.ViewModels
                 return new View_AlarmContainer(listaAlertas);
             });
 
+
         }
         #endregion
     }

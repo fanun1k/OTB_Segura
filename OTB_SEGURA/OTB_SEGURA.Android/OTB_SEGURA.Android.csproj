@@ -168,8 +168,6 @@
     <AndroidResource Include="Resources\drawable\IconOtb.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
     <AndroidResource Include="Resources\drawable\phoneCall.png" />
   </ItemGroup>
   <ItemGroup>
@@ -198,7 +196,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\semapa.png" />
->>>>>>> e95499e13dc8667d9766fec56db6ecca55d63290
     <AndroidResource Include="Resources\drawable\logoUnivalle.png" />
   </ItemGroup>
   <ItemGroup>
@@ -221,6 +218,7 @@
     <AndroidResource Include="Resources\drawable\icon_SeeAlarm.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\usuarioPerfil.png" />
     <AndroidResource Include="Resources\drawable\SeeCamera.png" />
   </ItemGroup>
   <ItemGroup>
@@ -240,7 +238,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\verCamara.png" />
->>>>>>> e95499e13dc8667d9766fec56db6ecca55d63290
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

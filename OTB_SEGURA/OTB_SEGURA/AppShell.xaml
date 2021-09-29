@@ -113,6 +113,9 @@
     <FlyoutItem Title="Registrar/Unirse OTB" Icon="icon_register.png">
         <ShellContent Route="registrarotb" ContentTemplate="{DataTemplate local:View_RegisterJoinOtb}" />
     </FlyoutItem>
+    <FlyoutItem Title="Agregar Alerta " Icon="usuario.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddAlert}" />
+    </FlyoutItem>
     <FlyoutItem Title="Ver Camara " Icon="verCamara.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_ViewCamera}" />
     </FlyoutItem>

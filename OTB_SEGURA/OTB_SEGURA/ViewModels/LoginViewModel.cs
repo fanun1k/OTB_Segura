@@ -155,24 +155,24 @@ namespace OTB_SEGURA.ViewModels
                             }
 
 
-                            //Application.Current.Properties["User_ID"] = resultHTTP.Data[0].User_ID;
-                            //Application.Current.Properties["Id"] = resultHTTP.Data[0].UserId;
-                            //Application.Current.Properties["Name"] = resultHTTP.Data[0].Name;
-                            //Application.Current.Properties["Email"] = resultHTTP.Data[0].Email;
-                            //Application.Current.Properties["Ci"] = resultHTTP.Data[0].Ci;
-                            //Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
-                            //Application.Current.Properties["UserType"] = resultHTTP.Data[0].Type;
-                            //Application.Current.Properties["Otb_ID"] = resultHTTP.Data[0].Otb_ID;
-                            //Application.Current.Properties["Token"] = resultHTTP.Data[0].Token;
+                            Application.Current.Properties["User_ID"] = resultHTTP.Data[0].User_ID;
+                            Application.Current.Properties["Id"] = resultHTTP.Data[0].UserId;
+                            Application.Current.Properties["Name"] = resultHTTP.Data[0].Name;
+                            Application.Current.Properties["Email"] = resultHTTP.Data[0].Email;
+                            Application.Current.Properties["Ci"] = resultHTTP.Data[0].Ci;
+                            Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
+                            Application.Current.Properties["UserType"] = resultHTTP.Data[0].Type;
+                            Application.Current.Properties["Otb_ID"] = resultHTTP.Data[0].Otb_ID;
+                            Application.Current.Properties["Token"] = resultHTTP.Data[0].Token;
 
-                            //if (resultHTTP.Data[0].Type >= 1)
-                            //{
-                            //    tipo = "admin";
-                            //}
-                            //else tipo = "user";
-                            //MessagingCenter.Send<LoginViewModel>(this, tipo);
-                            //DependencyService.Get<IMessage>().LongAlert(Application.Current.Properties["Name"] as string);
-                            //await Shell.Current.GoToAsync("//MyProfile");
+                            if (resultHTTP.Data[0].Type >= 1)
+                            {
+                                tipo = "admin";
+                            }
+                            else tipo = "user";
+                            MessagingCenter.Send<LoginViewModel>(this, tipo);
+                            DependencyService.Get<IMessage>().LongAlert(Application.Current.Properties["Name"] as string);
+                            await Shell.Current.GoToAsync("//MyProfile");
 
                         }
                         else

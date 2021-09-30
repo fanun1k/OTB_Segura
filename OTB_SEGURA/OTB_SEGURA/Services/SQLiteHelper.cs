@@ -1,28 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using OTB_SEGURA.Models;
 using SQLite;
-using OTB_SEGURA.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using System;
 
 namespace OTB_SEGURA.Services
 {
-    class SQLiteHelper
+    public class SQLiteHelper
     {
-        SQLiteAsyncConnection dataBase;
+        SQLiteAsyncConnection db;
 
         public SQLiteHelper(string dbPath)
         {
-            dataBase = new SQLiteAsyncConnection(dbPath);
-            dataBase.CreateTableAsync<UserModel>().Wait();
+            db = new SQLiteAsyncConnection(dbPath);
+            db.CreateTableAsync<UserModel>().Wait();
+            db.CreateTableAsync<SessionModel>().Wait();
         }
 
         //Para guardar registros
-        public Task<int> SaveUserAsync (UserModel user)
+        public Task<int> SaveUserAsync(UserModel user)
         {
             if (user.User_ID == 0)
             {
-                return dataBase.InsertAsync(user);
+                return db.InsertAsync(user);
             }
             else
             {
@@ -33,8 +33,39 @@ namespace OTB_SEGURA.Services
         //Para mostrar regisros
         public Task<List<UserModel>> GetUserAsync()
         {
-            return dataBase.Table<UserModel>().ToListAsync();
+            return db.Table<UserModel>().ToListAsync();
         }
+        #region Session
+        public async Task<int> SaveSession(SessionModel session)
+        {
+            try
+            {
+                db.DropTableAsync<SessionModel>().Wait();
+                db.CreateTableAsync<SessionModel>().Wait();
+                return await db.InsertAsync(session);
+            }
+            catch (System.Exception ex)
+            {
 
+                throw ex;
+            }          
+        }
+        public async Task DestroySession()
+        {
+            try
+            {
+                await db.DropTableAsync<SessionModel>();     
+            }
+            catch (System.Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public Task<SessionModel> GetSession()
+        {
+            return db.Table<SessionModel>().FirstOrDefaultAsync();
+        }
+        #endregion
     }
 }

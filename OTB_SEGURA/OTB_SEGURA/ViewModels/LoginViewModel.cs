@@ -44,12 +44,14 @@ namespace OTB_SEGURA.ViewModels
         /// Constructor
         /// </summary>
         /// <remarks>
-        /// Asigna el comando de OnLogiClicked a la variable LoginCommand
         /// </remarks>
         public LoginViewModel(INavigation nav)
         {
-            LoginCommand = new Command(OnLoginClicked);
             navigation = nav;
+            if (Application.Current.Properties.ContainsKey("Sesion"))
+            {
+                 Shell.Current.GoToAsync("//MyProfile");
+            }
         }
 
        
@@ -89,17 +91,6 @@ namespace OTB_SEGURA.ViewModels
                 });
             }
         }
-
-        /// <summary>
-        /// Devuelve el metodo LoginSuccess
-        /// </summary>
-        public ICommand Logged
-        {
-            get
-            {
-                return new RelayCommand(LoginSuccess);
-            }
-        }
         #endregion
 
         /// <summary>
@@ -130,11 +121,7 @@ namespace OTB_SEGURA.ViewModels
                         if (resultHTTP.Data[0].State != 0)
                         {
                             string tipo = "";
-
-                            if (_rememberMe)
-                            {
-                                Application.Current.Properties["Sesion"] = 1;
-                            }
+                            Application.Current.Properties["Sesion"] = 1;
                             Application.Current.Properties["User_ID"] = resultHTTP.Data[0].User_ID;
                             Application.Current.Properties["Id"] = resultHTTP.Data[0].UserId;
                             Application.Current.Properties["Name"] = resultHTTP.Data[0].Name;
@@ -149,11 +136,15 @@ namespace OTB_SEGURA.ViewModels
                             {
                                 tipo = "admin";
                             }
-                            else tipo = "user";
+                            else
+                            {
+                                tipo = "user";
+                            }
+                            if (resultHTTP.Data[0].Otb_ID == null)
+                            {
+                                tipo = "userWithOutOTB";
+                            }
                             MessagingCenter.Send<LoginViewModel>(this, tipo);
-                            //DependencyService.Get<IMessage>().LongAlert(tipo);
-                            //DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data[0].Name);
-                            DependencyService.Get<IMessage>().LongAlert(Application.Current.Properties["Name"] as string);
                             await Shell.Current.GoToAsync("//MyProfile");
 
                         }
@@ -173,28 +164,6 @@ namespace OTB_SEGURA.ViewModels
                 }
             }
         }
-
-        /// <summary>
-        /// Metodo para asignar un comando async en alguna variable command
-        /// </summary>
-        private async void OnLoginClicked(object obj)
-        {
-            await Shell.Current.GoToAsync($"//AboutPage");
-
-        }
-
-        /// <summary>
-        /// Metodo Para realizar la accion de inicio de sesion
-        /// </summary>
-        /// <remarks>
-        /// Este metodo, se lleva a cabo solo si la sesion fue creada, lo transportara
-        /// directo a pagina de emergencia
-        /// </remarks>
-        public async void LoginSuccess()
-        {
-            await Shell.Current.GoToAsync("//MyProfile");
-        }
-
         /// <summary>
         /// Metodo Para validar entries ingresados por el usuario
         /// </summary>

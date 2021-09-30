@@ -4,20 +4,15 @@
        xmlns:local="clr-namespace:OTB_SEGURA.Views"
        Title="OTB_SEGURA"
        x:Class="OTB_SEGURA.AppShell"
-       xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
-       xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack">
-    <Shell.BindingContext>
-        <vm:AppShellViewModel></vm:AppShellViewModel>
-    </Shell.BindingContext>
-    
-    
+       xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
+       >
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
     
         https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
     -->
-
+    <Shell.BackButtonBehavior />
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -99,47 +94,42 @@
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_About}" />
     </FlyoutItem>
     <FlyoutItem Title="Alertas de Usuario" Icon="UsertAlertIcon.png">
-        <ShellContent Route="UserAlerts" ContentTemplate="{Binding Data}" />
+        <ShellContent Route="UserAlerts" ContentTemplate="{Binding UserAlertsDataTemplate}" IsVisible="{Binding IsUser}" />
     </FlyoutItem>
     <FlyoutItem Title="Alertar Evento" Icon="botonEmergencia.png">
-        <ShellContent Route="AddActivity" ContentTemplate="{DataTemplate local:View_AddActivity}" />
+        <ShellContent Route="AddActivity" ContentTemplate="{DataTemplate local:View_AddActivity}" IsVisible="{Binding IsUser}"/>
     </FlyoutItem>
-    <FlyoutItem Title="Alertar Evento Admin" Icon="botonEmergencia.png">
+    <FlyoutItem Title="Alertar Evento Admin" Icon="alertaAdmin.png">
         <ShellContent Route="AddEmergency" ContentTemplate="{DataTemplate local:View_AddEmergency}" IsVisible="{Binding IsAdmin}" />
     </FlyoutItem>
     <FlyoutItem Title="Mi Perfil " Icon="usuario.png">
-        <ShellContent Route="MyProfile" ContentTemplate="{DataTemplate local:View_UserProfile}" />
+        <ShellContent Route="MyProfile" ContentTemplate="{DataTemplate local:View_UserProfile}"/>
     </FlyoutItem>
     <FlyoutItem Title="Registrar/Unirse OTB" Icon="icon_register.png">
-        <ShellContent Route="registrarotb" ContentTemplate="{DataTemplate local:View_RegisterJoinOtb}" />
-    </FlyoutItem>
-   
-    <FlyoutItem Title="Ver Camara " Icon="usuario.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_ViewCamera}" />
+        <ShellContent Route="registrarotb" ContentTemplate="{DataTemplate local:View_RegisterJoinOtb}" IsVisible="{Binding UserWithOutOTB}" />
     </FlyoutItem>
     <FlyoutItem Title="Agregar Alerta " Icon="usuario.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddAlert}" IsVisible="{Binding IsAdmin}"  />
+    </FlyoutItem>
+    <FlyoutItem Title="Agregar Alerta " Icon="agregarAlerta.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddAlert}" />
     </FlyoutItem>
     <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
-        <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" />
+        <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" IsVisible="{Binding IsUser}" />
     </FlyoutItem>
     <FlyoutItem Title="Mi OTB" Icon="IconOtb.png" >
-        <ShellContent Route="Mi OTB" ContentTemplate="{DataTemplate local:View_MyOtb}" />
+        <ShellContent Route="Mi OTB" ContentTemplate="{DataTemplate local:View_MyOtb}" IsVisible="{Binding IsUser}" />
     </FlyoutItem>
     <FlyoutItem x:Name="fiUser" Title="Lista de Usuarios" Icon="ListaUsuarios.png" IsVisible="{Binding IsAdmin}">
         <ShellContent Route="UserList" ContentTemplate="{DataTemplate local:View_UsersList}" />
     </FlyoutItem>
-    <FlyoutItem Title="Actividad de Usuarios" Icon="icon_feed.png">
+    <FlyoutItem Title="Actividad de Usuarios" Icon="icon_feed.png" IsVisible="{Binding IsUser}">
         <ShellContent Route="UserActivity" ContentTemplate="{DataTemplate local:View_UserActivity}"/>
     </FlyoutItem>
-    <FlyoutItem Title="Ver Alarmas " Icon="icon_SeeAlarm.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_ViewAlarms}" />
-    </FlyoutItem>
-    
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
 
-    <MenuItem Text="Cerrar Sesion" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked" IconImageSource="CerrarSesion.png">
+    <MenuItem Text="Cerrar Sesion" StyleClass="MenuItemLayoutStyle" IconImageSource="CerrarSesion.png" Command="{Binding LogOutCommand}">
     </MenuItem>
 
     <!--

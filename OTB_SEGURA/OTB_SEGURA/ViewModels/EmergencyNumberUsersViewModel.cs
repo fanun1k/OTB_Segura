@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -13,6 +14,7 @@ namespace OTB_SEGURA.ViewModels
         #region Attributes
         FireBaseHelper firebaseHelper = new FireBaseHelper();
         private List<UserModel> userList; // Lista de usuarios registrados
+        private UserService userService { get; set; } = new UserService();
         #endregion
         #region Properties
         public List<UserModel> UserList
@@ -50,16 +52,22 @@ namespace OTB_SEGURA.ViewModels
         {
             try
             {
-                UserList = await firebaseHelper.GetActiveUsers(); //Obtiene la lista de usuarios activos en el sistema
-
+                int otbID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                ResponseHTTP<UserModel> responseHTTP = await userService.UsersByOtb(otbID);
+                if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                {
+                    UserList = responseHTTP.Data;
+                    //--Agregar video 2
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                }
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
-
-                throw ex;
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
-
-            //Guardaresta listaen sqlIte
         }
 
         #endregion

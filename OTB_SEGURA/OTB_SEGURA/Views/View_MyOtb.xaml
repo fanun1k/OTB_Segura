@@ -6,9 +6,6 @@
              Title="{Binding Title}"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              >
-    <ContentPage.BindingContext>
-        <vm:MyOtbViewModel/>
-    </ContentPage.BindingContext>
     <Grid BackgroundColor="#b9eefc">
         <StackLayout Padding="25">
             <Frame CornerRadius="25">
@@ -19,6 +16,9 @@
             
             <StackLayout Orientation="Vertical"  WidthRequest="190">
                 <!--<Button  BackgroundColor="White"  CornerRadius="30" HeightRequest="200" TextColor="Black" Text="Registrar Cámara" FontAttributes="Bold" FontSize="20" 
+             Title="{Binding Title}">
+    <StackLayout Padding="20">
+        <Button CornerRadius="30" HeightRequest="215" Text="Registrar Cámara" FontAttributes="Bold" FontSize="20" 
                 Command="{Binding RegisterCameraCommand}" 
                 ImageSource="cameras.png"  ContentLayout="Top, 10" />-->
 
@@ -37,10 +37,9 @@
                 <Button BackgroundColor="White"  CornerRadius="30" HeightRequest="250"  TextColor="Black" Text="Ver  Cámara" FontAttributes="Bold" FontSize="20" 
                 Command="{Binding SeeCameraCommand}" 
                 ImageSource="seeCamera.png" ContentLayout="Top, 10" />
+                <Button CornerRadius="20" Text="Ver Alarmas" Margin="30, 15, 30, 15" Command="{Binding SeeAlarmCommand}"/>
 
-                
-
-                <Button BackgroundColor="White" CornerRadius="30" HeightRequest="250" TextColor="Black"  Text="Salir de Otb" FontAttributes="Bold" FontSize="20" 
+                    <Button BackgroundColor="White" CornerRadius="30" HeightRequest="250" TextColor="Black"  Text="Salir de Otb" FontAttributes="Bold" FontSize="20" 
                 Command="{Binding ExitOtbCommand}"
                 ImageSource="exitOtb.png" ContentLayout="Top, 10"/>
             </StackLayout>

@@ -96,26 +96,7 @@ namespace OTB_SEGURA.ViewModels
                 else
                 {
                     DependencyService.Get<IMessage>().LongAlert(response.Msj);
-                }
-                //List<AlertModel> listaenviar = new List<AlertModel>();
-                //switch (Title)
-                //{
-                //    case "General":
-                //        ListAlert = listaAlertas;
-                //        break;
-                //    case "Robos":
-                //        ListAlert = SepararPorAlertas(listaAlertas, 1);
-                //        break;
-                //    case "Incendios":
-                //        ListAlert = SepararPorAlertas(listaAlertas, 2);
-                //        break;
-                //    case "Accidentes":
-                //        ListAlert = SepararPorAlertas(listaAlertas, 3);
-                //        break;
-                //    case "Rescates":
-                //        ListAlert = SepararPorAlertas(listaAlertas, 4);
-                //        break;
-                //}
+                }               
             }
             catch (Exception ex)
             {

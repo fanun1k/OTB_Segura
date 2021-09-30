@@ -9,7 +9,7 @@ using OTB_SEGURA.Views;
 
 namespace OTB_SEGURA.ViewModels
 {
-    class MyOtbViewModel:BaseViewModel
+     class MyOtbViewModel:BaseViewModel
     {
         private INavigation Navigation { get; set; }
         public ICommand RegisterCameraCommand
@@ -43,9 +43,9 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(() =>
-                    DependencyService.Get<IMessage>().LongAlert("Ver Camaras")
-                );
+                return new RelayCommand(async () => {
+                    await Navigation.PushAsync(new View_ViewAlarms());
+                });
             }
         }
 
@@ -59,6 +59,8 @@ namespace OTB_SEGURA.ViewModels
             }
         }
 
+       
+
         public ICommand SeeAlarmCommand
         {
             get
@@ -68,6 +70,7 @@ namespace OTB_SEGURA.ViewModels
                 });
             }
         }
+
         public ICommand AdministrateAlerts
         {
             get

@@ -39,11 +39,11 @@
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Fecha: "/>
-                                <Label Text="{Binding DateTime}" FontAttributes="None"/>
+                                    <Label Text="{Binding Date}" FontAttributes="None"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Tipo : "/>
-                                <Label Text="{Binding Type}" FontAttributes="None"/>
+                                    <Label Text="{Binding Alert_type_ID}" FontAttributes="None"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Mensaje: "/>

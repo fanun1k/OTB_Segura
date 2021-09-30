@@ -21,5 +21,21 @@ namespace OTB_SEGURA.Services
                 throw ex;
             }
         }
+        public async Task<ResponseHTTP<AlertModel>> GetAlertsByUser(Nullable<int> idOtb,int idUser)
+        {
+            try
+            { 
+                if (idOtb==null)
+                {
+                    throw new Exception("El Otb_ID no puede ser nulo");
+                }
+                return await GET(urlAlert + $"/alertsbyuser/{idOtb}/{idUser}");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

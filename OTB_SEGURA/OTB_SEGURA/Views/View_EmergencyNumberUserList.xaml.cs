@@ -18,10 +18,6 @@ namespace OTB_SEGURA.Views
             InitializeComponent();
         }
 
-        private void ListUser_Refreshing(object sender, EventArgs e)
-        {
-
-        }
 
         private void ListUser_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
@@ -39,9 +35,7 @@ namespace OTB_SEGURA.Views
         private async void ShowExitDialog(SelectedItemChangedEventArgs e)
         {
             UserModel user = e.SelectedItem as UserModel;
-            //DependencyService.Get<IMessage>().ShortAlert(user.Name + user.Phone);
-            //Agregar redireccionamiento a perfil
-            await Navigation.PushAsync(new View_UserProfile(user.Name,user.Cell_phone,user.UserId));
+            await Navigation.PushAsync(new View_UserProfile(user.Name,user.Cell_phone,user.User_ID,user.Otb_ID));
         }
     }
 }

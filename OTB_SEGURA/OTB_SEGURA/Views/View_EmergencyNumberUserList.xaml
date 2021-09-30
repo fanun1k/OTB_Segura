@@ -16,8 +16,7 @@
         <vm:EmergencyNumberUsersViewModel/>
     </ContentPage.BindingContext>
     <ListView x:Name="ListUser" ItemsSource="{Binding UserList}" HasUnevenRows="True"
-                  IsPullToRefreshEnabled="True"
-                  Refreshing="ListUser_Refreshing"
+                  IsPullToRefreshEnabled="True"               
                   ItemSelected="ListUser_ItemSelected" Style="{StaticResource listViewStyle}">
         <ListView.Behaviors>
             <behaviorsPack:EventToCommandBehavior 
@@ -36,7 +35,7 @@
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Telefono:" WidthRequest="80"/>
-                                    <Label Text="{Binding Phone}" FontAttributes="None"/>
+                                    <Label Text="{Binding Cell_phone}" FontAttributes="None"/>
                                 </StackLayout>
                             </StackLayout>
                         </Grid>

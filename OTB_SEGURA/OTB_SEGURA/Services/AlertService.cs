@@ -1,4 +1,5 @@
-﻿using OTB_SEGURA.Models;
+﻿using Newtonsoft.Json;
+using OTB_SEGURA.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,6 +19,25 @@ namespace OTB_SEGURA.Services
             catch (Exception ex)
             {
 
+                throw ex;
+            }
+        }
+
+        public async Task<ResponseHTTP<AlertModel>> insertarAlerta(int idOtb)
+        {
+            try
+            {
+                string urlInsert = urlAlert;
+                var bodyRequest = new
+                {
+                   
+                };
+
+                string json = JsonConvert.SerializeObject(bodyRequest);
+                return await POST(json, urlInsert);
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }

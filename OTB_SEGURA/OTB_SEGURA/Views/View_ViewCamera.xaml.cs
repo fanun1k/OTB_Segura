@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OTB_SEGURA.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace OTB_SEGURA.Views
         public View_ViewCamera()
         {
             InitializeComponent();
+            
         }
     }
 }

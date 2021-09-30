@@ -5,8 +5,10 @@ using OTB_SEGURA.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using OTB_SEGURA.Views;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -19,13 +21,12 @@ namespace OTB_SEGURA.ViewModels
         
         #region Attributes
         AlertService alertService = new AlertService();
-        DataTemplate data;
-         
-        private bool isAdmin;
-        //private bool isxolito;
-
+        DataTemplate userAlertsDataTemplate;
+        private bool isAdmin=false;
+        private bool isUser=false;
+        private bool userWithOutOTB = false;
         private UserService userService = new UserService();
-
+        public INavigation Navigation { get; set; }
         #endregion
         #region Properties
         public bool IsAdmin
@@ -33,6 +34,17 @@ namespace OTB_SEGURA.ViewModels
             get { return isAdmin; }
             set { isAdmin = value; OnPropertyChanged(); }
         }
+        public bool IsUser
+        {
+            get { return isUser; }
+            set { isUser = value; OnPropertyChanged(); }
+        }
+        public bool UserWithOutOTB
+        {
+            get { return userWithOutOTB; }
+            set { userWithOutOTB = value; OnPropertyChanged(); }
+        }
+
         private View_AlarmContainer alarmContainer;
 
         public View_AlarmContainer AlarmContainer
@@ -41,85 +53,68 @@ namespace OTB_SEGURA.ViewModels
             set { alarmContainer= value; }
         }
         
-        public DataTemplate Data
+        public DataTemplate UserAlertsDataTemplate
         {
-            get { return data; }
-            set { data = value; OnPropertyChanged(); }
+            get { return userAlertsDataTemplate; }
+            set { userAlertsDataTemplate = value; OnPropertyChanged(); }
         }
-
-        /*public bool IsXolito
-        {
-            get { return isxolito; }
-            set { isxolito = value; OnPropertyChanged(); }
-        }*/
-        #endregion
-        #region Commands
-        /*
-        public ICommand ApperingCommand
-        { 
-            get 
-            {
-                return new RelayCommand(async() => {
-                    try
-                    {
-                        int id = int.Parse(Application.Current.Properties["User_ID"].ToString());
-                        ResponseHTTP<UserModel> responseHTTP = await userService.GetUser(id);
-                        if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
-                        {
-                            if (responseHTTP.Data[0].Type == 0)
-                            {
-                                IsAdmin = false;
-                            }
-                            if (responseHTTP.Data[0].State == 0)
-                            {
-                                await Shell.Current.GoToAsync("//LoginPage");
-                            }
-                            if (responseHTTP.Data[0].Otb_ID == null)
-                            {
-                                IsXolito = false;
-                                IsAdmin = false;
-                            }
-                            else
-                            {
-                                IsXolito = true;
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        throw ex;
-                    }
-                });
-            } 
-        }
-        */
         #endregion
         #region Construct
         /// <summary>
         /// Constructor que nos sirbe para determinar si el usuario que inicio sesion es administrador o usuario
         /// Esto oculta algunas caracteristicas de la vista
         /// </summary>
-        public AppShellViewModel()
+        public AppShellViewModel(INavigation nav)
         {
-                
+            Navigation = nav;
             if (Application.Current.Properties.ContainsKey("Sesion"))
             {
-                if (int.Parse(Application.Current.Properties["UserType"].ToString()) == 1)
+                switch (int.Parse(Application.Current.Properties["UserType"].ToString()))
                 {
-                    IsAdmin = true;
+                    case 0:
+                        IsAdmin = false;
+                        IsUser = true;
+                        UserWithOutOTB = false;
+                        break;
+                    case 1:
+                        IsAdmin = true;
+                        IsUser = true;
+                        UserWithOutOTB = false;
+                        break;
+                    case 2:
+                        IsAdmin = true;
+                        IsUser = true;
+                        UserWithOutOTB = false;
+                        break;
                 }
-            }         
-            MessagingCenter.Subscribe<LoginViewModel>(this,"admin",(sender)=> {
-                IsAdmin = true;
+                if (Application.Current.Properties["Otb_ID"] == null)
+                {
+                    IsAdmin = false;
+                    IsUser = false;
+                    UserWithOutOTB = true;
+                }
+            }
+            MessagingCenter.Subscribe<LoginViewModel>(this, "userWithOutOTB", (sender) => {
+                IsAdmin = false;
+                IsUser = false;
+                UserWithOutOTB = true;
             });
             MessagingCenter.Subscribe<LoginViewModel>(this, "user", (sender) => {
                 IsAdmin = false;
+                IsUser = true;
+                UserWithOutOTB = false;
             });
-            Data = new DataTemplate(() => {
+            MessagingCenter.Subscribe<LoginViewModel>(this, "admin", (sender) => {
+                IsAdmin = true;
+                IsUser = true;
+                UserWithOutOTB = false;
+            });
+
+            UserAlertsDataTemplate = new DataTemplate(() => {
                 List<String> listaAlertas = new List<string>();
                 listaAlertas.Add("General");
                 listaAlertas.Add("Robos");
-     
+
                 //    ResponseHTTP<AlertModel> response = await alertService.listarAlertas(int.Parse(Application.Current.Properties["Otb_ID"].ToString()));
                 //    if (response.Code == System.Net.HttpStatusCode.OK)
                 //    {
@@ -135,6 +130,33 @@ namespace OTB_SEGURA.ViewModels
 
 
         }
+        #endregion
+        #region Commands
+        public ICommand LogOutCommand {
+            get
+            {
+                return new RelayCommand(async()=> {
+
+                    Application.Current.Properties.Clear();
+                    await App.SQLiteDB.DestroySession();
+                    await Shell.Current.GoToAsync("//LoginPage");
+                });
+            }
+                
+        }
+        public ICommand JoinOtbCommand
+        {
+            get
+            {
+                return new RelayCommand(async () => {
+
+                    await Navigation.PushAsync(new View_RegisterJoinOtb()); ;
+                });
+            }
+
+        }
+        #endregion
+        #region DataTemplates
         #endregion
     }
 }

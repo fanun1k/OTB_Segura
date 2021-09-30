@@ -1,4 +1,5 @@
 ﻿using OTB_SEGURA.Services;
+using OTB_SEGURA.ViewModels;
 using OTB_SEGURA.Views;
 using System;
 using System.IO;
@@ -29,7 +30,6 @@ namespace OTB_SEGURA
 
         protected override void OnStart()
         {
-
         }
 
         protected override void OnSleep()

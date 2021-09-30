@@ -17,9 +17,8 @@ namespace OTB_SEGURA.ViewModels
     /// <summary>
     /// clase AddUSerViewModel que nos sirbe de logica para la vista View_AdUser
     /// </summary>
-    public class AddUSerViewModel:BaseViewModel
+    public class AddUSerViewModel : BaseViewModel
     {
-
 
         #region Attributes
         private UserModel user = new UserModel();
@@ -50,6 +49,7 @@ namespace OTB_SEGURA.ViewModels
         public AddUSerViewModel()
         {
             Title = "Agregar Nuevo Usuario";
+            
         }
         #endregion
 
@@ -57,48 +57,42 @@ namespace OTB_SEGURA.ViewModels
         /// <summary>
         /// comando que se ejecuta cuando se hace click al boton de insertar en la vista
         /// </summary>
-        public ICommand InsertCommand
-        {
-            get
-            {
-                return new RelayCommand(InsertMethod);
-            }
+        public ICommand InsertCommand {
+            get {
+                return new Command(execute: async (obj) => {
+                    try
+                    {
+                        IsBusy = false;
+                        ((Command)InsertCommand).ChangeCanExecute();
+                        user.State = 1;
+                        if (Validar())
+                        {
+                            ResponseHTTP<UserModel> resultHTTP = await restFull.UserInsert(user);
+
+                            if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                                await Shell.Current.GoToAsync("..");
+                            }
+                            else
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    IsBusy = true;
+                },canExecute: (obj) => { return IsBusy; });
+            } 
         }
+
         #endregion
 
         #region Method
-        /// <summary>
-        /// Metodo que nos ayuda a Hacer la insercion de un usuario a la bdd
-        /// </summary>
-        private async void InsertMethod()
-        {         
-            try
-            {
-                IsBusy = true;
-                user.State = 1;
-
-                if (Validar())
-                {
-                    ResponseHTTP<UserModel> resultHTTP = await restFull.UserInsert(user);
-
-                    if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
-                    {
-                        DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                        await Shell.Current.GoToAsync("..");
-                    }
-                    else
-                    {
-                        DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                    }
-                    IsBusy = false;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                DependencyService.Get<IMessage>().LongAlert(ex.Message);
-            }                            
-        }
+        
 
         /// <summary>
         /// Metodo que valida los campos del formulario de registro de usuario de la vista 

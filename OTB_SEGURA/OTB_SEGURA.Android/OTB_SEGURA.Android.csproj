@@ -219,12 +219,25 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\usuarioPerfil.png" />
+    <AndroidResource Include="Resources\drawable\SeeCamera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_play.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\background2ed.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\CamaraSubirImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\agregarAlerta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\alertaAdmin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\verCamara.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_User_Emergency_Phone.png" />

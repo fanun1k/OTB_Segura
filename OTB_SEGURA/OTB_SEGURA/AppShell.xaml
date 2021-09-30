@@ -104,7 +104,7 @@
     <FlyoutItem Title="Alertar Evento" Icon="botonEmergencia.png">
         <ShellContent Route="AddActivity" ContentTemplate="{DataTemplate local:View_AddActivity}" />
     </FlyoutItem>
-    <FlyoutItem Title="Alertar Evento Admin" Icon="botonEmergencia.png">
+    <FlyoutItem Title="Alertar Evento Admin" Icon="alertaAdmin.png">
         <ShellContent Route="AddEmergency" ContentTemplate="{DataTemplate local:View_AddEmergency}" IsVisible="{Binding IsAdmin}" />
     </FlyoutItem>
     <FlyoutItem Title="Mi Perfil " Icon="usuario.png">
@@ -115,6 +115,15 @@
     </FlyoutItem>
     <FlyoutItem Title="Agregar Alerta " Icon="usuario.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddAlert}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Ver Camara " Icon="verCamara.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_ViewCamera}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Agregar Alerta " Icon="agregarAlerta.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddAlert}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Camaras" Icon="usuario.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_SeeCamera}" />
     </FlyoutItem>
     <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
         <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" />

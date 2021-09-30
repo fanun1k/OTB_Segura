@@ -1,8 +1,4 @@
 ﻿using OTB_SEGURA.ViewModels;
-using OTB_SEGURA.Views;
-using System;
-using System.Collections.Generic;
-using Xamarin.Forms;
 
 namespace OTB_SEGURA
 {
@@ -11,12 +7,7 @@ namespace OTB_SEGURA
         public AppShell()
         {
             InitializeComponent();
-        }
-        
-        private async void OnMenuItemClicked(object sender, EventArgs e)
-        {
-            Application.Current.Properties.Clear();
-            await Shell.Current.GoToAsync("//LoginPage");
+            BindingContext = new AppShellViewModel(Navigation);
         }
     }
 }

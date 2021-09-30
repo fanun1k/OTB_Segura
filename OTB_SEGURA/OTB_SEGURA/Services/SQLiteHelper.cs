@@ -35,6 +35,7 @@ namespace OTB_SEGURA.Services
         {
             return db.Table<UserModel>().ToListAsync();
         }
+        #region Session
         public async Task<int> SaveSession(SessionModel session)
         {
             try
@@ -47,8 +48,24 @@ namespace OTB_SEGURA.Services
             {
 
                 throw ex;
-            }
-            
+            }          
         }
+        public async Task DestroySession()
+        {
+            try
+            {
+                await db.DropTableAsync<SessionModel>();     
+            }
+            catch (System.Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public Task<SessionModel> GetSession()
+        {
+            return db.Table<SessionModel>().FirstOrDefaultAsync();
+        }
+        #endregion
     }
 }

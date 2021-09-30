@@ -1,5 +1,4 @@
-﻿using OTB_SEGURA.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace OTB_SEGURA.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class View_ViewCamera : ContentPage
+    public partial class View_HelpAlert : ContentPage
     {
-        public View_ViewCamera()
+        public View_HelpAlert()
         {
             InitializeComponent();
-            
         }
     }
 }

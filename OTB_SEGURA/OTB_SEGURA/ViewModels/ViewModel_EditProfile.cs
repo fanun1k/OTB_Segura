@@ -35,48 +35,42 @@ namespace OTB_SEGURA.ViewModels
 
         #endregion
         #region Command      
-        public ICommand UpdateCommand //Comando para llamar al metodo 
+        public ICommand UpdateCommand //Comando para llamar al metodo y Metodo update del perfil de usuario
         {
             get
             {
-                return new RelayCommand(UpdateMethod);
+                return new Command(execute: async (obj) => {
+                    try
+                    {
+                        IsBusy = false;
+                        ((Command)UpdateCommand).ChangeCanExecute();
+                        user.State = 1;
+                        if (Validate())
+                        {
+                            ResponseHTTP<UserModel> resultHTTP = await restFull.UserUpdate(user);
+                            if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                            {
+                                Application.Current.Properties["Name"] = resultHTTP.Data[0].Name;
+                                Application.Current.Properties["Password"] = resultHTTP.Data[0].Password;
+                                Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
+                                await Shell.Current.GoToAsync("..");
+                            }
+                            else
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    IsBusy = true;
+                }, canExecute: (obj) => { return IsBusy; });
             }
         }
         #endregion
         #region Method
-        /// <summary>
-        /// Metodo update del perfil de usuario
-        /// </summary>
-        private async void UpdateMethod()
-        {
-            IsBusy = true;
-            if (Validate())
-            {
-                try
-                {
-                    IsBusy = true;
-                    user.State = 1;
-                    ResponseHTTP<UserModel> resultHTTP = await restFull.UserUpdate(user);
-                    if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
-                    {
-                        Application.Current.Properties["Name"]= resultHTTP.Data[0].Name;
-                        Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
-                        DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                        await Shell.Current.GoToAsync("..");
-                    }
-                    else
-                    {
-                        DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                    }
-                    IsBusy = false;
-                }
-                catch (Exception ex)
-                {
-                    DependencyService.Get<IMessage>().LongAlert(ex.Message);
-                }
-
-            }
-        }
         ///<summary>
         ///Validacion de datos de entrada 
         ///</summary>

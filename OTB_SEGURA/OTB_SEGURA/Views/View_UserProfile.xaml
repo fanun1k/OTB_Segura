@@ -25,9 +25,9 @@
 
         <Label BindingContext="{Binding User}" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"/>
         <Label BindingContext="{Binding User}" Text="{Binding Email,Mode=TwoWay}" HorizontalOptions="Center"/>
+
         <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="15">
-            
-            <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="55,5,41,10" WidthRequest="180" HeightRequest="200" Command="{Binding ButtonChangeStateClick}" BackgroundColor="{StaticResource PrimaryVariation}" HorizontalOptions="EndAndExpand"/>
+            <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="55,5,41,10" WidthRequest="180" HeightRequest="200" Command="{Binding ButtonChangeStateClick}" BackgroundColor="{StaticResource PrimaryVariation}" HorizontalOptions="EndAndExpand" IsEnabled="{Binding IsBusy}"/>
         </Grid>
         
         <Label Text="Alertas"></Label>

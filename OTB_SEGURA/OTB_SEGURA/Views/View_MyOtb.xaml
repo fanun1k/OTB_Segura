@@ -3,19 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OTB_SEGURA.Views.View_MyOtb"
              xmlns:local="clr-namespace:OTB_SEGURA.Views"
+             Title="{Binding Title}"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             >
+    <Grid BackgroundColor="#b9eefc">
+        <StackLayout Padding="25">
+            <Frame CornerRadius="25">
+                <Label Text="My Otb" HorizontalOptions="Center" FontSize="25" />
+            </Frame>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="10" Margin="0,120,0,0">
+            
+            <StackLayout Orientation="Vertical"  WidthRequest="190">
+                <!--<Button  BackgroundColor="White"  CornerRadius="30" HeightRequest="200" TextColor="Black" Text="Registrar Cámara" FontAttributes="Bold" FontSize="20" 
              Title="{Binding Title}">
     <StackLayout Padding="20">
         <Button CornerRadius="30" HeightRequest="215" Text="Registrar Cámara" FontAttributes="Bold" FontSize="20" 
                 Command="{Binding RegisterCameraCommand}" 
-                ImageSource="CameraIcon.png" ContentLayout="Bottom,-20"/>
-        <Button CornerRadius="20" Text="Ver Cámaras" Margin="30, 15, 30, 15" Command="{Binding SeeCameraCommand}" />
-        <Button CornerRadius="30" HeightRequest="215" Text="Registrar Alarma" FontAttributes="Bold" FontSize="20" 
+                ImageSource="cameras.png"  ContentLayout="Top, 10" />-->
+
+                <!-- <Button BackgroundColor="White" CornerRadius="30" HeightRequest="200"  TextColor="Black" Text="Registrar Alarma" FontAttributes="Bold" FontSize="20" 
                 Command="{Binding RegisterAlarmCommand}"
-                ImageSource="AlarmIcon.png" ContentLayout="Bottom,-20"/>
+                ImageSource="alarm.png" ContentLayout="Top, 10" />-->
+                <Button BackgroundColor="White" CornerRadius="30" HeightRequest="250"  TextColor="Black" Text="Administrar alertas" FontAttributes="Bold" FontSize="20" 
+                Command="{Binding AdministrateAlerts}"
+                ImageSource="admAlarm.png" ContentLayout="Top, 10" />
+                <Button BackgroundColor="White" CornerRadius="30" TextColor="Black" HeightRequest="250"  Text="Ver alarmas" FontAttributes="Bold" FontSize="20" 
+                Command="{Binding SeeAlarmCommand}"
+                ImageSource="seeAlarm.png" ContentLayout="Top, 10" />
+            </StackLayout>
 
-        <Button CornerRadius="20" Text="Ver Alarmas" Margin="30, 15, 30, 15" Command="{Binding SeeAlarmCommand}"/>
+            <StackLayout Orientation="Vertical" WidthRequest="190" >
+                <Button BackgroundColor="White"  CornerRadius="30" HeightRequest="250"  TextColor="Black" Text="Ver  Cámara" FontAttributes="Bold" FontSize="20" 
+                Command="{Binding SeeCameraCommand}" 
+                ImageSource="seeCamera.png" ContentLayout="Top, 10" />
+                <Button CornerRadius="20" Text="Ver Alarmas" Margin="30, 15, 30, 15" Command="{Binding SeeAlarmCommand}"/>
 
-        <Button CornerRadius="20" Text="Administrar Alertas" Margin="30, 0, 30, 15" Command="{Binding AdministrateAlerts}"/>
+                    <Button BackgroundColor="White" CornerRadius="30" HeightRequest="250" TextColor="Black"  Text="Salir de Otb" FontAttributes="Bold" FontSize="20" 
+                Command="{Binding ExitOtbCommand}"
+                ImageSource="exitOtb.png" ContentLayout="Top, 10"/>
+            </StackLayout>
 
-    </StackLayout>
+        </StackLayout>
+    </Grid>
+    
+    
 </ContentPage>

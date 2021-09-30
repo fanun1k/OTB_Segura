@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OTB_SEGURA.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,12 @@ namespace OTB_SEGURA.Views
         public View_AddAlert()
         {
             InitializeComponent();
+            BindingContext = new AddAlertViewModel(Navigation);
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new View_HelpAlert());
         }
     }
 }

@@ -1,9 +1,9 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
+using OTB_SEGURA.Views;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -13,6 +13,7 @@ namespace OTB_SEGURA.ViewModels
     class AddAlertViewModel : BaseViewModel
     {
         #region Attributes
+        private INavigation Navigation;
         private AlertTypeService alertTypeService = new AlertTypeService();
         public List<AlertTypeModel> listAlertsType;
         private ResponseHTTP<AlertTypeModel> responseHTTP;
@@ -41,8 +42,9 @@ namespace OTB_SEGURA.ViewModels
 
         #endregion
         #region Constructors
-        public AddAlertViewModel()
+        public AddAlertViewModel(INavigation nav)
         {
+            Navigation = nav;
         }
         #endregion
 
@@ -97,7 +99,7 @@ namespace OTB_SEGURA.ViewModels
                 {
                     try
                     {
-                        if (await App.Current.MainPage.DisplayAlert("Eliminar Tipo de Alerta","¿Desea eliminar el tipo de alerta?", "Aceptar", "Cancelar"))
+                        if (await App.Current.MainPage.DisplayAlert("Eliminar Tipo de Alerta", "¿Desea eliminar el tipo de alerta?", "Aceptar", "Cancelar"))
                         {
                             responseHTTP = await alertTypeService.DeleteAlertType(selectedAlert.Alert_type_ID);
                             if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
@@ -139,6 +141,17 @@ namespace OTB_SEGURA.ViewModels
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
         }
+
         #endregion
+        public ICommand InfoCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    await Navigation.PushAsync(new View_HelpAlert());
+                });
+            }
+        }
     }
 }

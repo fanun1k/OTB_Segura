@@ -4,16 +4,21 @@
              xmlns:local="clr-namespace:OTB_SEGURA.ViewModels"
              xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              x:Class="OTB_SEGURA.Views.View_AddAlert">
-    <ContentPage.BindingContext>
-        <local:AddAlertViewModel/>
-    </ContentPage.BindingContext>
     <ContentPage.Behaviors>
         <behaviorsPack:EventToCommandBehavior 
             EventName="Appearing"
             Command="{Binding AppearingCommand }"/>
     </ContentPage.Behaviors>
-    <StackLayout>
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Info" Order="Primary"  IconImageSource="question.png"  Command="{Binding InfoCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    
+    <StackLayout Padding="10" >
+       
+        
         <Entry
+         
             Placeholder="Nombre alerta"  Opacity="0.5" Margin="20,15,20,10"
             Text="{Binding AlertName}"
             FontSize="25"
@@ -22,20 +27,13 @@
         <Button
             Text="Agregar Alerta" Command="{Binding AddAlertCommand}"
             Margin="20,0,20,20" 
-            CornerRadius="20" 
+            CornerRadius="20"
             />
-        
-        <StackLayout BackgroundColor="{StaticResource Primary}" Padding="2" Margin="20,0,20,20">
-            <StackLayout BackgroundColor="White" Margin="1" >
-                <ListView x:Name="lvAlert" ItemsSource="{Binding ListAlertsType}" SelectedItem="{Binding  SelectedAlert, Mode=TwoWay}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Label Text="{Binding Name}"/>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+
+        <StackLayout   BackgroundColor="{StaticResource Primary}" Padding="2" Margin="20,0,20,20">
+            <StackLayout HorizontalOptions="Center" BackgroundColor="White"  Margin="1" >
+                <ListView  x:Name="lvAlert" ItemsSource="{Binding Alerts}" SelectedItem="{Binding SelectedAlert}" >
+            </ListView>
             </StackLayout>
             
         </StackLayout>

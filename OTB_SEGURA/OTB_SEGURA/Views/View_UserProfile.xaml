@@ -17,7 +17,7 @@
         </Grid>
         <Label BindingContext="{Binding User}" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"/>
         <Label BindingContext="{Binding User}" Text="{Binding Email,Mode=TwoWay}" HorizontalOptions="Center"/>
-        <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="0.60" Command="{Binding ButtonChangeStateClick}" BackgroundColor="{StaticResource PrimaryVariation}" />
+        <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="0.60" Command="{Binding ButtonChangeStateClick}" BackgroundColor="{StaticResource PrimaryVariation}" IsEnabled="{Binding IsBusy}" />
         <Label Text="Alertas"></Label>
         <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
             <ListView.ItemTemplate>

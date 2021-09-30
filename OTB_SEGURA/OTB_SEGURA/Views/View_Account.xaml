@@ -17,6 +17,6 @@
         <Entry x:Name="txtPassword" Text="{Binding OldPassword,Mode=TwoWay}" IsPassword="True" Placeholder="Escriba su contraseña antigua" PlaceholderColor="{StaticResource colorGray}"/>
         <Label Text="Contraseña nueva" FontSize="{StaticResource mediumTextSize}" />
         <Entry x:Name="txtRePassword" Text="{Binding Password,Mode=TwoWay}" IsPassword="True" Placeholder="Escriba la nueva contraseña" PlaceholderColor="{StaticResource colorGray}"/>
-        <Button Text="Editar Usuario" Command="{Binding UpdateCommand}"></Button>
+        <Button Text="Editar Usuario" Command="{Binding UpdateCommand}" IsEnabled="{Binding IsBusy}"></Button>
     </StackLayout>      
 </ContentPage> 

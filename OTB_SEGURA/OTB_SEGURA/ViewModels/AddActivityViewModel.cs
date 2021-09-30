@@ -188,7 +188,6 @@ namespace OTB_SEGURA.ViewModels
 
         private async void InsertRoboMethod()//insert del robo
         {
-            IsBusy = true;
             if (ValidationEntry())
             {
                 await getLocation();//llamada a metodo para obtener ubicacion
@@ -199,7 +198,6 @@ namespace OTB_SEGURA.ViewModels
                 DependencyService.Get<IMessage>().LongAlert("Actividad agregada con éxito");//Mensaje de exito de la insercion
                 PostNotification(activity);//llamada al metodo del envio de la notificacion
             }
-            IsBusy = false;
         }
         private async void InsertAccidenteMethod()
         {

@@ -13,33 +13,29 @@
             </Frame>
         </StackLayout>
         <StackLayout Orientation="Horizontal" Padding="10" Margin="0,120,0,0">
-            
+
             <StackLayout Orientation="Vertical"  WidthRequest="190">
-                <!--<Button  BackgroundColor="White"  CornerRadius="30" HeightRequest="200" TextColor="Black" Text="Registrar Cámara" FontAttributes="Bold" FontSize="20" 
-             Title="{Binding Title}">
-    <StackLayout Padding="20">
-        <Button CornerRadius="30" HeightRequest="215" Text="Registrar Cámara" FontAttributes="Bold" FontSize="20" 
+                <!--<Button CornerRadius="30" HeightRequest="215" Text="Registrar Cámara" FontAttributes="Bold" FontSize="20" 
                 Command="{Binding RegisterCameraCommand}" 
                 ImageSource="cameras.png"  ContentLayout="Top, 10" />-->
 
                 <!-- <Button BackgroundColor="White" CornerRadius="30" HeightRequest="200"  TextColor="Black" Text="Registrar Alarma" FontAttributes="Bold" FontSize="20" 
                 Command="{Binding RegisterAlarmCommand}"
                 ImageSource="alarm.png" ContentLayout="Top, 10" />-->
+               
+                <Button BackgroundColor="White"  CornerRadius="30" HeightRequest="250"  TextColor="Black" Text="Ver Cámaras" FontAttributes="Bold" FontSize="20" 
+                Command="{Binding SeeCameraCommand}" 
+                ImageSource="cameras.png" ContentLayout="Top, 10" />
                 <Button BackgroundColor="White" CornerRadius="30" HeightRequest="250"  TextColor="Black" Text="Administrar alertas" FontAttributes="Bold" FontSize="20" 
                 Command="{Binding AdministrateAlerts}"
                 ImageSource="admAlarm.png" ContentLayout="Top, 10" />
-                <Button BackgroundColor="White" CornerRadius="30" TextColor="Black" HeightRequest="250"  Text="Ver alarmas" FontAttributes="Bold" FontSize="20" 
-                Command="{Binding SeeAlarmCommand}"
-                ImageSource="seeAlarm.png" ContentLayout="Top, 10" />
             </StackLayout>
 
             <StackLayout Orientation="Vertical" WidthRequest="190" >
-                <Button BackgroundColor="White"  CornerRadius="30" HeightRequest="250"  TextColor="Black" Text="Ver  Cámara" FontAttributes="Bold" FontSize="20" 
-                Command="{Binding SeeCameraCommand}" 
-                ImageSource="seeCamera.png" ContentLayout="Top, 10" />
-                <Button CornerRadius="20" Text="Ver Alarmas" Margin="30, 15, 30, 15" Command="{Binding SeeAlarmCommand}"/>
-
-                    <Button BackgroundColor="White" CornerRadius="30" HeightRequest="250" TextColor="Black"  Text="Salir de Otb" FontAttributes="Bold" FontSize="20" 
+                <Button BackgroundColor="White" CornerRadius="30" TextColor="Black" HeightRequest="250"  Text="Ver alarmas" FontAttributes="Bold" FontSize="20" 
+                Command="{Binding SeeAlarmCommand}"
+                ImageSource="seAlarm.png" ContentLayout="Top, 10" />
+                <Button BackgroundColor="White" CornerRadius="30" HeightRequest="250" TextColor="Black"  Text="Salir de Otb" FontAttributes="Bold" FontSize="20" 
                 Command="{Binding ExitOtbCommand}"
                 ImageSource="exitOtb.png" ContentLayout="Top, 10"/>
             </StackLayout>

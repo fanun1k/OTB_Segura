@@ -8,16 +8,13 @@
         <ToolbarItem Text="Info" Order="Primary"  IconImageSource="question.png"  Command="{Binding InfoCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
 
-    
+
     <StackLayout Padding="10" >
-       
-        
         <Entry
          
             Placeholder="Nombre alerta"  Opacity="0.5" Margin="20,15,20,10"
             Text="{Binding Alertname}"
-            FontSize="25"
-            
+            FontSize="25"           
             />
         <Button
             Text="Agregar Alerta" Command="{Binding AddAlertCommand}"

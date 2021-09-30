@@ -11,21 +11,13 @@ namespace OTB_SEGURA.ViewModels
     /// Nombre del desarrollador: Miguel Angel Terrazas Challapa
     /// Clase para realizar el update de usuario
     ///</summary>
-    public class AccountViewModel : BaseViewModel
+    public class ViewModel_EditProfile : BaseViewModel
     {
         #region Attributes
         private UserModel user = new UserModel();
         UserService restFull = new UserService();
-        private string oldPassword;
-
         #endregion
         #region Properties
-        public string OldPassword
-        {
-            get { return oldPassword; }
-            set { oldPassword = value; OnPropertyChanged(); }
-        }
-
         public UserModel User
         {
             get { return user; }
@@ -33,11 +25,12 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
         #region Construct
-        public AccountViewModel()
+        public ViewModel_EditProfile()
         {
             Title = "Editar Usuario"; //Titulo de View_Account
             User.Name = Application.Current.Properties["Name"] as string;
             User.Cell_phone = int.Parse(Application.Current.Properties["Phone"].ToString());
+            User.User_ID = int.Parse(Application.Current.Properties["User_ID"].ToString());
         }
 
         #endregion
@@ -67,7 +60,6 @@ namespace OTB_SEGURA.ViewModels
                                 DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
                             }
                         }
-                            
                     }
                     catch (Exception ex)
                     {
@@ -86,8 +78,7 @@ namespace OTB_SEGURA.ViewModels
         private bool Validate()
         {
             bool res;
-            if (oldPassword == Application.Current.Properties["Password"].ToString())
-            {
+         
                 if (user.Cell_phone.ToString().Length > 6)
                 {
                     if (user.Name.Length > 4)
@@ -106,12 +97,6 @@ namespace OTB_SEGURA.ViewModels
                     DependencyService.Get<IMessage>().LongAlert("El número de celular debe tener más de 7 caracteres");
 
                 }
-            }
-            else
-            {
-                DependencyService.Get<IMessage>().LongAlert("La contraseña antigua es incorrecta");
-                res = false;
-            }
             return res;
         }
         #endregion

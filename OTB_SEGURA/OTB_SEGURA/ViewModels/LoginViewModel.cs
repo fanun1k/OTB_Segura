@@ -44,12 +44,14 @@ namespace OTB_SEGURA.ViewModels
         /// Constructor
         /// </summary>
         /// <remarks>
-        /// Asigna el comando de OnLogiClicked a la variable LoginCommand
         /// </remarks>
         public LoginViewModel(INavigation nav)
         {
-            LoginCommand = new Command(OnLoginClicked);
             navigation = nav;
+            if (Application.Current.Properties.ContainsKey("Sesion"))
+            {
+                 Shell.Current.GoToAsync("//MyProfile");
+            }
         }
 
 
@@ -156,17 +158,6 @@ namespace OTB_SEGURA.ViewModels
                 return new RelayCommand(async () => {
                     await navigation.PushAsync(new View_AddUser());
                 });
-            }
-        }
-
-        /// <summary>
-        /// Devuelve el metodo LoginSuccess
-        /// </summary>
-        public ICommand Logged
-        {
-            get
-            {
-                return new RelayCommand(LoginSuccess);
             }
         }
         #endregion

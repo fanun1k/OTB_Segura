@@ -13,28 +13,19 @@
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />  
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />  
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />  
+    <PackageReference Include="Syncfusion.Xamarin.Cards" Version="19.2.0.62" />  
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />  
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />  
+    <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="25.1.0-beta2" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />  
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />  
     <PackageReference Include="Xamarin.Forms.BehaviorsPack" Version="3.0.0" />  
-    <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2083" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Views\View_RegisterJoinOtb.xaml.cs">
-      <DependentUpon>View_RegisterJoinOtb.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\View_AlarmContainer.xaml.cs">
-      <DependentUpon>View_AlarmContainer.xaml</DependentUpon>
-    </Compile>
+    <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2083" />  
+    <PackageReference Include="ZXing.Net.MobileX.Forms" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Styles\Style_General.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\View_RegisterJoinOtb.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\View_About.xaml">
@@ -46,13 +37,13 @@
     <EmbeddedResource Update="Views\View_AddActivity.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\View_AddAlert.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\View_AddEmergency.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\View_AddUser.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\View_AlertType.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\View_EmergencyNumbers.xaml">
@@ -67,19 +58,13 @@
     <EmbeddedResource Update="Views\View_Login.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\View_MyOtb.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\View_RecoverPassword.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\View_SeeCamera.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\View_UserActivity.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\View_AlarmContainer.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\View_UserAlertRescues.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\View_UserProfile.xaml">
@@ -88,7 +73,7 @@
     <EmbeddedResource Update="Views\View_UsersList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\View_ViewAlarms.xaml">
+    <EmbeddedResource Update="Views\View_ViewCamera.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

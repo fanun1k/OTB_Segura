@@ -109,16 +109,25 @@ namespace OTB_SEGURA.ViewModels
         /// </summary>
         public async void LoadData()
         {
-            int otbID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
-            ResponseHTTP<UserModel> responseHTTP =await userService.UsersByOtb(otbID);
-            if (responseHTTP.Code==System.Net.HttpStatusCode.OK)
+            try
             {
-                UserList = responseHTTP.Data;
+                int otbID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                ResponseHTTP<UserModel> responseHTTP = await userService.UsersByOtb(otbID);
+                if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                {
+                    UserList = responseHTTP.Data;
+                    //--Agregar video 2
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                }
             }
-            else
+            catch (System.Exception ex)
             {
-                DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
+
         }
         #endregion
     }

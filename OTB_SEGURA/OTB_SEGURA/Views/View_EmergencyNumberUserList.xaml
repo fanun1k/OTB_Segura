@@ -16,8 +16,7 @@
         <vm:EmergencyNumberUsersViewModel/>
     </ContentPage.BindingContext>
     <ListView x:Name="ListUser" ItemsSource="{Binding UserList}" HasUnevenRows="True"
-                  IsPullToRefreshEnabled="True"
-                  Refreshing="ListUser_Refreshing"
+                  IsPullToRefreshEnabled="True"               
                   ItemSelected="ListUser_ItemSelected" Style="{StaticResource listViewStyle}">
         <ListView.Behaviors>
             <behaviorsPack:EventToCommandBehavior 

@@ -18,15 +18,19 @@ namespace OTB_SEGURA.Services
         }
 
         //Para guardar registros
-        public Task<int> SaveUserAsync(UserModel user)
+        public async Task SaveUserAsync(List<UserModel> userList)
         {
-            if (user.User_ID == 0)
+            try
             {
-                return db.InsertAsync(user);
+                foreach (var user in userList)
+                {
+                    await db.InsertAsync(user);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return null;
+
+                throw ex;
             }
         }
 

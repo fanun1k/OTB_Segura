@@ -44,32 +44,37 @@ namespace OTB_SEGURA.ViewModels
         #region Commands
         public ICommand RecoveryCommand
         {
-            get { return new RelayCommand(async()=> {
-              if(await ValidateForm())
-                {
+            get { 
+                return new Command(async(obj) => {
+                    IsBusy = false;
+                    ((Command)RecoveryCommand).ChangeCanExecute();
                     if (await ValidateForm())
                     {
+                        if (await ValidateForm())
+                        {
                         
-                        try
-                        {
-                            ResponseHTTP<UserModel> responseHTTP = await userService.RecoveryPassword(Email,Ci);
-                            if (responseHTTP.Code==System.Net.HttpStatusCode.OK)
+                            try
                             {
-                                DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                                ResponseHTTP<UserModel> responseHTTP = await userService.RecoveryPassword(Email,Ci);
+                                if (responseHTTP.Code==System.Net.HttpStatusCode.OK)
+                                {
+                                    DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                                }
+                                else
+                                {
+                                    DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                                }
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                                DependencyService.Get<IMessage>().LongAlert("Error " + ex.Message);
                             }
-                        }
-                        catch (Exception ex)
-                        {
-                            DependencyService.Get<IMessage>().LongAlert("Error " + ex.Message);
                         }
                     }
-                }
-                
-            }); }
+                    IsBusy = true;
+                },canExecute: (obj) => { return IsBusy; }); 
+            
+            }
         }
         #endregion
 

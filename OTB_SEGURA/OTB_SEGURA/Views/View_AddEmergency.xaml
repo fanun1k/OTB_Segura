@@ -28,7 +28,8 @@
                 HeightRequest     ="200"
                 CornerRadius      ="100"
                 VerticalOptions   ="Center"
-                HorizontalOptions ="Center"/>
+                HorizontalOptions ="Center"
+                IsEnabled="{Binding IsBusy}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

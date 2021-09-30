@@ -59,8 +59,6 @@ namespace OTB_SEGURA.ViewModels
             }
         }
 
-        private ICommand seeAlarmCommand;
-
         public ICommand SeeAlarmCommand
         {
             get

@@ -17,16 +17,9 @@ namespace OTB_SEGURA.Views
         ///<remarks>Si hay una sesion => entra automaticamente : Sino => Ingresa a login </remarks>
         public View_Login()
         {
-            string name = null;
             InitializeComponent();
             LoginViewModel log = new LoginViewModel(Navigation);
-            this.BindingContext = new LoginViewModel(Navigation);
-            if (Application.Current.Properties.ContainsKey("Sesion"))
-            {
-                name = Application.Current.Properties["Name"] as string;
-                DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + name);
-                log.Logged.Execute(button1);
-            }
+            this.BindingContext = new LoginViewModel(Navigation);        
         }
 
     }

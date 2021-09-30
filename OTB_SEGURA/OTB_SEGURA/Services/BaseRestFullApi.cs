@@ -135,5 +135,35 @@ namespace OTB_SEGURA.Services
             }
         }
 
+        protected async Task<ResponseHTTP<T>> DELETE(string url)
+        {
+            try
+            {
+                Uri RequestUri = new Uri(urlserver + url);
+                var client = new HttpClient();
+                if (Application.Current.Properties.ContainsKey("Token"))
+                {
+                    string token = Application.Current.Properties["Token"].ToString();
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token);
+                }
+                var response = await client.DeleteAsync(RequestUri);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    var jsonString = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<ResponseHTTP<T>>(jsonString);
+                }
+                else
+                {
+                    res.Code = response.StatusCode;
+                    if (res.Msj == null) res.Msj = response.StatusCode.ToString();
+                    return res;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

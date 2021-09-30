@@ -58,10 +58,10 @@ namespace OTB_SEGURA.Views
 
             aux = 0;
         }
-        public View_UserProfile(string name,int phone,Guid id)
+        public View_UserProfile(string name,int phone,int userid,Nullable<int> otbid)
         {
             InitializeComponent();
-            BindingContext = new UserProfileViewModel(name,phone,id);
+            BindingContext = new UserProfileViewModel(name,phone,userid,otbid);
             aux = 0;
         }
         private void ContentPage_Appearing(object sender, EventArgs e)

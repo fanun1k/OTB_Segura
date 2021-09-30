@@ -45,10 +45,12 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(async () =>
+                return new Command(async (obj) =>
                 {
                     try
                     {
+                        IsBusy = false;
+                        ((Command)CreateOTBCommand).ChangeCanExecute();
                         Regex rg = new Regex(@"^[a-zA-Z0-9\s,]*$");
                         if (rg.IsMatch(otb.Name) && otb.Name.Length > 6)
                         {
@@ -74,8 +76,8 @@ namespace OTB_SEGURA.ViewModels
 
                         DependencyService.Get<IMessage>().LongAlert(ex.Message);
                     }
-
-                });
+                    IsBusy = true;
+                }, canExecute: (obj) => { return IsBusy; });
             }
         }
         public ICommand JoinOtbCommand
@@ -86,6 +88,8 @@ namespace OTB_SEGURA.ViewModels
                 {
                     try
                     {
+                        IsBusy = false;
+                        ((Command)JoinOtbCommand).ChangeCanExecute();
                         ResponseHTTP<OtbModel> responseHTTP = await otbService.JoinOtb(User_ID,otb.Code);
                         if (responseHTTP.Code==System.Net.HttpStatusCode.OK)
                         {
@@ -103,6 +107,7 @@ namespace OTB_SEGURA.ViewModels
 
                         DependencyService.Get<IMessage>().LongAlert(ex.Message);
                     }
+                    IsBusy = true;
                 });
             }
         }

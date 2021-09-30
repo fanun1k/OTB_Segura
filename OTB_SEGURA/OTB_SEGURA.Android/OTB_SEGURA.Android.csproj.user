@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <SelectedDevice>Xiaomi Redmi Note 8</SelectedDevice>
+    <SelectedDevice>Samsung SM-G955F</SelectedDevice>
     <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
-    <DefaultDevice>pixel_2_pie_9_0_-_api_28</DefaultDevice>
-    <ActiveDebugProfile>Xiaomi Redmi Note 8</ActiveDebugProfile>
+    <DefaultDevice>bM</DefaultDevice>
+    <ActiveDebugProfile>bM</ActiveDebugProfile>
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
 </Project>

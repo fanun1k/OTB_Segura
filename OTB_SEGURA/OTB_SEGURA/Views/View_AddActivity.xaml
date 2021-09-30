@@ -19,7 +19,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Text="Robo" Command="{Binding InsertRoboCommand}"></Button>
+            <Button Text="Robo" Command="{Binding InsertRoboCommand}" ></Button>
             <Button Grid.Row="1" Text="Accidente" Command="{Binding InsertAccidenteCommand}"></Button>
             <Button Grid.Column="1" Text="Incendio" Command="{Binding InsertIncendioCommand}"></Button>
             <Button Grid.Row="1" Grid.Column="1" Text="Desastre" Command="{Binding InsertDesastreCommand}"></Button>

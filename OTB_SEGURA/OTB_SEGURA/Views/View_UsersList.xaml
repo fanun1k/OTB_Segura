@@ -68,7 +68,7 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Label Text="Celular:"/>
-                                    <Label Text="{Binding Phone}" Grid.Column="1" FontAttributes="None"/>
+                                    <Label Text="{Binding Cell_phone}" Grid.Column="1" FontAttributes="None"/>
                                 </Grid>
                                 
                             </Grid>

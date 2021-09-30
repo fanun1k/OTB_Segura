@@ -9,6 +9,7 @@ using OTB_SEGURA.Services;
 using OTB_SEGURA.Views;
 using Xamarin.Essentials;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -20,20 +21,20 @@ namespace OTB_SEGURA.ViewModels
         #region Attributes
         private UserModel user = new UserModel();
         private string textButton;
-        private List<ActivityModel> activityList = new List<ActivityModel>();
-        UserService restFull = new UserService();
-
+        private List<AlertModel> activityList = new List<AlertModel>();
+        private UserService restFull = new UserService();
         private Image imgProfile = new Image();
+        public ICommand ButtonChangeStateClick { get; private set; }
+        private AlertService alertService { get; set; } = new AlertService();
 
+        #endregion
+        #region Properties
         public Image ImgProfile
         {
             get { return imgProfile; }
             set { imgProfile = value; OnPropertyChanged(); }
         }
-
-        #endregion
-        #region Properties
-        public List<ActivityModel> ActivityList
+        public List<AlertModel> ActivityList
         {
             get { return activityList; }
             set { activityList = value; OnPropertyChanged(); }
@@ -62,7 +63,7 @@ namespace OTB_SEGURA.ViewModels
             this.user = user;
             
             SetTextButton();
-            //LoadActivities(user.UserId.ToString());
+            LoadActivities();
             ButtonChangeStateClick = new Command(UpdateMethod);
         }
         /// <summary>
@@ -78,8 +79,9 @@ namespace OTB_SEGURA.ViewModels
                 user.Name = Application.Current.Properties["Name"].ToString();
                 user.Email = Application.Current.Properties["Email"].ToString();
                 user.User_ID = int.Parse(Application.Current.Properties["User_ID"].ToString());
+                user.Otb_ID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
 
-                //LoadActivities(Application.Current.Properties["Id"].ToString());
+                LoadActivities();
                 ButtonChangeStateClick = new Command(async () =>
                 {
                     await navigation.PushAsync(new View_Account());
@@ -97,15 +99,16 @@ namespace OTB_SEGURA.ViewModels
         /// <param name="name">parametro que nos sirbe para mostrar el nombre del usuario en el perfil</param>
         /// <param name="phone">parametro que nos sirbe para poder hacerle llamadas al numero recibido mediante este parametro</param>
         /// <param name="id">parametro que nos sirbe para poder hacer consultas a la bdd</param>
-        public UserProfileViewModel(string name,int phone,Guid id)
+        public UserProfileViewModel(string name,int phone,int user_id,Nullable<int> otb_id)
         {
             user = new UserModel
             {
                 Name = name,
                 Email = phone.ToString(),
-                UserId = id
+                User_ID = user_id,
+                Otb_ID=otb_id
             };
-            //LoadActivities(user.UserId.ToString());
+            LoadActivities();
             textButton = "LLamar";
             ButtonChangeStateClick = new Command(async () => {
                 var answer = await App.Current.MainPage.DisplayAlert("Llamar a "+user.Name , "¿Desea realizar la llamada?", "Aceptar", "Cancelar");
@@ -118,13 +121,36 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
         #region Commands
-        public ICommand ButtonChangeStateClick { get; private set; }
-
         public ICommand SetAdminCommand
         {
             get 
             { 
-                return new RelayCommand(SetAdmin); 
+                return new Command(execute: async(obj) => {
+                    try
+                    {
+                        IsBusy = false;
+                        ((Command)SetAdminCommand).ChangeCanExecute();
+                        ResponseHTTP<UserModel> resultHTTP = await restFull.SetAdmin(user);
+
+                        if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            await Shell.Current.GoToAsync("..");
+                        }
+                        else
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                        }
+                        
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    IsBusy = true;
+                },canExecute: (obj) => { return IsBusy; }); 
             }
         }
 
@@ -132,7 +158,29 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(RemoveAdmin);
+                return new Command(execute: async(obj) => {
+                    try
+                    {
+                        IsBusy = false;
+                        ((Command)RemoveAdminCommand).ChangeCanExecute();
+                        ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveAdmin(user);
+
+                        if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            await Shell.Current.GoToAsync("..");
+                        }
+                        else
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    IsBusy = true;
+                },canExecute: (obj) => { return IsBusy; });
             }
         }
 
@@ -140,7 +188,29 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(RemoveOTB);
+                return new Command(execute: async (obj) => {
+                    try
+                    {
+                        IsBusy = false;
+                        ((Command)RemoveOTBCommand).ChangeCanExecute();
+                        ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveOTB(user);
+
+                        if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            await Shell.Current.GoToAsync("..");
+                        }
+                        else
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    IsBusy = true;
+                },canExecute: (obj) => { return IsBusy; });
             }
         }
 
@@ -148,10 +218,12 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(async () =>
+                return new Command(async (obj) =>
                 {
                     try
                     {
+                        IsBusy = false;
+                        ((Command)UploadCommand).ChangeCanExecute();
                         Stream stream = await DependencyService.Get<IOpenGalery>().GetFotoAsync();
 
                         if (stream != null)
@@ -178,8 +250,8 @@ namespace OTB_SEGURA.ViewModels
                     {
                         DependencyService.Get<IMessage>().LongAlert(ex.Message);
                     }
-                    
-                });
+                    IsBusy = true;
+                },canExecute: (obj) => { return IsBusy; });
             }
         }
 
@@ -199,87 +271,6 @@ namespace OTB_SEGURA.ViewModels
                 case 0:
                     textButton = "habilitar/borrar usuario";
                     break;
-            }
-        }
-
-        private async void SetAdmin()
-        {
-            try
-            {
-                IsBusy = true;
-
-                ResponseHTTP<UserModel> resultHTTP = await restFull.SetAdmin(user);
-
-                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
-                {
-                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                    await Shell.Current.GoToAsync("..");
-                }
-                else
-                {
-                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                }
-                IsBusy = false;
-
-                
-            }
-            catch (Exception ex)
-            {
-                DependencyService.Get<IMessage>().LongAlert(ex.Message);
-            }
-        }
-
-        private async void RemoveAdmin()
-        {
-            try
-            {
-                IsBusy = true;
-
-                ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveAdmin(user);
-
-                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
-                {
-                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                    await Shell.Current.GoToAsync("..");
-                }
-                else
-                {
-                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                }
-                IsBusy = false;
-
-
-            }
-            catch (Exception ex)
-            {
-                DependencyService.Get<IMessage>().LongAlert(ex.Message);
-            }
-        }
-
-        private async void RemoveOTB()
-        {
-            try
-            {
-                IsBusy = true;
-
-                ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveOTB(user);
-
-                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
-                {
-                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                    await Shell.Current.GoToAsync("..");
-                }
-                else
-                {
-                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                }
-                IsBusy = false;
-
-
-            }
-            catch (Exception ex)
-            {
-                DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
         }
 
@@ -342,10 +333,27 @@ namespace OTB_SEGURA.ViewModels
         /// Metodo que carga las actividades en la vista View_UserProfile segun el id del usuario que reciba
         /// </summary>
         /// <param name="id">codigo id de un usuario que sera utilizado para hacer consultas a la bdd</param>
-        //private async void LoadActivities(string id)
-        //{
-        //    ActivityList = await firebaseHelper.GetAllActivitiesId(id);
-        //}
+        private async void LoadActivities()
+        {
+            try
+            {
+
+                ResponseHTTP<AlertModel> responseHTTP =await alertService.GetAlertsByUser(user.Otb_ID,user.User_ID);
+                if (responseHTTP.Code==System.Net.HttpStatusCode.OK)
+                {
+                    ActivityList = responseHTTP.Data;
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
+        }
         #endregion
     }
 }

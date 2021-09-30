@@ -21,7 +21,7 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />  
     <PackageReference Include="Xamarin.Forms.BehaviorsPack" Version="3.0.0" />  
     <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2083" />  
-    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="3.1.0-beta2" />
+    <PackageReference Include="ZXing.Net.MobileX.Forms" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>

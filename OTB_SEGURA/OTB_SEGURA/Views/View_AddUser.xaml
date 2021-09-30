@@ -21,6 +21,29 @@
         <Entry Text="{Binding RePassword,Mode=TwoWay}" IsPassword="True" MaxLength="12" Placeholder="Confirme la contraseña" PlaceholderColor="{StaticResource colorGray}" />
         <Label Text="Email" FontSize="{StaticResource mediumTextSize}" />
         <Entry Text="{Binding User.Email,Mode=TwoWay}" Placeholder="Introduzca su correo" PlaceholderColor="{StaticResource colorGray}" />
-        <Button Text="Registrar Usuario" Command="{Binding InsertCommand}"></Button>
+        <Button Text="Registrar Usuario" Command="{Binding InsertCommand}" IsEnabled="{Binding IsBusy}">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="VisualStateManager.VisualStateGroups">
+                        <VisualStateGroupList>
+                            <VisualStateGroup>
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryDisabled}" />
+                                        <Setter Property="TextColor" Value="{StaticResource Dark}"/>
+                                        <Setter Property="Text" Value="..."/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
     </StackLayout>
 </ContentPage>

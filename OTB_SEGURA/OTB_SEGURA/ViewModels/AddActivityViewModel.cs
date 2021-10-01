@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GalaSoft.MvvmLight.Command;
+using Newtonsoft.Json;
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
-using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Essentials;
-using System.Threading;
 using Plugin.Geolocator;
-using Newtonsoft.Json;
+using System;
 using System.Net.Http;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -21,7 +18,7 @@ namespace OTB_SEGURA.ViewModels
         FireBaseHelper fireBaseHelper = new FireBaseHelper();//instancia de helper de BDD
         #region Attributes
 
-        private string message="";//mensaje de la actividad
+        private string message = "";//mensaje de la actividad
         private string type;//tipo de la actividad
         private string userId;//identificador de usuario
         private double latitude;//latitud de ubicacion
@@ -113,7 +110,7 @@ namespace OTB_SEGURA.ViewModels
             latitude = position.Latitude;//asignando valores de latitud a variables globales
             longitude = position.Longitude;//asignando valores de longitud a variables globales
         }
-        private ActivityModel newActivity(string message,string type)//metodo de creacion de la actividad
+        private ActivityModel newActivity(string message, string type)//metodo de creacion de la actividad
         {
             return new ActivityModel//creando el objeto de la emergencia
             {
@@ -125,7 +122,8 @@ namespace OTB_SEGURA.ViewModels
                 DateTime = DateTime.Now//obteniendo fecha y hora actual
             };
         }
-        private async void PostNotification(ActivityModel activity) {//metodo de envio de notificaiciones
+        private async void PostNotification(ActivityModel activity)
+        {//metodo de envio de notificaiciones
             try
             {
                 //llave del servidor para peticiones http/post para generar notificaciones
@@ -161,14 +159,14 @@ namespace OTB_SEGURA.ViewModels
             }
             catch (Exception ex)
             {
-                DependencyService.Get<IMessage>().LongAlert("Error: "+ex.Message);//mensaje en caso de error
+                DependencyService.Get<IMessage>().LongAlert("Error: " + ex.Message);//mensaje en caso de error
             }
         }
 
         // Metodo de validacion de los Entry de la vista
         public bool ValidationEntry()
         {
-            bool res=true;
+            bool res = true;
             if (!message.Equals(""))
             {
                 if (!Regex.Match(message, "^[ñA-Za-záéíóúÁÉÍÓÚ _]*[ñA-Za-záéíóúÁÉÍÓÚ][ñA-Za-záéíóúÁÉÍÓÚ _]*$").Success)
@@ -219,7 +217,7 @@ namespace OTB_SEGURA.ViewModels
             IsBusy = true;
             if (ValidationEntry())
             {
-                await getLocation ();//llamada a metodo para obtener ubicacion
+                await getLocation();//llamada a metodo para obtener ubicacion
                 await Task.Delay(1000);
                 var activity = newActivity(message, "Incendio");//Generar la actividad tipo incendio
                 await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
@@ -242,7 +240,7 @@ namespace OTB_SEGURA.ViewModels
                 DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");//Mensaje de exito de la desastre
                 PostNotification(activity);//llamada al metodo del envio de la notificacion
             }
-            IsBusy = true;  
+            IsBusy = true;
         }
         private async void EmergencyMethod()
         {

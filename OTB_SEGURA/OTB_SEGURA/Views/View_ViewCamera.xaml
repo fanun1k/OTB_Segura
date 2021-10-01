@@ -34,7 +34,7 @@
                                 </Grid.ColumnDefinitions>
                                 <StackLayout>
                                     <StackLayout Orientation="Horizontal">
-                                        <Label x:Name="lbStreetCamera" TextColor="White" Text="{Binding Name}" WidthRequest="150"/>
+                                        <Label x:Name="lbStreetCamera" TextColor="white" Text="{Binding Name}" WidthRequest="150"/>
                                     </StackLayout>
                                     
                                 </StackLayout>

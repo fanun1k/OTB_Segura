@@ -19,7 +19,7 @@
         </Grid>
         <Grid IsClippedToBounds="True">
             <ImgCircle:CircleImage HeightRequest="700" BorderColor="Black" BorderThickness="3" Margin="5,10,5,5" Source="{Binding ImgProfile}"></ImgCircle:CircleImage>
-            <Button Command="{Binding UploadCommand}" ImageSource="CamaraSubirImg.png" Margin="229,130,120,10" WidthRequest="300" HeightRequest="250" HorizontalOptions="Center" BackgroundColor="{StaticResource PrimaryVariation}" CornerRadius="30" Padding="0"/>
+            <Button Command="{Binding UploadCommand}" ImageSource="CamaraSubirImg.png" Margin="229,130,120,10" WidthRequest="300" HeightRequest="250" HorizontalOptions="Center" BackgroundColor="{StaticResource PrimaryVariation}" CornerRadius="30" Padding="0" MinimumWidthRequest="300" MinimumHeightRequest="250"/>
         </Grid>
         
 

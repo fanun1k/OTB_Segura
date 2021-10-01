@@ -32,8 +32,15 @@
 
         <StackLayout   BackgroundColor="{StaticResource Primary}" Padding="2" Margin="20,0,20,20">
             <StackLayout HorizontalOptions="Center" BackgroundColor="White"  Margin="1" >
-                <ListView  x:Name="lvAlert" ItemsSource="{Binding Alerts}" SelectedItem="{Binding SelectedAlert}" >
-            </ListView>
+                <ListView x:Name="lvAlert" ItemsSource="{Binding ListAlertsType}" SelectedItem="{Binding  SelectedAlert, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding Name}"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
             
         </StackLayout>

@@ -13,10 +13,8 @@
         <ToolbarItem Text="Info" Order="Primary"  IconImageSource="question.png"  Command="{Binding InfoCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
 
-    
+
     <StackLayout Padding="10" >
-       
-        
         <Entry
          
             Placeholder="Nombre alerta"  Opacity="0.5" Margin="20,15,20,10"

@@ -16,9 +16,7 @@ namespace OTB_SEGURA.ViewModels
         #region Attributes
         private List<AlarmModel> listAlarm;
         AlarmService alarmService = new AlarmService();
-
-
-
+        private INavigation Navigation { get; set; }
         #endregion
 
         #region Properties
@@ -63,12 +61,35 @@ namespace OTB_SEGURA.ViewModels
             }
 
         }
+        //public ICommand ItemTappedCommand
+        //{
+        //    get
+        //    {
+
+        //        return new RelayCommand(async () =>
+        //        {
+        //            try
+        //            {
+        //                //Navigation.PushAsync(new);
+        //                //TO-DO crear una interfaz para detonar las alarmas
+        //            }
+        //            catch (Exception ex)
+        //            {
+
+        //                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+        //            }
+        //        });
+
+        //    }
+
+        //}
         #endregion
 
         #region Constructor
-        public ViewModel_ViewAlarms()
+        public ViewModel_ViewAlarms(INavigation nav)
         {
             Title = "Ver Alarmas";
+            Navigation = nav;
         }
         #endregion
     }

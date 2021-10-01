@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OTB_SEGURA.Models;
-
+﻿using OTB_SEGURA.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,6 +10,7 @@ namespace OTB_SEGURA.Views
         public View_ViewAlarms()
         {
             InitializeComponent();
+            BindingContext = new ViewModel_ViewAlarms(Navigation);
         }
     }
 }

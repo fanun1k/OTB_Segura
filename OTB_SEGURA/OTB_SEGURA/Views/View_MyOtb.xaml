@@ -25,7 +25,7 @@
                
                 <Button BackgroundColor="White"  CornerRadius="30" HeightRequest="250"  TextColor="Black" Text="Ver Cámaras" FontAttributes="Bold" FontSize="20" 
                 Command="{Binding SeeCameraCommand}" 
-                ImageSource="cameras.png" ContentLayout="Top, 10" />
+                ImageSource="camerasSee.png" ContentLayout="Top, 10" />
                 <Button BackgroundColor="White" CornerRadius="30" HeightRequest="250"  TextColor="Black" Text="Administrar alertas" FontAttributes="Bold" FontSize="20" 
                 Command="{Binding AdministrateAlerts}"
                 ImageSource="admAlarm.png" ContentLayout="Top, 10" />

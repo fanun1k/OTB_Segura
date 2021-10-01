@@ -21345,7 +21345,7 @@ namespace OTB_SEGURA.Droid
 			public const int CameraIcon = 2131165328;
 			
 			// aapt resource value: 0x7F070091
-			public const int cameras = 2131165329;
+			public const int camerasSee = 2131165329;
 			
 			// aapt resource value: 0x7F070092
 			public const int cameraview = 2131165330;

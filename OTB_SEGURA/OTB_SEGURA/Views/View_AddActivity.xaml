@@ -10,20 +10,10 @@
     <StackLayout Padding="15">
         <Label Text="Descripción" TextColor="Black"/>
         <Editor Text="{Binding Message, Mode=TwoWay}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" TextColor="Black" />
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Button Text="Robo" Command="{Binding InsertRoboCommand}" ></Button>
-            <Button Grid.Row="1" Text="Accidente" Command="{Binding InsertAccidenteCommand}"></Button>
-            <Button Grid.Column="1" Text="Incendio" Command="{Binding InsertIncendioCommand}"></Button>
-            <Button Grid.Row="1" Grid.Column="1" Text="Desastre" Command="{Binding InsertDesastreCommand}"></Button>
-        </Grid>
+        <Label Text="Tipo de alerta" FontAttributes="Bold" HorizontalOptions="Fill" />
+        <Picker Title="Selecciona tu tipo de alerta" Margin="1,5,120,20"/>
+
+
         <BoxView   VerticalOptions="Center"
            HorizontalOptions="Center"
            HeightRequest="1"  
@@ -42,9 +32,10 @@
         <Button
             x:Name="btn1"
             Style="{StaticResource btnEmergencyStyle}"
-            Text="Botón de Emergencia" Command="{Binding EmergencyCommand}"
-            WidthRequest      ="200"
-            HeightRequest     ="200"
+            Command="{Binding EmergencyCommand}"
+            ImageSource="alarma2.png"
+            WidthRequest      ="300"
+            HeightRequest     ="300"
             CornerRadius      ="100"
             VerticalOptions   ="Center"
             HorizontalOptions ="Center"/>

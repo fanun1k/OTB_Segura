@@ -252,11 +252,12 @@
     <AndroidResource Include="Resources\drawable\seAlarm.png" />
     <AndroidResource Include="Resources\drawable\camerasSee.png" />
     <AndroidResource Include="Resources\drawable\camaraSubir2.png" />
+    <AndroidResource Include="Resources\drawable\alarma2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionOTB_SEGURAAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionOTB_SEGURAAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

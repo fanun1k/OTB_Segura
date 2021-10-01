@@ -125,7 +125,32 @@ namespace OTB_SEGURA.ViewModels
         {
             get 
             { 
-                return new RelayCommand(SetAdmin); 
+                return new Command(execute: async(obj) => {
+                    try
+                    {
+                        IsBusy = false;
+                        ((Command)SetAdminCommand).ChangeCanExecute();
+                        ResponseHTTP<UserModel> resultHTTP = await restFull.SetAdmin(user);
+
+                        if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            await Shell.Current.GoToAsync("..");
+                        }
+                        else
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                        }
+                        
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    IsBusy = true;
+                },canExecute: (obj) => { return IsBusy; }); 
             }
         }
 
@@ -133,7 +158,29 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(RemoveAdmin);
+                return new Command(execute: async(obj) => {
+                    try
+                    {
+                        IsBusy = false;
+                        ((Command)RemoveAdminCommand).ChangeCanExecute();
+                        ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveAdmin(user);
+
+                        if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            await Shell.Current.GoToAsync("..");
+                        }
+                        else
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    IsBusy = true;
+                },canExecute: (obj) => { return IsBusy; });
             }
         }
 
@@ -141,7 +188,29 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(RemoveOTB);
+                return new Command(execute: async (obj) => {
+                    try
+                    {
+                        IsBusy = false;
+                        ((Command)RemoveOTBCommand).ChangeCanExecute();
+                        ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveOTB(user);
+
+                        if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            await Shell.Current.GoToAsync("..");
+                        }
+                        else
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    IsBusy = true;
+                },canExecute: (obj) => { return IsBusy; });
             }
         }
 
@@ -149,10 +218,12 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(async () =>
+                return new Command(async (obj) =>
                 {
                     try
                     {
+                        IsBusy = false;
+                        ((Command)UploadCommand).ChangeCanExecute();
                         Stream stream = await DependencyService.Get<IOpenGalery>().GetFotoAsync();
 
                         if (stream != null)
@@ -179,8 +250,8 @@ namespace OTB_SEGURA.ViewModels
                     {
                         DependencyService.Get<IMessage>().LongAlert(ex.Message);
                     }
-                    
-                });
+                    IsBusy = true;
+                },canExecute: (obj) => { return IsBusy; });
             }
         }
 
@@ -200,87 +271,6 @@ namespace OTB_SEGURA.ViewModels
                 case 0:
                     textButton = "habilitar/borrar usuario";
                     break;
-            }
-        }
-
-        private async void SetAdmin()
-        {
-            try
-            {
-                IsBusy = true;
-
-                ResponseHTTP<UserModel> resultHTTP = await restFull.SetAdmin(user);
-
-                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
-                {
-                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                    await Shell.Current.GoToAsync("..");
-                }
-                else
-                {
-                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                }
-                IsBusy = false;
-
-                
-            }
-            catch (Exception ex)
-            {
-                DependencyService.Get<IMessage>().LongAlert(ex.Message);
-            }
-        }
-
-        private async void RemoveAdmin()
-        {
-            try
-            {
-                IsBusy = true;
-
-                ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveAdmin(user);
-
-                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
-                {
-                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                    await Shell.Current.GoToAsync("..");
-                }
-                else
-                {
-                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                }
-                IsBusy = false;
-
-
-            }
-            catch (Exception ex)
-            {
-                DependencyService.Get<IMessage>().LongAlert(ex.Message);
-            }
-        }
-
-        private async void RemoveOTB()
-        {
-            try
-            {
-                IsBusy = true;
-
-                ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveOTB(user);
-
-                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
-                {
-                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                    await Shell.Current.GoToAsync("..");
-                }
-                else
-                {
-                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                }
-                IsBusy = false;
-
-
-            }
-            catch (Exception ex)
-            {
-                DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
         }
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OTB_SEGURA.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace OTB_SEGURA.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class View_ViewAlarms : ContentPage
+    public partial class View_HelpAlert : ContentPage
     {
-        public View_ViewAlarms()
+        public View_HelpAlert()
         {
             InitializeComponent();
         }

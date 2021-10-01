@@ -57,19 +57,27 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(EmergencyMethod);//referencia de metodo de creacion de la emergencia
+                return new Command(execute: async (obj) => { //metodo de inicializacion de la emergencia
+                    try
+                    {
+                        IsBusy = false;
+                        ((Command)EmergencyCommand).ChangeCanExecute();
+                        getLocation();//llamada a metodo para obtener ubicacion
+                        await Task.Delay(1000);
+                        var emergency = newEmergency();//Generar la emergencia
+                        await fireBaseHelper.AddEmergency(emergency);//llamada al metodo del helper para insertar la emergencia
+                        await Task.Delay(1000);
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    IsBusy = true;
+                },canExecute: (obj) => { return IsBusy; });//referencia de metodo de creacion de la emergencia
             }
         }
         #endregion
         #region Method
-        private async void EmergencyMethod()//metodo de inicializacion de la emergencia
-        {
-            getLocation();//llamada a metodo para obtener ubicacion
-            await Task.Delay(1000);
-            var emergency = newEmergency();//Generar la emergencia
-            await fireBaseHelper.AddEmergency(emergency);//llamada al metodo del helper para insertar la emergencia
-            await Task.Delay(1000);
-        }
         private EmergencyModel newEmergency()//metodo de creacion de la emergencia
         {
             return new EmergencyModel //creando el objeto de la emergencia

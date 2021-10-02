@@ -70,11 +70,26 @@ namespace OTB_SEGURA.ViewModels
         #endregion
 
         #region Metodh
-
-        // Metodo que carga la data de actividades de usuarios
         public async void LoadData()
         {
-            ListActivity = await firebaseHelper.GetAllActivities(); // Llamada al metodo del helper para obtener la data
+            try
+            {
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+                {
+                    ListActivity = await firebaseHelper.GetAllActivities();
+                    await App.SQLiteDB.SaveUserActivitytAsync(ListActivity);
+                }
+                else
+                {
+                    ListActivity = await App.SQLiteDB.GetUserActivitytAsync();
+
+                }
+            }
+            catch (System.Exception ex)
+            {
+
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
         }
         #endregion
     }

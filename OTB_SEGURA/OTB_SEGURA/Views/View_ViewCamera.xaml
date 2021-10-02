@@ -6,9 +6,6 @@
              Title="{Binding Title}"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"             
              >
-    <ContentPage.BindingContext>
-        <vm:ViewCameraViewModel/>
-    </ContentPage.BindingContext>
     <ContentPage.Behaviors>
         <behaviorsPack:EventToCommandBehavior 
             EventName="Appearing"
@@ -22,6 +19,9 @@
                     ImageSource="cameraview" 
                />
         <ListView x:Name="listCamera" ItemsSource="{Binding ListaCamera}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
+            <ListView.Behaviors>
+                <behaviorsPack:EventToCommandBehavior EventName="ItemTapped" Command="{Binding ItemTappedCommand}"/>
+            </ListView.Behaviors>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

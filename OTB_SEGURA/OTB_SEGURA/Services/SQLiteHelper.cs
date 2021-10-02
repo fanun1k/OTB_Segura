@@ -15,6 +15,7 @@ namespace OTB_SEGURA.Services
             db = new SQLiteAsyncConnection(dbPath);
             db.CreateTableAsync<UserModel>().Wait();
             db.CreateTableAsync<SessionModel>().Wait();
+            db.CreateTableAsync<ImageProfileModel>().Wait();
         }
 
         //Para guardar registros
@@ -65,6 +66,24 @@ namespace OTB_SEGURA.Services
         public Task<SessionModel> GetSession()
         {
             return db.Table<SessionModel>().FirstOrDefaultAsync();
+        }
+
+        public async Task<int> SaveImageProfile(ImageProfileModel imgProfile)
+        {
+            try
+            {
+                await db.DropTableAsync<ImageProfileModel>();
+                await db.CreateTableAsync<ImageProfileModel>();
+                return await db.InsertAsync(imgProfile);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<ImageProfileModel> GetImageProfile()
+        {
+            return await db.Table<ImageProfileModel>().FirstOrDefaultAsync();
         }
         #endregion
     }

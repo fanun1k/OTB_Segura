@@ -131,6 +131,7 @@ namespace OTB_SEGURA.ViewModels
                             if (notify)
                             {
                                 alerta.User_ID = int.Parse(Application.Current.Properties["User_ID"].ToString());
+                                alerta.Date = DateTime.Now;
                                 alerta.Otb_ID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
                                 alerta.Alert_type_ID = alertTypeSelected.Alert_type_ID;
                                 ResponseHTTP<AlertModel> responseHTTP = await alertService.insertarAlerta(Alerta);

@@ -102,7 +102,7 @@ namespace OTB_SEGURA.Services
                 throw ex;
             }
         }
-        public async Task<ResponseHTTP<T>> PUT(string json, string url)
+        protected async Task<ResponseHTTP<T>> PUT(string json, string url)
         {
             try
             {

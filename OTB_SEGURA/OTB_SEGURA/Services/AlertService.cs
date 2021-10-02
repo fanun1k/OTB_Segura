@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace OTB_SEGURA.Services
 {
@@ -23,18 +24,23 @@ namespace OTB_SEGURA.Services
             }
         }
 
-        public async Task<ResponseHTTP<AlertModel>> insertarAlerta(int idOtb)
+        public async Task<ResponseHTTP<AlertModel>> insertarAlerta(AlertModel alert)
         {
             try
-            {
-                string urlInsert = urlAlert;
+            {          
                 var bodyRequest = new
                 {
-                   
-                };
+                   Date=alert.Date,
+                   Longitude=alert.Longitude,
+                   Latitude=alert.Latitude,
+                   Message=alert.Message,
+                   User_ID = int.Parse(Application.Current.Properties["User_ID"].ToString()),
+                   Otb_ID = int.Parse(Application.Current.Properties["Otb_ID"].ToString()),
+                   Alert_type_ID=alert.Alert_type_ID
+            };
 
                 string json = JsonConvert.SerializeObject(bodyRequest);
-                return await POST(json, urlInsert);
+                return await POST(json, urlAlert);
             }
             catch (Exception ex)
             {

@@ -3,15 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              x:Class="OTB_SEGURA.Views.View_AddActivity"
+             xmlns:cmd="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              Title="{Binding Title}">
     <ContentPage.BindingContext>
         <vm:AddActivityViewModel/>
     </ContentPage.BindingContext>
+    <ContentPage.Behaviors>
+        <cmd:EventToCommandBehavior EventName="Appearing" Command="{Binding AppearingCommand}"/>
+    </ContentPage.Behaviors>
     <StackLayout Padding="15">
         <Label Text="Descripción" TextColor="Black"/>
-        <Editor Text="{Binding Message, Mode=TwoWay}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" TextColor="Black" />
+        <Editor Text="{Binding Alerta.Message}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" TextColor="Black" />
         <Label Text="Tipo de alerta" FontAttributes="Bold" HorizontalOptions="Fill" />
-        <Picker Title="Selecciona tu tipo de alerta" Margin="1,5,120,20"/>
+        <Picker Title="Selecciona tu tipo de alerta" Margin="1,5,120,20" ItemsSource="{Binding ListAlertsType}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding AlertTypeSelected}" SelectedIndex="{Binding SelectedIndex}">
+            <Picker.Behaviors>
+                <cmd:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding SelectedIndexChangedCommand}"/>
+            </Picker.Behaviors>
+        </Picker>
 
 
         <BoxView   VerticalOptions="Center"

@@ -4,6 +4,7 @@ using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
 using Plugin.Geolocator;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -17,6 +18,18 @@ namespace OTB_SEGURA.ViewModels
     {
         FireBaseHelper fireBaseHelper = new FireBaseHelper();//instancia de helper de BDD
         #region Attributes
+        private AlertTypeService alertTypeService = new AlertTypeService(); //servicio de tipos de alertas
+        private AlertService alertService = new AlertService(); //servicio de alertas
+        private List<AlertTypeModel> listAlertsType;
+        private int selectedIndex;
+
+        public int SelectedIndex
+        {
+            get { return selectedIndex; }
+            set { selectedIndex = value; OnPropertyChanged(); }
+        }
+
+        private AlertModel alerta = new AlertModel();
 
         private string message = "";//mensaje de la actividad
         private string type;//tipo de la actividad
@@ -24,13 +37,25 @@ namespace OTB_SEGURA.ViewModels
         private double latitude;//latitud de ubicacion
         private double longitude;//longitud de ubicacion
         private DateTime dateTimeAttribute;//fecha y hora de emergencia
+        private AlertTypeModel alertTypeSelected;
+
+        public AlertTypeModel AlertTypeSelected
+        {
+            get { return alertTypeSelected; }
+            set { alertTypeSelected = value; }
+        }
 
         #endregion
         #region Properties
+        public AlertModel Alerta
+        {
+            get { return alerta; }
+            set { alerta = value; OnPropertyChanged(); }
+        }
         public string Message
         {
             get { return message; }
-            set { message = value; }
+            set { message = value; OnPropertyChanged(); }
         }
         public string Type
         {
@@ -57,41 +82,74 @@ namespace OTB_SEGURA.ViewModels
             get { return dateTimeAttribute; }
             set { dateTimeAttribute = value; }
         }
-
+        public List<AlertTypeModel> ListAlertsType
+        {
+            get { return listAlertsType; }
+            set { listAlertsType = value; OnPropertyChanged(); }
+        }
         #endregion
+
         public AddActivityViewModel()
         {
             Title = "Agregar Nueva Actividad";//Titulo de la vista
         }
         #region Command
-        public ICommand InsertRoboCommand//comando de boton de robo
+
+        //Comandos nuevos
+
+        public ICommand AppearingCommand
         {
             get
             {
-                return new RelayCommand(InsertRoboMethod);//referencia de metodo de creacion de la actividad de robo
+                return new RelayCommand(async () =>
+                {
+                    await LoadAlertsType();
+                });
             }
         }
-        public ICommand InsertAccidenteCommand//comando de boton de accidente
+
+        public ICommand SelectedIndexChangedCommand
         {
             get
             {
-                return new RelayCommand(InsertAccidenteMethod);//referencia de metodo de creacion de la actividad de accidente
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        if (alertTypeSelected != null)
+                        {
+                            var locator = CrossGeolocator.Current;//Nueva instancia para obtener ubicacion
+                            locator.DesiredAccuracy = 50;//definiendo la precision de la ubicacion
+                            var position = await locator.GetPositionAsync();
+                            alerta.Longitude = position.Longitude;
+                            alerta.Latitude = position.Latitude;
+
+                            var notify = await App.Current.MainPage.DisplayAlert("Enviar Alerta", $"Mensaje:{alerta.Message} \n" +
+                                                                $"Tipo de alerta: {alertTypeSelected.Name} \n" +
+                                                                $"Ubicación: {alerta.Latitude},{alerta.Longitude}\n" +
+                                                                $"fecha: {DateTime.Now}", "Enviar", "Cancelar");
+                            if (notify)
+                            {
+                                alerta.User_ID = int.Parse(Application.Current.Properties["User_ID"].ToString());
+                                alerta.Otb_ID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                                alerta.Alert_type_ID = alertTypeSelected.Alert_type_ID;
+                                ResponseHTTP<AlertModel> responseHTTP = await alertService.insertarAlerta(Alerta);
+                                DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                                PostNotification();
+                            }
+                            Alerta.Message = "";
+                            SelectedIndex = -1;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                });
             }
         }
-        public ICommand InsertIncendioCommand//comando de boton de incendio
-        {
-            get
-            {
-                return new RelayCommand(InsertIncendioMethod);//referencia de metodo de creacion de la actividad de incendio
-            }
-        }
-        public ICommand InsertDesastreCommand//comando de boton de desastre
-        {
-            get
-            {
-                return new RelayCommand(InsertDesastreMethod);//referencia de metodo de creacion de la actividad de desastre
-            }
-        }
+        //
+   
         public ICommand EmergencyCommand//comando de boton de emergencia
         {
             get
@@ -102,6 +160,50 @@ namespace OTB_SEGURA.ViewModels
         #endregion
 
         #region Method
+        //Nuevos meotodos
+
+        private async void PostNotification()
+        {//metodo de envio de notificaiciones
+            try
+            {
+                //llave del servidor para peticiones http/post para generar notificaciones
+                var serverKey = string.Format("key={0}", "AAAA4qfqqWY:APA91bGsZ0rQCczErCiSv-8-1bpO_U_Jmp1Q7-_GckSTf44jWe8MGKxQd0eJqb3IXXRJqQFsTaIW2POYZ_rjVrZrx492PmIyDGFjWaF3rmJ94IUVxRuce6KPf_TdTDngg7f0Hy35PWV_");
+                var senderId = string.Format("id={0}", "973479782758");//id del sender da las notificaciones
+                var data = new //datos de la notificaciones
+                {
+                    to = "/topics/all",//topic el que se mandara la notificacion
+                    notification = new//nueva notificacion 
+                    {
+                        body = alerta.Message,//mensaje de la notificacion
+                        title = alertTypeSelected.Name//titulo de la notificacion
+                    }
+
+                };
+                var jsonBody = JsonConvert.SerializeObject(data);//generando json para las peticiones
+
+                using (var httpRequest = new HttpRequestMessage(HttpMethod.Post, "https://fcm.googleapis.com/fcm/send"))//variable de envio de notificaciones
+                {
+                    httpRequest.Headers.TryAddWithoutValidation("Authorization", serverKey);//definicion del header de autorizacion
+                    httpRequest.Headers.TryAddWithoutValidation("Sender", senderId);//definicion del header del sender 
+                    httpRequest.Content = new StringContent(jsonBody, Encoding.UTF8, "application/json");//definicion del contenido con json de la notificacion
+
+                    using (var httpClient = new HttpClient())//variable de cliente de la peticion
+                    {
+                        var result = await httpClient.SendAsync(httpRequest);//definicion de variable de resultado de la peticion
+                        if (!result.IsSuccessStatusCode)
+                        {
+                            DependencyService.Get<IMessage>().LongAlert("No se Pudo Notificar");//mensaje de error 
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert("Error: " + ex.Message);//mensaje en caso de error
+            }
+        }
+        ///
+
         private async Task getLocation()//metodo para obtener la ubicacion
         {
             var locator = CrossGeolocator.Current;//Nueva instancia para obtener ubicacion
@@ -167,7 +269,7 @@ namespace OTB_SEGURA.ViewModels
         public bool ValidationEntry()
         {
             bool res = true;
-            if (!message.Equals(""))
+            if (!alerta.Message.Equals(""))
             {
                 if (!Regex.Match(message, "^[ñA-Za-záéíóúÁÉÍÓÚ _]*[ñA-Za-záéíóúÁÉÍÓÚ][ñA-Za-záéíóúÁÉÍÓÚ _]*$").Success)
                 {
@@ -182,65 +284,6 @@ namespace OTB_SEGURA.ViewModels
             }
 
             return res;
-        }
-
-        private async void InsertRoboMethod()//insert del robo
-        {
-            if (ValidationEntry())
-            {
-                await getLocation();//llamada a metodo para obtener ubicacion
-                await Task.Delay(1000);
-                var activity = newActivity(message, "Robo");//Generar la actividad tipo robo
-                await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
-                await Task.Delay(1000);
-                DependencyService.Get<IMessage>().LongAlert("Actividad agregada con éxito");//Mensaje de exito de la insercion
-                PostNotification(activity);//llamada al metodo del envio de la notificacion
-            }
-        }
-        private async void InsertAccidenteMethod()
-        {
-            IsBusy = true;
-            if (ValidationEntry())
-            {
-                await getLocation();//llamada a metodo para obtener ubicacion
-                await Task.Delay(1000);
-                var activity = newActivity(message, "Accidente");//Generar la actividad tipo accidente
-                await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
-                await Task.Delay(1000);
-                DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");//Mensaje de exito de la insercion
-                PostNotification(activity);//llamada al metodo del envio de la notificacion
-            }
-            IsBusy = false;
-        }
-        private async void InsertIncendioMethod()
-        {
-            IsBusy = true;
-            if (ValidationEntry())
-            {
-                await getLocation();//llamada a metodo para obtener ubicacion
-                await Task.Delay(1000);
-                var activity = newActivity(message, "Incendio");//Generar la actividad tipo incendio
-                await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
-                await Task.Delay(1000);
-                DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");//Mensaje de exito de la incendio
-                PostNotification(activity);//llamada al metodo del envio de la notificacion
-            }
-            IsBusy = false;
-        }
-        private async void InsertDesastreMethod()
-        {
-            IsBusy = true;
-            if (ValidationEntry())
-            {
-                await getLocation();//llamada a metodo para obtener ubicacion
-                await Task.Delay(1000);
-                var activity = newActivity(message, "Desastre");//Generar la actividad tipo desastre
-                await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
-                await Task.Delay(1000);
-                DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");//Mensaje de exito de la desastre
-                PostNotification(activity);//llamada al metodo del envio de la notificacion
-            }
-            IsBusy = true;
         }
         private async void EmergencyMethod()
         {
@@ -264,6 +307,30 @@ namespace OTB_SEGURA.ViewModels
                 DateTime = activity.DateTime//obteniendo fecha y hora actual
             };
         }
+        //Metodos nuevos
+
+        private async Task LoadAlertsType()
+        {
+            try
+            {
+                ResponseHTTP<AlertTypeModel> responseHTTP = await alertTypeService.GetAlertTypes();
+                if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                {
+                    ListAlertsType = responseHTTP.Data;
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                }
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
+        }
+
+
+        //////////////////////////
         #endregion
     }
 }

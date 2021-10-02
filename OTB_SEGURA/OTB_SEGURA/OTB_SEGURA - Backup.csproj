@@ -12,16 +12,16 @@
     <PackageReference Include="MvvmLight" Version="5.4.1.1" />  
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />  
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />  
-    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />  
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />  
     <PackageReference Include="Syncfusion.Xamarin.Cards" Version="19.2.0.62" />  
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />  
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />  
     <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="25.1.0-beta2" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />  
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />  
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />  
     <PackageReference Include="Xamarin.Forms.BehaviorsPack" Version="3.0.0" />  
     <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2083" />  
-    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="3.1.0-beta2" />
+    <PackageReference Include="ZXing.Net.MobileX.Forms" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,51 +1,154 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using OTB_SEGURA.Models;
+using OTB_SEGURA.Services;
 using OTB_SEGURA.Views;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace OTB_SEGURA.ViewModels
 {
-    class AddAlertViewModel
+    class AddAlertViewModel : BaseViewModel
     {
-        public INavigation Navigation { get; set; }
-        public ICommand AddAlertCommand => new Command(AddAlert);
-        public ICommand RemoveAlertCommand => new Command(RemoveAlert);
-        public ObservableCollection<string> Alerts { get; set; }
+        #region Attributes
+        private INavigation Navigation;
+        private AlertTypeService alertTypeService = new AlertTypeService();
+        public List<AlertTypeModel> listAlertsType;
+        private ResponseHTTP<AlertTypeModel> responseHTTP;
+        private AlertTypeModel selectedAlert;
+        private string alertName;
+        #endregion
+        #region Properties
 
-        public string Alertname { get; set; }
-        public string SelectedAlert { get; set; }
-     
+        public List<AlertTypeModel> ListAlertsType
+        {
+            get { return listAlertsType; }
+            set { listAlertsType = value; OnPropertyChanged(); }
+        }
 
+        public AlertTypeModel SelectedAlert
+        {
+            get { return selectedAlert; }
+            set { selectedAlert = value; OnPropertyChanged(); }
+        }
+
+        public string AlertName
+        {
+            get { return alertName; }
+            set { alertName = value; OnPropertyChanged(); }
+        }
+
+        #endregion
+        #region Constructors
         public AddAlertViewModel(INavigation nav)
         {
             Navigation = nav;
-            Alerts = new ObservableCollection<string>();
+        }
+        #endregion
 
-            Alerts.Add("Robo");
-            Alerts.Add("Incendio");
-            Alerts.Add("Accidente");
-            Alerts.Add("Inundacion");
-            
-        }
-
-        public void AddAlert()
-        {
-            Alerts.Add(Alertname);
-        }
-        public void RemoveAlert()
-        {
-            Alerts.Remove(SelectedAlert);
-        }
-        
-        public ICommand InfoCommand 
+        #region Commands
+        public ICommand AddAlertCommand
         {
             get
             {
-                return new RelayCommand(async()=> {
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        responseHTTP = await alertTypeService.AddAlertType(alertName);
+                        if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                        {
+                            await LoadAlertsType();
+                        }
+                        else
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                });
+            }
+        }
+        public ICommand AppearingCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        await LoadAlertsType();
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                });
+            }
+        }
+        public ICommand RemoveAlertCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        if (await App.Current.MainPage.DisplayAlert("Eliminar Tipo de Alerta", "¿Desea eliminar el tipo de alerta?", "Aceptar", "Cancelar"))
+                        {
+                            responseHTTP = await alertTypeService.DeleteAlertType(selectedAlert.Alert_type_ID);
+                            if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                            {
+                                await LoadAlertsType();
+                            }
+                            DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                        }
+                    }
+                    catch (System.Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+
+                });
+            }
+        }
+
+        #endregion
+
+        #region Methods
+
+        private async Task LoadAlertsType()
+        {
+            try
+            {
+                responseHTTP = await alertTypeService.GetAlertTypes();
+                if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                {
+                    ListAlertsType = responseHTTP.Data;
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                }
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
+        }
+
+        #endregion
+        public ICommand InfoCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
                     await Navigation.PushAsync(new View_HelpAlert());
                 });
             }

@@ -2,21 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels" 
-             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
+             xmlns:cmd="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              x:Class="OTB_SEGURA.Views.View_UserActivity"
              Title="{Binding Title}">
+    <ContentPage.Behaviors>
+        <cmd:EventToCommandBehavior EventName="Appearing" Command="{Binding AppearingCommand}"/>
+    </ContentPage.Behaviors>
+   
     <ContentPage.BindingContext>
         <vm:UserActivityViewModel/>
     </ContentPage.BindingContext>
-
     <StackLayout>
-        <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListActivity}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}">
+        <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListToShow}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}">
             <ListView.Behaviors>
-                <behaviorsPack:EventToCommandBehavior 
+                <cmd:EventToCommandBehavior 
                     EventName="ItemTapped"
                     Command="{Binding ItemTappedCommandUserActivity}"
                     EventArgsPropertyPath="Item"/>
-                <behaviorsPack:EventToCommandBehavior
+                <cmd:EventToCommandBehavior
                     EventName="Refreshing"
                     Command="{Binding RefreshingCommandActivityUsers}"/>
             </ListView.Behaviors>
@@ -27,11 +30,11 @@
                             <StackLayout >
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Fecha:" TextColor="{StaticResource Dark}" WidthRequest="80"></Label>
-                                    <Label Text="{Binding DateTime,StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
+                                    <Label Text="{Binding Date,StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Usuario:" TextColor="{StaticResource Dark}"  WidthRequest="80"></Label>
-                                    <Label Text="{Binding Name, Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
+                                    <Label Text="{Binding User_Name, Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Mensaje:" TextColor="{StaticResource Dark}"  WidthRequest="80"></Label>
@@ -39,7 +42,7 @@
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Tipo:" TextColor="{StaticResource Dark}"  WidthRequest="80"/>
-                                    <Label Text="{Binding Type,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
+                                    <Label Text="{Binding Alert_type_Name,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" IsVisible="False">
                                     <Label Text="Latitud:" TextColor="{StaticResource Dark}"  WidthRequest="80"/>

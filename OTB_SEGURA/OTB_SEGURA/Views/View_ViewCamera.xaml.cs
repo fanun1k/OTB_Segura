@@ -1,4 +1,5 @@
 ﻿using OTB_SEGURA.Models;
+using OTB_SEGURA.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,9 @@ namespace OTB_SEGURA.Views
         public View_ViewCamera()
         {
             InitializeComponent();
-            
+            BindingContext = new ViewCameraViewModel(Navigation);
+
+
         }
     }
 }

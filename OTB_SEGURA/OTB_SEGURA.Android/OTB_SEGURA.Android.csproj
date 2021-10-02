@@ -252,6 +252,14 @@
     <AndroidResource Include="Resources\drawable\seAlarm.png" />
     <AndroidResource Include="Resources\drawable\camerasSee.png" />
     <AndroidResource Include="Resources\drawable\camaraSubir2.png" />
+    <AndroidResource Include="Resources\drawable\prof.jpg" />
+    <AndroidResource Include="Resources\drawable\fonProfile.png" />
+    <AndroidResource Include="Resources\drawable\cam.png" />
+    <AndroidResource Include="Resources\drawable\date.png" />
+    <AndroidResource Include="Resources\drawable\message.png" />
+    <AndroidResource Include="Resources\drawable\type.png" />
+    <AndroidResource Include="Resources\drawable\user.png" />
+    <AndroidResource Include="Resources\drawable\correo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

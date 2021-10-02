@@ -102,22 +102,7 @@ namespace OTB_SEGURA.ViewModels
             {
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
-        }
-
-        private List<AlertModel> SepararPorAlertas(List<AlertModel> list, int type)
-        {
-            List<AlertModel> listDevolver = new List<AlertModel>();
-            int count = 0;
-            foreach ( var item in list)
-            {
-                if (item.Alert_type_ID==type)
-                {
-                    listDevolver.Add(list[count]);
-                }
-                count++;
-            }
-            return listDevolver;
-        }
+        }    
         #endregion
 
     }

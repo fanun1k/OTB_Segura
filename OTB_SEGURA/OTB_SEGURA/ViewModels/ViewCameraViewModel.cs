@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
+using OTB_SEGURA.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,7 +16,7 @@ namespace OTB_SEGURA.ViewModels
 
         #region Attributes
         private List<CameraModel> listaCamera;
-
+        private INavigation Navigation;
         CameraService cameraService = new CameraService();
 
         #endregion
@@ -32,12 +33,21 @@ namespace OTB_SEGURA.ViewModels
 
         #region Commands
 
-        public ICommand SeeCamera
+        public ICommand ItemTappedCommand
         {
             get
             {
-                return new RelayCommand(() => DependencyService.Get<IMessage>().LongAlert("Ver camara"));
+                return new RelayCommand(async() => {
+                    try
+                    {
+                       await  Navigation.PushAsync(new View_SeeCamera());
+                    }
+                    catch (Exception ex)
+                    {
 
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                });
             }
 
         }
@@ -67,9 +77,10 @@ namespace OTB_SEGURA.ViewModels
 
 
         #region Constructor
-        public ViewCameraViewModel()
+        public ViewCameraViewModel(INavigation nav)
         {
             Title = "Ver Cámaras";
+            Navigation = nav;
         }
         #endregion
 

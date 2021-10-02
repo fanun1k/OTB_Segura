@@ -45,8 +45,6 @@ namespace OTB_SEGURA.ViewModels
             {
                 return new RelayCommand(async () => {
                     await Navigation.PushAsync(new View_SeeCamera());
-                    //await Navigation.PushAsync(new View_ViewCamera());
-                    //TO-DO: Averiguar cual de las vistas es mia
                 });
             }
         }

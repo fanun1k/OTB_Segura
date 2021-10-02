@@ -108,11 +108,8 @@
     <FlyoutItem Title="Registrar/Unirse OTB" Icon="icon_register.png">
         <ShellContent Route="registrarotb" ContentTemplate="{DataTemplate local:View_RegisterJoinOtb}" IsVisible="{Binding UserWithOutOTB}" />
     </FlyoutItem>
-    <FlyoutItem Title="Agregar Alerta " Icon="usuario.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddAlert}" IsVisible="{Binding IsAdmin}"  />
-    </FlyoutItem>
-    <FlyoutItem Title="Agregar Alerta " Icon="agregarAlerta.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddAlert}" />
+    <FlyoutItem Title="Agregar Tipo de Alerta " Icon="agregarAlerta.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:View_AddAlert}" IsVisible="{Binding IsAdmin}" />
     </FlyoutItem>
     <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
         <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" IsVisible="{Binding IsUser}" />

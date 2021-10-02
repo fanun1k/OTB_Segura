@@ -1,11 +1,12 @@
 ﻿using SQLite;
+using OTB_SEGURA.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace OTB_SEGURA.Models
 {
-    public class AlertModel
+    public class AlertModel:BaseViewModel
     {
         public int Alert_ID { get; set; }
         [MaxLength(30)]
@@ -15,9 +16,9 @@ namespace OTB_SEGURA.Models
         [MaxLength(20)]
         public int Alert_type_ID { get; set; }
         [MaxLength(50)]
-        public float Latitude { get; set; }
+        public double Latitude { get; set; }
         [MaxLength(50)]
-        public float Longitude { get; set; }
+        public double Longitude { get; set; }
         [MaxLength(50)]
         public int Otb_ID { get; set; }
         [MaxLength(100)]

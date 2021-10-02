@@ -239,7 +239,19 @@
     <AndroidResource Include="Resources\drawable\verCamara.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_User_Emergency_Phone.png" />
+    <AndroidResource Include="Resources\drawable\alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\admAlarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cameras.png" />
+    <AndroidResource Include="Resources\drawable\exitOtb.png" />
+    <AndroidResource Include="Resources\drawable\question.png" />
+    <AndroidResource Include="Resources\drawable\seAlarm.png" />
+    <AndroidResource Include="Resources\drawable\camerasSee.png" />
+    <AndroidResource Include="Resources\drawable\camaraSubir2.png" />
+    <AndroidResource Include="Resources\drawable\alarma2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

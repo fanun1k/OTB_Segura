@@ -44,7 +44,7 @@ namespace OTB_SEGURA.ViewModels
             get
             {
                 return new RelayCommand(async () => {
-                    await Navigation.PushAsync(new View_ViewAlarms());
+                    await Navigation.PushAsync(new View_ViewCamera());
                 });
             }
         }
@@ -58,9 +58,6 @@ namespace OTB_SEGURA.ViewModels
                 );
             }
         }
-
-       
-
         public ICommand SeeAlarmCommand
         {
             get

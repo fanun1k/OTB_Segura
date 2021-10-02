@@ -4,12 +4,8 @@
              xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              x:Class="OTB_SEGURA.Views.View_ViewCamera"
              Title="{Binding Title}"
-             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
-             
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"             
              >
-    <ContentPage.BindingContext>
-        <vm:ViewCameraViewModel/>
-    </ContentPage.BindingContext>
     <ContentPage.Behaviors>
         <behaviorsPack:EventToCommandBehavior 
             EventName="Appearing"
@@ -23,6 +19,9 @@
                     ImageSource="cameraview" 
                />
         <ListView x:Name="listCamera" ItemsSource="{Binding ListaCamera}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
+            <ListView.Behaviors>
+                <behaviorsPack:EventToCommandBehavior EventName="ItemTapped" Command="{Binding ItemTappedCommand}"/>
+            </ListView.Behaviors>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -34,9 +33,8 @@
                                 </Grid.ColumnDefinitions>
                                 <StackLayout>
                                     <StackLayout Orientation="Horizontal">
-                                        <Label x:Name="lbStreetCamera" TextColor="White" Text="{Binding Name}" WidthRequest="150"/>
-                                    </StackLayout>
-                                    
+                                        <Label x:Name="lbStreetCamera" TextColor="white" Text="{Binding Name}" WidthRequest="150"/>
+                                    </StackLayout>                                    
                                 </StackLayout>
                                 <Grid Grid.Column="1" >
                                     <Image  Source="CameraIcon.png" HeightRequest="40" WidthRequest="40" />

@@ -11487,12 +11487,21 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Animation.EnterFromRight = global::OTB_SEGURA.Droid.Resource.Animation.EnterFromRight;
 			global::ZXing.Net.Mobile.Forms.Resource.Animation.ExitToLeft = global::OTB_SEGURA.Droid.Resource.Animation.ExitToLeft;
 			global::ZXing.Net.Mobile.Forms.Resource.Animation.ExitToRight = global::OTB_SEGURA.Droid.Resource.Animation.ExitToRight;
+			global::ZXing.Net.Mobile.Forms.Resource.Animation.fragment_fast_out_extra_slow_in = global::OTB_SEGURA.Droid.Resource.Animation.fragment_fast_out_extra_slow_in;
+			global::ZXing.Net.Mobile.Forms.Resource.Animation.mtrl_bottom_sheet_slide_in = global::OTB_SEGURA.Droid.Resource.Animation.mtrl_bottom_sheet_slide_in;
+			global::ZXing.Net.Mobile.Forms.Resource.Animation.mtrl_bottom_sheet_slide_out = global::OTB_SEGURA.Droid.Resource.Animation.mtrl_bottom_sheet_slide_out;
+			global::ZXing.Net.Mobile.Forms.Resource.Animation.mtrl_card_lowers_interpolator = global::OTB_SEGURA.Droid.Resource.Animation.mtrl_card_lowers_interpolator;
 			global::ZXing.Net.Mobile.Forms.Resource.Animator.design_appbar_state_list_animator = global::OTB_SEGURA.Droid.Resource.Animator.design_appbar_state_list_animator;
 			global::ZXing.Net.Mobile.Forms.Resource.Animator.design_fab_hide_motion_spec = global::OTB_SEGURA.Droid.Resource.Animator.design_fab_hide_motion_spec;
 			global::ZXing.Net.Mobile.Forms.Resource.Animator.design_fab_show_motion_spec = global::OTB_SEGURA.Droid.Resource.Animator.design_fab_show_motion_spec;
 			global::ZXing.Net.Mobile.Forms.Resource.Animator.mtrl_btn_state_list_anim = global::OTB_SEGURA.Droid.Resource.Animator.mtrl_btn_state_list_anim;
 			global::ZXing.Net.Mobile.Forms.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::OTB_SEGURA.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
+			global::ZXing.Net.Mobile.Forms.Resource.Animator.mtrl_card_state_list_anim = global::OTB_SEGURA.Droid.Resource.Animator.mtrl_card_state_list_anim;
 			global::ZXing.Net.Mobile.Forms.Resource.Animator.mtrl_chip_state_list_anim = global::OTB_SEGURA.Droid.Resource.Animator.mtrl_chip_state_list_anim;
+			global::ZXing.Net.Mobile.Forms.Resource.Animator.mtrl_extended_fab_change_size_motion_spec = global::OTB_SEGURA.Droid.Resource.Animator.mtrl_extended_fab_change_size_motion_spec;
+			global::ZXing.Net.Mobile.Forms.Resource.Animator.mtrl_extended_fab_hide_motion_spec = global::OTB_SEGURA.Droid.Resource.Animator.mtrl_extended_fab_hide_motion_spec;
+			global::ZXing.Net.Mobile.Forms.Resource.Animator.mtrl_extended_fab_show_motion_spec = global::OTB_SEGURA.Droid.Resource.Animator.mtrl_extended_fab_show_motion_spec;
+			global::ZXing.Net.Mobile.Forms.Resource.Animator.mtrl_extended_fab_state_list_animator = global::OTB_SEGURA.Droid.Resource.Animator.mtrl_extended_fab_state_list_animator;
 			global::ZXing.Net.Mobile.Forms.Resource.Animator.mtrl_fab_hide_motion_spec = global::OTB_SEGURA.Droid.Resource.Animator.mtrl_fab_hide_motion_spec;
 			global::ZXing.Net.Mobile.Forms.Resource.Animator.mtrl_fab_show_motion_spec = global::OTB_SEGURA.Droid.Resource.Animator.mtrl_fab_show_motion_spec;
 			global::ZXing.Net.Mobile.Forms.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec = global::OTB_SEGURA.Droid.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec;
@@ -11529,6 +11538,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.actionOverflowButtonStyle = global::OTB_SEGURA.Droid.Resource.Attribute.actionOverflowButtonStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.actionOverflowMenuStyle = global::OTB_SEGURA.Droid.Resource.Attribute.actionOverflowMenuStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.actionProviderClass = global::OTB_SEGURA.Droid.Resource.Attribute.actionProviderClass;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.actionTextColorAlpha = global::OTB_SEGURA.Droid.Resource.Attribute.actionTextColorAlpha;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.actionViewClass = global::OTB_SEGURA.Droid.Resource.Attribute.actionViewClass;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.activityChooserViewStyle = global::OTB_SEGURA.Droid.Resource.Attribute.activityChooserViewStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.alertDialogButtonGroupStyle = global::OTB_SEGURA.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
@@ -11538,6 +11548,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.allowStacking = global::OTB_SEGURA.Droid.Resource.Attribute.allowStacking;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.alpha = global::OTB_SEGURA.Droid.Resource.Attribute.alpha;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.alphabeticModifiers = global::OTB_SEGURA.Droid.Resource.Attribute.alphabeticModifiers;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.animationMode = global::OTB_SEGURA.Droid.Resource.Attribute.animationMode;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.appBarLayoutStyle = global::OTB_SEGURA.Droid.Resource.Attribute.appBarLayoutStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.arrowHeadLength = global::OTB_SEGURA.Droid.Resource.Attribute.arrowHeadLength;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.arrowShaftLength = global::OTB_SEGURA.Droid.Resource.Attribute.arrowShaftLength;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.autoCompleteTextViewStyle = global::OTB_SEGURA.Droid.Resource.Attribute.autoCompleteTextViewStyle;
@@ -11547,16 +11559,29 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.autoSizeStepGranularity = global::OTB_SEGURA.Droid.Resource.Attribute.autoSizeStepGranularity;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.autoSizeTextType = global::OTB_SEGURA.Droid.Resource.Attribute.autoSizeTextType;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.background = global::OTB_SEGURA.Droid.Resource.Attribute.background;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.backgroundColor = global::OTB_SEGURA.Droid.Resource.Attribute.backgroundColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.backgroundInsetBottom = global::OTB_SEGURA.Droid.Resource.Attribute.backgroundInsetBottom;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.backgroundInsetEnd = global::OTB_SEGURA.Droid.Resource.Attribute.backgroundInsetEnd;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.backgroundInsetStart = global::OTB_SEGURA.Droid.Resource.Attribute.backgroundInsetStart;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.backgroundInsetTop = global::OTB_SEGURA.Droid.Resource.Attribute.backgroundInsetTop;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.backgroundOverlayColorAlpha = global::OTB_SEGURA.Droid.Resource.Attribute.backgroundOverlayColorAlpha;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.backgroundSplit = global::OTB_SEGURA.Droid.Resource.Attribute.backgroundSplit;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.backgroundStacked = global::OTB_SEGURA.Droid.Resource.Attribute.backgroundStacked;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.backgroundTint = global::OTB_SEGURA.Droid.Resource.Attribute.backgroundTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.backgroundTintMode = global::OTB_SEGURA.Droid.Resource.Attribute.backgroundTintMode;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.badgeGravity = global::OTB_SEGURA.Droid.Resource.Attribute.badgeGravity;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.badgeStyle = global::OTB_SEGURA.Droid.Resource.Attribute.badgeStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.badgeTextColor = global::OTB_SEGURA.Droid.Resource.Attribute.badgeTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.barLength = global::OTB_SEGURA.Droid.Resource.Attribute.barLength;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.behavior_autoHide = global::OTB_SEGURA.Droid.Resource.Attribute.behavior_autoHide;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.behavior_autoShrink = global::OTB_SEGURA.Droid.Resource.Attribute.behavior_autoShrink;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.behavior_expandedOffset = global::OTB_SEGURA.Droid.Resource.Attribute.behavior_expandedOffset;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.behavior_fitToContents = global::OTB_SEGURA.Droid.Resource.Attribute.behavior_fitToContents;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.behavior_halfExpandedRatio = global::OTB_SEGURA.Droid.Resource.Attribute.behavior_halfExpandedRatio;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.behavior_hideable = global::OTB_SEGURA.Droid.Resource.Attribute.behavior_hideable;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.behavior_overlapTop = global::OTB_SEGURA.Droid.Resource.Attribute.behavior_overlapTop;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.behavior_peekHeight = global::OTB_SEGURA.Droid.Resource.Attribute.behavior_peekHeight;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.behavior_saveFlags = global::OTB_SEGURA.Droid.Resource.Attribute.behavior_saveFlags;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.behavior_skipCollapsed = global::OTB_SEGURA.Droid.Resource.Attribute.behavior_skipCollapsed;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.borderlessButtonStyle = global::OTB_SEGURA.Droid.Resource.Attribute.borderlessButtonStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.borderWidth = global::OTB_SEGURA.Droid.Resource.Attribute.borderWidth;
@@ -11573,6 +11598,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.boxCornerRadiusTopStart = global::OTB_SEGURA.Droid.Resource.Attribute.boxCornerRadiusTopStart;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.boxStrokeColor = global::OTB_SEGURA.Droid.Resource.Attribute.boxStrokeColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.boxStrokeWidth = global::OTB_SEGURA.Droid.Resource.Attribute.boxStrokeWidth;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.boxStrokeWidthFocused = global::OTB_SEGURA.Droid.Resource.Attribute.boxStrokeWidthFocused;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.buttonBarButtonStyle = global::OTB_SEGURA.Droid.Resource.Attribute.buttonBarButtonStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.buttonBarNegativeButtonStyle = global::OTB_SEGURA.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.buttonBarNeutralButtonStyle = global::OTB_SEGURA.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
@@ -11589,14 +11615,17 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cardBackgroundColor = global::OTB_SEGURA.Droid.Resource.Attribute.cardBackgroundColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cardCornerRadius = global::OTB_SEGURA.Droid.Resource.Attribute.cardCornerRadius;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cardElevation = global::OTB_SEGURA.Droid.Resource.Attribute.cardElevation;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cardForegroundColor = global::OTB_SEGURA.Droid.Resource.Attribute.cardForegroundColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cardMaxElevation = global::OTB_SEGURA.Droid.Resource.Attribute.cardMaxElevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cardPreventCornerOverlap = global::OTB_SEGURA.Droid.Resource.Attribute.cardPreventCornerOverlap;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cardUseCompatPadding = global::OTB_SEGURA.Droid.Resource.Attribute.cardUseCompatPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cardViewStyle = global::OTB_SEGURA.Droid.Resource.Attribute.cardViewStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.checkboxStyle = global::OTB_SEGURA.Droid.Resource.Attribute.checkboxStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.checkedButton = global::OTB_SEGURA.Droid.Resource.Attribute.checkedButton;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.checkedChip = global::OTB_SEGURA.Droid.Resource.Attribute.checkedChip;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.checkedIcon = global::OTB_SEGURA.Droid.Resource.Attribute.checkedIcon;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.checkedIconEnabled = global::OTB_SEGURA.Droid.Resource.Attribute.checkedIconEnabled;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.checkedIconTint = global::OTB_SEGURA.Droid.Resource.Attribute.checkedIconTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.checkedIconVisible = global::OTB_SEGURA.Droid.Resource.Attribute.checkedIconVisible;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.checkedTextViewStyle = global::OTB_SEGURA.Droid.Resource.Attribute.checkedTextViewStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.chipBackgroundColor = global::OTB_SEGURA.Droid.Resource.Attribute.chipBackgroundColor;
@@ -11609,6 +11638,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.chipIconTint = global::OTB_SEGURA.Droid.Resource.Attribute.chipIconTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.chipIconVisible = global::OTB_SEGURA.Droid.Resource.Attribute.chipIconVisible;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.chipMinHeight = global::OTB_SEGURA.Droid.Resource.Attribute.chipMinHeight;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.chipMinTouchTargetSize = global::OTB_SEGURA.Droid.Resource.Attribute.chipMinTouchTargetSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.chipSpacing = global::OTB_SEGURA.Droid.Resource.Attribute.chipSpacing;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.chipSpacingHorizontal = global::OTB_SEGURA.Droid.Resource.Attribute.chipSpacingHorizontal;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.chipSpacingVertical = global::OTB_SEGURA.Droid.Resource.Attribute.chipSpacingVertical;
@@ -11617,6 +11647,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.chipStrokeColor = global::OTB_SEGURA.Droid.Resource.Attribute.chipStrokeColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.chipStrokeWidth = global::OTB_SEGURA.Droid.Resource.Attribute.chipStrokeWidth;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.chipStyle = global::OTB_SEGURA.Droid.Resource.Attribute.chipStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.chipSurfaceColor = global::OTB_SEGURA.Droid.Resource.Attribute.chipSurfaceColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.closeIcon = global::OTB_SEGURA.Droid.Resource.Attribute.closeIcon;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.closeIconEnabled = global::OTB_SEGURA.Droid.Resource.Attribute.closeIconEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.closeIconEndPadding = global::OTB_SEGURA.Droid.Resource.Attribute.closeIconEndPadding;
@@ -11629,6 +11660,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.collapsedTitleGravity = global::OTB_SEGURA.Droid.Resource.Attribute.collapsedTitleGravity;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.collapsedTitleTextAppearance = global::OTB_SEGURA.Droid.Resource.Attribute.collapsedTitleTextAppearance;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.collapseIcon = global::OTB_SEGURA.Droid.Resource.Attribute.collapseIcon;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.collectionViewStyle = global::OTB_SEGURA.Droid.Resource.Attribute.collectionViewStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.color = global::OTB_SEGURA.Droid.Resource.Attribute.color;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorAccent = global::OTB_SEGURA.Droid.Resource.Attribute.colorAccent;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorBackgroundFloating = global::OTB_SEGURA.Droid.Resource.Attribute.colorBackgroundFloating;
@@ -11637,9 +11669,19 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorControlHighlight = global::OTB_SEGURA.Droid.Resource.Attribute.colorControlHighlight;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorControlNormal = global::OTB_SEGURA.Droid.Resource.Attribute.colorControlNormal;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorError = global::OTB_SEGURA.Droid.Resource.Attribute.colorError;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorOnBackground = global::OTB_SEGURA.Droid.Resource.Attribute.colorOnBackground;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorOnError = global::OTB_SEGURA.Droid.Resource.Attribute.colorOnError;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorOnPrimary = global::OTB_SEGURA.Droid.Resource.Attribute.colorOnPrimary;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorOnPrimarySurface = global::OTB_SEGURA.Droid.Resource.Attribute.colorOnPrimarySurface;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorOnSecondary = global::OTB_SEGURA.Droid.Resource.Attribute.colorOnSecondary;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorOnSurface = global::OTB_SEGURA.Droid.Resource.Attribute.colorOnSurface;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorPrimary = global::OTB_SEGURA.Droid.Resource.Attribute.colorPrimary;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorPrimaryDark = global::OTB_SEGURA.Droid.Resource.Attribute.colorPrimaryDark;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorPrimarySurface = global::OTB_SEGURA.Droid.Resource.Attribute.colorPrimarySurface;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorPrimaryVariant = global::OTB_SEGURA.Droid.Resource.Attribute.colorPrimaryVariant;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorSecondary = global::OTB_SEGURA.Droid.Resource.Attribute.colorSecondary;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorSecondaryVariant = global::OTB_SEGURA.Droid.Resource.Attribute.colorSecondaryVariant;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorSurface = global::OTB_SEGURA.Droid.Resource.Attribute.colorSurface;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.colorSwitchThumbNormal = global::OTB_SEGURA.Droid.Resource.Attribute.colorSwitchThumbNormal;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.commitIcon = global::OTB_SEGURA.Droid.Resource.Attribute.commitIcon;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.contentDescription = global::OTB_SEGURA.Droid.Resource.Attribute.contentDescription;
@@ -11657,12 +11699,28 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.contentScrim = global::OTB_SEGURA.Droid.Resource.Attribute.contentScrim;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.controlBackground = global::OTB_SEGURA.Droid.Resource.Attribute.controlBackground;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.coordinatorLayoutStyle = global::OTB_SEGURA.Droid.Resource.Attribute.coordinatorLayoutStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cornerFamily = global::OTB_SEGURA.Droid.Resource.Attribute.cornerFamily;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cornerFamilyBottomLeft = global::OTB_SEGURA.Droid.Resource.Attribute.cornerFamilyBottomLeft;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cornerFamilyBottomRight = global::OTB_SEGURA.Droid.Resource.Attribute.cornerFamilyBottomRight;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cornerFamilyTopLeft = global::OTB_SEGURA.Droid.Resource.Attribute.cornerFamilyTopLeft;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cornerFamilyTopRight = global::OTB_SEGURA.Droid.Resource.Attribute.cornerFamilyTopRight;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cornerRadius = global::OTB_SEGURA.Droid.Resource.Attribute.cornerRadius;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cornerSize = global::OTB_SEGURA.Droid.Resource.Attribute.cornerSize;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cornerSizeBottomLeft = global::OTB_SEGURA.Droid.Resource.Attribute.cornerSizeBottomLeft;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cornerSizeBottomRight = global::OTB_SEGURA.Droid.Resource.Attribute.cornerSizeBottomRight;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cornerSizeTopLeft = global::OTB_SEGURA.Droid.Resource.Attribute.cornerSizeTopLeft;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.cornerSizeTopRight = global::OTB_SEGURA.Droid.Resource.Attribute.cornerSizeTopRight;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.counterEnabled = global::OTB_SEGURA.Droid.Resource.Attribute.counterEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.counterMaxLength = global::OTB_SEGURA.Droid.Resource.Attribute.counterMaxLength;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.counterOverflowTextAppearance = global::OTB_SEGURA.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.counterOverflowTextColor = global::OTB_SEGURA.Droid.Resource.Attribute.counterOverflowTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.counterTextAppearance = global::OTB_SEGURA.Droid.Resource.Attribute.counterTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.counterTextColor = global::OTB_SEGURA.Droid.Resource.Attribute.counterTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.customNavigationLayout = global::OTB_SEGURA.Droid.Resource.Attribute.customNavigationLayout;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.dayInvalidStyle = global::OTB_SEGURA.Droid.Resource.Attribute.dayInvalidStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.daySelectedStyle = global::OTB_SEGURA.Droid.Resource.Attribute.daySelectedStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.dayStyle = global::OTB_SEGURA.Droid.Resource.Attribute.dayStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.dayTodayStyle = global::OTB_SEGURA.Droid.Resource.Attribute.dayTodayStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.defaultQueryHint = global::OTB_SEGURA.Droid.Resource.Attribute.defaultQueryHint;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.dialogCornerRadius = global::OTB_SEGURA.Droid.Resource.Attribute.dialogCornerRadius;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.dialogPreferredPadding = global::OTB_SEGURA.Droid.Resource.Attribute.dialogPreferredPadding;
@@ -11682,16 +11740,30 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.drawableTintMode = global::OTB_SEGURA.Droid.Resource.Attribute.drawableTintMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.drawableTopCompat = global::OTB_SEGURA.Droid.Resource.Attribute.drawableTopCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.drawerArrowStyle = global::OTB_SEGURA.Droid.Resource.Attribute.drawerArrowStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.drawerLayoutStyle = global::OTB_SEGURA.Droid.Resource.Attribute.drawerLayoutStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.dropdownListPreferredItemHeight = global::OTB_SEGURA.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.dropDownListViewStyle = global::OTB_SEGURA.Droid.Resource.Attribute.dropDownListViewStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.editTextBackground = global::OTB_SEGURA.Droid.Resource.Attribute.editTextBackground;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.editTextColor = global::OTB_SEGURA.Droid.Resource.Attribute.editTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.editTextStyle = global::OTB_SEGURA.Droid.Resource.Attribute.editTextStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.elevation = global::OTB_SEGURA.Droid.Resource.Attribute.elevation;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.elevationOverlayColor = global::OTB_SEGURA.Droid.Resource.Attribute.elevationOverlayColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.elevationOverlayEnabled = global::OTB_SEGURA.Droid.Resource.Attribute.elevationOverlayEnabled;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.endIconCheckable = global::OTB_SEGURA.Droid.Resource.Attribute.endIconCheckable;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.endIconContentDescription = global::OTB_SEGURA.Droid.Resource.Attribute.endIconContentDescription;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.endIconDrawable = global::OTB_SEGURA.Droid.Resource.Attribute.endIconDrawable;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.endIconMode = global::OTB_SEGURA.Droid.Resource.Attribute.endIconMode;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.endIconTint = global::OTB_SEGURA.Droid.Resource.Attribute.endIconTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.endIconTintMode = global::OTB_SEGURA.Droid.Resource.Attribute.endIconTintMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.enforceMaterialTheme = global::OTB_SEGURA.Droid.Resource.Attribute.enforceMaterialTheme;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.enforceTextAppearance = global::OTB_SEGURA.Droid.Resource.Attribute.enforceTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.ensureMinTouchTargetSize = global::OTB_SEGURA.Droid.Resource.Attribute.ensureMinTouchTargetSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.errorEnabled = global::OTB_SEGURA.Droid.Resource.Attribute.errorEnabled;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.errorIconDrawable = global::OTB_SEGURA.Droid.Resource.Attribute.errorIconDrawable;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.errorIconTint = global::OTB_SEGURA.Droid.Resource.Attribute.errorIconTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.errorIconTintMode = global::OTB_SEGURA.Droid.Resource.Attribute.errorIconTintMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.errorTextAppearance = global::OTB_SEGURA.Droid.Resource.Attribute.errorTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.errorTextColor = global::OTB_SEGURA.Droid.Resource.Attribute.errorTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.expandActivityOverflowButtonDrawable = global::OTB_SEGURA.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.expanded = global::OTB_SEGURA.Droid.Resource.Attribute.expanded;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.expandedTitleGravity = global::OTB_SEGURA.Droid.Resource.Attribute.expandedTitleGravity;
@@ -11701,7 +11773,10 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.expandedTitleMarginStart = global::OTB_SEGURA.Droid.Resource.Attribute.expandedTitleMarginStart;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.expandedTitleMarginTop = global::OTB_SEGURA.Droid.Resource.Attribute.expandedTitleMarginTop;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.expandedTitleTextAppearance = global::OTB_SEGURA.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.extendedFloatingActionButtonStyle = global::OTB_SEGURA.Droid.Resource.Attribute.extendedFloatingActionButtonStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.extendMotionSpec = global::OTB_SEGURA.Droid.Resource.Attribute.extendMotionSpec;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.fabAlignmentMode = global::OTB_SEGURA.Droid.Resource.Attribute.fabAlignmentMode;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.fabAnimationMode = global::OTB_SEGURA.Droid.Resource.Attribute.fabAnimationMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.fabCradleMargin = global::OTB_SEGURA.Droid.Resource.Attribute.fabCradleMargin;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.fabCradleRoundedCornerRadius = global::OTB_SEGURA.Droid.Resource.Attribute.fabCradleRoundedCornerRadius;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.fabCradleVerticalOffset = global::OTB_SEGURA.Droid.Resource.Attribute.fabCradleVerticalOffset;
@@ -11733,12 +11808,14 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.helperText = global::OTB_SEGURA.Droid.Resource.Attribute.helperText;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.helperTextEnabled = global::OTB_SEGURA.Droid.Resource.Attribute.helperTextEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.helperTextTextAppearance = global::OTB_SEGURA.Droid.Resource.Attribute.helperTextTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.helperTextTextColor = global::OTB_SEGURA.Droid.Resource.Attribute.helperTextTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.hideMotionSpec = global::OTB_SEGURA.Droid.Resource.Attribute.hideMotionSpec;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.hideOnContentScroll = global::OTB_SEGURA.Droid.Resource.Attribute.hideOnContentScroll;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.hideOnScroll = global::OTB_SEGURA.Droid.Resource.Attribute.hideOnScroll;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.hintAnimationEnabled = global::OTB_SEGURA.Droid.Resource.Attribute.hintAnimationEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.hintEnabled = global::OTB_SEGURA.Droid.Resource.Attribute.hintEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.hintTextAppearance = global::OTB_SEGURA.Droid.Resource.Attribute.hintTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.hintTextColor = global::OTB_SEGURA.Droid.Resource.Attribute.hintTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.homeAsUpIndicator = global::OTB_SEGURA.Droid.Resource.Attribute.homeAsUpIndicator;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.homeLayout = global::OTB_SEGURA.Droid.Resource.Attribute.homeLayout;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.hoveredFocusedTranslationZ = global::OTB_SEGURA.Droid.Resource.Attribute.hoveredFocusedTranslationZ;
@@ -11756,14 +11833,27 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.initialActivityCount = global::OTB_SEGURA.Droid.Resource.Attribute.initialActivityCount;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.insetForeground = global::OTB_SEGURA.Droid.Resource.Attribute.insetForeground;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.isLightTheme = global::OTB_SEGURA.Droid.Resource.Attribute.isLightTheme;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.isMaterialTheme = global::OTB_SEGURA.Droid.Resource.Attribute.isMaterialTheme;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemBackground = global::OTB_SEGURA.Droid.Resource.Attribute.itemBackground;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemFillColor = global::OTB_SEGURA.Droid.Resource.Attribute.itemFillColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemHorizontalPadding = global::OTB_SEGURA.Droid.Resource.Attribute.itemHorizontalPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemHorizontalTranslationEnabled = global::OTB_SEGURA.Droid.Resource.Attribute.itemHorizontalTranslationEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemIconPadding = global::OTB_SEGURA.Droid.Resource.Attribute.itemIconPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemIconSize = global::OTB_SEGURA.Droid.Resource.Attribute.itemIconSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemIconTint = global::OTB_SEGURA.Droid.Resource.Attribute.itemIconTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemMaxLines = global::OTB_SEGURA.Droid.Resource.Attribute.itemMaxLines;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemPadding = global::OTB_SEGURA.Droid.Resource.Attribute.itemPadding;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemRippleColor = global::OTB_SEGURA.Droid.Resource.Attribute.itemRippleColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemShapeAppearance = global::OTB_SEGURA.Droid.Resource.Attribute.itemShapeAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemShapeAppearanceOverlay = global::OTB_SEGURA.Droid.Resource.Attribute.itemShapeAppearanceOverlay;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemShapeFillColor = global::OTB_SEGURA.Droid.Resource.Attribute.itemShapeFillColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemShapeInsetBottom = global::OTB_SEGURA.Droid.Resource.Attribute.itemShapeInsetBottom;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemShapeInsetEnd = global::OTB_SEGURA.Droid.Resource.Attribute.itemShapeInsetEnd;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemShapeInsetStart = global::OTB_SEGURA.Droid.Resource.Attribute.itemShapeInsetStart;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemShapeInsetTop = global::OTB_SEGURA.Droid.Resource.Attribute.itemShapeInsetTop;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemSpacing = global::OTB_SEGURA.Droid.Resource.Attribute.itemSpacing;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemStrokeColor = global::OTB_SEGURA.Droid.Resource.Attribute.itemStrokeColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemStrokeWidth = global::OTB_SEGURA.Droid.Resource.Attribute.itemStrokeWidth;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemTextAppearance = global::OTB_SEGURA.Droid.Resource.Attribute.itemTextAppearance;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemTextAppearanceActive = global::OTB_SEGURA.Droid.Resource.Attribute.itemTextAppearanceActive;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.itemTextAppearanceInactive = global::OTB_SEGURA.Droid.Resource.Attribute.itemTextAppearanceInactive;
@@ -11784,6 +11874,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.layout_scrollFlags = global::OTB_SEGURA.Droid.Resource.Attribute.layout_scrollFlags;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.layout_scrollInterpolator = global::OTB_SEGURA.Droid.Resource.Attribute.layout_scrollInterpolator;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.liftOnScroll = global::OTB_SEGURA.Droid.Resource.Attribute.liftOnScroll;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.liftOnScrollTargetViewId = global::OTB_SEGURA.Droid.Resource.Attribute.liftOnScrollTargetViewId;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.lineHeight = global::OTB_SEGURA.Droid.Resource.Attribute.lineHeight;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.lineSpacing = global::OTB_SEGURA.Droid.Resource.Attribute.lineSpacing;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.listChoiceBackgroundIndicator = global::OTB_SEGURA.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
@@ -11803,18 +11894,39 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.listPreferredItemPaddingStart = global::OTB_SEGURA.Droid.Resource.Attribute.listPreferredItemPaddingStart;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.logo = global::OTB_SEGURA.Droid.Resource.Attribute.logo;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.logoDescription = global::OTB_SEGURA.Droid.Resource.Attribute.logoDescription;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialAlertDialogBodyTextStyle = global::OTB_SEGURA.Droid.Resource.Attribute.materialAlertDialogBodyTextStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialAlertDialogTheme = global::OTB_SEGURA.Droid.Resource.Attribute.materialAlertDialogTheme;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialAlertDialogTitleIconStyle = global::OTB_SEGURA.Droid.Resource.Attribute.materialAlertDialogTitleIconStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialAlertDialogTitlePanelStyle = global::OTB_SEGURA.Droid.Resource.Attribute.materialAlertDialogTitlePanelStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialAlertDialogTitleTextStyle = global::OTB_SEGURA.Droid.Resource.Attribute.materialAlertDialogTitleTextStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialButtonOutlinedStyle = global::OTB_SEGURA.Droid.Resource.Attribute.materialButtonOutlinedStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialButtonStyle = global::OTB_SEGURA.Droid.Resource.Attribute.materialButtonStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialButtonToggleGroupStyle = global::OTB_SEGURA.Droid.Resource.Attribute.materialButtonToggleGroupStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialCalendarDay = global::OTB_SEGURA.Droid.Resource.Attribute.materialCalendarDay;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialCalendarFullscreenTheme = global::OTB_SEGURA.Droid.Resource.Attribute.materialCalendarFullscreenTheme;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialCalendarHeaderConfirmButton = global::OTB_SEGURA.Droid.Resource.Attribute.materialCalendarHeaderConfirmButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialCalendarHeaderDivider = global::OTB_SEGURA.Droid.Resource.Attribute.materialCalendarHeaderDivider;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialCalendarHeaderLayout = global::OTB_SEGURA.Droid.Resource.Attribute.materialCalendarHeaderLayout;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialCalendarHeaderSelection = global::OTB_SEGURA.Droid.Resource.Attribute.materialCalendarHeaderSelection;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialCalendarHeaderTitle = global::OTB_SEGURA.Droid.Resource.Attribute.materialCalendarHeaderTitle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialCalendarHeaderToggleButton = global::OTB_SEGURA.Droid.Resource.Attribute.materialCalendarHeaderToggleButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialCalendarStyle = global::OTB_SEGURA.Droid.Resource.Attribute.materialCalendarStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialCalendarTheme = global::OTB_SEGURA.Droid.Resource.Attribute.materialCalendarTheme;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialCardViewStyle = global::OTB_SEGURA.Droid.Resource.Attribute.materialCardViewStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.materialThemeOverlay = global::OTB_SEGURA.Droid.Resource.Attribute.materialThemeOverlay;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.maxActionInlineWidth = global::OTB_SEGURA.Droid.Resource.Attribute.maxActionInlineWidth;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.maxButtonHeight = global::OTB_SEGURA.Droid.Resource.Attribute.maxButtonHeight;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.maxCharacterCount = global::OTB_SEGURA.Droid.Resource.Attribute.maxCharacterCount;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.maxImageSize = global::OTB_SEGURA.Droid.Resource.Attribute.maxImageSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.measureWithLargestChild = global::OTB_SEGURA.Droid.Resource.Attribute.measureWithLargestChild;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.menu = global::OTB_SEGURA.Droid.Resource.Attribute.menu;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.minTouchTargetSize = global::OTB_SEGURA.Droid.Resource.Attribute.minTouchTargetSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.multiChoiceItemLayout = global::OTB_SEGURA.Droid.Resource.Attribute.multiChoiceItemLayout;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.navigationContentDescription = global::OTB_SEGURA.Droid.Resource.Attribute.navigationContentDescription;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.navigationIcon = global::OTB_SEGURA.Droid.Resource.Attribute.navigationIcon;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.navigationMode = global::OTB_SEGURA.Droid.Resource.Attribute.navigationMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.navigationViewStyle = global::OTB_SEGURA.Droid.Resource.Attribute.navigationViewStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.number = global::OTB_SEGURA.Droid.Resource.Attribute.number;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.numericModifiers = global::OTB_SEGURA.Droid.Resource.Attribute.numericModifiers;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.overlapAnchor = global::OTB_SEGURA.Droid.Resource.Attribute.overlapAnchor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.paddingBottomNoButtons = global::OTB_SEGURA.Droid.Resource.Attribute.paddingBottomNoButtons;
@@ -11829,6 +11941,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.passwordToggleEnabled = global::OTB_SEGURA.Droid.Resource.Attribute.passwordToggleEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.passwordToggleTint = global::OTB_SEGURA.Droid.Resource.Attribute.passwordToggleTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.passwordToggleTintMode = global::OTB_SEGURA.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.popupMenuBackground = global::OTB_SEGURA.Droid.Resource.Attribute.popupMenuBackground;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.popupMenuStyle = global::OTB_SEGURA.Droid.Resource.Attribute.popupMenuStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.popupTheme = global::OTB_SEGURA.Droid.Resource.Attribute.popupTheme;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.popupWindowStyle = global::OTB_SEGURA.Droid.Resource.Attribute.popupWindowStyle;
@@ -11839,6 +11952,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.queryBackground = global::OTB_SEGURA.Droid.Resource.Attribute.queryBackground;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.queryHint = global::OTB_SEGURA.Droid.Resource.Attribute.queryHint;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.radioButtonStyle = global::OTB_SEGURA.Droid.Resource.Attribute.radioButtonStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.rangeFillColor = global::OTB_SEGURA.Droid.Resource.Attribute.rangeFillColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.ratingBarStyle = global::OTB_SEGURA.Droid.Resource.Attribute.ratingBarStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.ratingBarStyleIndicator = global::OTB_SEGURA.Droid.Resource.Attribute.ratingBarStyleIndicator;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.ratingBarStyleSmall = global::OTB_SEGURA.Droid.Resource.Attribute.ratingBarStyleSmall;
@@ -11848,17 +11962,24 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.scrimAnimationDuration = global::OTB_SEGURA.Droid.Resource.Attribute.scrimAnimationDuration;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.scrimBackground = global::OTB_SEGURA.Droid.Resource.Attribute.scrimBackground;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.scrimVisibleHeightTrigger = global::OTB_SEGURA.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.scrollViewStyle = global::OTB_SEGURA.Droid.Resource.Attribute.scrollViewStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.searchHintIcon = global::OTB_SEGURA.Droid.Resource.Attribute.searchHintIcon;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.searchIcon = global::OTB_SEGURA.Droid.Resource.Attribute.searchIcon;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.searchViewStyle = global::OTB_SEGURA.Droid.Resource.Attribute.searchViewStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.seekBarStyle = global::OTB_SEGURA.Droid.Resource.Attribute.seekBarStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.selectableItemBackground = global::OTB_SEGURA.Droid.Resource.Attribute.selectableItemBackground;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.selectableItemBackgroundBorderless = global::OTB_SEGURA.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.shapeAppearance = global::OTB_SEGURA.Droid.Resource.Attribute.shapeAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.shapeAppearanceLargeComponent = global::OTB_SEGURA.Droid.Resource.Attribute.shapeAppearanceLargeComponent;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.shapeAppearanceMediumComponent = global::OTB_SEGURA.Droid.Resource.Attribute.shapeAppearanceMediumComponent;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.shapeAppearanceOverlay = global::OTB_SEGURA.Droid.Resource.Attribute.shapeAppearanceOverlay;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.shapeAppearanceSmallComponent = global::OTB_SEGURA.Droid.Resource.Attribute.shapeAppearanceSmallComponent;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.showAsAction = global::OTB_SEGURA.Droid.Resource.Attribute.showAsAction;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.showDividers = global::OTB_SEGURA.Droid.Resource.Attribute.showDividers;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.showMotionSpec = global::OTB_SEGURA.Droid.Resource.Attribute.showMotionSpec;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.showText = global::OTB_SEGURA.Droid.Resource.Attribute.showText;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.showTitle = global::OTB_SEGURA.Droid.Resource.Attribute.showTitle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.shrinkMotionSpec = global::OTB_SEGURA.Droid.Resource.Attribute.shrinkMotionSpec;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.singleChoiceItemLayout = global::OTB_SEGURA.Droid.Resource.Attribute.singleChoiceItemLayout;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.singleLine = global::OTB_SEGURA.Droid.Resource.Attribute.singleLine;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.singleSelection = global::OTB_SEGURA.Droid.Resource.Attribute.singleSelection;
@@ -11871,12 +11992,19 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.splitTrack = global::OTB_SEGURA.Droid.Resource.Attribute.splitTrack;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.srcCompat = global::OTB_SEGURA.Droid.Resource.Attribute.srcCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.stackFromEnd = global::OTB_SEGURA.Droid.Resource.Attribute.stackFromEnd;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.startIconCheckable = global::OTB_SEGURA.Droid.Resource.Attribute.startIconCheckable;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.startIconContentDescription = global::OTB_SEGURA.Droid.Resource.Attribute.startIconContentDescription;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.startIconDrawable = global::OTB_SEGURA.Droid.Resource.Attribute.startIconDrawable;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.startIconTint = global::OTB_SEGURA.Droid.Resource.Attribute.startIconTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.startIconTintMode = global::OTB_SEGURA.Droid.Resource.Attribute.startIconTintMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.state_above_anchor = global::OTB_SEGURA.Droid.Resource.Attribute.state_above_anchor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.state_collapsed = global::OTB_SEGURA.Droid.Resource.Attribute.state_collapsed;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.state_collapsible = global::OTB_SEGURA.Droid.Resource.Attribute.state_collapsible;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.state_dragged = global::OTB_SEGURA.Droid.Resource.Attribute.state_dragged;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.state_liftable = global::OTB_SEGURA.Droid.Resource.Attribute.state_liftable;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.state_lifted = global::OTB_SEGURA.Droid.Resource.Attribute.state_lifted;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.statusBarBackground = global::OTB_SEGURA.Droid.Resource.Attribute.statusBarBackground;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.statusBarForeground = global::OTB_SEGURA.Droid.Resource.Attribute.statusBarForeground;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.statusBarScrim = global::OTB_SEGURA.Droid.Resource.Attribute.statusBarScrim;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.strokeColor = global::OTB_SEGURA.Droid.Resource.Attribute.strokeColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.strokeWidth = global::OTB_SEGURA.Droid.Resource.Attribute.strokeWidth;
@@ -11887,6 +12015,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.subtitleTextColor = global::OTB_SEGURA.Droid.Resource.Attribute.subtitleTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.subtitleTextStyle = global::OTB_SEGURA.Droid.Resource.Attribute.subtitleTextStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.suggestionRowLayout = global::OTB_SEGURA.Droid.Resource.Attribute.suggestionRowLayout;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.swipeRefreshLayoutProgressSpinnerBackgroundColor = global::OTB_SEGURA.Droid.Resource.Attribute.swipeRefreshLayoutProgressSpinnerBackgroundColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.switchMinWidth = global::OTB_SEGURA.Droid.Resource.Attribute.switchMinWidth;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.switchPadding = global::OTB_SEGURA.Droid.Resource.Attribute.switchPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.switchStyle = global::OTB_SEGURA.Droid.Resource.Attribute.switchStyle;
@@ -11929,6 +12058,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.textAppearanceHeadline5 = global::OTB_SEGURA.Droid.Resource.Attribute.textAppearanceHeadline5;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.textAppearanceHeadline6 = global::OTB_SEGURA.Droid.Resource.Attribute.textAppearanceHeadline6;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.textAppearanceLargePopupMenu = global::OTB_SEGURA.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.textAppearanceLineHeightEnabled = global::OTB_SEGURA.Droid.Resource.Attribute.textAppearanceLineHeightEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.textAppearanceListItem = global::OTB_SEGURA.Droid.Resource.Attribute.textAppearanceListItem;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.textAppearanceListItemSecondary = global::OTB_SEGURA.Droid.Resource.Attribute.textAppearanceListItemSecondary;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.textAppearanceListItemSmall = global::OTB_SEGURA.Droid.Resource.Attribute.textAppearanceListItemSmall;
@@ -11946,6 +12076,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.textLocale = global::OTB_SEGURA.Droid.Resource.Attribute.textLocale;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.textStartPadding = global::OTB_SEGURA.Droid.Resource.Attribute.textStartPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.theme = global::OTB_SEGURA.Droid.Resource.Attribute.theme;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.themeLineHeight = global::OTB_SEGURA.Droid.Resource.Attribute.themeLineHeight;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.thickness = global::OTB_SEGURA.Droid.Resource.Attribute.thickness;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.thumbTextPadding = global::OTB_SEGURA.Droid.Resource.Attribute.thumbTextPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.thumbTint = global::OTB_SEGURA.Droid.Resource.Attribute.thumbTint;
@@ -11977,6 +12108,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.trackTintMode = global::OTB_SEGURA.Droid.Resource.Attribute.trackTintMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.ttcIndex = global::OTB_SEGURA.Droid.Resource.Attribute.ttcIndex;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.useCompatPadding = global::OTB_SEGURA.Droid.Resource.Attribute.useCompatPadding;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.useMaterialThemeColors = global::OTB_SEGURA.Droid.Resource.Attribute.useMaterialThemeColors;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.viewInflaterClass = global::OTB_SEGURA.Droid.Resource.Attribute.viewInflaterClass;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.voiceIcon = global::OTB_SEGURA.Droid.Resource.Attribute.voiceIcon;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.windowActionBar = global::OTB_SEGURA.Droid.Resource.Attribute.windowActionBar;
@@ -11989,6 +12121,9 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.windowMinWidthMajor = global::OTB_SEGURA.Droid.Resource.Attribute.windowMinWidthMajor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.windowMinWidthMinor = global::OTB_SEGURA.Droid.Resource.Attribute.windowMinWidthMinor;
 			global::ZXing.Net.Mobile.Forms.Resource.Attribute.windowNoTitle = global::OTB_SEGURA.Droid.Resource.Attribute.windowNoTitle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.yearSelectedStyle = global::OTB_SEGURA.Droid.Resource.Attribute.yearSelectedStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.yearStyle = global::OTB_SEGURA.Droid.Resource.Attribute.yearStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Attribute.yearTodayStyle = global::OTB_SEGURA.Droid.Resource.Attribute.yearTodayStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Boolean.abc_action_bar_embed_tabs = global::OTB_SEGURA.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
 			global::ZXing.Net.Mobile.Forms.Resource.Boolean.abc_allow_stacked_button_bar = global::OTB_SEGURA.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
 			global::ZXing.Net.Mobile.Forms.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::OTB_SEGURA.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
@@ -11998,6 +12133,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Color.abc_btn_colored_borderless_text_material = global::OTB_SEGURA.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.abc_btn_colored_text_material = global::OTB_SEGURA.Droid.Resource.Color.abc_btn_colored_text_material;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.abc_color_highlight_material = global::OTB_SEGURA.Droid.Resource.Color.abc_color_highlight_material;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.abc_decor_view_status_guard = global::OTB_SEGURA.Droid.Resource.Color.abc_decor_view_status_guard;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.abc_decor_view_status_guard_light = global::OTB_SEGURA.Droid.Resource.Color.abc_decor_view_status_guard_light;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.abc_hint_foreground_material_dark = global::OTB_SEGURA.Droid.Resource.Color.abc_hint_foreground_material_dark;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.abc_hint_foreground_material_light = global::OTB_SEGURA.Droid.Resource.Color.abc_hint_foreground_material_light;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.abc_primary_text_disable_only_material_dark = global::OTB_SEGURA.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
@@ -12018,6 +12155,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Color.abc_tint_switch_track = global::OTB_SEGURA.Droid.Resource.Color.abc_tint_switch_track;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.accent_material_dark = global::OTB_SEGURA.Droid.Resource.Color.accent_material_dark;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.accent_material_light = global::OTB_SEGURA.Droid.Resource.Color.accent_material_light;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.androidx_core_ripple_material_light = global::OTB_SEGURA.Droid.Resource.Color.androidx_core_ripple_material_light;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.androidx_core_secondary_text_default_material_light = global::OTB_SEGURA.Droid.Resource.Color.androidx_core_secondary_text_default_material_light;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.background_floating_material_dark = global::OTB_SEGURA.Droid.Resource.Color.background_floating_material_dark;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.background_floating_material_light = global::OTB_SEGURA.Droid.Resource.Color.background_floating_material_light;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.background_material_dark = global::OTB_SEGURA.Droid.Resource.Color.background_material_dark;
@@ -12038,9 +12177,35 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Color.cardview_light_background = global::OTB_SEGURA.Droid.Resource.Color.cardview_light_background;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.cardview_shadow_end_color = global::OTB_SEGURA.Droid.Resource.Color.cardview_shadow_end_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.cardview_shadow_start_color = global::OTB_SEGURA.Droid.Resource.Color.cardview_shadow_start_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.checkbox_themeable_attribute_color = global::OTB_SEGURA.Droid.Resource.Color.checkbox_themeable_attribute_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.design_bottom_navigation_shadow_color = global::OTB_SEGURA.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_box_stroke_color = global::OTB_SEGURA.Droid.Resource.Color.design_box_stroke_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_background = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_background;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_error = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_error;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_on_background = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_on_background;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_on_error = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_on_error;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_on_primary = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_on_primary;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_on_secondary = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_on_secondary;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_on_surface = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_on_surface;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_primary = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_primary;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_primary_dark = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_primary_dark;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_primary_variant = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_primary_variant;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_secondary = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_secondary;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_secondary_variant = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_secondary_variant;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_dark_default_color_surface = global::OTB_SEGURA.Droid.Resource.Color.design_dark_default_color_surface;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_background = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_background;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_error = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_error;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_on_background = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_on_background;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_on_error = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_on_error;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_on_primary = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_on_primary;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_on_secondary = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_on_secondary;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_on_surface = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_on_surface;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_primary = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_primary;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_primary_dark = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_primary_dark;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_primary_variant = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_primary_variant;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_secondary = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_secondary;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_secondary_variant = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_secondary_variant;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_default_color_surface = global::OTB_SEGURA.Droid.Resource.Color.design_default_color_surface;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.design_error = global::OTB_SEGURA.Droid.Resource.Color.design_error;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.design_fab_shadow_end_color = global::OTB_SEGURA.Droid.Resource.Color.design_fab_shadow_end_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.design_fab_shadow_mid_color = global::OTB_SEGURA.Droid.Resource.Color.design_fab_shadow_mid_color;
@@ -12049,6 +12214,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Color.design_fab_stroke_end_outer_color = global::OTB_SEGURA.Droid.Resource.Color.design_fab_stroke_end_outer_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.design_fab_stroke_top_inner_color = global::OTB_SEGURA.Droid.Resource.Color.design_fab_stroke_top_inner_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.design_fab_stroke_top_outer_color = global::OTB_SEGURA.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.design_icon_tint = global::OTB_SEGURA.Droid.Resource.Color.design_icon_tint;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.design_snackbar_background_color = global::OTB_SEGURA.Droid.Resource.Color.design_snackbar_background_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.dim_foreground_disabled_material_dark = global::OTB_SEGURA.Droid.Resource.Color.dim_foreground_disabled_material_dark;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.dim_foreground_disabled_material_light = global::OTB_SEGURA.Droid.Resource.Color.dim_foreground_disabled_material_light;
@@ -12072,20 +12238,52 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Color.material_grey_800 = global::OTB_SEGURA.Droid.Resource.Color.material_grey_800;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.material_grey_850 = global::OTB_SEGURA.Droid.Resource.Color.material_grey_850;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.material_grey_900 = global::OTB_SEGURA.Droid.Resource.Color.material_grey_900;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.material_on_background_disabled = global::OTB_SEGURA.Droid.Resource.Color.material_on_background_disabled;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.material_on_background_emphasis_high_type = global::OTB_SEGURA.Droid.Resource.Color.material_on_background_emphasis_high_type;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.material_on_background_emphasis_medium = global::OTB_SEGURA.Droid.Resource.Color.material_on_background_emphasis_medium;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.material_on_primary_disabled = global::OTB_SEGURA.Droid.Resource.Color.material_on_primary_disabled;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.material_on_primary_emphasis_high_type = global::OTB_SEGURA.Droid.Resource.Color.material_on_primary_emphasis_high_type;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.material_on_primary_emphasis_medium = global::OTB_SEGURA.Droid.Resource.Color.material_on_primary_emphasis_medium;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.material_on_surface_disabled = global::OTB_SEGURA.Droid.Resource.Color.material_on_surface_disabled;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.material_on_surface_emphasis_high_type = global::OTB_SEGURA.Droid.Resource.Color.material_on_surface_emphasis_high_type;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.material_on_surface_emphasis_medium = global::OTB_SEGURA.Droid.Resource.Color.material_on_surface_emphasis_medium;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_bottom_nav_colored_item_tint = global::OTB_SEGURA.Droid.Resource.Color.mtrl_bottom_nav_colored_item_tint;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_bottom_nav_colored_ripple_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_bottom_nav_colored_ripple_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_bottom_nav_item_tint = global::OTB_SEGURA.Droid.Resource.Color.mtrl_bottom_nav_item_tint;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_bottom_nav_ripple_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_bottom_nav_ripple_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_btn_bg_color_selector = global::OTB_SEGURA.Droid.Resource.Color.mtrl_btn_bg_color_selector;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_btn_ripple_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_btn_ripple_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_btn_stroke_color_selector = global::OTB_SEGURA.Droid.Resource.Color.mtrl_btn_stroke_color_selector;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_btn_text_btn_bg_color_selector = global::OTB_SEGURA.Droid.Resource.Color.mtrl_btn_text_btn_bg_color_selector;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_btn_text_btn_ripple_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_btn_text_btn_ripple_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_btn_text_color_disabled = global::OTB_SEGURA.Droid.Resource.Color.mtrl_btn_text_color_disabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_btn_text_color_selector = global::OTB_SEGURA.Droid.Resource.Color.mtrl_btn_text_color_selector;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_btn_transparent_bg_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_btn_transparent_bg_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_calendar_item_stroke_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_calendar_item_stroke_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_calendar_selected_range = global::OTB_SEGURA.Droid.Resource.Color.mtrl_calendar_selected_range;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_card_view_foreground = global::OTB_SEGURA.Droid.Resource.Color.mtrl_card_view_foreground;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_card_view_ripple = global::OTB_SEGURA.Droid.Resource.Color.mtrl_card_view_ripple;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_chip_background_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_chip_background_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_chip_close_icon_tint = global::OTB_SEGURA.Droid.Resource.Color.mtrl_chip_close_icon_tint;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_chip_ripple_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_chip_ripple_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_chip_surface_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_chip_surface_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_chip_text_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_chip_text_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_choice_chip_background_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_choice_chip_background_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_choice_chip_ripple_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_choice_chip_ripple_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_choice_chip_text_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_choice_chip_text_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_error = global::OTB_SEGURA.Droid.Resource.Color.mtrl_error;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_fab_ripple_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_fab_ripple_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_filled_background_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_filled_background_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_filled_icon_tint = global::OTB_SEGURA.Droid.Resource.Color.mtrl_filled_icon_tint;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_filled_stroke_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_filled_stroke_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_indicator_text_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_indicator_text_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_navigation_item_background_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_navigation_item_background_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_navigation_item_icon_tint = global::OTB_SEGURA.Droid.Resource.Color.mtrl_navigation_item_icon_tint;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_navigation_item_text_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_navigation_item_text_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_on_primary_text_btn_text_color_selector = global::OTB_SEGURA.Droid.Resource.Color.mtrl_on_primary_text_btn_text_color_selector;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_outlined_icon_tint = global::OTB_SEGURA.Droid.Resource.Color.mtrl_outlined_icon_tint;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_outlined_stroke_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_outlined_stroke_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_popupmenu_overlay_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_popupmenu_overlay_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_scrim_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_scrim_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_tabs_colored_ripple_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_tabs_colored_ripple_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_tabs_icon_color_selector = global::OTB_SEGURA.Droid.Resource.Color.mtrl_tabs_icon_color_selector;
@@ -12095,6 +12293,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_textinput_default_box_stroke_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_textinput_disabled_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_textinput_disabled_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_textinput_filled_box_default_background_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_textinput_focused_box_stroke_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_textinput_focused_box_stroke_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_textinput_hovered_box_stroke_color = global::OTB_SEGURA.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.mtrl_text_btn_text_color_selector = global::OTB_SEGURA.Droid.Resource.Color.mtrl_text_btn_text_color_selector;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.notification_action_color_filter = global::OTB_SEGURA.Droid.Resource.Color.notification_action_color_filter;
@@ -12120,6 +12319,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Color.switch_thumb_material_light = global::OTB_SEGURA.Droid.Resource.Color.switch_thumb_material_light;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.switch_thumb_normal_material_dark = global::OTB_SEGURA.Droid.Resource.Color.switch_thumb_normal_material_dark;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.switch_thumb_normal_material_light = global::OTB_SEGURA.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.test_mtrl_calendar_day = global::OTB_SEGURA.Droid.Resource.Color.test_mtrl_calendar_day;
+			global::ZXing.Net.Mobile.Forms.Resource.Color.test_mtrl_calendar_day_selected = global::OTB_SEGURA.Droid.Resource.Color.test_mtrl_calendar_day_selected;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.tooltip_background_dark = global::OTB_SEGURA.Droid.Resource.Color.tooltip_background_dark;
 			global::ZXing.Net.Mobile.Forms.Resource.Color.tooltip_background_light = global::OTB_SEGURA.Droid.Resource.Color.tooltip_background_light;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.abc_action_bar_content_inset_material = global::OTB_SEGURA.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
@@ -12200,6 +12401,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::OTB_SEGURA.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.abc_text_size_title_material = global::OTB_SEGURA.Droid.Resource.Dimension.abc_text_size_title_material;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.abc_text_size_title_material_toolbar = global::OTB_SEGURA.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.action_bar_size = global::OTB_SEGURA.Droid.Resource.Dimension.action_bar_size;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.appcompat_dialog_background_inset = global::OTB_SEGURA.Droid.Resource.Dimension.appcompat_dialog_background_inset;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.browser_actions_context_menu_max_width = global::OTB_SEGURA.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.browser_actions_context_menu_min_padding = global::OTB_SEGURA.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.cardview_compat_inset_shadow = global::OTB_SEGURA.Droid.Resource.Dimension.cardview_compat_inset_shadow;
@@ -12212,6 +12415,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.compat_control_corner_material = global::OTB_SEGURA.Droid.Resource.Dimension.compat_control_corner_material;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.compat_notification_large_icon_max_height = global::OTB_SEGURA.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.compat_notification_large_icon_max_width = global::OTB_SEGURA.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.default_dimension = global::OTB_SEGURA.Droid.Resource.Dimension.default_dimension;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.def_drawer_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.def_drawer_elevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_appbar_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.design_appbar_elevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::OTB_SEGURA.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_bottom_navigation_active_item_min_width = global::OTB_SEGURA.Droid.Resource.Dimension.design_bottom_navigation_active_item_min_width;
@@ -12224,6 +12429,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_bottom_navigation_margin = global::OTB_SEGURA.Droid.Resource.Dimension.design_bottom_navigation_margin;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_bottom_navigation_shadow_height = global::OTB_SEGURA.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_bottom_navigation_text_size = global::OTB_SEGURA.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_bottom_sheet_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.design_bottom_sheet_elevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_bottom_sheet_modal_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_bottom_sheet_peek_height_min = global::OTB_SEGURA.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_fab_border_width = global::OTB_SEGURA.Droid.Resource.Dimension.design_fab_border_width;
@@ -12242,6 +12448,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_navigation_padding_bottom = global::OTB_SEGURA.Droid.Resource.Dimension.design_navigation_padding_bottom;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_navigation_separator_vertical_padding = global::OTB_SEGURA.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_snackbar_action_inline_max_width = global::OTB_SEGURA.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_snackbar_action_text_color_alpha = global::OTB_SEGURA.Droid.Resource.Dimension.design_snackbar_action_text_color_alpha;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_snackbar_background_corner_radius = global::OTB_SEGURA.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_snackbar_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.design_snackbar_elevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::OTB_SEGURA.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
@@ -12271,7 +12478,24 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::OTB_SEGURA.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::OTB_SEGURA.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::OTB_SEGURA.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.material_emphasis_disabled = global::OTB_SEGURA.Droid.Resource.Dimension.material_emphasis_disabled;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.material_emphasis_high_type = global::OTB_SEGURA.Droid.Resource.Dimension.material_emphasis_high_type;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.material_emphasis_medium = global::OTB_SEGURA.Droid.Resource.Dimension.material_emphasis_medium;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.material_text_view_test_line_height = global::OTB_SEGURA.Droid.Resource.Dimension.material_text_view_test_line_height;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.material_text_view_test_line_height_override = global::OTB_SEGURA.Droid.Resource.Dimension.material_text_view_test_line_height_override;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_alert_dialog_background_inset_bottom = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_bottom;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_alert_dialog_background_inset_end = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_end;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_alert_dialog_background_inset_start = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_start;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_alert_dialog_background_inset_top = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_top;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_alert_dialog_picker_background_inset = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_alert_dialog_picker_background_inset;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_badge_horizontal_edge_offset = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_badge_horizontal_edge_offset;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_badge_long_text_horizontal_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_badge_long_text_horizontal_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_badge_radius = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_badge_radius;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_badge_text_horizontal_edge_offset = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_badge_text_horizontal_edge_offset;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_badge_text_size = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_badge_text_size;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_badge_with_text_radius = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_badge_with_text_radius;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_bottomappbar_fab_bottom_margin = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_bottomappbar_fab_bottom_margin;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset;
@@ -12298,24 +12522,111 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_btn_text_btn_padding_right = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_right;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_btn_text_size = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_btn_text_size;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_btn_z = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_btn_z;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_action_height = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_action_height;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_action_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_action_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_bottom_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_bottom_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_content_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_content_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_days_of_week_height = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_days_of_week_height;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_day_corner = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_day_corner;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_day_height = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_day_height;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_day_horizontal_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_day_horizontal_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_day_today_stroke = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_day_today_stroke;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_day_vertical_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_day_vertical_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_day_width = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_day_width;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_dialog_background_inset = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_dialog_background_inset;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_header_content_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_header_content_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_header_content_padding_fullscreen = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_header_content_padding_fullscreen;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_header_divider_thickness = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_header_divider_thickness;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_header_height = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_header_height;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_header_height_fullscreen = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_header_height_fullscreen;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_header_selection_line_height = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_header_selection_line_height;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_header_text_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_header_text_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_header_toggle_margin_bottom = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_header_toggle_margin_bottom;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_header_toggle_margin_top = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_header_toggle_margin_top;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_landscape_header_width = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_landscape_header_width;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_maximum_default_fullscreen_minor_axis = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_maximum_default_fullscreen_minor_axis;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_month_horizontal_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_month_horizontal_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_month_vertical_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_month_vertical_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_navigation_bottom_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_navigation_bottom_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_navigation_height = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_navigation_height;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_navigation_top_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_navigation_top_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_pre_l_text_clip_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_pre_l_text_clip_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_selection_baseline_to_top_fullscreen = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_selection_baseline_to_top_fullscreen;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom_fullscreen = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom_fullscreen;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_top = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_top;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_text_input_padding_top = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_text_input_padding_top;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_title_baseline_to_top = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_title_baseline_to_top;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_title_baseline_to_top_fullscreen = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_title_baseline_to_top_fullscreen;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_year_corner = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_year_corner;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_year_height = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_year_height;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_year_horizontal_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_year_horizontal_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_year_vertical_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_year_vertical_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_calendar_year_width = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_calendar_year_width;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_card_checked_icon_margin = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_card_checked_icon_margin;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_card_checked_icon_size = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_card_checked_icon_size;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_card_corner_radius = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_card_corner_radius;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_card_dragged_z = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_card_dragged_z;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_card_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_card_elevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_card_spacing = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_card_spacing;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_chip_pressed_translation_z = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_chip_text_size = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_chip_text_size;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_bottom_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_bottom_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_corner_radius = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_corner_radius;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_disabled_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_disabled_elevation;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_disabled_translation_z = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_disabled_translation_z;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_elevation;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_end_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_end_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_end_padding_icon = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_end_padding_icon;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_icon_size = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_icon_size;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_icon_text_spacing = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_icon_text_spacing;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_min_height = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_min_height;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_min_width = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_min_width;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_start_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_start_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_start_padding_icon = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_start_padding_icon;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_top_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_top_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_translation_z_base = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_base;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_translation_z_hovered_focused = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_hovered_focused;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_extended_fab_translation_z_pressed = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_pressed;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_fab_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_fab_elevation;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_fab_min_touch_target = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_fab_min_touch_target;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_fab_translation_z_hovered_focused = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_fab_translation_z_hovered_focused;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_fab_translation_z_pressed = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_fab_translation_z_pressed;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_high_ripple_default_alpha = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_high_ripple_default_alpha;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_high_ripple_focused_alpha = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_high_ripple_focused_alpha;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_high_ripple_hovered_alpha = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_high_ripple_hovered_alpha;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_high_ripple_pressed_alpha = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_high_ripple_pressed_alpha;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_large_touch_target = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_large_touch_target;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_low_ripple_default_alpha = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_low_ripple_default_alpha;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_low_ripple_focused_alpha = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_low_ripple_focused_alpha;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_low_ripple_hovered_alpha = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_low_ripple_hovered_alpha;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_low_ripple_pressed_alpha = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_low_ripple_pressed_alpha;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_min_touch_target_size = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_min_touch_target_size;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_navigation_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_navigation_elevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_navigation_item_horizontal_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_navigation_item_horizontal_padding;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_navigation_item_icon_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_navigation_item_icon_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_navigation_item_icon_size = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_navigation_item_icon_size;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_navigation_item_shape_horizontal_margin = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_navigation_item_shape_horizontal_margin;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_navigation_item_shape_vertical_margin = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_navigation_item_shape_vertical_margin;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_shape_corner_size_large_component = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_shape_corner_size_large_component;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_shape_corner_size_medium_component = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_shape_corner_size_medium_component;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_shape_corner_size_small_component = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_shape_corner_size_small_component;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_snackbar_action_text_color_alpha = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_snackbar_action_text_color_alpha;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_snackbar_background_overlay_color_alpha = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_snackbar_background_overlay_color_alpha;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_snackbar_margin = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_snackbar_margin;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_switch_thumb_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_switch_thumb_elevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_textinput_box_corner_radius_medium = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_medium;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_textinput_box_corner_radius_small = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_small;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_textinput_box_label_cutout_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_textinput_box_label_cutout_padding;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_textinput_box_stroke_width_default = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_default;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_textinput_box_stroke_width_focused = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_focused;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_textinput_end_icon_margin_start = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_textinput_end_icon_margin_start;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_textinput_start_icon_margin_end = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_textinput_start_icon_margin_end;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.mtrl_toolbar_default_height = global::OTB_SEGURA.Droid.Resource.Dimension.mtrl_toolbar_default_height;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.notification_action_icon_size = global::OTB_SEGURA.Droid.Resource.Dimension.notification_action_icon_size;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.notification_action_text_size = global::OTB_SEGURA.Droid.Resource.Dimension.notification_action_text_size;
@@ -12332,6 +12643,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.notification_subtext_size = global::OTB_SEGURA.Droid.Resource.Dimension.notification_subtext_size;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.notification_top_pad = global::OTB_SEGURA.Droid.Resource.Dimension.notification_top_pad;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.notification_top_pad_large_text = global::OTB_SEGURA.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::ZXing.Net.Mobile.Forms.Resource.Dimension.test_mtrl_calendar_day_cornerSize = global::OTB_SEGURA.Droid.Resource.Dimension.test_mtrl_calendar_day_cornerSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.tooltip_corner_radius = global::OTB_SEGURA.Droid.Resource.Dimension.tooltip_corner_radius;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.tooltip_horizontal_padding = global::OTB_SEGURA.Droid.Resource.Dimension.tooltip_horizontal_padding;
 			global::ZXing.Net.Mobile.Forms.Resource.Dimension.tooltip_margin = global::OTB_SEGURA.Droid.Resource.Dimension.tooltip_margin;
@@ -12442,9 +12754,18 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.design_ic_visibility_off = global::OTB_SEGURA.Droid.Resource.Drawable.design_ic_visibility_off;
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.design_password_eye = global::OTB_SEGURA.Droid.Resource.Drawable.design_password_eye;
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.design_snackbar_background = global::OTB_SEGURA.Droid.Resource.Drawable.design_snackbar_background;
+			global::ZXing.Net.Mobile.Forms.Resource.Drawable.ic_mtrl_checked_circle = global::OTB_SEGURA.Droid.Resource.Drawable.ic_mtrl_checked_circle;
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.ic_mtrl_chip_checked_black = global::OTB_SEGURA.Droid.Resource.Drawable.ic_mtrl_chip_checked_black;
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.ic_mtrl_chip_checked_circle = global::OTB_SEGURA.Droid.Resource.Drawable.ic_mtrl_chip_checked_circle;
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.ic_mtrl_chip_close_circle = global::OTB_SEGURA.Droid.Resource.Drawable.ic_mtrl_chip_close_circle;
+			global::ZXing.Net.Mobile.Forms.Resource.Drawable.mtrl_dialog_background = global::OTB_SEGURA.Droid.Resource.Drawable.mtrl_dialog_background;
+			global::ZXing.Net.Mobile.Forms.Resource.Drawable.mtrl_dropdown_arrow = global::OTB_SEGURA.Droid.Resource.Drawable.mtrl_dropdown_arrow;
+			global::ZXing.Net.Mobile.Forms.Resource.Drawable.mtrl_ic_arrow_drop_down = global::OTB_SEGURA.Droid.Resource.Drawable.mtrl_ic_arrow_drop_down;
+			global::ZXing.Net.Mobile.Forms.Resource.Drawable.mtrl_ic_arrow_drop_up = global::OTB_SEGURA.Droid.Resource.Drawable.mtrl_ic_arrow_drop_up;
+			global::ZXing.Net.Mobile.Forms.Resource.Drawable.mtrl_ic_cancel = global::OTB_SEGURA.Droid.Resource.Drawable.mtrl_ic_cancel;
+			global::ZXing.Net.Mobile.Forms.Resource.Drawable.mtrl_ic_error = global::OTB_SEGURA.Droid.Resource.Drawable.mtrl_ic_error;
+			global::ZXing.Net.Mobile.Forms.Resource.Drawable.mtrl_popupmenu_background = global::OTB_SEGURA.Droid.Resource.Drawable.mtrl_popupmenu_background;
+			global::ZXing.Net.Mobile.Forms.Resource.Drawable.mtrl_popupmenu_background_dark = global::OTB_SEGURA.Droid.Resource.Drawable.mtrl_popupmenu_background_dark;
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.mtrl_tabs_default_indicator = global::OTB_SEGURA.Droid.Resource.Drawable.mtrl_tabs_default_indicator;
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.navigation_empty_icon = global::OTB_SEGURA.Droid.Resource.Drawable.navigation_empty_icon;
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.notification_action_background = global::OTB_SEGURA.Droid.Resource.Drawable.notification_action_background;
@@ -12459,6 +12780,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.notification_template_icon_low_bg = global::OTB_SEGURA.Droid.Resource.Drawable.notification_template_icon_low_bg;
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.notification_tile_bg = global::OTB_SEGURA.Droid.Resource.Drawable.notification_tile_bg;
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.notify_panel_notification_icon_bg = global::OTB_SEGURA.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::ZXing.Net.Mobile.Forms.Resource.Drawable.test_custom_background = global::OTB_SEGURA.Droid.Resource.Drawable.test_custom_background;
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.tooltip_frame_dark = global::OTB_SEGURA.Droid.Resource.Drawable.tooltip_frame_dark;
 			global::ZXing.Net.Mobile.Forms.Resource.Drawable.tooltip_frame_light = global::OTB_SEGURA.Droid.Resource.Drawable.tooltip_frame_light;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.accessibility_action_clickable_span = global::OTB_SEGURA.Droid.Resource.Id.accessibility_action_clickable_span;
@@ -12526,6 +12848,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Id.bottom = global::OTB_SEGURA.Droid.Resource.Id.bottom;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.bottomtab_navarea = global::OTB_SEGURA.Droid.Resource.Id.bottomtab_navarea;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.bottomtab_tabbar = global::OTB_SEGURA.Droid.Resource.Id.bottomtab_tabbar;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.BOTTOM_END = global::OTB_SEGURA.Droid.Resource.Id.BOTTOM_END;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.BOTTOM_START = global::OTB_SEGURA.Droid.Resource.Id.BOTTOM_START;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.browser_actions_header_text = global::OTB_SEGURA.Droid.Resource.Id.browser_actions_header_text;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.browser_actions_menu_items = global::OTB_SEGURA.Droid.Resource.Id.browser_actions_menu_items;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.browser_actions_menu_item_icon = global::OTB_SEGURA.Droid.Resource.Id.browser_actions_menu_item_icon;
@@ -12533,15 +12857,20 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Id.browser_actions_menu_view = global::OTB_SEGURA.Droid.Resource.Id.browser_actions_menu_view;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.buttonPanel = global::OTB_SEGURA.Droid.Resource.Id.buttonPanel;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.cancel_action = global::OTB_SEGURA.Droid.Resource.Id.cancel_action;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.cancel_button = global::OTB_SEGURA.Droid.Resource.Id.cancel_button;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.center = global::OTB_SEGURA.Droid.Resource.Id.center;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.center_horizontal = global::OTB_SEGURA.Droid.Resource.Id.center_horizontal;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.center_vertical = global::OTB_SEGURA.Droid.Resource.Id.center_vertical;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.checkbox = global::OTB_SEGURA.Droid.Resource.Id.checkbox;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.@checked = global::OTB_SEGURA.Droid.Resource.Id.@checked;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.chip = global::OTB_SEGURA.Droid.Resource.Id.chip;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.chip_group = global::OTB_SEGURA.Droid.Resource.Id.chip_group;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.chronometer = global::OTB_SEGURA.Droid.Resource.Id.chronometer;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.clear_text = global::OTB_SEGURA.Droid.Resource.Id.clear_text;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.clip_horizontal = global::OTB_SEGURA.Droid.Resource.Id.clip_horizontal;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.clip_vertical = global::OTB_SEGURA.Droid.Resource.Id.clip_vertical;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.collapseActionView = global::OTB_SEGURA.Droid.Resource.Id.collapseActionView;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.confirm_button = global::OTB_SEGURA.Droid.Resource.Id.confirm_button;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.container = global::OTB_SEGURA.Droid.Resource.Id.container;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.content = global::OTB_SEGURA.Droid.Resource.Id.content;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.contentFrame = global::OTB_SEGURA.Droid.Resource.Id.contentFrame;
@@ -12550,6 +12879,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Id.CTRL = global::OTB_SEGURA.Droid.Resource.Id.CTRL;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.custom = global::OTB_SEGURA.Droid.Resource.Id.custom;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.customPanel = global::OTB_SEGURA.Droid.Resource.Id.customPanel;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.cut = global::OTB_SEGURA.Droid.Resource.Id.cut;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.date_picker_actions = global::OTB_SEGURA.Droid.Resource.Id.date_picker_actions;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.decor_content_parent = global::OTB_SEGURA.Droid.Resource.Id.decor_content_parent;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.default_activity_button = global::OTB_SEGURA.Droid.Resource.Id.default_activity_button;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.design_bottom_sheet = global::OTB_SEGURA.Droid.Resource.Id.design_bottom_sheet;
@@ -12559,6 +12890,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Id.design_navigation_view = global::OTB_SEGURA.Droid.Resource.Id.design_navigation_view;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.dialog_button = global::OTB_SEGURA.Droid.Resource.Id.dialog_button;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.disableHome = global::OTB_SEGURA.Droid.Resource.Id.disableHome;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.dropdown_menu = global::OTB_SEGURA.Droid.Resource.Id.dropdown_menu;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.edit_query = global::OTB_SEGURA.Droid.Resource.Id.edit_query;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.end = global::OTB_SEGURA.Droid.Resource.Id.end;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.end_padder = global::OTB_SEGURA.Droid.Resource.Id.end_padder;
@@ -12567,17 +12899,21 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Id.exitUntilCollapsed = global::OTB_SEGURA.Droid.Resource.Id.exitUntilCollapsed;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.expanded_menu = global::OTB_SEGURA.Droid.Resource.Id.expanded_menu;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.expand_activities_button = global::OTB_SEGURA.Droid.Resource.Id.expand_activities_button;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.fade = global::OTB_SEGURA.Droid.Resource.Id.fade;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.fill = global::OTB_SEGURA.Droid.Resource.Id.fill;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.filled = global::OTB_SEGURA.Droid.Resource.Id.filled;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.fill_horizontal = global::OTB_SEGURA.Droid.Resource.Id.fill_horizontal;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.fill_vertical = global::OTB_SEGURA.Droid.Resource.Id.fill_vertical;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.fitToContents = global::OTB_SEGURA.Droid.Resource.Id.fitToContents;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.@fixed = global::OTB_SEGURA.Droid.Resource.Id.@fixed;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.flyoutcontent_appbar = global::OTB_SEGURA.Droid.Resource.Id.flyoutcontent_appbar;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.forever = global::OTB_SEGURA.Droid.Resource.Id.forever;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.fragment_container_view_tag = global::OTB_SEGURA.Droid.Resource.Id.fragment_container_view_tag;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.FUNCTION = global::OTB_SEGURA.Droid.Resource.Id.FUNCTION;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.ghost_view = global::OTB_SEGURA.Droid.Resource.Id.ghost_view;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.ghost_view_holder = global::OTB_SEGURA.Droid.Resource.Id.ghost_view_holder;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.group_divider = global::OTB_SEGURA.Droid.Resource.Id.group_divider;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.hideable = global::OTB_SEGURA.Droid.Resource.Id.hideable;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.home = global::OTB_SEGURA.Droid.Resource.Id.home;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.homeAsUp = global::OTB_SEGURA.Droid.Resource.Id.homeAsUp;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.icon = global::OTB_SEGURA.Droid.Resource.Id.icon;
@@ -12600,17 +12936,43 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Id.main_viewpager = global::OTB_SEGURA.Droid.Resource.Id.main_viewpager;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.masked = global::OTB_SEGURA.Droid.Resource.Id.masked;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.media_actions = global::OTB_SEGURA.Droid.Resource.Id.media_actions;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.media_controller_compat_view_tag = global::OTB_SEGURA.Droid.Resource.Id.media_controller_compat_view_tag;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.message = global::OTB_SEGURA.Droid.Resource.Id.message;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.META = global::OTB_SEGURA.Droid.Resource.Id.META;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.middle = global::OTB_SEGURA.Droid.Resource.Id.middle;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.mini = global::OTB_SEGURA.Droid.Resource.Id.mini;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.month_grid = global::OTB_SEGURA.Droid.Resource.Id.month_grid;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.month_navigation_bar = global::OTB_SEGURA.Droid.Resource.Id.month_navigation_bar;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.month_navigation_fragment_toggle = global::OTB_SEGURA.Droid.Resource.Id.month_navigation_fragment_toggle;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.month_navigation_next = global::OTB_SEGURA.Droid.Resource.Id.month_navigation_next;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.month_navigation_previous = global::OTB_SEGURA.Droid.Resource.Id.month_navigation_previous;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.month_title = global::OTB_SEGURA.Droid.Resource.Id.month_title;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_calendar_days_of_week = global::OTB_SEGURA.Droid.Resource.Id.mtrl_calendar_days_of_week;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_calendar_day_selector_frame = global::OTB_SEGURA.Droid.Resource.Id.mtrl_calendar_day_selector_frame;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_calendar_frame = global::OTB_SEGURA.Droid.Resource.Id.mtrl_calendar_frame;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_calendar_main_pane = global::OTB_SEGURA.Droid.Resource.Id.mtrl_calendar_main_pane;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_calendar_months = global::OTB_SEGURA.Droid.Resource.Id.mtrl_calendar_months;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_calendar_selection_frame = global::OTB_SEGURA.Droid.Resource.Id.mtrl_calendar_selection_frame;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_calendar_text_input_frame = global::OTB_SEGURA.Droid.Resource.Id.mtrl_calendar_text_input_frame;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_calendar_year_selector_frame = global::OTB_SEGURA.Droid.Resource.Id.mtrl_calendar_year_selector_frame;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_card_checked_layer_id = global::OTB_SEGURA.Droid.Resource.Id.mtrl_card_checked_layer_id;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_child_content_container = global::OTB_SEGURA.Droid.Resource.Id.mtrl_child_content_container;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_internal_children_alpha_tag = global::OTB_SEGURA.Droid.Resource.Id.mtrl_internal_children_alpha_tag;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_picker_fullscreen = global::OTB_SEGURA.Droid.Resource.Id.mtrl_picker_fullscreen;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_picker_header = global::OTB_SEGURA.Droid.Resource.Id.mtrl_picker_header;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_picker_header_selection_text = global::OTB_SEGURA.Droid.Resource.Id.mtrl_picker_header_selection_text;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_picker_header_title_and_selection = global::OTB_SEGURA.Droid.Resource.Id.mtrl_picker_header_title_and_selection;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_picker_header_toggle = global::OTB_SEGURA.Droid.Resource.Id.mtrl_picker_header_toggle;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_picker_text_input_date = global::OTB_SEGURA.Droid.Resource.Id.mtrl_picker_text_input_date;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_picker_text_input_range_end = global::OTB_SEGURA.Droid.Resource.Id.mtrl_picker_text_input_range_end;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_picker_text_input_range_start = global::OTB_SEGURA.Droid.Resource.Id.mtrl_picker_text_input_range_start;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.mtrl_picker_title_text = global::OTB_SEGURA.Droid.Resource.Id.mtrl_picker_title_text;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.multiply = global::OTB_SEGURA.Droid.Resource.Id.multiply;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.navigation_header_container = global::OTB_SEGURA.Droid.Resource.Id.navigation_header_container;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.never = global::OTB_SEGURA.Droid.Resource.Id.never;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.none = global::OTB_SEGURA.Droid.Resource.Id.none;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.normal = global::OTB_SEGURA.Droid.Resource.Id.normal;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.noScroll = global::OTB_SEGURA.Droid.Resource.Id.noScroll;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.notification_background = global::OTB_SEGURA.Droid.Resource.Id.notification_background;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.notification_main_column = global::OTB_SEGURA.Droid.Resource.Id.notification_main_column;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.notification_main_column_container = global::OTB_SEGURA.Droid.Resource.Id.notification_main_column_container;
@@ -12620,6 +12982,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Id.parallax = global::OTB_SEGURA.Droid.Resource.Id.parallax;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.parentPanel = global::OTB_SEGURA.Droid.Resource.Id.parentPanel;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.parent_matrix = global::OTB_SEGURA.Droid.Resource.Id.parent_matrix;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.password_toggle = global::OTB_SEGURA.Droid.Resource.Id.password_toggle;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.peekHeight = global::OTB_SEGURA.Droid.Resource.Id.peekHeight;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.pin = global::OTB_SEGURA.Droid.Resource.Id.pin;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.progress_circular = global::OTB_SEGURA.Droid.Resource.Id.progress_circular;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.progress_horizontal = global::OTB_SEGURA.Droid.Resource.Id.progress_horizontal;
@@ -12627,8 +12991,10 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Id.right = global::OTB_SEGURA.Droid.Resource.Id.right;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.right_icon = global::OTB_SEGURA.Droid.Resource.Id.right_icon;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.right_side = global::OTB_SEGURA.Droid.Resource.Id.right_side;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.rounded = global::OTB_SEGURA.Droid.Resource.Id.rounded;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.save_non_transition_alpha = global::OTB_SEGURA.Droid.Resource.Id.save_non_transition_alpha;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.save_overlay_view = global::OTB_SEGURA.Droid.Resource.Id.save_overlay_view;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.scale = global::OTB_SEGURA.Droid.Resource.Id.scale;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.screen = global::OTB_SEGURA.Droid.Resource.Id.screen;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.scroll = global::OTB_SEGURA.Droid.Resource.Id.scroll;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.scrollable = global::OTB_SEGURA.Droid.Resource.Id.scrollable;
@@ -12654,6 +13020,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Id.showCustom = global::OTB_SEGURA.Droid.Resource.Id.showCustom;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.showHome = global::OTB_SEGURA.Droid.Resource.Id.showHome;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.showTitle = global::OTB_SEGURA.Droid.Resource.Id.showTitle;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.skipCollapsed = global::OTB_SEGURA.Droid.Resource.Id.skipCollapsed;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.slide = global::OTB_SEGURA.Droid.Resource.Id.slide;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.sliding_tabs = global::OTB_SEGURA.Droid.Resource.Id.sliding_tabs;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.smallLabel = global::OTB_SEGURA.Droid.Resource.Id.smallLabel;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.snackbar_action = global::OTB_SEGURA.Droid.Resource.Id.snackbar_action;
@@ -12680,14 +13048,19 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Id.tag_transition_group = global::OTB_SEGURA.Droid.Resource.Id.tag_transition_group;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.tag_unhandled_key_event_manager = global::OTB_SEGURA.Droid.Resource.Id.tag_unhandled_key_event_manager;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.tag_unhandled_key_listeners = global::OTB_SEGURA.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.test_checkbox_android_button_tint = global::OTB_SEGURA.Droid.Resource.Id.test_checkbox_android_button_tint;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.test_checkbox_app_button_tint = global::OTB_SEGURA.Droid.Resource.Id.test_checkbox_app_button_tint;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.text = global::OTB_SEGURA.Droid.Resource.Id.text;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.text2 = global::OTB_SEGURA.Droid.Resource.Id.text2;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.textEnd = global::OTB_SEGURA.Droid.Resource.Id.textEnd;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.textinput_counter = global::OTB_SEGURA.Droid.Resource.Id.textinput_counter;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.textinput_error = global::OTB_SEGURA.Droid.Resource.Id.textinput_error;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.textinput_helper_text = global::OTB_SEGURA.Droid.Resource.Id.textinput_helper_text;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.textSpacerNoButtons = global::OTB_SEGURA.Droid.Resource.Id.textSpacerNoButtons;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.textSpacerNoTitle = global::OTB_SEGURA.Droid.Resource.Id.textSpacerNoTitle;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.textStart = global::OTB_SEGURA.Droid.Resource.Id.textStart;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.text_input_end_icon = global::OTB_SEGURA.Droid.Resource.Id.text_input_end_icon;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.text_input_start_icon = global::OTB_SEGURA.Droid.Resource.Id.text_input_start_icon;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.time = global::OTB_SEGURA.Droid.Resource.Id.time;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.title = global::OTB_SEGURA.Droid.Resource.Id.title;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.titleDividerNoCustom = global::OTB_SEGURA.Droid.Resource.Id.titleDividerNoCustom;
@@ -12695,6 +13068,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Id.toolbar = global::OTB_SEGURA.Droid.Resource.Id.toolbar;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.top = global::OTB_SEGURA.Droid.Resource.Id.top;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.topPanel = global::OTB_SEGURA.Droid.Resource.Id.topPanel;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.TOP_END = global::OTB_SEGURA.Droid.Resource.Id.TOP_END;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.TOP_START = global::OTB_SEGURA.Droid.Resource.Id.TOP_START;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.touch_outside = global::OTB_SEGURA.Droid.Resource.Id.touch_outside;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.transition_current_scene = global::OTB_SEGURA.Droid.Resource.Id.transition_current_scene;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.transition_layout_save = global::OTB_SEGURA.Droid.Resource.Id.transition_layout_save;
@@ -12707,7 +13082,9 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Id.up = global::OTB_SEGURA.Droid.Resource.Id.up;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.useLogo = global::OTB_SEGURA.Droid.Resource.Id.useLogo;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.view_offset_helper = global::OTB_SEGURA.Droid.Resource.Id.view_offset_helper;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.view_tree_saved_state_registry_owner = global::OTB_SEGURA.Droid.Resource.Id.view_tree_saved_state_registry_owner;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.visible = global::OTB_SEGURA.Droid.Resource.Id.visible;
+			global::ZXing.Net.Mobile.Forms.Resource.Id.visible_removing_fragment_view_tag = global::OTB_SEGURA.Droid.Resource.Id.visible_removing_fragment_view_tag;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.withText = global::OTB_SEGURA.Droid.Resource.Id.withText;
 			global::ZXing.Net.Mobile.Forms.Resource.Id.wrap_content = global::OTB_SEGURA.Droid.Resource.Id.wrap_content;
 			global::ZXing.Net.Mobile.Forms.Resource.Integer.abc_config_activityDefaultDur = global::OTB_SEGURA.Droid.Resource.Integer.abc_config_activityDefaultDur;
@@ -12719,8 +13096,14 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Integer.design_snackbar_text_max_lines = global::OTB_SEGURA.Droid.Resource.Integer.design_snackbar_text_max_lines;
 			global::ZXing.Net.Mobile.Forms.Resource.Integer.design_tab_indicator_anim_duration_ms = global::OTB_SEGURA.Droid.Resource.Integer.design_tab_indicator_anim_duration_ms;
 			global::ZXing.Net.Mobile.Forms.Resource.Integer.hide_password_duration = global::OTB_SEGURA.Droid.Resource.Integer.hide_password_duration;
+			global::ZXing.Net.Mobile.Forms.Resource.Integer.mtrl_badge_max_character_count = global::OTB_SEGURA.Droid.Resource.Integer.mtrl_badge_max_character_count;
 			global::ZXing.Net.Mobile.Forms.Resource.Integer.mtrl_btn_anim_delay_ms = global::OTB_SEGURA.Droid.Resource.Integer.mtrl_btn_anim_delay_ms;
 			global::ZXing.Net.Mobile.Forms.Resource.Integer.mtrl_btn_anim_duration_ms = global::OTB_SEGURA.Droid.Resource.Integer.mtrl_btn_anim_duration_ms;
+			global::ZXing.Net.Mobile.Forms.Resource.Integer.mtrl_calendar_header_orientation = global::OTB_SEGURA.Droid.Resource.Integer.mtrl_calendar_header_orientation;
+			global::ZXing.Net.Mobile.Forms.Resource.Integer.mtrl_calendar_selection_text_lines = global::OTB_SEGURA.Droid.Resource.Integer.mtrl_calendar_selection_text_lines;
+			global::ZXing.Net.Mobile.Forms.Resource.Integer.mtrl_calendar_year_selector_span = global::OTB_SEGURA.Droid.Resource.Integer.mtrl_calendar_year_selector_span;
+			global::ZXing.Net.Mobile.Forms.Resource.Integer.mtrl_card_anim_delay_ms = global::OTB_SEGURA.Droid.Resource.Integer.mtrl_card_anim_delay_ms;
+			global::ZXing.Net.Mobile.Forms.Resource.Integer.mtrl_card_anim_duration_ms = global::OTB_SEGURA.Droid.Resource.Integer.mtrl_card_anim_duration_ms;
 			global::ZXing.Net.Mobile.Forms.Resource.Integer.mtrl_chip_anim_duration = global::OTB_SEGURA.Droid.Resource.Integer.mtrl_chip_anim_duration;
 			global::ZXing.Net.Mobile.Forms.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::OTB_SEGURA.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
 			global::ZXing.Net.Mobile.Forms.Resource.Integer.show_password_duration = global::OTB_SEGURA.Droid.Resource.Integer.show_password_duration;
@@ -12781,11 +13164,39 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.design_navigation_item_subheader = global::OTB_SEGURA.Droid.Resource.Layout.design_navigation_item_subheader;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.design_navigation_menu = global::OTB_SEGURA.Droid.Resource.Layout.design_navigation_menu;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.design_navigation_menu_item = global::OTB_SEGURA.Droid.Resource.Layout.design_navigation_menu_item;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.design_text_input_end_icon = global::OTB_SEGURA.Droid.Resource.Layout.design_text_input_end_icon;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.design_text_input_start_icon = global::OTB_SEGURA.Droid.Resource.Layout.design_text_input_start_icon;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.FallbackTabbarDoNotUse = global::OTB_SEGURA.Droid.Resource.Layout.FallbackTabbarDoNotUse;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.FallbackToolbarDoNotUse = global::OTB_SEGURA.Droid.Resource.Layout.FallbackToolbarDoNotUse;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.FlyoutContent = global::OTB_SEGURA.Droid.Resource.Layout.FlyoutContent;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_alert_dialog = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_alert_dialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_alert_dialog_actions = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_alert_dialog_actions;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_alert_dialog_title = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_alert_dialog_title;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_alert_select_dialog_item = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_alert_select_dialog_item;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_alert_select_dialog_multichoice = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_alert_select_dialog_multichoice;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_alert_select_dialog_singlechoice = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_alert_select_dialog_singlechoice;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_calendar_day = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_calendar_day;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_calendar_days_of_week = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_calendar_days_of_week;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_calendar_day_of_week = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_calendar_day_of_week;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_calendar_horizontal = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_calendar_horizontal;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_calendar_month = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_calendar_month;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_calendar_months = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_calendar_months;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_calendar_month_labeled = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_calendar_month_labeled;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_calendar_month_navigation = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_calendar_month_navigation;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_calendar_vertical = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_calendar_vertical;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_calendar_year = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_calendar_year;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_layout_snackbar = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_layout_snackbar;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_layout_snackbar_include = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_layout_snackbar_include;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_picker_actions = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_picker_actions;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_picker_dialog = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_picker_dialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_picker_fullscreen = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_picker_fullscreen;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_picker_header_dialog = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_picker_header_dialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_picker_header_fullscreen = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_picker_header_fullscreen;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_picker_header_selection_text = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_picker_header_selection_text;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_picker_header_title_text = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_picker_header_title_text;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_picker_header_toggle = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_picker_header_toggle;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_picker_text_input_date = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_picker_text_input_date;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.mtrl_picker_text_input_date_range = global::OTB_SEGURA.Droid.Resource.Layout.mtrl_picker_text_input_date_range;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.notification_action = global::OTB_SEGURA.Droid.Resource.Layout.notification_action;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.notification_action_tombstone = global::OTB_SEGURA.Droid.Resource.Layout.notification_action_tombstone;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.notification_media_action = global::OTB_SEGURA.Droid.Resource.Layout.notification_media_action;
@@ -12808,9 +13219,22 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.ShellContent = global::OTB_SEGURA.Droid.Resource.Layout.ShellContent;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.support_simple_spinner_dropdown_item = global::OTB_SEGURA.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.Tabbar = global::OTB_SEGURA.Droid.Resource.Layout.Tabbar;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.test_action_chip = global::OTB_SEGURA.Droid.Resource.Layout.test_action_chip;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.test_design_checkbox = global::OTB_SEGURA.Droid.Resource.Layout.test_design_checkbox;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.test_reflow_chipgroup = global::OTB_SEGURA.Droid.Resource.Layout.test_reflow_chipgroup;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.test_toolbar = global::OTB_SEGURA.Droid.Resource.Layout.test_toolbar;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.test_toolbar_custom_background = global::OTB_SEGURA.Droid.Resource.Layout.test_toolbar_custom_background;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.test_toolbar_elevation = global::OTB_SEGURA.Droid.Resource.Layout.test_toolbar_elevation;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.test_toolbar_surface = global::OTB_SEGURA.Droid.Resource.Layout.test_toolbar_surface;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.text_view_without_line_height = global::OTB_SEGURA.Droid.Resource.Layout.text_view_without_line_height;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.text_view_with_line_height_from_appearance = global::OTB_SEGURA.Droid.Resource.Layout.text_view_with_line_height_from_appearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.text_view_with_line_height_from_layout = global::OTB_SEGURA.Droid.Resource.Layout.text_view_with_line_height_from_layout;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.text_view_with_line_height_from_style = global::OTB_SEGURA.Droid.Resource.Layout.text_view_with_line_height_from_style;
+			global::ZXing.Net.Mobile.Forms.Resource.Layout.text_view_with_theme_line_height = global::OTB_SEGURA.Droid.Resource.Layout.text_view_with_theme_line_height;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.Toolbar = global::OTB_SEGURA.Droid.Resource.Layout.Toolbar;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.zxingscanneractivitylayout = global::OTB_SEGURA.Droid.Resource.Layout.zxingscanneractivitylayout;
 			global::ZXing.Net.Mobile.Forms.Resource.Layout.zxingscannerfragmentlayout = global::OTB_SEGURA.Droid.Resource.Layout.zxingscannerfragmentlayout;
+			global::ZXing.Net.Mobile.Forms.Resource.Plurals.mtrl_badge_content_description = global::OTB_SEGURA.Droid.Resource.Plurals.mtrl_badge_content_description;
 			global::ZXing.Net.Mobile.Forms.Resource.String.abc_action_bar_home_description = global::OTB_SEGURA.Droid.Resource.String.abc_action_bar_home_description;
 			global::ZXing.Net.Mobile.Forms.Resource.String.abc_action_bar_up_description = global::OTB_SEGURA.Droid.Resource.String.abc_action_bar_up_description;
 			global::ZXing.Net.Mobile.Forms.Resource.String.abc_action_menu_overflow_description = global::OTB_SEGURA.Droid.Resource.String.abc_action_menu_overflow_description;
@@ -12841,11 +13265,55 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.String.appbar_scrolling_view_behavior = global::OTB_SEGURA.Droid.Resource.String.appbar_scrolling_view_behavior;
 			global::ZXing.Net.Mobile.Forms.Resource.String.bottom_sheet_behavior = global::OTB_SEGURA.Droid.Resource.String.bottom_sheet_behavior;
 			global::ZXing.Net.Mobile.Forms.Resource.String.character_counter_content_description = global::OTB_SEGURA.Droid.Resource.String.character_counter_content_description;
+			global::ZXing.Net.Mobile.Forms.Resource.String.character_counter_overflowed_content_description = global::OTB_SEGURA.Droid.Resource.String.character_counter_overflowed_content_description;
 			global::ZXing.Net.Mobile.Forms.Resource.String.character_counter_pattern = global::OTB_SEGURA.Droid.Resource.String.character_counter_pattern;
+			global::ZXing.Net.Mobile.Forms.Resource.String.chip_text = global::OTB_SEGURA.Droid.Resource.String.chip_text;
+			global::ZXing.Net.Mobile.Forms.Resource.String.clear_text_end_icon_content_description = global::OTB_SEGURA.Droid.Resource.String.clear_text_end_icon_content_description;
+			global::ZXing.Net.Mobile.Forms.Resource.String.copy_toast_msg = global::OTB_SEGURA.Droid.Resource.String.copy_toast_msg;
+			global::ZXing.Net.Mobile.Forms.Resource.String.error_icon_content_description = global::OTB_SEGURA.Droid.Resource.String.error_icon_content_description;
+			global::ZXing.Net.Mobile.Forms.Resource.String.exposed_dropdown_menu_content_description = global::OTB_SEGURA.Droid.Resource.String.exposed_dropdown_menu_content_description;
 			global::ZXing.Net.Mobile.Forms.Resource.String.fab_transformation_scrim_behavior = global::OTB_SEGURA.Droid.Resource.String.fab_transformation_scrim_behavior;
 			global::ZXing.Net.Mobile.Forms.Resource.String.fab_transformation_sheet_behavior = global::OTB_SEGURA.Droid.Resource.String.fab_transformation_sheet_behavior;
+			global::ZXing.Net.Mobile.Forms.Resource.String.fallback_menu_item_copy_link = global::OTB_SEGURA.Droid.Resource.String.fallback_menu_item_copy_link;
+			global::ZXing.Net.Mobile.Forms.Resource.String.fallback_menu_item_open_in_browser = global::OTB_SEGURA.Droid.Resource.String.fallback_menu_item_open_in_browser;
+			global::ZXing.Net.Mobile.Forms.Resource.String.fallback_menu_item_share_link = global::OTB_SEGURA.Droid.Resource.String.fallback_menu_item_share_link;
 			global::ZXing.Net.Mobile.Forms.Resource.String.hide_bottom_view_on_scroll_behavior = global::OTB_SEGURA.Droid.Resource.String.hide_bottom_view_on_scroll_behavior;
+			global::ZXing.Net.Mobile.Forms.Resource.String.icon_content_description = global::OTB_SEGURA.Droid.Resource.String.icon_content_description;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_badge_numberless_content_description = global::OTB_SEGURA.Droid.Resource.String.mtrl_badge_numberless_content_description;
 			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_chip_close_icon_content_description = global::OTB_SEGURA.Droid.Resource.String.mtrl_chip_close_icon_content_description;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_exceed_max_badge_number_suffix = global::OTB_SEGURA.Droid.Resource.String.mtrl_exceed_max_badge_number_suffix;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_a11y_next_month = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_a11y_next_month;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_a11y_prev_month = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_a11y_prev_month;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_announce_current_selection = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_announce_current_selection;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_cancel = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_cancel;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_confirm = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_confirm;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_date_header_selected = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_date_header_selected;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_date_header_title = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_date_header_title;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_date_header_unselected = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_date_header_unselected;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_day_of_week_column_header = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_day_of_week_column_header;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_invalid_format = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_invalid_format;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_invalid_format_example = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_invalid_format_example;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_invalid_format_use = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_invalid_format_use;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_invalid_range = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_invalid_range;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_navigate_to_year_description = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_navigate_to_year_description;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_out_of_range = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_out_of_range;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_range_header_only_end_selected = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_range_header_only_end_selected;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_range_header_only_start_selected = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_range_header_only_start_selected;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_range_header_selected = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_range_header_selected;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_range_header_title = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_range_header_title;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_range_header_unselected = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_range_header_unselected;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_save = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_save;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_text_input_date_hint = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_text_input_date_hint;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_text_input_date_range_end_hint = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_text_input_date_range_end_hint;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_text_input_date_range_start_hint = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_text_input_date_range_start_hint;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_text_input_day_abbr = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_text_input_day_abbr;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_text_input_month_abbr = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_text_input_month_abbr;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_text_input_year_abbr = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_text_input_year_abbr;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_toggle_to_calendar_input_mode = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_toggle_to_calendar_input_mode;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_toggle_to_day_selection = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_toggle_to_day_selection;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_toggle_to_text_input_mode = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_toggle_to_text_input_mode;
+			global::ZXing.Net.Mobile.Forms.Resource.String.mtrl_picker_toggle_to_year_selection = global::OTB_SEGURA.Droid.Resource.String.mtrl_picker_toggle_to_year_selection;
+			global::ZXing.Net.Mobile.Forms.Resource.String.overflow_tab_title = global::OTB_SEGURA.Droid.Resource.String.overflow_tab_title;
 			global::ZXing.Net.Mobile.Forms.Resource.String.password_toggle_content_description = global::OTB_SEGURA.Droid.Resource.String.password_toggle_content_description;
 			global::ZXing.Net.Mobile.Forms.Resource.String.path_password_eye = global::OTB_SEGURA.Droid.Resource.String.path_password_eye;
 			global::ZXing.Net.Mobile.Forms.Resource.String.path_password_eye_mask_strike_through = global::OTB_SEGURA.Droid.Resource.String.path_password_eye_mask_strike_through;
@@ -12859,6 +13327,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Animation_AppCompat_DropDownUp = global::OTB_SEGURA.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Animation_AppCompat_Tooltip = global::OTB_SEGURA.Droid.Resource.Style.Animation_AppCompat_Tooltip;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Animation_Design_BottomSheetDialog = global::OTB_SEGURA.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Animation_MaterialComponents_BottomSheetDialog = global::OTB_SEGURA.Droid.Resource.Style.Animation_MaterialComponents_BottomSheetDialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.AppCompatDialogStyle = global::OTB_SEGURA.Droid.Resource.Style.AppCompatDialogStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_AlertDialog_AppCompat = global::OTB_SEGURA.Droid.Resource.Style.Base_AlertDialog_AppCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_AlertDialog_AppCompat_Light = global::OTB_SEGURA.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Animation_AppCompat_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
@@ -12867,6 +13337,9 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_CardView = global::OTB_SEGURA.Droid.Resource.Style.Base_CardView;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::OTB_SEGURA.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_DialogWindowTitle_AppCompat = global::OTB_SEGURA.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Icon = global::OTB_SEGURA.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Icon;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Panel = global::OTB_SEGURA.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Panel;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Text = global::OTB_SEGURA.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Text;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_AppCompat = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_AppCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
@@ -12912,6 +13385,10 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_MaterialComponents_Badge = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Badge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_MaterialComponents_Button = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Button;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_MaterialComponents_Headline6 = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Headline6;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_MaterialComponents_Subtitle2 = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Subtitle2;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::OTB_SEGURA.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
@@ -12924,6 +13401,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::OTB_SEGURA.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert = global::OTB_SEGURA.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::OTB_SEGURA.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_AppCompat = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_AppCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_AppCompat_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
@@ -12944,6 +13422,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_Dialog_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_Light = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_Light;
@@ -12953,17 +13432,21 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::OTB_SEGURA.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::OTB_SEGURA.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::OTB_SEGURA.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V14_Theme_MaterialComponents = global::OTB_SEGURA.Droid.Resource.Style.Base_V14_Theme_MaterialComponents;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V14_Theme_MaterialComponents_Light = global::OTB_SEGURA.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V21_Theme_AppCompat = global::OTB_SEGURA.Droid.Resource.Style.Base_V21_Theme_AppCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
@@ -13045,12 +13528,33 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_AppCompat_Toolbar = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_Design_TabLayout = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_MaterialComponents_AutoCompleteTextView = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_MaterialComponents_AutoCompleteTextView;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_MaterialComponents_CheckedTextView = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_MaterialComponents_CheckedTextView;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_MaterialComponents_Chip = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_MaterialComponents_Chip;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_MaterialComponents_PopupMenu = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ContextMenu = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ContextMenu;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_Overflow = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_Overflow;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Base_Widget_MaterialComponents_TextView = global::OTB_SEGURA.Droid.Resource.Style.Base_Widget_MaterialComponents_TextView;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.CardView = global::OTB_SEGURA.Droid.Resource.Style.CardView;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.CardView_Dark = global::OTB_SEGURA.Droid.Resource.Style.CardView_Dark;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.CardView_Light = global::OTB_SEGURA.Droid.Resource.Style.CardView_Light;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.collectionViewTheme = global::OTB_SEGURA.Droid.Resource.Style.collectionViewTheme;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.EmptyTheme = global::OTB_SEGURA.Droid.Resource.Style.EmptyTheme;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.MainTheme = global::OTB_SEGURA.Droid.Resource.Style.MainTheme;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.MainTheme_Base = global::OTB_SEGURA.Droid.Resource.Style.MainTheme_Base;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.MaterialAlertDialog_MaterialComponents = global::OTB_SEGURA.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.MaterialAlertDialog_MaterialComponents_Body_Text = global::OTB_SEGURA.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Body_Text;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar = global::OTB_SEGURA.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner = global::OTB_SEGURA.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon = global::OTB_SEGURA.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked = global::OTB_SEGURA.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel = global::OTB_SEGURA.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked = global::OTB_SEGURA.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text = global::OTB_SEGURA.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked = global::OTB_SEGURA.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Platform_AppCompat = global::OTB_SEGURA.Droid.Resource.Style.Platform_AppCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Platform_AppCompat_Light = global::OTB_SEGURA.Droid.Resource.Style.Platform_AppCompat_Light;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Platform_MaterialComponents = global::OTB_SEGURA.Droid.Resource.Style.Platform_MaterialComponents;
@@ -13082,6 +13586,39 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::OTB_SEGURA.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::OTB_SEGURA.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::OTB_SEGURA.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.scrollViewScrollBars = global::OTB_SEGURA.Droid.Resource.Style.scrollViewScrollBars;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.scrollViewTheme = global::OTB_SEGURA.Droid.Resource.Style.scrollViewTheme;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_BottomRightCut = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_BottomRightCut;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_Cut = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_Cut;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_TopLeftCut = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_TopLeftCut;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearance_MaterialComponents = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearance_MaterialComponents;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ShapeAppearance_MaterialComponents_Test = global::OTB_SEGURA.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Test;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.TestStyleWithLineHeight = global::OTB_SEGURA.Droid.Resource.Style.TestStyleWithLineHeight;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.TestStyleWithLineHeightAppearance = global::OTB_SEGURA.Droid.Resource.Style.TestStyleWithLineHeightAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.TestStyleWithoutLineHeight = global::OTB_SEGURA.Droid.Resource.Style.TestStyleWithoutLineHeight;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.TestStyleWithThemeLineHeightAttribute = global::OTB_SEGURA.Droid.Resource.Style.TestStyleWithThemeLineHeightAttribute;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.TestThemeWithLineHeight = global::OTB_SEGURA.Droid.Resource.Style.TestThemeWithLineHeight;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.TestThemeWithLineHeightDisabled = global::OTB_SEGURA.Droid.Resource.Style.TestThemeWithLineHeightDisabled;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::OTB_SEGURA.Droid.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar = global::OTB_SEGURA.Droid.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar = global::OTB_SEGURA.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day = global::OTB_SEGURA.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::OTB_SEGURA.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.TextAppearance_AppCompat = global::OTB_SEGURA.Droid.Resource.Style.TextAppearance_AppCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.TextAppearance_AppCompat_Body1 = global::OTB_SEGURA.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.TextAppearance_AppCompat_Body2 = global::OTB_SEGURA.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
@@ -13148,6 +13685,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.TextAppearance_Design_Hint = global::OTB_SEGURA.Droid.Resource.Style.TextAppearance_Design_Hint;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.TextAppearance_Design_Snackbar_Message = global::OTB_SEGURA.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.TextAppearance_Design_Tab = global::OTB_SEGURA.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.TextAppearance_MaterialComponents_Badge = global::OTB_SEGURA.Droid.Resource.Style.TextAppearance_MaterialComponents_Badge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.TextAppearance_MaterialComponents_Body1 = global::OTB_SEGURA.Droid.Resource.Style.TextAppearance_MaterialComponents_Body1;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.TextAppearance_MaterialComponents_Body2 = global::OTB_SEGURA.Droid.Resource.Style.TextAppearance_MaterialComponents_Body2;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.TextAppearance_MaterialComponents_Button = global::OTB_SEGURA.Droid.Resource.Style.TextAppearance_MaterialComponents_Button;
@@ -13174,18 +13712,42 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_AppCompat_Light = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_Design_TextInputEditText = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_Design_TextInputEditText;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Primary = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Primary;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Surface = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Surface;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Primary = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Primary;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Surface = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Surface;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_BottomSheetDialog = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomSheetDialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_Dark = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_Dialog = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_Light = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_Light_BottomSheetDialog = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light_BottomSheetDialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Primary = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Primary;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Surface = global::OTB_SEGURA.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Surface;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_AppCompat = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_AppCompat_CompactMenu = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_AppCompat_DayNight = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_DayNight;
@@ -13199,6 +13761,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_AppCompat_Dialog_Alert = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_AppCompat_Empty = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_Empty;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_AppCompat_Light = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_Light;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_AppCompat_Light_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
@@ -13217,11 +13780,33 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_CompactMenu = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_BottomSheetDialog = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_BottomSheetDialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Bridge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar_Bridge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_DialogWhenLarge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DialogWhenLarge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Bridge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Dialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Dialog_Alert_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert_Bridge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Dialog_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Bridge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_BarSize = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_BarSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
@@ -13229,7 +13814,13 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert_Bridge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_Dialog_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Bridge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_LargeTouch = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_LargeTouch;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Theme_MaterialComponents_NoActionBar = global::OTB_SEGURA.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar;
@@ -13319,10 +13910,25 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_Design_Snackbar = global::OTB_SEGURA.Droid.Resource.Style.Widget_Design_Snackbar;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_Design_TabLayout = global::OTB_SEGURA.Droid.Resource.Style.Widget_Design_TabLayout;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_Design_TextInputLayout = global::OTB_SEGURA.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_ActionBar_Primary = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Primary;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_ActionBar_PrimarySurface = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_PrimarySurface;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_ActionBar_Solid = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Solid;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_ActionBar_Surface = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Surface;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_AppBarLayout_Primary = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_Primary;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_AppBarLayout_PrimarySurface = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_PrimarySurface;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_AppBarLayout_Surface = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_Surface;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Badge = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Badge;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_BottomAppBar = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_BottomAppBar_PrimarySurface = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_PrimarySurface;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_BottomNavigationView = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_BottomNavigationView_PrimarySurface = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_PrimarySurface;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_BottomSheet = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Button = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Button;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Button_Icon = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Button_Icon;
@@ -13330,31 +13936,72 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Button_TextButton = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Flush = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Flush;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Button_TextButton_Snackbar = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Snackbar;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_CardView = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_CardView;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_CheckedTextView = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_CheckedTextView;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_ChipGroup = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Chip_Action = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Chip_Choice = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Chip_Entry = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Chip_Filter = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_CompoundButton_RadioButton = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_RadioButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_CompoundButton_Switch = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_Switch;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton_Icon = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton_Icon;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_FloatingActionButton = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Light_ActionBar_Solid = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Light_ActionBar_Solid;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialButtonToggleGroup = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialButtonToggleGroup;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_DayTextView = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_DayTextView;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Invalid = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Invalid;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Selected;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Today = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Today;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Fullscreen = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Fullscreen;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderDivider = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderDivider;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderLayout = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderLayout;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderTitle = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderTitle;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Item = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Item;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Selected = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Selected;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Today = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Today;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_NavigationView = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_NavigationView;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_PopupMenu = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_PopupMenu_ContextMenu = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_ContextMenu;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_PopupMenu_ListPopupWindow = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_ListPopupWindow;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_PopupMenu_Overflow = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_Overflow;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Snackbar = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Snackbar;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TabLayout = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TabLayout;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TabLayout_Colored = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_Colored;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TabLayout_PrimarySurface = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_PrimarySurface;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_TextView = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_TextView;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Toolbar = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Toolbar;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Toolbar_Primary = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_Primary;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Toolbar_PrimarySurface = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_PrimarySurface;
+			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_MaterialComponents_Toolbar_Surface = global::OTB_SEGURA.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_Surface;
 			global::ZXing.Net.Mobile.Forms.Resource.Style.Widget_Support_CoordinatorLayout = global::OTB_SEGURA.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ActionBar = global::OTB_SEGURA.Droid.Resource.Styleable.ActionBar;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ActionBarLayout = global::OTB_SEGURA.Droid.Resource.Styleable.ActionBarLayout;
@@ -13440,6 +14087,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::OTB_SEGURA.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::OTB_SEGURA.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.AppBarLayout_liftOnScroll = global::OTB_SEGURA.Droid.Resource.Styleable.AppBarLayout_liftOnScroll;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId = global::OTB_SEGURA.Droid.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.AppBarLayout_statusBarForeground = global::OTB_SEGURA.Droid.Resource.Styleable.AppBarLayout_statusBarForeground;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.AppCompatImageView = global::OTB_SEGURA.Droid.Resource.Styleable.AppCompatImageView;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.AppCompatImageView_android_src = global::OTB_SEGURA.Droid.Resource.Styleable.AppCompatImageView_android_src;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.AppCompatImageView_srcCompat = global::OTB_SEGURA.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
@@ -13606,29 +14255,46 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::OTB_SEGURA.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::OTB_SEGURA.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.AppCompatTheme_windowNoTitle = global::OTB_SEGURA.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Badge = global::OTB_SEGURA.Droid.Resource.Styleable.Badge;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Badge_backgroundColor = global::OTB_SEGURA.Droid.Resource.Styleable.Badge_backgroundColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Badge_badgeGravity = global::OTB_SEGURA.Droid.Resource.Styleable.Badge_badgeGravity;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Badge_badgeTextColor = global::OTB_SEGURA.Droid.Resource.Styleable.Badge_badgeTextColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Badge_maxCharacterCount = global::OTB_SEGURA.Droid.Resource.Styleable.Badge_maxCharacterCount;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Badge_number = global::OTB_SEGURA.Droid.Resource.Styleable.Badge_number;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomAppBar = global::OTB_SEGURA.Droid.Resource.Styleable.BottomAppBar;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomAppBar_backgroundTint = global::OTB_SEGURA.Droid.Resource.Styleable.BottomAppBar_backgroundTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomAppBar_elevation = global::OTB_SEGURA.Droid.Resource.Styleable.BottomAppBar_elevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomAppBar_fabAlignmentMode = global::OTB_SEGURA.Droid.Resource.Styleable.BottomAppBar_fabAlignmentMode;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomAppBar_fabAnimationMode = global::OTB_SEGURA.Droid.Resource.Styleable.BottomAppBar_fabAnimationMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomAppBar_fabCradleMargin = global::OTB_SEGURA.Droid.Resource.Styleable.BottomAppBar_fabCradleMargin;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius = global::OTB_SEGURA.Droid.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset = global::OTB_SEGURA.Droid.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomAppBar_hideOnScroll = global::OTB_SEGURA.Droid.Resource.Styleable.BottomAppBar_hideOnScroll;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView_backgroundTint = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView_backgroundTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView_elevation = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView_elevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView_itemBackground = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView_itemIconSize = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView_itemIconSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView_itemIconTint = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView_itemRippleColor = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView_itemRippleColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView_itemTextColor = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView_labelVisibilityMode = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView_labelVisibilityMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomNavigationView_menu = global::OTB_SEGURA.Droid.Resource.Styleable.BottomNavigationView_menu;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomSheetBehavior_Layout = global::OTB_SEGURA.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomSheetBehavior_Layout_android_elevation = global::OTB_SEGURA.Droid.Resource.Styleable.BottomSheetBehavior_Layout_android_elevation;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomSheetBehavior_Layout_backgroundTint = global::OTB_SEGURA.Droid.Resource.Styleable.BottomSheetBehavior_Layout_backgroundTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomSheetBehavior_Layout_behavior_expandedOffset = global::OTB_SEGURA.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_expandedOffset;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents = global::OTB_SEGURA.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio = global::OTB_SEGURA.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::OTB_SEGURA.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::OTB_SEGURA.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomSheetBehavior_Layout_behavior_saveFlags = global::OTB_SEGURA.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_saveFlags;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::OTB_SEGURA.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearanceOverlay = global::OTB_SEGURA.Droid.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearanceOverlay;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ButtonBarLayout = global::OTB_SEGURA.Droid.Resource.Styleable.ButtonBarLayout;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ButtonBarLayout_allowStacking = global::OTB_SEGURA.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.CardView = global::OTB_SEGURA.Droid.Resource.Styleable.CardView;
@@ -13658,6 +14324,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_android_maxWidth = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_android_maxWidth;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_android_text = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_android_text;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_android_textAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_android_textAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_android_textColor = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_android_textColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_checkedIcon = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_checkedIcon;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_checkedIconEnabled = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_checkedIconEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_checkedIconVisible = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_checkedIconVisible;
@@ -13670,9 +14337,11 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_chipIconTint = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_chipIconTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_chipIconVisible = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_chipIconVisible;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_chipMinHeight = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_chipMinHeight;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_chipMinTouchTargetSize = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_chipMinTouchTargetSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_chipStartPadding = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_chipStartPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_chipStrokeColor = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_chipStrokeColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_chipStrokeWidth = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_chipStrokeWidth;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_chipSurfaceColor = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_chipSurfaceColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_closeIcon = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_closeIcon;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_closeIconEnabled = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_closeIconEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_closeIconEndPadding = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_closeIconEndPadding;
@@ -13680,10 +14349,13 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_closeIconStartPadding = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_closeIconStartPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_closeIconTint = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_closeIconTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_closeIconVisible = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_closeIconVisible;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_ensureMinTouchTargetSize = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_ensureMinTouchTargetSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_hideMotionSpec = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_hideMotionSpec;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_iconEndPadding = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_iconEndPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_iconStartPadding = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_iconStartPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_rippleColor = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_rippleColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_shapeAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_shapeAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_shapeAppearanceOverlay = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_shapeAppearanceOverlay;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_showMotionSpec = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_showMotionSpec;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_textEndPadding = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_textEndPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Chip_textStartPadding = global::OTB_SEGURA.Droid.Resource.Styleable.Chip_textStartPadding;
@@ -13736,6 +14408,17 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.DrawerArrowToggle_spinBars = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.DrawerArrowToggle_thickness = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.DrawerLayout = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerLayout;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.DrawerLayout_elevation = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerLayout_elevation;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ExtendedFloatingActionButton = global::OTB_SEGURA.Droid.Resource.Styleable.ExtendedFloatingActionButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout = global::OTB_SEGURA.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide = global::OTB_SEGURA.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink = global::OTB_SEGURA.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ExtendedFloatingActionButton_elevation = global::OTB_SEGURA.Droid.Resource.Styleable.ExtendedFloatingActionButton_elevation;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ExtendedFloatingActionButton_extendMotionSpec = global::OTB_SEGURA.Droid.Resource.Styleable.ExtendedFloatingActionButton_extendMotionSpec;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ExtendedFloatingActionButton_hideMotionSpec = global::OTB_SEGURA.Droid.Resource.Styleable.ExtendedFloatingActionButton_hideMotionSpec;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ExtendedFloatingActionButton_showMotionSpec = global::OTB_SEGURA.Droid.Resource.Styleable.ExtendedFloatingActionButton_showMotionSpec;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ExtendedFloatingActionButton_shrinkMotionSpec = global::OTB_SEGURA.Droid.Resource.Styleable.ExtendedFloatingActionButton_shrinkMotionSpec;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_backgroundTint = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
@@ -13743,6 +14426,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_borderWidth = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_elevation = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_ensureMinTouchTargetSize = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_ensureMinTouchTargetSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_fabCustomSize = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_fabSize = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_fabSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_hideMotionSpec = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_hideMotionSpec;
@@ -13750,6 +14434,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_maxImageSize = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_maxImageSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_rippleColor = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_shapeAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_shapeAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_shapeAppearanceOverlay = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_shapeAppearanceOverlay;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_showMotionSpec = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FloatingActionButton_useCompatPadding = global::OTB_SEGURA.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FlowLayout = global::OTB_SEGURA.Droid.Resource.Styleable.FlowLayout;
@@ -13777,6 +14463,13 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::OTB_SEGURA.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::OTB_SEGURA.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::OTB_SEGURA.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Fragment = global::OTB_SEGURA.Droid.Resource.Styleable.Fragment;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FragmentContainerView = global::OTB_SEGURA.Droid.Resource.Styleable.FragmentContainerView;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FragmentContainerView_android_name = global::OTB_SEGURA.Droid.Resource.Styleable.FragmentContainerView_android_name;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.FragmentContainerView_android_tag = global::OTB_SEGURA.Droid.Resource.Styleable.FragmentContainerView_android_tag;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Fragment_android_id = global::OTB_SEGURA.Droid.Resource.Styleable.Fragment_android_id;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Fragment_android_name = global::OTB_SEGURA.Droid.Resource.Styleable.Fragment_android_name;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Fragment_android_tag = global::OTB_SEGURA.Droid.Resource.Styleable.Fragment_android_tag;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.GradientColor = global::OTB_SEGURA.Droid.Resource.Styleable.GradientColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.GradientColorItem = global::OTB_SEGURA.Droid.Resource.Styleable.GradientColorItem;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.GradientColorItem_android_color = global::OTB_SEGURA.Droid.Resource.Styleable.GradientColorItem_android_color;
@@ -13793,6 +14486,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.GradientColor_android_startY = global::OTB_SEGURA.Droid.Resource.Styleable.GradientColor_android_startY;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.GradientColor_android_tileMode = global::OTB_SEGURA.Droid.Resource.Styleable.GradientColor_android_tileMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.GradientColor_android_type = global::OTB_SEGURA.Droid.Resource.Styleable.GradientColor_android_type;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ItemsViewRendererTheme = global::OTB_SEGURA.Droid.Resource.Styleable.ItemsViewRendererTheme;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ItemsViewRendererTheme_collectionViewStyle = global::OTB_SEGURA.Droid.Resource.Styleable.ItemsViewRendererTheme_collectionViewStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.LinearLayoutCompat = global::OTB_SEGURA.Droid.Resource.Styleable.LinearLayoutCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::OTB_SEGURA.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::OTB_SEGURA.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
@@ -13811,7 +14506,22 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ListPopupWindow = global::OTB_SEGURA.Droid.Resource.Styleable.ListPopupWindow;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::OTB_SEGURA.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::OTB_SEGURA.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialAlertDialog = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialAlertDialog;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialAlertDialogTheme = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialAlertDialogTheme;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogBodyTextStyle = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogBodyTextStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTheme = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTheme;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleIconStyle = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleIconStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitlePanelStyle = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitlePanelStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleTextStyle = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleTextStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialAlertDialog_backgroundInsetBottom = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetBottom;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialAlertDialog_backgroundInsetEnd = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetEnd;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialAlertDialog_backgroundInsetStart = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetStart;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialAlertDialog_backgroundInsetTop = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetTop;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButtonToggleGroup = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButtonToggleGroup;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButtonToggleGroup_checkedButton = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButtonToggleGroup_checkedButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButtonToggleGroup_singleSelection = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButtonToggleGroup_singleSelection;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_android_checkable = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_android_checkable;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_android_insetBottom = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_android_insetBottom;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_android_insetLeft = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_android_insetLeft;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_android_insetRight = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_android_insetRight;
@@ -13819,6 +14529,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_backgroundTint = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_backgroundTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_backgroundTintMode = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_backgroundTintMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_cornerRadius = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_cornerRadius;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_elevation = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_elevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_icon = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_icon;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_iconGravity = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_iconGravity;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_iconPadding = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_iconPadding;
@@ -13826,11 +14537,57 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_iconTint = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_iconTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_iconTintMode = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_iconTintMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_rippleColor = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_rippleColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_shapeAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_shapeAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_shapeAppearanceOverlay = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_shapeAppearanceOverlay;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_strokeColor = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_strokeColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialButton_strokeWidth = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialButton_strokeWidth;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendar = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendar;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendarItem = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendarItem;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendarItem_android_insetBottom = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendarItem_android_insetBottom;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendarItem_android_insetLeft = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendarItem_android_insetLeft;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendarItem_android_insetRight = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendarItem_android_insetRight;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendarItem_android_insetTop = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendarItem_android_insetTop;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendarItem_itemFillColor = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendarItem_itemFillColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendarItem_itemShapeAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendarItem_itemShapeAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendarItem_itemShapeAppearanceOverlay = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendarItem_itemShapeAppearanceOverlay;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendarItem_itemStrokeColor = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendarItem_itemStrokeColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendarItem_itemStrokeWidth = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendarItem_itemStrokeWidth;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendarItem_itemTextColor = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendarItem_itemTextColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendar_android_windowFullscreen = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendar_android_windowFullscreen;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendar_dayInvalidStyle = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendar_dayInvalidStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendar_daySelectedStyle = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendar_daySelectedStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendar_dayStyle = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendar_dayStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendar_dayTodayStyle = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendar_dayTodayStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendar_rangeFillColor = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendar_rangeFillColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendar_yearSelectedStyle = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendar_yearSelectedStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendar_yearStyle = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendar_yearStyle;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCalendar_yearTodayStyle = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCalendar_yearTodayStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCardView = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCardView;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCardView_android_checkable = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCardView_android_checkable;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCardView_cardForegroundColor = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCardView_cardForegroundColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCardView_checkedIcon = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCardView_checkedIcon;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCardView_checkedIconTint = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCardView_checkedIconTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCardView_rippleColor = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCardView_rippleColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCardView_shapeAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCardView_shapeAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCardView_shapeAppearanceOverlay = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCardView_shapeAppearanceOverlay;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCardView_state_dragged = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCardView_state_dragged;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCardView_strokeColor = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCardView_strokeColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCardView_strokeWidth = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCardView_strokeWidth;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCheckBox = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCheckBox;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCheckBox_buttonTint = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCheckBox_buttonTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialCheckBox_useMaterialThemeColors = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialCheckBox_useMaterialThemeColors;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialRadioButton = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialRadioButton;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialRadioButton_useMaterialThemeColors = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialRadioButton_useMaterialThemeColors;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialShape = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialShape;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialShape_shapeAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialShape_shapeAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialShape_shapeAppearanceOverlay = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialShape_shapeAppearanceOverlay;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialTextAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialTextAppearance_android_lineHeight = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialTextAppearance_android_lineHeight;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialTextAppearance_lineHeight = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialTextAppearance_lineHeight;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialTextView = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialTextView;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialTextView_android_lineHeight = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialTextView_android_lineHeight;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialTextView_android_textAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialTextView_android_textAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MaterialTextView_lineHeight = global::OTB_SEGURA.Droid.Resource.Styleable.MaterialTextView_lineHeight;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MenuGroup = global::OTB_SEGURA.Droid.Resource.Styleable.MenuGroup;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MenuGroup_android_checkableBehavior = global::OTB_SEGURA.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.MenuGroup_android_enabled = global::OTB_SEGURA.Droid.Resource.Styleable.MenuGroup_android_enabled;
@@ -13881,7 +14638,16 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemBackground = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemBackground;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemHorizontalPadding = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemHorizontalPadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemIconPadding = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemIconPadding;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemIconSize = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemIconSize;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemIconTint = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemMaxLines = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemMaxLines;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemShapeAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemShapeAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemShapeAppearanceOverlay = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemShapeAppearanceOverlay;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemShapeFillColor = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemShapeFillColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemShapeInsetBottom = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemShapeInsetBottom;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemShapeInsetEnd = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemShapeInsetEnd;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemShapeInsetStart = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemShapeInsetStart;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemShapeInsetTop = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemShapeInsetTop;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemTextAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_itemTextColor = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_itemTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.NavigationView_menu = global::OTB_SEGURA.Droid.Resource.Styleable.NavigationView_menu;
@@ -13911,6 +14677,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::OTB_SEGURA.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ScrollingViewBehavior_Layout = global::OTB_SEGURA.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::OTB_SEGURA.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ScrollViewRendererTheme = global::OTB_SEGURA.Droid.Resource.Styleable.ScrollViewRendererTheme;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ScrollViewRendererTheme_scrollViewStyle = global::OTB_SEGURA.Droid.Resource.Styleable.ScrollViewRendererTheme_scrollViewStyle;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SearchView = global::OTB_SEGURA.Droid.Resource.Styleable.SearchView;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SearchView_android_focusable = global::OTB_SEGURA.Droid.Resource.Styleable.SearchView_android_focusable;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SearchView_android_imeOptions = global::OTB_SEGURA.Droid.Resource.Styleable.SearchView_android_imeOptions;
@@ -13929,9 +14697,23 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SearchView_submitBackground = global::OTB_SEGURA.Droid.Resource.Styleable.SearchView_submitBackground;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SearchView_suggestionRowLayout = global::OTB_SEGURA.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SearchView_voiceIcon = global::OTB_SEGURA.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ShapeAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.ShapeAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ShapeAppearance_cornerFamily = global::OTB_SEGURA.Droid.Resource.Styleable.ShapeAppearance_cornerFamily;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ShapeAppearance_cornerFamilyBottomLeft = global::OTB_SEGURA.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyBottomLeft;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ShapeAppearance_cornerFamilyBottomRight = global::OTB_SEGURA.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyBottomRight;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ShapeAppearance_cornerFamilyTopLeft = global::OTB_SEGURA.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyTopLeft;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ShapeAppearance_cornerFamilyTopRight = global::OTB_SEGURA.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyTopRight;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ShapeAppearance_cornerSize = global::OTB_SEGURA.Droid.Resource.Styleable.ShapeAppearance_cornerSize;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ShapeAppearance_cornerSizeBottomLeft = global::OTB_SEGURA.Droid.Resource.Styleable.ShapeAppearance_cornerSizeBottomLeft;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ShapeAppearance_cornerSizeBottomRight = global::OTB_SEGURA.Droid.Resource.Styleable.ShapeAppearance_cornerSizeBottomRight;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ShapeAppearance_cornerSizeTopLeft = global::OTB_SEGURA.Droid.Resource.Styleable.ShapeAppearance_cornerSizeTopLeft;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ShapeAppearance_cornerSizeTopRight = global::OTB_SEGURA.Droid.Resource.Styleable.ShapeAppearance_cornerSizeTopRight;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Snackbar = global::OTB_SEGURA.Droid.Resource.Styleable.Snackbar;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SnackbarLayout = global::OTB_SEGURA.Droid.Resource.Styleable.SnackbarLayout;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SnackbarLayout_actionTextColorAlpha = global::OTB_SEGURA.Droid.Resource.Styleable.SnackbarLayout_actionTextColorAlpha;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SnackbarLayout_android_maxWidth = global::OTB_SEGURA.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SnackbarLayout_animationMode = global::OTB_SEGURA.Droid.Resource.Styleable.SnackbarLayout_animationMode;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SnackbarLayout_backgroundOverlayColorAlpha = global::OTB_SEGURA.Droid.Resource.Styleable.SnackbarLayout_backgroundOverlayColorAlpha;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SnackbarLayout_elevation = global::OTB_SEGURA.Droid.Resource.Styleable.SnackbarLayout_elevation;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::OTB_SEGURA.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.Snackbar_snackbarButtonStyle = global::OTB_SEGURA.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle;
@@ -13951,6 +14733,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.StateListDrawable_android_exitFadeDuration = global::OTB_SEGURA.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.StateListDrawable_android_variablePadding = global::OTB_SEGURA.Droid.Resource.Styleable.StateListDrawable_android_variablePadding;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.StateListDrawable_android_visible = global::OTB_SEGURA.Droid.Resource.Styleable.StateListDrawable_android_visible;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SwipeRefreshLayout = global::OTB_SEGURA.Droid.Resource.Styleable.SwipeRefreshLayout;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SwipeRefreshLayout_swipeRefreshLayoutProgressSpinnerBackgroundColor = global::OTB_SEGURA.Droid.Resource.Styleable.SwipeRefreshLayout_swipeRefreshLayoutProgressSpinnerBackgroundColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SwitchCompat = global::OTB_SEGURA.Droid.Resource.Styleable.SwitchCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SwitchCompat_android_textOff = global::OTB_SEGURA.Droid.Resource.Styleable.SwitchCompat_android_textOff;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SwitchCompat_android_textOn = global::OTB_SEGURA.Droid.Resource.Styleable.SwitchCompat_android_textOn;
@@ -13966,6 +14750,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SwitchCompat_track = global::OTB_SEGURA.Droid.Resource.Styleable.SwitchCompat_track;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SwitchCompat_trackTint = global::OTB_SEGURA.Droid.Resource.Styleable.SwitchCompat_trackTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SwitchCompat_trackTintMode = global::OTB_SEGURA.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SwitchMaterial = global::OTB_SEGURA.Droid.Resource.Styleable.SwitchMaterial;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.SwitchMaterial_useMaterialThemeColors = global::OTB_SEGURA.Droid.Resource.Styleable.SwitchMaterial_useMaterialThemeColors;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TabItem = global::OTB_SEGURA.Droid.Resource.Styleable.TabItem;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TabItem_android_icon = global::OTB_SEGURA.Droid.Resource.Styleable.TabItem_android_icon;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TabItem_android_layout = global::OTB_SEGURA.Droid.Resource.Styleable.TabItem_android_layout;
@@ -14025,23 +14811,45 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_boxStrokeColor = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_boxStrokeColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_boxStrokeWidth = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidth;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_boxStrokeWidthFocused = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidthFocused;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_counterEnabled = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_counterMaxLength = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_counterOverflowTextColor = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_counterTextAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_counterTextColor = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_counterTextColor;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_endIconCheckable = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_endIconCheckable;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_endIconContentDescription = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_endIconContentDescription;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_endIconDrawable = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_endIconDrawable;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_endIconMode = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_endIconMode;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_endIconTint = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_endIconTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_endIconTintMode = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_endIconTintMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_errorEnabled = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_errorIconDrawable = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_errorIconDrawable;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_errorIconTint = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_errorIconTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_errorIconTintMode = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_errorIconTintMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_errorTextAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_errorTextColor = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_errorTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_helperText = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_helperText;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_helperTextEnabled = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_helperTextEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_helperTextTextAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_helperTextTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_helperTextTextColor = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_helperTextTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_hintEnabled = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_hintTextAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_hintTextColor = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_hintTextColor;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_passwordToggleTint = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_shapeAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_shapeAppearance;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_shapeAppearanceOverlay = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_shapeAppearanceOverlay;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_startIconCheckable = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_startIconCheckable;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_startIconContentDescription = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_startIconContentDescription;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_startIconDrawable = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_startIconDrawable;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_startIconTint = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_startIconTint;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.TextInputLayout_startIconTintMode = global::OTB_SEGURA.Droid.Resource.Styleable.TextInputLayout_startIconTintMode;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ThemeEnforcement = global::OTB_SEGURA.Droid.Resource.Styleable.ThemeEnforcement;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ThemeEnforcement_android_textAppearance = global::OTB_SEGURA.Droid.Resource.Styleable.ThemeEnforcement_android_textAppearance;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme = global::OTB_SEGURA.Droid.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme;
@@ -14082,6 +14890,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ViewBackgroundHelper_android_background = global::OTB_SEGURA.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::OTB_SEGURA.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::OTB_SEGURA.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ViewPager2 = global::OTB_SEGURA.Droid.Resource.Styleable.ViewPager2;
+			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ViewPager2_android_orientation = global::OTB_SEGURA.Droid.Resource.Styleable.ViewPager2_android_orientation;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ViewStubCompat = global::OTB_SEGURA.Droid.Resource.Styleable.ViewStubCompat;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ViewStubCompat_android_id = global::OTB_SEGURA.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.ViewStubCompat_android_inflatedId = global::OTB_SEGURA.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
@@ -14091,6 +14901,11 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.View_paddingEnd = global::OTB_SEGURA.Droid.Resource.Styleable.View_paddingEnd;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.View_paddingStart = global::OTB_SEGURA.Droid.Resource.Styleable.View_paddingStart;
 			global::ZXing.Net.Mobile.Forms.Resource.Styleable.View_theme = global::OTB_SEGURA.Droid.Resource.Styleable.View_theme;
+			global::ZXing.Net.Mobile.Forms.Resource.Xml.image_share_filepaths = global::OTB_SEGURA.Droid.Resource.Xml.image_share_filepaths;
+			global::ZXing.Net.Mobile.Forms.Resource.Xml.standalone_badge = global::OTB_SEGURA.Droid.Resource.Xml.standalone_badge;
+			global::ZXing.Net.Mobile.Forms.Resource.Xml.standalone_badge_gravity_bottom_end = global::OTB_SEGURA.Droid.Resource.Xml.standalone_badge_gravity_bottom_end;
+			global::ZXing.Net.Mobile.Forms.Resource.Xml.standalone_badge_gravity_bottom_start = global::OTB_SEGURA.Droid.Resource.Xml.standalone_badge_gravity_bottom_start;
+			global::ZXing.Net.Mobile.Forms.Resource.Xml.standalone_badge_gravity_top_start = global::OTB_SEGURA.Droid.Resource.Xml.standalone_badge_gravity_top_start;
 			global::ZXing.Net.Mobile.Forms.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::OTB_SEGURA.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::ZXing.Net.Mobile.Resource.Animation.abc_fade_in = global::OTB_SEGURA.Droid.Resource.Animation.abc_fade_in;
 			global::ZXing.Net.Mobile.Resource.Animation.abc_fade_out = global::OTB_SEGURA.Droid.Resource.Animation.abc_fade_out;
@@ -14116,6 +14931,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation = global::OTB_SEGURA.Droid.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation;
 			global::ZXing.Net.Mobile.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation = global::OTB_SEGURA.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation;
 			global::ZXing.Net.Mobile.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation = global::OTB_SEGURA.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation;
+			global::ZXing.Net.Mobile.Resource.Animation.fragment_fast_out_extra_slow_in = global::OTB_SEGURA.Droid.Resource.Animation.fragment_fast_out_extra_slow_in;
 			global::ZXing.Net.Mobile.Resource.Attribute.actionBarDivider = global::OTB_SEGURA.Droid.Resource.Attribute.actionBarDivider;
 			global::ZXing.Net.Mobile.Resource.Attribute.actionBarItemBackground = global::OTB_SEGURA.Droid.Resource.Attribute.actionBarItemBackground;
 			global::ZXing.Net.Mobile.Resource.Attribute.actionBarPopupTheme = global::OTB_SEGURA.Droid.Resource.Attribute.actionBarPopupTheme;
@@ -14211,7 +15027,6 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Attribute.contentInsetStart = global::OTB_SEGURA.Droid.Resource.Attribute.contentInsetStart;
 			global::ZXing.Net.Mobile.Resource.Attribute.contentInsetStartWithNavigation = global::OTB_SEGURA.Droid.Resource.Attribute.contentInsetStartWithNavigation;
 			global::ZXing.Net.Mobile.Resource.Attribute.controlBackground = global::OTB_SEGURA.Droid.Resource.Attribute.controlBackground;
-			global::ZXing.Net.Mobile.Resource.Attribute.coordinatorLayoutStyle = global::OTB_SEGURA.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::ZXing.Net.Mobile.Resource.Attribute.customNavigationLayout = global::OTB_SEGURA.Droid.Resource.Attribute.customNavigationLayout;
 			global::ZXing.Net.Mobile.Resource.Attribute.defaultQueryHint = global::OTB_SEGURA.Droid.Resource.Attribute.defaultQueryHint;
 			global::ZXing.Net.Mobile.Resource.Attribute.dialogCornerRadius = global::OTB_SEGURA.Droid.Resource.Attribute.dialogCornerRadius;
@@ -14232,6 +15047,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Attribute.drawableTintMode = global::OTB_SEGURA.Droid.Resource.Attribute.drawableTintMode;
 			global::ZXing.Net.Mobile.Resource.Attribute.drawableTopCompat = global::OTB_SEGURA.Droid.Resource.Attribute.drawableTopCompat;
 			global::ZXing.Net.Mobile.Resource.Attribute.drawerArrowStyle = global::OTB_SEGURA.Droid.Resource.Attribute.drawerArrowStyle;
+			global::ZXing.Net.Mobile.Resource.Attribute.drawerLayoutStyle = global::OTB_SEGURA.Droid.Resource.Attribute.drawerLayoutStyle;
 			global::ZXing.Net.Mobile.Resource.Attribute.dropdownListPreferredItemHeight = global::OTB_SEGURA.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
 			global::ZXing.Net.Mobile.Resource.Attribute.dropDownListViewStyle = global::OTB_SEGURA.Droid.Resource.Attribute.dropDownListViewStyle;
 			global::ZXing.Net.Mobile.Resource.Attribute.editTextBackground = global::OTB_SEGURA.Droid.Resource.Attribute.editTextBackground;
@@ -14266,15 +15082,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Attribute.initialActivityCount = global::OTB_SEGURA.Droid.Resource.Attribute.initialActivityCount;
 			global::ZXing.Net.Mobile.Resource.Attribute.isLightTheme = global::OTB_SEGURA.Droid.Resource.Attribute.isLightTheme;
 			global::ZXing.Net.Mobile.Resource.Attribute.itemPadding = global::OTB_SEGURA.Droid.Resource.Attribute.itemPadding;
-			global::ZXing.Net.Mobile.Resource.Attribute.keylines = global::OTB_SEGURA.Droid.Resource.Attribute.keylines;
 			global::ZXing.Net.Mobile.Resource.Attribute.lastBaselineToBottomHeight = global::OTB_SEGURA.Droid.Resource.Attribute.lastBaselineToBottomHeight;
 			global::ZXing.Net.Mobile.Resource.Attribute.layout = global::OTB_SEGURA.Droid.Resource.Attribute.layout;
-			global::ZXing.Net.Mobile.Resource.Attribute.layout_anchor = global::OTB_SEGURA.Droid.Resource.Attribute.layout_anchor;
-			global::ZXing.Net.Mobile.Resource.Attribute.layout_anchorGravity = global::OTB_SEGURA.Droid.Resource.Attribute.layout_anchorGravity;
-			global::ZXing.Net.Mobile.Resource.Attribute.layout_behavior = global::OTB_SEGURA.Droid.Resource.Attribute.layout_behavior;
-			global::ZXing.Net.Mobile.Resource.Attribute.layout_dodgeInsetEdges = global::OTB_SEGURA.Droid.Resource.Attribute.layout_dodgeInsetEdges;
-			global::ZXing.Net.Mobile.Resource.Attribute.layout_insetEdge = global::OTB_SEGURA.Droid.Resource.Attribute.layout_insetEdge;
-			global::ZXing.Net.Mobile.Resource.Attribute.layout_keyline = global::OTB_SEGURA.Droid.Resource.Attribute.layout_keyline;
 			global::ZXing.Net.Mobile.Resource.Attribute.lineHeight = global::OTB_SEGURA.Droid.Resource.Attribute.lineHeight;
 			global::ZXing.Net.Mobile.Resource.Attribute.listChoiceBackgroundIndicator = global::OTB_SEGURA.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
 			global::ZXing.Net.Mobile.Resource.Attribute.listChoiceIndicatorMultipleAnimated = global::OTB_SEGURA.Droid.Resource.Attribute.listChoiceIndicatorMultipleAnimated;
@@ -14338,7 +15147,6 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Attribute.splitTrack = global::OTB_SEGURA.Droid.Resource.Attribute.splitTrack;
 			global::ZXing.Net.Mobile.Resource.Attribute.srcCompat = global::OTB_SEGURA.Droid.Resource.Attribute.srcCompat;
 			global::ZXing.Net.Mobile.Resource.Attribute.state_above_anchor = global::OTB_SEGURA.Droid.Resource.Attribute.state_above_anchor;
-			global::ZXing.Net.Mobile.Resource.Attribute.statusBarBackground = global::OTB_SEGURA.Droid.Resource.Attribute.statusBarBackground;
 			global::ZXing.Net.Mobile.Resource.Attribute.subMenuArrow = global::OTB_SEGURA.Droid.Resource.Attribute.subMenuArrow;
 			global::ZXing.Net.Mobile.Resource.Attribute.submitBackground = global::OTB_SEGURA.Droid.Resource.Attribute.submitBackground;
 			global::ZXing.Net.Mobile.Resource.Attribute.subtitle = global::OTB_SEGURA.Droid.Resource.Attribute.subtitle;
@@ -14411,6 +15219,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Color.abc_btn_colored_borderless_text_material = global::OTB_SEGURA.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
 			global::ZXing.Net.Mobile.Resource.Color.abc_btn_colored_text_material = global::OTB_SEGURA.Droid.Resource.Color.abc_btn_colored_text_material;
 			global::ZXing.Net.Mobile.Resource.Color.abc_color_highlight_material = global::OTB_SEGURA.Droid.Resource.Color.abc_color_highlight_material;
+			global::ZXing.Net.Mobile.Resource.Color.abc_decor_view_status_guard = global::OTB_SEGURA.Droid.Resource.Color.abc_decor_view_status_guard;
+			global::ZXing.Net.Mobile.Resource.Color.abc_decor_view_status_guard_light = global::OTB_SEGURA.Droid.Resource.Color.abc_decor_view_status_guard_light;
 			global::ZXing.Net.Mobile.Resource.Color.abc_hint_foreground_material_dark = global::OTB_SEGURA.Droid.Resource.Color.abc_hint_foreground_material_dark;
 			global::ZXing.Net.Mobile.Resource.Color.abc_hint_foreground_material_light = global::OTB_SEGURA.Droid.Resource.Color.abc_hint_foreground_material_light;
 			global::ZXing.Net.Mobile.Resource.Color.abc_primary_text_disable_only_material_dark = global::OTB_SEGURA.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
@@ -14431,6 +15241,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Color.abc_tint_switch_track = global::OTB_SEGURA.Droid.Resource.Color.abc_tint_switch_track;
 			global::ZXing.Net.Mobile.Resource.Color.accent_material_dark = global::OTB_SEGURA.Droid.Resource.Color.accent_material_dark;
 			global::ZXing.Net.Mobile.Resource.Color.accent_material_light = global::OTB_SEGURA.Droid.Resource.Color.accent_material_light;
+			global::ZXing.Net.Mobile.Resource.Color.androidx_core_ripple_material_light = global::OTB_SEGURA.Droid.Resource.Color.androidx_core_ripple_material_light;
+			global::ZXing.Net.Mobile.Resource.Color.androidx_core_secondary_text_default_material_light = global::OTB_SEGURA.Droid.Resource.Color.androidx_core_secondary_text_default_material_light;
 			global::ZXing.Net.Mobile.Resource.Color.background_floating_material_dark = global::OTB_SEGURA.Droid.Resource.Color.background_floating_material_dark;
 			global::ZXing.Net.Mobile.Resource.Color.background_floating_material_light = global::OTB_SEGURA.Droid.Resource.Color.background_floating_material_light;
 			global::ZXing.Net.Mobile.Resource.Color.background_material_dark = global::OTB_SEGURA.Droid.Resource.Color.background_material_dark;
@@ -14580,6 +15392,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Dimension.compat_control_corner_material = global::OTB_SEGURA.Droid.Resource.Dimension.compat_control_corner_material;
 			global::ZXing.Net.Mobile.Resource.Dimension.compat_notification_large_icon_max_height = global::OTB_SEGURA.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
 			global::ZXing.Net.Mobile.Resource.Dimension.compat_notification_large_icon_max_width = global::OTB_SEGURA.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::ZXing.Net.Mobile.Resource.Dimension.def_drawer_elevation = global::OTB_SEGURA.Droid.Resource.Dimension.def_drawer_elevation;
 			global::ZXing.Net.Mobile.Resource.Dimension.disabled_alpha_material_dark = global::OTB_SEGURA.Droid.Resource.Dimension.disabled_alpha_material_dark;
 			global::ZXing.Net.Mobile.Resource.Dimension.disabled_alpha_material_light = global::OTB_SEGURA.Droid.Resource.Dimension.disabled_alpha_material_light;
 			global::ZXing.Net.Mobile.Resource.Dimension.highlight_alpha_material_colored = global::OTB_SEGURA.Droid.Resource.Dimension.highlight_alpha_material_colored;
@@ -14774,7 +15587,6 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Id.activity_chooser_view_content = global::OTB_SEGURA.Droid.Resource.Id.activity_chooser_view_content;
 			global::ZXing.Net.Mobile.Resource.Id.add = global::OTB_SEGURA.Droid.Resource.Id.add;
 			global::ZXing.Net.Mobile.Resource.Id.alertTitle = global::OTB_SEGURA.Droid.Resource.Id.alertTitle;
-			global::ZXing.Net.Mobile.Resource.Id.all = global::OTB_SEGURA.Droid.Resource.Id.all;
 			global::ZXing.Net.Mobile.Resource.Id.ALT = global::OTB_SEGURA.Droid.Resource.Id.ALT;
 			global::ZXing.Net.Mobile.Resource.Id.always = global::OTB_SEGURA.Droid.Resource.Id.always;
 			global::ZXing.Net.Mobile.Resource.Id.async = global::OTB_SEGURA.Droid.Resource.Id.async;
@@ -14787,14 +15599,10 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Id.browser_actions_menu_item_text = global::OTB_SEGURA.Droid.Resource.Id.browser_actions_menu_item_text;
 			global::ZXing.Net.Mobile.Resource.Id.browser_actions_menu_view = global::OTB_SEGURA.Droid.Resource.Id.browser_actions_menu_view;
 			global::ZXing.Net.Mobile.Resource.Id.buttonPanel = global::OTB_SEGURA.Droid.Resource.Id.buttonPanel;
-			global::ZXing.Net.Mobile.Resource.Id.center = global::OTB_SEGURA.Droid.Resource.Id.center;
-			global::ZXing.Net.Mobile.Resource.Id.center_horizontal = global::OTB_SEGURA.Droid.Resource.Id.center_horizontal;
 			global::ZXing.Net.Mobile.Resource.Id.center_vertical = global::OTB_SEGURA.Droid.Resource.Id.center_vertical;
 			global::ZXing.Net.Mobile.Resource.Id.checkbox = global::OTB_SEGURA.Droid.Resource.Id.checkbox;
 			global::ZXing.Net.Mobile.Resource.Id.@checked = global::OTB_SEGURA.Droid.Resource.Id.@checked;
 			global::ZXing.Net.Mobile.Resource.Id.chronometer = global::OTB_SEGURA.Droid.Resource.Id.chronometer;
-			global::ZXing.Net.Mobile.Resource.Id.clip_horizontal = global::OTB_SEGURA.Droid.Resource.Id.clip_horizontal;
-			global::ZXing.Net.Mobile.Resource.Id.clip_vertical = global::OTB_SEGURA.Droid.Resource.Id.clip_vertical;
 			global::ZXing.Net.Mobile.Resource.Id.collapseActionView = global::OTB_SEGURA.Droid.Resource.Id.collapseActionView;
 			global::ZXing.Net.Mobile.Resource.Id.content = global::OTB_SEGURA.Droid.Resource.Id.content;
 			global::ZXing.Net.Mobile.Resource.Id.contentFrame = global::OTB_SEGURA.Droid.Resource.Id.contentFrame;
@@ -14810,10 +15618,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Id.end = global::OTB_SEGURA.Droid.Resource.Id.end;
 			global::ZXing.Net.Mobile.Resource.Id.expanded_menu = global::OTB_SEGURA.Droid.Resource.Id.expanded_menu;
 			global::ZXing.Net.Mobile.Resource.Id.expand_activities_button = global::OTB_SEGURA.Droid.Resource.Id.expand_activities_button;
-			global::ZXing.Net.Mobile.Resource.Id.fill = global::OTB_SEGURA.Droid.Resource.Id.fill;
-			global::ZXing.Net.Mobile.Resource.Id.fill_horizontal = global::OTB_SEGURA.Droid.Resource.Id.fill_horizontal;
-			global::ZXing.Net.Mobile.Resource.Id.fill_vertical = global::OTB_SEGURA.Droid.Resource.Id.fill_vertical;
 			global::ZXing.Net.Mobile.Resource.Id.forever = global::OTB_SEGURA.Droid.Resource.Id.forever;
+			global::ZXing.Net.Mobile.Resource.Id.fragment_container_view_tag = global::OTB_SEGURA.Droid.Resource.Id.fragment_container_view_tag;
 			global::ZXing.Net.Mobile.Resource.Id.FUNCTION = global::OTB_SEGURA.Droid.Resource.Id.FUNCTION;
 			global::ZXing.Net.Mobile.Resource.Id.group_divider = global::OTB_SEGURA.Droid.Resource.Id.group_divider;
 			global::ZXing.Net.Mobile.Resource.Id.home = global::OTB_SEGURA.Droid.Resource.Id.home;
@@ -14824,7 +15630,6 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Id.image = global::OTB_SEGURA.Droid.Resource.Id.image;
 			global::ZXing.Net.Mobile.Resource.Id.info = global::OTB_SEGURA.Droid.Resource.Id.info;
 			global::ZXing.Net.Mobile.Resource.Id.italic = global::OTB_SEGURA.Droid.Resource.Id.italic;
-			global::ZXing.Net.Mobile.Resource.Id.left = global::OTB_SEGURA.Droid.Resource.Id.left;
 			global::ZXing.Net.Mobile.Resource.Id.line1 = global::OTB_SEGURA.Droid.Resource.Id.line1;
 			global::ZXing.Net.Mobile.Resource.Id.line3 = global::OTB_SEGURA.Droid.Resource.Id.line3;
 			global::ZXing.Net.Mobile.Resource.Id.listMode = global::OTB_SEGURA.Droid.Resource.Id.listMode;
@@ -14845,7 +15650,6 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Id.progress_circular = global::OTB_SEGURA.Droid.Resource.Id.progress_circular;
 			global::ZXing.Net.Mobile.Resource.Id.progress_horizontal = global::OTB_SEGURA.Droid.Resource.Id.progress_horizontal;
 			global::ZXing.Net.Mobile.Resource.Id.radio = global::OTB_SEGURA.Droid.Resource.Id.radio;
-			global::ZXing.Net.Mobile.Resource.Id.right = global::OTB_SEGURA.Droid.Resource.Id.right;
 			global::ZXing.Net.Mobile.Resource.Id.right_icon = global::OTB_SEGURA.Droid.Resource.Id.right_icon;
 			global::ZXing.Net.Mobile.Resource.Id.right_side = global::OTB_SEGURA.Droid.Resource.Id.right_side;
 			global::ZXing.Net.Mobile.Resource.Id.screen = global::OTB_SEGURA.Droid.Resource.Id.screen;
@@ -14873,7 +15677,6 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Id.src_atop = global::OTB_SEGURA.Droid.Resource.Id.src_atop;
 			global::ZXing.Net.Mobile.Resource.Id.src_in = global::OTB_SEGURA.Droid.Resource.Id.src_in;
 			global::ZXing.Net.Mobile.Resource.Id.src_over = global::OTB_SEGURA.Droid.Resource.Id.src_over;
-			global::ZXing.Net.Mobile.Resource.Id.start = global::OTB_SEGURA.Droid.Resource.Id.start;
 			global::ZXing.Net.Mobile.Resource.Id.submenuarrow = global::OTB_SEGURA.Droid.Resource.Id.submenuarrow;
 			global::ZXing.Net.Mobile.Resource.Id.submit_area = global::OTB_SEGURA.Droid.Resource.Id.submit_area;
 			global::ZXing.Net.Mobile.Resource.Id.SYM = global::OTB_SEGURA.Droid.Resource.Id.SYM;
@@ -14900,6 +15703,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Id.uniform = global::OTB_SEGURA.Droid.Resource.Id.uniform;
 			global::ZXing.Net.Mobile.Resource.Id.up = global::OTB_SEGURA.Droid.Resource.Id.up;
 			global::ZXing.Net.Mobile.Resource.Id.useLogo = global::OTB_SEGURA.Droid.Resource.Id.useLogo;
+			global::ZXing.Net.Mobile.Resource.Id.view_tree_saved_state_registry_owner = global::OTB_SEGURA.Droid.Resource.Id.view_tree_saved_state_registry_owner;
+			global::ZXing.Net.Mobile.Resource.Id.visible_removing_fragment_view_tag = global::OTB_SEGURA.Droid.Resource.Id.visible_removing_fragment_view_tag;
 			global::ZXing.Net.Mobile.Resource.Id.withText = global::OTB_SEGURA.Droid.Resource.Id.withText;
 			global::ZXing.Net.Mobile.Resource.Id.wrap_content = global::OTB_SEGURA.Droid.Resource.Id.wrap_content;
 			global::ZXing.Net.Mobile.Resource.Integer.abc_config_activityDefaultDur = global::OTB_SEGURA.Droid.Resource.Integer.abc_config_activityDefaultDur;
@@ -14984,6 +15789,10 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.String.abc_shareactionprovider_share_with = global::OTB_SEGURA.Droid.Resource.String.abc_shareactionprovider_share_with;
 			global::ZXing.Net.Mobile.Resource.String.abc_shareactionprovider_share_with_application = global::OTB_SEGURA.Droid.Resource.String.abc_shareactionprovider_share_with_application;
 			global::ZXing.Net.Mobile.Resource.String.abc_toolbar_collapse_description = global::OTB_SEGURA.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::ZXing.Net.Mobile.Resource.String.copy_toast_msg = global::OTB_SEGURA.Droid.Resource.String.copy_toast_msg;
+			global::ZXing.Net.Mobile.Resource.String.fallback_menu_item_copy_link = global::OTB_SEGURA.Droid.Resource.String.fallback_menu_item_copy_link;
+			global::ZXing.Net.Mobile.Resource.String.fallback_menu_item_open_in_browser = global::OTB_SEGURA.Droid.Resource.String.fallback_menu_item_open_in_browser;
+			global::ZXing.Net.Mobile.Resource.String.fallback_menu_item_share_link = global::OTB_SEGURA.Droid.Resource.String.fallback_menu_item_share_link;
 			global::ZXing.Net.Mobile.Resource.String.search_menu_title = global::OTB_SEGURA.Droid.Resource.String.search_menu_title;
 			global::ZXing.Net.Mobile.Resource.String.status_bar_notification_info_overflow = global::OTB_SEGURA.Droid.Resource.String.status_bar_notification_info_overflow;
 			global::ZXing.Net.Mobile.Resource.Style.AlertDialog_AppCompat = global::OTB_SEGURA.Droid.Resource.Style.AlertDialog_AppCompat;
@@ -15252,6 +16061,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
 			global::ZXing.Net.Mobile.Resource.Style.Theme_AppCompat_Dialog_Alert = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
 			global::ZXing.Net.Mobile.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::ZXing.Net.Mobile.Resource.Style.Theme_AppCompat_Empty = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_Empty;
 			global::ZXing.Net.Mobile.Resource.Style.Theme_AppCompat_Light = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_Light;
 			global::ZXing.Net.Mobile.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
 			global::ZXing.Net.Mobile.Resource.Style.Theme_AppCompat_Light_Dialog = global::OTB_SEGURA.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
@@ -15335,7 +16145,6 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::OTB_SEGURA.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
 			global::ZXing.Net.Mobile.Resource.Style.Widget_Compat_NotificationActionContainer = global::OTB_SEGURA.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
 			global::ZXing.Net.Mobile.Resource.Style.Widget_Compat_NotificationActionText = global::OTB_SEGURA.Droid.Resource.Style.Widget_Compat_NotificationActionText;
-			global::ZXing.Net.Mobile.Resource.Style.Widget_Support_CoordinatorLayout = global::OTB_SEGURA.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
 			global::ZXing.Net.Mobile.Resource.Styleable.ActionBar = global::OTB_SEGURA.Droid.Resource.Styleable.ActionBar;
 			global::ZXing.Net.Mobile.Resource.Styleable.ActionBarLayout = global::OTB_SEGURA.Droid.Resource.Styleable.ActionBarLayout;
 			global::ZXing.Net.Mobile.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::OTB_SEGURA.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
@@ -15582,17 +16391,6 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Styleable.CompoundButton_buttonCompat = global::OTB_SEGURA.Droid.Resource.Styleable.CompoundButton_buttonCompat;
 			global::ZXing.Net.Mobile.Resource.Styleable.CompoundButton_buttonTint = global::OTB_SEGURA.Droid.Resource.Styleable.CompoundButton_buttonTint;
 			global::ZXing.Net.Mobile.Resource.Styleable.CompoundButton_buttonTintMode = global::OTB_SEGURA.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
-			global::ZXing.Net.Mobile.Resource.Styleable.CoordinatorLayout = global::OTB_SEGURA.Droid.Resource.Styleable.CoordinatorLayout;
-			global::ZXing.Net.Mobile.Resource.Styleable.CoordinatorLayout_keylines = global::OTB_SEGURA.Droid.Resource.Styleable.CoordinatorLayout_keylines;
-			global::ZXing.Net.Mobile.Resource.Styleable.CoordinatorLayout_Layout = global::OTB_SEGURA.Droid.Resource.Styleable.CoordinatorLayout_Layout;
-			global::ZXing.Net.Mobile.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::OTB_SEGURA.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
-			global::ZXing.Net.Mobile.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::OTB_SEGURA.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
-			global::ZXing.Net.Mobile.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::OTB_SEGURA.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
-			global::ZXing.Net.Mobile.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::OTB_SEGURA.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
-			global::ZXing.Net.Mobile.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::OTB_SEGURA.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
-			global::ZXing.Net.Mobile.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::OTB_SEGURA.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
-			global::ZXing.Net.Mobile.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::OTB_SEGURA.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
-			global::ZXing.Net.Mobile.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::OTB_SEGURA.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
 			global::ZXing.Net.Mobile.Resource.Styleable.DrawerArrowToggle = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerArrowToggle;
 			global::ZXing.Net.Mobile.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
 			global::ZXing.Net.Mobile.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
@@ -15602,6 +16400,8 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
 			global::ZXing.Net.Mobile.Resource.Styleable.DrawerArrowToggle_spinBars = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
 			global::ZXing.Net.Mobile.Resource.Styleable.DrawerArrowToggle_thickness = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::ZXing.Net.Mobile.Resource.Styleable.DrawerLayout = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerLayout;
+			global::ZXing.Net.Mobile.Resource.Styleable.DrawerLayout_elevation = global::OTB_SEGURA.Droid.Resource.Styleable.DrawerLayout_elevation;
 			global::ZXing.Net.Mobile.Resource.Styleable.FontFamily = global::OTB_SEGURA.Droid.Resource.Styleable.FontFamily;
 			global::ZXing.Net.Mobile.Resource.Styleable.FontFamilyFont = global::OTB_SEGURA.Droid.Resource.Styleable.FontFamilyFont;
 			global::ZXing.Net.Mobile.Resource.Styleable.FontFamilyFont_android_font = global::OTB_SEGURA.Droid.Resource.Styleable.FontFamilyFont_android_font;
@@ -15620,6 +16420,13 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::OTB_SEGURA.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
 			global::ZXing.Net.Mobile.Resource.Styleable.FontFamily_fontProviderPackage = global::OTB_SEGURA.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
 			global::ZXing.Net.Mobile.Resource.Styleable.FontFamily_fontProviderQuery = global::OTB_SEGURA.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::ZXing.Net.Mobile.Resource.Styleable.Fragment = global::OTB_SEGURA.Droid.Resource.Styleable.Fragment;
+			global::ZXing.Net.Mobile.Resource.Styleable.FragmentContainerView = global::OTB_SEGURA.Droid.Resource.Styleable.FragmentContainerView;
+			global::ZXing.Net.Mobile.Resource.Styleable.FragmentContainerView_android_name = global::OTB_SEGURA.Droid.Resource.Styleable.FragmentContainerView_android_name;
+			global::ZXing.Net.Mobile.Resource.Styleable.FragmentContainerView_android_tag = global::OTB_SEGURA.Droid.Resource.Styleable.FragmentContainerView_android_tag;
+			global::ZXing.Net.Mobile.Resource.Styleable.Fragment_android_id = global::OTB_SEGURA.Droid.Resource.Styleable.Fragment_android_id;
+			global::ZXing.Net.Mobile.Resource.Styleable.Fragment_android_name = global::OTB_SEGURA.Droid.Resource.Styleable.Fragment_android_name;
+			global::ZXing.Net.Mobile.Resource.Styleable.Fragment_android_tag = global::OTB_SEGURA.Droid.Resource.Styleable.Fragment_android_tag;
 			global::ZXing.Net.Mobile.Resource.Styleable.GradientColor = global::OTB_SEGURA.Droid.Resource.Styleable.GradientColor;
 			global::ZXing.Net.Mobile.Resource.Styleable.GradientColorItem = global::OTB_SEGURA.Droid.Resource.Styleable.GradientColorItem;
 			global::ZXing.Net.Mobile.Resource.Styleable.GradientColorItem_android_color = global::OTB_SEGURA.Droid.Resource.Styleable.GradientColorItem_android_color;
@@ -15814,6 +16621,7 @@ namespace OTB_SEGURA.Droid
 			global::ZXing.Net.Mobile.Resource.Styleable.View_paddingEnd = global::OTB_SEGURA.Droid.Resource.Styleable.View_paddingEnd;
 			global::ZXing.Net.Mobile.Resource.Styleable.View_paddingStart = global::OTB_SEGURA.Droid.Resource.Styleable.View_paddingStart;
 			global::ZXing.Net.Mobile.Resource.Styleable.View_theme = global::OTB_SEGURA.Droid.Resource.Styleable.View_theme;
+			global::ZXing.Net.Mobile.Resource.Xml.image_share_filepaths = global::OTB_SEGURA.Droid.Resource.Xml.image_share_filepaths;
 			global::ZXing.Net.Mobile.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::OTB_SEGURA.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 		}
 		
@@ -20378,451 +21186,472 @@ namespace OTB_SEGURA.Droid
 			public const int abc_vector_test = 2131165275;
 			
 			// aapt resource value: 0x7F07005C
-			public const int agregarAlerta = 2131165276;
+			public const int admAlarm = 2131165276;
 			
 			// aapt resource value: 0x7F07005D
-			public const int AlarmIcon = 2131165277;
+			public const int agregarAlerta = 2131165277;
 			
 			// aapt resource value: 0x7F07005E
-			public const int AlarmIconOtb = 2131165278;
+			public const int alarm = 2131165278;
 			
 			// aapt resource value: 0x7F07005F
-			public const int alertaAdmin = 2131165279;
+			public const int alarma2 = 2131165279;
 			
 			// aapt resource value: 0x7F070060
-			public const int Avatar1 = 2131165280;
+			public const int AlarmIcon = 2131165280;
 			
 			// aapt resource value: 0x7F070061
-			public const int Avatar10 = 2131165281;
+			public const int AlarmIconOtb = 2131165281;
 			
 			// aapt resource value: 0x7F070062
-			public const int Avatar11 = 2131165282;
+			public const int alertaAdmin = 2131165282;
 			
 			// aapt resource value: 0x7F070063
-			public const int Avatar12 = 2131165283;
+			public const int Avatar1 = 2131165283;
 			
 			// aapt resource value: 0x7F070064
-			public const int Avatar13 = 2131165284;
+			public const int Avatar10 = 2131165284;
 			
 			// aapt resource value: 0x7F070065
-			public const int Avatar14 = 2131165285;
+			public const int Avatar11 = 2131165285;
 			
 			// aapt resource value: 0x7F070066
-			public const int Avatar15 = 2131165286;
+			public const int Avatar12 = 2131165286;
 			
 			// aapt resource value: 0x7F070067
-			public const int Avatar16 = 2131165287;
+			public const int Avatar13 = 2131165287;
 			
 			// aapt resource value: 0x7F070068
-			public const int Avatar17 = 2131165288;
+			public const int Avatar14 = 2131165288;
 			
 			// aapt resource value: 0x7F070069
-			public const int Avatar18 = 2131165289;
+			public const int Avatar15 = 2131165289;
 			
 			// aapt resource value: 0x7F07006A
-			public const int Avatar19 = 2131165290;
+			public const int Avatar16 = 2131165290;
 			
 			// aapt resource value: 0x7F07006B
-			public const int Avatar2 = 2131165291;
+			public const int Avatar17 = 2131165291;
 			
 			// aapt resource value: 0x7F07006C
-			public const int Avatar20 = 2131165292;
+			public const int Avatar18 = 2131165292;
 			
 			// aapt resource value: 0x7F07006D
-			public const int Avatar21 = 2131165293;
+			public const int Avatar19 = 2131165293;
 			
 			// aapt resource value: 0x7F07006E
-			public const int Avatar22 = 2131165294;
+			public const int Avatar2 = 2131165294;
 			
 			// aapt resource value: 0x7F07006F
-			public const int Avatar23 = 2131165295;
+			public const int Avatar20 = 2131165295;
 			
 			// aapt resource value: 0x7F070070
-			public const int Avatar24 = 2131165296;
+			public const int Avatar21 = 2131165296;
 			
 			// aapt resource value: 0x7F070071
-			public const int Avatar25 = 2131165297;
+			public const int Avatar22 = 2131165297;
 			
 			// aapt resource value: 0x7F070072
-			public const int Avatar26 = 2131165298;
+			public const int Avatar23 = 2131165298;
 			
 			// aapt resource value: 0x7F070073
-			public const int Avatar27 = 2131165299;
+			public const int Avatar24 = 2131165299;
 			
 			// aapt resource value: 0x7F070074
-			public const int Avatar28 = 2131165300;
+			public const int Avatar25 = 2131165300;
 			
 			// aapt resource value: 0x7F070075
-			public const int Avatar29 = 2131165301;
+			public const int Avatar26 = 2131165301;
 			
 			// aapt resource value: 0x7F070076
-			public const int Avatar3 = 2131165302;
+			public const int Avatar27 = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int Avatar30 = 2131165303;
+			public const int Avatar28 = 2131165303;
 			
 			// aapt resource value: 0x7F070078
-			public const int Avatar4 = 2131165304;
+			public const int Avatar29 = 2131165304;
 			
 			// aapt resource value: 0x7F070079
-			public const int Avatar5 = 2131165305;
+			public const int Avatar3 = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int Avatar6 = 2131165306;
+			public const int Avatar30 = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int Avatar7 = 2131165307;
+			public const int Avatar4 = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int Avatar8 = 2131165308;
+			public const int Avatar5 = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int Avatar9 = 2131165309;
+			public const int Avatar6 = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int avd_hide_password = 2131165310;
+			public const int Avatar7 = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int avd_show_password = 2131165311;
+			public const int Avatar8 = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int background2ed = 2131165312;
+			public const int Avatar9 = 2131165312;
 			
 			// aapt resource value: 0x7F070081
-			public const int banerUnivalle = 2131165313;
+			public const int avd_hide_password = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int bloodBank = 2131165314;
+			public const int avd_show_password = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int bom = 2131165315;
+			public const int background2ed = 2131165315;
 			
 			// aapt resource value: 0x7F070084
-			public const int botonEmergencia = 2131165316;
+			public const int banerUnivalle = 2131165316;
 			
 			// aapt resource value: 0x7F070085
-			public const int btn_checkbox_checked_mtrl = 2131165317;
+			public const int bloodBank = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int btn_checkbox_checked_to_unchecked_mtrl_animation = 2131165318;
+			public const int bom = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int btn_checkbox_unchecked_mtrl = 2131165319;
+			public const int botonEmergencia = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int btn_checkbox_unchecked_to_checked_mtrl_animation = 2131165320;
+			public const int btn_checkbox_checked_mtrl = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int btn_radio_off_mtrl = 2131165321;
+			public const int btn_checkbox_checked_to_unchecked_mtrl_animation = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int btn_radio_off_to_on_mtrl_animation = 2131165322;
+			public const int btn_checkbox_unchecked_mtrl = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int btn_radio_on_mtrl = 2131165323;
+			public const int btn_checkbox_unchecked_to_checked_mtrl_animation = 2131165323;
 			
 			// aapt resource value: 0x7F07008C
-			public const int btn_radio_on_to_off_mtrl_animation = 2131165324;
+			public const int btn_radio_off_mtrl = 2131165324;
 			
 			// aapt resource value: 0x7F07008D
-			public const int CamaraSubirImg = 2131165325;
+			public const int btn_radio_off_to_on_mtrl_animation = 2131165325;
 			
 			// aapt resource value: 0x7F07008E
-			public const int CameraIcon = 2131165326;
+			public const int btn_radio_on_mtrl = 2131165326;
 			
 			// aapt resource value: 0x7F07008F
-			public const int cameraview = 2131165327;
+			public const int btn_radio_on_to_off_mtrl_animation = 2131165327;
 			
 			// aapt resource value: 0x7F070090
-			public const int CerrarSesion = 2131165328;
+			public const int camaraSubir2 = 2131165328;
 			
 			// aapt resource value: 0x7F070091
-			public const int clear_button_icon = 2131165329;
+			public const int CamaraSubirImg = 2131165329;
 			
 			// aapt resource value: 0x7F070092
-			public const int common_full_open_on_phone = 2131165330;
+			public const int CameraIcon = 2131165330;
 			
 			// aapt resource value: 0x7F070093
-			public const int common_google_signin_btn_icon_dark = 2131165331;
+			public const int camerasSee = 2131165331;
 			
 			// aapt resource value: 0x7F070094
-			public const int common_google_signin_btn_icon_dark_focused = 2131165332;
+			public const int cameraview = 2131165332;
 			
 			// aapt resource value: 0x7F070095
-			public const int common_google_signin_btn_icon_dark_normal = 2131165333;
+			public const int CerrarSesion = 2131165333;
 			
 			// aapt resource value: 0x7F070096
-			public const int common_google_signin_btn_icon_dark_normal_background = 2131165334;
+			public const int clear_button_icon = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int common_google_signin_btn_icon_disabled = 2131165335;
+			public const int common_full_open_on_phone = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int common_google_signin_btn_icon_light = 2131165336;
+			public const int common_google_signin_btn_icon_dark = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int common_google_signin_btn_icon_light_focused = 2131165337;
+			public const int common_google_signin_btn_icon_dark_focused = 2131165337;
 			
 			// aapt resource value: 0x7F07009A
-			public const int common_google_signin_btn_icon_light_normal = 2131165338;
+			public const int common_google_signin_btn_icon_dark_normal = 2131165338;
 			
 			// aapt resource value: 0x7F07009B
-			public const int common_google_signin_btn_icon_light_normal_background = 2131165339;
+			public const int common_google_signin_btn_icon_dark_normal_background = 2131165339;
 			
 			// aapt resource value: 0x7F07009C
-			public const int common_google_signin_btn_text_dark = 2131165340;
+			public const int common_google_signin_btn_icon_disabled = 2131165340;
 			
 			// aapt resource value: 0x7F07009D
-			public const int common_google_signin_btn_text_dark_focused = 2131165341;
+			public const int common_google_signin_btn_icon_light = 2131165341;
 			
 			// aapt resource value: 0x7F07009E
-			public const int common_google_signin_btn_text_dark_normal = 2131165342;
+			public const int common_google_signin_btn_icon_light_focused = 2131165342;
 			
 			// aapt resource value: 0x7F07009F
-			public const int common_google_signin_btn_text_dark_normal_background = 2131165343;
+			public const int common_google_signin_btn_icon_light_normal = 2131165343;
 			
 			// aapt resource value: 0x7F0700A0
-			public const int common_google_signin_btn_text_disabled = 2131165344;
+			public const int common_google_signin_btn_icon_light_normal_background = 2131165344;
 			
 			// aapt resource value: 0x7F0700A1
-			public const int common_google_signin_btn_text_light = 2131165345;
+			public const int common_google_signin_btn_text_dark = 2131165345;
 			
 			// aapt resource value: 0x7F0700A2
-			public const int common_google_signin_btn_text_light_focused = 2131165346;
+			public const int common_google_signin_btn_text_dark_focused = 2131165346;
 			
 			// aapt resource value: 0x7F0700A3
-			public const int common_google_signin_btn_text_light_normal = 2131165347;
+			public const int common_google_signin_btn_text_dark_normal = 2131165347;
 			
 			// aapt resource value: 0x7F0700A4
-			public const int common_google_signin_btn_text_light_normal_background = 2131165348;
+			public const int common_google_signin_btn_text_dark_normal_background = 2131165348;
 			
 			// aapt resource value: 0x7F0700A5
-			public const int design_bottom_navigation_item_background = 2131165349;
+			public const int common_google_signin_btn_text_disabled = 2131165349;
 			
 			// aapt resource value: 0x7F0700A6
-			public const int design_fab_background = 2131165350;
+			public const int common_google_signin_btn_text_light = 2131165350;
 			
 			// aapt resource value: 0x7F0700A7
-			public const int design_ic_visibility = 2131165351;
+			public const int common_google_signin_btn_text_light_focused = 2131165351;
 			
 			// aapt resource value: 0x7F0700A8
-			public const int design_ic_visibility_off = 2131165352;
+			public const int common_google_signin_btn_text_light_normal = 2131165352;
 			
 			// aapt resource value: 0x7F0700A9
-			public const int design_password_eye = 2131165353;
+			public const int common_google_signin_btn_text_light_normal_background = 2131165353;
 			
 			// aapt resource value: 0x7F0700AA
-			public const int design_snackbar_background = 2131165354;
+			public const int design_bottom_navigation_item_background = 2131165354;
 			
 			// aapt resource value: 0x7F0700AB
-			public const int elfec = 2131165355;
+			public const int design_fab_background = 2131165355;
 			
 			// aapt resource value: 0x7F0700AC
-			public const int family = 2131165356;
+			public const int design_ic_visibility = 2131165356;
 			
 			// aapt resource value: 0x7F0700AD
-			public const int felcc = 2131165357;
+			public const int design_ic_visibility_off = 2131165357;
 			
 			// aapt resource value: 0x7F0700AE
-			public const int googleg_disabled_color_18 = 2131165358;
+			public const int design_password_eye = 2131165358;
 			
 			// aapt resource value: 0x7F0700AF
-			public const int googleg_standard_color_18 = 2131165359;
-			
-			// aapt resource value: 0x7F0700BC
-			public const int IconOtb = 2131165372;
-			
-			// aapt resource value: 0x7F0700B5
-			public const int icon_about = 2131165365;
-			
-			// aapt resource value: 0x7F0700B6
-			public const int icon_alert = 2131165366;
-			
-			// aapt resource value: 0x7F0700B7
-			public const int icon_feed = 2131165367;
-			
-			// aapt resource value: 0x7F0700B8
-			public const int icon_play = 2131165368;
-			
-			// aapt resource value: 0x7F0700B9
-			public const int icon_register = 2131165369;
-			
-			// aapt resource value: 0x7F0700BA
-			public const int icon_SeeAlarm = 2131165370;
-			
-			// aapt resource value: 0x7F0700BB
-			public const int icon_User_Emergency_Phone = 2131165371;
+			public const int design_snackbar_background = 2131165359;
 			
 			// aapt resource value: 0x7F0700B0
-			public const int ic_arrow_down_24dp = 2131165360;
+			public const int elfec = 2131165360;
 			
 			// aapt resource value: 0x7F0700B1
-			public const int ic_mtrl_checked_circle = 2131165361;
+			public const int exitOtb = 2131165361;
 			
 			// aapt resource value: 0x7F0700B2
-			public const int ic_mtrl_chip_checked_black = 2131165362;
+			public const int family = 2131165362;
 			
 			// aapt resource value: 0x7F0700B3
-			public const int ic_mtrl_chip_checked_circle = 2131165363;
+			public const int felcc = 2131165363;
 			
 			// aapt resource value: 0x7F0700B4
-			public const int ic_mtrl_chip_close_circle = 2131165364;
+			public const int googleg_disabled_color_18 = 2131165364;
 			
-			// aapt resource value: 0x7F0700BE
-			public const int inputlayout_togglecollapseicon = 2131165374;
-			
-			// aapt resource value: 0x7F0700BF
-			public const int inputlayout_togglevisibleicon = 2131165375;
-			
-			// aapt resource value: 0x7F0700BD
-			public const int input_layout_drop_down_icon = 2131165373;
-			
-			// aapt resource value: 0x7F0700C0
-			public const int ladron = 2131165376;
+			// aapt resource value: 0x7F0700B5
+			public const int googleg_standard_color_18 = 2131165365;
 			
 			// aapt resource value: 0x7F0700C1
-			public const int ListaUsuarios = 2131165377;
+			public const int IconOtb = 2131165377;
 			
-			// aapt resource value: 0x7F0700C2
-			public const int logoOtb = 2131165378;
+			// aapt resource value: 0x7F0700BB
+			public const int icon_about = 2131165371;
+			
+			// aapt resource value: 0x7F0700BC
+			public const int icon_alert = 2131165372;
+			
+			// aapt resource value: 0x7F0700BD
+			public const int icon_feed = 2131165373;
+			
+			// aapt resource value: 0x7F0700BE
+			public const int icon_play = 2131165374;
+			
+			// aapt resource value: 0x7F0700BF
+			public const int icon_register = 2131165375;
+			
+			// aapt resource value: 0x7F0700C0
+			public const int icon_SeeAlarm = 2131165376;
+			
+			// aapt resource value: 0x7F0700B6
+			public const int ic_arrow_down_24dp = 2131165366;
+			
+			// aapt resource value: 0x7F0700B7
+			public const int ic_mtrl_checked_circle = 2131165367;
+			
+			// aapt resource value: 0x7F0700B8
+			public const int ic_mtrl_chip_checked_black = 2131165368;
+			
+			// aapt resource value: 0x7F0700B9
+			public const int ic_mtrl_chip_checked_circle = 2131165369;
+			
+			// aapt resource value: 0x7F0700BA
+			public const int ic_mtrl_chip_close_circle = 2131165370;
 			
 			// aapt resource value: 0x7F0700C3
-			public const int logoUnivalle = 2131165379;
+			public const int inputlayout_togglecollapseicon = 2131165379;
 			
 			// aapt resource value: 0x7F0700C4
-			public const int material_ic_calendar_black_24dp = 2131165380;
+			public const int inputlayout_togglevisibleicon = 2131165380;
+			
+			// aapt resource value: 0x7F0700C2
+			public const int input_layout_drop_down_icon = 2131165378;
 			
 			// aapt resource value: 0x7F0700C5
-			public const int material_ic_clear_black_24dp = 2131165381;
+			public const int ladron = 2131165381;
 			
 			// aapt resource value: 0x7F0700C6
-			public const int material_ic_edit_black_24dp = 2131165382;
+			public const int ListaUsuarios = 2131165382;
 			
 			// aapt resource value: 0x7F0700C7
-			public const int material_ic_keyboard_arrow_left_black_24dp = 2131165383;
+			public const int logoOtb = 2131165383;
 			
 			// aapt resource value: 0x7F0700C8
-			public const int material_ic_keyboard_arrow_right_black_24dp = 2131165384;
+			public const int logoUnivalle = 2131165384;
 			
 			// aapt resource value: 0x7F0700C9
-			public const int material_ic_menu_arrow_down_black_24dp = 2131165385;
+			public const int material_ic_calendar_black_24dp = 2131165385;
 			
 			// aapt resource value: 0x7F0700CA
-			public const int material_ic_menu_arrow_up_black_24dp = 2131165386;
+			public const int material_ic_clear_black_24dp = 2131165386;
 			
 			// aapt resource value: 0x7F0700CB
-			public const int medicar = 2131165387;
+			public const int material_ic_edit_black_24dp = 2131165387;
 			
 			// aapt resource value: 0x7F0700CC
-			public const int mtrl_dialog_background = 2131165388;
+			public const int material_ic_keyboard_arrow_left_black_24dp = 2131165388;
 			
 			// aapt resource value: 0x7F0700CD
-			public const int mtrl_dropdown_arrow = 2131165389;
+			public const int material_ic_keyboard_arrow_right_black_24dp = 2131165389;
 			
 			// aapt resource value: 0x7F0700CE
-			public const int mtrl_ic_arrow_drop_down = 2131165390;
+			public const int material_ic_menu_arrow_down_black_24dp = 2131165390;
 			
 			// aapt resource value: 0x7F0700CF
-			public const int mtrl_ic_arrow_drop_up = 2131165391;
+			public const int material_ic_menu_arrow_up_black_24dp = 2131165391;
 			
 			// aapt resource value: 0x7F0700D0
-			public const int mtrl_ic_cancel = 2131165392;
+			public const int medicar = 2131165392;
 			
 			// aapt resource value: 0x7F0700D1
-			public const int mtrl_ic_error = 2131165393;
+			public const int mtrl_dialog_background = 2131165393;
 			
 			// aapt resource value: 0x7F0700D2
-			public const int mtrl_popupmenu_background = 2131165394;
+			public const int mtrl_dropdown_arrow = 2131165394;
 			
 			// aapt resource value: 0x7F0700D3
-			public const int mtrl_popupmenu_background_dark = 2131165395;
+			public const int mtrl_ic_arrow_drop_down = 2131165395;
 			
 			// aapt resource value: 0x7F0700D4
-			public const int mtrl_tabs_default_indicator = 2131165396;
+			public const int mtrl_ic_arrow_drop_up = 2131165396;
 			
 			// aapt resource value: 0x7F0700D5
-			public const int navigation_empty_icon = 2131165397;
+			public const int mtrl_ic_cancel = 2131165397;
 			
 			// aapt resource value: 0x7F0700D6
-			public const int notification_action_background = 2131165398;
+			public const int mtrl_ic_error = 2131165398;
 			
 			// aapt resource value: 0x7F0700D7
-			public const int notification_bg = 2131165399;
+			public const int mtrl_popupmenu_background = 2131165399;
 			
 			// aapt resource value: 0x7F0700D8
-			public const int notification_bg_low = 2131165400;
+			public const int mtrl_popupmenu_background_dark = 2131165400;
 			
 			// aapt resource value: 0x7F0700D9
-			public const int notification_bg_low_normal = 2131165401;
+			public const int mtrl_tabs_default_indicator = 2131165401;
 			
 			// aapt resource value: 0x7F0700DA
-			public const int notification_bg_low_pressed = 2131165402;
+			public const int navigation_empty_icon = 2131165402;
 			
 			// aapt resource value: 0x7F0700DB
-			public const int notification_bg_normal = 2131165403;
+			public const int notification_action_background = 2131165403;
 			
 			// aapt resource value: 0x7F0700DC
-			public const int notification_bg_normal_pressed = 2131165404;
+			public const int notification_bg = 2131165404;
 			
 			// aapt resource value: 0x7F0700DD
-			public const int notification_icon_background = 2131165405;
+			public const int notification_bg_low = 2131165405;
 			
 			// aapt resource value: 0x7F0700DE
-			public const int notification_template_icon_bg = 2131165406;
+			public const int notification_bg_low_normal = 2131165406;
 			
 			// aapt resource value: 0x7F0700DF
-			public const int notification_template_icon_low_bg = 2131165407;
+			public const int notification_bg_low_pressed = 2131165407;
 			
 			// aapt resource value: 0x7F0700E0
-			public const int notification_tile_bg = 2131165408;
+			public const int notification_bg_normal = 2131165408;
 			
 			// aapt resource value: 0x7F0700E1
-			public const int notify_panel_notification_icon_bg = 2131165409;
+			public const int notification_bg_normal_pressed = 2131165409;
 			
 			// aapt resource value: 0x7F0700E2
-			public const int NumerosEmergencia = 2131165410;
+			public const int notification_icon_background = 2131165410;
 			
 			// aapt resource value: 0x7F0700E3
-			public const int phoneCall = 2131165411;
+			public const int notification_template_icon_bg = 2131165411;
 			
 			// aapt resource value: 0x7F0700E4
-			public const int policeCar = 2131165412;
+			public const int notification_template_icon_low_bg = 2131165412;
 			
 			// aapt resource value: 0x7F0700E5
-			public const int preference_list_divider_material = 2131165413;
+			public const int notification_tile_bg = 2131165413;
 			
 			// aapt resource value: 0x7F0700E6
-			public const int sar = 2131165414;
+			public const int notify_panel_notification_icon_bg = 2131165414;
 			
 			// aapt resource value: 0x7F0700E7
-			public const int SeeCamera = 2131165415;
+			public const int NumerosEmergencia = 2131165415;
 			
 			// aapt resource value: 0x7F0700E8
-			public const int semapa = 2131165416;
+			public const int phoneCall = 2131165416;
 			
 			// aapt resource value: 0x7F0700E9
-			public const int test_custom_background = 2131165417;
+			public const int policeCar = 2131165417;
 			
 			// aapt resource value: 0x7F0700EA
-			public const int tooltip_frame_dark = 2131165418;
+			public const int preference_list_divider_material = 2131165418;
 			
 			// aapt resource value: 0x7F0700EB
-			public const int tooltip_frame_light = 2131165419;
+			public const int question = 2131165419;
 			
 			// aapt resource value: 0x7F0700EC
-			public const int UsertAlertIcon = 2131165420;
+			public const int sar = 2131165420;
 			
 			// aapt resource value: 0x7F0700ED
-			public const int usuario = 2131165421;
+			public const int seAlarm = 2131165421;
 			
 			// aapt resource value: 0x7F0700EE
-			public const int usuarioPerfil = 2131165422;
+			public const int SeeCamera = 2131165422;
 			
 			// aapt resource value: 0x7F0700EF
-			public const int verCamara = 2131165423;
+			public const int semapa = 2131165423;
 			
 			// aapt resource value: 0x7F0700F0
-			public const int xamarin_logo = 2131165424;
+			public const int test_custom_background = 2131165424;
+			
+			// aapt resource value: 0x7F0700F1
+			public const int tooltip_frame_dark = 2131165425;
+			
+			// aapt resource value: 0x7F0700F2
+			public const int tooltip_frame_light = 2131165426;
+			
+			// aapt resource value: 0x7F0700F3
+			public const int UsertAlertIcon = 2131165427;
+			
+			// aapt resource value: 0x7F0700F4
+			public const int usuario = 2131165428;
+			
+			// aapt resource value: 0x7F0700F5
+			public const int usuarioPerfil = 2131165429;
+			
+			// aapt resource value: 0x7F0700F6
+			public const int verCamara = 2131165430;
+			
+			// aapt resource value: 0x7F0700F7
+			public const int xamarin_logo = 2131165431;
 			
 			static Drawable()
 			{

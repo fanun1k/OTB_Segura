@@ -3,34 +3,67 @@ using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace OTB_SEGURA.ViewModels
 {
-    public class UserActivityViewModel:BaseViewModel
+    public class UserActivityViewModel : BaseViewModel
     {
-        #region prop
-        FireBaseHelper firebaseHelper = new FireBaseHelper(); // instancia de helper de BDD
-        private List<UserActivityModel> listActivity=new List<UserActivityModel>(); // instancia de la lista de actividades 
-
+        #region Attributes
+        private List<AlertModel> listActivity = new List<AlertModel>(); // instancia de la lista de actividades 
+        private AlertService alertService = new AlertService();
+        private UserService userService = new UserService();
+        private AlertTypeService alertTypeService = new AlertTypeService();
+        private List<UserModel> userLis = new List<UserModel>();
+        private ObservableCollection<AlertTypeModel> alertTypeList = new ObservableCollection<AlertTypeModel>();
+        private ObservableCollection<CompleteAlertModel> listToShow;
+        private AlertTypeModel alertTypeSelected;
+        private bool group;
+        private int indexPick;
         #endregion
 
-        public List<UserActivityModel> ListActivity
+        #region Properties
+
+
+        public ObservableCollection<AlertTypeModel> AlertTypeList
         {
-            get { return listActivity; }
-            set { listActivity = value;
-                OnPropertyChanged();
-            }
+            get { return alertTypeList; }
+            set { alertTypeList = value; OnPropertyChanged(); }
         }
 
+
+        public int IndexPick
+        {
+            get { return indexPick; }
+            set { indexPick = value; OnPropertyChanged(); }
+        }
+
+        public bool Group
+        {
+            get { return group; }
+            set { group = value; OnPropertyChanged(); }
+        }
+        public AlertTypeModel AlertTypeSelected
+        {
+            get { return alertTypeSelected; }
+            set { alertTypeSelected = value; OnPropertyChanged(); }
+        }
+
+        public ObservableCollection<CompleteAlertModel> ListToShow
+        {
+            get { return listToShow; }
+            set { listToShow = value; OnPropertyChanged(); }
+        }
+        #endregion
         #region Construct
         public UserActivityViewModel()
         {
             Title = "Actividad de Usuarios"; // Titulo de la vista
-            LoadData(); // Carga de los datos
         }
         #endregion
 
@@ -41,7 +74,7 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(LoadData);
+                return new RelayCommand(async () => await LoadData()); ;
             }
         }
 
@@ -50,47 +83,234 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(LoadData);
+                return new RelayCommand(async () => await LoadData()); ;
             }
         }
 
         // Comando que redirecciona a Google Maps con la locaclizacion de la actividad
         public ICommand ItemTappedCommandUserActivity { get; } = new Command(async (Item) =>
         {
-            var userActivityModel = Item as UserActivityModel; // Instancia del UserActivityViewModel
-            if (userActivityModel != null)
+            try
             {
-                await Map.OpenAsync(userActivityModel.Latitude, userActivityModel.Longitude, new MapLaunchOptions
+                var userActivityModel = Item as UserActivityModel; // Instancia del UserActivityViewModel
+                if (userActivityModel != null)
                 {
-                    Name = "Ubicación",
-                    NavigationMode = NavigationMode.None
-                }); // Redireccion a Maps con la latitud y longitud
+                    await Map.OpenAsync(userActivityModel.Latitude, userActivityModel.Longitude, new MapLaunchOptions
+                    {
+                        Name = "Ubicación",
+                        NavigationMode = NavigationMode.None
+                    }); // Redireccion a Maps con la latitud y longitud
+                }
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
         });
+
+
+
+        public ICommand SelectedChangedCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        if (alertTypeSelected != null)
+                        {
+                            if (!group)
+                            {
+                                await Filter();
+                            }
+                            else
+                            {
+
+                            }
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                });
+            }
+        }
+
+        public ICommand CheckedChangedCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        if (group)
+                        {
+
+                            await GroupList();
+                        }
+                        else if (alertTypeSelected != null)
+                        {
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                });
+            }
+        }
+
         #endregion
 
         #region Metodh
-        public async void LoadData()
+        // Metodo que carga la data de actividades de usuarios
+        public async Task LoadData()
         {
             try
             {
-                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
-                {
-                    ListActivity = await firebaseHelper.GetAllActivities();
-                    await App.SQLiteDB.SaveUserActivitytAsync(ListActivity);
-                }
-                else
-                {
-                    ListActivity = await App.SQLiteDB.GetUserActivitytAsync();
 
+                var tasks = new List<Task>();
+                tasks.Add(LoadAlerts());
+                tasks.Add(LoadAlertTypes());
+                tasks.Add(LoadUsers());
+                await Task.WhenAll(tasks);
+                ListToShow = null;
+                ListToShow = new ObservableCollection<CompleteAlertModel>();
+                IndexPick = -1;
+                Group = false;
+                var query = from x in listActivity
+                            select new CompleteAlertModel
+                            {
+                                Alert_ID = x.Alert_ID,
+                                Alert_type_Name = AlertTypeList.Where(y => y.Alert_type_ID == x.Alert_type_ID).Select(z => z.Name).FirstOrDefault(),
+                                User_Name = userLis.Where(y => y.User_ID == x.User_ID).Select(z => z.Name).FirstOrDefault(),
+                                Longitude = x.Longitude,
+                                Latitude = x.Latitude,
+                                Date = x.Date,
+                                Message = x.Message
+                            };
+                foreach (var item in query)
+                {
+                    ListToShow.Add(item);
                 }
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
         }
+
+        private async Task Filter()
+        {
+            try
+            {
+                if (alertTypeSelected != null)
+                {
+                    ListToShow = null;
+                    ListToShow = new ObservableCollection<CompleteAlertModel>();
+                    await Task.Run(()=> {
+                        var query = from x in listActivity
+                                    where x.Alert_type_ID == alertTypeSelected.Alert_type_ID
+                                    select new CompleteAlertModel
+                                    {
+                                        Alert_ID = x.Alert_ID,
+                                        Alert_type_Name = AlertTypeList.Where(y => y.Alert_type_ID == x.Alert_type_ID).Select(z => z.Name).FirstOrDefault(),
+                                        User_Name = userLis.Where(y => y.User_ID == x.User_ID).Select(z => z.Name).FirstOrDefault(),
+                                        Longitude = x.Longitude,
+                                        Latitude = x.Latitude,
+                                        Date = x.Date,
+                                        Message = x.Message
+                                    };
+                        foreach (var item in query)
+                        {
+                            ListToShow.Add(item);
+                        }
+                    });            
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private async Task GroupList()
+        {
+            try
+            {
+                ListToShow = null;
+                ListToShow = new ObservableCollection<CompleteAlertModel>();
+                var query = from x in alertTypeList
+                            select new CompleteAlertModel
+                            {
+                                Alert_type_Name = x.Name,
+                                Ubication_List = listActivity.Where(y => y.Alert_type_ID == x.Alert_type_ID).
+                                                              Select(z => new UbicationModel
+                                                              {
+                                                                  Latitude = z.Latitude,
+                                                                  Longitude = z.Longitude
+                                                              }).ToList()
+                            };
+                foreach (var item in query)
+                {
+                    ListToShow.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }     
+        }
+
+        private async Task LoadAlerts()
+        {
+            try
+            {
+                int otbId = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                ResponseHTTP<AlertModel> responseHTTP = await alertService.listarAlertas(otbId);
+                listActivity = responseHTTP.Data;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private async Task LoadAlertTypes()
+        {
+            try
+            {
+                ResponseHTTP<AlertTypeModel> responseHTTP = await alertTypeService.GetAlertTypes();
+                AlertTypeList = new ObservableCollection<AlertTypeModel>(responseHTTP.Data);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private async Task LoadUsers()
+        {
+            try
+            {
+                int otbId = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                ResponseHTTP<UserModel> responseHTTP = await userService.UsersByOtb(otbId);
+                userLis = responseHTTP.Data;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
     }
 

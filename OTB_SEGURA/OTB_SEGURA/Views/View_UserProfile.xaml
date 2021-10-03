@@ -4,8 +4,13 @@
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              xmlns:ImgCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="OTB_SEGURA.Views.View_UserProfile"
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              Appearing="ContentPage_Appearing"
-             x:Name="contentPage">
+             x:Name="contentPage"
+             BackgroundImageSource="fonProfile.png">
+    <ContentPage.Behaviors>
+        <behaviorsPack:EventToCommandBehavior EventName="Appearing" Command="{Binding AppearingProfileCommand}"/>
+    </ContentPage.Behaviors>
     <StackLayout>
         <Grid IsClippedToBounds="True">
              <Grid.RowDefinitions>
@@ -17,36 +22,43 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <Grid IsClippedToBounds="True">
-            <ImgCircle:CircleImage HeightRequest="700" BorderColor="Black" BorderThickness="3" Margin="5,10,5,5" Source="{Binding ImgProfile}"></ImgCircle:CircleImage>
-            <Button Command="{Binding UploadCommand}" ImageSource="CamaraSubirImg.png" Margin="229,130,120,10" WidthRequest="300" HeightRequest="250" HorizontalOptions="Center" BackgroundColor="{StaticResource PrimaryVariation}" CornerRadius="30" Padding="0" MinimumWidthRequest="300" MinimumHeightRequest="250"/>
+        <Grid >
+            <ImgCircle:CircleImage HeightRequest="600" BorderColor="White" BorderThickness="3" Margin="5,10,5,5" Source="{Binding ImgProfile.Source}"></ImgCircle:CircleImage>
+            <Button Command="{Binding UploadCommand}" BackgroundColor="White" BorderColor="White" ImageSource="cam.png" Margin="229,105,120,10" WidthRequest="300" HeightRequest="700" HorizontalOptions="Center"  CornerRadius="30" Padding="0"/>
         </Grid>
-        
-
-        <Label BindingContext="{Binding User}" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"/>
-        <Label BindingContext="{Binding User}" Text="{Binding Email,Mode=TwoWay}" HorizontalOptions="Center"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Image Source="user.png"/>
+            <Label BindingContext="{Binding User}" TextColor="White" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Image Source="correo.png"/>
+            <Label BindingContext="{Binding User}" TextColor="White" Text="{Binding Email,Mode=TwoWay}" HorizontalOptions="Center"/>
+        </StackLayout>
         <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="15">
-            <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="55,5,41,10" WidthRequest="180" HeightRequest="200" Command="{Binding ButtonChangeStateClick}" BackgroundColor="{StaticResource PrimaryVariation}" HorizontalOptions="EndAndExpand"/>
+            <Button Text="{Binding TextButton,Mode=TwoWay}" BackgroundColor="#52a5df" BorderColor="White" CornerRadius="5" WidthRequest="700" HeightRequest="200" Command="{Binding ButtonChangeStateClick}"  HorizontalOptions="EndAndExpand" IsEnabled="{Binding IsBusy}"/>
         </Grid>
+
+        <Frame Margin="0,70,0,0" HorizontalOptions="Center" CornerRadius="5" BackgroundColor="#52a5df">
+            <Label TextColor="White" Text="Alertas"></Label>
+        </Frame>
         
-        <Label Text="Alertas"></Label>
     <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <Frame Style="{StaticResource frameStyle}">
+                    <Frame  Style="{StaticResource frameA}">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Fecha: "/>
+                                    <Image Source="date.png"/>
                                     <Label Text="{Binding Date}" FontAttributes="None"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Tipo : "/>
+                                    <Image Source="type.png"/>
                                     <Label Text="{Binding Alert_type_ID}" FontAttributes="None"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Mensaje: "/>
-                                <Label Text="{Binding Message}" FontAttributes="None"/>
+                                    <Image Source="message.png"/>
+                                    <Label Text="{Binding Message}" FontAttributes="None"/>
                             </StackLayout>
                         </StackLayout>
                     </Frame>

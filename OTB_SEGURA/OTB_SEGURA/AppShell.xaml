@@ -93,14 +93,8 @@
     <FlyoutItem Title="Acerca de Nosotros" Icon="logoUnivalle.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_About}" />
     </FlyoutItem>
-    <FlyoutItem Title="Alertas de Usuario" Icon="UsertAlertIcon.png">
-        <ShellContent Route="UserAlerts" ContentTemplate="{Binding UserAlertsDataTemplate}" IsVisible="{Binding IsUser}" />
-    </FlyoutItem>
     <FlyoutItem Title="Alertar Evento" Icon="botonEmergencia.png">
         <ShellContent Route="AddActivity" ContentTemplate="{DataTemplate local:View_AddActivity}" IsVisible="{Binding IsUser}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="Alertar Evento Admin" Icon="alertaAdmin.png">
-        <ShellContent Route="AddEmergency" ContentTemplate="{DataTemplate local:View_AddEmergency}" IsVisible="{Binding IsAdmin}" />
     </FlyoutItem>
     <FlyoutItem Title="Mi Perfil " Icon="usuario.png">
         <ShellContent Route="MyProfile" ContentTemplate="{DataTemplate local:View_UserProfile}"/>

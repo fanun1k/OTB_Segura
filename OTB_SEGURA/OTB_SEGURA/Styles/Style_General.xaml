@@ -15,14 +15,13 @@
     <!--===============================================================================-->
     
     <!--Colores Nuevos -->
-    <Color x:Key="Primary">#056d8a</Color>
-    <Color x:Key="PrimaryVariation">#068bb0</Color>
+    <Color x:Key="Primary">#52a5df</Color>
+    <Color x:Key="PrimaryVariation">#4aa5e5</Color>
     <Color x:Key="PrimaryDisabled">#b9eefc</Color>
     <Color x:Key="Secondary">#FB7923</Color>
     <Color x:Key="tertiary">#79B030</Color>
     <Color x:Key="quaternary">#FCFF47</Color>
     <Color x:Key="Dark">#292D25</Color>
-    <Color x:Key="colorEmergency">#ea0208</Color>
     <Color x:Key="colorEmergencyDisabled">#fe787b</Color>
     <Color x:Key="colorEmergencyNumbers">#C2D7F4</Color>
     <Color x:Key="colorFrames">#6EDFF0</Color>
@@ -126,13 +125,29 @@
         <Setter Property="Padding" Value="9"/>
         <Setter Property="BorderColor" Value="{StaticResource Primary}"/>
     </Style>
+    <!-- Frame Números emergencias-->
     <!--===========================================================================================================-->
     <Style TargetType="Frame" x:Key="frameN">
         <Setter Property="CornerRadius" Value="30"/>
         <Setter Property="Margin" Value="6"/>
         <Setter Property="Padding" Value="9"/>
         <Setter Property="HorizontalOptions" Value="Center"/>
-        <Setter Property="BackgroundColor" Value="{StaticResource colorFrames}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+    </Style>
+    <!-- Frame Alertas-->
+    <!--===========================================================================================================-->
+    <Style TargetType="Frame" x:Key="frameA">
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Margin" Value="6"/>
+        <Setter Property="Padding" Value="9"/>
+        <Setter Property="BorderColor" Value="#52a5df"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+    </Style>
+
+
+    <Style TargetType="ContentPage">
+        <Setter Property="BackgroundImageSource" Value="fonProfile.png"/>
     </Style>
 
 </ResourceDictionary>

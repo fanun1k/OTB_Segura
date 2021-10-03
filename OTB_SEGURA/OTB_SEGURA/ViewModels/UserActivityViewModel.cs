@@ -4,33 +4,38 @@ using OTB_SEGURA.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace OTB_SEGURA.ViewModels
 {
     public class UserActivityViewModel:BaseViewModel
     {
         #region prop
-        FireBaseHelper firebaseHelper = new FireBaseHelper(); // instancia de helper de BDD
-        private List<UserActivityModel> listActivity=new List<UserActivityModel>(); // instancia de la lista de actividades 
+        private List<AlertModel> listActivity=new List<AlertModel>(); // instancia de la lista de actividades 
+        private AlertService alertService = new AlertService();
+        private UserService userService = new UserService();
+        private AlertTypeService alertTypeService = new AlertTypeService();
+        private List<UserModel> userLis = new List<UserModel>();
+        private List<AlertTypeModel> alertTypeList = new List<AlertTypeModel>();
+        private ObservableCollection<CompleteAlertModel> listToShow;
 
-        #endregion
-
-        public List<UserActivityModel> ListActivity
+        public ObservableCollection<CompleteAlertModel> ListToShow
         {
-            get { return listActivity; }
-            set { listActivity = value;
-                OnPropertyChanged();
-            }
+            get { return listToShow; }
+            set { listToShow = value; OnPropertyChanged(); }
         }
 
+
+        #endregion
         #region Construct
         public UserActivityViewModel()
         {
             Title = "Actividad de Usuarios"; // Titulo de la vista
-            LoadData(); // Carga de los datos
         }
         #endregion
 
@@ -41,7 +46,7 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(LoadData);
+                return new RelayCommand(async () => await LoadData()); ;
             }
         }
 
@@ -50,47 +55,109 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(LoadData);
+                return new RelayCommand(async () => await LoadData()); ;
             }
         }
 
         // Comando que redirecciona a Google Maps con la locaclizacion de la actividad
         public ICommand ItemTappedCommandUserActivity { get; } = new Command(async (Item) =>
         {
-            var userActivityModel = Item as UserActivityModel; // Instancia del UserActivityViewModel
-            if (userActivityModel != null)
+            try
             {
-                await Map.OpenAsync(userActivityModel.Latitude, userActivityModel.Longitude, new MapLaunchOptions
+                var userActivityModel = Item as UserActivityModel; // Instancia del UserActivityViewModel
+                if (userActivityModel != null)
                 {
-                    Name = "Ubicación",
-                    NavigationMode = NavigationMode.None
-                }); // Redireccion a Maps con la latitud y longitud
+                    await Map.OpenAsync(userActivityModel.Latitude, userActivityModel.Longitude, new MapLaunchOptions
+                    {
+                        Name = "Ubicación",
+                        NavigationMode = NavigationMode.None
+                    }); // Redireccion a Maps con la latitud y longitud
+                }
             }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
+
         });
         #endregion
 
         #region Metodh
-        public async void LoadData()
+        // Metodo que carga la data de actividades de usuarios
+        public async Task LoadData()
         {
             try
             {
-                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+               
+                var tasks = new List<Task>();
+                tasks.Add(LoadAlerts());
+                tasks.Add(LoadAlertTypes());
+                tasks.Add(LoadUsers());
+                await Task.WhenAll(tasks);
+                ListToShow = null;
+                ListToShow = new ObservableCollection<CompleteAlertModel>();
+                var query = from x in listActivity
+                            select new CompleteAlertModel { Alert_ID = x.Alert_ID,
+                                                            Alert_type_Name = alertTypeList.Where(y => y.Alert_type_ID == x.Alert_type_ID).Select(z => z.Name).FirstOrDefault(),
+                                                            User_Name = userLis.Where(y => y.User_ID == x.User_ID).Select(z => z.Name).FirstOrDefault(),
+                                                            Longitude=x.Longitude,
+                                                            Latitude=x.Latitude,
+                                                            Date=x.Date,
+                                                            Message=x.Message                                                                                                                      
+                            };
+                foreach (var item in query)
                 {
-                    ListActivity = await firebaseHelper.GetAllActivities();
-                    await App.SQLiteDB.SaveUserActivitytAsync(ListActivity);
-                }
-                else
-                {
-                    ListActivity = await App.SQLiteDB.GetUserActivitytAsync();
-
+                    ListToShow.Add(item);
                 }
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
+
         }
+
+        private async Task LoadAlerts()
+        {
+            try
+            {
+                int otbId = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                ResponseHTTP<AlertModel> responseHTTP = await alertService.listarAlertas(otbId);
+                listActivity = responseHTTP.Data;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        } 
+        private async Task LoadAlertTypes()
+        {
+            try
+            {
+                ResponseHTTP<AlertTypeModel> responseHTTP = await alertTypeService.GetAlertTypes();
+                alertTypeList = responseHTTP.Data;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private async Task LoadUsers()
+        {
+            try
+            {
+                int otbId = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                ResponseHTTP<UserModel> responseHTTP = await userService.UsersByOtb(otbId);
+                userLis = responseHTTP.Data;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
     }
 

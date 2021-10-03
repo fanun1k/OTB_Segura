@@ -17,7 +17,7 @@ namespace OTB_SEGURA.Services
             db.CreateTableAsync<SessionModel>().Wait();
             db.CreateTableAsync<AlertModel>().Wait();
             db.CreateTableAsync<UserActivityModel>().Wait();
-
+            db.CreateTableAsync<ImageProfileModel>().Wait();
         }
 
         /// <summary>
@@ -157,6 +157,24 @@ namespace OTB_SEGURA.Services
         public Task<SessionModel> GetSession()
         {
             return db.Table<SessionModel>().FirstOrDefaultAsync();
+        }
+
+        public async Task<int> SaveImageProfile(ImageProfileModel imgProfile)
+        {
+            try
+            {
+                await db.DropTableAsync<ImageProfileModel>();
+                await db.CreateTableAsync<ImageProfileModel>();
+                return await db.InsertAsync(imgProfile);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<ImageProfileModel> GetImageProfile()
+        {
+            return await db.Table<ImageProfileModel>().FirstOrDefaultAsync();
         }
         #endregion
     }

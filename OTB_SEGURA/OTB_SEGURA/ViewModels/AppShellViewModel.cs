@@ -21,7 +21,6 @@ namespace OTB_SEGURA.ViewModels
         
         #region Attributes
         AlertService alertService = new AlertService();
-        DataTemplate userAlertsDataTemplate;
         private bool isAdmin=false;
         private bool isUser=false;
         private bool userWithOutOTB = false;
@@ -43,20 +42,6 @@ namespace OTB_SEGURA.ViewModels
         {
             get { return userWithOutOTB; }
             set { userWithOutOTB = value; OnPropertyChanged(); }
-        }
-
-        private View_AlarmContainer alarmContainer;
-
-        public View_AlarmContainer AlarmContainer
-        {
-            get { return alarmContainer; }
-            set { alarmContainer= value; }
-        }
-        
-        public DataTemplate UserAlertsDataTemplate
-        {
-            get { return userAlertsDataTemplate; }
-            set { userAlertsDataTemplate = value; OnPropertyChanged(); }
         }
         #endregion
         #region Construct
@@ -109,26 +94,6 @@ namespace OTB_SEGURA.ViewModels
                 IsUser = true;
                 UserWithOutOTB = false;
             });
-
-            UserAlertsDataTemplate = new DataTemplate(() => {
-                List<String> listaAlertas = new List<string>();
-                listaAlertas.Add("General");
-                listaAlertas.Add("Robos");
-
-                //    ResponseHTTP<AlertModel> response = await alertService.listarAlertas(int.Parse(Application.Current.Properties["Otb_ID"].ToString()));
-                //    if (response.Code == System.Net.HttpStatusCode.OK)
-                //    {
-                //        listaAlertas = response.Data;
-                //    }
-                //    else
-                //    {
-                //        DependencyService.Get<IMessage>().LongAlert(response.Msj);
-                //    }
-                //Data = new DataTemplate(() => { return new View_AlarmContainer(); });
-                return new View_AlarmContainer(listaAlertas);
-            });
-
-
         }
         #endregion
         #region Commands

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace OTB_SEGURA.ViewModels
@@ -53,19 +54,30 @@ namespace OTB_SEGURA.ViewModels
             try
             {
                 int otbID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
-                ResponseHTTP<UserModel> responseHTTP = await userService.UsersByOtb(otbID);
-                if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
                 {
-                    UserList = responseHTTP.Data;
-                    //--Agregar video 2
+                    ResponseHTTP<UserModel> responseHTTP = await userService.UsersByOtb(otbID);
+                    if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                    {
+                        UserList = responseHTTP.Data;
+                        await App.SQLiteDB.SaveUserAsync(UserList);
+
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+
+                    }
                 }
                 else
                 {
-                    DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                    UserList = await App.SQLiteDB.GetUserAsync();
+
                 }
             }
             catch (System.Exception ex)
             {
+
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
         }

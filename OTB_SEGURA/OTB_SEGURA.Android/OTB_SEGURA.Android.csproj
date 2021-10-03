@@ -92,7 +92,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileAccess.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MessageAndroid.cs" />
     <Compile Include="MyFirebaseIdService.cs" />

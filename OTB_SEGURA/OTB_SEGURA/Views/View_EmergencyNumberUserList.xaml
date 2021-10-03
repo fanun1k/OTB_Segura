@@ -24,18 +24,21 @@
                     Command="{Binding RefreshingCommand}"/>
         </ListView.Behaviors>
         <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <Frame Style="{StaticResource frameStyle}">
-                        <Grid>
-                            <StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Nombre:" WidthRequest="80"/>
-                                    <Label Text="{Binding Name}" FontAttributes="None"/>
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Telefono:" WidthRequest="80"/>
-                                    <Label Text="{Binding Cell_phone}" FontAttributes="None"/>
+            <DataTemplate >
+                <ViewCell >
+                    <Frame Style="{StaticResource frameStyle}" BackgroundColor="{StaticResource colorEmergencyNumbers }" >
+                        <Grid >
+                            <StackLayout Orientation="Horizontal" >
+                                <Image Source="icon_User_Emergency_Phone" />
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Nombre:" WidthRequest="88" FontSize="17" />
+                                        <Label Text="{Binding Name}" FontAttributes="None" WidthRequest="250" FontFamily="Helvetica" FontSize="15" VerticalTextAlignment="Center"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Telefono:" WidthRequest="85" FontSize="17" />
+                                        <Label Text="{Binding Phone}" FontAttributes="None" WidthRequest="220"  FontSize="15" />
+                                    </StackLayout>
                                 </StackLayout>
                             </StackLayout>
                         </Grid>

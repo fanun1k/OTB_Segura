@@ -83,7 +83,6 @@ namespace OTB_SEGURA.ViewModels
         #endregion
 
         #region Metodh
-
         // Metodo que carga la data de actividades de usuarios
         public async Task LoadData()
         {
@@ -155,7 +154,6 @@ namespace OTB_SEGURA.ViewModels
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

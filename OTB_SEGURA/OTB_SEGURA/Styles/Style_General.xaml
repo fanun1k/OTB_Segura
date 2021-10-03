@@ -22,8 +22,9 @@
     <Color x:Key="tertiary">#79B030</Color>
     <Color x:Key="quaternary">#FCFF47</Color>
     <Color x:Key="Dark">#292D25</Color>
-    <Color x:Key="colorEmergency">#ea0208</Color>
     <Color x:Key="colorEmergencyDisabled">#fe787b</Color>
+    <Color x:Key="colorEmergencyNumbers">#C2D7F4</Color>
+    <Color x:Key="colorFrames">#6EDFF0</Color>
     <!--===============================================================================-->
     <!--===============================================================================-->
 

@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              x:Class="OTB_SEGURA.Views.View_AddActivity"
              xmlns:cmd="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
-             Title="{Binding Title}">
+             Title="{Binding Title}" Style="{StaticResource fondoApp}">
     <ContentPage.BindingContext>
         <vm:AddActivityViewModel/>
     </ContentPage.BindingContext>

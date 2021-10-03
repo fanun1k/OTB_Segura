@@ -4,9 +4,9 @@
              x:Class="OTB_SEGURA.Views.View_MyOtb"
              xmlns:local="clr-namespace:OTB_SEGURA.Views"
              Title="{Binding Title}"
-             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels" Style="{StaticResource fondoApp}"
              >
-    <Grid BackgroundColor="#b9eefc">
+    <Grid>
         <StackLayout Padding="25">
             <Frame CornerRadius="25">
                 <Label Text="My Otb" HorizontalOptions="Center" FontSize="25" />

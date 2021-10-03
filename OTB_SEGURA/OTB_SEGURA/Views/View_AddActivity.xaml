@@ -11,14 +11,8 @@
         <Label Text="Descripción" TextColor="Black"/>
         <Editor Text="{Binding Message, Mode=TwoWay}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" TextColor="Black" />
         <Label Text="Tipo de alerta" FontAttributes="Bold" HorizontalOptions="Fill" />
-        <Picker Title="Selecciona tu tipo de alerta" Margin="1,5,120,20"/>
+        <Picker Title="Seleccione el tipo de alerta" Margin="1,5,120,20" TitleColor="Black"/>
 
-
-        <BoxView   VerticalOptions="Center"
-           HorizontalOptions="Center"
-           HeightRequest="1"  
-           WidthRequest      ="300"
-           Color="#111a1c"></BoxView>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>

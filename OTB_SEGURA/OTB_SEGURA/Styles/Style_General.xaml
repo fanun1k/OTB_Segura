@@ -134,4 +134,17 @@
         <Setter Property="BackgroundColor" Value="{StaticResource colorFrames}"/>
     </Style>
 
+    <!-- Frame Alertas-->
+    <!--===========================================================================================================-->
+    <Style TargetType="Frame" x:Key="frameA">
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Margin" Value="6"/>
+        <Setter Property="Padding" Value="9"/>
+        <Setter Property="BorderColor" Value="#52a5df"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+    </Style>
+    <Style TargetType="ContentPage" x:Key="fondoApp">
+        <Setter Property="BackgroundImageSource" Value="Fondo.jpg"/>
+    </Style>
 </ResourceDictionary>

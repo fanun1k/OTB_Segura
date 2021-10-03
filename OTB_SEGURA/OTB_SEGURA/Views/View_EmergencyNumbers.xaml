@@ -4,7 +4,7 @@
              x:Class="OTB_SEGURA.Views.View_EmergencyNumbers"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
-             Title="{Binding Title}">
+             Title="{Binding Title}" Style="{StaticResource fondoApp}">
     <ContentPage.BindingContext>
         <vm:EmergencyNumbersViewModel />
         <!-- establecemos el contexto de los datos -->

@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              xmlns:Maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="OTB_SEGURA.Views.View_AddUser"             
-             Title="{Binding Title}">
+             Title="{Binding Title}" Style="{StaticResource fondoApp}">
     <ContentPage.BindingContext>
         <vm:AddUSerViewModel />
     </ContentPage.BindingContext>

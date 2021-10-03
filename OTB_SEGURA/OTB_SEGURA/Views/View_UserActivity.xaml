@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels" 
              xmlns:cmd="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              x:Class="OTB_SEGURA.Views.View_UserActivity"
-             Title="{Binding Title}">
+             Title="{Binding Title}" Style="{StaticResource fondoApp}" >
     <ContentPage.Behaviors>
         <cmd:EventToCommandBehavior EventName="Appearing" Command="{Binding AppearingCommand}"/>
     </ContentPage.Behaviors>

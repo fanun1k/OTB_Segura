@@ -5,7 +5,7 @@
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack" 
              xmlns:ImgCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
-             Title="{Binding Title}"
+             Title="{Binding Title}" Style="{StaticResource fondoApp}"
              >
     <ContentPage.Behaviors>
         <behaviorsPack:EventToCommandBehavior 

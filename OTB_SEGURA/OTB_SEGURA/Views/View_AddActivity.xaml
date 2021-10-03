@@ -15,18 +15,13 @@
         <Label Text="Descripción" TextColor="Black"/>
         <Editor Text="{Binding Alerta.Message}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" TextColor="Black" />
         <Label Text="Tipo de alerta" FontAttributes="Bold" HorizontalOptions="Fill" />
+
         <Picker Title="Selecciona tu tipo de alerta" Margin="1,5,120,20" ItemsSource="{Binding ListAlertsType}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding AlertTypeSelected}" SelectedIndex="{Binding SelectedIndex}">
             <Picker.Behaviors>
                 <cmd:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding SelectedIndexChangedCommand}"/>
             </Picker.Behaviors>
         </Picker>
 
-
-        <BoxView   VerticalOptions="Center"
-           HorizontalOptions="Center"
-           HeightRequest="1"  
-           WidthRequest      ="300"
-           Color="#111a1c"></BoxView>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>

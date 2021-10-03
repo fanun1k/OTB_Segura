@@ -8,7 +8,6 @@ namespace OTB_SEGURA.Models
 {
     public class EmergencyNumbersModel
     {
-        [PrimaryKey, AutoIncrement]
         public Guid NumberId { get; set; }
         public string Name { get; set; }
         public int Number { get; set; }

@@ -37,11 +37,11 @@
         <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="15">
             <Button Text="{Binding TextButton,Mode=TwoWay}" BackgroundColor="#52a5df" BorderColor="White" CornerRadius="5" WidthRequest="700" HeightRequest="200" Command="{Binding ButtonChangeStateClick}"  HorizontalOptions="EndAndExpand" IsEnabled="{Binding IsBusy}"/>
         </Grid>
- 
+
         <Frame Margin="0,70,0,0" HorizontalOptions="Center" CornerRadius="5" BackgroundColor="#52a5df">
             <Label TextColor="White" Text="Alertas"></Label>
         </Frame>
-
+        
     <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
         <ListView.ItemTemplate>
             <DataTemplate>

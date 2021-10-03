@@ -114,29 +114,19 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(() =>
+                return new RelayCommand(async () =>
                 {
                     try
                     {
                         if (alertTypeSelected != null)
                         {
-                            ListToShow = null;
-                            ListToShow = new ObservableCollection<CompleteAlertModel>();
-                            var query = from x in listActivity
-                                        where x.Alert_type_ID == alertTypeSelected.Alert_type_ID
-                                        select new CompleteAlertModel
-                                        {
-                                            Alert_ID = x.Alert_ID,
-                                            Alert_type_Name = AlertTypeList.Where(y => y.Alert_type_ID == x.Alert_type_ID).Select(z => z.Name).FirstOrDefault(),
-                                            User_Name = userLis.Where(y => y.User_ID == x.User_ID).Select(z => z.Name).FirstOrDefault(),
-                                            Longitude = x.Longitude,
-                                            Latitude = x.Latitude,
-                                            Date = x.Date,
-                                            Message = x.Message
-                                        };
-                            foreach (var item in query)
+                            if (!group)
                             {
-                                ListToShow.Add(item);
+                                await Filter();
+                            }
+                            else
+                            {
+
                             }
                         }
 
@@ -154,31 +144,20 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(() =>
+                return new RelayCommand(async () =>
                 {
                     try
                     {
-                        ListToShow = null;
-                        ListToShow = new ObservableCollection<CompleteAlertModel>();
-                        var query = from x in alertTypeList
-                                    select new CompleteAlertModel
-                                    {
-                                        Alert_type_Name = x.Name,
-                                        Ubication_List = listActivity.Where(y => y.Alert_type_ID == x.Alert_type_ID).
-                                                                      Select(z => new UbicationModel
-                                                                      {
-                                                                          Latitude = z.Latitude,
-                                                                          Longitude = z.Longitude
-                                                                      }).ToList()
-
-                                    };
-                        foreach (var item in query)
+                        if (group)
                         {
-                            ListToShow.Add(item);
+
+                            await GroupList();
                         }
+                        else if (alertTypeSelected != null)
+                        {
 
+                        }
                     }
-
                     catch (Exception ex)
                     {
                         DependencyService.Get<IMessage>().LongAlert(ex.Message);
@@ -226,7 +205,70 @@ namespace OTB_SEGURA.ViewModels
             {
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
+        }
 
+        private async Task Filter()
+        {
+            try
+            {
+                if (alertTypeSelected != null)
+                {
+                    ListToShow = null;
+                    ListToShow = new ObservableCollection<CompleteAlertModel>();
+                    await Task.Run(()=> {
+                        var query = from x in listActivity
+                                    where x.Alert_type_ID == alertTypeSelected.Alert_type_ID
+                                    select new CompleteAlertModel
+                                    {
+                                        Alert_ID = x.Alert_ID,
+                                        Alert_type_Name = AlertTypeList.Where(y => y.Alert_type_ID == x.Alert_type_ID).Select(z => z.Name).FirstOrDefault(),
+                                        User_Name = userLis.Where(y => y.User_ID == x.User_ID).Select(z => z.Name).FirstOrDefault(),
+                                        Longitude = x.Longitude,
+                                        Latitude = x.Latitude,
+                                        Date = x.Date,
+                                        Message = x.Message
+                                    };
+                        foreach (var item in query)
+                        {
+                            ListToShow.Add(item);
+                        }
+                    });            
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private async Task GroupList()
+        {
+            try
+            {
+                ListToShow = null;
+                ListToShow = new ObservableCollection<CompleteAlertModel>();
+                var query = from x in alertTypeList
+                            select new CompleteAlertModel
+                            {
+                                Alert_type_Name = x.Name,
+                                Ubication_List = listActivity.Where(y => y.Alert_type_ID == x.Alert_type_ID).
+                                                              Select(z => new UbicationModel
+                                                              {
+                                                                  Latitude = z.Latitude,
+                                                                  Longitude = z.Longitude
+                                                              }).ToList()
+                            };
+                foreach (var item in query)
+                {
+                    ListToShow.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }     
         }
 
         private async Task LoadAlerts()

@@ -33,7 +33,6 @@ namespace OTB_SEGURA.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            string dbPath = FileAccess.GetLocalFilePath("EmergencyNumbers.db3");//Crear la tabla del sqlite
             LoadApplication(new App());
 
             if (!GetString(Resource.String.google_app_id).Equals("1:973479782758:android:f3029c216105cc690cc0a7"))//Validacion de json de datos de firebase

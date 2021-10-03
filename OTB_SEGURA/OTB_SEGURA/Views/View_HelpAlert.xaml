@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OTB_SEGURA.Views.View_HelpAlert"
-             Title="Descripción">
+             Title="Descripción" Style="{StaticResource fondoApp}">
     <ContentPage.Content>
         <StackLayout  Padding="50" Background="#b9eefc">
             <Image Source="alarm.png" WidthRequest="400"/>

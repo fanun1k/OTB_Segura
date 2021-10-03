@@ -3,17 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              x:Class="OTB_SEGURA.Views.View_ViewAlarms"
-             Title="Ver Alarmas"
-             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels">
-
-    <ContentPage.BindingContext>
-        <vm:ViewModel_ViewAlarms/>
-    </ContentPage.BindingContext>
+             Title="Ver Alarmas" Style="{StaticResource fondoApp}">
     <ContentPage.Behaviors>
         <behaviorsPack:EventToCommandBehavior 
             EventName="Appearing"
             Command="{Binding ApperingCommandAlarm }"/>
     </ContentPage.Behaviors>
+    
+    
     <StackLayout Padding="0">
         <Button WidthRequest="1000" HeightRequest="60" BackgroundColor="{StaticResource PrimaryVariation}" 
             Text="Ver Alarmas" HorizontalOptions="Center"
@@ -22,6 +19,9 @@
                     ImageSource="alarmview" 
                />
         <ListView x:Name="listAlarms" ItemsSource="{Binding ListAlarm}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
+            <ListView.Behaviors>
+                <behaviorsPack:EventToCommandBehavior EventName="ItemTapped" Command="{Binding ItemTappedCommand}"/>
+            </ListView.Behaviors>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

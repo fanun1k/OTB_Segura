@@ -26,7 +26,7 @@ namespace OTB_SEGURA.ViewModels
         private Image imgProfile = new Image();
         public ICommand ButtonChangeStateClick { get; private set; }
         private AlertService alertService { get; set; } = new AlertService();
-
+        private ImageProfileModel photoProfile = new ImageProfileModel();
         #endregion
         #region Properties
         public Image ImgProfile
@@ -49,6 +49,12 @@ namespace OTB_SEGURA.ViewModels
         {
             get { return user; }
             set { user = value;OnPropertyChanged(); }
+        }
+
+        public ImageProfileModel PhotoProfile
+        {
+            get { return photoProfile; }
+            set { photoProfile = value; OnPropertyChanged(); }
         }
         #endregion
         #region Contructs
@@ -228,22 +234,23 @@ namespace OTB_SEGURA.ViewModels
 
                         if (stream != null)
                         {
-                            ImgProfile.Source = ImageSource.FromStream(() => stream);
-
-                            IsBusy = true;
+                            //ImgProfile.Source = ImageSource.FromStream(() => stream);
+                            MemoryStream ms = new MemoryStream();
+                            stream.Position = 0;
+                            stream.CopyTo(ms);
 
                             ResponseHTTP<UserModel> resultHTTP = await restFull.UploadProfile(user.User_ID.ToString(),stream);
 
                             if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                             {
+                                PhotoProfile.ImageProfile = ms.ToArray();
+                                await App.SQLiteDB.SaveImageProfile(photoProfile);
                                 DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                                await Shell.Current.GoToAsync("..");
                             }
                             else
                             {
                                 DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
                             }
-                            IsBusy = false;
                         }
                     }
                     catch (Exception ex)
@@ -252,6 +259,15 @@ namespace OTB_SEGURA.ViewModels
                     }
                     IsBusy = true;
                 },canExecute: (obj) => { return IsBusy; });
+            }
+        }
+        public ICommand AppearingProfileCommand
+        {
+            get
+            {
+                return new RelayCommand(async () => {
+                    await LoadImageProfile();
+                });
             }
         }
 
@@ -333,26 +349,50 @@ namespace OTB_SEGURA.ViewModels
         /// Metodo que carga las actividades en la vista View_UserProfile segun el id del usuario que reciba
         /// </summary>
         /// <param name="id">codigo id de un usuario que sera utilizado para hacer consultas a la bdd</param>
-        private async void LoadActivities()
+        /// 
+
+        public async void LoadActivities()
         {
             try
             {
-
-                ResponseHTTP<AlertModel> responseHTTP =await alertService.GetAlertsByUser(user.Otb_ID,user.User_ID);
-                if (responseHTTP.Code==System.Net.HttpStatusCode.OK)
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
                 {
-                    ActivityList = responseHTTP.Data;
+                    ResponseHTTP<AlertModel> responseHTTP = await alertService.GetAlertsByUser(user.Otb_ID, user.User_ID);
+                    if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                    {
+                        ActivityList = responseHTTP.Data;
+                        await App.SQLiteDB.SaveAlertAsync(activityList);
+
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+
+                    }
                 }
                 else
                 {
-                    DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                    ActivityList = await App.SQLiteDB.GetAlertAsync();
+
                 }
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
 
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
+        }
+
+        private async Task LoadImageProfile()
+        {
+
+            var img = await App.SQLiteDB.GetImageProfile();
+            if (img != null)
+            {
+                Stream stream = new MemoryStream(img.ImageProfile);
+                ImgProfile.Source = ImageSource.FromStream(() => stream);
+            }
+
         }
         #endregion
     }

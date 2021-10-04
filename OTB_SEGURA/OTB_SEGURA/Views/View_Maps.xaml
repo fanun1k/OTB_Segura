@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:cntrl="clr-namespace:OTB_SEGURA.Controls"
+             x:Class="OTB_SEGURA.Views.View_Maps" Title="Maps">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackLayout>
+            <Label FontSize="Title" Text="{Binding Alert.Alert_type_Name}" HorizontalOptions="Center"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Nombre: "/>
+                <Label Grid.Column="1" Text="{Binding Alert.User_Name}" FontAttributes="None"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Fecha:"/>
+                <Label Grid.Column="1" Text="{Binding Alert.Date}"  FontAttributes="None"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Mensaje: "/>
+                <Label Grid.Column="1" Text="{Binding Alert.Message}"  FontAttributes="None"/>
+            </Grid>
+        </StackLayout >
+        <cntrl:CustomMap Grid.Row="1" MapType="Street" MapPosition="{Binding Position}" MapPins="{Binding PinList}"/>
+    </Grid>
+</ContentPage>

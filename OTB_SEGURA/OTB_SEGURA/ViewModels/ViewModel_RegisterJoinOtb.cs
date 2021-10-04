@@ -85,7 +85,7 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(async () =>
+                return new Command(async (obj) =>
                 {
                     try
                     {
@@ -110,7 +110,7 @@ namespace OTB_SEGURA.ViewModels
                         DependencyService.Get<IMessage>().LongAlert(ex.Message);
                     }
                     IsBusy = true;
-                });
+                }, canExecute: (obj) => { return IsBusy; });
             }
         }
         #endregion

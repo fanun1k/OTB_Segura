@@ -16,7 +16,7 @@ namespace OTB_SEGURA.ViewModels
         public string MyOTBName
         {
             get { return myOTBName; }
-            set { myOTBName = value; }
+            set { myOTBName = value; OnPropertyChanged(); }
         }
 
         private INavigation Navigation { get; set; }

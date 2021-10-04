@@ -21,7 +21,7 @@ namespace OTB_SEGURA.ViewModels
         private AlertTypeService alertTypeService = new AlertTypeService();
         private List<UserModel> userLis = new List<UserModel>();
         private ObservableCollection<AlertTypeModel> alertTypeList = new ObservableCollection<AlertTypeModel>();
-        private ObservableCollection<CompleteAlertModel> listToShow;
+        private ObservableCollection<CompleteAlertModel> listToShow=new ObservableCollection<CompleteAlertModel>();
         private AlertTypeModel alertTypeSelected;
         private bool group;
         private int indexPick;
@@ -118,18 +118,17 @@ namespace OTB_SEGURA.ViewModels
                 {
                     try
                     {
-                        if (alertTypeSelected != null)
+                        if (alertTypeSelected != null) //Filtrado
                         {
-                            if (!group)
+                            if (!group)//filtrado sin agrupado
                             {
-                                await Filter();
+                                await FilterList();
                             }
-                            else
+                            else //filtrado y agrupado
                             {
-
+                                await FilterAndGroup();
                             }
                         }
-
                     }
                     catch (Exception ex)
                     {
@@ -148,14 +147,24 @@ namespace OTB_SEGURA.ViewModels
                 {
                     try
                     {
-                        if (group)
+                        if (group)//check en true
                         {
-
-                            await GroupList();
+                            if (alertTypeSelected!=null)// agrupado y filtrado
+                            {
+                                await FilterAndGroup();
+                            }
+                            else//solo agrupado
+                            { 
+                                await GroupList();
+                            }                     
                         }
-                        else if (alertTypeSelected != null)
+                        else//check en false
                         {
-
+                            if (alertTypeSelected != null)//filtrado
+                            {
+                                await FilterList();
+                            }
+                            else await LoadData(); // sin agrupar y sin filtrar
                         }
                     }
                     catch (Exception ex)
@@ -180,11 +189,11 @@ namespace OTB_SEGURA.ViewModels
                 tasks.Add(LoadAlertTypes());
                 tasks.Add(LoadUsers());
                 await Task.WhenAll(tasks);
-                ListToShow = null;
-                ListToShow = new ObservableCollection<CompleteAlertModel>();
+                await ClearList();
                 IndexPick = -1;
                 Group = false;
                 var query = from x in listActivity
+                            orderby x.Date descending
                             select new CompleteAlertModel
                             {
                                 Alert_ID = x.Alert_ID,
@@ -205,23 +214,61 @@ namespace OTB_SEGURA.ViewModels
                 DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
         }
+        private async Task FilterAndGroup()
+        {
+            try
+            {
+                await ClearList();
+                await Task.Run(() => {
+                    var query = from x in alertTypeList
+                                where x.Alert_type_ID==alertTypeSelected.Alert_type_ID       
+                                select new CompleteAlertModel
+                                {
+                                    Alert_type_Name = x.Name,
+                                    Ubication_List = listActivity.Where(y => y.Alert_type_ID == x.Alert_type_ID).                                                               
+                                                                  Select(z => new UbicationModel
+                                                                  {
+                                                                      Latitude = z.Latitude,
+                                                                      Longitude = z.Longitude
+                                                                  }).ToList()
+                                };
+                    foreach (var item in query)
+                    {
+                        ListToShow.Add(item);
+                    }
+                    
+                });             
+            }
+            catch (Exception ex)
+            {
 
-        private async Task Filter()
+                throw ex;
+            }
+        }
+        private async Task ClearList()
+        {
+            await Task.Run(()=> {
+                ListToShow.Clear();
+            });
+        }
+        private async Task FilterList()
         {
             try
             {
                 if (alertTypeSelected != null)
                 {
-                    ListToShow = null;
-                    ListToShow = new ObservableCollection<CompleteAlertModel>();
-                    await Task.Run(()=> {
+                    await ClearList();
+                    await Task.Run(()=>
+                    {                       
                         var query = from x in listActivity
                                     where x.Alert_type_ID == alertTypeSelected.Alert_type_ID
+                                    orderby x.Date descending
                                     select new CompleteAlertModel
                                     {
                                         Alert_ID = x.Alert_ID,
                                         Alert_type_Name = AlertTypeList.Where(y => y.Alert_type_ID == x.Alert_type_ID).Select(z => z.Name).FirstOrDefault(),
-                                        User_Name = userLis.Where(y => y.User_ID == x.User_ID).Select(z => z.Name).FirstOrDefault(),
+                                        User_Name = userLis.Where(y => y.User_ID == x.User_ID).
+                                        Select(z => z.Name).FirstOrDefault(),
                                         Longitude = x.Longitude,
                                         Latitude = x.Latitude,
                                         Date = x.Date,
@@ -240,28 +287,29 @@ namespace OTB_SEGURA.ViewModels
                 throw ex;
             }
         }
-
         private async Task GroupList()
         {
             try
             {
-                ListToShow = null;
-                ListToShow = new ObservableCollection<CompleteAlertModel>();
-                var query = from x in alertTypeList
-                            select new CompleteAlertModel
-                            {
-                                Alert_type_Name = x.Name,
-                                Ubication_List = listActivity.Where(y => y.Alert_type_ID == x.Alert_type_ID).
-                                                              Select(z => new UbicationModel
-                                                              {
-                                                                  Latitude = z.Latitude,
-                                                                  Longitude = z.Longitude
-                                                              }).ToList()
-                            };
-                foreach (var item in query)
-                {
-                    ListToShow.Add(item);
-                }
+                await ClearList();
+                await Task.Run(()=> {
+                    var query = from x in alertTypeList
+                                select new CompleteAlertModel
+                                {
+                                    Alert_type_Name = x.Name,
+                                    Ubication_List = listActivity.Where(y => y.Alert_type_ID == x.Alert_type_ID).
+                                                                  Select(z => new UbicationModel
+                                                                  {
+                                                                      Latitude = z.Latitude,
+                                                                      Longitude = z.Longitude
+                                                                  }).ToList()
+                                };
+                    foreach (var item in query)
+                    {
+                        ListToShow.Add(item);
+                    }
+                });
+                
             }
             catch (Exception ex)
             {
@@ -269,7 +317,6 @@ namespace OTB_SEGURA.ViewModels
                 throw ex;
             }     
         }
-
         private async Task LoadAlerts()
         {
             try

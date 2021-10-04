@@ -65,7 +65,7 @@ namespace OTB_SEGURA.ViewModels
         #region Construct
         public UserActivityViewModel( INavigation nav)
         {
-            Title = "Actividad de Usuarios"; // Titulo de la vista
+            Title = "Alertas de Usuarios"; // Titulo de la vista
             Navigation = nav;
         }
         #endregion

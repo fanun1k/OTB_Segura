@@ -8,10 +8,6 @@
     <ContentPage.Behaviors>
         <cmd:EventToCommandBehavior EventName="Appearing" Command="{Binding AppearingCommand}"/>
     </ContentPage.Behaviors>
-
-    <ContentPage.BindingContext>
-        <vm:UserActivityViewModel/>
-    </ContentPage.BindingContext>
     <StackLayout>
         <StackLayout Orientation="Horizontal">
             <Label Text="Filtrar por tipo:" VerticalTextAlignment="Center"/>
@@ -27,12 +23,11 @@
                 </CheckBox.Behaviors>
             </CheckBox>
         </StackLayout>
-        <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListToShow}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}">
+        <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListToShow}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}" SelectedItem="{Binding AlertSelected}">
             <ListView.Behaviors>
                 <cmd:EventToCommandBehavior 
                     EventName="ItemTapped"
-                    Command="{Binding ItemTappedCommandUserActivity}"
-                    EventArgsPropertyPath="Item"/>
+                    Command="{Binding ItemTappedCommandUserActivity}"/>
                 <cmd:EventToCommandBehavior
                     EventName="Refreshing"
                     Command="{Binding RefreshingCommandActivityUsers}"/>

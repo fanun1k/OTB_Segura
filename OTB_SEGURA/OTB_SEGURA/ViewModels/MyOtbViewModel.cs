@@ -11,6 +11,14 @@ namespace OTB_SEGURA.ViewModels
 {
      class MyOtbViewModel:BaseViewModel
     {
+        private string myOTBName;
+
+        public string MyOTBName
+        {
+            get { return myOTBName; }
+            set { myOTBName = value; }
+        }
+
         private INavigation Navigation { get; set; }
         public ICommand RegisterCameraCommand
         {
@@ -76,6 +84,24 @@ namespace OTB_SEGURA.ViewModels
                     DependencyService.Get<IMessage>().LongAlert("Administrar Alertas")
                 );
                 
+            }
+        }
+
+        public  ICommand AppearingCommand
+        {
+            get
+            {
+                return new RelayCommand( async () =>
+                {
+                    try
+                    {
+                        MyOTBName = await App.SQLiteDB.GetMyOtb();
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                });
             }
         }
 

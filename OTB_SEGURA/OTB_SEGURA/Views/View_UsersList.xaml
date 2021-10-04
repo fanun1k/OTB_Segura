@@ -22,8 +22,7 @@
             <ListView.Behaviors>
                 <behaviorsPack:EventToCommandBehavior 
                     EventName="ItemTapped"
-                    Command="{Binding ItemTappedCommand}"
-                    EventArgsPropertyPath="Item"/>
+                    Command="{Binding ItemTappedCommand}"/>
                 <behaviorsPack:EventToCommandBehavior 
                     EventName="Refreshing"
                     Command="{Binding RefreshingCommand}"/>

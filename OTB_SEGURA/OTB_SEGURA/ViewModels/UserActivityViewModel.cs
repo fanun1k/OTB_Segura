@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
+using OTB_SEGURA.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,28 +22,30 @@ namespace OTB_SEGURA.ViewModels
         private AlertTypeService alertTypeService = new AlertTypeService();
         private List<UserModel> userLis = new List<UserModel>();
         private ObservableCollection<AlertTypeModel> alertTypeList = new ObservableCollection<AlertTypeModel>();
-        private ObservableCollection<CompleteAlertModel> listToShow=new ObservableCollection<CompleteAlertModel>();
+        private ObservableCollection<CompleteAlertModel> listToShow = new ObservableCollection<CompleteAlertModel>();
         private AlertTypeModel alertTypeSelected;
         private bool group;
         private int indexPick;
+        private CompleteAlertModel alertSelected;
+        private INavigation Navigation;
         #endregion
 
         #region Properties
-
-
+        public CompleteAlertModel AlertSelected
+        {
+            get { return alertSelected; }
+            set { alertSelected = value; }
+        }
         public ObservableCollection<AlertTypeModel> AlertTypeList
         {
             get { return alertTypeList; }
             set { alertTypeList = value; OnPropertyChanged(); }
         }
-
-
         public int IndexPick
         {
             get { return indexPick; }
             set { indexPick = value; OnPropertyChanged(); }
         }
-
         public bool Group
         {
             get { return group; }
@@ -53,7 +56,6 @@ namespace OTB_SEGURA.ViewModels
             get { return alertTypeSelected; }
             set { alertTypeSelected = value; OnPropertyChanged(); }
         }
-
         public ObservableCollection<CompleteAlertModel> ListToShow
         {
             get { return listToShow; }
@@ -61,9 +63,10 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
         #region Construct
-        public UserActivityViewModel()
+        public UserActivityViewModel( INavigation nav)
         {
             Title = "Actividad de Usuarios"; // Titulo de la vista
+            Navigation = nav;
         }
         #endregion
 
@@ -88,28 +91,20 @@ namespace OTB_SEGURA.ViewModels
         }
 
         // Comando que redirecciona a Google Maps con la locaclizacion de la actividad
-        public ICommand ItemTappedCommandUserActivity { get; } = new Command(async (Item) =>
+        public ICommand ItemTappedCommandUserActivity
         {
-            try
+            get
             {
-                var userActivityModel = Item as UserActivityModel; // Instancia del UserActivityViewModel
-                if (userActivityModel != null)
+                return new RelayCommand(async () =>
                 {
-                    await Map.OpenAsync(userActivityModel.Latitude, userActivityModel.Longitude, new MapLaunchOptions
+
+                    if (alertSelected!=null)
                     {
-                        Name = "Ubicación",
-                        NavigationMode = NavigationMode.None
-                    }); // Redireccion a Maps con la latitud y longitud
-                }
+                        await Navigation.PushAsync(new View_Maps(alertSelected));                        
+                    }
+                });
             }
-            catch (Exception ex)
-            {
-                DependencyService.Get<IMessage>().LongAlert(ex.Message);
-            }
-        });
-
-
-
+        }
         public ICommand SelectedChangedCommand
         {
             get
@@ -138,7 +133,6 @@ namespace OTB_SEGURA.ViewModels
                 });
             }
         }
-
         public ICommand CheckedChangedCommand
         {
             get
@@ -149,14 +143,14 @@ namespace OTB_SEGURA.ViewModels
                     {
                         if (group)//check en true
                         {
-                            if (alertTypeSelected!=null)// agrupado y filtrado
+                            if (alertTypeSelected != null)// agrupado y filtrado
                             {
                                 await FilterAndGroup();
                             }
                             else//solo agrupado
-                            { 
+                            {
                                 await GroupList();
-                            }                     
+                            }
                         }
                         else//check en false
                         {
@@ -174,7 +168,6 @@ namespace OTB_SEGURA.ViewModels
                 });
             }
         }
-
         #endregion
 
         #region Metodh
@@ -219,13 +212,14 @@ namespace OTB_SEGURA.ViewModels
             try
             {
                 await ClearList();
-                await Task.Run(() => {
+                await Task.Run(() =>
+                {
                     var query = from x in alertTypeList
-                                where x.Alert_type_ID==alertTypeSelected.Alert_type_ID       
+                                where x.Alert_type_ID == alertTypeSelected.Alert_type_ID
                                 select new CompleteAlertModel
                                 {
                                     Alert_type_Name = x.Name,
-                                    Ubication_List = listActivity.Where(y => y.Alert_type_ID == x.Alert_type_ID).                                                               
+                                    Ubication_List = listActivity.Where(y => y.Alert_type_ID == x.Alert_type_ID).
                                                                   Select(z => new UbicationModel
                                                                   {
                                                                       Latitude = z.Latitude,
@@ -236,8 +230,8 @@ namespace OTB_SEGURA.ViewModels
                     {
                         ListToShow.Add(item);
                     }
-                    
-                });             
+
+                });
             }
             catch (Exception ex)
             {
@@ -247,7 +241,8 @@ namespace OTB_SEGURA.ViewModels
         }
         private async Task ClearList()
         {
-            await Task.Run(()=> {
+            await Task.Run(() =>
+            {
                 ListToShow.Clear();
             });
         }
@@ -258,8 +253,8 @@ namespace OTB_SEGURA.ViewModels
                 if (alertTypeSelected != null)
                 {
                     await ClearList();
-                    await Task.Run(()=>
-                    {                       
+                    await Task.Run(() =>
+                    {
                         var query = from x in listActivity
                                     where x.Alert_type_ID == alertTypeSelected.Alert_type_ID
                                     orderby x.Date descending
@@ -278,7 +273,7 @@ namespace OTB_SEGURA.ViewModels
                         {
                             ListToShow.Add(item);
                         }
-                    });            
+                    });
                 }
             }
             catch (Exception ex)
@@ -292,7 +287,8 @@ namespace OTB_SEGURA.ViewModels
             try
             {
                 await ClearList();
-                await Task.Run(()=> {
+                await Task.Run(() =>
+                {
                     var query = from x in alertTypeList
                                 select new CompleteAlertModel
                                 {
@@ -309,13 +305,13 @@ namespace OTB_SEGURA.ViewModels
                         ListToShow.Add(item);
                     }
                 });
-                
+
             }
             catch (Exception ex)
             {
 
                 throw ex;
-            }     
+            }
         }
         private async Task LoadAlerts()
         {

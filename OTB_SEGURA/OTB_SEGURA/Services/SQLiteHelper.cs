@@ -16,6 +16,7 @@ namespace OTB_SEGURA.Services
             db.CreateTableAsync<UserModel>().Wait();
             db.CreateTableAsync<SessionModel>().Wait();
             db.CreateTableAsync<ImageProfileModel>().Wait();
+            db.CreateTableAsync<OtbModel>().Wait();
         }
 
         //Para guardar registros
@@ -67,7 +68,8 @@ namespace OTB_SEGURA.Services
         {
             return db.Table<SessionModel>().FirstOrDefaultAsync();
         }
-
+        #endregion
+        #region ImageProfile
         public async Task<int> SaveImageProfile(ImageProfileModel imgProfile)
         {
             try
@@ -84,6 +86,26 @@ namespace OTB_SEGURA.Services
         public async Task<ImageProfileModel> GetImageProfile()
         {
             return await db.Table<ImageProfileModel>().FirstOrDefaultAsync();
+        }
+        #endregion
+        #region Otb
+        public async Task<int> SaveMyOtb(OtbModel myOtb)
+        {
+            try
+            {
+                await db.DropTableAsync<OtbModel>();
+                await db.CreateTableAsync<OtbModel>();
+                return await db.InsertAsync(myOtb);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<string> GetMyOtb()
+        {
+            var otbName = await db.Table<OtbModel>().FirstOrDefaultAsync();
+            return otbName.Name;
         }
         #endregion
     }

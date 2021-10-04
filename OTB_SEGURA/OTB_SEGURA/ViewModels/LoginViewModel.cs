@@ -114,6 +114,8 @@ namespace OTB_SEGURA.ViewModels
                                         tipo = "admin";
                                     }
                                     else tipo = "user";
+                                    if (resultHTTP.Data[0].Type == 0 && resultHTTP.Data[0].Otb_ID == null)
+                                        tipo = "userWithOutOTB";
                                     MessagingCenter.Send<LoginViewModel>(this, tipo);
                                     //DependencyService.Get<IMessage>().LongAlert(tipo);
                                     //DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data[0].Name);

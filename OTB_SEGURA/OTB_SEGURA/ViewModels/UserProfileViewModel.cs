@@ -136,20 +136,21 @@ namespace OTB_SEGURA.ViewModels
                     {
                         IsBusy = false;
                         ((Command)SetAdminCommand).ChangeCanExecute();
-                        ResponseHTTP<UserModel> resultHTTP = await restFull.SetAdmin(user);
-
-                        if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                        if (await App.Current.MainPage.DisplayAlert("Dar Administrador", "¿Desea volver administrador a "
+                                                                    +$"{user.Name} ?", "Aceptar", "Cancelar"))
                         {
-                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                            await Shell.Current.GoToAsync("..");
-                        }
-                        else
-                        {
-                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                        }
-                        
+                            ResponseHTTP<UserModel> resultHTTP = await restFull.SetAdmin(user);
 
-
+                            if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                                await Shell.Current.GoToAsync("..");
+                            }
+                            else
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            }
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -169,16 +170,20 @@ namespace OTB_SEGURA.ViewModels
                     {
                         IsBusy = false;
                         ((Command)RemoveAdminCommand).ChangeCanExecute();
-                        ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveAdmin(user);
+                        if (await App.Current.MainPage.DisplayAlert("Remover Administrador", "¿Desea volver quitarle el Administrador a "
+                                                                    + $"{user.Name} ?", "Aceptar", "Cancelar"))
+                        {
+                            ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveAdmin(user);
 
-                        if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
-                        {
-                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                            await Shell.Current.GoToAsync("..");
-                        }
-                        else
-                        {
-                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                                await Shell.Current.GoToAsync("..");
+                            }
+                            else
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -199,16 +204,20 @@ namespace OTB_SEGURA.ViewModels
                     {
                         IsBusy = false;
                         ((Command)RemoveOTBCommand).ChangeCanExecute();
-                        ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveOTB(user);
+                        if (await App.Current.MainPage.DisplayAlert("Expulsar OTB", "¿Desea volver expulsar a "
+                                                                    + $"{user.Name} ?", "Aceptar", "Cancelar"))
+                        {
+                            ResponseHTTP<UserModel> resultHTTP = await restFull.RemoveOTB(user);
 
-                        if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
-                        {
-                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                            await Shell.Current.GoToAsync("..");
-                        }
-                        else
-                        {
-                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                                await Shell.Current.GoToAsync("..");
+                            }
+                            else
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                            }
                         }
                     }
                     catch (Exception ex)

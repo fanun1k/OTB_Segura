@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:OTB_SEGURA.Views"
             xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
              x:Class="OTB_SEGURA.Views.View_EmergencyNumbersTabbedPage"
-            Title="Numeros de emergencia">
+            Title="Numeros de emergencia" Style="{StaticResource fondoApp}">
     
     <local:View_EmergencyNumbers/>
   

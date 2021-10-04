@@ -24,7 +24,7 @@
         </Grid>
         <Grid >
             <ImgCircle:CircleImage HeightRequest="600" BorderColor="White" BorderThickness="3" Margin="5,10,5,5" Source="{Binding ImgProfile.Source}"></ImgCircle:CircleImage>
-            <Button Command="{Binding UploadCommand}" BackgroundColor="White" BorderColor="White" ImageSource="cam.png" Margin="229,130,120,10" WidthRequest="300" HeightRequest="700" HorizontalOptions="Center"  CornerRadius="30" Padding="0"/>
+            <Button Command="{Binding UploadCommand}" BackgroundColor="White" BorderColor="White" ImageSource="cam.png" Margin="229,105,120,10" WidthRequest="300" HeightRequest="700" HorizontalOptions="Center"  CornerRadius="30" Padding="0"/>
         </Grid>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
             <Image Source="user.png"/>

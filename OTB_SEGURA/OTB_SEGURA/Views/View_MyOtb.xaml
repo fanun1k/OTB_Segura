@@ -4,13 +4,13 @@
              x:Class="OTB_SEGURA.Views.View_MyOtb"
              xmlns:local="clr-namespace:OTB_SEGURA.Views"
              Title="{Binding Title}"
-             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels" Style="{StaticResource fondoApp}"
              xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              >
     <ContentPage.Behaviors>
         <behaviorsPack:EventToCommandBehavior EventName="Appearing" Command="{Binding AppearingCommand}"/>
     </ContentPage.Behaviors>
-    <Grid BackgroundColor="#b9eefc">
+    <Grid>
         <StackLayout Padding="25">
             <Frame CornerRadius="25">
                 <Label Text="{Binding MyOTBName}" HorizontalOptions="Center" FontSize="25" />

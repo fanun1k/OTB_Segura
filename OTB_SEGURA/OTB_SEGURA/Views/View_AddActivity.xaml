@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              x:Class="OTB_SEGURA.Views.View_AddActivity"
              xmlns:cmd="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
-             Title="{Binding Title}">
+             Title="{Binding Title}" Style="{StaticResource fondoApp}">
     <ContentPage.BindingContext>
         <vm:AddActivityViewModel/>
     </ContentPage.BindingContext>
@@ -13,20 +13,15 @@
     </ContentPage.Behaviors>
     <StackLayout Padding="15">
         <Label Text="Descripción" TextColor="Black"/>
-        <Editor Text="{Binding Alerta.Message}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" TextColor="Black" />
+        <Editor Text="{Binding Alerta.Message}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" TextColor="Black" Placeholder="Escriba una descripcción" PlaceholderColor="Black"/>
         <Label Text="Tipo de alerta" FontAttributes="Bold" HorizontalOptions="Fill" />
-        <Picker Title="Selecciona tu tipo de alerta" Margin="1,5,120,20" ItemsSource="{Binding ListAlertsType}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding AlertTypeSelected}" SelectedIndex="{Binding SelectedIndex}">
+
+        <Picker Title="Selecciona tu tipo de alerta" TitleColor="Black" Margin="1,5,120,20" ItemsSource="{Binding ListAlertsType}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding AlertTypeSelected}" SelectedIndex="{Binding SelectedIndex}">
             <Picker.Behaviors>
                 <cmd:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding SelectedIndexChangedCommand}"/>
             </Picker.Behaviors>
         </Picker>
 
-
-        <BoxView   VerticalOptions="Center"
-           HorizontalOptions="Center"
-           HeightRequest="1"  
-           WidthRequest      ="300"
-           Color="#111a1c"></BoxView>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -44,7 +39,7 @@
             ImageSource="alarma2.png"
             WidthRequest      ="300"
             HeightRequest     ="300"
-            CornerRadius      ="100"
+            CornerRadius      ="110"
             VerticalOptions   ="Center"
             HorizontalOptions ="Center"/>
     </StackLayout>

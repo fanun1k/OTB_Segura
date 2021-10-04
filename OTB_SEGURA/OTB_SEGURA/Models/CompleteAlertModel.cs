@@ -15,5 +15,7 @@ namespace OTB_SEGURA.Models
         public int Otb_ID { get; set; }
         public string User_Name { get; set; }
         public string Message { get; set; }
+        public int Alert_type_ID { get; set; }
+        public List<UbicationModel> Ubication_List { get; set; } = new List<UbicationModel>();
     }
 }

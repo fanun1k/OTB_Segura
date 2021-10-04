@@ -4,15 +4,29 @@
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels" 
              xmlns:cmd="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              x:Class="OTB_SEGURA.Views.View_UserActivity"
-             Title="{Binding Title}">
+             Title="{Binding Title}" Style="{StaticResource fondoApp}" >
     <ContentPage.Behaviors>
         <cmd:EventToCommandBehavior EventName="Appearing" Command="{Binding AppearingCommand}"/>
     </ContentPage.Behaviors>
-   
+
     <ContentPage.BindingContext>
         <vm:UserActivityViewModel/>
     </ContentPage.BindingContext>
     <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Filtrar por tipo:" VerticalTextAlignment="Center"/>
+            <Picker Title="Seleccione un tipo" ItemsSource="{Binding AlertTypeList}" ItemDisplayBinding="{Binding Name}" WidthRequest="170" SelectedItem="{Binding AlertTypeSelected}" SelectedIndex="{Binding IndexPick}" >
+                <Picker.Behaviors>
+                    <cmd:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding SelectedChangedCommand}"/>
+                </Picker.Behaviors>
+            </Picker>
+                <Label Text="Agrupar" VerticalTextAlignment="Center"/>
+            <CheckBox IsChecked="{Binding Group}" >
+                <CheckBox.Behaviors>
+                    <cmd:EventToCommandBehavior EventName="CheckedChanged" Command="{Binding CheckedChangedCommand}"/>
+                </CheckBox.Behaviors>
+            </CheckBox>
+        </StackLayout>
         <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListToShow}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}">
             <ListView.Behaviors>
                 <cmd:EventToCommandBehavior 

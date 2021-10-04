@@ -24,6 +24,8 @@
     <Color x:Key="Dark">#292D25</Color>
     <Color x:Key="colorEmergency">#ea0208</Color>
     <Color x:Key="colorEmergencyDisabled">#fe787b</Color>
+    <Color x:Key="colorEmergencyNumbers">#C2D7F4</Color>
+    <Color x:Key="colorFrames">#6EDFF0</Color>
     <!--===============================================================================-->
     <!--===============================================================================-->
 
@@ -133,6 +135,12 @@
         <Setter Property="HorizontalOptions" Value="Center"/>
         <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
     </Style>
+
+
+    <Style TargetType="ContentPage">
+        <Setter Property="BackgroundImageSource" Value="fonProfile.png"/>
+    </Style>
+
     <!-- Frame Alertas-->
     <!--===========================================================================================================-->
     <Style TargetType="Frame" x:Key="frameA">
@@ -143,10 +151,7 @@
         <Setter Property="HorizontalOptions" Value="Center"/>
         <Setter Property="BackgroundColor" Value="White"/>
     </Style>
-
-
-    <Style TargetType="ContentPage">
-        <Setter Property="BackgroundImageSource" Value="fonProfile.png"/>
+    <Style TargetType="ContentPage" x:Key="fondoApp">
+        <Setter Property="BackgroundImageSource" Value="Fondo.jpg"/>
     </Style>
-
 </ResourceDictionary>

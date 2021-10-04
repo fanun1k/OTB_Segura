@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              x:Class="OTB_SEGURA.Views.View_ViewAlarms"
-             Title="Ver Alarmas">
+             Title="Ver Alarmas" Style="{StaticResource fondoApp}">
     <ContentPage.Behaviors>
         <behaviorsPack:EventToCommandBehavior 
             EventName="Appearing"

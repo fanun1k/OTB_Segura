@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OTB_SEGURA.Views.View_About"
-             BackgroundImageSource="background2ed.png"
+             Style="{StaticResource fondoApp}"
             >
     <ContentPage.Content >
         

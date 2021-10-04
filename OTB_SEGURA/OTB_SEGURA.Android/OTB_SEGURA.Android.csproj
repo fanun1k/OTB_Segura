@@ -92,7 +92,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileAccess.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MessageAndroid.cs" />
     <Compile Include="MyFirebaseIdService.cs" />
@@ -260,11 +259,15 @@
     <AndroidResource Include="Resources\drawable\type.png" />
     <AndroidResource Include="Resources\drawable\user.png" />
     <AndroidResource Include="Resources\drawable\correo.png" />
+    <AndroidResource Include="Resources\drawable\alarma2.png" />
+    <AndroidResource Include="Resources\drawable\Fondo.jpg" />
+    <AndroidResource Include="Resources\drawable\icon_User_Emergency_Phone.png" />
+    <AndroidResource Include="Resources\drawable\user2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionOTB_SEGURAAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionOTB_SEGURAAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

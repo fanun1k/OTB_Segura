@@ -13,7 +13,7 @@
         <vm:UserActivityViewModel/>
     </ContentPage.BindingContext>
     <StackLayout>
-        <StackLayout Orientation="Horizontal" Background="#4aa5e5">
+        <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource PrimaryVariation}">
             <Label Text="Filtrar por tipo:" VerticalTextAlignment="Center" FontSize="15" Margin="10,0,0,0"/>
             <Picker Title="Seleccione un tipo" ItemsSource="{Binding AlertTypeList}" ItemDisplayBinding="{Binding Name}" WidthRequest="170" SelectedItem="{Binding AlertTypeSelected}" SelectedIndex="{Binding IndexPick}"  FontSize="15">
                 <Picker.Behaviors>
@@ -47,7 +47,7 @@
                                     <Label Text="Fecha:" TextColor="{StaticResource Dark}" WidthRequest="86"></Label>
                                     <Label Text="{Binding Date,StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}" TextColor="{StaticResource Dark}" FontAttributes="None" WidthRequest="250"/>
                                 </StackLayout>
-                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#4aa5e5"/>
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{StaticResource PrimaryVariation}"/>
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="usuario" HeightRequest="20" VerticalOptions="Start" Margin="0,3,0,0"/>
                                     <Label Text="Usuario:" TextColor="{StaticResource Dark}"  WidthRequest="86"></Label>

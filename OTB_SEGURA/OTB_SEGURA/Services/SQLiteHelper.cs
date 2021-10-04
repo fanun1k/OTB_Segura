@@ -3,6 +3,7 @@ using SQLite;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
+using System.Collections.ObjectModel;
 
 namespace OTB_SEGURA.Services
 {
@@ -18,6 +19,8 @@ namespace OTB_SEGURA.Services
             db.CreateTableAsync<AlertModel>().Wait();
             db.CreateTableAsync<UserActivityModel>().Wait();
             db.CreateTableAsync<ImageProfileModel>().Wait();
+            db.CreateTableAsync<AlertTypeModel>().Wait();
+
         }
 
         /// <summary>
@@ -128,6 +131,41 @@ namespace OTB_SEGURA.Services
             return db.Table<UserActivityModel>().ToListAsync();
         }
 
+        /// <summary>
+        /// Guardar lista de alertType en la tabla del SQLite
+        /// Tambien se realizan las acciones de DropTableAsync y CreateTableAsync para evitar errores
+        /// la variable alertTypeList guarda la lista de alerts
+        /// </summary>
+        /// <param name="alertTypeList"></param>
+        /// <returns></returns>
+        public async Task SaveAlertTypeAsync(List<AlertTypeModel> alertTypeList)
+        {
+            try
+            {
+                await db.DropTableAsync<AlertTypeModel>();
+                await db.CreateTableAsync<AlertTypeModel>();
+                foreach (var alertType in alertTypeList)
+                {
+                    await db.InsertAsync(alertType);
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Muestra los datos realizando un Get a la tabla AlertTypeModel
+        /// para la posterior visualizacion
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<AlertTypeModel>> GetAlertTypeAsync()
+        {
+            return db.Table<AlertTypeModel>().ToListAsync();
+        }
         #region Session
         public async Task<int> SaveSession(SessionModel session)
         {

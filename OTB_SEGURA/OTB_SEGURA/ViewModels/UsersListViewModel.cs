@@ -68,7 +68,6 @@ namespace OTB_SEGURA.ViewModels
                 {
                     try
                     {
-                        DependencyService.Get<IMessage>().LongAlert(userSelected.Name);
                         await Navigation.PushAsync(new View_UserProfile(userSelected));
                     }
                     catch (System.Exception ex)

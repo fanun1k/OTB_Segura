@@ -114,7 +114,7 @@
     <FlyoutItem x:Name="fiUser" Title="Lista de Usuarios" Icon="ListaUsuarios.png" IsVisible="{Binding IsAdmin}">
         <ShellContent Route="UserList" ContentTemplate="{DataTemplate local:View_UsersList}" />
     </FlyoutItem>
-    <FlyoutItem Title="Actividad de Usuarios" Icon="icon_feed.png" IsVisible="{Binding IsUser}">
+    <FlyoutItem Title="Alertas de Usuarios" Icon="icon_feed.png" IsVisible="{Binding IsUser}">
         <ShellContent Route="UserActivity" ContentTemplate="{DataTemplate local:View_UserActivity}"/>
     </FlyoutItem>
 

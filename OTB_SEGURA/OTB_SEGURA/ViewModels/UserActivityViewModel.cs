@@ -275,8 +275,23 @@ namespace OTB_SEGURA.ViewModels
             try
             {
                 int otbId = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
-                ResponseHTTP<AlertModel> responseHTTP = await alertService.listarAlertas(otbId);
-                listActivity = responseHTTP.Data;
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+                {
+                    ResponseHTTP<AlertModel> responseHTTP = await alertService.listarAlertas(otbId);
+                    if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                    {
+                        listActivity = responseHTTP.Data;
+                        await App.SQLiteDB.SaveAlertAsync(listActivity);
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                    }
+                }
+                else
+                {
+                    listActivity = await App.SQLiteDB.GetAlertAsync();
+                }
             }
             catch (Exception ex)
             {
@@ -288,8 +303,24 @@ namespace OTB_SEGURA.ViewModels
         {
             try
             {
-                ResponseHTTP<AlertTypeModel> responseHTTP = await alertTypeService.GetAlertTypes();
-                AlertTypeList = new ObservableCollection<AlertTypeModel>(responseHTTP.Data);
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+                {
+                    ResponseHTTP<AlertTypeModel> responseHTTP = await alertTypeService.GetAlertTypes();
+                    if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                    {
+                        AlertTypeList = new ObservableCollection<AlertTypeModel>(responseHTTP.Data);
+                        await App.SQLiteDB.SaveAlertTypeAsync(responseHTTP.Data);
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                    }
+                }
+                else
+                {
+                    var aux = await App.SQLiteDB.GetAlertTypeAsync();
+                    AlertTypeList = new ObservableCollection<AlertTypeModel>(aux);
+                }
             }
             catch (Exception ex)
             {
@@ -302,8 +333,23 @@ namespace OTB_SEGURA.ViewModels
             try
             {
                 int otbId = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
-                ResponseHTTP<UserModel> responseHTTP = await userService.UsersByOtb(otbId);
-                userLis = responseHTTP.Data;
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+                {
+                    ResponseHTTP<UserModel> responseHTTP = await userService.UsersByOtb(otbId);
+                    if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                    {
+                        userLis = responseHTTP.Data;
+                        await App.SQLiteDB.SaveUserAsync(userLis);
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                    }
+                }
+                else
+                {
+                    userLis = await App.SQLiteDB.GetUserAsync();
+                }
             }
             catch (Exception ex)
             {

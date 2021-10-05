@@ -23,7 +23,7 @@
                 </CheckBox.Behaviors>
             </CheckBox>
         </StackLayout>
-        <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListToShow}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}" Margin="15,0,15,0" >
+        <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListToShow}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}" Margin="15,0,15,0" SelectedItem="{Binding AlertSelected}">
             <ListView.Behaviors>
                 <cmd:EventToCommandBehavior 
                     EventName="ItemTapped"

@@ -177,10 +177,12 @@ namespace OTB_SEGURA.ViewModels
             try
             {
 
-                var tasks = new List<Task>();
-                tasks.Add(LoadAlerts());
-                tasks.Add(LoadAlertTypes());
-                tasks.Add(LoadUsers());
+                var tasks = new List<Task>
+                {
+                    LoadAlerts(),
+                    LoadAlertTypes(),
+                    LoadUsers()
+                };
                 await Task.WhenAll(tasks);
                 await ClearList();
                 IndexPick = -1;
@@ -293,6 +295,9 @@ namespace OTB_SEGURA.ViewModels
                                 select new CompleteAlertModel
                                 {
                                     Alert_type_Name = x.Name,
+                                    User_Name = "Usuario agrupado",
+                                    Message = "Mensaje agrupado",
+                                    Date = DateTime.Now,
                                     Ubication_List = listActivity.Where(y => y.Alert_type_ID == x.Alert_type_ID).
                                                                   Select(z => new UbicationModel
                                                                   {

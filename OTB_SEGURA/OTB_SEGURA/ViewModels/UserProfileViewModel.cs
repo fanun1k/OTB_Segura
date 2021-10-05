@@ -95,6 +95,7 @@ namespace OTB_SEGURA.ViewModels
                 user.Otb_ID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
 
                 LoadActivities();
+                LoadImageProfile();
                 ButtonChangeStateClick = new Command(async () =>
                 {
                     await navigation.PushAsync(new View_Account());
@@ -250,10 +251,15 @@ namespace OTB_SEGURA.ViewModels
 
                         if (stream != null)
                         {
-                            ImgProfile = ImageSource.FromStream(() => stream);
+                            MemoryStream ms = new MemoryStream();
+                            stream.CopyTo(ms);
                             
-                            ResponseHTTP<UserModel> resultHTTP = await restFull.UploadProfile(user.User_ID.ToString(), stream);
+                            PhotoProfile.ImageProfile = ms.ToArray();
+                            await App.SQLiteDB.SaveImageProfile(photoProfile);
+                            var img = await App.SQLiteDB.GetImageProfile();
 
+                            ResponseHTTP<UserModel> resultHTTP = await restFull.UploadProfile(user.User_ID.ToString(), new MemoryStream(img.ImageProfile));
+                            ImgProfile = ImageSource.FromStream(() => new MemoryStream(img.ImageProfile));
                             if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                             {
                                 DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
@@ -400,11 +406,12 @@ namespace OTB_SEGURA.ViewModels
             var img = await App.SQLiteDB.GetImageProfile();
             if (img != null)
             {
-                Stream stream = new MemoryStream(img.ImageProfile);
-                ImgProfile = ImageSource.FromStream(() => stream);
+                ImgProfile = ImageSource.FromStream(() => new MemoryStream(img.ImageProfile));
             }
-
+            
         }
+
+
 
 
         #endregion

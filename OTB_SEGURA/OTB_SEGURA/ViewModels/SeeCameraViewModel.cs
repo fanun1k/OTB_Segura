@@ -9,7 +9,6 @@ namespace OTB_SEGURA.ViewModels
 {
     class SeeCameraViewModel : BaseViewModel
     {
-        private ICommand seeCamera;
 
         public ICommand SeeCamera
         {
@@ -20,10 +19,6 @@ namespace OTB_SEGURA.ViewModels
             }
 
         }
-
-
-
-
         public SeeCameraViewModel()
         {
             Title = "Ver Cámaras";

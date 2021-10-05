@@ -15,7 +15,6 @@ namespace OTB_SEGURA.ViewModels
     /// </summary>
     public class EmergencyNumbersViewModel:BaseViewModel
     {
-        EmergencyNumbersViewModel e;
         public ObservableCollection<EmergencyNumbersModel> emergencyNumbersList { get; }
         public string Name { get; private set; }
 
@@ -33,14 +32,6 @@ namespace OTB_SEGURA.ViewModels
             emergencyNumbersList.Add(new EmergencyNumbersModel { Name = "Banco de sangre", Number = 4220229, State = 1, Imagen = "bloodBank.png" });
             emergencyNumbersList.Add(new EmergencyNumbersModel { Name = "ELFEC", Number = 4200125, State = 1, Imagen = "elfec.png" });
             emergencyNumbersList.Add(new EmergencyNumbersModel { Name = "SEMAPA", Number = 4290755, State = 1, Imagen = "semapa.png" });
-
-            
-            
-
-
-
-
-
         }
         
 

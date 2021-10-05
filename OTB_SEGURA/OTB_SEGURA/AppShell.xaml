@@ -87,17 +87,27 @@
             Se coloco la parte de LoginPage al inicio para cambiar el orden de presentacion de vistas
             </summary>
     -->
-    <TabBar>
-        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:View_Login}" />
-    </TabBar>
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="Black">
+            <Image Aspect="Fill"
+               Source="logoOtb.png"
+               Opacity="0.6" VerticalOptions="Fill" HorizontalOptions="Fill" HeightRequest="200"/>
+        </Grid>
+    </Shell.FlyoutHeader>
     <FlyoutItem Title="Acerca de Nosotros" Icon="logoUnivalle.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_About}" />
     </FlyoutItem>
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:View_Login}" />
+    </TabBar>
+    <FlyoutItem Title="Mi Perfil" Icon="usuario.png">
+        <ShellContent Route="MyProfile" ContentTemplate="{DataTemplate local:View_UserProfile}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Mi OTB" Icon="IconOtb.png" >
+        <ShellContent Route="Mi OTB" ContentTemplate="{DataTemplate local:View_MyOtb}" IsVisible="{Binding IsUser}" />
+    </FlyoutItem>
     <FlyoutItem Title="Alertar Evento" Icon="botonEmergencia.png">
         <ShellContent Route="AddActivity" ContentTemplate="{DataTemplate local:View_AddActivity}" IsVisible="{Binding IsUser}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="Mi Perfil " Icon="usuario.png">
-        <ShellContent Route="MyProfile" ContentTemplate="{DataTemplate local:View_UserProfile}"/>
     </FlyoutItem>
     <FlyoutItem Title="Registrar/Unirse OTB" Icon="icon_register.png">
         <ShellContent Route="registrarotb" ContentTemplate="{DataTemplate local:View_RegisterJoinOtb}" IsVisible="{Binding UserWithOutOTB}" />
@@ -108,13 +118,10 @@
     <FlyoutItem Title="Numeros de Emergencia" Icon="NumerosEmergencia.png">
         <ShellContent Route="Emergency" ContentTemplate="{DataTemplate local:View_EmergencyNumbersTabbedPage}" IsVisible="{Binding IsUser}" />
     </FlyoutItem>
-    <FlyoutItem Title="Mi OTB" Icon="IconOtb.png" >
-        <ShellContent Route="Mi OTB" ContentTemplate="{DataTemplate local:View_MyOtb}" IsVisible="{Binding IsUser}" />
-    </FlyoutItem>
     <FlyoutItem x:Name="fiUser" Title="Lista de Usuarios" Icon="ListaUsuarios.png" IsVisible="{Binding IsAdmin}">
         <ShellContent Route="UserList" ContentTemplate="{DataTemplate local:View_UsersList}" />
     </FlyoutItem>
-    <FlyoutItem Title="Alertas de Usuarios" Icon="icon_feed.png" IsVisible="{Binding IsUser}">
+    <FlyoutItem Title="Lista de Alertas" Icon="icon_feed.png" IsVisible="{Binding IsUser}">
         <ShellContent Route="UserActivity" ContentTemplate="{DataTemplate local:View_UserActivity}"/>
     </FlyoutItem>
 

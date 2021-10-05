@@ -27,8 +27,17 @@ namespace OTB_SEGURA.ViewModels
         public ICommand ButtonChangeStateClick { get; private set; }
         private AlertService alertService= new AlertService();
         private ImageProfileModel photoProfile = new ImageProfileModel();
+        private bool editButtonVisivility=true;
+
+
+
         #endregion
         #region Properties
+        public bool EditButtonVisivility
+        {
+            get { return editButtonVisivility; }
+            set { editButtonVisivility = value; OnPropertyChanged(); }
+        }
         public Image ImgProfile
         {
             get { return imgProfile; }
@@ -66,11 +75,10 @@ namespace OTB_SEGURA.ViewModels
         /// <param name="user"></param>
         public UserProfileViewModel(UserModel user)
         {          
-            this.user = user;
-            
-            SetTextButton();
+            this.user = user;         
             LoadActivities();
-            ButtonChangeStateClick = new Command(UpdateMethod);
+            EditButtonVisivility = false;
+
         }
         /// <summary>
         /// Constructor que recibe como parametro un elemento del tipo INavigation

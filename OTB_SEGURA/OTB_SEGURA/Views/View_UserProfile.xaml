@@ -22,11 +22,11 @@
             <Button Command="{Binding UploadCommand}" BackgroundColor="White" BorderColor="White" ImageSource="cam.png" Margin="229,105,120,10" WidthRequest="300" HeightRequest="700" HorizontalOptions="Center"  CornerRadius="30" Padding="0"/>
         </Grid>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Image Source="user.png"/>
+            <Image Source="user3.png" HeightRequest="23"/>
             <Label BindingContext="{Binding User}" TextColor="White" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"/>
         </StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Image Source="correo.png"/>
+            <Image Source="message_icon" HeightRequest="23"/>
             <Label BindingContext="{Binding User}" TextColor="White" Text="{Binding Email,Mode=TwoWay}" HorizontalOptions="Center"/>
         </StackLayout>
         <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="15">
@@ -44,16 +44,21 @@
                     <Frame  Style="{StaticResource frameA}">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                    <Image Source="date.png"/>
-                                    <Label Text="{Binding Date}" FontAttributes="None"/>
+                                    <Image Source="calendar_icon" HeightRequest="20" VerticalOptions="Start" Margin="0,3,0,0"/>
+                                    <Label Text="Fecha:" TextColor="{StaticResource Dark}" WidthRequest="86"></Label>
+                                    <Label Text="{Binding Date}" FontAttributes="None" WidthRequest="225"/>
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                    <Image Source="type.png"/>
-                                    <Label Text="{Binding Alert_type_ID}" FontAttributes="None"/>
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#4aa5e5"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="alarm_Icon.png" HeightRequest="20" VerticalOptions="Start" Margin="0,3,0,0"/>
+                                    <Label Text="Alerta:" TextColor="{StaticResource Dark}" WidthRequest="86"></Label>
+                                    <Label Text="{Binding Alert_type_ID}" FontAttributes="None" WidthRequest="225"/>
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                    <Image Source="message.png"/>
-                                    <Label Text="{Binding Message}" FontAttributes="None"/>
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#4aa5e5"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="message_icon" HeightRequest="20" VerticalOptions="Start" Margin="0,3,0,0"/>
+                                    <Label Text="Mensaje:" TextColor="{StaticResource Dark}" WidthRequest="86"></Label>
+                                    <Label Text="{Binding Message}" FontAttributes="None" WidthRequest="225"/>
                             </StackLayout>
                         </StackLayout>
                     </Frame>

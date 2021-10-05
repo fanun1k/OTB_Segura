@@ -266,11 +266,13 @@
     <AndroidResource Include="Resources\drawable\question_icon.png" />
     <AndroidResource Include="Resources\drawable\message_icon.png" />
     <AndroidResource Include="Resources\drawable\calendar_icon.png" />
+    <AndroidResource Include="Resources\drawable\user3.png" />
+    <AndroidResource Include="Resources\drawable\alarm_Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionOTB_SEGURAAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionOTB_SEGURAAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

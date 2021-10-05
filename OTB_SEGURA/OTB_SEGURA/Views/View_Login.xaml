@@ -2,17 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Shell.NavBarIsVisible="False"
-             x:Class="OTB_SEGURA.Views.View_Login" Style="{StaticResource fondoApp}">
+             x:Class="OTB_SEGURA.Views.View_Login" BackgroundColor="#626262">
     <StackLayout>
         <Grid>
-            <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
-                <Frame HeightRequest="300" BackgroundColor="#292D25" Padding="0" Margin="0">
-                    <Image Source="https://i.ibb.co/dg6LVNX/Otb-Segura-Wallpaper.jpg" Aspect="AspectFill" Margin="0"/>
-                </Frame>
+            <StackLayout HeightRequest="50" WidthRequest="50" HorizontalOptions="FillAndExpand">
+                <Image Source="otb_icon2.png" Margin="0" HeightRequest="240" WidthRequest="50" />
             </StackLayout>
-            <StackLayout Padding="0" Margin="10,200,10,0" HorizontalOptions="FillAndExpand">
-                <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
-
+            <StackLayout Padding="0" Margin="10,230,10,0" HorizontalOptions="FillAndExpand">
+                <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0" CornerRadius="30">
                     <StackLayout>
 
 
@@ -25,7 +22,7 @@
                             <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                 <StackLayout Orientation="Horizontal">
                                     <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
-                                        <Image Source="https://www.findool.com/images/avatars/avatar.png" Aspect="AspectFill" Margin="0"/>
+                                        <Image Source="user5.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
 
                                     <Entry Placeholder="Email" Text="{Binding User.Email, Mode=TwoWay}" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
@@ -35,7 +32,7 @@
                             <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                 <StackLayout Orientation="Horizontal">
                                     <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
-                                        <Image Source="https://images.all-free-download.com/images/graphicthumb/lock_icon_6813906.jpg" Aspect="AspectFill" Margin="0"/>
+                                        <Image Source="password.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
 
                                     <Entry Placeholder="Password" Text="{Binding User.Password,Mode=TwoWay}" IsPassword="True" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
@@ -43,13 +40,13 @@
                             </Frame>
 
                             <StackLayout  Orientation="Horizontal">
-                                <Button Text="Crear una Cuenta" TextColor="#056d8a" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small"
+                                <Button Text="Crear una Cuenta" TextColor="{StaticResource Primary}" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small"
                                         Background="Transparent" BorderWidth="0" Command="{Binding CreateAccountCommand}" />
                             </StackLayout>
 
-                            <Button Text="Ingresar" Command="{Binding LoginValidateCommand}" BackgroundColor="#056d8a" TextColor="White" CornerRadius="30" IsEnabled="{Binding IsBusy}" />
+                            <Button Text="Ingresar" Command="{Binding LoginValidateCommand}" BackgroundColor="{StaticResource Primary}" TextColor="White" CornerRadius="30" IsEnabled="{Binding IsBusy}" />
                             <Button x:Name="button1" IsVisible="False"></Button>
-                            <Button Text="Me olvide mi contraseña" TextColor="#056d8a" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="End" FontSize="Small"
+                            <Button Text="Me olvide mi contraseña" TextColor="{StaticResource Primary}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="End" FontSize="Small"
                                         Background="Transparent" BorderWidth="0" Command="{Binding RecoveryPassCommand}" />
                         </StackLayout>
                         

@@ -21636,70 +21636,82 @@ namespace OTB_SEGURA.Droid
 			public const int NumerosEmergencia = 2131165425;
 			
 			// aapt resource value: 0x7F0700F2
-			public const int phoneCall = 2131165426;
+			public const int otb_icon2 = 2131165426;
 			
 			// aapt resource value: 0x7F0700F3
-			public const int policeCar = 2131165427;
+			public const int password = 2131165427;
 			
 			// aapt resource value: 0x7F0700F4
-			public const int preference_list_divider_material = 2131165428;
+			public const int phoneCall = 2131165428;
 			
 			// aapt resource value: 0x7F0700F5
-			public const int prof = 2131165429;
+			public const int policeCar = 2131165429;
 			
 			// aapt resource value: 0x7F0700F6
-			public const int question = 2131165430;
+			public const int preference_list_divider_material = 2131165430;
 			
 			// aapt resource value: 0x7F0700F7
-			public const int question_icon = 2131165431;
+			public const int prof = 2131165431;
 			
 			// aapt resource value: 0x7F0700F8
-			public const int sar = 2131165432;
+			public const int question = 2131165432;
 			
 			// aapt resource value: 0x7F0700F9
-			public const int seAlarm = 2131165433;
+			public const int question_icon = 2131165433;
 			
 			// aapt resource value: 0x7F0700FA
-			public const int SeeCamera = 2131165434;
+			public const int sar = 2131165434;
 			
 			// aapt resource value: 0x7F0700FB
-			public const int semapa = 2131165435;
+			public const int seAlarm = 2131165435;
 			
 			// aapt resource value: 0x7F0700FC
-			public const int test_custom_background = 2131165436;
+			public const int SeeCamera = 2131165436;
 			
 			// aapt resource value: 0x7F0700FD
-			public const int tooltip_frame_dark = 2131165437;
+			public const int semapa = 2131165437;
 			
 			// aapt resource value: 0x7F0700FE
-			public const int tooltip_frame_light = 2131165438;
+			public const int test_custom_background = 2131165438;
 			
 			// aapt resource value: 0x7F0700FF
-			public const int type = 2131165439;
+			public const int tooltip_frame_dark = 2131165439;
 			
 			// aapt resource value: 0x7F070100
-			public const int user = 2131165440;
+			public const int tooltip_frame_light = 2131165440;
 			
 			// aapt resource value: 0x7F070101
-			public const int user2 = 2131165441;
+			public const int type = 2131165441;
 			
 			// aapt resource value: 0x7F070102
-			public const int user3 = 2131165442;
+			public const int user = 2131165442;
 			
 			// aapt resource value: 0x7F070103
-			public const int UsertAlertIcon = 2131165443;
+			public const int user2 = 2131165443;
 			
 			// aapt resource value: 0x7F070104
-			public const int usuario = 2131165444;
+			public const int user3 = 2131165444;
 			
 			// aapt resource value: 0x7F070105
-			public const int usuarioPerfil = 2131165445;
+			public const int user4 = 2131165445;
 			
 			// aapt resource value: 0x7F070106
-			public const int verCamara = 2131165446;
+			public const int user5 = 2131165446;
 			
 			// aapt resource value: 0x7F070107
-			public const int xamarin_logo = 2131165447;
+			public const int UsertAlertIcon = 2131165447;
+			
+			// aapt resource value: 0x7F070108
+			public const int usuario = 2131165448;
+			
+			// aapt resource value: 0x7F070109
+			public const int usuarioPerfil = 2131165449;
+			
+			// aapt resource value: 0x7F07010A
+			public const int verCamara = 2131165450;
+			
+			// aapt resource value: 0x7F07010B
+			public const int xamarin_logo = 2131165451;
 			
 			static Drawable()
 			{

@@ -18,7 +18,7 @@
     <Color x:Key="Primary">#52a5df</Color>
     <Color x:Key="PrimaryVariation">#4aa5e5</Color>
     <Color x:Key="PrimaryDisabled">#b9eefc</Color>
-    <Color x:Key="Secondary">#FB7923</Color>
+    <Color x:Key="Secondary">#0052DE</Color>
     <Color x:Key="tertiary">#79B030</Color>
     <Color x:Key="quaternary">#FCFF47</Color>
     <Color x:Key="Dark">#292D25</Color>

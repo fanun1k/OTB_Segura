@@ -118,9 +118,9 @@ namespace OTB_SEGURA.ViewModels
                     ResponseHTTP<UserModel> responseHTTP = await userService.UsersByOtb(otbID);
                     if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
                     {
-                        UserList = responseHTTP.Data;
+                        UserList = await userService.GetListImageProfile(responseHTTP.Data);
                         await App.SQLiteDB.SaveUserAsync(UserList);
-
+                        
                     }
                     else
                     {

@@ -81,8 +81,8 @@ namespace OTB_SEGURA.Droid
                 if ((resultCode == Result.Ok) && (intent != null))
                 {
                     Android.Net.Uri uri = intent.Data;
-                    Stream stream = ContentResolver.OpenInputStream(uri);
 
+                    Stream stream = ContentResolver.OpenInputStream(uri);
                     ImagenTaskCompletionSource.SetResult(stream);
                 }
                 else

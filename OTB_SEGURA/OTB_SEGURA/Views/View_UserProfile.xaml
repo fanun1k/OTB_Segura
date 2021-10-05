@@ -1,16 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              xmlns:ImgCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="OTB_SEGURA.Views.View_UserProfile"
-             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
-             Appearing="ContentPage_Appearing"
              x:Name="contentPage"
              BackgroundImageSource="fonProfile.png">
-    <ContentPage.Behaviors>
-        <behaviorsPack:EventToCommandBehavior EventName="Appearing" Command="{Binding AppearingProfileCommand}"/>
-    </ContentPage.Behaviors>
+    
     <StackLayout>
         <Grid IsClippedToBounds="True">
              <Grid.RowDefinitions>
@@ -23,7 +18,7 @@
             </Grid.ColumnDefinitions>
         </Grid>
         <Grid >
-            <ImgCircle:CircleImage HeightRequest="600" BorderColor="White" BorderThickness="3" Margin="5,10,5,5" Source="{Binding ImgProfile.Source}"></ImgCircle:CircleImage>
+            <ImgCircle:CircleImage HeightRequest="600" BorderColor="White" BorderThickness="3" Margin="5,10,5,5" Source="{Binding ImgProfile}"></ImgCircle:CircleImage>
             <Button Command="{Binding UploadCommand}" BackgroundColor="White" BorderColor="White" ImageSource="cam.png" Margin="229,105,120,10" WidthRequest="300" HeightRequest="700" HorizontalOptions="Center"  CornerRadius="30" Padding="0"/>
         </Grid>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -35,7 +30,7 @@
             <Label BindingContext="{Binding User}" TextColor="White" Text="{Binding Email,Mode=TwoWay}" HorizontalOptions="Center"/>
         </StackLayout>
         <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="15">
-            <Button Text="{Binding TextButton,Mode=TwoWay}" BackgroundColor="#52a5df" BorderColor="White" CornerRadius="5" WidthRequest="700" HeightRequest="200" Command="{Binding ButtonChangeStateClick}"  HorizontalOptions="EndAndExpand" IsEnabled="{Binding IsBusy}"/>
+            <Button Text="{Binding TextButton,Mode=TwoWay}" BackgroundColor="#52a5df" BorderColor="White" CornerRadius="5" WidthRequest="700" HeightRequest="200" Command="{Binding UploadCommand}"  HorizontalOptions="EndAndExpand" IsEnabled="{Binding IsBusy}"/>
         </Grid>
 
         <Frame Margin="0,70,0,0" HorizontalOptions="Center" CornerRadius="5" BackgroundColor="#52a5df">

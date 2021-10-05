@@ -26,7 +26,7 @@ namespace OTB_SEGURA.ViewModels
         private UserService restFull = new UserService();
 
         public ICommand ButtonChangeStateClick { get; private set; }
-        private AlertService alertService { get; set; } = new AlertService();
+        private AlertService alertService= new AlertService();
         private ImageProfileModel photoProfile = new ImageProfileModel();
         private ImageSource imgProfile;
 

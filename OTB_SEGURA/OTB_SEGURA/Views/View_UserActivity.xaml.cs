@@ -16,7 +16,9 @@ namespace OTB_SEGURA.Views
     {
         public View_UserActivity()
         {
+
             InitializeComponent();
+            BindingContext = new UserActivityViewModel(Navigation);
         }
 
         private async void ListActivityUser_Refreshing(object sender, EventArgs e)

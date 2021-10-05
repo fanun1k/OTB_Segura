@@ -263,6 +263,9 @@
     <AndroidResource Include="Resources\drawable\Fondo.jpg" />
     <AndroidResource Include="Resources\drawable\icon_User_Emergency_Phone.png" />
     <AndroidResource Include="Resources\drawable\user2.png" />
+    <AndroidResource Include="Resources\drawable\question_icon.png" />
+    <AndroidResource Include="Resources\drawable\message_icon.png" />
+    <AndroidResource Include="Resources\drawable\calendar_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

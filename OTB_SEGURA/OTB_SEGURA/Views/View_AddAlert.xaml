@@ -13,24 +13,22 @@
     <ContentPage.ToolbarItems >
         <ToolbarItem Text="Info" Order="Primary"  IconImageSource="question.png"  Command="{Binding InfoCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
-
-
+    
     <StackLayout Padding="10" >
-        <Entry
-         
+        <Entry        
             Placeholder="Nombre alerta"  Opacity="0.5" Margin="20,15,20,10"
             Text="{Binding AlertName}"
-            FontSize="25"
-            
+            FontSize="25"           
             />
+        
         <Button
             Text="Agregar Alerta" Command="{Binding AddAlertCommand}"
             Margin="20,0,20,20" 
             CornerRadius="20"
             />
-
-        <StackLayout   BackgroundColor="{StaticResource Primary}" Padding="2" Margin="20,0,20,20">
-            <StackLayout HorizontalOptions="Center" BackgroundColor="White"  Margin="1" >
+        
+        <StackLayout  Padding="2" Margin="20,0,20,20">
+            <StackLayout HorizontalOptions="Center" Margin="1" >
                 <ListView x:Name="lvAlert" ItemsSource="{Binding ListAlertsType}" SelectedItem="{Binding  SelectedAlert, Mode=TwoWay}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -41,7 +39,6 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-            
         </StackLayout>
 
         <Button
@@ -49,7 +46,6 @@
             Margin="260,0,20,20"     
             CornerRadius="20"           
             />
-
     </StackLayout>
                   
 </ContentPage>

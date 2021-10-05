@@ -24,17 +24,21 @@ namespace OTB_SEGURA.ViewModels
         private string textButton;
         private List<AlertModel> activityList = new List<AlertModel>();
         private UserService restFull = new UserService();
-
         public ICommand ButtonChangeStateClick { get; private set; }
         private AlertService alertService= new AlertService();
         private ImageProfileModel photoProfile = new ImageProfileModel();
+        private bool editButtonVisivility=true;
         private ImageSource imgProfile;
 
         
 
         #endregion
         #region Properties
-
+        public bool EditButtonVisivility
+        {
+            get { return editButtonVisivility; }
+            set { editButtonVisivility = value; OnPropertyChanged(); }
+        }
         public List<AlertModel> ActivityList
         {
             get { return activityList; }
@@ -73,11 +77,10 @@ namespace OTB_SEGURA.ViewModels
         /// <param name="user"></param>
         public UserProfileViewModel(UserModel user)
         {          
-            this.user = user;
-            
-            SetTextButton();
+            this.user = user;         
             LoadActivities();
-            ButtonChangeStateClick = new Command(UpdateMethod);
+            EditButtonVisivility = false;
+
         }
         /// <summary>
         /// Constructor que recibe como parametro un elemento del tipo INavigation

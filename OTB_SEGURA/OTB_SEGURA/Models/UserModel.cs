@@ -17,7 +17,7 @@ namespace OTB_SEGURA.Models
         [MaxLength(15)]
         public int Cell_phone { get; set; }
         [MaxLength(100)]
-        public byte[] Photo { get; set; }
+        public string Photo { get; set; }
         [MaxLength(1)]
         public byte State { get; set; }
         [MaxLength(8)]

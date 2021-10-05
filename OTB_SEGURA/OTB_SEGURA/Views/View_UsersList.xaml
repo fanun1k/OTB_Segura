@@ -30,7 +30,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame Style="{StaticResource frameStyle}" BorderColor="#7f7f87" CornerRadius="50" BackgroundColor="#e1e9ff" Margin="10">
+                        <Frame Style="{StaticResource frameStyle}" BorderColor="#7f7f87" CornerRadius="50" BackgroundColor="{StaticResource Primary}" Margin="10" >
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="25"/>
@@ -43,31 +43,31 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Grid Grid.ColumnSpan="1" Grid.RowSpan="3" Padding="0">
-                                    <ImgCircle:CircleImage WidthRequest="80" HeightRequest="80" Source="https://i.blogs.es/2d5264/facebook-image/1366_2000.jpg" BorderThickness="3"></ImgCircle:CircleImage>
+                                    <ImgCircle:CircleImage WidthRequest="80" HeightRequest="80" Source="{Binding Photo}" Aspect="AspectFill" BorderThickness="3"></ImgCircle:CircleImage>
                                 </Grid>
                                 <Grid Grid.Column="1" >
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="Nombre:"/>
-                                    <Label Text="{Binding Name}" Grid.Column="1" FontAttributes="None"/>
+                                    <Label Text="Nombre:" TextColor="White"/>
+                                    <Label Text="{Binding Name}" Grid.Column="1" FontAttributes="None" TextColor="White"/>
                                 </Grid>
                                 <Grid Grid.Row="1" Grid.Column="1">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="C.I:"/>
-                                    <Label Text="{Binding Ci}" Grid.Column="1" FontAttributes="None"/>
+                                    <Label Text="C.I:" TextColor="White"/>
+                                    <Label Text="{Binding Ci}" Grid.Column="1" FontAttributes="None" TextColor="White"/>
                                 </Grid>
                                 <Grid Grid.Row="2" Grid.Column="1">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="Celular:"/>
-                                    <Label Text="{Binding Cell_phone}" Grid.Column="1" FontAttributes="None"/>
+                                    <Label Text="Celular:" TextColor="White"/>
+                                    <Label Text="{Binding Cell_phone}" Grid.Column="1" FontAttributes="None" TextColor="White"/>
                                 </Grid>
                                 
                             </Grid>

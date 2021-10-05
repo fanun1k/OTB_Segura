@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
+﻿using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Models;
-using Xamarin.Forms;
 using OTB_SEGURA.Services;
 using OTB_SEGURA.Views;
-using Xamarin.Essentials;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -23,13 +24,13 @@ namespace OTB_SEGURA.ViewModels
         private string textButton;
         private List<AlertModel> activityList = new List<AlertModel>();
         private UserService restFull = new UserService();
-        private Image imgProfile = new Image();
         public ICommand ButtonChangeStateClick { get; private set; }
         private AlertService alertService= new AlertService();
         private ImageProfileModel photoProfile = new ImageProfileModel();
         private bool editButtonVisivility=true;
+        private ImageSource imgProfile;
 
-
+        
 
         #endregion
         #region Properties
@@ -37,11 +38,6 @@ namespace OTB_SEGURA.ViewModels
         {
             get { return editButtonVisivility; }
             set { editButtonVisivility = value; OnPropertyChanged(); }
-        }
-        public Image ImgProfile
-        {
-            get { return imgProfile; }
-            set { imgProfile = value; OnPropertyChanged(); }
         }
         public List<AlertModel> ActivityList
         {
@@ -64,6 +60,12 @@ namespace OTB_SEGURA.ViewModels
         {
             get { return photoProfile; }
             set { photoProfile = value; OnPropertyChanged(); }
+        }
+
+        public ImageSource ImgProfile
+        {
+            get { return imgProfile; }
+            set { imgProfile = value; OnPropertyChanged(); }
         }
         #endregion
         #region Contructs
@@ -96,6 +98,7 @@ namespace OTB_SEGURA.ViewModels
                 user.Otb_ID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
 
                 LoadActivities();
+                LoadImageProfile();
                 ButtonChangeStateClick = new Command(async () =>
                 {
                     await navigation.PushAsync(new View_Account());
@@ -251,17 +254,17 @@ namespace OTB_SEGURA.ViewModels
 
                         if (stream != null)
                         {
-                            //ImgProfile.Source = ImageSource.FromStream(() => stream);
                             MemoryStream ms = new MemoryStream();
-                            stream.Position = 0;
                             stream.CopyTo(ms);
+                            
+                            PhotoProfile.ImageProfile = ms.ToArray();
+                            await App.SQLiteDB.SaveImageProfile(photoProfile);
+                            var img = await App.SQLiteDB.GetImageProfile();
 
-                            ResponseHTTP<UserModel> resultHTTP = await restFull.UploadProfile(user.User_ID.ToString(),stream);
-
+                            ResponseHTTP<UserModel> resultHTTP = await restFull.UploadProfile(user.User_ID.ToString(), new MemoryStream(img.ImageProfile));
+                            ImgProfile = ImageSource.FromStream(() => new MemoryStream(img.ImageProfile));
                             if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                             {
-                                PhotoProfile.ImageProfile = ms.ToArray();
-                                await App.SQLiteDB.SaveImageProfile(photoProfile);
                                 DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
                             }
                             else
@@ -275,7 +278,7 @@ namespace OTB_SEGURA.ViewModels
                         DependencyService.Get<IMessage>().LongAlert(ex.Message);
                     }
                     IsBusy = true;
-                },canExecute: (obj) => { return IsBusy; });
+                }, canExecute: (obj) => { return IsBusy; });
             }
         }
         public ICommand AppearingProfileCommand
@@ -406,11 +409,14 @@ namespace OTB_SEGURA.ViewModels
             var img = await App.SQLiteDB.GetImageProfile();
             if (img != null)
             {
-                Stream stream = new MemoryStream(img.ImageProfile);
-                ImgProfile.Source = ImageSource.FromStream(() => stream);
+                ImgProfile = ImageSource.FromStream(() => new MemoryStream(img.ImageProfile));
             }
-
+            
         }
+
+
+
+
         #endregion
     }
 }

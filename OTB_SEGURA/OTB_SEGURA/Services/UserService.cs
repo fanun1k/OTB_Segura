@@ -196,5 +196,32 @@ namespace OTB_SEGURA.Services
                 throw ex;
             }
         }
+
+        public async Task<List<UserModel>> GetListImageProfile(List<UserModel> listUsers)
+        {
+            try
+            {
+                await Task.Run(() => {
+                    
+                    for (int i = 0; i < listUsers.Count; i++)
+                    {
+                        listUsers[i].Photo = urlserver +"uploads/"  + listUsers[i].User_ID + ".png";
+                        /*byte[] byteArray = Encoding.UTF8.GetBytes(urlListImg);
+                        MemoryStream stream = new MemoryStream(byteArray);
+                        listImgProfile.Add(stream);*/
+                        if (listUsers[i].Photo == null)
+                        {
+                            //https://i.blogs.es/2d5264/facebook-image/1366_2000.jpg
+                        }
+                    }
+                    
+                });
+                return listUsers;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

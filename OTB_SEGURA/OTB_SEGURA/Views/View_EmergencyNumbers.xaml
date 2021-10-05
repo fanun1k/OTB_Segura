@@ -22,11 +22,11 @@
                             </Grid.ColumnDefinitions>
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label x:Name="txtNombre" Text="{Binding Name}" WidthRequest="100"/>
+                                    <Label x:Name="txtNombre" Text="{Binding Name}" WidthRequest="100" TextColor="White"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Image Source="phoneCall.png" HeightRequest="30" WidthRequest="30" />
-                                    <Label x:Name="txtNumero" Text="{Binding Number}"/>
+                                    <Image Source="phoneCall.png" HeightRequest="30" WidthRequest="30"/>
+                                    <Label x:Name="txtNumero" Text="{Binding Number}" TextColor="White"/>
                                 </StackLayout>
                                 
                                 

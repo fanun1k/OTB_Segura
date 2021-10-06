@@ -393,8 +393,9 @@ namespace OTB_SEGURA.ViewModels
 
         private async Task LoadImageProfile()
         {
-            User = await restFull.GetImageProfile(user);
+            
             ImgProfile = null;
+            User = await restFull.GetImageProfile(user);
             ImgProfile = User.Photo;
         }
 

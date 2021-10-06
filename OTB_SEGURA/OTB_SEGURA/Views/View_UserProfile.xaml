@@ -2,10 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ImgCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack" 
              x:Class="OTB_SEGURA.Views.View_UserProfile"
              x:Name="contentPage"
              BackgroundImageSource="fonProfile.png">
-    
+
+    <ContentPage.Behaviors>
+        <behaviorsPack:EventToCommandBehavior 
+            EventName="Appearing"
+            Command="{Binding AppearingProfileCommand }"/>
+    </ContentPage.Behaviors>
     <StackLayout>
         <Grid IsClippedToBounds="True">
              <Grid.RowDefinitions>

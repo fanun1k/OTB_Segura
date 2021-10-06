@@ -26,7 +26,6 @@ namespace OTB_SEGURA.ViewModels
         private UserService restFull = new UserService();
         public ICommand ButtonChangeStateClick { get; private set; }
         private AlertService alertService= new AlertService();
-        private ImageProfileModel photoProfile = new ImageProfileModel();
         private bool editButtonVisivility=true;
         private ImageSource imgProfile;
 
@@ -54,12 +53,6 @@ namespace OTB_SEGURA.ViewModels
         {
             get { return user; }
             set { user = value;OnPropertyChanged(); }
-        }
-
-        public ImageProfileModel PhotoProfile
-        {
-            get { return photoProfile; }
-            set { photoProfile = value; OnPropertyChanged(); }
         }
 
         public ImageSource ImgProfile
@@ -98,7 +91,6 @@ namespace OTB_SEGURA.ViewModels
                 user.Otb_ID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
 
                 LoadActivities();
-                LoadImageProfile();
                 ButtonChangeStateClick = new Command(async () =>
                 {
                     await navigation.PushAsync(new View_Account());
@@ -256,13 +248,9 @@ namespace OTB_SEGURA.ViewModels
                         {
                             MemoryStream ms = new MemoryStream();
                             stream.CopyTo(ms);
-                            
-                            PhotoProfile.ImageProfile = ms.ToArray();
-                            await App.SQLiteDB.SaveImageProfile(photoProfile);
-                            var img = await App.SQLiteDB.GetImageProfile();
 
-                            ResponseHTTP<UserModel> resultHTTP = await restFull.UploadProfile(user.User_ID.ToString(), new MemoryStream(img.ImageProfile));
-                            ImgProfile = ImageSource.FromStream(() => new MemoryStream(img.ImageProfile));
+                            ResponseHTTP<UserModel> resultHTTP = await restFull.UploadProfile(user.User_ID.ToString(), new MemoryStream(ms.ToArray()));
+                            ImgProfile = ImageSource.FromStream(() => new MemoryStream(ms.ToArray()));
                             if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                             {
                                 DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
@@ -405,17 +393,11 @@ namespace OTB_SEGURA.ViewModels
 
         private async Task LoadImageProfile()
         {
-
-            var img = await App.SQLiteDB.GetImageProfile();
-            if (img != null)
-            {
-                ImgProfile = ImageSource.FromStream(() => new MemoryStream(img.ImageProfile));
-            }
             
+            ImgProfile = null;
+            User = await restFull.GetImageProfile(user);
+            ImgProfile = User.Photo;
         }
-
-
-
 
         #endregion
     }

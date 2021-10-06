@@ -6,7 +6,7 @@
              x:Class="OTB_SEGURA.Views.View_UserProfile"
              x:Name="contentPage"
              BackgroundImageSource="fonProfile.png">
-<
+
     <ContentPage.Behaviors>
         <behaviorsPack:EventToCommandBehavior 
             EventName="Appearing"

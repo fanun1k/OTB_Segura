@@ -20,7 +20,7 @@ namespace OTB_SEGURA.ViewModels
         #region Attributes
         private UserModel user=new UserModel();
         UserService restFull = new UserService();
-        INavigation navigation;
+        INavigation Navigation;
         #endregion
         /// <summary>
         /// Getters y Setters
@@ -33,15 +33,14 @@ namespace OTB_SEGURA.ViewModels
         }
         #endregion
         public Command LoginCommand { get; }
-
         /// <summary>
         /// Constructor
         /// </summary>
         /// <remarks>
         /// </remarks>
-        public LoginViewModel()
+        public LoginViewModel(INavigation nav)
         {
-           
+            Navigation = nav;
         }
         /// <summary>
         /// Metodos ICommand
@@ -127,7 +126,7 @@ namespace OTB_SEGURA.ViewModels
             get
             {
                 return new RelayCommand(async()=>{
-                    await navigation.PushAsync(new View_RecoverPassword());
+                    await Navigation.PushAsync(new NavigationPage(new View_RecoverPassword()));
                 });
             }
         }
@@ -137,7 +136,7 @@ namespace OTB_SEGURA.ViewModels
             get
             {
                 return new RelayCommand(async () => {
-                    await navigation.PushAsync(new View_AddUser());
+                    await Navigation.PushAsync(new NavigationPage(new View_AddUser()));
                 });
             }
         }

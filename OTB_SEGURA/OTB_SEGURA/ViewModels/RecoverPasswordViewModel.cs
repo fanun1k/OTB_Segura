@@ -19,6 +19,7 @@ namespace OTB_SEGURA.ViewModels
         UserService userService = new UserService();
         private string  email;
         private int ci;
+        public INavigation Navigation { get; set; }
         #endregion
 
         #region Properties
@@ -35,9 +36,11 @@ namespace OTB_SEGURA.ViewModels
         #endregion
 
         #region Construct
-        public RecoverPasswordViewModel(Func<string, string, string, Task> displayAlert)
+        public RecoverPasswordViewModel(Func<string, string, string, Task> displayAlert,INavigation nav)
         {
             this.displayAlert = displayAlert;
+            Navigation = nav;
+
         }
         #endregion
 
@@ -59,6 +62,7 @@ namespace OTB_SEGURA.ViewModels
                                 if (responseHTTP.Code==System.Net.HttpStatusCode.OK)
                                 {
                                     DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                                    await Navigation.PopAsync();
                                 }
                                 else
                                 {
@@ -90,7 +94,7 @@ namespace OTB_SEGURA.ViewModels
             else
             {
                 //Valida que el formato del correo sea valido
-                bool isEmail = Regex.IsMatch(Email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+                bool isEmail = Regex.IsMatch(Email.Trim(), @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
                 if (!isEmail)
                 {
                     await displayAlert("Advertencia", "El formato del correo electrónico es incorrecto, revíselo e intente nuevamente.", "OK");

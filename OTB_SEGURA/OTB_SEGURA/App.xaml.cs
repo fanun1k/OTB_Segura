@@ -11,10 +11,23 @@ namespace OTB_SEGURA
     public partial class App : Application
     {
         static SQLiteHelper db;
+        private AppShell appShell;
+        private View_Login login;
         public App()
         {
             InitializeComponent();
-            MainPage = new AppShell();
+            if (Application.Current.Properties.ContainsKey("Sesion"))
+            {
+                appShell = null;
+                appShell = new AppShell();
+                MainPage = appShell;
+            }
+            else
+            {
+                login = null;
+                login = new View_Login();
+                MainPage = login;
+            }
         }
         public static SQLiteHelper SQLiteDB
         {

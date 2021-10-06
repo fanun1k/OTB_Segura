@@ -104,24 +104,11 @@ namespace OTB_SEGURA.ViewModels
 
                     Application.Current.Properties.Clear();
                     await App.SQLiteDB.DestroySession();
-                    await Shell.Current.GoToAsync("//LoginPage");
+                    App.Current.MainPage = new View_Login();
                 });
             }
                 
         }
-        public ICommand JoinOtbCommand
-        {
-            get
-            {
-                return new RelayCommand(async () => {
-
-                    await Navigation.PushAsync(new View_RegisterJoinOtb()); ;
-                });
-            }
-
-        }
-        #endregion
-        #region DataTemplates
         #endregion
     }
 }

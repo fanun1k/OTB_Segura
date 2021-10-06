@@ -31,12 +31,6 @@ namespace OTB_SEGURA.ViewModels
             get { return user; }
             set { user = value; OnPropertyChanged(); }
         }
-        public bool RememberMe
-        {
-            get { return _rememberMe; }
-            set { _rememberMe = value; this.OnPropertyChanged("ColorFiltered"); }
-        }
-        private bool _rememberMe = true;
         #endregion
         public Command LoginCommand { get; }
 
@@ -45,17 +39,10 @@ namespace OTB_SEGURA.ViewModels
         /// </summary>
         /// <remarks>
         /// </remarks>
-        public LoginViewModel(INavigation nav)
+        public LoginViewModel()
         {
-            navigation = nav;
-            if (Application.Current.Properties.ContainsKey("Sesion"))
-            {
-                 Shell.Current.GoToAsync("//MyProfile");
-            }
+           
         }
-
-
-
         /// <summary>
         /// Metodos ICommand
         /// </summary>
@@ -81,7 +68,6 @@ namespace OTB_SEGURA.ViewModels
                 return new Command(execute: async (obj) => {
                     IsBusy = false;
                     ((Command)LoginValidateCommand).ChangeCanExecute();
-                    var re = await restFull.UsersByOtb(5);
                     if (validar())
                     {
 
@@ -94,10 +80,7 @@ namespace OTB_SEGURA.ViewModels
                                 {
                                     string tipo = "";
 
-                                    if (_rememberMe)
-                                    {
-                                        Application.Current.Properties["Sesion"] = 1;
-                                    }
+                                    Application.Current.Properties["Sesion"] = 1;
                                     Application.Current.Properties["User_ID"] = resultHTTP.Data[0].User_ID;
                                     Application.Current.Properties["Id"] = resultHTTP.Data[0].UserId;
                                     Application.Current.Properties["Name"] = resultHTTP.Data[0].Name;
@@ -117,11 +100,7 @@ namespace OTB_SEGURA.ViewModels
                                     if (resultHTTP.Data[0].Type == 0 && resultHTTP.Data[0].Otb_ID == null)
                                         tipo = "userWithOutOTB";
                                     MessagingCenter.Send<LoginViewModel>(this, tipo);
-                                    //DependencyService.Get<IMessage>().LongAlert(tipo);
-                                    //DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data[0].Name);
-                                    DependencyService.Get<IMessage>().LongAlert(Application.Current.Properties["Name"] as string);
-                                    await Shell.Current.GoToAsync("//MyProfile");
-
+                                    Application.Current.MainPage = new AppShell();
                                 }
                                 else
                                 {

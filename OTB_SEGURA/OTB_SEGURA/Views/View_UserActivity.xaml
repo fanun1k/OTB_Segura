@@ -11,7 +11,7 @@
     <StackLayout>
         <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource PrimaryVariation}">
             <Label Text="Filtrar por tipo:" VerticalTextAlignment="Center" FontSize="15" Margin="10,0,0,0"/>
-            <Picker Title="Seleccione un tipo" ItemsSource="{Binding AlertTypeList}" ItemDisplayBinding="{Binding Name}" WidthRequest="170" SelectedItem="{Binding AlertTypeSelected}" SelectedIndex="{Binding IndexPick}"  FontSize="15">
+            <Picker Title="Seleccione un tipo" ItemsSource="{Binding AlertTypeList}" ItemDisplayBinding="{Binding Name}" WidthRequest="150" SelectedItem="{Binding AlertTypeSelected}" SelectedIndex="{Binding IndexPick}"  FontSize="15">
                 <Picker.Behaviors>
                     <cmd:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding SelectedChangedCommand}"/>
                 </Picker.Behaviors>

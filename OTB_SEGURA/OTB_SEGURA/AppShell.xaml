@@ -95,6 +95,9 @@
     <FlyoutItem Title="Mi Perfil" Icon="usuario.png">
         <ShellContent Route="MyProfile" ContentTemplate="{DataTemplate local:View_UserProfile}"/>
     </FlyoutItem>
+    <FlyoutItem Title="Acerca de Nosotros" Icon="logoUnivalle.png">
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_About}" />
+    </FlyoutItem>
     <FlyoutItem Title="Mi OTB" Icon="IconOtb.png" >
         <ShellContent Route="Mi OTB" ContentTemplate="{DataTemplate local:View_MyOtb}" IsVisible="{Binding IsUser}" />
     </FlyoutItem>
@@ -118,6 +121,7 @@
     </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
+
     <FlyoutItem Title="Acerca de Nosotros" Icon="logoUnivalle.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:View_About}" />
     </FlyoutItem>

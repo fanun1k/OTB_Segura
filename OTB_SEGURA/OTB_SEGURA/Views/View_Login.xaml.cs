@@ -18,7 +18,7 @@ namespace OTB_SEGURA.Views
         public View_Login()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();        
+            this.BindingContext = new LoginViewModel(Navigation);        
         }
 
     }

@@ -26,7 +26,7 @@ namespace OTB_SEGURA
             {
                 login = null;
                 login = new View_Login();
-                MainPage = login;
+                MainPage =new NavigationPage(login);
             }
         }
         public static SQLiteHelper SQLiteDB

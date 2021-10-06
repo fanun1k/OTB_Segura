@@ -49,7 +49,7 @@ namespace OTB_SEGURA.ViewModels
         #region Constructor
         public AddActivityViewModel()
         {
-            Title = "Agregar Nueva Actividad";//Titulo de la vista
+            Title = "Alertar Evento";//Titulo de la vista
         }
         #endregion
         #region Command

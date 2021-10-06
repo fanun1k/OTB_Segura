@@ -101,12 +101,10 @@ namespace OTB_SEGURA.ViewModels
             get
             {
                 return new RelayCommand(()=> {
-
                         Application.Current.Properties.Clear();
                         App.Current.MainPage = new NavigationPage(new View_Login());
                 });             
-            }
-                
+            }    
         }
         #endregion
     }

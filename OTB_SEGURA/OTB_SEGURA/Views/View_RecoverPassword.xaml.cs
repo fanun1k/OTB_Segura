@@ -15,7 +15,7 @@ namespace OTB_SEGURA.Views
         public View_RecoverPassword()
         {
             InitializeComponent();
-            BindingContext = new RecoverPasswordViewModel(DisplayAlert); 
+            BindingContext = new RecoverPasswordViewModel(DisplayAlert,Navigation); 
         }
     }
 }

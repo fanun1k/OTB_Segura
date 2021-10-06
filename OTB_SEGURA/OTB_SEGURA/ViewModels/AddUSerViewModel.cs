@@ -11,6 +11,7 @@ using Xamarin.Essentials;
 using Plugin.Geolocator.Abstractions;
 using Plugin.Geolocator;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -65,12 +66,15 @@ namespace OTB_SEGURA.ViewModels
                         IsBusy = false;
                         ((Command)InsertCommand).ChangeCanExecute();
                         user.State = 1;
+                        user.Photo = "https://i.blogs.es/2d5264/facebook-image/1366_2000.jpg";
                         if (Validar())
                         {
                             ResponseHTTP<UserModel> resultHTTP = await restFull.UserInsert(user);
-
+                            
                             if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                             {
+                                Stream stream = GetStreamFromUrl(user.Photo);
+                                await restFull.UploadProfile(resultHTTP.Data[0].User_ID.ToString(), stream);
                                 DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
                                 await Shell.Current.GoToAsync("..");
                             }
@@ -160,7 +164,17 @@ namespace OTB_SEGURA.ViewModels
             }
             return res;
         }
-      
+
+        private static Stream GetStreamFromUrl(string url)
+        {
+            byte[] imageData = null;
+
+            using (var wc = new System.Net.WebClient())
+                imageData = wc.DownloadData(url);
+
+            return new MemoryStream(imageData);
+        }
+
         #endregion
 
 

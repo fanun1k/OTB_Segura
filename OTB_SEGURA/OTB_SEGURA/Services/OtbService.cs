@@ -48,5 +48,19 @@ namespace OTB_SEGURA.Services
                 throw ex;
             }
         }
+
+        public async Task<ResponseHTTP<OtbModel>> GetOtb(int otbId)
+        {
+            try
+            {
+                string urlGetUsersByOtb = urlApiOtb + $"/{otbId}";
+                return await GET(urlGetUsersByOtb);
+            }
+            catch (System.Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

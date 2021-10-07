@@ -220,7 +220,10 @@ namespace OTB_SEGURA.ViewModels
                                 where x.Alert_type_ID == alertTypeSelected.Alert_type_ID
                                 select new CompleteAlertModel
                                 {
+                                    User_Name = "Usuario Agrupado",
+                                    Message = "Mensaje agrupado",
                                     Alert_type_Name = x.Name,
+                                    Date = DateTime.Now,
                                     Ubication_List = listActivity.Where(y => y.Alert_type_ID == x.Alert_type_ID).
                                                                   Select(z => new UbicationModel
                                                                   {

@@ -57,7 +57,7 @@ namespace OTB_SEGURA.ViewModels
                             ResponseHTTP<OtbModel> resultHTTP = await otbService.CreateOtb(otb.Name,User_ID);
                             if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                             {
-                                await App.SQLiteDB.SaveMyOtb(otb);
+                                
                                 Otb = resultHTTP.Data[0];
                                 DependencyService.Get<IMessage>().LongAlert("OTB registrada con éxito");
                             }
@@ -94,7 +94,7 @@ namespace OTB_SEGURA.ViewModels
                         ResponseHTTP<OtbModel> responseHTTP = await otbService.JoinOtb(User_ID,otb.Code);
                         if (responseHTTP.Code==System.Net.HttpStatusCode.OK)
                         {
-                            await App.SQLiteDB.SaveMyOtb(responseHTTP.Data[0]);
+                            
                             Application.Current.Properties["Otb_ID"] = responseHTTP.Data[0].Otb_ID;
                           
                             //aqui algun metodo para refresacar el menu principal con sus nuevas funcionalidades

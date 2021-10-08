@@ -5,13 +5,16 @@ using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using Xamarin.Forms;
 using OTB_SEGURA.Views;
-
+using OTB_SEGURA.Services;
+using OTB_SEGURA.Models;
 
 namespace OTB_SEGURA.ViewModels
 {
      class MyOtbViewModel:BaseViewModel
     {
+        private OtbService otbService = new OtbService();
         private string myOTBName;
+
 
         public string MyOTBName
         {
@@ -95,7 +98,15 @@ namespace OTB_SEGURA.ViewModels
                 {
                     try
                     {
-                        MyOTBName = await App.SQLiteDB.GetMyOtb();
+                        ResponseHTTP<OtbModel> resultHTTP = await otbService.GetOtb(int.Parse(Application.Current.Properties["Otb_ID"].ToString()));
+                        if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                        {
+                            MyOTBName = resultHTTP.Data[0].Name;
+                        }
+                        else
+                        {
+                            DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                        }
                     }
                     catch (Exception ex)
                     {

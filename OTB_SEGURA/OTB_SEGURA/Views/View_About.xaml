@@ -34,7 +34,7 @@
                             HorizontalOptions="Center" />
                 </Frame>
                 <StackLayout Orientation="Vertical">
-                    <Image Source="ladron.jpg" Aspect="AspectFit" WidthRequest="390" Margin="10"/>
+                    <Image Source="ladron.png" Aspect="AspectFit" WidthRequest="390" Margin="10"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

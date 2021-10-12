@@ -152,6 +152,6 @@
         <Setter Property="BackgroundColor" Value="White"/>
     </Style>
     <Style TargetType="ContentPage" x:Key="fondoApp">
-        <Setter Property="BackgroundImageSource" Value="Fondo.jpg"/>
+        <Setter Property="BackgroundImageSource" Value="fondo.jpg"/>
     </Style>
 </ResourceDictionary>

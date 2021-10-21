@@ -12,6 +12,7 @@ using Plugin.Geolocator.Abstractions;
 using Plugin.Geolocator;
 using System.Text.RegularExpressions;
 using System.IO;
+using OTB_SEGURA.Views;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -76,7 +77,9 @@ namespace OTB_SEGURA.ViewModels
                                 Stream stream = GetStreamFromUrl(user.Photo);
                                 await restFull.UploadProfile(resultHTTP.Data[0].User_ID.ToString(), stream);
                                 DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                                await Shell.Current.GoToAsync("..");
+                                View_Login login = null;
+                                login = new View_Login();
+                                App.Current.MainPage = new NavigationPage(login);
                             }
                             else
                             {

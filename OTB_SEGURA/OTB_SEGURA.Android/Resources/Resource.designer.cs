@@ -25825,7 +25825,7 @@ namespace OTB_SEGURA.Droid
 			public const int felcc = 2131165360;
 			
 			// aapt resource value: 0x7F0700B1
-			public const int Fondo = 2131165361;
+			public const int fondo = 2131165361;
 			
 			// aapt resource value: 0x7F0700B2
 			public const int fonProfile = 2131165362;

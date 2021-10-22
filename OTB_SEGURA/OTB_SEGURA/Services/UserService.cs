@@ -232,5 +232,24 @@ namespace OTB_SEGURA.Services
                 throw ex;
             }
         }
+
+        public async Task<ResponseHTTP<UserModel>> VerifyEmail(string email)
+        {
+            try
+            {
+                string urlInsert = urlApiUser + "/verifyEmail";
+                var bodyRequest = new
+                {
+                    Email = email
+                };
+
+                string json = JsonConvert.SerializeObject(bodyRequest);
+                return await POST(json, urlInsert);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

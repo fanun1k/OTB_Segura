@@ -4,7 +4,7 @@
              x:Class="OTB_SEGURA.Views.View_HelpAlert"
              Title="Descripción" Style="{StaticResource fondoApp}">
     <ContentPage.Content>
-        <StackLayout  Padding="50" Background="#b9eefc">
+        <StackLayout  Padding="50">
             <Image Source="alarm.png" WidthRequest="400"/>
             <Frame   VerticalOptions="Center">
                 <Label HorizontalOptions="Center" Text="¿Cómo funcionan las alertas?" />

@@ -14,7 +14,7 @@ namespace OTB_SEGURA.Services
     class BaseRestFullApi<T>
     {
         //string urlserver = "https://otbsegura.000webhostapp.com/otbapi/v3/";
-        readonly protected string urlserver = "http://ec2-3-22-172-219.us-east-2.compute.amazonaws.com/otbapi/"; //
+        readonly protected string urlserver = "http://ec2-18-223-118-237.us-east-2.compute.amazonaws.com/otbapi/"; //
         ResponseHTTP<T> res = new ResponseHTTP<T>();
 
         protected async Task<ResponseHTTP<T>> POST(string json, string url)

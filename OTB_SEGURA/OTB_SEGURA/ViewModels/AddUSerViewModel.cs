@@ -70,21 +70,30 @@ namespace OTB_SEGURA.ViewModels
                         user.Photo = "https://i.blogs.es/2d5264/facebook-image/1366_2000.jpg";
                         if (Validar())
                         {
-                            ResponseHTTP<UserModel> resultHTTP = await restFull.UserInsert(user);
-                            
-                            if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                            ResponseHTTP<UserModel> responseEmailHTTP = await restFull.VerifyEmail(user.Email);
+                            if (responseEmailHTTP.Code == System.Net.HttpStatusCode.OK)
                             {
-                                Stream stream = GetStreamFromUrl(user.Photo);
-                                await restFull.UploadProfile(resultHTTP.Data[0].User_ID.ToString(), stream);
-                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                                View_Login login = null;
-                                login = new View_Login();
-                                App.Current.MainPage = new NavigationPage(login);
+                                ResponseHTTP<UserModel> resultHTTP = await restFull.UserInsert(user);
+
+                                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                                {
+                                    Stream stream = GetStreamFromUrl(user.Photo);
+                                    await restFull.UploadProfile(resultHTTP.Data[0].User_ID.ToString(), stream);
+                                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                                    View_Login login = null;
+                                    login = new View_Login();
+                                    App.Current.MainPage = new NavigationPage(login);
+                                }
+                                else
+                                {
+                                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                                }
                             }
                             else
                             {
-                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                                DependencyService.Get<IMessage>().LongAlert(responseEmailHTTP.Msj);
                             }
+                            
                         }
                     }
                     catch (Exception ex)

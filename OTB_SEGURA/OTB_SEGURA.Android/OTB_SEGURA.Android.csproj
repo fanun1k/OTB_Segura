@@ -237,6 +237,8 @@
     <AndroidResource Include="Resources\drawable\password.png" />
     <AndroidResource Include="Resources\drawable\otb_icon2.png" />
     <AndroidResource Include="Resources\drawable\user5.png" />
+    <AndroidResource Include="Resources\drawable\ladron.png" />
+    <AndroidResource Include="Resources\drawable\cameras.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

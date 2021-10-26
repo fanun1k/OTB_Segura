@@ -124,7 +124,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
-    <AndroidResource Include="Resources\drawable\icon_about.png" />
     <AndroidResource Include="Resources\drawable\icon_feed.png" />
   </ItemGroup>
   <ItemGroup>
@@ -198,45 +197,19 @@
     <AndroidResource Include="Resources\drawable\logoUnivalle.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\UsertAlertIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\AlarmIconOtb.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\banerUnivalle.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ladron.jpg" />
     <AndroidResource Include="Resources\drawable\icon_register.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_alert.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_SeeAlarm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\usuarioPerfil.png" />
     <AndroidResource Include="Resources\drawable\SeeCamera.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_play.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\background2ed.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CamaraSubirImg.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\agregarAlerta.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\alertaAdmin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\verCamara.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\alarm.png" />
@@ -250,19 +223,11 @@
     <AndroidResource Include="Resources\drawable\question.png" />
     <AndroidResource Include="Resources\drawable\seAlarm.png" />
     <AndroidResource Include="Resources\drawable\camerasSee.png" />
-    <AndroidResource Include="Resources\drawable\camaraSubir2.png" />
-    <AndroidResource Include="Resources\drawable\prof.jpg" />
     <AndroidResource Include="Resources\drawable\fonProfile.png" />
     <AndroidResource Include="Resources\drawable\cam.png" />
-    <AndroidResource Include="Resources\drawable\date.png" />
-    <AndroidResource Include="Resources\drawable\message.png" />
-    <AndroidResource Include="Resources\drawable\type.png" />
     <AndroidResource Include="Resources\drawable\user.png" />
-    <AndroidResource Include="Resources\drawable\correo.png" />
     <AndroidResource Include="Resources\drawable\alarma2.png" />
     <AndroidResource Include="Resources\drawable\Fondo.jpg" />
-    <AndroidResource Include="Resources\drawable\icon_User_Emergency_Phone.png" />
-    <AndroidResource Include="Resources\drawable\user2.png" />
     <AndroidResource Include="Resources\drawable\question_icon.png" />
     <AndroidResource Include="Resources\drawable\message_icon.png" />
     <AndroidResource Include="Resources\drawable\calendar_icon.png" />
@@ -276,7 +241,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionOTB_SEGURAAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionOTB_SEGURAAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

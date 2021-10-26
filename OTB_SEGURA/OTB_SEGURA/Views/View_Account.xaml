@@ -14,7 +14,7 @@
         <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" />
         <Entry x:Name="txtPhone" Text="{Binding User.Cell_phone,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de celular" PlaceholderColor="{StaticResource colorGray}" />
         <Label Text="Contraseña nueva" FontSize="{StaticResource mediumTextSize}" />
-        <Entry x:Name="txtRePassword" Text="{Binding Password,Mode=TwoWay}" IsPassword="True" Placeholder="Escriba la nueva contraseña"/>
+        <Entry x:Name="txtRePassword" Text="{Binding User.Password,Mode=TwoWay}" IsPassword="True" Placeholder="Escriba la nueva contraseña"/>
         <Button Text="Editar Usuario" Command="{Binding UpdateCommand}" IsEnabled="{Binding IsBusy}"></Button>
     </StackLayout>      
 </ContentPage> 

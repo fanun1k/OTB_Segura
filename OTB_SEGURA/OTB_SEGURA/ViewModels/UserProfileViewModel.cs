@@ -28,6 +28,7 @@ namespace OTB_SEGURA.ViewModels
         private AlertService alertService= new AlertService();
         private bool editButtonVisivility=true;
         private ImageSource imgProfile;
+        private INavigation navigation = null;
 
         
 
@@ -83,6 +84,7 @@ namespace OTB_SEGURA.ViewModels
         {
             try
             {
+                this.navigation = navigation;
                 user = new UserModel();
                 textButton = "Editar Mi Perfil";
                 user.Name = Application.Current.Properties["Name"].ToString();
@@ -274,6 +276,11 @@ namespace OTB_SEGURA.ViewModels
             get
             {
                 return new RelayCommand(async () => {
+                    if (navigation !=null)
+                    {
+                        user.Name = Application.Current.Properties["Name"].ToString();
+                        User = User;
+                    }
                     await LoadImageProfile();
                 });
             }

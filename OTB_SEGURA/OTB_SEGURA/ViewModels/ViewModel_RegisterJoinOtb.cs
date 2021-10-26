@@ -1,7 +1,9 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
+using OTB_SEGURA.Views;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -60,6 +62,11 @@ namespace OTB_SEGURA.ViewModels
                                 
                                 Otb = resultHTTP.Data[0];
                                 DependencyService.Get<IMessage>().LongAlert("OTB registrada con éxito");
+                                await Task.Delay(2000);
+                                if (await App.Current.MainPage.DisplayAlert("Volver a iniciar sesión","necesita volver a iniciar sesión para visualizar los cambios","Aceptar","Cancelar"))
+                                {
+                                    App.Current.MainPage = new NavigationPage(new View_Login());
+                                }
                             }
                             else
                             {
@@ -96,8 +103,12 @@ namespace OTB_SEGURA.ViewModels
                         {
                             
                             Application.Current.Properties["Otb_ID"] = responseHTTP.Data[0].Otb_ID;
-                          
-                            //aqui algun metodo para refresacar el menu principal con sus nuevas funcionalidades
+                            DependencyService.Get<IMessage>().LongAlert($"se registro con exito a la OTB: {responseHTTP.Data[0].Name}");
+                            await Task.Delay(2000);
+                            if (await App.Current.MainPage.DisplayAlert("Volver a iniciar sesión", "necesita volver a iniciar sesión para visualizar los cambios", "Aceptar", "Cancelar"))
+                            {
+                                App.Current.MainPage = new NavigationPage(new View_Login());
+                            }
                         }
                         else
                         {
@@ -106,7 +117,6 @@ namespace OTB_SEGURA.ViewModels
                     }
                     catch (System.Exception ex)
                     {
-
                         DependencyService.Get<IMessage>().LongAlert(ex.Message);
                     }
                     IsBusy = true;

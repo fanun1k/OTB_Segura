@@ -22,7 +22,18 @@ namespace OTB_SEGURA.Services
             db.CreateTableAsync<OtbModel>().Wait();
             db.CreateTableAsync<AlertTypeModel>().Wait();
         }
-
+        
+        public async Task ClearTables()
+        {
+            await db.DropTableAsync<UserModel>();
+            await db.DropTableAsync<SessionModel>();
+            await db.DropTableAsync<AlertModel>();
+            await db.DropTableAsync<UserActivityModel>();
+            await db.DropTableAsync<ImageProfileModel>();
+            await db.DropTableAsync<OtbModel>();
+            await db.DropTableAsync<AlertTypeModel>();
+        }
+        
         /// <summary>
         /// Guardar lista de usuarios en la tabla del SQLite
         /// Tambien se realizan las acciones de DropTableAsync y CreateTableAsync para evitar errores

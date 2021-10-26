@@ -12,11 +12,11 @@
         <cmd:EventToCommandBehavior EventName="Appearing" Command="{Binding AppearingCommand}"/>
     </ContentPage.Behaviors>
     <StackLayout Padding="15">
-        <Label Text="Descripción" TextColor="Black"/>
-        <Editor Text="{Binding Alerta.Message}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" TextColor="Black" Placeholder="Escriba una descripcción" PlaceholderColor="Black"/>
+        <Label Text="Descripción"/>
+        <Editor Text="{Binding Alerta.Message}" Keyboard="Plain" AutoSize="TextChanges" MaxLength="180" TextColor="Black" Placeholder="Escriba una descripcción" PlaceholderColor="{StaticResource Secondary}"/>
         <Label Text="Tipo de alerta" FontAttributes="Bold" HorizontalOptions="Fill" />
 
-        <Picker Title="Selecciona tu tipo de alerta" TitleColor="Black" Margin="1,5,120,20" ItemsSource="{Binding ListAlertsType}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding AlertTypeSelected}" SelectedIndex="{Binding SelectedIndex}">
+        <Picker Title="Selecciona tu tipo de alerta" TitleColor="{StaticResource Secondary}" Margin="1,5,120,20" ItemsSource="{Binding ListAlertsType}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding AlertTypeSelected}" SelectedIndex="{Binding SelectedIndex}">
             <Picker.Behaviors>
                 <cmd:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding SelectedIndexChangedCommand}"/>
             </Picker.Behaviors>

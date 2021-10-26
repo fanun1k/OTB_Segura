@@ -1,4 +1,4 @@
-﻿using Confluent.Kafka;
+﻿
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.IO;
@@ -11,7 +11,6 @@ namespace OTB_SEGURA.ViewModels
 {
     class SeeCameraViewModel : BaseViewModel
     {
-        ConsumerConfig conf;
         private ImageSource imageVid;
 
         public ImageSource ImageVid
@@ -25,18 +24,6 @@ namespace OTB_SEGURA.ViewModels
         public SeeCameraViewModel()
         {
             Title = "Ver Cámaras";
-
-            conf = new ConsumerConfig
-            {
-                GroupId = "web_consumer",
-                BootstrapServers = "192.168.0.100:29092",
-                // Note: The AutoOffsetReset property determines the start offset in the event
-                // there are not yet any committed offsets for the consumer group for the
-                // topic/partitions of interest. By default, offsets are committed
-                // automatically, so in this example, consumption will only start from the
-                // earliest message in the topic 'my-topic' the first time you run the program.
-                //AutoOffsetReset = AutoOffsetReset.Earliest
-            };
         }
 
         public ICommand SeeCamera
@@ -47,32 +34,7 @@ namespace OTB_SEGURA.ViewModels
                 {
                     try
                     {
-                        using (var c = new ConsumerBuilder<Ignore, string>(conf).Build())
-                        {
-                            c.Subscribe("video-stream");
-
-                            CancellationTokenSource cts = new CancellationTokenSource();
-                            Console.CancelKeyPress += (_, e) =>
-                            {
-                                e.Cancel = true; // prevent the process from terminating.
-                                cts.Cancel();
-                            };
-                            while (true)
-                            {
-                                try
-                                {
-                                    var cr = c.Consume(cts.Token);
-                                    string key = cr.Message.Key == null ? "Null" : cr.Message.Key.ToString();
-                                    //ImageVid = cr.Message.Value;  //esto puede ser......
-                                    ImageVid = stringToImage(cr.Message.Value);
-                                    //Console.WriteLine($"Consumed message '{cr.Message}' at: '{cr.TopicPartitionOffset}'.");
-                                }
-                                catch (ConsumeException e)
-                                {
-                                    throw e;
-                                }
-                            }
-                        }
+                        DependencyService.Get<IMessage>().LongAlert("PLAY");
                     }
                     catch (Exception ex)
                     {

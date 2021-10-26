@@ -100,8 +100,9 @@ namespace OTB_SEGURA.ViewModels
         public ICommand LogOutCommand {
             get
             {
-                return new RelayCommand(()=> {
+                return new RelayCommand( async()=> {
                         Application.Current.Properties.Clear();
+                        await App.SQLiteDB.ClearTables();
                         App.Current.MainPage = new NavigationPage(new View_Login());
                 });             
             }    

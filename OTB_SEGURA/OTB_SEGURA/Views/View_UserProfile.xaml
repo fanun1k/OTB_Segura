@@ -29,7 +29,7 @@
         </Grid>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
             <Image Source="user3.png" HeightRequest="23"/>
-            <Label BindingContext="{Binding User}" TextColor="White" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"/>
+            <Label TextColor="White" Text="{Binding User.Name ,Mode=TwoWay}" HorizontalOptions="Center"/>
         </StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
             <Image Source="message_icon" HeightRequest="23"/>

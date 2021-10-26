@@ -12,7 +12,7 @@
             Vista de Camara 
         </Label>
         <StackLayout>
-            <Image Source="SeeCamera.png" WidthRequest="350"/>
+            <Image Source="{Binding ImageVid}" WidthRequest="350" HeightRequest="200"/>
             <Button CornerRadius="30" Margin="132,10,132,5" HorizontalOptions="Center" WidthRequest="130" HeightRequest="60"
                     ImageSource="icon_play.png "
                     Command="{Binding SeeCamera}"/>

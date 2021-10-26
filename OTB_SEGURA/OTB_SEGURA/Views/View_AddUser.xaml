@@ -9,18 +9,18 @@
         <vm:AddUSerViewModel />
     </ContentPage.BindingContext>
     <StackLayout Padding="15">
-        <Label Text="Nombre Completo" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding User.Name, Mode=TwoWay}" Placeholder="Introduzca el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
-        <Label Text="Número de Carnet" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding User.Ci,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Introduzca el número de carnet" PlaceholderColor="{StaticResource colorGray}"/>
-        <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding User.Cell_phone,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Introduzca el número de celular" PlaceholderColor="{StaticResource colorGray}" />
-        <Label Text="Contraseña" FontSize="{StaticResource mediumTextSize}"/>
-        <Entry Text="{Binding User.Password,Mode=TwoWay}" IsPassword="True" MaxLength="12" Placeholder="Establezca una contraseña" PlaceholderColor="{StaticResource colorGray}"/>
-        <Label Text="Confirmar Contraseña" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding RePassword,Mode=TwoWay}" IsPassword="True" MaxLength="12" Placeholder="Confirme la contraseña" PlaceholderColor="{StaticResource colorGray}" />
-        <Label Text="Email" FontSize="{StaticResource mediumTextSize}" />
-        <Entry Text="{Binding User.Email,Mode=TwoWay}" Placeholder="Introduzca su correo" PlaceholderColor="{StaticResource colorGray}" />
+        <Label Text="Nombre Completo" FontSize="{StaticResource mediumTextSize}" TextColor="{StaticResource Primary}" />
+        <Entry Text="{Binding User.Name, Mode=TwoWay}" Placeholder="Introduzca el nombre completo"  PlaceholderColor="{StaticResource Secondary}" TextColor="{StaticResource Primary}"/>
+        <Label Text="Número de Carnet" FontSize="{StaticResource mediumTextSize}" TextColor="{StaticResource Primary}"/>
+        <Entry Text="{Binding User.Ci,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Introduzca el número de carnet"  PlaceholderColor="{StaticResource Secondary}" TextColor="{StaticResource Primary}"/>
+        <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" TextColor="{StaticResource Primary}" />
+        <Entry Text="{Binding User.Cell_phone,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Introduzca el número de celular" PlaceholderColor="{StaticResource Secondary}" TextColor="{StaticResource Primary}" />
+        <Label Text="Contraseña" FontSize="{StaticResource mediumTextSize}" TextColor="{StaticResource Primary}"/>
+        <Entry Text="{Binding User.Password,Mode=TwoWay}" IsPassword="True" MaxLength="12" Placeholder="Establezca una contraseña"  PlaceholderColor="{StaticResource Secondary}" TextColor="{StaticResource Primary}"/>
+        <Label Text="Confirmar Contraseña" FontSize="{StaticResource mediumTextSize}" TextColor="{StaticResource Primary}" />
+        <Entry Text="{Binding RePassword,Mode=TwoWay}" IsPassword="True" MaxLength="12" Placeholder="Confirme la contraseña"  PlaceholderColor="{StaticResource Secondary}" TextColor="{StaticResource Primary}" />
+        <Label Text="Email" FontSize="{StaticResource mediumTextSize}" TextColor="{StaticResource Primary}" />
+        <Entry Text="{Binding User.Email,Mode=TwoWay}" Placeholder="Introduzca su correo"  PlaceholderColor="{StaticResource Secondary}" TextColor="{StaticResource Primary}"/>
         <Button Text="Registrar Usuario" Command="{Binding InsertCommand}" IsEnabled="{Binding IsBusy}">
             <Button.Style>
                 <Style TargetType="Button">

@@ -96,8 +96,9 @@
     <!-- Entry Styles-->
     <!--===========================================================================================================-->
     <Style TargetType="Entry">
-        <Setter Property="TextColor" Value="{StaticResource colorDark}"/>
+        <Setter Property="TextColor" Value="{StaticResource Primary}"/>
         <Setter Property="FontSize" Value="{StaticResource bigTextSize}"/>
+        <Setter Property="PlaceholderColor" Value="{StaticResource Secondary}"/>
     </Style>
     <!--===========================================================================================================-->
     
@@ -105,7 +106,7 @@
     <!-- Label Styles-->
     <!--===========================================================================================================-->
     <Style TargetType="Label">
-        <Setter Property="TextColor" Value="{StaticResource Dark}"/>
+        <Setter Property="TextColor" Value="{StaticResource Primary}"/>
         <Setter Property="FontSize" Value="{StaticResource bigTextSize}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>

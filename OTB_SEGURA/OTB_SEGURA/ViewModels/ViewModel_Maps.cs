@@ -50,8 +50,8 @@ namespace OTB_SEGURA.ViewModels
                 }
                 else
                 {
-                    pinList.Add(new Pin {Position=new Position(alert.Latitude, alert.Longitude),Label=""});
                     Position = new Position(alert.Latitude, alert.Longitude);
+                    PinList.Add(new Pin {Position=new Position(alert.Latitude, alert.Longitude),Label=""});                   
                 }
             }
             catch (System.Exception ex)

@@ -12,11 +12,13 @@
             Vista de Camara 
         </Label>
         <StackLayout>
-            <Image Source="{Binding ImageVid}" WidthRequest="350" HeightRequest="200"/>
+            <WebView Source="http://192.168.0.100:8000/" WidthRequest="350" HeightRequest="400">
+
+            </WebView>
             <Button CornerRadius="30" Margin="132,10,132,5" HorizontalOptions="Center" WidthRequest="130" HeightRequest="60"
                     ImageSource="icon_play.png "
                     Command="{Binding SeeCamera}"/>
-            <Image Source="logoOtb.png" WidthRequest="260"/>
+            <Image Source="logoOtb.png" WidthRequest="210"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

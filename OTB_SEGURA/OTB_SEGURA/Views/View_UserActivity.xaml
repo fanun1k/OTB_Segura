@@ -10,13 +10,13 @@
     </ContentPage.Behaviors>
     <StackLayout>
         <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource PrimaryVariation}">
-            <Label Text="Filtrar por tipo:" VerticalTextAlignment="Center" FontSize="15" Margin="10,0,0,0"/>
+            <Label Text="Filtrar por tipo:" VerticalTextAlignment="Center" TextColor="Black" FontSize="15" Margin="10,0,0,0"/>
             <Picker Title="Seleccione un tipo" ItemsSource="{Binding AlertTypeList}" ItemDisplayBinding="{Binding Name}" WidthRequest="150" SelectedItem="{Binding AlertTypeSelected}" SelectedIndex="{Binding IndexPick}"  FontSize="15">
                 <Picker.Behaviors>
                     <cmd:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding SelectedChangedCommand}"/>
                 </Picker.Behaviors>
             </Picker>
-            <Label Text="Agrupar" VerticalTextAlignment="Center" FontSize="15" />
+            <Label Text="Agrupar" VerticalTextAlignment="Center" TextColor="Black" FontSize="15" />
             <CheckBox IsChecked="{Binding Group}" >
                 <CheckBox.Behaviors>
                     <cmd:EventToCommandBehavior EventName="CheckedChanged" Command="{Binding CheckedChangedCommand}"/>

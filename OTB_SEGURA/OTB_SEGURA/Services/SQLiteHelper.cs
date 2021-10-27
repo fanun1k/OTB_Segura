@@ -81,6 +81,7 @@ namespace OTB_SEGURA.Services
         {
             try
             {
+                await db.CreateTableAsync<AlertModel>();
                 await db.DropTableAsync<AlertModel>();
                 await db.CreateTableAsync<AlertModel>();
                 foreach (var alert in alertList)

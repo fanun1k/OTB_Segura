@@ -101,7 +101,7 @@ namespace OTB_SEGURA.ViewModels
                         if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                         {
                             MyOTBName = resultHTTP.Data[0].Name;
-                            Title += " - " + resultHTTP.Data[0].Code;
+                            Title = "Mi OTB - " + resultHTTP.Data[0].Code;
                         }
                         else
                         {
@@ -117,8 +117,7 @@ namespace OTB_SEGURA.ViewModels
         }
 
         public MyOtbViewModel(INavigation nav)
-        {
-            Title = "Mi OTB";
+        { 
             Navigation = nav;
         }
     }

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -90,9 +91,11 @@ namespace OTB_SEGURA.ViewModels
                 user.Name = Application.Current.Properties["Name"].ToString();
                 user.Email = Application.Current.Properties["Email"].ToString();
                 user.User_ID = int.Parse(Application.Current.Properties["User_ID"].ToString());
-                user.Otb_ID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
-
-                LoadActivities();
+                if (Application.Current.Properties["Otb_ID"]!=null)
+                {
+                    user.Otb_ID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                    LoadActivities();
+                }           
                 ButtonChangeStateClick = new Command(async () =>
                 {
                     await navigation.PushAsync(new View_Account());
@@ -281,6 +284,10 @@ namespace OTB_SEGURA.ViewModels
                         user.Name = Application.Current.Properties["Name"].ToString();
                         User = User;
                     }
+                    if (user.Otb_ID!=null)
+                    {
+                        LoadActivities();
+                    }
                     await LoadImageProfile();
                 });
             }
@@ -375,9 +382,8 @@ namespace OTB_SEGURA.ViewModels
                     ResponseHTTP<AlertModel> responseHTTP = await alertService.GetAlertsByUser(user.Otb_ID, user.User_ID);
                     if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
                     {
-                        ActivityList = responseHTTP.Data;
+                        ActivityList = responseHTTP.Data.OrderByDescending(x=>x.Date).ToList();
                         await App.SQLiteDB.SaveAlertAsync(activityList);
-
                     }
                     else
                     {

@@ -21,7 +21,6 @@ namespace OTB_SEGURA.ViewModels
             get { return myOTBName; }
             set { myOTBName = value; OnPropertyChanged(); }
         }
-
         private INavigation Navigation { get; set; }
         public ICommand RegisterCameraCommand
         {
@@ -102,6 +101,7 @@ namespace OTB_SEGURA.ViewModels
                         if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                         {
                             MyOTBName = resultHTTP.Data[0].Name;
+                            Title += " - " + resultHTTP.Data[0].Code;
                         }
                         else
                         {

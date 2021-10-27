@@ -18,12 +18,12 @@ namespace OTB_SEGURA.ViewModels
         private Func<string, string, string, Task> displayAlert;
         UserService userService = new UserService();
         private string  email;
-        private int ci;
+        private string ci;
         public INavigation Navigation { get; set; }
         #endregion
 
         #region Properties
-        public int Ci
+        public string Ci
         {
             get { return ci; }
             set { ci = value; OnPropertyChanged(); }
@@ -58,7 +58,7 @@ namespace OTB_SEGURA.ViewModels
                         
                             try
                             {
-                                ResponseHTTP<UserModel> responseHTTP = await userService.RecoveryPassword(Email,Ci);
+                                ResponseHTTP<UserModel> responseHTTP = await userService.RecoveryPassword(Email.Trim(),Ci.Trim());
                                 if (responseHTTP.Code==System.Net.HttpStatusCode.OK)
                                 {
                                     DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);

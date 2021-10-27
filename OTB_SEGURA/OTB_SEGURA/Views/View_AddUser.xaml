@@ -12,7 +12,7 @@
         <Label Text="Nombre Completo" FontSize="{StaticResource mediumTextSize}" TextColor="{StaticResource Primary}" />
         <Entry Text="{Binding User.Name, Mode=TwoWay}" Placeholder="Introduzca el nombre completo"  PlaceholderColor="{StaticResource Secondary}" TextColor="{StaticResource Primary}"/>
         <Label Text="Número de Carnet" FontSize="{StaticResource mediumTextSize}" TextColor="{StaticResource Primary}"/>
-        <Entry Text="{Binding User.Ci,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Introduzca el número de carnet"  PlaceholderColor="{StaticResource Secondary}" TextColor="{StaticResource Primary}"/>
+        <Entry Text="{Binding User.Ci,Mode=OneWayToSource}" MaxLength="15" Placeholder="Introduzca el número de carnet"  PlaceholderColor="{StaticResource Secondary}" TextColor="{StaticResource Primary}"/>
         <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" TextColor="{StaticResource Primary}" />
         <Entry Text="{Binding User.Cell_phone,Mode=OneWayToSource}" Keyboard="Numeric" MaxLength="8" Placeholder="Introduzca el número de celular" PlaceholderColor="{StaticResource Secondary}" TextColor="{StaticResource Primary}" />
         <Label Text="Contraseña" FontSize="{StaticResource mediumTextSize}" TextColor="{StaticResource Primary}"/>

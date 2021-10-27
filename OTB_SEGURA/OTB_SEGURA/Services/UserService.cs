@@ -91,7 +91,7 @@ namespace OTB_SEGURA.Services
             }
 
         }
-        public async Task<ResponseHTTP<UserModel>> RecoveryPassword(string email, int ci)
+        public async Task<ResponseHTTP<UserModel>> RecoveryPassword(string email, string ci)
         {
             try
             {

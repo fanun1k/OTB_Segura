@@ -4,7 +4,7 @@
              x:Class="OTB_SEGURA.Views.View_EmergencyNumberUserList"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
-             Title="{Binding Title}"             
+             Title="{Binding Title}"  Style="{StaticResource fondoApp}"            
              >
 
     <ContentPage.Behaviors>
@@ -16,8 +16,7 @@
         <vm:EmergencyNumberUsersViewModel/>
     </ContentPage.BindingContext>
     <ListView x:Name="ListUser" ItemsSource="{Binding UserList}" HasUnevenRows="True"
-                  IsPullToRefreshEnabled="True"
-                  Refreshing="ListUser_Refreshing"
+                  IsPullToRefreshEnabled="True"               
                   ItemSelected="ListUser_ItemSelected" Style="{StaticResource listViewStyle}">
         <ListView.Behaviors>
             <behaviorsPack:EventToCommandBehavior 
@@ -27,16 +26,16 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <Frame Style="{StaticResource frameStyle}">
+                    <Frame Style="{StaticResource frameStyle}" BackgroundColor="{StaticResource Primary}">
                         <Grid>
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Nombre:" WidthRequest="80"/>
-                                    <Label Text="{Binding Name}" FontAttributes="None"/>
+                                    <Image Source="user4.png" HeightRequest="30"/>
+                                    <Label Text="{Binding Name}" FontAttributes="None" TextColor="White"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Telefono:" WidthRequest="80"/>
-                                    <Label Text="{Binding Phone}" FontAttributes="None"/>
+                                    <Image Source="phoneCall.png" HeightRequest="30"/>
+                                    <Label Text="{Binding Cell_phone}" FontAttributes="None" TextColor="White"/>
                                 </StackLayout>
                             </StackLayout>
                         </Grid>

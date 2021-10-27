@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OTB_SEGURA.Views.View_HelpAlert"
+             Title="Descripción" Style="{StaticResource fondoApp}">
+    <ContentPage.Content>
+        <StackLayout  Padding="50">
+            <Image Source="alarm.png" WidthRequest="400"/>
+            <Frame   VerticalOptions="Center">
+                <Label HorizontalOptions="Center" Text="¿Cómo funcionan las alertas?" />
+            </Frame>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Frame CornerRadius="20"  BackgroundColor="#FB7923">
+                    <Label TextColor="White" HorizontalOptions="Center" Text="Robo" />
+                </Frame>
+                <Frame CornerRadius="20" BackgroundColor="Red">
+                    <Label TextColor="White" HorizontalOptions="Center" Text="Inundación" />
+                </Frame>
+                
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Frame CornerRadius="20" BackgroundColor="Red">
+                    <Label TextColor="White" HorizontalOptions="Center" Text="Incendio" />
+                </Frame>
+                <Frame  CornerRadius="20" BackgroundColor="#FB7923">
+                    <Label TextColor="White" HorizontalOptions="Center" Text="Otros" />
+                </Frame>
+            </StackLayout>
+           
+            <Frame Padding="30"  VerticalOptions="Center" >
+                <Label HorizontalOptions="Center"  Text="En este apartado puede agregar alertas que son visibles para toda la Otb, éstas servirán para brindar alertas personalizadas así mismo visualizarse de manera grupal."/>
+            </Frame>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

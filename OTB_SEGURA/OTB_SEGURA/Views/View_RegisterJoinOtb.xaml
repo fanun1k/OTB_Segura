@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OTB_SEGURA.Views.View_RegisterJoinOtb"
              Title="{Binding Title}"
-             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels">
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels" Style="{StaticResource fondoApp}">
 
     <ContentPage.BindingContext>
         <vm:ViewModel_RegisterJoinOtb/>
@@ -21,7 +21,7 @@
                 <Label Text="Ingrese el nombre de la OTB" Opacity="0.5"/>
                 <Entry Text="{Binding Otb.Name, Mode=TwoWay}" Placeholder="OTB ...." />
                 <Frame CornerRadius="20" Padding="0">
-                    <Button Text="CREAR OTB" Command="{Binding CreateOTBCommand}" />
+                    <Button Text="CREAR OTB" Command="{Binding CreateOTBCommand}" IsEnabled="{Binding IsBusy}" />
                 </Frame>
                 <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                     <Label Text="Código: "
@@ -39,7 +39,7 @@
                 <Label Text="Escriba el Código de la OTB" Opacity="0.5"/>
                 <Entry Text="{Binding Otb.Code, Mode=TwoWay}" Placeholder="Código ...." />
                 <Frame CornerRadius="20" Padding="0">
-                    <Button Text="Unirse" Command="{Binding JoinOtbCommand}" />
+                    <Button Text="Unirse" Command="{Binding JoinOtbCommand}" IsEnabled="{Binding IsBusy}" />
                 </Frame>
             </StackLayout>
         </Frame>

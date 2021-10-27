@@ -1,46 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
              xmlns:ImgCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack" 
              x:Class="OTB_SEGURA.Views.View_UserProfile"
-             Appearing="ContentPage_Appearing">
+             x:Name="contentPage"
+             BackgroundImageSource="fonProfile.png">
+
+    <ContentPage.Behaviors>
+        <behaviorsPack:EventToCommandBehavior 
+            EventName="Appearing"
+            Command="{Binding AppearingProfileCommand }"/>
+    </ContentPage.Behaviors>
     <StackLayout>
-        <Grid>
-            <Grid.RowDefinitions>
+        <Grid IsClippedToBounds="True">
+             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
-            <Grid BackgroundColor="{StaticResource PrimaryDisabled}"></Grid>
-            <ImgCircle:CircleImage WidthRequest="80" HeightRequest="80" BorderColor="White" BorderThickness="3" Grid.RowSpan="2" Source="https://i.blogs.es/2d5264/facebook-image/1366_2000.jpg"></ImgCircle:CircleImage>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
         </Grid>
-        <Label BindingContext="{Binding User}" Text="{Binding Name,Mode=TwoWay}" HorizontalOptions="Center"/>
-        <Label BindingContext="{Binding User}" Text="{Binding Email,Mode=TwoWay}" HorizontalOptions="Center"/>
-        <Button Text="{Binding TextButton,Mode=TwoWay}" Margin="0.60" Command="{Binding ButtonChangeStateClick}" BackgroundColor="{StaticResource PrimaryVariation}" />
-        <Label Text="Alertas"></Label>
-        <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Frame Style="{StaticResource frameStyle}">
-                            <StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Fecha: "/>
-                                    <Label Text="{Binding DateTime}" FontAttributes="None"/>
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Tipo : "/>
-                                    <Label Text="{Binding Type}" FontAttributes="None"/>
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Mensaje: "/>
-                                    <Label Text="{Binding Message}" FontAttributes="None"/>
-                                </StackLayout>
+        <Grid >
+            <ImgCircle:CircleImage HeightRequest="600" BorderColor="White" BorderThickness="3" Margin="5,10,5,5" Source="{Binding ImgProfile}"></ImgCircle:CircleImage>
+            <Button Command="{Binding UploadCommand}" BackgroundColor="White" BorderColor="White" ImageSource="cam.png" Margin="229,105,120,10" WidthRequest="300" HeightRequest="700" HorizontalOptions="Center"  CornerRadius="30" Padding="0"/>
+        </Grid>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Image Source="user3.png" HeightRequest="23"/>
+            <Label TextColor="White" Text="{Binding User.Name ,Mode=TwoWay}" HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Image Source="message_icon" HeightRequest="23"/>
+            <Label BindingContext="{Binding User}" TextColor="White" Text="{Binding Email,Mode=TwoWay}" HorizontalOptions="Center"/>
+        </StackLayout>
+        <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="15">
+            <Button Text="{Binding TextButton,Mode=TwoWay}" BackgroundColor="#52a5df" BorderColor="White" CornerRadius="5" WidthRequest="700" HeightRequest="200" Command="{Binding ButtonChangeStateClick}"  HorizontalOptions="EndAndExpand" IsEnabled="{Binding IsBusy}"
+                    IsVisible="{Binding EditButtonVisivility}"/>
+        </Grid>
+
+        <Frame Margin="0,70,0,0" HorizontalOptions="Center" CornerRadius="5" BackgroundColor="#52a5df">
+            <Label TextColor="White" Text="Alertas"></Label>
+        </Frame>
+        
+    <ListView ItemsSource="{Binding ActivityList}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame  Style="{StaticResource frameA}">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                    <Image Source="calendar_icon" HeightRequest="20" VerticalOptions="Start" Margin="0,3,0,0"/>
+                                    <Label Text="Fecha:" TextColor="{StaticResource Dark}" WidthRequest="86"></Label>
+                                    <Label Text="{Binding Date}" FontAttributes="None" WidthRequest="225"/>
                             </StackLayout>
-                        </Frame>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#4aa5e5"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="alarm_Icon.png" HeightRequest="20" VerticalOptions="Start" Margin="0,3,0,0"/>
+                                    <Label Text="Alerta:" TextColor="{StaticResource Dark}" WidthRequest="86"></Label>
+                                    <Label Text="{Binding Alert_type_ID}" FontAttributes="None" WidthRequest="225"/>
+                            </StackLayout>
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#4aa5e5"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="message_icon" HeightRequest="20" VerticalOptions="Start" Margin="0,3,0,0"/>
+                                    <Label Text="Mensaje:" TextColor="{StaticResource Dark}" WidthRequest="86"></Label>
+                                    <Label Text="{Binding Message}" FontAttributes="None" WidthRequest="225"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
     </StackLayout>
 </ContentPage>

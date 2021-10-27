@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:OTB_SEGURA.ViewModels"
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
+             x:Class="OTB_SEGURA.Views.View_AddAlert" Style="{StaticResource fondoApp}"
+             Title="Agregar Tipo de Alerta">
+    <ContentPage.Behaviors>
+        <behaviorsPack:EventToCommandBehavior 
+            EventName="Appearing"
+            Command="{Binding AppearingCommand }"/>
+    </ContentPage.Behaviors>
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Info" Order="Primary"  IconImageSource="question.png"  Command="{Binding InfoCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout Padding="10" >
+        <Entry        
+            Placeholder="Nombre alerta"  Opacity="0.5" Margin="20,15,20,10"
+            Text="{Binding AlertName}"
+            FontSize="25"           
+            />
+        
+        <Button
+            Text="Agregar Alerta" Command="{Binding AddAlertCommand}"
+            Margin="20,0,20,20" 
+            CornerRadius="20"
+            />
+        
+        <StackLayout  Padding="2" Margin="20,0,20,20">
+            <StackLayout HorizontalOptions="Center" Margin="1" >
+                <ListView x:Name="lvAlert" ItemsSource="{Binding ListAlertsType}" SelectedItem="{Binding  SelectedAlert, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding Name}"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+
+        <Button
+            Text="Quitar Alerta" Command="{Binding RemoveAlertCommand}"
+            Margin="260,0,20,20"     
+            CornerRadius="20"           
+            />
+    </StackLayout>
+                  
+</ContentPage>

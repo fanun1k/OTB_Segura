@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using OTB_SEGURA.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +15,7 @@ namespace OTB_SEGURA.Views
         public View_MyOtb()
         {
             InitializeComponent();
+            BindingContext = new MyOtbViewModel(Navigation);
         }
     }
 }

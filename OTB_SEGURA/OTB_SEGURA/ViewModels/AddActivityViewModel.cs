@@ -1,131 +1,133 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GalaSoft.MvvmLight.Command;
+using Newtonsoft.Json;
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
-using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Essentials;
-using System.Threading;
 using Plugin.Geolocator;
-using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace OTB_SEGURA.ViewModels
 {
     class AddActivityViewModel : BaseViewModel
     {
-        FireBaseHelper fireBaseHelper = new FireBaseHelper();//instancia de helper de BDD
         #region Attributes
-
-        private string message="";//mensaje de la actividad
-        private string type;//tipo de la actividad
-        private string userId;//identificador de usuario
-        private double latitude;//latitud de ubicacion
-        private double longitude;//longitud de ubicacion
-        private DateTime dateTimeAttribute;//fecha y hora de emergencia
-
+        private AlertTypeService alertTypeService = new AlertTypeService(); //servicio de tipos de alertas
+        private AlertService alertService = new AlertService(); //servicio de alertas
+        private List<AlertTypeModel> listAlertsType;
+        private int selectedIndex;
+        private AlertModel alerta = new AlertModel();  
+        private AlertTypeModel alertTypeSelected;
         #endregion
         #region Properties
-        public string Message
+        public int SelectedIndex
         {
-            get { return message; }
-            set { message = value; }
+            get { return selectedIndex; }
+            set { selectedIndex = value; OnPropertyChanged(); }
         }
-        public string Type
+        public AlertTypeModel AlertTypeSelected
         {
-            get { return type; }
-            set { type = value; }
+            get { return alertTypeSelected; }
+            set { alertTypeSelected = value; }
         }
-        public string UserId
+        public AlertModel Alerta
         {
-            get { return userId; }
-            set { userId = value; }
-        }
-        public double Latitude
+            get { return alerta; }
+            set { alerta = value; OnPropertyChanged(); }
+        }   
+        public List<AlertTypeModel> ListAlertsType
         {
-            get { return latitude; }
-            set { latitude = value; }
+            get { return listAlertsType; }
+            set { listAlertsType = value; OnPropertyChanged(); }
         }
-        public double Longitude
-        {
-            get { return longitude; }
-            set { longitude = value; }
-        }
-        public DateTime DateTimeAttribute
-        {
-            get { return dateTimeAttribute; }
-            set { dateTimeAttribute = value; }
-        }
-
         #endregion
+        #region Constructor
         public AddActivityViewModel()
         {
-            Title = "Agregar Nueva Actividad";//Titulo de la vista
+            Title = "Alertar Evento";//Titulo de la vista
         }
+        #endregion
         #region Command
-        public ICommand InsertRoboCommand//comando de boton de robo
+        public ICommand AppearingCommand
         {
             get
             {
-                return new RelayCommand(InsertRoboMethod);//referencia de metodo de creacion de la actividad de robo
+                return new RelayCommand(async () =>
+                {
+                    await LoadAlertsType();
+                });
             }
         }
-        public ICommand InsertAccidenteCommand//comando de boton de accidente
+
+        public ICommand SelectedIndexChangedCommand
         {
             get
             {
-                return new RelayCommand(InsertAccidenteMethod);//referencia de metodo de creacion de la actividad de accidente
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        if (alertTypeSelected != null)
+                        {
+                            await GetLocation();
+                            var notify = await App.Current.MainPage.DisplayAlert("Enviar Alerta", $"Mensaje:{alerta.Message} \n" +
+                                                                $"Tipo de alerta: {alertTypeSelected.Name} \n" +
+                                                                $"Ubicación: {alerta.Latitude},{alerta.Longitude}\n" +
+                                                                $"fecha: {DateTime.Now}", "Enviar", "Cancelar");
+                            if (notify)
+                            {
+                                alerta.User_ID = int.Parse(Application.Current.Properties["User_ID"].ToString());
+                                alerta.Date = DateTime.Now;
+                                alerta.Otb_ID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                                alerta.Alert_type_ID = alertTypeSelected.Alert_type_ID;
+                                ResponseHTTP<AlertModel> responseHTTP = await alertService.insertarAlerta(Alerta);
+                                DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                                PostNotification();
+                            }
+                            Alerta.Message = "";
+                            Alerta = Alerta;
+                            SelectedIndex = -1;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                });
             }
         }
-        public ICommand InsertIncendioCommand//comando de boton de incendio
-        {
-            get
-            {
-                return new RelayCommand(InsertIncendioMethod);//referencia de metodo de creacion de la actividad de incendio
-            }
-        }
-        public ICommand InsertDesastreCommand//comando de boton de desastre
-        {
-            get
-            {
-                return new RelayCommand(InsertDesastreMethod);//referencia de metodo de creacion de la actividad de desastre
-            }
-        }
+        //
+
         public ICommand EmergencyCommand//comando de boton de emergencia
         {
             get
             {
-                return new RelayCommand(EmergencyMethod);//referencia de metodo de creacion de la emergencia
-            }
-        }
+                return new RelayCommand(async () =>
+                {
+                    //alerta = new AlertModel();
+                    //await getLocation();//llamada a metodo para obtener ubicacion
+                    //alerta.User_ID = int.Parse(Application.Current.Properties["User_ID"].ToString());
+                    //alerta.Date = DateTime.Now;
+                    //alerta.Otb_ID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                    //alerta.Alert_type_ID = alertTypeSelected.Alert_type_ID;
+                    //alerta.Message = "Alerta de Emergencia";
+                    //ResponseHTTP<AlertModel> responseHTTP = await alertService.insertarAlerta(Alerta);
+                    //DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                    //PostNotification();//llamada al metodo del envio de la notificacion});//referencia de metodo de creacion de la emergencia
+                    DependencyService.Get<IMessage>().LongAlert("Falta reformular");
+                });
+                
+        }   }
         #endregion
-
         #region Method
-        private async Task getLocation()//metodo para obtener la ubicacion
-        {
-            var locator = CrossGeolocator.Current;//Nueva instancia para obtener ubicacion
-            locator.DesiredAccuracy = 50;//definiendo la precision de la ubicacion
-            var position = await locator.GetPositionAsync();//metodo para obtener la ubicacion
-            latitude = position.Latitude;//asignando valores de latitud a variables globales
-            longitude = position.Longitude;//asignando valores de longitud a variables globales
-        }
-        private ActivityModel newActivity(string message,string type)//metodo de creacion de la actividad
-        {
-            return new ActivityModel//creando el objeto de la emergencia
-            {
-                Message = message,//definiendo mensaje de la actividad
-                Type = type,//definiendo tipo de la actividad
-                UserId = Application.Current.Properties["Id"].ToString(),//obtener id del usuario
-                Latitude = Latitude,//obteniendo valores de latitud de la ubicacion
-                Longitude = Longitude,//obteniendo valores de latitud de la ubicacion
-                DateTime = DateTime.Now//obteniendo fecha y hora actual
-            };
-        }
-        private async void PostNotification(ActivityModel activity) {//metodo de envio de notificaiciones
+        //Nuevos meotodos
+        private async void PostNotification()
+        {//metodo de envio de notificaiciones
             try
             {
                 //llave del servidor para peticiones http/post para generar notificaciones
@@ -136,8 +138,8 @@ namespace OTB_SEGURA.ViewModels
                     to = "/topics/all",//topic el que se mandara la notificacion
                     notification = new//nueva notificacion 
                     {
-                        body = activity.Message,//mensaje de la notificacion
-                        title = activity.Type//titulo de la notificacion
+                        body = alerta.Message,//mensaje de la notificacion
+                        title = alertTypeSelected.Name//titulo de la notificacion
                     }
 
                 };
@@ -161,17 +163,26 @@ namespace OTB_SEGURA.ViewModels
             }
             catch (Exception ex)
             {
-                DependencyService.Get<IMessage>().LongAlert("Error: "+ex.Message);//mensaje en caso de error
+                DependencyService.Get<IMessage>().LongAlert("Error: " + ex.Message);//mensaje en caso de error
             }
         }
-
+        private async Task GetLocation()//metodo para obtener la ubicacion
+        {
+            await Task.Run(async()=>{
+                var locator = CrossGeolocator.Current;//Nueva instancia para obtener ubicacion
+                locator.DesiredAccuracy = 50;//definiendo la precision de la ubicacion
+                var position = await locator.GetPositionAsync();
+                alerta.Longitude = position.Longitude;
+                alerta.Latitude = position.Latitude;
+            });  
+        }
         // Metodo de validacion de los Entry de la vista
         public bool ValidationEntry()
         {
-            bool res=true;
-            if (!message.Equals(""))
+            bool res = true;
+            if (!alerta.Message.Equals(""))
             {
-                if (!Regex.Match(message, "^[ñA-Za-záéíóúÁÉÍÓÚ _]*[ñA-Za-záéíóúÁÉÍÓÚ][ñA-Za-záéíóúÁÉÍÓÚ _]*$").Success)
+                if (!Regex.Match(alerta.Message, "^[ñA-Za-záéíóúÁÉÍÓÚ _]*[ñA-Za-záéíóúÁÉÍÓÚ][ñA-Za-záéíóúÁÉÍÓÚ _]*$").Success)
                 {
                     res = false;
                     DependencyService.Get<IMessage>().LongAlert("Formato del mensaje incorrecto");
@@ -185,88 +196,25 @@ namespace OTB_SEGURA.ViewModels
 
             return res;
         }
-
-        private async void InsertRoboMethod()//insert del robo
+        //Metodos nuevos
+        private async Task LoadAlertsType()
         {
-            IsBusy = true;
-            if (ValidationEntry())
+            try
             {
-                await getLocation();//llamada a metodo para obtener ubicacion
-                await Task.Delay(1000);
-                var activity = newActivity(message, "Robo");//Generar la actividad tipo robo
-                await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
-                await Task.Delay(1000);
-                DependencyService.Get<IMessage>().LongAlert("Actividad agregada con éxito");//Mensaje de exito de la insercion
-                PostNotification(activity);//llamada al metodo del envio de la notificacion
+                ResponseHTTP<AlertTypeModel> responseHTTP = await alertTypeService.GetAlertTypes();
+                if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                {
+                    ListAlertsType = responseHTTP.Data;
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                }
             }
-            IsBusy = false;
-        }
-        private async void InsertAccidenteMethod()
-        {
-            IsBusy = true;
-            if (ValidationEntry())
+            catch (Exception ex)
             {
-                await getLocation();//llamada a metodo para obtener ubicacion
-                await Task.Delay(1000);
-                var activity = newActivity(message, "Accidente");//Generar la actividad tipo accidente
-                await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
-                await Task.Delay(1000);
-                DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");//Mensaje de exito de la insercion
-                PostNotification(activity);//llamada al metodo del envio de la notificacion
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
             }
-            IsBusy = false;
-        }
-        private async void InsertIncendioMethod()
-        {
-            IsBusy = true;
-            if (ValidationEntry())
-            {
-                await getLocation ();//llamada a metodo para obtener ubicacion
-                await Task.Delay(1000);
-                var activity = newActivity(message, "Incendio");//Generar la actividad tipo incendio
-                await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
-                await Task.Delay(1000);
-                DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");//Mensaje de exito de la incendio
-                PostNotification(activity);//llamada al metodo del envio de la notificacion
-            }
-            IsBusy = false;
-        }
-        private async void InsertDesastreMethod()
-        {
-            IsBusy = true;
-            if (ValidationEntry())
-            {
-                await getLocation();//llamada a metodo para obtener ubicacion
-                await Task.Delay(1000);
-                var activity = newActivity(message, "Desastre");//Generar la actividad tipo desastre
-                await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
-                await Task.Delay(1000);
-                DependencyService.Get<IMessage>().LongAlert("Actividad agregada con exito");//Mensaje de exito de la desastre
-                PostNotification(activity);//llamada al metodo del envio de la notificacion
-            }
-            IsBusy = true;  
-        }
-        private async void EmergencyMethod()
-        {
-            await getLocation();//llamada a metodo para obtener ubicacion
-            await Task.Delay(1000);
-            var activity = newActivity("Alerta de Emergencia iniciada", "Emergencia");//Generar la actividad tipo emergencia
-            var emergency = newEmergency(activity);//llamada al metodo del helper para insertar la actividad tipo emergencia
-            await fireBaseHelper.AddActivity(activity);//llamada al metodo del helper para insertar la actividad
-            await Task.Delay(1000);
-            await fireBaseHelper.AddEmergency(emergency);//llamada al metodo del helper para insertar la emergencia
-            await Task.Delay(1000);
-            PostNotification(activity);//llamada al metodo del envio de la notificacion
-        }
-        private EmergencyModel newEmergency(ActivityModel activity)
-        {
-            return new EmergencyModel
-            {
-                UserId = activity.UserId,//obtener id del usuario
-                Latitude = activity.Latitude,//obteniendo valores de latitud de la ubicacion
-                Longitude = activity.Longitude,//obteniendo valores de latitud de la ubicacion
-                DateTime = activity.DateTime//obteniendo fecha y hora actual
-            };
         }
         #endregion
     }

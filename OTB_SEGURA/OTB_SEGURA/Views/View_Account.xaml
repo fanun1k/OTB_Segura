@@ -4,19 +4,17 @@
              x:Class="OTB_SEGURA.Views.View_Account"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
               xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
-             Title="{Binding Title}">
+             Title="{Binding Title}" Style="{StaticResource fondoApp}">
         <ContentPage.BindingContext>
-            <vm:AccountViewModel />
+            <vm:ViewModel_EditProfile />
         </ContentPage.BindingContext>
     <StackLayout Padding="15">        
         <Label Text="Nombre Completo" FontSize="{StaticResource mediumTextSize}" />
         <Entry x:Name="txtName" Text="{Binding User.Name, Mode=TwoWay}" Keyboard="Text" Placeholder="Escriba el nombre completo" PlaceholderColor="{StaticResource colorGray}" />
         <Label Text="Número de Celular" FontSize="{StaticResource mediumTextSize}" />
         <Entry x:Name="txtPhone" Text="{Binding User.Cell_phone,Mode=TwoWay}" Keyboard="Numeric" MaxLength="8" Placeholder="Escriba el número de celular" PlaceholderColor="{StaticResource colorGray}" />
-        <Label Text="Contraseña antigua" FontSize="{StaticResource mediumTextSize}" />
-        <Entry x:Name="txtPassword" Text="{Binding OldPassword,Mode=TwoWay}" IsPassword="True" Placeholder="Escriba su contraseña antigua" PlaceholderColor="{StaticResource colorGray}"/>
         <Label Text="Contraseña nueva" FontSize="{StaticResource mediumTextSize}" />
-        <Entry x:Name="txtRePassword" Text="{Binding Password,Mode=TwoWay}" IsPassword="True" Placeholder="Escriba la nueva contraseña" PlaceholderColor="{StaticResource colorGray}"/>
-        <Button Text="Editar Usuario" Command="{Binding UpdateCommand}"></Button>
+        <Entry x:Name="txtRePassword" Text="{Binding User.Password,Mode=TwoWay}" IsPassword="True" Placeholder="Escriba la nueva contraseña"/>
+        <Button Text="Editar Usuario" Command="{Binding UpdateCommand}" IsEnabled="{Binding IsBusy}"></Button>
     </StackLayout>      
 </ContentPage> 

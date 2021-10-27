@@ -2,52 +2,71 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels" 
-             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
+             xmlns:cmd="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              x:Class="OTB_SEGURA.Views.View_UserActivity"
-             Title="{Binding Title}">
-    <ContentPage.BindingContext>
-        <vm:UserActivityViewModel/>
-    </ContentPage.BindingContext>
-
+             Title="{Binding Title}" Style="{StaticResource fondoApp}" >
+    <ContentPage.Behaviors>
+        <cmd:EventToCommandBehavior EventName="Appearing" Command="{Binding AppearingCommand}"/>
+    </ContentPage.Behaviors>
     <StackLayout>
-        <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListActivity}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}">
+        <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource PrimaryVariation}">
+            <Label Text="Filtrar por tipo:" VerticalTextAlignment="Center" FontSize="15" Margin="10,0,0,0"/>
+            <Picker Title="Seleccione un tipo" ItemsSource="{Binding AlertTypeList}" ItemDisplayBinding="{Binding Name}" WidthRequest="150" SelectedItem="{Binding AlertTypeSelected}" SelectedIndex="{Binding IndexPick}"  FontSize="15">
+                <Picker.Behaviors>
+                    <cmd:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding SelectedChangedCommand}"/>
+                </Picker.Behaviors>
+            </Picker>
+            <Label Text="Agrupar" VerticalTextAlignment="Center" FontSize="15" />
+            <CheckBox IsChecked="{Binding Group}" >
+                <CheckBox.Behaviors>
+                    <cmd:EventToCommandBehavior EventName="CheckedChanged" Command="{Binding CheckedChangedCommand}"/>
+                </CheckBox.Behaviors>
+            </CheckBox>
+        </StackLayout>
+        <ListView x:Name="ListActivityUser" ItemsSource="{Binding ListToShow}" HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="ListActivityUser_Refreshing" Style="{StaticResource listViewStyle}" Margin="15,0,15,0" SelectedItem="{Binding AlertSelected}">
             <ListView.Behaviors>
-                <behaviorsPack:EventToCommandBehavior 
+                <cmd:EventToCommandBehavior 
                     EventName="ItemTapped"
-                    Command="{Binding ItemTappedCommandUserActivity}"
-                    EventArgsPropertyPath="Item"/>
-                <behaviorsPack:EventToCommandBehavior
+                    Command="{Binding ItemTappedCommandUserActivity}"/>
+                <cmd:EventToCommandBehavior
                     EventName="Refreshing"
                     Command="{Binding RefreshingCommandActivityUsers}"/>
             </ListView.Behaviors>
             <ListView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate >
                     <ViewCell>
-                        <Frame Style="{StaticResource frameStyle}">
+                        <Frame Style="{StaticResource frameStyle}" Opacity="1">
                             <StackLayout >
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Fecha:" TextColor="{StaticResource Dark}" WidthRequest="80"></Label>
-                                    <Label Text="{Binding DateTime,StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
+                                    <Image Source="calendar_icon" HeightRequest="20" VerticalOptions="Start" Margin="0,3,0,0"/>
+                                    <Label Text="Fecha:" TextColor="{StaticResource Dark}" WidthRequest="86"></Label>
+                                    <Label Text="{Binding Date,StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}" TextColor="{StaticResource Dark}" FontAttributes="None" WidthRequest="250"/>
                                 </StackLayout>
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{StaticResource PrimaryVariation}"/>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Usuario:" TextColor="{StaticResource Dark}"  WidthRequest="80"></Label>
-                                    <Label Text="{Binding Name, Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
+                                    <Image Source="usuario" HeightRequest="20" VerticalOptions="Start" Margin="0,3,0,0"/>
+                                    <Label Text="Usuario:" TextColor="{StaticResource Dark}"  WidthRequest="86"></Label>
+                                    <Label Text="{Binding User_Name, Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"  WidthRequest="250"/>
                                 </StackLayout>
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#4aa5e5"/>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Mensaje:" TextColor="{StaticResource Dark}"  WidthRequest="80"></Label>
-                                    <Label Text="{Binding Message,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
+                                    <Image Source="message_icon" HeightRequest="20" VerticalOptions="Start" Margin="0,3,0,0"/>
+                                    <Label Text="Mensaje:" TextColor="{StaticResource Dark}"  WidthRequest="86"></Label>
+                                    <Label Text="{Binding Message,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"  WidthRequest="250"/>
                                 </StackLayout>
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#4aa5e5"/>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Tipo:" TextColor="{StaticResource Dark}"  WidthRequest="80"/>
-                                    <Label Text="{Binding Type,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
+                                    <Image Source="question_icon" HeightRequest="20" VerticalOptions="Start" Margin="0,3,0,0"/>
+                                    <Label Text="Tipo:" TextColor="{StaticResource Dark}"  WidthRequest="86"/>
+                                    <Label Text="{Binding Alert_type_Name,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"  WidthRequest="250"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" IsVisible="False">
-                                    <Label Text="Latitud:" TextColor="{StaticResource Dark}"  WidthRequest="80"/>
-                                    <Label Text="{Binding Latitude,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
+                                    <Label Text="Latitud:" TextColor="{StaticResource Dark}"  WidthRequest="86"/>
+                                    <Label Text="{Binding Latitude,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"  WidthRequest="250"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" IsVisible="False">
-                                    <Label Text="Longitud:" TextColor="{StaticResource Dark}"  WidthRequest="80"/>
-                                    <Label Text="{Binding Longitude,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"/>
+                                    <Label Text="Longitud:" TextColor="{StaticResource Dark}"  WidthRequest="86"/>
+                                    <Label Text="{Binding Longitude,Mode=TwoWay}" TextColor="{StaticResource Dark}" FontAttributes="None"  WidthRequest="250"/>
                                 </StackLayout>
                             </StackLayout>                                                                                              
                         </Frame>

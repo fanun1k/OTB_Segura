@@ -1,36 +1,72 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
+using OTB_SEGURA.Views;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace OTB_SEGURA.ViewModels
 {
-    public class UserActivityViewModel:BaseViewModel
+    public class UserActivityViewModel : BaseViewModel
     {
-        #region prop
-        FireBaseHelper firebaseHelper = new FireBaseHelper(); // instancia de helper de BDD
-        private List<UserActivityModel> listActivity=new List<UserActivityModel>(); // instancia de la lista de actividades 
-
+        #region Attributes
+        private List<AlertModel> listActivity = new List<AlertModel>(); // instancia de la lista de actividades 
+        private AlertService alertService = new AlertService();
+        private UserService userService = new UserService();
+        private AlertTypeService alertTypeService = new AlertTypeService();
+        private List<UserModel> userLis = new List<UserModel>();
+        private ObservableCollection<AlertTypeModel> alertTypeList = new ObservableCollection<AlertTypeModel>();
+        private ObservableCollection<CompleteAlertModel> listToShow = new ObservableCollection<CompleteAlertModel>();
+        private AlertTypeModel alertTypeSelected;
+        private bool group;
+        private int indexPick;
+        private CompleteAlertModel alertSelected;
+        private INavigation Navigation;
         #endregion
 
-        public List<UserActivityModel> ListActivity
+        #region Properties
+        public CompleteAlertModel AlertSelected
         {
-            get { return listActivity; }
-            set { listActivity = value;
-                OnPropertyChanged();
-            }
+            get { return alertSelected; }
+            set { alertSelected = value; }
         }
-
-        #region Construct
-        public UserActivityViewModel()
+        public ObservableCollection<AlertTypeModel> AlertTypeList
         {
-            Title = "Actividad de Usuarios"; // Titulo de la vista
-            LoadData(); // Carga de los datos
+            get { return alertTypeList; }
+            set { alertTypeList = value; OnPropertyChanged(); }
+        }
+        public int IndexPick
+        {
+            get { return indexPick; }
+            set { indexPick = value; OnPropertyChanged(); }
+        }
+        public bool Group
+        {
+            get { return group; }
+            set { group = value; OnPropertyChanged(); }
+        }
+        public AlertTypeModel AlertTypeSelected
+        {
+            get { return alertTypeSelected; }
+            set { alertTypeSelected = value; OnPropertyChanged(); }
+        }
+        public ObservableCollection<CompleteAlertModel> ListToShow
+        {
+            get { return listToShow; }
+            set { listToShow = value; OnPropertyChanged(); }
+        }
+        #endregion
+        #region Construct
+        public UserActivityViewModel( INavigation nav)
+        {
+            Title = "Lista de Alertas"; // Titulo de la vista
+            Navigation = nav;
         }
         #endregion
 
@@ -41,7 +77,7 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(LoadData);
+                return new RelayCommand(async () => await LoadData()); ;
             }
         }
 
@@ -50,32 +86,328 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return new RelayCommand(LoadData);
+                return new RelayCommand(async () => await LoadData()); ;
             }
         }
 
         // Comando que redirecciona a Google Maps con la locaclizacion de la actividad
-        public ICommand ItemTappedCommandUserActivity { get; } = new Command(async (Item) =>
+        public ICommand ItemTappedCommandUserActivity
         {
-            var userActivityModel = Item as UserActivityModel; // Instancia del UserActivityViewModel
-            if (userActivityModel != null)
+            get
             {
-                await Map.OpenAsync(userActivityModel.Latitude, userActivityModel.Longitude, new MapLaunchOptions
+                return new RelayCommand(async () =>
                 {
-                    Name = "Ubicación",
-                    NavigationMode = NavigationMode.None
-                }); // Redireccion a Maps con la latitud y longitud
+
+                    if (alertSelected!=null)
+                    {
+                        await Navigation.PushAsync(new View_Maps(alertSelected));                        
+                    }
+                });
             }
-        });
+        }
+        public ICommand SelectedChangedCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        if (alertTypeSelected != null) //Filtrado
+                        {
+                            if (!group)//filtrado sin agrupado
+                            {
+                                await FilterList();
+                            }
+                            else //filtrado y agrupado
+                            {
+                                await FilterAndGroup();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                });
+            }
+        }
+        public ICommand CheckedChangedCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        if (group)//check en true
+                        {
+                            if (alertTypeSelected != null)// agrupado y filtrado
+                            {
+                                await FilterAndGroup();
+                            }
+                            else//solo agrupado
+                            {
+                                await GroupList();
+                            }
+                        }
+                        else//check en false
+                        {
+                            if (alertTypeSelected != null)//filtrado
+                            {
+                                await FilterList();
+                            }
+                            else await LoadData(); // sin agrupar y sin filtrar
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                });
+            }
+        }
         #endregion
 
         #region Metodh
-
         // Metodo que carga la data de actividades de usuarios
-        public async void LoadData()
+        public async Task LoadData()
         {
-            ListActivity = await firebaseHelper.GetAllActivities(); // Llamada al metodo del helper para obtener la data
+            try
+            {
+
+                var tasks = new List<Task>
+                {
+                    LoadAlerts(),
+                    LoadAlertTypes(),
+                    LoadUsers()
+                };
+                await Task.WhenAll(tasks);
+                await ClearList();
+                IndexPick = -1;
+                Group = false;
+                var query = from x in listActivity
+                            orderby x.Date descending
+                            select new CompleteAlertModel
+                            {
+                                Alert_ID = x.Alert_ID,
+                                Alert_type_Name = AlertTypeList.Where(y => y.Alert_type_ID == x.Alert_type_ID).Select(z => z.Name).FirstOrDefault(),
+                                User_Name = userLis.Where(y => y.User_ID == x.User_ID).Select(z => z.Name).FirstOrDefault(),
+                                Longitude = x.Longitude,
+                                Latitude = x.Latitude,
+                                Date = x.Date,
+                                Message = x.Message
+                            };
+                foreach (var item in query)
+                {
+                    ListToShow.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
         }
+        private async Task FilterAndGroup()
+        {
+            try
+            {
+                await ClearList();
+                await Task.Run(() =>
+                {
+                    var query = from x in alertTypeList
+                                where x.Alert_type_ID == alertTypeSelected.Alert_type_ID
+                                select new CompleteAlertModel
+                                {
+                                    User_Name = "Usuario Agrupado",
+                                    Message = "Mensaje agrupado",
+                                    Alert_type_Name = x.Name,
+                                    Date = DateTime.Now,
+                                    Ubication_List = listActivity.Where(y => y.Alert_type_ID == x.Alert_type_ID).
+                                                                  Select(z => new UbicationModel
+                                                                  {
+                                                                      Latitude = z.Latitude,
+                                                                      Longitude = z.Longitude
+                                                                  }).ToList()
+                                };
+                    foreach (var item in query)
+                    {
+                        ListToShow.Add(item);
+                    }
+
+                });
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private async Task ClearList()
+        {
+            await Task.Run(() =>
+            {
+                ListToShow.Clear();
+            });
+        }
+        private async Task FilterList()
+        {
+            try
+            {
+                if (alertTypeSelected != null)
+                {
+                    await ClearList();
+                    await Task.Run(() =>
+                    {
+                        var query = from x in listActivity
+                                    where x.Alert_type_ID == alertTypeSelected.Alert_type_ID
+                                    orderby x.Date descending
+                                    select new CompleteAlertModel
+                                    {
+                                        Alert_ID = x.Alert_ID,
+                                        Alert_type_Name = AlertTypeList.Where(y => y.Alert_type_ID == x.Alert_type_ID).Select(z => z.Name).FirstOrDefault(),
+                                        User_Name = userLis.Where(y => y.User_ID == x.User_ID).
+                                        Select(z => z.Name).FirstOrDefault(),
+                                        Longitude = x.Longitude,
+                                        Latitude = x.Latitude,
+                                        Date = x.Date,
+                                        Message = x.Message
+                                    };
+                        foreach (var item in query)
+                        {
+                            ListToShow.Add(item);
+                        }
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private async Task GroupList()
+        {
+            try
+            {
+                await ClearList();
+                await Task.Run(() =>
+                {
+                    var query = from x in alertTypeList
+                                select new CompleteAlertModel
+                                {
+                                    Alert_type_Name = x.Name,
+                                    User_Name = "Usuario agrupado",
+                                    Message = "Mensaje agrupado",
+                                    Date = DateTime.Now,
+                                    Ubication_List = listActivity.Where(y => y.Alert_type_ID == x.Alert_type_ID).
+                                                                  Select(z => new UbicationModel
+                                                                  {
+                                                                      Latitude = z.Latitude,
+                                                                      Longitude = z.Longitude
+                                                                  }).ToList()
+                                };
+                    foreach (var item in query)
+                    {
+                        ListToShow.Add(item);
+                    }
+                });
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private async Task LoadAlerts()
+        {
+            try
+            {
+                int otbId = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+                {
+                    ResponseHTTP<AlertModel> responseHTTP = await alertService.listarAlertas(otbId);
+                    if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                    {
+                        listActivity = responseHTTP.Data;
+                        await App.SQLiteDB.SaveAlertAsync(listActivity);
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                    }
+                }
+                else
+                {
+                    listActivity = await App.SQLiteDB.GetAlertAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private async Task LoadAlertTypes()
+        {
+            try
+            {
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+                {
+                    ResponseHTTP<AlertTypeModel> responseHTTP = await alertTypeService.GetAlertTypes();
+                    if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                    {
+                        AlertTypeList = new ObservableCollection<AlertTypeModel>(responseHTTP.Data);
+                        await App.SQLiteDB.SaveAlertTypeAsync(responseHTTP.Data);
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                    }
+                }
+                else
+                {
+                    var aux = await App.SQLiteDB.GetAlertTypeAsync();
+                    AlertTypeList = new ObservableCollection<AlertTypeModel>(aux);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private async Task LoadUsers()
+        {
+            try
+            {
+                int otbId = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+                {
+                    ResponseHTTP<UserModel> responseHTTP = await userService.UsersByOtb(otbId);
+                    if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                    {
+                        userLis = responseHTTP.Data;
+                        await App.SQLiteDB.SaveUserAsync(userLis);
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+                    }
+                }
+                else
+                {
+                    userLis = await App.SQLiteDB.GetUserAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
     }
 

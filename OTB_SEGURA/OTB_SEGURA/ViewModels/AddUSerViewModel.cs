@@ -11,15 +11,16 @@ using Xamarin.Essentials;
 using Plugin.Geolocator.Abstractions;
 using Plugin.Geolocator;
 using System.Text.RegularExpressions;
+using System.IO;
+using OTB_SEGURA.Views;
 
 namespace OTB_SEGURA.ViewModels
 {
     /// <summary>
     /// clase AddUSerViewModel que nos sirbe de logica para la vista View_AdUser
     /// </summary>
-    public class AddUSerViewModel:BaseViewModel
+    public class AddUSerViewModel : BaseViewModel
     {
-
 
         #region Attributes
         private UserModel user = new UserModel();
@@ -50,6 +51,7 @@ namespace OTB_SEGURA.ViewModels
         public AddUSerViewModel()
         {
             Title = "Agregar Nuevo Usuario";
+            
         }
         #endregion
 
@@ -57,48 +59,56 @@ namespace OTB_SEGURA.ViewModels
         /// <summary>
         /// comando que se ejecuta cuando se hace click al boton de insertar en la vista
         /// </summary>
-        public ICommand InsertCommand
-        {
-            get
-            {
-                return new RelayCommand(InsertMethod);
-            }
+        public ICommand InsertCommand {
+            get {
+                return new Command(execute: async (obj) => {
+                    try
+                    {
+                        IsBusy = false;
+                        ((Command)InsertCommand).ChangeCanExecute();
+                        user.State = 1;
+                        user.Photo = "https://i.blogs.es/2d5264/facebook-image/1366_2000.jpg";
+                        if (Validar())
+                        {
+                            ResponseHTTP<UserModel> responseEmailHTTP = await restFull.VerifyEmail(user.Email);
+                            if (responseEmailHTTP.Code == System.Net.HttpStatusCode.OK)
+                            {
+                                ResponseHTTP<UserModel> resultHTTP = await restFull.UserInsert(user);
+
+                                if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                                {
+                                    Stream stream = GetStreamFromUrl(user.Photo);
+                                    await restFull.UploadProfile(resultHTTP.Data[0].User_ID.ToString(), stream);
+                                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                                    View_Login login = null;
+                                    login = new View_Login();
+                                    App.Current.MainPage = new NavigationPage(login);
+                                }
+                                else
+                                {
+                                    DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
+                                }
+                            }
+                            else
+                            {
+                                DependencyService.Get<IMessage>().LongAlert(responseEmailHTTP.Msj);
+                            }
+                            
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                    IsBusy = true;
+                },canExecute: (obj) => { return IsBusy; });
+            } 
         }
+
         #endregion
 
         #region Method
-        /// <summary>
-        /// Metodo que nos ayuda a Hacer la insercion de un usuario a la bdd
-        /// </summary>
-        private async void InsertMethod()
-        {         
-            try
-            {
-                IsBusy = true;
-                user.State = 1;
-
-                if (Validar())
-                {
-                    ResponseHTTP<UserModel> resultHTTP = await restFull.UserInsert(user);
-
-                    if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
-                    {
-                        DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                        await Shell.Current.GoToAsync("..");
-                    }
-                    else
-                    {
-                        DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                    }
-                    IsBusy = false;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                DependencyService.Get<IMessage>().LongAlert(ex.Message);
-            }                            
-        }
+        
 
         /// <summary>
         /// Metodo que valida los campos del formulario de registro de usuario de la vista 
@@ -112,11 +122,6 @@ namespace OTB_SEGURA.ViewModels
             {
                 res = false;
                 DependencyService.Get<IMessage>().LongAlert("Formato del nombre incorrecto");
-            }
-            else if (!Regex.Match(user.Ci.ToString(), "^[0-9]{7}$").Success)
-            {
-                res = false;
-                DependencyService.Get<IMessage>().LongAlert("Formato de C.I incorrecto");
             }
             else if (!Regex.Match(user.Cell_phone.ToString(), "^[0-9]{8}$").Success)
             {
@@ -166,7 +171,17 @@ namespace OTB_SEGURA.ViewModels
             }
             return res;
         }
-      
+
+        private static Stream GetStreamFromUrl(string url)
+        {
+            byte[] imageData = null;
+
+            using (var wc = new System.Net.WebClient())
+                imageData = wc.DownloadData(url);
+
+            return new MemoryStream(imageData);
+        }
+
         #endregion
 
 

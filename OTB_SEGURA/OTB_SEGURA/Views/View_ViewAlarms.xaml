@@ -1,40 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
              x:Class="OTB_SEGURA.Views.View_ViewAlarms"
-             Title="Ver Alarmas"
-             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels">
-    <!--<ContentPage.BindingContext>
-        <vm:ViewModel_ViewAlarms>
-    </ContentPage.BindingContext>-->
-      <ScrollView HeightRequest="1000" Background="White" >
-        <StackLayout >
-            <StackLayout WidthRequest="1000" HeightRequest="40" BackgroundColor="{StaticResource PrimaryVariation}"  >
-                <Label Text="Alarmas Registradas" TextColor="White"
-                VerticalOptions="Start" 
-                HorizontalOptions="Center" FontSize="18" />
-                <BoxView></BoxView>
-                <StackLayout HorizontalOptions="Center" WidthRequest="200" VerticalOptions="Center">
-                    <Button Text="Alarma 1
-                            Calle Colombia"  FontSize="16" BackgroundColor="{StaticResource PrimaryDisabled }" BorderColor="Black" BorderWidth="0.5"
-                            TextColor="Black"
-                        CornerRadius="20"  />
-                    <BoxView></BoxView>
-                    <Button Text="Alarma 2
-                            Calle Ecuador" BorderColor="Black" BorderWidth="0.5" FontSize="16" BackgroundColor="{StaticResource PrimaryDisabled }"
-                            TextColor="Black"
-                        CornerRadius="20" />
-                    <BoxView></BoxView>
-                    <Button Text="Alarma 3                                                        
-                            Calle Mexico" FontSize="16" BackgroundColor="{StaticResource PrimaryDisabled }"
-                            BorderColor="Black" BorderWidth="0.5" TextColor="Black"
-                        CornerRadius="20"  />
-                    <BoxView></BoxView>
-                    <Button Text="Alarma 4
-                            Calle San Martin "  TextColor="{StaticResource Dark}" BorderColor="Black" BorderWidth="0.5"
-                        CornerRadius="20" BackgroundColor="{StaticResource PrimaryDisabled }" FontSize="16"  />
-                </StackLayout>
-            </StackLayout>
-        </StackLayout>
-    </ScrollView>
+             Title="Ver Alarmas" Style="{StaticResource fondoApp}">
+    <ContentPage.Behaviors>
+        <behaviorsPack:EventToCommandBehavior 
+            EventName="Appearing"
+            Command="{Binding ApperingCommandAlarm }"/>
+    </ContentPage.Behaviors>
+    
+    
+    <StackLayout Padding="0">
+        <Button WidthRequest="1000" HeightRequest="60" BackgroundColor="{StaticResource PrimaryVariation}" 
+            Text="Ver Alarmas" HorizontalOptions="Center"
+               TextColor="White"
+               FontSize="28"
+                    ImageSource="alarmview" 
+               />
+        <ListView x:Name="listAlarms" ItemsSource="{Binding ListAlarm}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
+            <ListView.Behaviors>
+                <behaviorsPack:EventToCommandBehavior EventName="ItemTapped" Command="{Binding ItemTappedCommand}"/>
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame   Grid.Row="0"  Style="{StaticResource frameN}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Label x:Name="lbStreetAlarm" TextColor="White" Text="{Binding Name}" WidthRequest="150"/>
+                                    </StackLayout>
+
+                                </StackLayout>
+                                <Grid Grid.Column="1" >
+                                    <Image  Source="AlarmIcon.png" HeightRequest="40" WidthRequest="40" />
+                                    
+                                </Grid>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
 </ContentPage>

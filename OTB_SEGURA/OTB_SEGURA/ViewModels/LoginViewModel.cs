@@ -20,7 +20,7 @@ namespace OTB_SEGURA.ViewModels
         #region Attributes
         private UserModel user=new UserModel();
         UserService restFull = new UserService();
-        INavigation navigation;
+        INavigation Navigation;
         #endregion
         /// <summary>
         /// Getters y Setters
@@ -31,29 +31,17 @@ namespace OTB_SEGURA.ViewModels
             get { return user; }
             set { user = value; OnPropertyChanged(); }
         }
-        public bool RememberMe
-        {
-            get { return _rememberMe; }
-            set { _rememberMe = value; this.OnPropertyChanged("ColorFiltered"); }
-        }
-        private bool _rememberMe = true;
         #endregion
         public Command LoginCommand { get; }
-
         /// <summary>
         /// Constructor
         /// </summary>
         /// <remarks>
-        /// Asigna el comando de OnLogiClicked a la variable LoginCommand
         /// </remarks>
         public LoginViewModel(INavigation nav)
         {
-            LoginCommand = new Command(OnLoginClicked);
-            navigation = nav;
+            Navigation = nav;
         }
-
-       
-
         /// <summary>
         /// Metodos ICommand
         /// </summary>
@@ -62,51 +50,7 @@ namespace OTB_SEGURA.ViewModels
         /// <summary>
         /// Devuelve el metodo LoginMethod
         /// </summary>
-        public ICommand LoginValidateCommand
-        {
-            get
-            {
-                return new RelayCommand(LoginMethod);
-            }
-        }
-
-        public ICommand RecoveryPassCommand
-        {
-            get
-            {
-                return new RelayCommand(async()=>{
-                    await navigation.PushAsync(new View_RecoverPassword());
-                });
-            }
-        }
-
-        public ICommand CreateAccountCommand
-        {
-            get
-            {
-                return new RelayCommand(async () => {
-                    await navigation.PushAsync(new View_AddUser());
-                });
-            }
-        }
-
-        /// <summary>
-        /// Devuelve el metodo LoginSuccess
-        /// </summary>
-        public ICommand Logged
-        {
-            get
-            {
-                return new RelayCommand(LoginSuccess);
-            }
-        }
-        #endregion
-
-        /// <summary>
-        /// Metodos
-        /// </summary>
-        #region metodos
-
+        /// 
         /// <summary>
         /// Metodo Para realizar la accion de inicio de sesion
         /// </summary>
@@ -116,64 +60,92 @@ namespace OTB_SEGURA.ViewModels
         /// tiene conexion con la base de datos
         /// traslada al usuario a la ventana emergencia en caso de ser realizar inicio de sesion
         /// </remarks>
-        private async void LoginMethod()
+        public ICommand LoginValidateCommand
         {
-            var re = await restFull.UsersByOtb(5);
-            if (validar())
+            get
             {
-
-                try
-                {                  
-                    ResponseHTTP<UserModel> resultHTTP = await restFull.Login(User.Email,user.Password);
-                    if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
+                return new Command(execute: async (obj) => {
+                    IsBusy = false;
+                    ((Command)LoginValidateCommand).ChangeCanExecute();
+                    if (validar())
                     {
-                        if (resultHTTP.Data[0].State != 0)
+
+                        try
                         {
-                            string tipo = "";
-
-                            if (_rememberMe)
+                            ResponseHTTP<UserModel> resultHTTP = await restFull.Login(User.Email, user.Password);
+                            if (resultHTTP.Code == System.Net.HttpStatusCode.OK)
                             {
-                                Application.Current.Properties["Sesion"] = 1;
-                            }
-                            Application.Current.Properties["User_ID"] = resultHTTP.Data[0].User_ID;
-                            Application.Current.Properties["Id"] = resultHTTP.Data[0].UserId;
-                            Application.Current.Properties["Name"] = resultHTTP.Data[0].Name;
-                            Application.Current.Properties["Email"] = resultHTTP.Data[0].Email;
-                            Application.Current.Properties["Ci"] = resultHTTP.Data[0].Ci;
-                            Application.Current.Properties["Password"] = resultHTTP.Data[0].Password;
-                            Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
-                            Application.Current.Properties["UserType"] = resultHTTP.Data[0].Type;
-                            Application.Current.Properties["Otb_ID"] = resultHTTP.Data[0].Otb_ID;
-                            Application.Current.Properties["Token"] = resultHTTP.Data[0].Token;
+                                if (resultHTTP.Data[0].State != 0)
+                                {
+                                    string tipo = "";
 
-                            if (resultHTTP.Data[0].Type == 1)
+                                    Application.Current.Properties["Sesion"] = 1;
+                                    Application.Current.Properties["User_ID"] = resultHTTP.Data[0].User_ID;
+                                    Application.Current.Properties["Id"] = resultHTTP.Data[0].UserId;
+                                    Application.Current.Properties["Name"] = resultHTTP.Data[0].Name;
+                                    Application.Current.Properties["Email"] = resultHTTP.Data[0].Email;
+                                    Application.Current.Properties["Ci"] = resultHTTP.Data[0].Ci;
+                                    Application.Current.Properties["Password"] = resultHTTP.Data[0].Password;
+                                    Application.Current.Properties["Phone"] = resultHTTP.Data[0].Cell_phone;
+                                    Application.Current.Properties["UserType"] = resultHTTP.Data[0].Type;
+                                    Application.Current.Properties["Otb_ID"] = resultHTTP.Data[0].Otb_ID;
+                                    Application.Current.Properties["Token"] = resultHTTP.Data[0].Token;
+
+                                    if (resultHTTP.Data[0].Type >= 1)
+                                    {
+                                        tipo = "admin";
+                                    }
+                                    else tipo = "user";
+                                    if (resultHTTP.Data[0].Type == 0 && resultHTTP.Data[0].Otb_ID == null)
+                                        tipo = "userWithOutOTB";
+                                    MessagingCenter.Send<LoginViewModel>(this, tipo);
+                                    Application.Current.MainPage = new AppShell();
+                                }
+                                else
+                                {
+                                    DependencyService.Get<IMessage>().LongAlert("Su usuario se Encuentra bloqueado, comuniquese con soporte de su zona");
+                                }
+                            }
+                            else
                             {
-                                tipo = "admin";
+                                DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
                             }
-                            else tipo = "user";
-                            MessagingCenter.Send<LoginViewModel>(this, tipo);
-                            //DependencyService.Get<IMessage>().LongAlert(tipo);
-                            //DependencyService.Get<IMessage>().LongAlert("Bienvenido: " + resultHTTP.Data[0].Name);
-                            DependencyService.Get<IMessage>().LongAlert(Application.Current.Properties["Name"] as string);
-                            await Shell.Current.GoToAsync("//AddActivity");
-
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            DependencyService.Get<IMessage>().LongAlert("Su usuario se Encuentra bloqueado, comuniquese con soporte de su zona");
+                            DependencyService.Get<IMessage>().LongAlert(ex.Message);
                         }
                     }
-                    else
-                    {
-                        DependencyService.Get<IMessage>().LongAlert(resultHTTP.Msj);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    DependencyService.Get<IMessage>().LongAlert(ex.Message);
-                }
+                    IsBusy = true;
+                }, canExecute: (obj) => { return IsBusy; });
             }
         }
+
+        public ICommand RecoveryPassCommand
+        {
+            get
+            {
+                return new RelayCommand(async()=>{
+                    await Navigation.PushAsync(new NavigationPage(new View_RecoverPassword()));
+                });
+            }
+        }
+
+        public ICommand CreateAccountCommand
+        {
+            get
+            {
+                return new RelayCommand(async () => {
+                    await Navigation.PushAsync(new NavigationPage(new View_AddUser()));
+                });
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// Metodos
+        /// </summary>
+        #region metodos
 
         /// <summary>
         /// Metodo para asignar un comando async en alguna variable command
@@ -193,7 +165,7 @@ namespace OTB_SEGURA.ViewModels
         /// </remarks>
         public async void LoginSuccess()
         {
-            await Shell.Current.GoToAsync("//AddActivity");
+            await Shell.Current.GoToAsync("//MyProfile");
         }
 
         /// <summary>

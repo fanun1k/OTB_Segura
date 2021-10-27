@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OTB_SEGURA.Views.View_SeeCamera"
+             Title="{Binding Title}"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels" Style="{StaticResource fondoApp}">
+    <ContentPage.BindingContext>
+        <vm:SeeCameraViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Label  Margin="20,20,20,20" FontSize="35" HorizontalOptions="Center" TextColor="{StaticResource Primary}">
+            Vista de Camara 
+        </Label>
+        <StackLayout>
+            <WebView Source="http://192.168.0.100:8000/" WidthRequest="350" HeightRequest="400">
+
+            </WebView>
+            <Button CornerRadius="30" Margin="132,10,132,5" HorizontalOptions="Center" WidthRequest="130" HeightRequest="60"
+                    ImageSource="icon_play.png "
+                    Command="{Binding SeeCamera}"/>
+            <Image Source="logoOtb.png" WidthRequest="210"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

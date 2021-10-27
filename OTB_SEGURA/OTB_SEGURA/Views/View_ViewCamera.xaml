@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
+             x:Class="OTB_SEGURA.Views.View_ViewCamera"
+             Title="{Binding Title}"
+             xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels" Style="{StaticResource fondoApp}"       
+             >
+    <ContentPage.Behaviors>
+        <behaviorsPack:EventToCommandBehavior 
+            EventName="Appearing"
+            Command="{Binding ApperingCommand }"/>
+    </ContentPage.Behaviors>
+    <StackLayout Padding="0">
+            <Button WidthRequest="1000" HeightRequest="60" BackgroundColor="{StaticResource PrimaryVariation}" 
+            Text="  Cámaras Registradas" HorizontalOptions="Center"
+               TextColor="White"
+               FontSize="28"
+                    ImageSource="cameraview" 
+               />
+        <ListView x:Name="listCamera" ItemsSource="{Binding ListaCamera}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
+            <ListView.Behaviors>
+                <behaviorsPack:EventToCommandBehavior EventName="ItemTapped" Command="{Binding ItemTappedCommand}"/>
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame   Grid.Row="0"  Style="{StaticResource frameN}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label x:Name="lbStreetCamera" TextColor="white" Text="{Binding Name}" WidthRequest="150"/>
+                                    </StackLayout>                                    
+                                </StackLayout>
+                                <Grid Grid.Column="1" >
+                                    <Image  Source="CameraIcon.png" HeightRequest="40" WidthRequest="40" />
+                                    <!--<Button x:Name="btnCallNumber" Text="Llamar" BackgroundColor="#fd2a2f" Clicked="btnCallNumber_Clicked"  />-->
+                                </Grid>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

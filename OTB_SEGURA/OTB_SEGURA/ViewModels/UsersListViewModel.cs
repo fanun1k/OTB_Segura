@@ -2,13 +2,10 @@
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
 using OTB_SEGURA.Views;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace OTB_SEGURA.ViewModels
 {
@@ -20,16 +17,24 @@ namespace OTB_SEGURA.ViewModels
     {
 
         #region Attributes
-        FireBaseHelper firebaseHelper = new FireBaseHelper();
         public INavigation Navigation { get; set; }
+        private UserModel userSelected = new UserModel();
+        private UserService userService = new UserService();
         private List<UserModel> userList;
         #endregion
 
         #region Properties
+        public UserModel UserSelected
+        {
+            get { return userSelected; }
+            set { userSelected = value; OnPropertyChanged(); }
+        }
         public List<UserModel> UserList
         {
             get { return userList; }
-            set { userList = value;
+            set
+            {
+                userList = value;
                 OnPropertyChanged();
             }
         }
@@ -45,8 +50,8 @@ namespace OTB_SEGURA.ViewModels
         public UsersListViewModel(INavigation navigation)
         {
             Navigation = navigation;
-            Title = "Lista de Usuarios";         
-            InitCommandTapped();
+            Title = "Lista de Usuarios";
+            //InitCommandTapped();
         }
         #endregion
 
@@ -55,7 +60,24 @@ namespace OTB_SEGURA.ViewModels
         ///  comando que se ejecuta cuando el usuario hace click en un item del listview de la vista
         ///  el comando necesita inicializarse con el metodo InitCommandTapped
         /// </summary>
-        public ICommand ItemTappedCommand { get; protected set; }
+        public ICommand ItemTappedCommand
+        {
+            get
+            {
+                return new RelayCommand(async() =>
+                {
+                    try
+                    {
+                        await Navigation.PushAsync(new View_UserProfile(userSelected));
+                    }
+                    catch (System.Exception ex)
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+
+                });
+            }
+        }
 
         /// <summary>
         /// comando que se ejecuta cuando aparece la vista View_UserList en pantalla
@@ -64,7 +86,7 @@ namespace OTB_SEGURA.ViewModels
         {
             get
             {
-                return  new RelayCommand(LoadData);
+                return new RelayCommand(LoadData);
             }
         }
         /// <summary>
@@ -76,7 +98,7 @@ namespace OTB_SEGURA.ViewModels
             {
                 return new RelayCommand(LoadData);
             }
-        } 
+        }
         #endregion
 
         #region Method
@@ -86,31 +108,36 @@ namespace OTB_SEGURA.ViewModels
         /// este metodo pone un color al item de usuario dependiendo si su estado es activo o inactivo
         /// </summary>
         public async void LoadData()
-        {           
-            UserList = await firebaseHelper.GetAllUsers();
-            foreach (var user in userList)
+        {
+            try
             {
-                if (user.State == 0)
+                int otbID = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
                 {
-                    user.StateColor = "#ff4e4e";
-                    user.StateBorderColor = "#ff4e4e";
+                    ResponseHTTP<UserModel> responseHTTP = await userService.UsersByOtb(otbID);
+                    if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
+                    {
+                        UserList = await userService.GetListImageProfile(responseHTTP.Data);
+                        await App.SQLiteDB.SaveUserAsync(UserList);
+                        
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
+
+                    }
                 }
                 else
                 {
-                    user.StateBorderColor = "#056d8a";
+                    UserList = await App.SQLiteDB.GetUserAsync();
+
                 }
             }
-        }
+            catch (System.Exception ex)
+            {
 
-        /// <summary>
-        /// Metodo que que inicia el comando ItemTappedCommnad
-        /// </summary>
-        public void InitCommandTapped()
-        {
-            ItemTappedCommand = new Command(async (item) => {
-                var user = item as UserModel;
-                await Navigation.PushAsync(new View_UserProfile(user));
-            });
+                DependencyService.Get<IMessage>().LongAlert(ex.Message);
+            }
         }
         #endregion
     }

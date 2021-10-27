@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OTB_SEGURA.Views.View_UsersList"
              xmlns:vm="clr-namespace:OTB_SEGURA.ViewModels"
-             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
-             Title="{Binding Title}"
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack" 
+             xmlns:ImgCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="{Binding Title}" Style="{StaticResource fondoApp}"
              >
     <ContentPage.Behaviors>
         <behaviorsPack:EventToCommandBehavior 
@@ -15,14 +16,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <ListView x:Name="ListUser"  ItemsSource="{Binding UserList}" HasUnevenRows="true"
+        <ListView x:Name="ListUser"  ItemsSource="{Binding UserList}" HasUnevenRows="true" SelectedItem="{Binding UserSelected}"
                   IsPullToRefreshEnabled="True"
                   Refreshing="ListUser_Refreshing" Style="{StaticResource listViewStyle}">
             <ListView.Behaviors>
                 <behaviorsPack:EventToCommandBehavior 
                     EventName="ItemTapped"
-                    Command="{Binding ItemTappedCommand}"
-                    EventArgsPropertyPath="Item"/>
+                    Command="{Binding ItemTappedCommand}"/>
                 <behaviorsPack:EventToCommandBehavior 
                     EventName="Refreshing"
                     Command="{Binding RefreshingCommand}"/>
@@ -30,61 +30,52 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame BackgroundColor="{Binding StateColor}"  Style="{StaticResource frameStyle}" BorderColor="{Binding StateBorderColor}">
+                        <Frame Style="{StaticResource frameStyle}" BorderColor="#7f7f87" CornerRadius="50" BackgroundColor="{StaticResource Primary}" Margin="10" >
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="25"/>
                                     <RowDefinition Height="25"/>
-                                    <RowDefinition Height="45"/>
+                                    <RowDefinition Height="25"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
                                     <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="80"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Grid Grid.ColumnSpan="2">
+                                <Grid Grid.ColumnSpan="1" Grid.RowSpan="3" Padding="0">
+                                    <ImgCircle:CircleImage WidthRequest="80" HeightRequest="80" Source="{Binding Photo}" Aspect="AspectFill" BorderThickness="3"></ImgCircle:CircleImage>
+                                </Grid>
+                                <Grid Grid.Column="1" >
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="Nombre:"/>
-                                    <Label Text="{Binding Name}" Grid.Column="1" FontAttributes="None"/>
+                                    <Label Text="Nombre:" TextColor="White"/>
+                                    <Label Text="{Binding Name}" Grid.Column="1" FontAttributes="None" TextColor="White"/>
                                 </Grid>
-                                <Grid Grid.Row="1">
+                                <Grid Grid.Row="1" Grid.Column="1">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="C.I:"/>
-                                    <Label Text="{Binding Ci}" Grid.Column="1" FontAttributes="None"/>
+                                    <Label Text="C.I:" TextColor="White"/>
+                                    <Label Text="{Binding Ci}" Grid.Column="1" FontAttributes="None" TextColor="White"/>
                                 </Grid>
-                                <Grid Grid.Row="2">
+                                <Grid Grid.Row="2" Grid.Column="1">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="Celular:"/>
-                                    <Label Text="{Binding Phone}" Grid.Column="1" FontAttributes="None"/>
+                                    <Label Text="Celular:" TextColor="White"/>
+                                    <Label Text="{Binding Cell_phone}" Grid.Column="1" FontAttributes="None" TextColor="White"/>
                                 </Grid>
-                                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
-                                    <Image Background="gray"/>
-                                </Grid>
+                                
                             </Grid>
                         </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Grid.Row="0" 
-                Text="+" BorderColor="{StaticResource Primary}"
-                BorderWidth="1"
-                FontAttributes="Bold" 
-                BackgroundColor="{StaticResource PrimaryVariation}"
-                BorderRadius="90" TextColor="White" 
-                HorizontalOptions="End" WidthRequest="80" 
-                HeightRequest="80" Margin="0,0,20,22" VerticalOptions="End"
-                FontSize="40"
-                Clicked="Button_Clicked"/>
-
+        
     </Grid>
 </ContentPage>

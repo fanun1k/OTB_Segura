@@ -46,16 +46,21 @@ namespace OTB_SEGURA.ViewModels
 
                 return new RelayCommand(async () =>
                 {
-                    int idOtb = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
-                    ResponseHTTP<AlarmModel> respServer = await alarmService.GetAlarmList(idOtb);
-                    if (respServer.Code == System.Net.HttpStatusCode.OK)
+                    try
                     {
-                        ListAlarm = respServer.Data;
+                        int idOtb = int.Parse(Application.Current.Properties["Otb_ID"].ToString());
+                        ResponseHTTP<AlarmModel> respServer = await alarmService.GetAlarmList(idOtb);
+                        if (respServer.Code == System.Net.HttpStatusCode.OK)
+                        {
+                            ListAlarm = respServer.Data;
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        DependencyService.Get<IMessage>().LongAlert(respServer.Msj);
+
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
                     }
+                   
                 });
 
             }

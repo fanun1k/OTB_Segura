@@ -12,7 +12,7 @@
             Vista de Camara 
         </Label>
         <StackLayout>
-            <WebView Source="http://192.168.0.100:8000/" WidthRequest="350" HeightRequest="400">
+            <WebView Source="http://192.168.0.108:8000/" WidthRequest="350" HeightRequest="400">
 
             </WebView>
             <Button CornerRadius="30" Margin="132,10,132,5" HorizontalOptions="Center" WidthRequest="130" HeightRequest="60"

@@ -206,10 +206,6 @@ namespace OTB_SEGURA.ViewModels
                 {
                     ListAlertsType = responseHTTP.Data;
                 }
-                else
-                {
-                    DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
-                }
             }
             catch (Exception ex)
             {

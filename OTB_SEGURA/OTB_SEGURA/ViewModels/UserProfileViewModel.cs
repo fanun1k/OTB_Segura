@@ -311,62 +311,6 @@ namespace OTB_SEGURA.ViewModels
                     break;
             }
         }
-
-        /// <summary>
-        /// Metodo que actualiza el estado en bdd del usuario al que seleccionamos
-        /// si el usuario esta inactivo el metodo lo pone activo
-        /// si el usuario esta activo el metodo lo pone activo
-        /// </summary>
-        private async void UpdateMethod()
-        {
-            bool resDisplayAlert;
-            try
-            {
-
-                if (user != null)
-                {
-                    switch (user.State)
-                    {
-                        //SI EL ESTADO ES =1 ENTONCES DEBEMOS DESHABILITAR AL USUARIO
-                        case 1:
-                            resDisplayAlert = await App.Current.MainPage.DisplayAlert("DESHABILITAR USUARIO", $"¿Esta seguro de deshabilitar al usuario: {user.Name}?", "Ok", "Cancelar");
-                            if (resDisplayAlert)
-                            {
-                                //await firebaseHelper.DisableUser(user);
-                                DependencyService.Get<IMessage>().ShortAlert($"usuario {user.Name} deshabilitado");
-                                SetTextButton();
-
-                            }
-                            break;
-                        //SI ESTADO =2 ENTONCES DEBEMOS PREGUNTAR SI HABILITAR O ELIMINAR DEFINITIVAMENTE AL USUARIO
-                        case 0:
-                            resDisplayAlert = await App.Current.MainPage.DisplayAlert("HABILITAR O ELIMINAR De La OTB USUARIO", $"¿Que desea hacer con el usuario: {user.Name} ", "Habilitar", "Eliminar usuario");
-                            if (resDisplayAlert)
-                            {
-                                //await firebaseHelper.EnableUser(user);
-                                DependencyService.Get<IMessage>().ShortAlert($"usuario {user.Name} habilitado");
-                                SetTextButton();
-                            }
-                            else
-                            {
-                                //await firebaseHelper.DeleteUser(user.UserId);
-                                DependencyService.Get<IMessage>().ShortAlert($"usuario {user.Name} fue eliminado");
-                                SetTextButton();
-                            }
-                            break;
-                    }
-                    await Shell.Current.GoToAsync("..");
-                }
-                }
-            catch (Exception ex)
-            {
-
-                DependencyService.Get<IMessage>().LongAlert(ex.Message);
-            }
-          
-
-           
-        }
         /// <summary>
         /// Metodo que carga las actividades en la vista View_UserProfile segun el id del usuario que reciba
         /// </summary>
@@ -384,12 +328,7 @@ namespace OTB_SEGURA.ViewModels
                     {
                         ActivityList = responseHTTP.Data.OrderByDescending(x=>x.Date).ToList();
                         await App.SQLiteDB.SaveAlertAsync(activityList);
-                    }
-                    else
-                    {
-                        DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
-
-                    }
+                    }                   
                 }
                 else
                 {

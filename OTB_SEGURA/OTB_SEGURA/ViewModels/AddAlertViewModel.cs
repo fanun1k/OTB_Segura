@@ -15,7 +15,7 @@ namespace OTB_SEGURA.ViewModels
         #region Attributes
         private INavigation Navigation;
         private AlertTypeService alertTypeService = new AlertTypeService();
-        public List<AlertTypeModel> listAlertsType;
+        public List<AlertTypeModel> listAlertsType = new List<AlertTypeModel>();
         private ResponseHTTP<AlertTypeModel> responseHTTP;
         private AlertTypeModel selectedAlert;
         private string alertName;
@@ -62,10 +62,6 @@ namespace OTB_SEGURA.ViewModels
                         {
                             await LoadAlertsType();
                         }
-                        else
-                        {
-                            DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
-                        }
                     }
                     catch (Exception ex)
                     {
@@ -104,9 +100,9 @@ namespace OTB_SEGURA.ViewModels
                             responseHTTP = await alertTypeService.DeleteAlertType(selectedAlert.Alert_type_ID);
                             if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
                             {
+                                ListAlertsType = null;
                                 await LoadAlertsType();
                             }
-                            DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
                         }
                     }
                     catch (System.Exception ex)
@@ -117,7 +113,16 @@ namespace OTB_SEGURA.ViewModels
                 });
             }
         }
-
+        public ICommand InfoCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    await Navigation.PushAsync(new View_HelpAlert());
+                });
+            }
+        }
         #endregion
 
         #region Methods
@@ -129,11 +134,9 @@ namespace OTB_SEGURA.ViewModels
                 responseHTTP = await alertTypeService.GetAlertTypes();
                 if (responseHTTP.Code == System.Net.HttpStatusCode.OK)
                 {
+                    AlertName = "";
+                    ListAlertsType = new List<AlertTypeModel>();
                     ListAlertsType = responseHTTP.Data;
-                }
-                else
-                {
-                    DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
                 }
             }
             catch (Exception ex)
@@ -142,16 +145,7 @@ namespace OTB_SEGURA.ViewModels
             }
         }
 
+
         #endregion
-        public ICommand InfoCommand
-        {
-            get
-            {
-                return new RelayCommand(async () =>
-                {
-                    await Navigation.PushAsync(new View_HelpAlert());
-                });
-            }
-        }
     }
 }

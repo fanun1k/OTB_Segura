@@ -47,6 +47,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Label Text="Las alarmas se agregran de manera externa" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="Red" Margin="15"></Label>
 
     </StackLayout>
 </ContentPage>

@@ -119,7 +119,7 @@ namespace OTB_SEGURA.ViewModels
                     //ResponseHTTP<AlertModel> responseHTTP = await alertService.insertarAlerta(Alerta);
                     //DependencyService.Get<IMessage>().LongAlert(responseHTTP.Msj);
                     //PostNotification();//llamada al metodo del envio de la notificacion});//referencia de metodo de creacion de la emergencia
-                    DependencyService.Get<IMessage>().LongAlert("Falta reformular");
+                    DependencyService.Get<IMessage>().LongAlert("Sonando Alarma");
                 });
                 
         }   }

@@ -18,7 +18,7 @@
                FontSize="28"
                     ImageSource="alarmview" 
                />
-        <ListView x:Name="listAlarms" ItemsSource="{Binding ListAlarm}" HasUnevenRows="True" Style="{StaticResource listViewStyle}">
+        <ListView x:Name="listAlarms" ItemsSource="{Binding ListAlarm}" HasUnevenRows="True" Style="{StaticResource listViewStyle}" SelectedItem="{Binding Alarma}">
             <ListView.Behaviors>
                 <behaviorsPack:EventToCommandBehavior EventName="ItemTapped" Command="{Binding ItemTappedCommand}"/>
             </ListView.Behaviors>

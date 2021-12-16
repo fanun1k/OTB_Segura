@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using OTB_SEGURA.Models;
 using OTB_SEGURA.Services;
+using OTB_SEGURA.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,6 +18,14 @@ namespace OTB_SEGURA.ViewModels
         private List<AlarmModel> listAlarm;
         AlarmService alarmService = new AlarmService();
         private INavigation Navigation { get; set; }
+        private AlarmModel alarma;
+
+        public AlarmModel Alarma
+        {
+            get { return alarma; }
+            set { alarma = value; OnPropertyChanged(); }
+        }
+
         #endregion
 
         #region Properties
@@ -66,28 +75,29 @@ namespace OTB_SEGURA.ViewModels
             }
 
         }
-        //public ICommand ItemTappedCommand
-        //{
-        //    get
-        //    {
+        public ICommand ItemTappedCommand
+        {
+            get
+            {
 
-        //        return new RelayCommand(async () =>
-        //        {
-        //            try
-        //            {
-        //                //Navigation.PushAsync(new);
-        //                //TO-DO crear una interfaz para detonar las alarmas
-        //            }
-        //            catch (Exception ex)
-        //            {
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
 
-        //                DependencyService.Get<IMessage>().LongAlert(ex.Message);
-        //            }
-        //        });
+                       await Navigation.PushAsync(new View_EnableDisableAlarm(Alarma));
+                       
+                    }
+                    catch (Exception ex)
+                    {
 
-        //    }
+                        DependencyService.Get<IMessage>().LongAlert(ex.Message);
+                    }
+                });
 
-        //}
+            }
+
+        }
         #endregion
 
         #region Constructor

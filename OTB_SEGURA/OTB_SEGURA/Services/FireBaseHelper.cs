@@ -138,21 +138,42 @@ namespace OTB_SEGURA.Services
 
             });
         }
-
-        //Metodo de insercion de actividades a firebase
-        public async Task AddActivity(ActivityModel activity)
+        private class res
         {
-            await firebase
-            .Child("Activity")
-            .PostAsync(new ActivityModel()
+            public int Estado { get; set; }
+        }
+        //Metodo de insercion de actividades a firebase
+        public async Task<int> EnableDisableAlarm()
+        {
+            try
             {
-                DateTime = activity.DateTime,
-                Latitude = activity.Latitude,
-                Longitude = activity.Longitude,
-                Message = activity.Message,
-                Type = activity.Type,
-                UserId = activity.UserId
-            });
+                var estado = (await firebase.Child("AlarmaPlaza").OnceAsync<res>()).FirstOrDefault();
+
+                if (estado.Object.Estado == 1)
+                {
+                    await firebase
+                    .Child("Activity")
+                    .PutAsync(0);
+                    await firebase.Child("AlarmaPlaza").Child("-Mc6C7YP8iuk7adm7Hc2").PutAsync(new res {Estado=0 });
+                    return 0;
+                }
+                else
+                {
+                    await firebase
+                   .Child("Activity")
+                   .PutAsync(1);
+                    await firebase.Child("AlarmaPlaza").Child("-Mc6C7YP8iuk7adm7Hc2").PutAsync(new res { Estado = 1 });
+                    return 1;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
+           
         }
         //Metodo de insercion de emergencias a firebase
         public async Task AddEmergency(EmergencyModel emergency)
